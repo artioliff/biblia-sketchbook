@@ -1,0 +1,138 @@
+
+<div id="erd" style="padding: 1rem 0"></div>
+<script type="module">
+import mermaid from 'https://esm.sh/mermaid@11/dist/mermaid.esm.min.mjs';
+const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+await document.fonts.ready;
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: '"Anthropic Sans", sans-serif',
+  themeVariables: {
+    darkMode: dark,
+    fontSize: '13px',
+    fontFamily: '"Anthropic Sans", sans-serif',
+    lineColor: dark ? '#9c9a92' : '#73726c',
+    textColor: dark ? '#c2c0b6' : '#3d3d3a',
+  },
+});
+const { svg } = await mermaid.render('erd-svg', `erDiagram
+  TESTAMENTO {
+    int id PK
+    string nome
+    string descricao
+  }
+  LIVRO {
+    int id PK
+    int testamento_id FK
+    string nome
+    string abreviacao
+    string autor
+    string genero
+    int ordem
+    string periodo_historico
+  }
+  CAPITULO {
+    int id PK
+    int livro_id FK
+    int numero
+    string resumo
+  }
+  VERSICULO {
+    int id PK
+    int capitulo_id FK
+    int numero
+    text conteudo
+  }
+  PERSONAGEM {
+    int id PK
+    string nome
+    string tipo
+    string descricao
+    int epoca_inicio
+    int epoca_fim
+  }
+  LUGAR {
+    int id PK
+    string nome
+    string descricao
+    string regiao
+    float lat
+    float lng
+  }
+  EVENTO {
+    int id PK
+    string titulo
+    string descricao
+    string tipo
+    int capitulo_id FK
+  }
+  TEMA {
+    int id PK
+    string nome
+    string descricao
+  }
+  PERSONAGEM_LIVRO {
+    int personagem_id FK
+    int livro_id FK
+    string papel
+  }
+  PERSONAGEM_VERSICULO {
+    int personagem_id FK
+    int versiculo_id FK
+  }
+  PERSONAGEM_RELACIONAMENTO {
+    int personagem_id FK
+    int relacionado_id FK
+    string tipo_relacao
+  }
+  EVENTO_PERSONAGEM {
+    int evento_id FK
+    int personagem_id FK
+  }
+  EVENTO_LUGAR {
+    int evento_id FK
+    int lugar_id FK
+  }
+  LIVRO_TEMA {
+    int livro_id FK
+    int tema_id FK
+  }
+
+  TESTAMENTO ||--o{ LIVRO : contém
+  LIVRO ||--o{ CAPITULO : contém
+  CAPITULO ||--o{ VERSICULO : contém
+  CAPITULO ||--o{ EVENTO : acontece_em
+  LIVRO ||--o{ PERSONAGEM_LIVRO : aparece_em
+  PERSONAGEM ||--o{ PERSONAGEM_LIVRO : aparece_em
+  PERSONAGEM ||--o{ PERSONAGEM_VERSICULO : mencionado_em
+  VERSICULO ||--o{ PERSONAGEM_VERSICULO : menciona
+  PERSONAGEM ||--o{ PERSONAGEM_RELACIONAMENTO : tem_relacao
+  PERSONAGEM ||--o{ EVENTO_PERSONAGEM : participa_de
+  EVENTO ||--o{ EVENTO_PERSONAGEM : envolve
+  EVENTO ||--o{ EVENTO_LUGAR : ocorre_em
+  LUGAR ||--o{ EVENTO_LUGAR : sedia
+  LIVRO ||--o{ LIVRO_TEMA : aborda
+  TEMA ||--o{ LIVRO_TEMA : aparece_em
+`);
+document.getElementById('erd').innerHTML = svg;
+document.querySelectorAll('#erd svg.erDiagram .node').forEach(node => {
+  const firstPath = node.querySelector('path[d]');
+  if (!firstPath) return;
+  const d = firstPath.getAttribute('d');
+  const nums = d.match(/-?[\d.]+/g)?.map(Number);
+  if (!nums || nums.length < 8) return;
+  const xs = [nums[0], nums[2], nums[4], nums[6]];
+  const ys = [nums[1], nums[3], nums[5], nums[7]];
+  const x = Math.min(...xs), y = Math.min(...ys);
+  const w = Math.max(...xs) - x, h = Math.max(...ys) - y;
+  const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+  rect.setAttribute('x', x); rect.setAttribute('y', y);
+  rect.setAttribute('width', w); rect.setAttribute('height', h);
+  rect.setAttribute('rx', '8');
+  for (const a of ['fill', 'stroke', 'stroke-width', 'class', 'style']) {
+    if (firstPath.hasAttribute(a)) rect.setAttribute(a, firstPath.getAttribute(a));
+  }
+  firstPath.replaceWith(rect);
+});
+</script>
