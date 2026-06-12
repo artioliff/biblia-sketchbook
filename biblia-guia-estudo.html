@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A Bíblia — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ['Cinzel', 'serif'],
+            body: ['Crimson Pro', 'serif'],
+          },
+          colors: {
+            parch: {
+              50:  '#fdf8ef',
+              100: '#f7edda',
+              200: '#eedcb8',
+              300: '#e2c48a',
+              400: '#d4a55a',
+              500: '#c98c38',
+              600: '#b8742d',
+              700: '#985a26',
+              800: '#7c4825',
+              900: '#663c22',
+            },
+            ink: {
+              DEFAULT: '#1c1410',
+              light:   '#3d2f25',
+              muted:   '#7a6352',
+              faint:   '#b8a898',
+            },
+            gold: {
+              DEFAULT: '#c8913a',
+              light:   '#e8c97a',
+              dark:    '#8a6020',
+            },
+            crimson: {
+              DEFAULT: '#8b2020',
+              light:   '#c45050',
+              pale:    '#f5e8e8',
+            },
+            sapphire: {
+              DEFAULT: '#1e3a5f',
+              light:   '#3a6090',
+              pale:    '#e8f0f8',
+            },
+            forest: {
+              DEFAULT: '#1e4a2a',
+              light:   '#3a7a50',
+              pale:    '#e8f5ec',
+            },
+          },
+          animation: {
+            'fade-up':    'fadeUp 0.7s ease both',
+            'fade-in':    'fadeIn 0.6s ease both',
+            'slide-in':   'slideIn 0.5s ease both',
+          },
+          keyframes: {
+            fadeUp:  { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
+            fadeIn:  { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
+            slideIn: { '0%': { opacity: '0', transform: 'translateX(-16px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    body { background-color: #fdf8ef; color: #1c1410; }
+
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 20% 20%, rgba(200,145,58,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse at 80% 80%, rgba(139,32,32,0.05) 0%, transparent 60%);
+    }
+
+    .ornament { color: #c8913a; font-size: 1.5rem; line-height: 1; }
+
+    .divider-ornament {
+      display: flex; align-items: center; gap: 1rem;
+      color: #c8913a; margin: 2rem 0;
+    }
+    .divider-ornament::before,
+    .divider-ornament::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, transparent, #c8913a88, transparent);
+    }
+
+    .section-card {
+      background: rgba(255,255,255,0.55);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(200,145,58,0.25);
+      border-radius: 12px;
+      padding: 1.75rem;
+      transition: box-shadow 0.3s ease;
+    }
+    .section-card:hover {
+      box-shadow: 0 4px 24px rgba(200,145,58,0.12);
+    }
+
+    .stat-card {
+      background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(247,237,218,0.6));
+      border: 1px solid rgba(200,145,58,0.3);
+      border-radius: 10px;
+      padding: 1.25rem 1rem;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .stat-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(200,145,58,0.15);
+    }
+
+    .lang-pill {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+    }
+
+    .continent-card {
+      border-radius: 10px;
+      padding: 1.25rem;
+      text-align: center;
+      border: 1px solid;
+      transition: transform 0.2s ease;
+    }
+    .continent-card:hover { transform: translateY(-2px); }
+
+    .curiosity-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 0.75rem 1rem;
+      background: rgba(255,255,255,0.5);
+      border-radius: 8px;
+      border-left: 3px solid #c8913a;
+      transition: background 0.2s;
+    }
+    .curiosity-item:hover { background: rgba(255,255,255,0.85); }
+
+    .genre-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 600;
+      letter-spacing: 0.07em; text-transform: uppercase;
+      padding: 5px 12px; border-radius: 20px;
+      border: 1px solid;
+    }
+
+    .section-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #8a6020;
+      margin-bottom: 1rem;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: linear-gradient(to right, #c8913a55, transparent);
+    }
+
+    .animate-delay-1 { animation-delay: 0.1s; }
+    .animate-delay-2 { animation-delay: 0.2s; }
+    .animate-delay-3 { animation-delay: 0.3s; }
+    .animate-delay-4 { animation-delay: 0.4s; }
+    .animate-delay-5 { animation-delay: 0.5s; }
+    .animate-delay-6 { animation-delay: 0.6s; }
+
+    .hero-cross {
+      width: 48px; height: 48px;
+      position: relative; display: inline-flex;
+      align-items: center; justify-content: center;
+    }
+    .hero-cross::before {
+      content: '✝';
+      font-size: 2.5rem; color: #c8913a;
+      text-shadow: 0 2px 8px rgba(200,145,58,0.4);
+    }
+
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #f7edda; }
+    ::-webkit-scrollbar-thumb { background: #c8913a55; border-radius: 3px; }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Header / Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, #c8913a 0px, #c8913a 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #c8913a 0px, #c8913a 1px, transparent 1px, transparent 40px);"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+      <div class="animate-fade-in mb-6">
+        <span class="hero-cross"></span>
+      </div>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-4 animate-fade-up" style="letter-spacing: 0.04em; text-shadow: 0 2px 4px rgba(200,145,58,0.15);">
+        A Bíblia
+      </h1>
+
+      <p class="font-body text-xl text-ink-muted italic animate-fade-up animate-delay-1 mb-2">
+        Do grego <em>βιβλία</em> (biblía) — "coleção de pequenos livros"
+      </p>
+
+      <p class="font-body text-base text-ink-faint animate-fade-up animate-delay-2">
+        Guia de Estudos
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <!-- Mega stats -->
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-3 animate-fade-up animate-delay-4">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">66</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Livros</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.189</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">31.173</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~810 mil</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Palavras</div>
+        </div>
+        <div class="stat-card col-span-2 md:col-span-1">
+          <div class="font-display text-2xl font-bold text-gold-dark">~3,5 mi</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Letras</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Composição -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Composição</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-4">Divisão dos Livros</h3>
+          <div class="space-y-3">
+            <div class="flex items-center justify-between p-3 rounded-lg" style="background: rgba(30,74,42,0.08); border: 1px solid rgba(30,74,42,0.2);">
+              <span class="font-body text-sm font-semibold text-forest">Antigo Testamento</span>
+              <span class="font-display text-lg font-bold text-forest">39 livros</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg" style="background: rgba(30,58,95,0.08); border: 1px solid rgba(30,58,95,0.2);">
+              <span class="font-body text-sm font-semibold text-sapphire">Novo Testamento</span>
+              <span class="font-display text-lg font-bold text-sapphire">27 livros</span>
+            </div>
+            <div class="grid grid-cols-2 gap-3 mt-4">
+              <div class="text-center p-3 rounded-lg" style="background: rgba(200,145,58,0.1); border: 1px solid rgba(200,145,58,0.25);">
+                <div class="font-display text-xl font-bold text-gold-dark">~40</div>
+                <div class="font-body text-xs text-ink-muted">autores diferentes</div>
+              </div>
+              <div class="text-center p-3 rounded-lg" style="background: rgba(200,145,58,0.1); border: 1px solid rgba(200,145,58,0.25);">
+                <div class="font-display text-xl font-bold text-gold-dark">~1.500</div>
+                <div class="font-body text-xs text-ink-muted">anos de escrita</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-4">Gêneros Literários</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="genre-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">📜 Lei</span>
+            <span class="genre-badge" style="background:rgba(30,58,95,0.08);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">📖 Narrativa Histórica</span>
+            <span class="genre-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🎵 Poesia</span>
+            <span class="genre-badge" style="background:rgba(139,32,32,0.08);border-color:rgba(139,32,32,0.3);color:#8b2020;">🔥 Profecia</span>
+            <span class="genre-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">💡 Sabedoria</span>
+            <span class="genre-badge" style="background:rgba(30,58,95,0.08);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">✉️ Cartas (Epístolas)</span>
+            <span class="genre-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">✝️ Evangelhos</span>
+            <span class="genre-badge" style="background:rgba(139,32,32,0.08);border-color:rgba(139,32,32,0.3);color:#8b2020;">🌌 Apocalíptico</span>
+          </div>
+          <p class="font-body text-sm text-ink-muted mt-4 italic leading-relaxed">
+            Apesar de 3 continentes, 3 idiomas, ~40 autores e mais de 1.500 anos de produção, a Bíblia mantém uma narrativa coesa do Gênesis ao Apocalipse.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Idiomas -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Idiomas Originais</div>
+      <div class="space-y-4">
+
+        <div class="flex gap-4 items-start p-4 rounded-xl" style="background: rgba(30,58,95,0.06); border: 1px solid rgba(30,58,95,0.18);">
+          <div class="flex-shrink-0 mt-1">
+            <span class="lang-pill" style="background:rgba(30,58,95,0.12);color:#1e3a5f;border:1px solid rgba(30,58,95,0.3);">Hebraico</span>
+          </div>
+          <div>
+            <p class="font-body text-sm leading-relaxed text-ink">
+              Predominante no <strong>Antigo Testamento</strong>. Língua do povo de Israel — diferente do hebraico moderno falado hoje. Usado na maioria dos livros da Lei, dos Profetas e dos Escritos.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start p-4 rounded-xl" style="background: rgba(200,145,58,0.07); border: 1px solid rgba(200,145,58,0.22);">
+          <div class="flex-shrink-0 mt-1">
+            <span class="lang-pill" style="background:rgba(200,145,58,0.15);color:#7a4a10;border:1px solid rgba(200,145,58,0.35);">Aramaico</span>
+          </div>
+          <div>
+            <p class="font-body text-sm leading-relaxed text-ink">
+              Trechos de <strong>Daniel</strong> (2:4–7:28), <strong>Esdras</strong> (4:8–6:18 e 7:12–26) e uma frase em <strong>Jeremias</strong> (10:11). Era a língua franca do Oriente Médio após o domínio assírio e babilônico, e provavelmente o idioma cotidiano de Jesus. Expressões como <em>"Eli, Eli, lamá sabactâni"</em> e <em>"Maranata"</em> aparecem no Novo Testamento.
+            </p>
+          </div>
+        </div>
+
+        <div class="flex gap-4 items-start p-4 rounded-xl" style="background: rgba(30,74,42,0.06); border: 1px solid rgba(30,74,42,0.18);">
+          <div class="flex-shrink-0 mt-1">
+            <span class="lang-pill" style="background:rgba(30,74,42,0.12);color:#1e4a2a;border:1px solid rgba(30,74,42,0.3);">Grego Koiné</span>
+          </div>
+          <div>
+            <p class="font-body text-sm leading-relaxed text-ink">
+              Todo o <strong>Novo Testamento</strong>. O grego popular (<em>κοινή</em>) do Império Romano — não o clássico de Platão. Sua ampla difusão permitiu que a mensagem se espalhasse por todo o mundo mediterrâneo. O AT também foi traduzido para o grego na <strong>Septuaginta (LXX)</strong>, usada pelos primeiros cristãos e pelos próprios autores do NT ao citar o AT.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Continentes -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Continentes de Escrita</div>
+      <div class="grid md:grid-cols-3 gap-4">
+
+        <div class="continent-card" style="background:rgba(200,145,58,0.08);border-color:rgba(200,145,58,0.3);">
+          <div class="text-3xl mb-3">🌏</div>
+          <h3 class="font-display text-base font-semibold text-gold-dark mb-2">Ásia</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Onde a maior parte foi escrita. Inclui a Terra de Israel / Canaã, a Mesopotâmia (atual Iraque) e a Ásia Menor (atual Turquia). Paulo escreveu de Éfeso e Filipos.
+          </p>
+        </div>
+
+        <div class="continent-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="text-3xl mb-3">🌍</div>
+          <h3 class="font-display text-base font-semibold text-crimson mb-2">África</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Egito — cenário central de Moisés, José e o Êxodo. Parte do Pentateuco foi escrita durante o período no Egito e no êxodo pelo deserto do Sinai.
+          </p>
+        </div>
+
+        <div class="continent-card" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.2);">
+          <div class="text-3xl mb-3">🌎</div>
+          <h3 class="font-display text-base font-semibold text-sapphire mb-2">Europa</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            <strong>Roma</strong> (Filipenses, escrita por Paulo durante a prisão), ilha de <strong>Patmos / Grécia</strong> (Apocalipse, escrito por João), além de outras epístolas paulinas.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Maior livro:</strong> Salmos — 150 capítulos</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Menor livro (AT):</strong> Obadias — 1 capítulo</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Menor livro (NT):</strong> 2 João — 1 capítulo</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Versículo mais longo:</strong> Ester 8:9 — ~90 palavras em hebraico</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Versículo mais curto:</strong> João 11:35 — <em>"Jesus chorou."</em></p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Capítulo central:</strong> Salmos 117 — o mais curto e o capítulo do meio da Bíblia</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Septuaginta (LXX):</strong> Tradução do AT para o grego, feita antes de Cristo, usada pelos primeiros cristãos</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Livro mais distribuído:</strong> traduzido para mais de 3.600 idiomas e dialetos</p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Coesão extraordinária:</strong> Apesar de 3 continentes, 3 idiomas, ~40 autores e mais de 1.500 anos de produção, a Bíblia apresenta narrativa com início, meio e fim — com temas que se repetem e se complementam do Gênesis ao Apocalipse.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Síntese final -->
+    <section class="text-center py-8 animate-fade-up animate-delay-4">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Toda a Escritura é inspirada por Deus e útil para o ensino, para a repreensão, para a correção e para a instrução na justiça."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Timóteo 3:16</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color: rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>
