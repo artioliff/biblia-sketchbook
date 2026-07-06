@@ -1,0 +1,307 @@
+/* =============================================================
+   style.css — Bíblia Sketchbook
+   CSS centralizado para todos os guias de estudo bíblico.
+   ============================================================= */
+
+/* ── Base ─────────────────────────────────────────────────── */
+body {
+  background-color: #fdf8ef;
+  color: #1c1410;
+}
+
+/* ── Fundo pergaminho ─────────────────────────────────────── */
+.parchment-bg {
+  background-color: #fdf8ef;
+  background-image:
+    radial-gradient(ellipse at 20% 20%, rgba(200,145,58,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse at 80% 80%, rgba(139,32,32,0.05) 0%, transparent 60%);
+}
+/* Variações por livro — aplique junto com .parchment-bg */
+.parchment-genesis {
+  background-image:
+    radial-gradient(ellipse at 15% 15%, rgba(200,145,58,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(30,74,42,0.06) 0%, transparent 55%);
+}
+.parchment-exodo {
+  background-image:
+    radial-gradient(ellipse at 15% 20%, rgba(184,74,16,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 80%, rgba(200,145,58,0.07) 0%, transparent 55%);
+}
+.parchment-levitico {
+  background-image:
+    radial-gradient(ellipse at 20% 15%, rgba(74,30,110,0.07) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 85%, rgba(200,145,58,0.08) 0%, transparent 55%);
+}
+.parchment-numeros {
+  background-image:
+    radial-gradient(ellipse at 20% 15%, rgba(160,128,64,0.09) 0%, transparent 55%),
+    radial-gradient(ellipse at 82% 82%, rgba(200,145,58,0.07) 0%, transparent 55%);
+}
+.parchment-deuteronomio {
+  background-image:
+    radial-gradient(ellipse at 18% 18%, rgba(58,42,94,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse at 80% 82%, rgba(200,145,58,0.08) 0%, transparent 55%);
+}
+
+/* ── Grade de fundo (cabeçalhos) ──────────────────────────── */
+.header-grid {
+  position: absolute;
+  inset: 0;
+  opacity: 0.05;
+  background-image:
+    repeating-linear-gradient(0deg,   #c8913a 0px, #c8913a 1px, transparent 1px, transparent 40px),
+    repeating-linear-gradient(90deg,  #c8913a 0px, #c8913a 1px, transparent 1px, transparent 40px);
+}
+
+/* ── Ornamentos e divisores ───────────────────────────────── */
+.ornament {
+  color: #c8913a;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.divider-ornament {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: #c8913a;
+  margin: 2rem 0;
+}
+.divider-ornament::before,
+.divider-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, transparent, #c8913a88, transparent);
+}
+
+/* ── Cruz decorativa (00-biblia) ──────────────────────────── */
+.hero-cross {
+  width: 48px;
+  height: 48px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-cross::before {
+  content: '✝';
+  font-size: 2.5rem;
+  color: #c8913a;
+  text-shadow: 0 2px 8px rgba(200,145,58,0.4);
+}
+
+/* ── Rótulo de seção ──────────────────────────────────────── */
+.section-label {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a6020;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(to right, #c8913a55, transparent);
+}
+
+/* ── Cards ────────────────────────────────────────────────── */
+.section-card {
+  background: rgba(255,255,255,0.55);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(200,145,58,0.25);
+  border-radius: 12px;
+  padding: 1.75rem;
+  transition: box-shadow 0.3s ease;
+}
+.section-card:hover {
+  box-shadow: 0 4px 24px rgba(200,145,58,0.12);
+}
+
+.stat-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(247,237,218,0.6));
+  border: 1px solid rgba(200,145,58,0.3);
+  border-radius: 10px;
+  padding: 1.25rem 1rem;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(200,145,58,0.15);
+}
+
+.person-card {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+.person-card:hover { transform: translateY(-2px); }
+
+.offering-card {
+  border-radius: 10px;
+  padding: 1rem;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+.offering-card:hover { transform: translateY(-2px); }
+
+.plague-card {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 1px solid;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+.plague-card:hover { transform: translateY(-2px); }
+
+.continent-card {
+  border-radius: 10px;
+  padding: 1.25rem;
+  text-align: center;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+.continent-card:hover { transform: translateY(-2px); }
+
+.blessing-card {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+.blessing-card:hover { transform: translateY(-2px); }
+
+/* ── Itens de lista / linha ───────────────────────────────── */
+.timeline-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 1rem 1.25rem;
+  border-radius: 10px;
+  border: 1px solid;
+  transition: transform 0.2s ease;
+}
+.timeline-item:hover { transform: translateX(4px); }
+
+.curiosity-item {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  padding: 0.75rem 1rem;
+  background: rgba(255,255,255,0.5);
+  border-radius: 8px;
+  border-left: 3px solid #c8913a;
+  transition: background 0.2s;
+}
+.curiosity-item:hover { background: rgba(255,255,255,0.85); }
+
+.feast-card {
+  border-radius: 10px;
+  padding: 0.875rem 1rem;
+  border: 1px solid;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+.feast-card:hover { transform: translateX(4px); }
+
+.rebellion-card {
+  border-radius: 8px;
+  padding: 0.875rem 1rem;
+  border: 1px solid;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  transition: transform 0.2s ease;
+}
+.rebellion-card:hover { transform: translateX(4px); }
+
+.lang-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 12px;
+  background: rgba(247,237,218,0.5);
+  border-radius: 8px;
+}
+
+/* ── Badges e pílulas ─────────────────────────────────────── */
+.theme-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.genre-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  border: 1px solid;
+}
+
+.lang-pill {
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Misc ─────────────────────────────────────────────────── */
+.census-bar {
+  height: 28px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.65rem;
+  font-weight: 600;
+  transition: width 0.8s ease;
+}
+
+/* ── Delays de animação ───────────────────────────────────── */
+.animate-delay-1 { animation-delay: 0.1s; }
+.animate-delay-2 { animation-delay: 0.2s; }
+.animate-delay-3 { animation-delay: 0.3s; }
+.animate-delay-4 { animation-delay: 0.4s; }
+.animate-delay-5 { animation-delay: 0.5s; }
+.animate-delay-6 { animation-delay: 0.6s; }
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #f7edda; }
+::-webkit-scrollbar-thumb { background: #c8913a55; border-radius: 3px; }
+
+/* ── Responsividade ───────────────────────────────────────── */
+@media (max-width: 480px) {
+  .section-card { padding: 1.25rem; }
+  .stat-card    { padding: 1rem 0.75rem; }
+}

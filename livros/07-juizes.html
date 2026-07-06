@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Juízes — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    
+    /* Ciclo dos Juízes */
+    .cycle-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 6px;
+      padding: 1rem 0.75rem;
+      border-radius: 10px;
+      border: 1px solid;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .cycle-step:hover { transform: translateY(-2px); }
+
+    .cycle-arrow {
+      display: none;
+    }
+
+    @media (min-width: 768px) {
+      .cycle-arrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #c8913a;
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        padding-top: 0.5rem;
+      }
+    }
+
+    /* Card de juiz */
+    .judge-card {
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .judge-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(200,145,58,0.12);
+    }
+
+    .judge-type-major {
+      border-left: 3px solid #c8913a;
+    }
+    
+    .judge-type-minor {
+      border-left: 3px solid #b8a898;
+      opacity: 0.85;
+    }
+
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 7º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Juízes
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>שֹׁפְטִים</em> (Shoftim) — "Governantes / Libertadores"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Κριταί</em> (Kritaí) — "Juízes" · o <em>shofet</em> hebraico é juiz, general e libertador ao mesmo tempo
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">21</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">618</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">12 Juízes</div>
+          <div class="font-body text-sm text-ink-muted mt-1">libertadores de Israel</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~350 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.07);border:1px solid rgba(139,32,32,0.22);">
+              <span class="font-display text-xs font-bold text-crimson">7º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">2º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">AT</span>
+              <span class="font-body text-sm text-ink">2º dos <strong>Profetas Anteriores</strong> no cânone hebraico</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Cenário e Autoria</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O período dos Juízes vai da morte de Josué até o início da monarquia — aproximadamente <strong>350 anos</strong> de instabilidade cíclica. O Talmude atribui a autoria a <strong>Samuel</strong>, o último dos juízes e o primeiro dos profetas que ungiu reis.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o livro mais sombrio dos históricos — um retrato honesto e perturbador da <strong>decadência espiritual progressiva</strong> de Israel quando abandona o Senhor. A frase que ecoa do começo ao fim é: <em>"Israel fez o que era mau aos olhos do Senhor."</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Ciclo dos Juízes -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Grande Ciclo — O Padrão que se Repete</div>
+      <p class="font-body text-sm text-ink-muted mb-6 leading-relaxed">
+        O livro inteiro é estruturado em torno de um ciclo de <strong>5 etapas</strong> que se repete pelo menos 7 vezes. Cada repetição é mais sombria que a anterior — demonstrando que o problema de Israel não é político, mas espiritual.
+      </p>
+
+      <div class="flex flex-col md:flex-row items-stretch gap-2 md:gap-1">
+
+        <div class="cycle-step flex-1"
+             style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="text-2xl">😈</div>
+          <div class="font-display text-xs font-bold text-crimson tracking-wide">1. PECADO</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Israel abandona o Senhor e serve aos Baais e Astarotes dos povos cananeus</p>
+        </div>
+
+        <div class="cycle-arrow">→</div>
+
+        <div class="cycle-step flex-1"
+             style="background:rgba(184,74,16,0.06);border-color:rgba(184,74,16,0.25);">
+          <div class="text-2xl">⛓️</div>
+          <div class="font-display text-xs font-bold text-fire tracking-wide">2. CASTIGO</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Deus entrega Israel nas mãos de povos inimigos — opressão e servidão</p>
+        </div>
+
+        <div class="cycle-arrow">→</div>
+
+        <div class="cycle-step flex-1"
+             style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="text-2xl">😭</div>
+          <div class="font-display text-xs font-bold text-gold-dark tracking-wide">3. CLAMOR</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Israel clama ao Senhor na angústia — não necessariamente arrependimento genuíno</p>
+        </div>
+
+        <div class="cycle-arrow">→</div>
+
+        <div class="cycle-step flex-1"
+             style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.25);">
+          <div class="text-2xl">⚔️</div>
+          <div class="font-display text-xs font-bold text-forest tracking-wide">4. LIBERTAÇÃO</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Deus levanta um juiz — libertador ungido pelo Espírito para derrotar o inimigo</p>
+        </div>
+
+        <div class="cycle-arrow">→</div>
+
+        <div class="cycle-step flex-1"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <div class="text-2xl">☮️</div>
+          <div class="font-display text-xs font-bold text-sapphire tracking-wide">5. PAZ</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Descanso enquanto o juiz vive — após sua morte, o ciclo recomeça, pior que antes</p>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-crimson">A frase-chave do livro</strong> — aparece duas vezes, abrindo e fechando os apêndices finais:
+          <em class="text-ink"> "Naqueles dias não havia rei em Israel; cada um fazia o que parecia reto aos seus próprios olhos."</em> (17:6 e 21:25)
+        </p>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 1–2</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Prólogo</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">O Fracasso da Conquista Incompleta</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Israel não expulsou completamente os cananeus como Deus havia ordenado — deixou povos, cidades e ídolos no meio da terra. O anjo do Senhor anuncia as consequências: esses povos serão "<em>como espinhos nos vossos lados e os seus deuses serão laço para vós</em>" (2:3). Aqui está a raiz de todos os problemas que se seguirão.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 3–16</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Os Juízes</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Os Doze Juízes e o Ciclo da Apostasia</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O coração do livro: seis juízes maiores (Otniel, Eude, Débora, Gideão, Jefté e Sansão) com narrativas extensas, e seis juízes menores com apenas breves menções. Cada ciclo revela um Israel mais distante de Deus e um comportamento coletivo mais degradado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 17–21</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Epílogo</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Dois Apêndices — O Fundo do Poço</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Dois episódios que não seguem o ciclo, mas mostram a profundidade da decadência: a <strong>idolatria de Mica e a tribo de Dã</strong> (cap. 17–18), que instala um sacerdócio falso e ídolos no norte de Israel; e o terrível episódio da <strong>concubina do levita em Gibeá</strong> (cap. 19–21), que quase extermina a tribo de Benjamim. O livro termina sem esperança humana — clamando por um rei.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Os 12 Juízes -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Doze Juízes de Israel</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Os <strong>6 juízes maiores</strong> têm narrativas extensas com contexto, batalha e desfecho. Os <strong>6 juízes menores</strong> são mencionados brevemente — apenas seu nome, tribo, anos de governo e morte.
+      </p>
+
+      <!-- Juízes Maiores -->
+      <h3 class="font-display text-xs font-bold text-gold-dark tracking-widest mb-3">JUÍZES MAIORES</h3>
+      <div class="grid md:grid-cols-2 gap-3 mb-6">
+
+        <div class="judge-card judge-type-major"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🌿</span>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-display text-sm font-semibold text-forest">Otniel</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 3:7–11</span>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Sobrinho de Calebe e o <strong>primeiro juiz</strong>. Modelo perfeito do ciclo: Israel peca, é oprimido pela Mesopotâmia por 8 anos, clama, Otniel é ungido pelo Espírito, liberta Israel e há paz por 40 anos. O juiz mais "limpo" do livro — sem falhas registradas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="judge-card judge-type-major"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🗡️</span>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-display text-sm font-semibold text-sapphire">Eude</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 3:12–30</span>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                <strong>Canhoto</strong> da tribo de Benjamim — pormenor significativo pois "Benjamim" significa "filho da mão direita". Matou sozinho Eglom, o gordo rei de Moabe, com uma adaga escondida na coxa direita. Libertou Israel de 18 anos de opressão. Paz por 80 anos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="judge-card judge-type-major"
+             style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🔥</span>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-display text-sm font-semibold text-gold-dark">Débora e Baraque</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 4–5</span>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                <strong>A única juíza</strong> do livro — profetisa e líder nacional. Convocou Baraque para a batalha contra Sísera e seus 900 carros de ferro. O honor da vitória coube a <strong>Jael</strong>, mulher quenita, que matou Sísera com uma estaca de tenda enquanto ele dormia. O capítulo 5 é um dos poemas mais antigos da Bíblia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="judge-card judge-type-major"
+             style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🏺</span>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-display text-sm font-semibold text-fire">Gideão</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 6–8</span>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Chamado enquanto debulhava trigo escondido no lagar por medo dos midianitas. Pediu sinais duplos do velo (fleece). Deus reduziu seu exército de <strong>32.000 para 300</strong> homens para que a glória fosse de Deus, não de Israel. Derrota os midianitas com tochas, cântaros e trombetas. Recusou ser rei mas criou um éfode que se tornou ídolo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="judge-card judge-type-major"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">🗣️</span>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-display text-sm font-semibold text-violet">Jefté</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 10:6–12:7</span>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Filho de prostituta, expulso pelos irmãos, líder de bandidos — chamado de volta na hora da crise. Derrotou os amonitas mas fez um <strong>voto precipitado</strong>: ofereceria ao Senhor o que saísse primeiro de sua porta. Foi sua única filha. O episódio mais debatido do livro. Citado em Hebreus 11:32 como homem de fé.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="judge-card judge-type-major"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="flex items-start gap-3">
+            <span class="text-xl flex-shrink-0">💪</span>
+            <div>
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-display text-sm font-semibold text-crimson">Sansão</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 13–16</span>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                <strong>Nazireo desde o nascimento</strong>, dotado de força sobrenatural ligada ao seu cabelo. O juiz mais famoso e mais contraditório — perseguiu mulheres filistéias, matou um leão com as mãos, carregou as portas de Gaza, foi traído por <strong>Dalila</strong>, perdeu a força, foi cegado e acorrentado. Em seu último ato, derrubou o templo de Dagom matando mais em sua morte do que em vida.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Juízes Menores -->
+      <h3 class="font-display text-xs font-bold text-ink-faint tracking-widest mb-3">JUÍZES MENORES</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-2">
+        <div class="judge-card judge-type-minor p-3"
+             style="background:rgba(247,237,218,0.4);border-color:rgba(200,145,58,0.2);">
+          <h4 class="font-display text-xs font-semibold text-ink-muted">Sangar</h4>
+          <p class="font-body text-xs text-ink-faint mt-1">Cap. 3:31 · matou 600 filisteus com um aguilhão de bois</p>
+        </div>
+        <div class="judge-card judge-type-minor p-3"
+             style="background:rgba(247,237,218,0.4);border-color:rgba(200,145,58,0.2);">
+          <h4 class="font-display text-xs font-semibold text-ink-muted">Tola</h4>
+          <p class="font-body text-xs text-ink-faint mt-1">Cap. 10:1–2 · julgou Israel por 23 anos</p>
+        </div>
+        <div class="judge-card judge-type-minor p-3"
+             style="background:rgba(247,237,218,0.4);border-color:rgba(200,145,58,0.2);">
+          <h4 class="font-display text-xs font-semibold text-ink-muted">Jair</h4>
+          <p class="font-body text-xs text-ink-faint mt-1">Cap. 10:3–5 · 22 anos · 30 filhos com 30 cidades</p>
+        </div>
+        <div class="judge-card judge-type-minor p-3"
+             style="background:rgba(247,237,218,0.4);border-color:rgba(200,145,58,0.2);">
+          <h4 class="font-display text-xs font-semibold text-ink-muted">Ibzã</h4>
+          <p class="font-body text-xs text-ink-faint mt-1">Cap. 12:8–10 · 7 anos · 30 filhos e 30 filhas</p>
+        </div>
+        <div class="judge-card judge-type-minor p-3"
+             style="background:rgba(247,237,218,0.4);border-color:rgba(200,145,58,0.2);">
+          <h4 class="font-display text-xs font-semibold text-ink-muted">Elom</h4>
+          <p class="font-body text-xs text-ink-faint mt-1">Cap. 12:11–12 · 10 anos · tribo de Zebulom</p>
+        </div>
+        <div class="judge-card judge-type-minor p-3"
+             style="background:rgba(247,237,218,0.4);border-color:rgba(200,145,58,0.2);">
+          <h4 class="font-display text-xs font-semibold text-ink-muted">Abdom</h4>
+          <p class="font-body text-xs text-ink-faint mt-1">Cap. 12:13–15 · 8 anos · 40 filhos e 30 netos</p>
+        </div>
+      </div>
+
+      <!-- Abimeleque: o anti-juiz -->
+      <div class="mt-4 p-4 rounded-xl"
+           style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.22);">
+        <div class="flex gap-3">
+          <span class="text-xl flex-shrink-0">👑</span>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-earth mb-1">Abimeleque — O Anti-Juiz (Cap. 9)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              Filho bastardo de Gideão que matou 70 irmãos sobre uma pedra e se autoproclamou rei de Siquém por 3 anos. <strong>Não é considerado um juiz legítimo</strong> — é um usurpador e tirano. Morreu quando uma mulher jogou uma pedra de moinho sobre sua cabeça em Tebes. A parábola das árvores (9:8–15) é a primeira parábola política registrada na Bíblia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge"
+                  style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🔄 O Ciclo da Apostasia</span>
+            <span class="theme-badge"
+                  style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">👁️ Cada um fazia o que era reto aos seus olhos</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">✨ Graça de Deus apesar da infidelidade</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌬️ O Espírito que capacita</span>
+            <span class="theme-badge"
+                  style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">👑 A necessidade de um rei</span>
+            <span class="theme-badge"
+                  style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚠️ Consequências da desobediência</span>
+            <span class="theme-badge"
+                  style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📉 Decadência espiritual progressiva</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🛡️ Deus como único Rei de Israel</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Os Juízes no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Hebreus 11:32–34 — Hall da Fé</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Gideão, Baraque, Sansão e Jefté são citados entre os heróis da fé — apesar de suas falhas humanas evidentes.</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Atos 13:20</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo resume o período dos juízes em seu sermão em Antioquia da Pisídia: "Depois disso, por cerca de 450 anos, lhes deu juízes até Samuel."</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">1 Samuel 12:9–11</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Samuel recapitula o período dos juízes ao povo — confirmando Jerubaal (Gideão), Baraque, Jefté e Samuel como libertadores enviados por Deus.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Débora — a única juíza:</strong> É a única mulher a exercer função de juíza em Israel. Também é profetisa e compositora — o Cântico de Débora (cap. 5) é considerado um dos textos poéticos mais antigos de toda a Bíblia, datado possivelmente do século XII a.C.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 300 de Gideão:</strong> Deus reduziu o exército de 32.000 para 300 em duas etapas — primeiro eliminando os medrosos (22.000), depois selecionando pelos que beberam água de joelhos vs os que lamberam diretamente. A estratégia: que Israel não se glorie dizendo "a minha mão me salvou" (7:2).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Shibboleth:</strong> Jefté usou a palavra <em>shibboleth</em> (שִׁבֹּלֶת) como senha para identificar os efraimitas — que pronunciavam "sibboleth" sem o "sh". Esse teste linguístico matou 42.000 pessoas (12:5–6). A palavra entrou nas línguas modernas como sinônimo de sinal de identificação de grupo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jael e a estaca:</strong> Enquanto Sísera, general inimigo, dormia exausto em sua tenda, Jael — uma mulher quenita — cravou uma estaca de tenda em sua cabeça (4:21). Débora havia profetizado que a glória da batalha iria para uma mulher, não para Baraque (4:9).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O velo de Gideão:</strong> Gideão pediu dois sinais confirmadores a Deus — o velo molhado com o chão seco, depois o chão molhado com o velo seco (6:36–40). É um dos exemplos bíblicos de busca de confirmação divina antes de uma missão de alto risco.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Sansão no Hall da Fé:</strong> Hebreus 11:32 cita Sansão entre os heróis da fé — apesar de suas fraquezas morais flagrantes. Isso demonstra que a fé bíblica não exige perfeição moral, mas confiança em Deus, mesmo entre pessoas profundamente falhas.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A parábola de Jotão (cap. 9):</strong> Ao subir ao monte Gerizim, Jotão (único filho sobrevivente de Gideão) contou a primeira parábola política da Bíblia — as árvores elegendo o espinheiro como rei. Uma advertência sarcástica sobre a liderança de Abimeleque.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Israel fez o que era mau":</strong> A frase "E os filhos de Israel fizeram o que era mau aos olhos do Senhor" aparece <strong>7 vezes</strong> no livro — uma para cada ciclo de apostasia. A repetição intencional é uma acusação teológica, não apenas história.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A decadência progressiva:</strong> Cada ciclo é pior que o anterior. O primeiro juiz (Otniel) é impecável. O último (Sansão) é profundamente falho. Os dois apêndices finais (cap. 17–21) mostram idolatria institucionalizada e violência sexual coletiva — cenas dignas de Sodoma. O livro termina no ponto mais baixo da história de Israel antes da monarquia.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O propósito teológico do livro:</strong> Juízes não é apenas história — é um argumento. A repetição do ciclo, a decadência progressiva e a frase final ("não havia rei em Israel") preparam o leitor para o próximo passo da história salvífica: a <strong>monarquia</strong>, que começa em 1 Samuel. Mas o livro também sugere que nenhum rei humano será suficiente — Israel precisa de um Rei eterno, o próprio Deus encarnado.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-5">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E os filhos de Israel fizeram o que era mau aos olhos do Senhor, e serviram aos Baais."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Juízes 2:11 — A frase que define o livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Vai com esta força que tens e livra Israel da mão dos midianitas. Não te enviei eu?"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Juízes 6:14 — Deus chama Gideão</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Naqueles dias não havia rei em Israel; cada um fazia o que parecia reto aos seus próprios olhos."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Juízes 21:25 — O último versículo do livro</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Juízes · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

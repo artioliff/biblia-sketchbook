@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Josué — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 6º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Josué
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>יְהוֹשֻׁעַ</em> (Yehoshua) — "O Senhor é salvação" / "YHWH salva"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Ἰησοῦς</em> (Iēsoûs) — o mesmo nome traduzido como <strong>Jesus</strong> no NT
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">24</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">658</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~25 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">12 Tribos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">recebem herança</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.22);">
+              <span class="font-display text-xs font-bold text-sapphire">6º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">1º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong> (Josué a Ester)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">AT</span>
+              <span class="font-body text-sm text-ink">1º livro dos <strong>Profetas Anteriores</strong> no cânone hebraico (Nevi'im)</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Natureza e Autoria</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Josué narra o cumprimento da promessa feita a Abraão séculos antes — a posse da <strong>Terra de Canaã</strong>. É a continuação direta de Deuteronômio: Moisés morreu, Josué assume e conduz Israel através do Jordão.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            A tradição judaica atribui a autoria ao próprio <strong>Josué</strong>, com os versículos finais (sobre sua morte) acrescentados por <strong>Eleazar</strong> e <strong>Finéias</strong>. O livro cobre aproximadamente <strong>25 a 30 anos</strong> de história, desde a entrada em Canaã até a morte de Josué com 110 anos.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Josué se divide naturalmente em três grandes movimentos: a <strong>entrada</strong> na terra, a <strong>conquista</strong> da terra e a <strong>divisão</strong> da terra — encerrado com o discurso de despedida de Josué.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 1–5</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Preparação</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Entrada na Terra Prometida</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O chamado de Josué por Deus com a promessa "Sê forte e corajoso" (1:6–9), o envio dos dois espias a Jericó e o encontro com <strong>Raabe</strong>, a travessia miraculosa do <strong>Rio Jordão</strong> em seco (eco do Mar Vermelho), as doze pedras memoriais em Gilgal, a circuncisão da nova geração e a celebração da Páscoa em Canaã — a primeira após 40 anos.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 6–12</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Conquista</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Conquista de Canaã</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A queda miraculosa das muralhas de <strong>Jericó</strong> (cap. 6), o pecado de <strong>Acã</strong> e a derrota em Ai (cap. 7), a retomada e destruição de Ai (cap. 8), o engano dos <strong>Gibeonitas</strong> (cap. 9), a batalha de Gibeão onde o <strong>sol parou</strong> (cap. 10) e a campanha de conquista pelo sul e pelo norte de Canaã, culminando na lista de 31 reis derrotados (cap. 12).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 13–21</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Divisão</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">A Divisão da Terra entre as Tribos</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A herança das 12 tribos definida por sorteio diante do Senhor. <strong>Calebe</strong>, aos 85 anos, pede o monte Hebrom (cap. 14). As tribos de <strong>Rúben, Gade e metade de Manassés</strong> recebem suas terras a leste do Jordão. Estabelecimento das <strong>6 Cidades de Refúgio</strong> (cap. 20) e das 48 cidades levíticas (cap. 21).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 22–24</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Despedida</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Renovação da Aliança e Morte de Josué</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A dispensa honrosa das tribos transjordânicas, o altar de testemunho que quase gera uma guerra civil (cap. 22), o discurso final de Josué (cap. 23) e a solene <strong>Renovação da Aliança em Siquém</strong> (cap. 24) — onde Josué pronuncia as palavras imortais: <em>"Eu e a minha casa serviremos ao Senhor."</em> Josué morre com 110 anos e é enterrado em Timnate-Sera.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Personagens de Destaque</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+        <div class="person-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">⚔️</div>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Josué</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Sucessor de Moisés, general e líder espiritual de Israel. Seu nome — idêntico ao de Jesus em grego — não é coincidência teológica: ambos conduzem o povo de Deus ao descanso e à herança prometida.
+          </p>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">🪟</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">Raabe</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Prostituta de Jericó que escondeu os espias israelitas e foi salva com sua família pelo cordão escarlate na janela. Citada em Hebreus 11 (fé) e Tiago 2:25 (obras), e está na genealogia de Jesus (Mt 1:5).
+          </p>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🏔️</div>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">Calebe</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            O fiel espião da tribo de Judá. Aos <strong>85 anos</strong> ainda pede o território mais difícil — o monte Hebrom, habitado pelos gigantes Anaquins — declarando: "Ainda sou tão forte quanto no dia em que Moisés me enviou" (14:11).
+          </p>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="text-2xl mb-2">💰</div>
+          <h4 class="font-display text-sm font-semibold text-fire mb-1">Acã</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Da tribo de Judá. Tomou ilegalmente um manto babilônico, prata e ouro consagrados ao Senhor após Jericó. Seu pecado oculto causou a derrota de Israel em Ai — demonstrando que o pecado de um afeta toda a comunidade (cap. 7).
+          </p>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="text-2xl mb-2">⚱️</div>
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Eleazar</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Filho de Arão e sumo sacerdote durante todo o período de Josué. Presidiu junto com Josué a distribuição da terra às tribos por sorteio diante do Senhor em Siló (cap. 14, 19, 21).
+          </p>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <div class="text-2xl mb-2">🏘️</div>
+          <h4 class="font-display text-sm font-semibold text-violet mb-1">Os Gibeonitas</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Povo de Gibeão que enganou Israel apresentando roupas e alimentos velhos para parecerem viajantes de terras distantes. Israel firmou aliança com eles sem consultar o Senhor — uma aliança que seria honrada por séculos (cap. 9; 2 Sm 21).
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Eventos-chave -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Grandes Eventos</div>
+      <div class="space-y-2">
+
+        <div class="rebellion-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-xl flex-shrink-0">🌊</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">A Travessia do Rio Jordão — Cap. 3–4</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Os sacerdotes carregando a Arca da Aliança pisaram no Jordão em época de cheia — e as águas pararam. Eco direto da travessia do Mar Vermelho no Êxodo: a nova geração tem o seu próprio milagre fundador. Doze pedras foram retiradas do leito seco como memorial eterno.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-xl flex-shrink-0">🎺</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">A Queda de Jericó — Cap. 6</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Israel marchou em silêncio ao redor de Jericó por seis dias, uma vez por dia. No sétimo dia, marchararam sete vezes, os sacerdotes tocaram as trombetas e o povo gritou — e as muralhas desabaram. Apenas a casa de Raabe, marcada pelo <strong>cordão escarlate</strong>, foi preservada.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <span class="text-xl flex-shrink-0">💎</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">O Pecado de Acã e a Derrota em Ai — Cap. 7</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Após Jericó, Israel foi humilhantemente derrotado em Ai — uma cidade pequena. Deus revela que há "coisa consagrada" (cherem) no meio do acampamento. O pecado oculto de Acã é descoberto por sorteio. Sua confissão e punição restauram a pureza e a vitória de Israel.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <span class="text-xl flex-shrink-0">☀️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">O Sol que Parou — Cap. 10:12–14</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Na batalha de Gibeão, Josué ordenou: <em>"Sol, detém-te em Gibeão, e tu, lua, no vale de Aijalom."</em> O texto afirma que o sol parou no meio do céu por quase um dia inteiro. O narrador conclui: "Não houve dia semelhante a este antes nem depois, em que o Senhor ouviu a voz de um homem" (10:14).
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="text-xl flex-shrink-0">🏛️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">A Renovação da Aliança em Siquém — Cap. 24</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              O último ato público de Josué. Ele reúne todo o Israel em Siquém, recapitula toda a história salvífica desde Abraão e apresenta o desafio definitivo: escolham a quem servir. A resposta do povo e de Josué ecoa pelo mundo até hoje.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Cidades de Refúgio -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As Seis Cidades de Refúgio — Cap. 20</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Instituídas conforme ordenado em Números 35, as cidades de refúgio eram lugares onde alguém que tivesse matado outra pessoa <strong>involuntariamente</strong> poderia fugir para ser protegido do vingador de sangue até ser julgado. São vistas como tipo de Cristo — o refúgio do pecador.
+      </p>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">🗺️ A Oeste do Jordão</h3>
+          <div class="space-y-2">
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest w-5 flex-shrink-0">N</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Quedes</p>
+                <p class="font-body text-xs text-ink-muted">Na Galileia, tribo de Naftali</p>
+              </div>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest w-5 flex-shrink-0">C</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Siquém</p>
+                <p class="font-body text-xs text-ink-muted">No monte Efraim, tribo de Efraim</p>
+              </div>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest w-5 flex-shrink-0">S</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Hebrom (Quiriate-Arba)</p>
+                <p class="font-body text-xs text-ink-muted">No monte de Judá, tribo de Judá</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-sapphire mb-3">🗺️ A Leste do Jordão</h3>
+          <div class="space-y-2">
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-5 flex-shrink-0">N</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Bezer</p>
+                <p class="font-body text-xs text-ink-muted">No deserto, tribo de Rúben</p>
+              </div>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-5 flex-shrink-0">C</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Ramote</p>
+                <p class="font-body text-xs text-ink-muted">Em Gileade, tribo de Gade</p>
+              </div>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-5 flex-shrink-0">S</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Golã</p>
+                <p class="font-body text-xs text-ink-muted">Em Basã, tribo de Manassés</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mt-4 p-4 rounded-xl"
+           style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-crimson">Tipo de Cristo:</strong> Assim como o acusado precisava <em>correr</em> para a cidade de refúgio e <em>permanecer</em> nela para estar seguro, o crente foge para Cristo como seu refúgio eterno. A morte do sumo sacerdote libertava o refugiado — assim como a morte de Cristo liberta do pecado (Hb 6:18).
+        </p>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge"
+                  style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">✅ Fidelidade de Deus</span>
+            <span class="theme-badge"
+                  style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🏡 Herança e Descanso</span>
+            <span class="theme-badge"
+                  style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚔️ Deus que guerreia</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🙏 Obediência total</span>
+            <span class="theme-badge"
+                  style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🏛️ Renovação da Aliança</span>
+            <span class="theme-badge"
+                  style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🔥 Santidade na guerra</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌿 A terra como dom</span>
+            <span class="theme-badge"
+                  style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📖 Lei de Moisés</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Josué como Tipo de Jesus</h3>
+          <p class="font-body text-xs text-ink-muted italic mb-3">O paralelo mais explícito do AT com Cristo</p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">O mesmo nome</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Yehoshua (hebraico) = Iēsoûs (grego) = Jesus. Hebreus 4:8 usa o nome de Josué em grego ao falar de Jesus.</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Conduz ao descanso</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Josué conduz Israel à terra do descanso. Jesus conduz os seus ao descanso eterno (Mt 11:28–29; Hb 4:9–10).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Sucede o legislador</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Josué sucede Moisés (a Lei). Jesus não veio abolir a Lei, mas cumpri-la (Mt 5:17).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Distribui herança</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Josué distribui a terra como herança. Jesus prepara lugar e distribui herança eterna aos seus (Jo 14:2–3; Ef 1:11).</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Josué = Jesus:</strong> Hebreus 4:8 usa o nome "Jesus" em grego para se referir a Josué do AT: "Se Josué [Jesus] lhes tivesse dado descanso..." — tornando explícita a tipologia entre os dois.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Raabe na genealogia de Jesus:</strong> Mateus 1:5 lista Raabe — uma cananeia e ex-prostituta — na linhagem direta de Jesus Cristo. Ela se casou com Salmom e foi mãe de Boaz (avô de Obed, pai de Jessé, pai de Davi).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Calebe aos 85 anos:</strong> "Ainda sou tão forte quanto no dia em que Moisés me enviou... Dame, pois, este monte" (14:11–12). Calebe pede o território mais difícil, habitado pelos temidos Anaquins — e o conquista. Modelo de fé que não envelhece.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O cordão escarlate:</strong> Raabe marcou sua janela com um fio escarlate (2:18) — símbolo de salvação pelo sangue, que ecoa o sangue do cordeiro pascal na Páscoa do Êxodo e aponta para o sangue de Cristo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Sê forte e corajoso":</strong> A expressão aparece <strong>quatro vezes</strong> no primeiro capítulo (1:6, 7, 9, 18) — o comando mais repetido no chamado de Josué. Paulo ecoa este chamado em 1 Coríntios 16:13.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Sol que Parou (cap. 10):</strong> Um dos milagres mais debatidos da Bíblia. O texto cita o "Livro do Jasher" como fonte. O NT não comenta o episódio diretamente, mas o AT o confirma em Habacuque 3:11.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Príncipe do Exército do Senhor (5:13–15):</strong> Antes de Jericó, Josué encontra um ser celestial com espada desembainhada que se identifica como "Príncipe do Exército do Senhor" e manda Josué tirar as sandálias — cena que lembra a sarça ardente de Moisés. Muitos estudiosos identificam esta figura como uma <em>teofania</em> pré-encarnada do Cristo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A promessa cumprida:</strong> Josué 21:43–45 declara solenemente: "Assim o Senhor deu a Israel toda a terra que havia jurado dar a seus pais... Não falhou uma só palavra de todas as suas boas promessas." O livro é o registro do cumprimento fiel de uma promessa feita ~500 anos antes a Abraão.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Raabe no Hall da Fé:</strong> Hebreus 11:31 a lista entre os heróis da fé ao lado de Abraão, Moisés e Davi. Tiago 2:25 a usa como exemplo de que a fé sem obras é morta — ela não apenas acreditou, ela agiu escondendo os espias.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Josué e a Torá:</strong> O comando de Deus a Josué (1:8) — "Este livro da Lei não se apartará da tua boca; medita nele de dia e de noite" — é o modelo bíblico do que o Salmo 1 chamará de meditação na Lei e o que Paulo chamará de "renovação da mente" (Rm 12:2).
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O encerramento do livro:</strong> Josué, José e Eleazar são todos enterrados em Canaã (24:29–33) — simbolizando que a terra prometida é de fato a herança de Israel. Os ossos de José, carregados desde o Egito por 40 anos no deserto (Ex 13:19), finalmente descansam em Siquém, a terra comprada por seu pai Jacó (Jo 24:32). Uma história que levou mais de 400 anos para ter seu desfecho.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-5">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Não to mandei eu? Sê forte e corajoso; não temas, nem te espantes, porque o Senhor teu Deus é contigo por onde quer que andares."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Josué 1:9 — O chamado de Josué</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Escolhei hoje a quem sirveis... quanto a mim e à minha casa, serviremos ao Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Josué 24:15 — A escolha de Josué em Siquém</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Não falhou uma só palavra de todas as suas boas promessas que havia feito à casa de Israel; tudo se cumpriu."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Josué 21:45 — O cumprimento de todas as promessas</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Josué · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

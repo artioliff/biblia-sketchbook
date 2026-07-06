@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Reis — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 18% 16%, rgba(200,145,58,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 82%, rgba(139,32,32,0.07) 0%, transparent 55%);
+    }
+
+    /* Card do reino dividido */
+    .kingdom-card {
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .kingdom-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(200,145,58,0.13);
+    }
+
+    /* Linha de rei */
+    .king-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 7px;
+      border: 1px solid;
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.82rem;
+      transition: background 0.15s;
+    }
+    .king-row:hover { filter: brightness(0.97); }
+    .king-years {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    .king-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 11º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        1 Reis
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>מְלָכִים</em> (Melakhim) — "Reis"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        1 e 2 Reis eram <strong>um único livro</strong> no hebraico original · divididos pelos tradutores da Septuaginta (LXX)
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">22</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">816</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~120 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">2 reinos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Israel e Judá</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">11º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">6º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">AT</span>
+              <span class="font-body text-sm text-ink">4º dos <strong>Profetas Anteriores</strong> no cânone hebraico</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro do Esplendor e da Ruptura</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            1 Reis abre no auge da grandeza de Israel — o reinado de Salomão, o Templo de Jerusalém, a sabedoria reconhecida pelo mundo. E termina com o reino <strong>partido ao meio</strong>, dois bezerros de ouro no norte, e o profeta Elias sozinho no deserto querendo morrer.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O livro é a história de como a maior nação da terra no século X a.C. se tornou dois reinos rivais em conflito — e a causa raiz é sempre a mesma: <strong>a desobediência ao Senhor</strong>, começando pelo homem mais sábio que já viveu.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 1–2</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Transição</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Morte de Davi e a Ascensão de Salomão</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A velhice de Davi, a tentativa de Adonias de se autoproclamar rei, a intervenção de Bate-Seba e Natã, a unção de <strong>Salomão</strong> pelo sacerdote Zadoque. As últimas instruções de Davi ao filho — incluindo a ordem de punir Joabe e Simei — e a consolidação do trono por Salomão com a morte dos seus oponentes.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 3–11</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Salomão</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">O Reinado de Salomão — Glória e Queda</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O sonho em Gibeão e o pedido de sabedoria, o julgamento das duas mães, a organização administrativa do reino, a construção e dedicação do <strong>Templo de Jerusalém</strong> (cap. 5–8), o palácio real, a visita da <strong>Rainha de Sabá</strong>, a riqueza incomparável de Salomão — e sua queda: as 700 esposas e 300 concubinas, os altares para deuses estrangeiros e a anunciada divisão do reino.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 12–16</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Divisão</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">O Reino Dividido — Roboão e Jeroboão</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A estupidez política de <strong>Roboão</strong> que causou a divisão: recusou aliviar os impostos pesados de Salomão, seguindo o conselho dos jovens em vez dos anciãos. Dez tribos do norte seguiram <strong>Jeroboão</strong> — fundando o <strong>Reino de Israel</strong>. Jeroboão instalou dois bezerros de ouro em Betel e Dã: <em>"Eis os teus deuses, ó Israel"</em> — o pecado que marcou todos os reis do norte depois dele.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 17–22</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Elias</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">O Profeta Elias e o Rei Acabe</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O ministério explosivo de <strong>Elias</strong>: a seca de três anos anunciada, a viúva de Sarepta, o desafio no <strong>Monte Carmelo</strong> contra 450 profetas de Baal, o fogo do céu, a voz mansa e delicada em Horebe, a vocação de Eliseu. O perverso casal <strong>Acabe e Jezabel</strong>, a vinha de Nabote e a sentença de Elias. A morte de Acabe em batalha — cumprindo a profecia de Micaías.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Salomão: sabedoria e queda -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Salomão — O Rei Mais Sábio e sua Queda</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-sapphire mb-3">✨ A Sabedoria de Salomão</h3>
+          <div class="p-4 rounded-xl italic mb-4"
+               style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.2);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Dá ao teu servo um coração que saiba ouvir, para que possa governar o teu povo e discernir entre o bem e o mal."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">1 Reis 3:9 — O pedido de Salomão em Gibeão</p>
+          </div>
+          <div class="space-y-2">
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              ⚖️ Julgou o caso das duas mães com uma espada — revelando a mãe verdadeira (3:16–28)
+            </div>
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              📖 Compôs 3.000 provérbios e 1.005 cânticos (4:32)
+            </div>
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              🌍 Reis do mundo inteiro vinham ouvir sua sabedoria (4:34)
+            </div>
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              👸 A Rainha de Sabá ficou "sem fôlego" ao ver sua sabedoria e riqueza (10:5)
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">⚠️ A Queda de Salomão</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O homem mais sábio do mundo desobedeceu exatamente as três advertências que Deuteronômio 17:16–17 dera para os reis de Israel:
+          </p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">🐎 "Não multiplicará cavalos"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Salomão tinha 1.400 carros e 12.000 cavaleiros (10:26) — importados do Egito.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">💰 "Não acumulará prata e ouro"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Recebia 666 talentos de ouro por ano (10:14). Prata era tão abundante que "não era considerada nada" (10:21).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">👰 "Não terá muitas esposas"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Tinha 700 esposas princesas e 300 concubinas. Elas desviaram seu coração para outros deuses na velhice (11:3–4).</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed">
+            O resultado: Salomão construiu altares para Quemós, Moloque, Astarote e outros deuses. Deus anunciou que arrancaria o reino de sua mão — deixando apenas uma tribo por amor a Davi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Templo de Salomão -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Templo de Jerusalém — Cap. 5–8</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        A construção do Templo é o ponto mais alto do reinado de Salomão e o cumprimento de um sonho que Davi não pôde realizar. É o evento central de 1 Reis — e uma das obras mais extraordinárias do mundo antigo.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="font-display text-2xl font-bold text-gold-dark">7 anos</div>
+          <div class="font-body text-xs text-ink-muted mt-1">de construção do Templo</div>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="font-display text-2xl font-bold text-gold-dark">13 anos</div>
+          <div class="font-body text-xs text-ink-muted mt-1">de construção do palácio real</div>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="font-display text-2xl font-bold text-gold-dark">4º ano</div>
+          <div class="font-body text-xs text-ink-muted mt-1">do reinado de Salomão — início das obras</div>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🏛️ O Projeto</h3>
+          <div class="space-y-2">
+            <div class="flex gap-3 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              📐 Construído no Monte Moriá — onde Abraão quase sacrificou Isaque e Davi comprou a eira de Araúna
+            </div>
+            <div class="flex gap-3 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🪵 Madeira de cedro do Líbano fornecida por Hirão, rei de Tiro, em troca de trigo e azeite
+            </div>
+            <div class="flex gap-3 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🔇 As pedras foram talhadas na pedreira — nenhum martelo ou ferramenta foi ouvido na obra (6:7)
+            </div>
+            <div class="flex gap-3 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              ✨ Interior revestido de ouro puro — paredes, teto, chão e o Santo dos Santos
+            </div>
+            <div class="flex gap-3 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🏺 Dois querubins de oliveira revestidos de ouro no Santo dos Santos — cada um com 5 metros de altura
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🔥 A Dedicação — Cap. 8</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A dedicação do Templo é um dos momentos mais solenes do AT. A Arca foi trazida ao Santo dos Santos pelos sacerdotes. Então aconteceu:
+          </p>
+          <div class="p-4 rounded-xl italic mb-3"
+               style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Aconteceu que, quando os sacerdotes saíram do santuário, a nuvem encheu a casa do Senhor, de tal modo que os sacerdotes não podiam continuar a ministrar por causa da nuvem, pois a glória do Senhor enchia a casa do Senhor."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">1 Reis 8:10–11 · A Shekinah no Templo</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            A mesma nuvem que guiou Israel no deserto e preencheu o Tabernáculo (Ex 40:34) agora preencheu o Templo permanente — confirmando que Deus habitava ali. Jesus usou uma linguagem similar ao falar de seu corpo como templo (Jo 2:21).
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Reino Dividido -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Reino Dividido — A Grande Ruptura de 930 a.C.</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Após a morte de Salomão, seu filho <strong>Roboão</strong> foi a Siquém para ser confirmado rei por todo Israel. O povo pediu que aliviasse os impostos pesados. Roboão consultou os anciãos — que aconselharam clemência — e os jovens — que aconselharam dureza. Roboão escolheu os jovens. Israel se dividiu para sempre.
+      </p>
+
+      <div class="p-4 rounded-xl mb-5 text-center italic"
+           style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.22);">
+        <p class="font-body text-base text-ink leading-relaxed">
+          "Meu pai vos castigou com açoites, mas eu vos castigarei com escorpiões."
+        </p>
+        <p class="font-display text-xs text-crimson mt-2 tracking-widest">Roboão — 1 Reis 12:14 · As palavras que partiram um reino</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <!-- Israel Norte -->
+        <div class="kingdom-card"
+             style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.22);">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-sapphire flex-shrink-0"></div>
+            <h3 class="font-display text-sm font-semibold text-sapphire">Reino de Israel — Norte</h3>
+          </div>
+          <p class="font-body text-xs text-ink-muted mb-3">10 tribos · Capital: Siquém → Tirza → <strong>Samaria</strong> · 930–722 a.C.</p>
+          <div class="space-y-1.5">
+            <div class="king-row" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.2);">
+              <div class="king-dot" style="background:#8b2020;"></div>
+              <span class="text-crimson font-semibold">Jeroboão I</span>
+              <span class="font-body text-xs text-ink-faint">Fundador · 2 bezerros de ouro</span>
+              <span class="king-years text-crimson">22 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.15);">
+              <div class="king-dot" style="background:#c45050;"></div>
+              <span>Nadabe</span>
+              <span class="font-body text-xs text-ink-faint">assassinado por Baasa</span>
+              <span class="king-years">2 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.15);">
+              <div class="king-dot" style="background:#c45050;"></div>
+              <span>Baasa</span>
+              <span class="font-body text-xs text-ink-faint">exterminou a casa de Jeroboão</span>
+              <span class="king-years">24 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.15);">
+              <div class="king-dot" style="background:#c45050;"></div>
+              <span>Elá</span>
+              <span class="font-body text-xs text-ink-faint">assassinado por Zinri</span>
+              <span class="king-years">2 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(184,74,16,0.07);border-color:rgba(184,74,16,0.22);">
+              <div class="king-dot" style="background:#b84a10;"></div>
+              <span class="text-fire font-semibold">Zinri</span>
+              <span class="font-body text-xs text-ink-faint">o reinado mais curto da Bíblia</span>
+              <span class="king-years text-fire">7 dias</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.15);">
+              <div class="king-dot" style="background:#c45050;"></div>
+              <span>Omri</span>
+              <span class="font-body text-xs text-ink-faint">fundou Samaria como capital</span>
+              <span class="king-years">12 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.25);">
+              <div class="king-dot" style="background:#8b2020;"></div>
+              <span class="text-crimson font-semibold">Acabe</span>
+              <span class="font-body text-xs text-ink-faint">casou com Jezabel · Elias</span>
+              <span class="king-years text-crimson">22 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.15);">
+              <div class="king-dot" style="background:#c45050;"></div>
+              <span>Acazias</span>
+              <span class="font-body text-xs text-ink-faint">→ continua em 2 Reis</span>
+              <span class="king-years">2 anos</span>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-faint mt-3 italic">⚠️ Todos os reis do norte foram maus aos olhos do Senhor</p>
+        </div>
+
+        <!-- Judá Sul -->
+        <div class="kingdom-card"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.28);">
+          <div class="flex items-center gap-2 mb-4">
+            <div class="w-3 h-3 rounded-full bg-gold flex-shrink-0"></div>
+            <h3 class="font-display text-sm font-semibold text-gold-dark">Reino de Judá — Sul</h3>
+          </div>
+          <p class="font-body text-xs text-ink-muted mb-3">2 tribos (Judá e Benjamim) · Capital: <strong>Jerusalém</strong> · 930–586 a.C.</p>
+          <div class="space-y-1.5">
+            <div class="king-row" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.18);">
+              <div class="king-dot" style="background:#8b2020;"></div>
+              <span class="text-crimson font-semibold">Roboão</span>
+              <span class="font-body text-xs text-ink-faint">causou a divisão · filho de Salomão</span>
+              <span class="king-years text-crimson">17 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.15);">
+              <div class="king-dot" style="background:#c45050;"></div>
+              <span>Abias</span>
+              <span class="font-body text-xs text-ink-faint">seguiu os pecados do pai</span>
+              <span class="king-years">3 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(30,74,42,0.07);border-color:rgba(30,74,42,0.22);">
+              <div class="king-dot" style="background:#1e4a2a;"></div>
+              <span class="text-forest font-semibold">Asa</span>
+              <span class="font-body text-xs text-ink-faint">✅ rei bom · reformas religiosas</span>
+              <span class="king-years text-forest">41 anos</span>
+            </div>
+            <div class="king-row" style="background:rgba(30,74,42,0.07);border-color:rgba(30,74,42,0.22);">
+              <div class="king-dot" style="background:#1e4a2a;"></div>
+              <span class="text-forest font-semibold">Josafá</span>
+              <span class="font-body text-xs text-ink-faint">✅ rei bom · → continua em 2 Reis</span>
+              <span class="king-years text-forest">25 anos</span>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-faint mt-3 italic">✅ Alguns reis de Judá foram bons — mantiveram a linhagem de Davi</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Elias -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Elias — O Profeta de Fogo</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Elias aparece de repente no capítulo 17, sem genealogia ou introdução — como um trovão em dia de sol. Seu ministério nos capítulos 17–22 é um dos mais dramáticos de toda a Bíblia e prefigura João Batista no NT.
+      </p>
+
+      <div class="space-y-2 mb-5">
+
+        <div class="rebellion-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-xl flex-shrink-0">☁️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">A Seca de Três Anos — Cap. 17</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Elias anunciou a Acabe que não haveria chuva nem orvalho "senão segundo a minha palavra". Foi sustentado pelo ribeiro de Querite — os corvos lhe traziam pão e carne. Quando o ribeiro secou, foi enviado a Sarepta, onde sustentou milagrosamente a <strong>viúva e seu filho</strong> com farinha e azeite que não se esgotaram, e ressuscitou o filho dela quando morreu.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <span class="text-xl flex-shrink-0">🔥</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">O Monte Carmelo — Cap. 18</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              O confronto mais dramático do AT. <strong>450 profetas de Baal</strong> de um lado, Elias sozinho do outro. Cada lado preparou um altar e invocou seu deus — o que respondesse com fogo seria o Deus verdadeiro. Os profetas de Baal clamaram, saltaram, cortaram-se com facas por horas: silêncio. Elias encharcou o altar três vezes com água, então orou brevemente — e o fogo do Senhor consumiu o holocausto, a lenha, as pedras, o pó e lambeu até a água do fosso. O povo prostrou-se: <em>"O Senhor é Deus!"</em> Os 450 profetas foram mortos. A chuva voltou.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.2);">
+          <span class="text-xl flex-shrink-0">🌬️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">A Voz Mansa e Delicada em Horebe — Cap. 19</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Jezabel ameaçou matar Elias. O profeta que acabara de enfrentar 450 sacerdotes fugiu para o deserto e pediu a morte: <em>"Já basta, Senhor; tira-me a vida."</em> Um anjo o alimentou duas vezes e ele foi ao Monte Horebe — o mesmo Sinai de Moisés. Deus não estava no vento violento, nem no terremoto, nem no fogo — mas em uma <strong>voz mansa e delicada</strong>. Ali recebeu nova missão: ungir Hazael, Jeú e Eliseu.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-xl flex-shrink-0">🍇</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">A Vinha de Nabote — Cap. 21</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Acabe queria a vinha de <strong>Nabote</strong>, vizinha ao palácio. Nabote recusou vender a herança dos seus pais. Jezabel arquitetou calúnias, fez Nabote ser acusado falsamente de blasfêmia e apedrejado. Acabe tomou a vinha. Elias então confrontou Acabe: <em>"Assim diz o Senhor: No lugar onde os cães lamberam o sangue de Nabote, hão de lamber também o teu sangue."</em> Acabe se humilhou — e a sentença foi adiada para seu filho. Jezabel seria comida pelos cães (cumprido em 2 Rs 9:36).
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Elias e João Batista -->
+      <div class="p-4 rounded-xl"
+           style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+        <h4 class="font-display text-sm font-semibold text-forest mb-2">Elias como Tipo de João Batista</h4>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="space-y-1">
+            <p class="font-body text-xs text-ink-muted">🌵 Viveu no deserto e vestes simples</p>
+            <p class="font-body text-xs text-ink-muted">🔥 Confrontou reis com coragem</p>
+            <p class="font-body text-xs text-ink-muted">📢 Chamou Israel ao arrependimento</p>
+            <p class="font-body text-xs text-ink-muted">🤝 Passou seu manto ao sucessor (Eliseu / Jesus)</p>
+          </div>
+          <div class="space-y-1">
+            <p class="font-body text-xs text-ink-muted">📖 Malaquias 4:5 prometeu que Elias viria antes do Messias</p>
+            <p class="font-body text-xs text-ink-muted">✝️ Jesus identificou João Batista como "o Elias que havia de vir" (Mt 11:14)</p>
+            <p class="font-body text-xs text-ink-muted">⛰️ Elias aparece na Transfiguração ao lado de Jesus (Mt 17:3)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">✨ Sabedoria vem de Deus</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🏛️ O Templo como morada de Deus</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">💔 Apostasia e suas consequências</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🔥 A voz profética contra o poder</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🌬️ Deus na voz mansa e delicada</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚖️ Justiça para os oprimidos</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">👑 Obediência como condição da bênção</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌍 A fama de Israel entre as nações</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">1 Reis no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Mt 12:42 / Lc 11:31 — Jesus e Salomão</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus diz que a Rainha do Sul (Sabá) condenará a geração dele — pois veio ver a sabedoria de Salomão, e "aqui está mais do que Salomão."</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lc 4:25–26 — Jesus e a viúva de Sarepta</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus cita o milagre de Elias com a viúva gentia para mostrar que a graça de Deus alcança os de fora de Israel.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Rm 11:3–4 — Paulo e os 7.000</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo cita a resposta de Deus a Elias — "reservei para mim 7.000 que não dobraram joelhos a Baal" — para falar do remanescente fiel de Israel.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Jo 2:19–21 — O Templo e o corpo de Cristo</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus declara que destruirão "este templo" e ele o reedificará em três dias — referindo-se ao seu corpo como o novo Templo de Deus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Zinri — o reinado de 7 dias:</strong> O general Zinri assassinou o rei Elá, entrou no palácio e se autoproclamou rei. Quando soube que o exército havia proclamado Omri como rei, Zinri entrou no palácio real, ateou fogo e morreu nas chamas. O reinado mais curto registrado na Bíblia (1 Rs 16:15–20).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A oração de Salomão (cap. 8):</strong> A oração de dedicação do Templo é uma das mais longas e teologicamente ricas da Bíblia. Salomão reconhece que nem o céu dos céus pode conter a Deus — quanto mais aquela casa. Jesus citará esta teologia ao falar do Pai que deve ser adorado "em espírito e verdade" (Jo 4:21–24).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>666 talentos de ouro:</strong> A receita anual de Salomão em ouro era de 666 talentos (10:14) — um número que reaparecerá no Apocalipse (13:18) como marca da besta. A ligação pode ser intencional: o excesso de riqueza e poder como idolatria.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Elias e a depressão (cap. 19):</strong> Após sua maior vitória no Carmelo, Elias entrou em colapso emocional total no deserto. Deus não o repreendeu — mandou um anjo cuidar de seu sono e alimentação antes de dar qualquer instrução. Um texto profundo sobre saúde mental e o cuidado pastoral de Deus.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 7.000 que não dobraram o joelho (19:18):</strong> Elias clamou que era o único fiel restante. Deus corrigiu: havia 7.000 que não se curvaram a Baal. Paulo usa esta passagem em Romanos 11:4 para mostrar que sempre há um remanescente fiel mesmo quando tudo parece perdido.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A morte de Acabe (cap. 22):</strong> O profeta Micaías previu a derrota e a morte de Acabe na batalha de Ramote-Gileade. Acabe disfarçou-se de soldado comum. Uma flecha disparada "ao acaso" penetrou nas juntas da sua armadura — cumprindo a profecia. Os cães lamberam seu sangue quando lavaram o carro — exatamente como Elias havia predito.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>As duas mães e a espada (cap. 3):</strong> O julgamento de Salomão entre as duas mulheres que reivindicavam o mesmo bebê é um dos casos jurídicos mais famosos da história. A psicologia por trás da solução — ameaçar dividir o bebê para revelar o amor materno verdadeiro — tornou Salomão lendário em todo o Oriente Médio (3:28).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Aqui está mais do que Salomão" (Mt 12:42):</strong> Jesus usou a visita da Rainha de Sabá para se apresentar como superior a Salomão. A rainha viajou de longe para ouvir a sabedoria de um rei — os líderes religiosos de Israel não reconheciam a sabedoria encarnada diante dos seus próprios olhos.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O paradoxo de Salomão:</strong> 1 Reis apresenta o paradoxo mais perturbador da história bíblica — o homem a quem Deus deu mais sabedoria do que qualquer ser humano antes ou depois tomou as decisões mais tolas de sua vida. Desobedeceu às regras mais básicas para reis israelitas, multiplicou esposas estrangeiras e acabou adorando os mesmos ídolos que Israel havia expulsado de Canaã. A lição: sabedoria intelectual sem obediência moral não salva ninguém — e nenhuma experiência espiritual passada, por maior que seja, garante fidelidade futura.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Dá ao teu servo um coração que saiba ouvir, para que possa governar o teu povo e discernir entre o bem e o mal."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Reis 3:9 — O pedido de Salomão · O maior pedido registrado na Bíblia</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Após o fogo, uma voz mansa e delicada. E foi assim: quando Elias a ouviu, cobriu o rosto com o seu manto."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Reis 19:12–13 · Deus fala a Elias em Horebe</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Até quando mancais entre dois pensamentos? Se o Senhor é Deus, segui-o; se Baal, segui-o."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Reis 18:21 · Elias ao povo no Monte Carmelo</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · 1 Reis · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

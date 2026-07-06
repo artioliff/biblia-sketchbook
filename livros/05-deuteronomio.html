@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deuteronômio — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(0deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px);"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · PENTATEUCO · 5º E ÚLTIMO LIVRO</p>
+      <h1 class="font-display text-4xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em;text-shadow:0 2px 4px rgba(200,145,58,0.15);">Deuteronômio</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>דְּבָרִים</em> (Devarim) — "Palavras / Discursos"</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">Do grego <em>Deuteronomion</em> — "Segunda Lei" &nbsp;·&nbsp; <em>deutero</em> (segundo) + <em>nomos</em> (lei)</p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">34</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">959</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">3 Discursos</div><div class="font-body text-sm text-ink-muted mt-1">de Moisés</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">120 anos</div><div class="font-body text-sm text-ink-muted mt-1">de Moisés ao morrer</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(58,42,94,0.07);border:1px solid rgba(58,42,94,0.22);">
+              <span class="font-display text-xs font-bold text-dusk">5º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia e do Antigo Testamento</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">5º</span>
+              <span class="font-body text-sm text-ink"><strong>último</strong> dos 5 livros do Pentateuco (Torá)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Fim</span>
+              <span class="font-body text-sm text-ink">encerra a era de <strong>Moisés</strong> e abre a dos <strong>Profetas</strong></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Natureza do Livro</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Deuteronômio é essencialmente o <strong>testamento e o sermão de despedida de Moisés</strong>. Israel está acampado nas planícies de Moabe, às portas de Canaã. Moisés tem 120 anos e sabe que não entrará na terra — então reúne o povo e profere três grandes discursos.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O livro <strong>não traz leis novas</strong> em sua maioria — é uma renovação e reapresentação da Aliança do Sinai para a nova geração que nunca a ouviu diretamente. Seu tom é profundamente pastoral, cheio de amor e urgência.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura: Os 3 Discursos -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura — Os Três Grandes Discursos de Moisés</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O livro se organiza como três sermões pronunciados por Moisés nos últimos dias de sua vida, seguidos dos atos finais que encerram o Pentateuco.</p>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 1–4</span>
+            <div class="font-body text-xs text-ink-faint mt-1">1º Discurso</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Retrospectiva — "Lembrem-se do que Deus fez"</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Moisés recapitula a jornada de 40 anos desde o Sinai — os espias, as rebeliões, as vitórias militares. O propósito é claro: que a nova geração entenda de onde veio e reconheça a fidelidade de Deus antes de entrar na terra. Termina com uma solene exortação à obediência.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 5–26</span>
+            <div class="font-body text-xs text-ink-faint mt-1">2º Discurso</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Renovação da Lei — "O que Deus exige"</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">O maior e mais importante discurso. Inclui a repetição dos <strong>Dez Mandamentos</strong> (cap. 5), o <strong>Shemá</strong> (cap. 6:4–9), leis sobre o culto centralizado, leis civis e sociais, as regras para reis, sacerdotes e profetas, a lei da guerra e o calendário das festas. É o coração teológico do livro.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 27–30</span>
+            <div class="font-body text-xs text-ink-faint mt-1">3º Discurso</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Bênçãos e Maldições — "Escolham a vida"</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">A Aliança renovada com bênçãos detalhadas para a obediência e maldições para a desobediência (cap. 28 — o mais longo do livro). O apelo culminante de Moisés ao povo: <em>"Escolhe a vida para que vivas, tu e a tua descendência"</em> (30:19).</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(58,42,94,0.05);border-color:rgba(58,42,94,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-dusk">Cap. 31–34</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Atos Finais</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-dusk mb-1">A Despedida — Morte de Moisés</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">A comissão de Josué como sucessor, o <strong>Cântico de Moisés</strong> (cap. 32 — um dos poemas mais antigos da Bíblia), a <strong>Bênção das 12 Tribos</strong> (cap. 33) e, por fim, a morte de Moisés no Monte Nebo (cap. 34), de onde avistou a Terra Prometida sem poder entrar nela.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O Shemá -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Shemá — Deuteronômio 6:4–9</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">A declaração de fé central do judaísmo e um dos textos mais importantes de toda a Bíblia. A palavra <em>Shemá</em> (שְׁמַע) significa simplesmente "Ouve" — a primeira palavra do texto. É recitada duas vezes ao dia no judaísmo há milênios.</p>
+
+      <div class="p-6 rounded-xl text-center mb-5" style="background:rgba(58,42,94,0.06);border:1px solid rgba(58,42,94,0.22);">
+        <p class="font-body text-ink leading-loose mb-3" dir="rtl" style="font-size:1.5rem;letter-spacing:0.05em;color:#3a2a5e;">
+          שְׁמַע יִשְׂרָאֵל יְהוָה אֱלֹהֵינוּ יְהוָה אֶחָד
+        </p>
+        <p class="font-body text-lg italic text-ink-muted leading-relaxed">
+          "Ouve, ó Israel: o Senhor nosso Deus é o único Senhor.<br/>
+          Amarás o Senhor teu Deus de todo o teu coração,<br/>
+          de toda a tua alma e de todas as tuas forças."
+        </p>
+        <p class="font-display text-xs text-gold-dark mt-3 tracking-widest">Deuteronômio 6:4–5</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div class="p-4 rounded-xl text-center" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">❤️</div>
+          <h4 class="font-display text-xs font-bold text-sapphire mb-2">"De todo o coração"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">No hebraico bíblico, o coração (<em>lev</em>) é a sede da vontade e do pensamento — não apenas das emoções.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🌬️</div>
+          <h4 class="font-display text-xs font-bold text-forest mb-2">"De toda a alma"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed"><em>Nefesh</em> — a vida, o ser interior completo. Os rabinos ensinavam: "mesmo que Deus tome a tua vida".</p>
+        </div>
+        <div class="p-4 rounded-xl text-center" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="text-2xl mb-2">💪</div>
+          <h4 class="font-display text-xs font-bold text-gold-dark mb-2">"De todas as forças"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed"><em>Me'od</em> — literalmente "muito" ou "abundância". Inclui os recursos materiais e toda a capacidade humana.</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-crimson">Jesus e o Shemá:</strong> Quando questionado sobre qual era o maior mandamento, Jesus citou exatamente o Shemá (Dt 6:5) e acrescentou Levítico 19:18 — declarando que "destes dois mandamentos dependem toda a lei e os profetas" (Mateus 22:37–40).
+        </p>
+      </div>
+    </section>
+
+    <!-- Profecia do Profeta -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Profecia do Profeta como Moisés — Cap. 18:15–18</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">"O Senhor teu Deus te suscitará um profeta do meio de ti, dos teus irmãos, semelhante a mim; a ele ouvireis... Porei as minhas palavras na sua boca, e ele lhes falará tudo o que eu lhe ordenar."</p>
+            <p class="font-display text-xs text-gold-dark mt-3 tracking-widest">Deuteronômio 18:15,18</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Cumprimento no NT</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Pedro em Atos 3:22–23</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Cita diretamente esta passagem e a aplica a Jesus Cristo ressuscitado.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">João 6:14</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Após a multiplicação dos pães, o povo declara: "Este é verdadeiramente o Profeta que devia vir ao mundo."</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">João 1:21 e 7:40</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"O Profeta" era uma categoria esperada distinta do Messias — baseada exatamente nesta promessa de Deuteronômio.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(58,42,94,0.06);border:1px solid rgba(58,42,94,0.18);">
+              <span class="font-display text-xs font-bold text-dusk">Hebreus 3:1–6</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus é comparado a Moisés — e declarado superior: Moisés era servo na casa de Deus; Jesus é o Filho sobre a casa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Bençãos e Maldições -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Bênçãos e Maldições — Cap. 28</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O capítulo mais longo do livro (68 versículos) apresenta as consequências da obediência e da desobediência à Aliança. A desproporção é significativa: <strong>14 versículos de bênçãos</strong> seguidos de <strong>54 versículos de maldições</strong> — uma advertência grave sobre o custo da rebelião.</p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">🌿 Bênçãos pela Obediência (v.1–14)</h3>
+          <div class="space-y-2">
+            <div class="blessing-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);"><p class="font-body text-xs text-ink-muted">🏙️ Bendito na cidade e no campo</p></div>
+            <div class="blessing-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);"><p class="font-body text-xs text-ink-muted">👶 Fruto do ventre, da terra e dos animais</p></div>
+            <div class="blessing-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);"><p class="font-body text-xs text-ink-muted">⚔️ Vitória sobre os inimigos</p></div>
+            <div class="blessing-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);"><p class="font-body text-xs text-ink-muted">🌧️ Chuvas na estação certa e prosperidade</p></div>
+            <div class="blessing-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);"><p class="font-body text-xs text-ink-muted">👑 Ser cabeça e não cauda, acima e não abaixo</p></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">⚠️ Maldições pela Desobediência (v.15–68)</h3>
+          <div class="space-y-2">
+            <div class="blessing-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);"><p class="font-body text-xs text-ink-muted">🌵 Seca, pragas e doenças na terra</p></div>
+            <div class="blessing-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);"><p class="font-body text-xs text-ink-muted">👁️ Confusão de mente e terror contínuo</p></div>
+            <div class="blessing-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);"><p class="font-body text-xs text-ink-muted">⚔️ Derrota diante dos inimigos</p></div>
+            <div class="blessing-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);"><p class="font-body text-xs text-ink-muted">🚶 Dispersão entre os povos (v.64) — o Exílio</p></div>
+            <div class="blessing-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);"><p class="font-body text-xs text-ink-muted">⛓️ Retorno ao Egito em navios (v.68)</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 p-4 rounded-xl" style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.22);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed"><strong class="text-fire">Profecia cumprida:</strong> As maldições do capítulo 28 descreveriam com precisão perturbadora a destruição de Jerusalém em 586 a.C. pelos babilônios e em 70 d.C. pelos romanos — incluindo o cerco, a fome e a dispersão do povo entre as nações.</p>
+      </div>
+    </section>
+
+    <!-- Morte de Moisés -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Morte de Moisés — Cap. 34</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">O último capítulo do Pentateuco narra a morte de Moisés no <strong>Monte Nebo</strong>, na terra de Moabe. Deus lhe mostrou toda a terra prometida — de Gileade a Dã, Naftali, Efraim, Manassés, Judá, o Neguebe e o vale de Jericó — mas não lhe permitiu entrar.</p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(58,42,94,0.06);border:1px solid rgba(58,42,94,0.2);">
+              <p class="font-body text-xs text-ink-muted"><strong class="text-dusk">Idade ao morrer:</strong> 120 anos — "seus olhos não se tinham escurecido, nem havia perdido o vigor" (34:7)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(58,42,94,0.06);border:1px solid rgba(58,42,94,0.2);">
+              <p class="font-body text-xs text-ink-muted"><strong class="text-dusk">Sepultado por Deus:</strong> "O Senhor o sepultou num vale na terra de Moabe... e ninguém sabe o seu sepulcro até hoje" (34:6)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(58,42,94,0.06);border:1px solid rgba(58,42,94,0.2);">
+              <p class="font-body text-xs text-ink-muted"><strong class="text-dusk">Luto:</strong> Israel chorou Moisés por 30 dias nas planícies de Moabe</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(58,42,94,0.06);border:1px solid rgba(58,42,94,0.2);">
+              <p class="font-body text-xs text-ink-muted"><strong class="text-dusk">Sucessão:</strong> Josué, cheio do Espírito de sabedoria, assume a liderança de Israel</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Epitáfio de Moisés</h3>
+          <div class="p-5 rounded-xl italic" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">"Nunca mais se levantou em Israel profeta algum como Moisés, a quem o Senhor conheceu face a face, em todos os sinais e maravilhas que o Senhor o enviou a fazer na terra do Egito... e em todo aquele poder formidável e em todos os grandes feitos que Moisés realizou perante os olhos de todo o Israel."</p>
+            <p class="font-display text-xs text-gold-dark mt-3 tracking-widest">Deuteronômio 34:10–12</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed">Moisés aparece transfigurado com Elias ao lado de Jesus no Monte da Transfiguração (Mt 17:3) — o último grande encontro bíblico entre o grande legislador e o Filho de Deus.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">❤️ Amor a Deus</span>
+            <span class="theme-badge" style="background:rgba(58,42,94,0.07);border-color:rgba(58,42,94,0.3);color:#3a2a5e;">🙏 Monoteísmo</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">📜 Renovação da Aliança</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌿 Escolha e Liberdade</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🏛️ Culto Centralizado</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚖️ Justiça Social</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🌟 Memória e Gratidão</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📖 Educação da Fé</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Deuteronômio e Jesus nas Tentações</h3>
+          <p class="font-body text-xs text-ink-muted mb-3 italic">Nas três respostas ao diabo no deserto, Jesus citou exclusivamente Deuteronômio.</p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.2);">
+              <span class="font-display text-xs font-bold text-fire">1ª Tentação → Mt 4:4</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Nem só de pão viverá o homem, mas de toda palavra que procede da boca de Deus" (Dt 8:3)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.2);">
+              <span class="font-display text-xs font-bold text-fire">2ª Tentação → Mt 4:7</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Não tentarás o Senhor teu Deus" (Dt 6:16)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.2);">
+              <span class="font-display text-xs font-bold text-fire">3ª Tentação → Mt 4:10</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Ao Senhor teu Deus adorarás e só a ele darás culto" (Dt 6:13)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>"Escolhe a vida":</strong> Deuteronômio 30:19 — "a vida e a morte tenho posto diante de ti... Escolhe a vida" — é um dos versículos mais citados e memoráveis de todo o AT.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A palavra "amor":</strong> Deuteronômio usa <em>ahavah</em> (amor) para Deus e Israel mais do que qualquer outro livro do Pentateuco — Deus ama Israel não pelos méritos do povo, mas por graça soberana (7:7–8).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O Livro de Josias:</strong> O "Livro da Lei" encontrado no Templo no reinado de Josias (2 Reis 22), que provocou uma grande reforma religiosa, é amplamente identificado pelos estudiosos como Deuteronômio ou parte dele.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Quem escreveu o cap. 34?</strong> A morte de Moisés é narrada em terceira pessoa. A tradição judaica atribui estes últimos versículos a Josué, escrevendo sob inspiração divina. Moisés teria escrito o restante do livro.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O Cântico de Moisés (cap. 32):</strong> Um dos poemas mais antigos da Bíblia, composto antes da morte de Moisés. Reaparece no Apocalipse 15:3, cantado pelos redimidos diante do trono de Deus.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Sepultado por Deus:</strong> Moisés é o único personagem bíblico enterrado pelo próprio Deus — e o local do sepulcro permanece desconhecido. Judas (v.9) menciona uma disputa entre Miguel e o diabo pelo corpo de Moisés.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Lei do rei (17:14–20):</strong> Séculos antes de Israel ter um rei, Deuteronômio já regulamentava a monarquia — o rei não deveria multiplicar cavalos, esposas nem prata, e deveria copiar a Lei com sua própria mão e lê-la todos os dias.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Justiça Social:</strong> O livro contém leis pioneiras de proteção social — proibição de juros entre israelitas, liberação de escravos no 7º ano, direitos de trabalhadores e estrangeiros, e proteção de viúvas, órfãos e estrangeiros residentes.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O Shemá hoje:</strong> A declaração "Ouve, ó Israel" (Dt 6:4) é recitada duas vezes ao dia por judeus praticantes ao redor do mundo há mais de 2.500 anos — uma das orações mais antigas ainda em uso contínuo na história humana.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>40 dias × 40 anos:</strong> Assim como Israel vagou 40 anos no deserto após falhar em Canaã, Jesus passou 40 dias no deserto sendo tentado. Em ambos os casos, o deserto é o lugar da provação — e Jesus, ao contrário de Israel, venceu citando Deuteronômio.</p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O encerramento do Pentateuco:</strong> Com a morte de Moisés, fecha-se o grande arco narrativo que começou na Criação (Gênesis 1) e passou pela escravidão, o Êxodo, a Lei do Sinai e os 40 anos no deserto — tudo culminando às portas de Canaã. O Pentateuco termina com Israel ainda fora da terra, numa postura de esperança e fé. A história continua no livro de Josué.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Ouve, ó Israel: o Senhor nosso Deus é o único Senhor. Amarás o Senhor teu Deus de todo o teu coração, de toda a tua alma e de todas as tuas forças."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Deuteronômio 6:4–5 — O Shemá · O maior mandamento</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Testemunha hoje contra vós os céus e a terra: a vida e a morte tenho posto diante de ti, a bênção e a maldição; escolhe, pois, a vida, para que vivas tu e a tua descendência."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Deuteronômio 30:19 — O grande apelo de Moisés</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Nunca mais se levantou em Israel profeta algum como Moisés, a quem o Senhor conheceu face a face."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Deuteronômio 34:10 — O epitáfio de Moisés · Fim do Pentateuco</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Deuteronômio · Pentateuco Concluído · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Samuel — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    
+
+    /* Card dos três protagonistas */
+    .trio-card {
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .trio-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(200,145,58,0.14);
+    }
+    .trio-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    /* Contraste Saul × Davi */
+    .contrast-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(200,145,58,0.12);
+    }
+    .contrast-row:last-child { border-bottom: none; }
+    .contrast-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #b8a898;
+    }
+    .contrast-saul  { text-align: right; font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: #8b2020; }
+    .contrast-david { text-align: left;  font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: #1e3a5f; }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 9º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        1 Samuel
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>שְׁמוּאֵל</em> (Shemuel) — "Ouvido por Deus" ou "Nome de Deus"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        1 e 2 Samuel eram <strong>um único livro</strong> no hebraico original — divididos pelos tradutores da Septuaginta (LXX)
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">31</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">810</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~100 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">3 reis</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Samuel · Saul · Davi</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.22);">
+              <span class="font-display text-xs font-bold text-sapphire">9º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">4º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">AT</span>
+              <span class="font-body text-sm text-ink">3º dos <strong>Profetas Anteriores</strong> no cânone hebraico</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro da Grande Transição</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            1 Samuel narra a maior transição política da história de Israel: da <strong>teocracia dos juízes à monarquia dos reis</strong>. Samuel é o elo — o último juiz, o primeiro profeta que unge reis, e a figura que prepara Israel para uma nova era.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O livro apresenta dois reis em contraste radical: <strong>Saul</strong>, o rei que o povo escolheu pela aparência, e <strong>Davi</strong>, o rei que Deus escolheu pelo coração. A tensão entre os dois domina a segunda metade do livro.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os Três Protagonistas -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Os Três Protagonistas</div>
+      <div class="grid md:grid-cols-3 gap-4">
+
+        <div class="trio-card"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="absolute bottom-0 left-0 right-0 h-0.5"
+               style="background:rgba(200,145,58,0.5);"></div>
+          <div class="text-3xl mb-3">🕯️</div>
+          <h3 class="font-display text-base font-semibold text-gold-dark mb-1">Samuel</h3>
+          <p class="font-body text-xs text-ink-faint mb-3">Cap. 1–16 · O Profeta-Juiz</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Filho da oração de Ana, consagrado desde o nascimento. O último dos juízes e o primeiro dos grandes profetas. Unge dois reis — Saul e Davi — e é a voz de Deus para Israel na transição para a monarquia. Após sua morte, Saul o consulta pela necromante de Endor.
+          </p>
+        </div>
+
+        <div class="trio-card"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.25);">
+          <div class="absolute bottom-0 left-0 right-0 h-0.5"
+               style="background:rgba(139,32,32,0.5);"></div>
+          <div class="text-3xl mb-3">👑</div>
+          <h3 class="font-display text-base font-semibold text-crimson mb-1">Saul</h3>
+          <p class="font-body text-xs text-ink-faint mb-3">Cap. 9–31 · O Rei Rejeitado</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Benjaminita alto e imponente — fisicamente perfeito para ser rei. Começa com humildade, termina com ciúme, desobediência e consulta a espíritos. Rejeitado por Deus em duas ocasiões (cap. 13 e 15). Sua vida é uma tragédia de potencial desperdiçado. Morre na batalha do Monte Gilboa.
+          </p>
+        </div>
+
+        <div class="trio-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <div class="absolute bottom-0 left-0 right-0 h-0.5"
+               style="background:rgba(30,58,95,0.5);"></div>
+          <div class="text-3xl mb-3">🎶</div>
+          <h3 class="font-display text-base font-semibold text-sapphire mb-1">Davi</h3>
+          <p class="font-body text-xs text-ink-faint mb-3">Cap. 16–31 · O Ungido</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            O mais jovem dos oito filhos de Jessé, pastor de ovelhas, tocador de harpa e poeta. Ungido secretamente por Samuel, mata Golias, torna-se herói nacional, foge perseguido por Saul anos a fio — e em nenhum momento levanta a mão contra "o ungido do Senhor". É o personagem mais complexo do AT.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 1–7</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Samuel</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">O Nascimento e Ministério de Samuel</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A oração de <strong>Ana</strong> e o nascimento milagroso de Samuel, a corrupção dos filhos de Eli, a chamada de Samuel na noite ("<em>Fala, Senhor, que o teu servo ouve</em>" — 3:9), a captura da <strong>Arca da Aliança</strong> pelos filisteus e as pragas que se seguiram, a morte de Eli, o retorno da Arca a Israel e a vitória de Samuel sobre os filisteus em Mispá.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 8–15</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Saul</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">O Pedido, a Unção e a Queda de Saul</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Israel exige um rei <em>"como as outras nações"</em>. Deus concede a pedido do povo e adverte sobre as consequências da monarquia (cap. 8). Saul é ungido — alto, belo, humilde a princípio. Sua primeira desobediência: oferece sacrifício sem esperar Samuel (cap. 13). A segunda e fatal: poupa o rei Agague e o melhor do rebanho amalequita contra a ordem explícita de Deus (cap. 15). Samuel anuncia a rejeição definitiva: <em>"Melhor é obedecer do que sacrificar"</em> (15:22).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 16–31</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Davi</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Ascensão de Davi e a Queda de Saul</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Samuel unge Davi secretamente em Belém. Davi entra na corte como músico e mata <strong>Golias</strong>. A amizade com <strong>Jônatas</strong>. O ciúme crescente de Saul, as tentativas de assassinato, a fuga de Davi. Davi poupa a vida de Saul duas vezes. A morte de Samuel. Davi e Abigail. A consulta à feiticeira de Endor. A morte de Saul e Jônatas no Monte Gilboa — fim trágico do primeiro rei de Israel.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Eventos-chave -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Grandes Eventos</div>
+      <div class="space-y-2">
+
+        <div class="rebellion-card"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-xl flex-shrink-0">🙏</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">A Oração de Ana — Cap. 1–2</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Ana, estéril e humilhada pela rival Penina, derramou sua alma diante do Senhor em Siló com tal intensidade que Eli pensou que estava bêbada. Deus a ouviu — Samuel nasceu. O <strong>Cântico de Ana</strong> (2:1–10) é um dos hinos mais belos do AT e serviu de modelo direto para o <strong>Magnificat de Maria</strong> (Lc 1:46–55) mais de mil anos depois.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-xl flex-shrink-0">📦</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">A Arca da Aliança Capturada — Cap. 4–6</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Os filisteus capturaram a Arca na batalha de Eben-Ézer — os filhos de Eli morreram e Eli caiu da cadeira e quebrou o pescoço ao ouvir a notícia. A Arca gerou tumores e pragas em cada cidade filisteia onde foi colocada — Dagom, o deus filisteu, caiu prostrado diante dela duas vezes. Após 7 meses, os filisteus a devolveram voluntariamente em uma carroça puxada por vacas leiteiras.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <span class="text-xl flex-shrink-0">👑</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Israel Pede um Rei — Cap. 8</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Os anciãos pedem a Samuel um rei "como as outras nações". Samuel se entristece — Deus lhe revela que não rejeitaram Samuel, mas ao próprio Deus como seu rei. Deus <em>concede</em> o pedido como julgamento, não como aprovação, listando todas as consequências que o rei trará: tomará seus filhos para a guerra, suas filhas para serviços, suas terras, rebanhos e renda — e então clamará ao Senhor e ele não responderá.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <span class="text-xl flex-shrink-0">🪨</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">Davi e Golias — Cap. 17</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              O gigante filisteu de aproximadamente <strong>2,9 metros</strong> desafiava Israel há 40 dias. Davi, jovem pastor sem armadura, recusou a armadura de Saul, escolheu 5 pedras lisas do ribeiro e com uma só pedrada atingiu Golias na testa. Golias caiu, Davi cortou-lhe a cabeça com sua própria espada. A declaração de Davi é o coração teológico da cena: <em>"A batalha é do Senhor"</em> (17:47).
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <span class="text-xl flex-shrink-0">🤝</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">A Aliança de Davi e Jônatas — Cap. 18–20</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              "A alma de Jônatas se ligou à alma de Davi, e Jônatas o amou como a si mesmo" (18:1). Filho do rei e candidato natural ao trono, Jônatas escolheu a amizade com Davi acima da própria herança. Fez aliança com Davi, deu-lhe sua manto e armas — reconhecendo que Davi seria rei. Arriscou a própria vida para proteger o amigo do pai. É um dos maiores exemplos de amizade sacrificial da Bíblia.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.2);">
+          <span class="text-xl flex-shrink-0">🕯️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">Davi Poupa Saul — Cap. 24 e 26</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Em duas ocasiões Davi teve Saul à sua mercê — uma vez na caverna de En-Gedi (cap. 24), outra no próprio acampamento de Saul (cap. 26). Em ambas, seus homens o pressionaram a matar o rei. Davi recusou: <em>"Longe de mim que eu estenda a mão contra o ungido do Senhor."</em> Cortou apenas a orla do manto na primeira vez; tomou a lança e o cântaro d'água na segunda. Saul chorou ao reconhecer a nobreza de Davi.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-xl flex-shrink-0">💀</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">A Morte de Saul e Jônatas — Cap. 31</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Na batalha do Monte Gilboa contra os filisteus, os três filhos de Saul — incluindo Jônatas — foram mortos. Saul, gravemente ferido por flecheiros, pediu ao seu escudeiro que o matasse para não ser capturado e escarnecido. O escudeiro recusou, e Saul caiu sobre a própria espada. Os filisteus pendurararam seus corpos nos muros de Bete-Seã. Os homens de Jabes-Gileade os resgataram e sepultaram honrosamente — lembrando que Saul havia os libertado no início de seu reinado.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Saul × Davi -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Grande Contraste — Saul × Davi</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        1 Samuel é construído em torno de dois homens ungidos pelo mesmo profeta, servindo ao mesmo Deus — mas com resultados radicalmente opostos. O contraste não é de talento ou aparência, mas de <strong>coração</strong>.
+      </p>
+
+      <div class="grid grid-cols-3 gap-2 mb-4">
+        <div class="text-center p-3 rounded-xl"
+             style="background:rgba(139,32,32,0.07);border:1px solid rgba(139,32,32,0.25);">
+          <div class="font-display text-sm font-bold text-crimson">SAUL</div>
+          <div class="font-body text-xs text-ink-faint mt-1">O rei que o povo queria</div>
+        </div>
+        <div class="text-center p-3 rounded-xl"
+             style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25);">
+          <div class="font-display text-xs font-bold text-gold-dark tracking-widest">CRITÉRIO</div>
+        </div>
+        <div class="text-center p-3 rounded-xl"
+             style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.25);">
+          <div class="font-display text-sm font-bold text-sapphire">DAVI</div>
+          <div class="font-body text-xs text-ink-faint mt-1">O rei que Deus escolheu</div>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden border" style="border-color:rgba(200,145,58,0.2);">
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Alto, belo, imponente</span>
+          <span class="contrast-label">Aparência</span>
+          <span class="contrast-david">Jovem, avermelhado, humilde</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Tribo de Benjamim</span>
+          <span class="contrast-label">Origem</span>
+          <span class="contrast-david">Tribo de Judá · Belém</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Escolha do povo</span>
+          <span class="contrast-label">Eleição</span>
+          <span class="contrast-david">Escolha de Deus</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Ofereceu sacrifício sem esperar Samuel</span>
+          <span class="contrast-label">1ª Desobediência</span>
+          <span class="contrast-david">Recusou matar o "ungido do Senhor"</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Poupou Agague e os melhores rebanhos</span>
+          <span class="contrast-label">2ª Desobediência</span>
+          <span class="contrast-david">Poupou Saul duas vezes por reverência</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">O Espírito partiu; espírito mau o atormentava</span>
+          <span class="contrast-label">O Espírito</span>
+          <span class="contrast-david">O Espírito veio sobre ele desde a unção (16:13)</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Consultou a feiticeira de Endor</span>
+          <span class="contrast-label">Em crise</span>
+          <span class="contrast-david">Buscou o Senhor e escreveu salmos</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Suicídio no Monte Gilboa</span>
+          <span class="contrast-label">Fim</span>
+          <span class="contrast-david">Rei em Hebrom — depois Jerusalém</span>
+        </div>
+        <div class="contrast-row px-3">
+          <span class="contrast-saul">Memória como advertência</span>
+          <span class="contrast-label">Legado</span>
+          <span class="contrast-david">"Homem segundo o coração de Deus" (13:14)</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Cântico de Ana e o Magnificat -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Cântico de Ana e o Magnificat de Maria</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O Cântico de Ana (1 Sm 2:1–10) e o Magnificat de Maria (Lc 1:46–55) são dois hinos de mulheres que receberam a graça de Deus de forma extraordinária — separados por mais de 1.000 anos, mas com paralelos impressionantes.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-3">🕯️ Ana — 1 Samuel 2:1–10</h4>
+          <div class="space-y-2 font-body text-xs text-ink-muted leading-relaxed">
+            <p>"O meu coração exulta no Senhor, o meu poder se eleva no Senhor..."</p>
+            <p>"O arco dos poderosos se quebrou, mas os fracos se cingiram de força."</p>
+            <p>"Os fartos se alugaram por pão, mas os famintos deixaram de sê-lo."</p>
+            <p>"O Senhor faz morrer e faz viver, faz descer à sepultura e faz subir."</p>
+            <p>"Ele levanta o pobre do pó, e da cinza ergue o necessitado."</p>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl"
+             style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+          <h4 class="font-display text-sm font-semibold text-violet mb-3">🕊️ Maria — Lucas 1:46–55</h4>
+          <div class="space-y-2 font-body text-xs text-ink-muted leading-relaxed">
+            <p>"A minha alma engrandece ao Senhor, e o meu espírito se alegrou em Deus..."</p>
+            <p>"Derrubou os poderosos dos seus tronos e exaltou os humildes."</p>
+            <p>"Encheu de bens os famintos e despediu os ricos de mãos vazias."</p>
+            <p>"Lembrou-se da sua misericórdia para com Abraão e a sua descendência..."</p>
+            <p>"Fez grandes coisas por mim o Poderoso, e santo é o seu nome."</p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-4 p-4 rounded-xl"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-sapphire">O padrão bíblico:</strong> Ambas as mulheres eram consideradas "pequenas" pela sociedade (estéril / jovem de cidade humilde). Ambas receberam um filho miraculoso que mudaria a história de Israel. Ambas responderam com o mesmo hino: Deus que rebaixa os poderosos e exalta os humildes. Lucas deliberadamente modelou o Magnificat de Maria sobre o Cântico de Ana.
+        </p>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge"
+                  style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">👁️ Deus vê o coração</span>
+            <span class="theme-badge"
+                  style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">👑 Teocracia → Monarquia</span>
+            <span class="theme-badge"
+                  style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🙏 Obedecer > Sacrificar</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🛡️ O ungido do Senhor</span>
+            <span class="theme-badge"
+                  style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🤝 Aliança e amizade</span>
+            <span class="theme-badge"
+                  style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚔️ A batalha é do Senhor</span>
+            <span class="theme-badge"
+                  style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📉 Consequências da desobediência</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌟 Providência na adversidade</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">1 Samuel no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Lc 1:46–55 — O Magnificat</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Maria modela seu cântico sobre o de Ana — ligando o nascimento de Jesus ao de Samuel.</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">At 13:22 — Paulo em Antioquia</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo cita 1 Sm 13:14: "Achei Davi, filho de Jessé, homem segundo o meu coração."</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Hb 11:32 — Hall da Fé</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Samuel e Davi são citados entre os heróis da fé em Hebreus 11.</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Mt 12:3–4 — Jesus cita Davi</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus cita o episódio de Davi comendo os pães da proposição (1 Sm 21) para ensinar sobre o sábado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Deus vê o coração":</strong> 1 Samuel 16:7 — "O homem vê o que está diante dos olhos, porém o Senhor vê o coração" — é um dos versículos mais citados do AT e o princípio que explica por que Davi foi escolhido no lugar de seus irmãos mais velhos e aparentemente mais qualificados.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>As 5 pedras de Davi:</strong> Davi escolheu <em>cinco</em> pedras (17:40), não uma. Alguns estudiosos sugerem que havia outros quatro irmãos de Golias (2 Sm 21:15–22) — e Davi estava preparado para todos. Usou apenas uma.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A feiticeira de Endor (cap. 28):</strong> Na véspera de sua morte, Saul — que havia expulsado todos os necromantes de Israel — consultou uma médium para invocar Samuel. O episódio é único na Bíblia: Samuel aparece e anuncia a Saul que no dia seguinte estaria com ele entre os mortos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Melhor é obedecer que sacrificar":</strong> 1 Sm 15:22 — a resposta de Samuel a Saul após a desobediência com Agague — é um dos versículos mais citados sobre a natureza da verdadeira adoração. Jesus ecoa este princípio citando Oséias 6:6: "Misericórdia quero, e não sacrifício" (Mt 9:13; 12:7).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Dagom prostrado (cap. 5):</strong> Os filisteus colocaram a Arca no templo de seu deus Dagom. Na manhã seguinte, a estátua estava prostrada diante da Arca. Recolocaram-na; no dia seguinte, prostrada novamente — e desta vez com cabeça e mãos cortadas. É uma paródia teológica: o deus dos vencedores se curva ao Deus dos "derrotados".
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A altura de Saul:</strong> Saul é descrito como "da ombreira para cima mais alto do que todo o povo" (9:2; 10:23) — o critério de liderança que o povo valorizava. Golias era alto e Saul também — e foi exatamente Saul quem deveria ter enfrentado o gigante, não o jovem Davi.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Abigail — a mulher sábia (cap. 25):</strong> Quando Davi ia matar Nabal (marido tolo de Abigail) em represália, Abigail interceptou o exército com provisões e um discurso que convenceu Davi a não agir impulsivamente. Nabal morreu de ataque cardíaco dias depois. Davi então tomou Abigail como esposa.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>1 e 2 Samuel — um único livro:</strong> No original hebraico, 1 e 2 Samuel formam um único livro chamado apenas "Samuel". A divisão foi introduzida pelos tradutores gregos da Septuaginta e depois adotada pelas Bíblias cristãs. O mesmo acontece com 1 e 2 Reis e 1 e 2 Crônicas.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O paradoxo de Davi:</strong> Davi é apresentado em 1 Samuel como o herói ideal — fiel, corajoso, misericordioso, poeta, guerreiro. Mas o livro não esconde suas ambiguidades: ele viveu entre os filisteus por um período (cap. 27), enganou o rei filisteu, e sua ascensão ao trono se dá em meio a guerras civis e traições. O Davi de 1 Samuel é humano — o que o torna ainda mais fascinante e o prepara para as falhas maiores que virão em 2 Samuel.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O homem vê o que está diante dos olhos, porém o Senhor vê o coração."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Samuel 16:7 — Deus explica sua escolha de Davi</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porventura tem o Senhor tanto prazer em holocaustos e sacrifícios como em que se obedeceu à sua voz? Eis que obedecer é melhor do que sacrificar."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Samuel 15:22 — Samuel a Saul após a desobediência</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Tu vens a mim com espada, e com lança, e com escudo; mas eu venho a ti em nome do Senhor dos Exércitos, o Deus dos exércitos de Israel... porque a batalha é do Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Samuel 17:45,47 — Davi a Golias</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · 1 Samuel · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

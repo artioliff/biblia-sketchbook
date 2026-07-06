@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gênesis — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, #c8913a 0px, #c8913a 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #c8913a 0px, #c8913a 1px, transparent 1px, transparent 40px);"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <!-- Breadcrumb -->
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PENTATEUCO · 1º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing: 0.04em; text-shadow: 0 2px 4px rgba(200,145,58,0.15);">
+        Gênesis
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>בְּרֵאשִׁית</em> (Bereshit) — "No princípio"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Γένεσις</em> (Génesis) — "Origem / Geração"
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">50</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.533</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Moisés</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Autor tradicional</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Hebraico</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Idioma original</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">1º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia e do Antigo Testamento</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">1º</span>
+              <span class="font-body text-sm text-ink">dos 5 livros do <strong>Pentateuco</strong> (Torá)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">AT</span>
+              <span class="font-body text-sm text-ink">pertence à seção da <strong>Lei</strong> (Torá / Pentateuco)</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Autoria e Data</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A tradição judaico-cristã atribui a autoria a <strong>Moisés</strong>, o que é confirmado em diversas passagens do próprio NT (Marcos 12:26, João 5:46). A redação é estimada entre os séculos <strong>XV e XIII a.C.</strong>
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O livro cobre um período que vai desde a <strong>Criação</strong> até a morte de <strong>José no Egito</strong> — abrangendo possivelmente mais de 2.000 anos de história.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Gênesis se divide em duas grandes partes, marcadas por uma mudança de escala: da história universal ao chamado de uma família específica.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:64px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 1–11</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">História Primordial</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A criação do universo e do ser humano, a queda no Jardim do Éden, o assassinato de Abel por Caim, o Dilúvio e a Arca de Noé, e a dispersão dos povos na Torre de Babel. Cobrem as origens da humanidade como um todo.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:64px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 12–25</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Abraão</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O chamado de Abrão (depois Abraão) em Ur dos Caldeus. A Aliança de Deus com Abraão, a promessa de uma terra e de uma descendência incontável, o nascimento miraculoso de Isaque e o teste no Monte Moriá.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:64px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 25–36</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">Isaque e Jacó</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              As histórias de Isaque e Rebeca, o conflito entre Esaú e Jacó pela bênção patriarcal, a visão da escada celestial em Betel, as doze tribos que nascerão de Jacó (renomeado Israel) e a reconciliação dos irmãos.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:64px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 37–50</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">José no Egito</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A história de José, vendido como escravo pelos próprios irmãos. Sua ascensão ao poder no Egito através da interpretação de sonhos, o reencontro com a família, e a descida das 12 tribos de Israel ao Egito — preparando o cenário para o Êxodo.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Personagens Principais</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+        <div class="person-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">👨</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">Adão e Eva</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Primeiros seres humanos. A queda no Éden marca o início do pecado no mundo (cap. 2–3).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.22);">
+          <div class="text-2xl mb-2">🌊</div>
+          <h4 class="font-display text-sm font-semibold text-earth mb-1">Noé</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Construiu a Arca por fé e obediência. Sobreviveu ao Dilúvio com sua família e os animais (cap. 6–9).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">⭐</div>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Abraão</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">"Pai da fé" (Rm 4:11). Chamado por Deus em Ur, recebeu a Aliança e a promessa messiânica (cap. 12–25).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🕊️</div>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">Isaque</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Filho da promessa, nascido miraculosamente. Submetido ao sacrifício no Monte Moriá — tipo de Cristo (cap. 21–26).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="text-2xl mb-2">🪨</div>
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Jacó / Israel</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Renomeado "Israel" após lutar com Deus. Pai das 12 tribos que formarão a nação de Israel (cap. 25–49).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">👑</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">José</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Vendido como escravo, tornou-se governador do Egito. Tipo de Cristo pelo sofrimento e redenção (cap. 37–50).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Temas teológicos -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌿 Criação</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🍎 Queda do Homem</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌈 Aliança</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">⭐ Eleição</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🙏 Fé e Obediência</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🛡️ Providência Divina</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">✝️ Promessa Messiânica</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🤝 Redenção</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">As Grandes Alianças</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">Aliança com Adão</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Domínio sobre a criação; proibição da árvore do bem e do mal (cap. 2).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Aliança com Noé</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Nunca mais destruir a terra pelo dilúvio. Sinal: o <strong>arco-íris</strong> (cap. 9).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25);">
+              <span class="font-display text-xs font-bold text-gold-dark">Aliança com Abraão</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Descendência numerosa, terra prometida e bênção para todas as nações. Sinal: a <strong>circuncisão</strong> (cap. 12, 15, 17).</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Proto-evangelho:</strong> Gênesis 3:15 é considerada a primeira promessa messiânica da Bíblia — "porei inimizade entre ti e a mulher..."</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Nome de Deus:</strong> Elohim (אֱלֹהִים) aparece no cap. 1; YHWH (יְהוָה), o nome pessoal de Deus, aparece a partir do cap. 2.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Fé de Abraão:</strong> Citado como modelo de fé no NT (Romanos 4, Gálatas 3, Hebreus 11) — o "pai de todos os que creem".</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>José como tipo de Cristo:</strong> Traído pelos seus, sofredor inocente, exaltado à direita do poder — paralelo com a vida de Jesus.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Toledot:</strong> O livro se estrutura em torno de 10 seções com a fórmula "estas são as gerações de…" (תּוֹלְדוֹת, toledot), que funciona como divisores narrativos.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Melquisedeque:</strong> Sacerdote-rei de Salém que abençoa Abraão (cap. 14) — figura misteriosa citada em Salmos 110 e Hebreus 5–7.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Isaque no Monte Moriá:</strong> O local onde Abraão é testado (cap. 22) é identificado como o mesmo monte onde posteriormente foi construído o <strong>Templo de Salomão</strong> em Jerusalém (2 Cr 3:1).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Fim do livro:</strong> Gênesis termina com a morte de José no Egito, mas com a promessa de que Deus visitaria o povo e o conduziria à terra prometida — preparando diretamente o Êxodo.</p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="text-gold mt-0.5 flex-shrink-0">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Gênesis no Novo Testamento:</strong> É um dos livros do AT mais citados no NT. Jesus mesmo o cita em Mateus 19:4–5 (sobre o casamento), e João 1:1 ("No princípio era o Verbo") faz eco direto a Gênesis 1:1 ("No princípio criou Deus os céus e a terra").</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículo chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-4">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "No princípio criou Deus os céus e a terra."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Gênesis 1:1 — O primeiro versículo da Bíblia</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Vocês planejaram o mal contra mim, mas Deus planejou isso para o bem, a fim de realizar o que está acontecendo hoje: salvar a vida de muita gente."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Gênesis 50:20 — José fala aos seus irmãos</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color: rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Gênesis · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

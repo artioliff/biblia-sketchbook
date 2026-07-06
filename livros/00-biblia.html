@@ -4,191 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>A Bíblia — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            display: ['Cinzel', 'serif'],
-            body: ['Crimson Pro', 'serif'],
-          },
-          colors: {
-            parch: {
-              50:  '#fdf8ef',
-              100: '#f7edda',
-              200: '#eedcb8',
-              300: '#e2c48a',
-              400: '#d4a55a',
-              500: '#c98c38',
-              600: '#b8742d',
-              700: '#985a26',
-              800: '#7c4825',
-              900: '#663c22',
-            },
-            ink: {
-              DEFAULT: '#1c1410',
-              light:   '#3d2f25',
-              muted:   '#7a6352',
-              faint:   '#b8a898',
-            },
-            gold: {
-              DEFAULT: '#c8913a',
-              light:   '#e8c97a',
-              dark:    '#8a6020',
-            },
-            crimson: {
-              DEFAULT: '#8b2020',
-              light:   '#c45050',
-              pale:    '#f5e8e8',
-            },
-            sapphire: {
-              DEFAULT: '#1e3a5f',
-              light:   '#3a6090',
-              pale:    '#e8f0f8',
-            },
-            forest: {
-              DEFAULT: '#1e4a2a',
-              light:   '#3a7a50',
-              pale:    '#e8f5ec',
-            },
-          },
-          animation: {
-            'fade-up':    'fadeUp 0.7s ease both',
-            'fade-in':    'fadeIn 0.6s ease both',
-            'slide-in':   'slideIn 0.5s ease both',
-          },
-          keyframes: {
-            fadeUp:  { '0%': { opacity: '0', transform: 'translateY(24px)' }, '100%': { opacity: '1', transform: 'translateY(0)' } },
-            fadeIn:  { '0%': { opacity: '0' }, '100%': { opacity: '1' } },
-            slideIn: { '0%': { opacity: '0', transform: 'translateX(-16px)' }, '100%': { opacity: '1', transform: 'translateX(0)' } },
-          },
-        },
-      },
-    }
-  </script>
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
   <style>
-    body { background-color: #fdf8ef; color: #1c1410; }
-
-    .parchment-bg {
-      background-color: #fdf8ef;
-      background-image:
-        radial-gradient(ellipse at 20% 20%, rgba(200,145,58,0.07) 0%, transparent 60%),
-        radial-gradient(ellipse at 80% 80%, rgba(139,32,32,0.05) 0%, transparent 60%);
-    }
-
-    .ornament { color: #c8913a; font-size: 1.5rem; line-height: 1; }
-
-    .divider-ornament {
-      display: flex; align-items: center; gap: 1rem;
-      color: #c8913a; margin: 2rem 0;
-    }
-    .divider-ornament::before,
-    .divider-ornament::after {
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(to right, transparent, #c8913a88, transparent);
-    }
-
-    .section-card {
-      background: rgba(255,255,255,0.55);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(200,145,58,0.25);
-      border-radius: 12px;
-      padding: 1.75rem;
-      transition: box-shadow 0.3s ease;
-    }
-    .section-card:hover {
-      box-shadow: 0 4px 24px rgba(200,145,58,0.12);
-    }
-
-    .stat-card {
-      background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(247,237,218,0.6));
-      border: 1px solid rgba(200,145,58,0.3);
-      border-radius: 10px;
-      padding: 1.25rem 1rem;
-      text-align: center;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .stat-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(200,145,58,0.15);
-    }
-
-    .lang-pill {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      letter-spacing: 0.08em;
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-weight: 600;
-    }
-
-    .continent-card {
-      border-radius: 10px;
-      padding: 1.25rem;
-      text-align: center;
-      border: 1px solid;
-      transition: transform 0.2s ease;
-    }
-    .continent-card:hover { transform: translateY(-2px); }
-
-    .curiosity-item {
-      display: flex; gap: 12px; align-items: flex-start;
-      padding: 0.75rem 1rem;
-      background: rgba(255,255,255,0.5);
-      border-radius: 8px;
-      border-left: 3px solid #c8913a;
-      transition: background 0.2s;
-    }
-    .curiosity-item:hover { background: rgba(255,255,255,0.85); }
-
-    .genre-badge {
-      display: inline-flex; align-items: center; gap: 6px;
-      font-family: 'Cinzel', serif; font-size: 0.6rem; font-weight: 600;
-      letter-spacing: 0.07em; text-transform: uppercase;
-      padding: 5px 12px; border-radius: 20px;
-      border: 1px solid;
-    }
-
-    .section-label {
-      font-family: 'Cinzel', serif;
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: #8a6020;
-      margin-bottom: 1rem;
-      display: flex; align-items: center; gap: 8px;
-    }
-    .section-label::after {
-      content: ''; flex: 1; height: 1px;
-      background: linear-gradient(to right, #c8913a55, transparent);
-    }
-
-    .animate-delay-1 { animation-delay: 0.1s; }
-    .animate-delay-2 { animation-delay: 0.2s; }
-    .animate-delay-3 { animation-delay: 0.3s; }
-    .animate-delay-4 { animation-delay: 0.4s; }
-    .animate-delay-5 { animation-delay: 0.5s; }
-    .animate-delay-6 { animation-delay: 0.6s; }
-
-    .hero-cross {
-      width: 48px; height: 48px;
-      position: relative; display: inline-flex;
-      align-items: center; justify-content: center;
-    }
-    .hero-cross::before {
-      content: '✝';
-      font-size: 2.5rem; color: #c8913a;
-      text-shadow: 0 2px 8px rgba(200,145,58,0.4);
-    }
-
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: #f7edda; }
-    ::-webkit-scrollbar-thumb { background: #c8913a55; border-radius: 3px; }
+    
   </style>
 </head>
 <body class="parchment-bg min-h-screen font-body">

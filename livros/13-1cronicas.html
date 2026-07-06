@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>1 Crônicas — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 18% 16%, rgba(74,30,110,0.07) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 82%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+
+    /* Bloco de genealogia */
+    .gen-block {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+    .gen-block:hover { transform: translateY(-2px); }
+
+    /* Card de diferença Samuel vs Crônicas */
+    .diff-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(200,145,58,0.12);
+    }
+    .diff-row:last-child { border-bottom: none; }
+    .diff-label {
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-align: center;
+      color: #b8a898;
+    }
+    .diff-left  { text-align: right; font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: #1e3a5f; }
+    .diff-right { text-align: left;  font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: #4a1e6e; }
+
+    /* Card de preparação do templo */
+    .prep-card {
+      border-radius: 9px;
+      padding: 0.875rem 1rem;
+      border: 1px solid;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .prep-card:hover { transform: translateX(4px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 13º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        1 Crônicas
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>דִּבְרֵי הַיָּמִים</em> (Divrei HaYamim) — "Palavras dos Dias" / "Anais"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Παραλειπόμενα</em> (Paraleipomena) — "Coisas Omitidas" · o que Samuel e Reis deixaram de fora
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">29</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">942</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Adão → Davi</div>
+          <div class="font-body text-sm text-ink-muted mt-1">período coberto</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">9 cap.</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de genealogias</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(74,30,110,0.07);border:1px solid rgba(74,30,110,0.22);">
+              <span class="font-display text-xs font-bold text-violet">13º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia (cânone cristão)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">8º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Último</span>
+              <span class="font-body text-sm text-ink">livro do <strong>Tanakh hebraico</strong> (2 Crônicas encerra a Bíblia hebraica)</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro do Recomeço</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Crônicas foi escrito <strong>após o exílio babilônico</strong>, provavelmente por <strong>Esdras</strong>, para a comunidade que retornava à terra prometida. O povo havia perdido o Templo, a monarquia e parte da identidade nacional. A pergunta urgente era: <em>somos ainda o povo de Deus?</em>
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            A resposta de Crônicas é um sonoro <strong>sim</strong> — e para prová-lo, o livro reconta a história de Israel com um foco diferente: não nos fracassos políticos, mas na fidelidade de Deus, na continuidade das genealogias e na centralidade do <strong>culto e do Templo</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Samuel/Reis vs Crônicas -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Duas Perspectivas sobre a Mesma História</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Samuel e Reis foram escritos <strong>durante e logo após o exílio</strong> — explicando o porquê do desastre. Crônicas foi escrito <strong>após o retorno</strong> — inspirando uma nova geração a recomeçar. O mesmo Davi, o mesmo Templo, o mesmo Israel — mas dois ângulos completamente distintos.
+      </p>
+
+      <div class="grid grid-cols-3 gap-2 mb-4">
+        <div class="text-center p-3 rounded-xl"
+             style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.25);">
+          <div class="font-display text-sm font-bold text-sapphire">SAMUEL / REIS</div>
+          <div class="font-body text-xs text-ink-faint mt-1">Perspectiva profética</div>
+        </div>
+        <div class="text-center p-3 rounded-xl"
+             style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25);">
+          <div class="font-display text-xs font-bold text-gold-dark tracking-widest">TEMA</div>
+        </div>
+        <div class="text-center p-3 rounded-xl"
+             style="background:rgba(74,30,110,0.07);border:1px solid rgba(74,30,110,0.25);">
+          <div class="font-display text-sm font-bold text-violet">CRÔNICAS</div>
+          <div class="font-body text-xs text-ink-faint mt-1">Perspectiva sacerdotal</div>
+        </div>
+      </div>
+
+      <div class="rounded-xl overflow-hidden border" style="border-color:rgba(200,145,58,0.2);">
+        <div class="diff-row px-3">
+          <span class="diff-left">Durante / após o exílio</span>
+          <span class="diff-label">Escrito</span>
+          <span class="diff-right">Após o retorno do exílio</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">Por que caímos?</span>
+          <span class="diff-label">Pergunta central</span>
+          <span class="diff-right">Como recomeçamos?</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">Pecados de Davi (Bate-Seba, Absalão)</span>
+          <span class="diff-label">Davi</span>
+          <span class="diff-right">Davi como organizador do culto e do Templo</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">Foco em política e diplomacia</span>
+          <span class="diff-label">Ênfase</span>
+          <span class="diff-right">Foco em culto, sacerdócio e música</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">Inclui ambos os reinos (Norte e Sul)</span>
+          <span class="diff-label">Escopo</span>
+          <span class="diff-right">Foca apenas em Judá e a linhagem davídica</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">Profetas como principais personagens</span>
+          <span class="diff-label">Figuras de destaque</span>
+          <span class="diff-right">Sacerdotes e levitas como principais personagens</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">Avaliação moral dos reis</span>
+          <span class="diff-label">Critério</span>
+          <span class="diff-right">Fidelidade ao culto e busca a Deus</span>
+        </div>
+        <div class="diff-row px-3">
+          <span class="diff-left">O reino dividido e destruído</span>
+          <span class="diff-label">Narrativa</span>
+          <span class="diff-right">A continuidade da promessa davídica</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-violet">Cap. 1–9</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Genealogias</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">As Genealogias — De Adão ao Retorno do Exílio</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A maior seção genealógica da Bíblia. Começa com "<em>Adão, Sete, Enos…</em>" e traça a linha até as famílias que retornaram da Babilônia. Não são apenas listas de nomes — são a prova da continuidade do povo de Deus através dos séculos, da criação ao exílio e de volta. As tribos de <strong>Judá</strong> (linhagem davídica) e <strong>Levi</strong> (sacerdócio) recebem atenção especial.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 10</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Transição</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Morte de Saul — O Fim que Abre Caminho</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Crônicas cobre a morte de Saul em apenas um capítulo — sem a história de seu reinado, sem Samuel, sem Davi fugindo. O foco é a análise teológica: <em>"Saul morreu por causa da sua transgressão... e não consultou o Senhor; por isso o matou."</em> (10:13–14). Saul serve apenas como contraste negativo para introduzir o reinado de Davi.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 11–21</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Reino de Davi</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">O Reinado de Davi — Conquistas e a Arca</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A unção de Davi por todo Israel, a conquista de Jerusalém, os seus guerreiros valentes, a tentativa frustrada de trazer a Arca (morte de Uzá), a dança de Davi, a <strong>Aliança Davídica</strong> (cap. 17 — paralelo a 2 Sm 7), as guerras e vitórias militares, e o censo que gerou a praga — que identificou o local do futuro Templo.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 22–29</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Preparação</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Grande Preparação para o Templo</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Exclusivo de Crônicas — Samuel e Reis mal mencionam isto. Davi organizou <strong>38.000 levitas</strong> em funções específicas, designou 4.000 músicos com instrumentos que ele mesmo mandou fazer, organizou 4.000 porteiros, nomeou juízes e administradores. Reuniu materiais em quantidades extraordinárias para o Templo e passou os planos detalhados a Salomão. Sua última oração pública (cap. 29) é um dos textos de adoração mais belos do AT.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- As Genealogias -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">As Genealogias — Por que Tantos Nomes? (Cap. 1–9)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Os primeiros 9 capítulos são os mais áridos da Bíblia para o leitor moderno — mas para a comunidade pós-exílica, eram <strong>vitalmente necessários</strong>. Provar a continuidade genealógica era provar o direito à terra, ao sacerdócio e à pertença ao povo de Deus.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-3 mb-5">
+        <div class="gen-block" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.22);">
+          <div class="font-display text-xs font-bold text-violet mb-2">Cap. 1</div>
+          <h4 class="font-body text-sm font-semibold text-ink mb-1">Adão → Abraão</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Da criação ao patriarca fundador — ligando Israel à origem de toda a humanidade. Inclui os descendentes de Noé e as nações.</p>
+        </div>
+        <div class="gen-block" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="font-display text-xs font-bold text-gold-dark mb-2">Cap. 2–4</div>
+          <h4 class="font-body text-sm font-semibold text-ink mb-1">Judá e suas ramificações</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A tribo de Judá recebe mais espaço que qualquer outra — porque dela vem a linhagem davídica e o futuro Messias.</p>
+        </div>
+        <div class="gen-block" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="font-display text-xs font-bold text-sapphire mb-2">Cap. 5</div>
+          <h4 class="font-body text-sm font-semibold text-ink mb-1">Rúben, Gade e Manassés</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">As tribos transjordânicas — com nota que foram exiladas pela Assíria "porque transgrediram contra o Deus de seus pais."</p>
+        </div>
+        <div class="gen-block" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="font-display text-xs font-bold text-forest mb-2">Cap. 6</div>
+          <h4 class="font-body text-sm font-semibold text-ink mb-1">Levi — o maior capítulo genealógico</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O sacerdócio e os músicos do Templo. Traça a linhagem de Arão até o período do Templo — legitimando o sacerdócio pós-exílico.</p>
+        </div>
+        <div class="gen-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <div class="font-display text-xs font-bold text-earth mb-2">Cap. 7–8</div>
+          <h4 class="font-body text-sm font-semibold text-ink mb-1">As demais tribos</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Issacar, Benjamim, Naftali, Manassés, Efraim e Aser. Dan e Zebulom são omitidos — possivelmente por sua associação com idolatria.</p>
+        </div>
+        <div class="gen-block" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="font-display text-xs font-bold text-crimson mb-2">Cap. 9</div>
+          <h4 class="font-body text-sm font-semibold text-ink mb-1">Os que retornaram do exílio</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A lista dos primeiros a retornar a Jerusalém após o exílio — o ponto de chegada de toda a genealogia. O arco fechou.</p>
+        </div>
+      </div>
+
+      <!-- Jabez -->
+      <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">💎 A Oração de Jabez — 1 Crônicas 4:9–10</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+          Em meio à lista genealógica da tribo de Judá, o texto para inesperadamente para registrar a oração de um homem chamado <strong>Jabez</strong> — cujo nome significa "dor", pois sua mãe o deu à luz com dor. Jabez clamou ao Deus de Israel: <em>"Oxalá me abençoes e alargas o meu território, e que a tua mão seja comigo e me livres do mal."</em> E Deus lhe concedeu o que pediu.
+        </p>
+        <p class="font-body text-xs text-ink-muted leading-relaxed">
+          Este pequeno parêntese — dois versículos em meio a centenas de nomes — tornou-se um dos textos mais meditados sobre oração e fé. Demonstra que Deus conhece cada indivíduo dentro da grande narrativa da história.
+        </p>
+      </div>
+    </section>
+
+    <!-- A Arca e a Aliança -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Arca, Uzá e a Aliança Davídica — Cap. 13–17</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">⚡ A Morte de Uzá — Cap. 13</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Davi tentou trazer a Arca a Jerusalém com grande celebração. A Arca foi colocada em uma carroça nova puxada por bois — método filisteu, não o método levítico prescrito por Moisés. Quando os bois tropecaram, Uzá estendeu a mão para segurar a Arca. <strong>Deus o feriu ali mesmo e ele morreu.</strong>
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Davi ficou com medo e deixou a Arca na casa de <strong>Obede-Edom</strong> por três meses — e a bênção de Deus transbordou sobre toda aquela casa. Davi então a trouxe a Jerusalém, desta vez da forma correta: carregada pelos levitas nos ombros, com sacrifícios a cada seis passos, e com Davi dançando com toda a força.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-crimson">A lição de Uzá:</strong> Deus não aceita ser servido de qualquer maneira — mesmo com boas intenções. A forma importa tanto quanto o coração. Paulo ecoa este princípio: "cada um examine a si mesmo" antes de tomar a Ceia (1 Co 11:28).
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-gold-dark mb-3">👑 A Aliança Davídica em Crônicas — Cap. 17</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O capítulo 17 repete quase palavra por palavra o texto de 2 Samuel 7 — mas com uma diferença sutil e importante. Em Samuel o foco é político e dinástico; em Crônicas o foco é <strong>o Templo como morada de Deus</strong>.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Deus explica a Davi por que ele não construirá o Templo: <em>"Tu derramaste muito sangue e fizeste grandes guerras; não edificarás casa ao meu nome, porque muito sangue derramaste na terra."</em> (22:8). Será Salomão — "Homem de Paz" — quem construirá a Casa do Senhor.
+          </p>
+          <div class="p-4 rounded-xl italic"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "E estabelecerei o seu trono para sempre. Eu lhe serei por pai, e ele me será por filho... estabelecerei-o em minha casa e no meu reino para sempre, e o seu trono será firme para sempre."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">1 Crônicas 17:12–14</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Grande Preparação para o Templo -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Grande Preparação para o Templo — Cap. 22–29</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Esta seção é <strong>exclusiva de Crônicas</strong> — Samuel e Reis não a mencionam. Davi não pôde construir o Templo, mas dedicou os últimos anos de seu reinado a preparar tudo para que Salomão o fizesse. É um dos maiores exemplos bíblicos de liderança que pensa no legado além de si mesma.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-5">
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🏗️ Materiais Reunidos por Davi (22:14)</h3>
+          <div class="space-y-2">
+            <div class="flex items-center justify-between p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25);">
+              <span class="font-body text-sm text-ink">Ouro</span>
+              <span class="font-display text-sm font-bold text-gold-dark">100.000 talentos</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-body text-sm text-ink">Prata</span>
+              <span class="font-display text-sm font-bold text-gold-dark">1.000.000 talentos</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg"
+                 style="background:rgba(92,61,30,0.07);border:1px solid rgba(92,61,30,0.22);">
+              <span class="font-body text-sm text-ink">Bronze e ferro</span>
+              <span class="font-display text-sm font-bold text-earth">em abundância</span>
+            </div>
+            <div class="flex items-center justify-between p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-body text-sm text-ink">Madeira e pedras preciosas</span>
+              <span class="font-display text-sm font-bold text-forest">sem medida</span>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-faint mt-2 italic">100.000 talentos de ouro ≈ ~3.400 toneladas — uma cifra extraordinária mesmo considerando possível hipérbole literária oriental</p>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🎵 A Organização dos Levitas (23–26)</h3>
+          <div class="space-y-2">
+            <div class="prep-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+              <span class="text-lg flex-shrink-0">🎶</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-violet">4.000 músicos levitas</p>
+                <p class="font-body text-xs text-ink-faint">com instrumentos que Davi mandou construir — harpas, alaúdes e címbalos</p>
+              </div>
+            </div>
+            <div class="prep-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+              <span class="text-lg flex-shrink-0">🚪</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-forest">4.000 porteiros</p>
+                <p class="font-body text-xs text-ink-faint">distribuídos pelos quatro lados do Templo e seus depósitos</p>
+              </div>
+            </div>
+            <div class="prep-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+              <span class="text-lg flex-shrink-0">🙏</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-sapphire">24 turmas de sacerdotes</p>
+                <p class="font-body text-xs text-ink-faint">determinadas por sorteio — cada família servia duas semanas por ano</p>
+              </div>
+            </div>
+            <div class="prep-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.22);">
+              <span class="text-lg flex-shrink-0">🎼</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-gold-dark">24 grupos de músicos</p>
+                <p class="font-body text-xs text-ink-faint">liderados por Asafe, Jedutum e Hemã — 288 músicos treinados</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- A última oração de Davi -->
+      <div class="p-5 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <h4 class="font-display text-sm font-semibold text-sapphire mb-3">🙏 A Última Oração Pública de Davi — Cap. 29:10–19</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+          Após o povo contribuir voluntariamente e com alegria para o Templo — ouro, prata, bronze e pedras preciosas —, Davi orou diante de toda a assembleia. É considerada uma das orações mais teologicamente ricas do AT:
+        </p>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.5);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Tua é, ó Senhor, a grandeza, e o poder, e a glória, e a vitória, e a majestade; porque teu é tudo quanto há nos céus e na terra; teu é o reino, ó Senhor, e tu te exaltaste como cabeça sobre tudo."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">1 Crônicas 29:11</p>
+          </div>
+          <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.5);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Porque quem sou eu, e quem é o meu povo, para que pudéssemos oferecer assim voluntariamente? Pois tudo vem de ti, e do que é teu te demos."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">1 Crônicas 29:14</p>
+          </div>
+        </div>
+        <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed text-center italic">
+          O doxologia "pois teu é o reino, e o poder, e a glória para sempre" no Pai Nosso (Mt 6:13) ressoa diretamente com este versículo de Davi.
+        </p>
+      </div>
+    </section>
+
+    <!-- Os músicos de Davi -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Revolução Musical de Davi</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Um dos aspectos mais únicos de Crônicas é o destaque dado à <strong>música como ministério sagrado</strong>. Davi não apenas organizou o culto — ele criou a primeira orquestra e o primeiro coral institucionalizados da história do povo de Deus.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.22);">
+          <div class="text-2xl mb-2">🎵</div>
+          <h4 class="font-display text-xs font-bold text-violet mb-1">Asafe</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Músico e compositor. 12 Salmos levam seu nome (Sl 50, 73–83). Seus descendentes ainda serviam no Templo séculos depois (Ed 2:41).</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">🎶</div>
+          <h4 class="font-display text-xs font-bold text-sapphire mb-1">Jedutum</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Também chamado Etã. Três Salmos têm seu nome no título (Sl 39, 62, 77). Era responsável por tocar cítaras e proclamar a graça de Deus.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="text-2xl mb-2">🎼</div>
+          <h4 class="font-display text-xs font-bold text-gold-dark mb-1">Hemã</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Neto de Samuel. Chamado de "vidente do rei" e teve 14 filhos e 3 filhas que serviam com ele como músicos do Templo (25:4–6).</p>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-forest">O legado musical de Davi:</strong> Crônicas apresenta Davi como o arquiteto do culto musical de Israel. O livro de <strong>Salmos</strong> — a maior coleção de hinários da Bíblia — nasce diretamente desta organização. Os levitas músicos de Davi estabeleceram um padrão de adoração que influencia a música cristã até hoje: louvor congregacional, instrumentos variados, cânticos de confissão e ação de graças.
+        </p>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">📜 Continuidade do povo de Deus</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🏛️ Centralidade do Templo</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">👑 A Aliança Davídica</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🎵 Adoração como vocação</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🔍 "Buscar a Deus" como critério</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🌱 Esperança pós-exílica</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🎯 Liderança que pensa no legado</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">⚖️ Responsabilidade individual</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">1 Crônicas no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Mt 1:1–17 — A genealogia de Jesus</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Mateus abre seu Evangelho com uma genealogia que ecoa o estilo e o propósito de 1 Crônicas 1–9: provar a continuidade histórica da linhagem prometida.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Lc 1:32–33 — O trono de Davi</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O anjo Gabriel cita a promessa de 1 Cr 17 ao anunciar Jesus: "o Senhor Deus lhe dará o trono de Davi, seu pai... e o seu reino não terá fim."</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Mt 6:13 — O Pai Nosso</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Pois teu é o reino, e o poder, e a glória para sempre" ressoa diretamente a 1 Cr 29:11 — a última oração de Davi.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Ap 5:9 — O novo cântico</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A adoração celestial do Apocalipse com harpas e cânticos novos é o cumprimento eterno da organização musical que Davi iniciou em 1 Crônicas.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O último livro do Tanakh:</strong> No cânone hebraico (Tanakh), a ordem dos livros é diferente do cânone cristão — e 2 Crônicas é o <em>último livro</em> da Bíblia hebraica. Jesus provavelmente alude a isso em Mateus 23:35, ao mencionar "desde o sangue de Abel até o sangue de Zacarias" — Gênesis a Crônicas, do início ao fim do Tanakh.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Autoria de Esdras:</strong> A tradição judaica (Talmude, Bava Batra 15a) atribui a autoria de Crônicas a Esdras. As últimas duas linhas de 2 Crônicas são quase idênticas às primeiras linhas de Esdras — sugerindo que os dois livros foram originalmente uma obra contínua.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A oração de Jabez (4:9–10):</strong> Tornou-se um dos textos bíblicos mais populares do século XXI após o livro de Bruce Wilkinson em 2000. Em dois versículos, contém pedidos de bênção, expansão de território, presença de Deus e proteção do mal — um modelo compacto de oração.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Davi e os planos do Templo (28:19):</strong> Davi afirmou que os planos detalhados do Templo lhe foram dados "por escrito da mão do Senhor" — sugerindo que os planos arquitetônicos do Templo foram divinamente revelados, assim como os do Tabernáculo a Moisés (Ex 25:40).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Buscar a Deus" — a frase-chave de Crônicas:</strong> A expressão "buscar ao Senhor" (darash et-YHWH) aparece <strong>mais de 30 vezes</strong> em 1 e 2 Crônicas — mais do que em qualquer outro livro. É o critério fundamental pelo qual cada rei é avaliado. Reis que buscaram a Deus prosperaram; os que não buscaram, fracassaram.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>As 24 turmas sacerdotais:</strong> A organização dos 24 grupos de sacerdotes por Davi (cap. 24) perdurou por séculos. No NT, <strong>Zacarias</strong> — pai de João Batista — pertencia à "turma de Abias" (Lc 1:5), a 8ª das 24 turmas instituídas por Davi quase 1.000 anos antes.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Davi de Crônicas vs o de Samuel:</strong> Crônicas omite completamente o adultério com Bate-Seba, a rebelião de Absalão, a violência da guerra civil e os anos de fuga. Não por desonestidade — o autor presumia que o leitor conhecia Samuel. O foco era mostrar o Davi ideal como modelo de adoração para a comunidade que recomeçava.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A responsabilidade individual (10:13–14):</strong> Crônicas introduz uma ênfase teológica importante: cada pessoa é responsável por suas próprias escolhas diante de Deus. O exílio não foi punição automática pelos pecados dos antepassados — cada geração escolheu. Esta teologia respondeu ao lamento do exílio: "os pais comeram uvas verdes e os filhos têm os dentes embotados" (Jr 31:29).
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Crônicas importa hoje:</strong> 1 Crônicas foi escrito para pessoas que haviam perdido tudo — terra, Templo, monarquia, identidade — e precisavam de uma razão para recomeçar. O livro responde: a identidade do povo de Deus não depende de instituições externas, mas da fidelidade de Deus às suas promessas. As genealogias provam que nenhum nome foi esquecido. A Aliança Davídica prova que o trono prometido ainda está em pé. O Templo será reconstruído. Esta mensagem ressoa em qualquer geração que passa por ruína e precisa recomeçar.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Tua é, ó Senhor, a grandeza, e o poder, e a glória, e a vitória, e a majestade; porque teu é tudo quanto há nos céus e na terra; teu é o reino, ó Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Crônicas 29:11 — A última oração pública de Davi</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Oxalá me abençoes e alargues o meu território, e que a tua mão seja comigo e me livres do mal."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Crônicas 4:10 — A oração de Jabez</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Seja forte e corajoso, não temas nem te espantes; porque o Senhor Deus, meu Deus, é contigo; ele não te deixará, nem te desamparará."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">1 Crônicas 28:20 — Davi a Salomão · eco de Josué 1:9</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · 1 Crônicas · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Números — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(0deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px);"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PENTATEUCO · 4º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Números
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>בְּמִדְבַּר</em> (Bemidbar) — "No deserto"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Ἀριθμοί</em> (Arithmoí) — "Números" · Do latim <em>Numeri</em>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">36</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.288</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">40 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">no deserto</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">2</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Censos realizados</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(160,128,64,0.08);border:1px solid rgba(160,128,64,0.25);">
+              <span class="font-display text-xs font-bold text-sand">4º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia e do Antigo Testamento</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">4º</span>
+              <span class="font-body text-sm text-ink">dos 5 livros do <strong>Pentateuco</strong> (Torá)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">AT</span>
+              <span class="font-body text-sm text-ink">seção da <strong>Lei</strong> — o livro da jornada no deserto</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Natureza do Livro</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Números narra os <strong>40 anos de peregrinação de Israel no deserto</strong> — entre o Monte Sinai e as planícies de Moabe, às portas da Terra Prometida. O nome hebraico <em>Bemidbar</em> ("no deserto") captura melhor seu conteúdo do que o nome grego, que se refere apenas aos dois censos realizados.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É um livro de <strong>tensão entre a fidelidade de Deus e a incredulidade do povo</strong>. A geração que saiu do Egito morre no deserto por desobediência; uma nova geração se levanta para herdar a promessa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O livro se organiza em torno dos <strong>dois censos</strong>, que funcionam como marcadores da transição entre a geração do Êxodo (condenada a morrer no deserto) e a nova geração que entrará em Canaã.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 1–10</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">O 1º Censo e a Preparação para Partir</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O recenseamento dos homens em idade militar, a organização do acampamento em torno do Tabernáculo, as funções das famílias levíticas, a bênção sacerdotal de Arão (cap. 6:24–26) e a nuvem e o fogo como guias da jornada. Israel finalmente parte do Sinai.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 11–25</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Geração da Incredulidade — Rebeliões no Deserto</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O coração do livro: murmurações, rebeliões e suas consequências. Os 12 espias enviados a Canaã, o relatório negativo de 10 deles, a sentença dos 40 anos de deserto, a rebelião de Corá, a vara de Arão que floresceu, o pecado de Moisés na rocha, as serpentes de bronze e a apostasia em Baal-Peor.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 26–36</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">O 2º Censo e a Nova Geração</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O segundo recenseamento confirma que a antiga geração morreu — com exceção de Josué e Calebe. Seguem-se leis sobre heranças, o calendário de festas, os votos, as vitórias militares a leste do Jordão e a designação de Josué como sucessor de Moisés. Israel acampa às portas de Canaã.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Os Dois Censos -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Dois Censos — Génese de um Novo Povo</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Os dois censos contam os homens aptos para a guerra com mais de 20 anos. O resultado é quase idêntico em número, mas são <strong>pessoas completamente diferentes</strong> — a prova concreta da renovação geracional de Israel.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.2);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">1º Censo — Cap. 1</h4>
+          <p class="font-body text-xs text-ink-faint mb-3">Geração do Êxodo · Sinai · Ano 2 após o Êxodo</p>
+          <div class="font-display text-3xl font-bold text-sapphire mb-2">603.550</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Homens em idade militar. Esta geração, apesar de ter visto as 10 pragas e a travessia do Mar Vermelho, não confiou em Deus para tomar Canaã e morreu no deserto.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">2º Censo — Cap. 26</h4>
+          <p class="font-body text-xs text-ink-faint mb-3">Nova geração · Planícies de Moabe · 40 anos depois</p>
+          <div class="font-display text-3xl font-bold text-forest mb-2">601.730</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Uma diferença de apenas 1.820 homens, mas <strong>toda uma nova geração</strong>. Dos recenseados no 1º censo, apenas Josué e Calebe sobreviveram para entrar na Terra Prometida.</p>
+        </div>
+      </div>
+
+      <div class="mt-4 p-4 rounded-xl text-center" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Os <strong>Levitas</strong> não foram incluídos em nenhum dos censos militares — eles eram consagrados ao serviço do Tabernáculo e não lutavam (Nm 1:47–49).
+        </p>
+      </div>
+    </section>
+
+    <!-- Rebeliões -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">As Grandes Rebeliões no Deserto</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Paulo usa estas rebeliões como advertência para os cristãos: <em>"Essas coisas aconteceram como exemplos para nós"</em> (1 Coríntios 10:6–11). Cada episódio revela uma faceta diferente da incredulidade humana.
+      </p>
+      <div class="space-y-2">
+
+        <div class="rebellion-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-xl flex-shrink-0">🥩</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">Murmurações e a Carne — Cap. 11</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">O povo clamou por carne em vez do maná. Deus enviou codornizes em abundância, mas também uma praga severa. O local foi chamado de <em>Quibrote-Hataavá</em> ("sepulcros da cobiça").</p>
+          </div>
+        </div>
+
+        <div class="rebellion-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="text-xl flex-shrink-0">👩‍👦</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">Miriã e Arão Contra Moisés — Cap. 12</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Criticaram a liderança de Moisés por causa de sua esposa cusita. Miriã foi afligida com lepra por sete dias. A humildade de Moisés é destacada: "era o homem mais manso da terra" (Nm 12:3).</p>
+          </div>
+        </div>
+
+        <div class="rebellion-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.22);">
+          <span class="text-xl flex-shrink-0">🕵️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Os 12 Espias e a Grande Incredulidade — Cap. 13–14</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Doze espias exploraram Canaã por 40 dias. Dez voltaram com relatório negativo, apavorando o povo. Apenas <strong>Josué e Calebe</strong> confiaram em Deus. Resultado: 40 anos de deserto — um ano por dia de espionagem.</p>
+          </div>
+        </div>
+
+        <div class="rebellion-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <span class="text-xl flex-shrink-0">⚡</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">A Rebelião de Corá — Cap. 16</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Corá, Datã e Abirão lideraram 250 homens contra a liderança de Moisés e Arão. A terra se abriu e os engoliu vivos. Uma praga subsequente matou 14.700 pessoas.</p>
+          </div>
+        </div>
+
+        <div class="rebellion-card" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.22);">
+          <span class="text-xl flex-shrink-0">🪨</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">O Pecado de Moisés — Cap. 20</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Deus ordenou que Moisés <em>falasse</em> à rocha para obter água. Moisés, irado, a <em>golpeou</em> duas vezes. Por desobedecer e não santificar a Deus diante do povo, foi proibido de entrar na Terra Prometida.</p>
+          </div>
+        </div>
+
+        <div class="rebellion-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-xl flex-shrink-0">🐍</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">As Serpentes de Bronze — Cap. 21</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">O povo murmurou e foi atacado por serpentes. Deus ordenou a Moisés que fizesse uma serpente de bronze e a erguesse num poste — quem olhasse para ela seria salvo. Jesus usou este episódio para falar de si mesmo em João 3:14–15.</p>
+          </div>
+        </div>
+
+        <div class="rebellion-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.22);">
+          <span class="text-xl flex-shrink-0">🪧</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">A Apostasia em Baal-Peor — Cap. 25</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Israel se prostituiu com as mulheres moabitas e adorou Baal-Peor. Uma praga matou 24.000 pessoas. Foi interrompida pelo zelo de <strong>Fineias</strong>, neto de Arão, a quem Deus concedeu uma aliança de paz eterna do sacerdócio.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Personagens de Destaque</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+        <div class="person-card" style="background:rgba(160,128,64,0.07);border-color:rgba(160,128,64,0.28);">
+          <div class="text-2xl mb-2">🏔️</div>
+          <h4 class="font-display text-sm font-semibold text-sand mb-1">Moisés</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Líder e intercessor. Descrito como "o homem mais manso de toda a terra" (12:3). Seu pecado na rocha (cap. 20) o impede de entrar em Canaã.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="text-2xl mb-2">🌿</div>
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Arão</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Sumo sacerdote. Sua vara que floresceu (cap. 17) confirmou a eleição divina do sacerdócio. Morre no monte Hor (cap. 20), sem entrar em Canaã.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🛡️</div>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">Josué</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Um dos dois espias fiéis. Escolhido por Deus para suceder Moisés (cap. 27) e conduzir Israel à conquista de Canaã.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">⭐</div>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Calebe</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O outro espião fiel — da tribo de Judá. Com Josué, os únicos da antiga geração que entraram em Canaã por terem seguido a Deus de "todo o coração" (14:24).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="text-2xl mb-2">🐴</div>
+          <h4 class="font-display text-sm font-semibold text-fire mb-1">Balaão</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Profeta contratado por Balaque para amaldiçoar Israel. Deus fez sua jumenta falar (cap. 22) e transformou cada maldição em bênção. Sua profecia messiânica (24:17) anuncia "uma estrela de Jacó".</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">⚔️</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">Fineias</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Neto de Arão. Seu zelo em Baal-Peor deteve a praga e lhe valeu uma aliança eterna do sacerdócio (cap. 25). Citado como modelo de fé em Salmos 106:30–31.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Bênção Aarônica e Voto Nazireo -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Dois Textos Únicos de Números</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">A Bênção Sacerdotal — Cap. 6:24–26</h3>
+          <div class="p-4 rounded-xl italic text-center" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-loose">
+              "O Senhor te abençoe e te guarde;<br/>
+              o Senhor faça resplandecer o seu rosto sobre ti<br/>
+              e tenha misericórdia de ti;<br/>
+              o Senhor volte o seu rosto para ti<br/>
+              e te dê a paz."
+            </p>
+          </div>
+          <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed">
+            É uma das orações mais antigas do mundo. Pergaminhos de prata gravados com este texto foram encontrados em Jerusalém e datados do século <strong>VII a.C.</strong> — mais antigos que qualquer manuscrito bíblico conhecido. Ainda usada em sinagogas e igrejas ao redor do mundo.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Voto Nazireo — Cap. 6:1–21</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Um israelita podia se consagrar a Deus por um período específico através do voto de Nazireo, que incluía três restrições:
+          </p>
+          <div class="space-y-2">
+            <div class="flex gap-3 p-2 rounded-lg" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.2);">
+              <span class="text-base flex-shrink-0">🍷</span>
+              <p class="font-body text-xs text-ink-muted">Abstenção de vinho, uvas e qualquer produto da videira</p>
+            </div>
+            <div class="flex gap-3 p-2 rounded-lg" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.2);">
+              <span class="text-base flex-shrink-0">✂️</span>
+              <p class="font-body text-xs text-ink-muted">Não cortar o cabelo durante todo o período do voto</p>
+            </div>
+            <div class="flex gap-3 p-2 rounded-lg" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.2);">
+              <span class="text-base flex-shrink-0">💀</span>
+              <p class="font-body text-xs text-ink-muted">Não se aproximar de cadáveres, mesmo de familiares</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed">
+            <strong>Nazireu de nascimento:</strong> Sansão (Jz 13), Samuel (1 Sm 1) e João Batista (Lc 1:15) foram consagrados desde o ventre materno.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚠️ Consequências da Incredulidade</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🛡️ Fidelidade de Deus</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🙏 Intercessão</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🏕️ Organização Sacerdotal</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">✨ Santidade Comunitária</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🔥 Julgamento Divino</span>
+            <span class="theme-badge" style="background:rgba(160,128,64,0.1);border-color:rgba(160,128,64,0.35);color:#705a20;">🌟 Esperança e Renovação</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🗺️ Providência na Jornada</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Números no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">A Serpente de Bronze → João 3:14</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Como Moisés levantou a serpente no deserto, assim importa que o Filho do Homem seja levantado" — Jesus falando de sua crucificação.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.2);">
+              <span class="font-display text-xs font-bold text-fire">As Rebeliões → 1 Coríntios 10:1–11</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo usa as murmurações, a idolatria e a imoralidade de Israel no deserto como advertência solene à Igreja.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">Balaão → 2 Pedro 2:15 / Apocalipse 2:14</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Balaão é citado como símbolo de falso profeta que, por ganância, conduz o povo ao pecado.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>40 anos × 40 dias:</strong> A sentença de 40 anos no deserto correspondeu aos 40 dias em que os espias exploraram Canaã — um ano por cada dia (Nm 14:34).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A jumenta de Balaão:</strong> Um dos dois casos na Bíblia em que um animal fala (o outro é a serpente em Gênesis 3). Pedro confirma o episódio historicamente em 2 Pedro 2:16.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A serpente Neustã:</strong> A serpente de bronze de Moisés foi preservada como relíquia e acabou sendo idolatrada pelo povo. O rei Ezequias a destruiu séculos depois (2 Reis 18:4).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A profecia messiânica de Balaão:</strong> "Uma estrela sairá de Jacó" (Nm 24:17) é reconhecida como profecia messiânica pelos próprios judeus e é relacionada com a estrela de Belém pelos cristãos (Mt 2:2).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Os Pergaminhos de Prata:</strong> A Bênção Sacerdotal de Nm 6:24–26 foi encontrada gravada em dois pergaminhos de prata em Jerusalém, datados do século VII a.C. — os mais antigos textos bíblicos jamais descobertos pela arqueologia.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>"O homem mais manso":</strong> Números 12:3 — "Moisés era homem mui manso, mais do que todos os homens que havia sobre a terra" — é a única descrição direta do caráter de Moisés no Pentateuco.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>As filhas de Zelofeade — Cap. 27:</strong> Um caso pioneiro de direito à herança feminina. As filhas de Zelofeade (sem irmãos) reclamaram herança e Deus lhes deu razão, estabelecendo uma lei em favor das mulheres.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Josué e Calebe — a exceção:</strong> De todos os homens com mais de 20 anos que saíram do Egito, apenas estes dois entraram em Canaã. A razão explícita: seguiram a Deus "de todo o coração" (Nm 14:24; 32:12).</p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A lição central do livro:</strong> Números demonstra que a geração que viu os maiores milagres (as 10 pragas, o Mar Vermelho, o maná diário) ainda assim falhou por incredulidade — enquanto a nova geração, nascida e criada no deserto sem ver tais milagres, avançou pela fé. O NT interpreta isso como um aviso permanente: a fé salvadora não é herdada nem baseada em experiências passadas.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O Senhor te abençoe e te guarde; o Senhor faça resplandecer o seu rosto sobre ti e tenha misericórdia de ti; o Senhor volte o seu rosto para ti e te dê a paz."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Números 6:24–26 — A Bênção Sacerdotal de Arão</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Como Moisés levantou a serpente no deserto, assim importa que o Filho do Homem seja levantado, para que todo aquele que nele crê tenha a vida eterna."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">João 3:14–15 — Jesus citando Números 21</cite>
+
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Números · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

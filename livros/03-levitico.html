@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Levítico — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(0deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px);"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PENTATEUCO · 3º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Levítico
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>וַיִּקְרָא</em> (Vayikra) — "E chamou"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Λευϊτικόν</em> (Leuitikón) — "Relativo aos Levitas"
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">27</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">859</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Moisés</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Autor tradicional</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">+90x</div>
+          <div class="font-body text-sm text-ink-muted mt-1">"Santo" no livro</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(74,30,110,0.07);border:1px solid rgba(74,30,110,0.2);">
+              <span class="font-display text-xs font-bold text-violet">3º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia e do Antigo Testamento</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">3º</span>
+              <span class="font-body text-sm text-ink">dos 5 livros do <strong>Pentateuco</strong> (Torá)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">AT</span>
+              <span class="font-body text-sm text-ink">seção da <strong>Lei</strong> — o livro dos sacerdotes</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Natureza do Livro</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Levítico é o único livro do Pentateuco que <strong>não narra uma jornada</strong>. Israel permanece acampado ao pé do Monte Sinai enquanto Deus instrui Moisés sobre como o povo deve se aproximar dele por meio do culto, do sacerdócio e da santidade.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o manual de adoração e santidade de Israel — um código de leis <strong>cerimoniais, morais e civis</strong> que estrutura a vida do povo como nação santa diante de Deus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O livro pode ser organizado em quatro grandes blocos temáticos, todos centrados na questão central: <em>como um povo pecador pode se aproximar de um Deus santo?</em>
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-fire">Cap. 1–7</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-fire mb-1">As Cinco Ofertas / Sacrifícios</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Instruções detalhadas sobre os cinco tipos de ofertas que o povo devia trazer a Deus: holocausto, oferta de manjares, oferta de paz, oferta pelo pecado e oferta pela culpa. Cada uma com um propósito específico na relação entre o adorador e Deus.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 8–10</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Consagração do Sacerdócio</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A ordenação e consagração de Arão e seus filhos como sacerdotes. O incidente do <strong>fogo estranho</strong> de Nadabe e Abiú — que desobedeceram e foram consumidos pelo fogo divino (cap. 10) — demonstra a seriedade com que Deus trata a santidade do culto.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 11–16</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">Leis de Pureza e o Yom Kippur</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Leis sobre alimentos puros e impuros, purificação após o parto, diagnóstico de doenças de pele, pureza das habitações e dos fluidos corporais. O ponto culminante é o capítulo 16 — o <strong>Dia da Expiação (Yom Kippur)</strong>, o mais sagrado do calendário de Israel.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-violet">Cap. 17–27</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">O Código de Santidade</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A seção central é Levítico 19:2 — <em>"Sede santos, porque eu, o Senhor vosso Deus, sou santo."</em> Inclui leis morais, as sete festas sagradas de Israel, o ano sabático, o <strong>Ano do Jubileu</strong> (a cada 50 anos) e as bênçãos e maldições da Aliança.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- As 5 Ofertas -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">As Cinco Ofertas Sagradas</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O sistema sacrificial não era mero ritual — cada oferta comunicava um aspecto da relação entre Deus e o adorador, e todas prefiguram a obra de Cristo no NT.
+      </p>
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-3">
+
+        <div class="offering-card" style="background:rgba(184,74,16,0.06);border-color:rgba(184,74,16,0.25);">
+          <div class="text-2xl mb-2 text-center">🔥</div>
+          <h4 class="font-display text-xs font-bold text-fire text-center mb-2">Holocausto</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed text-center">Animal inteiro queimado. Consagração total e entrega completa a Deus.</p>
+        </div>
+
+        <div class="offering-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="text-2xl mb-2 text-center">🌾</div>
+          <h4 class="font-display text-xs font-bold text-gold-dark text-center mb-2">Oferta de Manjares</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed text-center">Farinha, azeite e incenso. Ação de graças pelo sustento e pelo trabalho.</p>
+        </div>
+
+        <div class="offering-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+          <div class="text-2xl mb-2 text-center">🕊️</div>
+          <h4 class="font-display text-xs font-bold text-forest text-center mb-2">Oferta de Paz</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed text-center">Comunhão e bênção. Parte era queimada, parte comida pelo sacerdote e pelo ofertante.</p>
+        </div>
+
+        <div class="offering-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-2 text-center">🐑</div>
+          <h4 class="font-display text-xs font-bold text-crimson text-center mb-2">Oferta pelo Pecado</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed text-center">Expiação por pecados involuntários cometidos por ignorância ou fraqueza.</p>
+        </div>
+
+        <div class="offering-card" style="background:rgba(74,30,110,0.06);border-color:rgba(74,30,110,0.22);">
+          <div class="text-2xl mb-2 text-center">⚖️</div>
+          <h4 class="font-display text-xs font-bold text-violet text-center mb-2">Oferta pela Culpa</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed text-center">Reparação por violações específicas, incluindo a restituição de danos causados.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Yom Kippur -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Dia da Expiação — Yom Kippur (Cap. 16)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo mais solene do livro. Uma vez por ano, no décimo dia do sétimo mês, o <strong>Sumo Sacerdote</strong> entrava sozinho no Santo dos Santos — o lugar mais sagrado do Tabernáculo — para fazer expiação por todos os pecados de Israel.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="p-4 rounded-xl" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.2);">
+          <h4 class="font-display text-sm font-semibold text-violet mb-3">O Rito dos Dois Bodes</h4>
+          <div class="space-y-3">
+            <div class="flex gap-3">
+              <span class="text-lg flex-shrink-0">🐐</span>
+              <div>
+                <p class="font-display text-xs font-bold text-violet mb-1">1º Bode — Sacrificado</p>
+                <p class="font-body text-xs text-ink-muted leading-relaxed">Seu sangue era aspergido sobre o propiciatório (a tampa da Arca da Aliança) — expiação pelos pecados do povo.</p>
+              </div>
+            </div>
+            <div class="flex gap-3">
+              <span class="text-lg flex-shrink-0">🐐</span>
+              <div>
+                <p class="font-display text-xs font-bold text-violet mb-1">2º Bode — O Bode Expiatório (Azazel)</p>
+                <p class="font-body text-xs text-ink-muted leading-relaxed">O sumo sacerdote confessava sobre ele todos os pecados de Israel e o enviava ao deserto — simbolizando a remoção dos pecados para longe do povo.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="p-4 rounded-xl" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+          <h4 class="font-display text-sm font-semibold text-crimson mb-3">Cumprimento em Cristo</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A Carta aos <strong>Hebreus</strong> é inteiramente dedicada a mostrar que o Yom Kippur foi cumprido por Jesus Cristo:
+          </p>
+          <div class="space-y-2">
+            <div class="p-2 rounded-lg" style="background:rgba(255,255,255,0.5);">
+              <p class="font-body text-xs text-ink-muted">Cristo entrou no Santo dos Santos celestial — não feito por mãos humanas (Hb 9:11)</p>
+            </div>
+            <div class="p-2 rounded-lg" style="background:rgba(255,255,255,0.5);">
+              <p class="font-body text-xs text-ink-muted">Com seu próprio sangue — não de animais — obtendo eterna redenção (Hb 9:12)</p>
+            </div>
+            <div class="p-2 rounded-lg" style="background:rgba(255,255,255,0.5);">
+              <p class="font-body text-xs text-ink-muted">Uma única vez para sempre — não repetível a cada ano (Hb 9:26–28)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- As 7 Festas -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As Sete Festas Sagradas de Israel — Cap. 23</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Deus instituiu sete festas anuais como "assembleias sagradas" para Israel. Muitos estudiosos as entendem como uma profecia do plano redentor de Deus ao longo da história.
+      </p>
+      <div class="space-y-2">
+
+        <div class="feast-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5" style="min-width:24px;">I</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Páscoa</span>
+            <span class="font-body text-xs text-ink-faint ml-2">14 de Nisã</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Memorial da libertação do Egito. Cumprimento: crucificação de Cristo, "nosso Cordeiro Pascal" (1 Co 5:7).</p>
+          </div>
+        </div>
+
+        <div class="feast-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.2);">
+          <span class="font-display text-xs font-bold text-fire flex-shrink-0 mt-0.5" style="min-width:24px;">II</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">Pães Ázimos</span>
+            <span class="font-body text-xs text-ink-faint ml-2">15–21 de Nisã (7 dias)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Pão sem fermento — símbolo de separação do pecado. Cumprimento: sepultamento sem corrupção de Cristo (Sl 16:10; At 2:27).</p>
+          </div>
+        </div>
+
+        <div class="feast-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5" style="min-width:24px;">III</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">Primícias</span>
+            <span class="font-body text-xs text-ink-faint ml-2">Após o Sábado da Páscoa</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Primeiro feixe da colheita ofertado a Deus. Cumprimento: ressurreição de Cristo, "as primícias dos que dormem" (1 Co 15:20).</p>
+          </div>
+        </div>
+
+        <div class="feast-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 mt-0.5" style="min-width:24px;">IV</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">Pentecostes / Semanas</span>
+            <span class="font-body text-xs text-ink-faint ml-2">50 dias após Primícias</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Celebração da colheita. Cumprimento: derramamento do Espírito Santo no Pentecostes (Atos 2).</p>
+          </div>
+        </div>
+
+        <div class="feast-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="font-display text-xs font-bold text-sapphire flex-shrink-0 mt-0.5" style="min-width:24px;">V</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">Festas das Trombetas</span>
+            <span class="font-body text-xs text-ink-faint ml-2">1º de Tishri</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Som do shofar (chifre de carneiro) convocando o povo. Associada ao Rosh Hashaná no judaísmo. Muitos estudiosos a associam à segunda vinda de Cristo (1 Ts 4:16).</p>
+          </div>
+        </div>
+
+        <div class="feast-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="font-display text-xs font-bold text-violet flex-shrink-0 mt-0.5" style="min-width:24px;">VI</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">Dia da Expiação — Yom Kippur</span>
+            <span class="font-body text-xs text-ink-faint ml-2">10 de Tishri</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">O dia mais santo do ano. Expiação coletiva pelos pecados de toda a nação. Cumprimento: obra expiatória de Cristo (Hebreus 9–10).</p>
+          </div>
+        </div>
+
+        <div class="feast-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 mt-0.5" style="min-width:24px;">VII</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">Festa dos Tabernáculos</span>
+            <span class="font-body text-xs text-ink-faint ml-2">15–21 de Tishri (7 dias)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Israel habita em tendas lembrando os 40 anos no deserto. Antecipa o reino milenial e a habitação eterna de Deus com seu povo (Ap 21:3).</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">✨ Santidade</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🩸 Sacrifício e Expiação</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">👑 Sacerdócio</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌿 Pureza Ritual</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🎺 Festas Sagradas</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">⚖️ Lei Moral</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🕍 Ano do Jubileu</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🤝 Amor ao Próximo</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Ano do Jubileu — Cap. 25</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A cada <strong>50 anos</strong> (após 7 ciclos de 7 anos), Israel celebrava o Jubileu com o som do shofar. Era um reordenamento social radical:
+          </p>
+          <div class="space-y-2">
+            <div class="flex gap-2 p-2 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="text-sm flex-shrink-0">🏡</span>
+              <p class="font-body text-xs text-ink-muted">Terras devolvidas às famílias de origem</p>
+            </div>
+            <div class="flex gap-2 p-2 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="text-sm flex-shrink-0">🔓</span>
+              <p class="font-body text-xs text-ink-muted">Escravos hebreus libertados</p>
+            </div>
+            <div class="flex gap-2 p-2 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="text-sm flex-shrink-0">💰</span>
+              <p class="font-body text-xs text-ink-muted">Dívidas canceladas</p>
+            </div>
+            <div class="flex gap-2 p-2 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="text-sm flex-shrink-0">✝️</span>
+              <p class="font-body text-xs text-ink-muted">Jesus cita o Jubileu em Lucas 4:18–19 para descrever sua missão</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>"Sede santos":</strong> A frase "sede santos, porque eu sou santo" aparece repetidamente (11:44–45; 19:2; 20:7) e é o versículo-chave de todo o livro.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Amarás o teu próximo:</strong> Levítico 19:18 — "Amarás o teu próximo como a ti mesmo" — é citado por Jesus como o segundo maior mandamento (Mt 22:39).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Nadabe e Abiú:</strong> Os filhos de Arão que ofereceram "fogo estranho" morreram consumidos (cap. 10). O episódio sublinha que Deus não aceita adoração inventada por humanos.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Sem movimento narrativo:</strong> É o único livro do Pentateuco onde Israel não viaja a lugar nenhum — todo ele se passa ao pé do Monte Sinai.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O vocábulo "santo":</strong> A palavra hebraica <em>qadosh</em> (קָדוֹשׁ) aparece mais de 90 vezes em Levítico — mais do que em qualquer outro livro do AT.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O sangue como expiação:</strong> Levítico 17:11 — "a vida da carne está no sangue" — fundamenta teologicamente todo o sistema sacrificial e aponta para o sangue de Cristo no NT (Hb 9:22).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>As leis alimentares:</strong> A distinção entre animais puros e impuros (cap. 11) foi usada por Deus como elemento de separação cultural de Israel entre os povos — abolida no NT para os gentios (Atos 10:15).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Livro de Hebreus:</strong> O NT mais cita Levítico por meio da carta aos Hebreus, que sistematicamente mostra como cada elemento do culto levítico encontra seu cumprimento em Jesus Cristo.</p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A questão central do livro:</strong> Levítico responde à pergunta gerada pelo Êxodo — "Deus veio habitar no meio do povo, mas como um povo pecador pode conviver com um Deus santo sem ser destruído?" A resposta é: <em>por meio da expiação, da purificação e da santidade de vida.</em></p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Sede santos, porque eu, o Senhor vosso Deus, sou santo."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Levítico 19:2 — O versículo-chave do livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porque a vida da carne está no sangue, e eu vo-lo dei sobre o altar para fazer expiação pelas vossas almas."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Levítico 17:11 — Fundamento teológico do sacrifício</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Amarás o teu próximo como a ti mesmo."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Levítico 19:18 — Citado por Jesus como o segundo maior mandamento</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Levítico · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Reis — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 18% 16%, rgba(92,61,30,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 82% 82%, rgba(139,32,32,0.09) 0%, transparent 55%);
+    }
+
+    /* Card de milagre de Eliseu */
+    .miracle-card {
+      border-radius: 9px;
+      padding: 0.875rem 1rem;
+      border: 1px solid;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .miracle-card:hover { transform: translateX(4px); }
+
+    /* Linha de rei compacta */
+    .king-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 7px;
+      border: 1px solid;
+      font-family: 'Crimson Pro', serif;
+      font-size: 0.82rem;
+    }
+    .king-years {
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+      margin-left: auto;
+    }
+    .king-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* Linha do tempo da queda */
+    .fall-step {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1rem 1.25rem;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .fall-step:hover { transform: translateX(4px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 12º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        2 Reis
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Continuação direta de 1 Reis — originalmente <strong>um único livro</strong> no hebraico
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O livro que narra o fim de dois reinos — <strong>Israel em 722 a.C.</strong> e <strong>Judá em 586 a.C.</strong>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">25</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">719</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~300 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">2 quedas</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Israel e Judá</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(92,61,30,0.08);border:1px solid rgba(92,61,30,0.22);">
+              <span class="font-display text-xs font-bold text-earth">12º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">7º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Fim</span>
+              <span class="font-body text-sm text-ink">encerra a era dos <strong>Profetas Anteriores</strong> no cânone hebraico</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro dos Dois Fins</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            2 Reis é o livro dos fins inevitáveis. Começa com a partida gloriosa de <strong>Elias em um carro de fogo</strong> e termina com a destruição do <strong>Templo de Salomão</strong>, a queima de Jerusalém e o povo de Deus levado em cativeiro para a Babilônia.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o cumprimento doloroso de tudo que Moisés havia advertido em Deuteronômio 28 — as maldições da desobediência. Mas mesmo nas últimas linhas do livro, uma centelha de esperança persiste: o rei cativo é tratado com honra na Babilônia. A linhagem davídica sobrevive.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 1–8</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Eliseu</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">A Partida de Elias e o Ministério de Eliseu</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Elias é arrebatado ao céu num carro de fogo. Eliseu recebe a dupla porção do espírito de Elias e inicia um ministério repleto de milagres: purifica as águas de Jericó, abre o Mar para atravessar, multiplica o azeite da viúva, ressuscita o filho da sunamita, cura o cozido envenenado, multiplica pães, cura <strong>Naamã</strong> da lepra e faz flutuar um machado de ferro.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 9–16</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Declínio</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Reis em Declínio — Israel e Judá</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A revolução de <strong>Jeú</strong> — ungido por Eliseu, mata Jorão, Acazias e a rainha <strong>Jezabel</strong> (cujo corpo é comido pelos cães, conforme profecia). A usurpação de <strong>Atalia</strong> em Judá e a salvação do menino <strong>Jeoás</strong>. Sequência de reis em ambos os reinos — a maioria má. O norte paga tributo à Assíria, o sul oscila entre fidelidade e apostasia.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-earth">Cap. 17</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Queda Norte</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-earth mb-1">A Queda do Reino do Norte — 722 a.C.</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O rei assírio Salmaneser V cerca Samaria por três anos. Após a queda, Sargão II deporta os israelitas para a Assíria e repovoou Samaria com povos de outras nações — os ancestrais dos <strong>samaritanos</strong>. O capítulo 17 é uma longa análise teológica: Israel caiu porque abandonou sistematicamente o Senhor e seguiu os costumes das nações que Deus havia expulsado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 18–23</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Judá: luz e trevas</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Ezequias, Manassés e Josias</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Ezequias</strong> — o rei mais fiel desde Davi — resiste à invasão assíria: 185.000 soldados morrem por anjo numa noite. <strong>Manassés</strong> — o pior rei de Judá, 55 anos de idolatria que selam o destino do reino. <strong>Josias</strong> — o último grande rei reformador, descobre o Livro da Lei no Templo e promove a maior reforma religiosa de Judá — mas o julgamento já estava decretado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 24–25</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Queda Sul</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Queda do Reino do Sul — 586 a.C.</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Três deportações babilônicas (605, 597 e 586 a.C.). <strong>Nabucodonosor</strong> cerca Jerusalém, destrói o Templo de Salomão, queima o palácio e as casas, arrasa as muralhas e leva o povo cativo. O último rei, <strong>Zedequias</strong>, vê seus filhos mortos, tem os olhos arrancados e é levado acorrentado à Babilônia. O livro termina com uma centelha de esperança: o rei Joaquim é libertado da prisão e honrado na corte babilônica.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Elias arrebatado e Eliseu -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Elias Arrebatado e os Milagres de Eliseu — Cap. 2</div>
+      <div class="grid md:grid-cols-2 gap-6 mb-5">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-gold-dark mb-3">🔥 O Arrebatamento de Elias</h3>
+          <div class="p-4 rounded-xl italic mb-3"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "E sucedeu que, indo eles andando e falando, eis que um carro de fogo com cavalos de fogo os separou um do outro; e Elias subiu ao céu num redemoinho."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">2 Reis 2:11</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+            Elias é um dos <strong>dois únicos personagens bíblicos</strong> que não morreram — o outro é Enoque (Gn 5:24). Antes de partir, Eliseu pediu a herança da dupla porção do seu espírito — a porção do filho primogênito. O manto de Elias caiu sobre Eliseu, confirmando a transferência do ministério.
+          </p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Elias aparece novamente na <strong>Transfiguração</strong> (Mt 17:3) e possivelmente é uma das duas testemunhas do Apocalipse (Ap 11:3–6). A tradição judaica espera seu retorno antes do Dia do Senhor (Ml 4:5).
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">⚡ Os 8 Milagres de Eliseu como Tipo de Cristo</h3>
+          <div class="space-y-1.5">
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">💧</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Purificação das águas de Jericó</p>
+                <p class="font-body text-xs text-ink-faint">sal no manancial · tipo: Cristo que purifica (Jo 4)</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">🫙</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Multiplicação do azeite da viúva</p>
+                <p class="font-body text-xs text-ink-faint">tipo: Cristo que supre a necessidade (Jo 2, Jo 6)</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">👦</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Ressurreição do filho da sunamita</p>
+                <p class="font-body text-xs text-ink-faint">tipo: Cristo que ressuscita os mortos (Jo 11)</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">🍲</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Cura do cozido envenenado</p>
+                <p class="font-body text-xs text-ink-faint">farinha neutralizou o veneno · tipo: cura e proteção</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">🍞</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Multiplicação de pães</p>
+                <p class="font-body text-xs text-ink-faint">20 pães para 100 homens · tipo: Cristo alimenta multidões (Mt 14)</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">🩺</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Cura de Naamã da lepra</p>
+                <p class="font-body text-xs text-ink-faint">banhou-se 7x no Jordão · tipo: Cristo cura gentios (Lc 4:27)</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">🪓</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Machado de ferro flutuando</p>
+                <p class="font-body text-xs text-ink-faint">atirou um pau e o ferro flutuou · tipo: o impossível possível</p>
+              </div>
+            </div>
+            <div class="miracle-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.18);">
+              <span class="text-base flex-shrink-0">👁️</span>
+              <div>
+                <p class="font-body text-xs font-semibold text-ink">Cegou e curou o exército sírio</p>
+                <p class="font-body text-xs text-ink-faint">abriu os olhos do servo para ver os anjos · tipo: Cristo que abre olhos (Jo 9)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Naamã -->
+      <div class="p-4 rounded-xl"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <h4 class="font-display text-sm font-semibold text-sapphire mb-2">🪖 Naamã — A Cura do General Sírio (Cap. 5)</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Naamã, poderoso general do exército da Síria, era leproso. Uma menina israelita escrava sugeriu que ele procurasse Eliseu. Naamã foi ao profeta esperando um ritual grandioso — Eliseu mandou um servo dizer que se banhasse sete vezes no Jordão. Naamã se irou pela simplicidade. Seu servo o convenceu a obedecer. Ao sétimo banho, sua carne foi restaurada "como a de um menino." Jesus cita este episódio em Lucas 4:27 para mostrar que a graça de Deus sempre alcançou os gentios. Geazi, servo de Eliseu, mentiu para receber presentes de Naamã — e contraiu a lepra de Naamã como punição.
+        </p>
+      </div>
+    </section>
+
+    <!-- A Queda do Norte -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Queda do Reino do Norte — 722 a.C. (Cap. 17)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 17 é um dos mais teologicamente densos da Bíblia — não é apenas história, é uma autópsia espiritual. O narrador lista, ponto por ponto, <strong>por que</strong> Israel caiu.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-5">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-earth mb-3">📜 As Causas da Queda (17:7–18)</h3>
+          <div class="space-y-2">
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.18);">
+              ❌ Temeram outros deuses e andaram nos costumes das nações expulsas
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.18);">
+              ❌ Levantaram altos, estelas e postes de Aserá em todo lugar
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.18);">
+              ❌ Serviram a Baal e passaram seus filhos pelo fogo
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.18);">
+              ❌ Praticaram adivinhação e feitiçaria
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.18);">
+              ❌ Não ouviram os profetas que Deus enviou repetidamente
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.18);">
+              ❌ Endureceram o pescoço como seus pais que não creram no Senhor
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-sapphire mb-3">🌍 As Consequências — Os Samaritanos</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Após a deportação dos israelitas, o rei da Assíria repovoou Samaria com povos de <strong>Babilônia, Cuta, Ava, Hamate e Sefarvaim</strong> — cada grupo trouxe seus deuses e os misturou com o culto ao Senhor. Esta mistura religiosa e étnica produziu os <strong>samaritanos</strong> do NT — razão do profundo preconceito judeu contra eles.
+          </p>
+          <div class="p-3 rounded-xl"
+               style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">Conexão com o NT:</strong> Quando Jesus conversa com a <em>mulher samaritana</em> (Jo 4), ou conta a parábola do <em>bom samaritano</em> (Lc 10), ou cura os <em>dez leprosos</em> dos quais apenas o samaritano volta (Lc 17), ele está desfazendo séculos de hostilidade enraizada neste capítulo de 2 Reis.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reis do Norte completos -->
+      <h3 class="font-display text-xs font-bold text-earth tracking-widest mb-3">TODOS OS REIS DO NORTE — ISRAEL (930–722 a.C.)</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+        <div class="king-row" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.2);">
+          <div class="king-dot" style="background:#8b2020;"></div>
+          <span class="text-crimson font-semibold">Jeroboão I</span>
+          <span class="font-body text-xs text-ink-faint">fundador · 2 bezerros de ouro</span>
+          <span class="king-years text-crimson">22 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Nadabe</span>
+          <span class="font-body text-xs text-ink-faint">assassinado por Baasa</span>
+          <span class="king-years">2 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Baasa</span>
+          <span class="font-body text-xs text-ink-faint">exterminou Jeroboão</span>
+          <span class="king-years">24 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Elá</span>
+          <span class="font-body text-xs text-ink-faint">assassinado por Zinri</span>
+          <span class="king-years">2 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.22);">
+          <div class="king-dot" style="background:#b84a10;"></div>
+          <span class="text-fire font-semibold">Zinri</span>
+          <span class="font-body text-xs text-ink-faint">⚡ reinado mais curto da Bíblia</span>
+          <span class="king-years text-fire">7 dias</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Omri</span>
+          <span class="font-body text-xs text-ink-faint">fundou Samaria como capital</span>
+          <span class="king-years">12 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.08);border-color:rgba(139,32,32,0.25);">
+          <div class="king-dot" style="background:#8b2020;"></div>
+          <span class="text-crimson font-semibold">Acabe</span>
+          <span class="font-body text-xs text-ink-faint">Jezabel · Elias · o pior até então</span>
+          <span class="king-years text-crimson">22 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Acazias</span>
+          <span class="font-body text-xs text-ink-faint">seguiu Acabe · não teve filhos</span>
+          <span class="king-years">2 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Jorão (Jeorão)</span>
+          <span class="font-body text-xs text-ink-faint">morto por Jeú</span>
+          <span class="king-years">12 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(184,74,16,0.06);border-color:rgba(184,74,16,0.2);">
+          <div class="king-dot" style="background:#b84a10;"></div>
+          <span class="text-fire font-semibold">Jeú</span>
+          <span class="font-body text-xs text-ink-faint">ungido por Eliseu · exterminou casa de Acabe</span>
+          <span class="king-years text-fire">28 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Joacaz</span>
+          <span class="font-body text-xs text-ink-faint">Israel oprimido pela Síria</span>
+          <span class="king-years">17 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Jeoás</span>
+          <span class="font-body text-xs text-ink-faint">visitou Eliseu moribundo</span>
+          <span class="king-years">16 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Jeroboão II</span>
+          <span class="font-body text-xs text-ink-faint">maior expansão territorial do norte</span>
+          <span class="king-years">41 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Zacarias</span>
+          <span class="font-body text-xs text-ink-faint">6 meses · assassinado — fim da dinastia de Jeú</span>
+          <span class="king-years">6 meses</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Salum</span>
+          <span class="font-body text-xs text-ink-faint">assassinado por Manaém</span>
+          <span class="king-years">1 mês</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Manaém</span>
+          <span class="font-body text-xs text-ink-faint">pagou tributo à Assíria</span>
+          <span class="king-years">10 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Pecaías</span>
+          <span class="font-body text-xs text-ink-faint">assassinado por Peca</span>
+          <span class="king-years">2 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.14);">
+          <div class="king-dot" style="background:#c45050;"></div>
+          <span>Peca</span>
+          <span class="font-body text-xs text-ink-faint">deportações assírias começam</span>
+          <span class="king-years">20 anos</span>
+        </div>
+        <div class="king-row" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.25);">
+          <div class="king-dot" style="background:#8b2020;"></div>
+          <span class="text-crimson font-semibold">Oseias</span>
+          <span class="font-body text-xs text-ink-faint">💀 último rei · Samaria cai em 722 a.C.</span>
+          <span class="king-years text-crimson">9 anos</span>
+        </div>
+      </div>
+      <p class="font-body text-xs text-ink-faint mt-3 italic text-center">⚠️ Todos os 19 reis do norte foram maus aos olhos do Senhor — nenhuma exceção</p>
+    </section>
+
+    <!-- Ezequias, Manassés e Josias -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Os Três Reis Decisivos de Judá</div>
+      <div class="space-y-4">
+
+        <div class="fall-step" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.22);">
+          <div class="flex items-start gap-4">
+            <div class="text-2xl flex-shrink-0">🙏</div>
+            <div>
+              <div class="flex items-center gap-2 mb-1 flex-wrap">
+                <h4 class="font-display text-sm font-semibold text-forest">Ezequias — O Rei que Confiou</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 18–20 · 29 anos de reinado</span>
+              </div>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                O rei mais elogiado de Judá desde Davi. Removeu os altos, quebrou as estátuas, destruiu a serpente de bronze de Moisés (que havia se tornado ídolo). Quando o general assírio <strong>Rapsaces</strong> cercou Jerusalém com um exército imenso e blasfemou publicamente contra o Senhor, Ezequias espalhou a carta do inimigo diante do Senhor no Templo e orou. Resposta de Deus através do profeta Isaías: <em>"Nesta cidade não entrará."</em> Naquela noite, um anjo matou <strong>185.000 soldados assírios</strong>. Senaqueribe voltou para Nínive e foi assassinado por seus filhos.
+              </p>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Ezequias adoeceu mortalmente. Orou chorando. Deus concedeu mais 15 anos e fez o sol retroceder 10 degraus no relógio de Acaz como sinal. Porém cometeu um erro: mostrou todos os tesouros do palácio aos mensageiros babilônicos — Isaías então profetizou que tudo seria levado para a Babilônia.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fall-step" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex items-start gap-4">
+            <div class="text-2xl flex-shrink-0">💀</div>
+            <div>
+              <div class="flex items-center gap-2 mb-1 flex-wrap">
+                <h4 class="font-display text-sm font-semibold text-crimson">Manassés — O Rei que Selou o Destino</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 21 · 55 anos de reinado — o mais longo de Judá</span>
+              </div>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Filho de Ezequias — o rei mais justo — Manassés foi o rei mais ímpio de Judá. Reconstruiu tudo que o pai havia destruído. Erigiu altares a Baal, instalou uma imagem de Aserá no próprio Templo, passou seus filhos pelo fogo, praticou feitiçaria e consulta aos mortos. O texto diz que ele derramou sangue inocente em Jerusalém "de uma extremidade à outra." A tradição judaica afirma que Manassés mandou serrar ao meio o profeta Isaías — citado em Hebreus 11:37 ("serrados ao meio").
+              </p>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Por causa de Manassés, o texto afirma explicitamente que Deus decidiu destruir Judá: <em>"Removerei Jerusalém como se remove um prato — que se limpa e se vira de cabeça para baixo"</em> (21:13). Nenhuma reforma posterior seria suficiente para evitar o julgamento já decretado.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="fall-step" style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex items-start gap-4">
+            <div class="text-2xl flex-shrink-0">📜</div>
+            <div>
+              <div class="flex items-center gap-2 mb-1 flex-wrap">
+                <h4 class="font-display text-sm font-semibold text-sapphire">Josias — O Rei da Última Reforma</h4>
+                <span class="font-body text-xs text-ink-faint">Cap. 22–23 · 31 anos de reinado</span>
+              </div>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Aos 8 anos de idade assumiu o trono. Aos 26, mandou reparar o Templo. Durante as obras, o sumo sacerdote <strong>Hilquias</strong> encontrou o <strong>Livro da Lei</strong> — provavelmente Deuteronômio — esquecido e perdido. Josias ouviu a leitura, rasgou suas vestes em luto e consultou a profetisa <strong>Hulda</strong>. Hulda confirmou: o julgamento estava decretado, mas não viria nos dias de Josias por causa de sua humildade.
+              </p>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Josias promoveu a maior reforma religiosa de Judá: destruiu altares, queimou ossos de sacerdotes pagãos, profanou Tofete onde crianças eram queimadas, aboliu os sacerdotes dos altos e celebrou a Páscoa mais solene desde os dias de Samuel. Morreu em batalha em <strong>Megido</strong> contra o faraó Neco. O povo chorou profundamente — Jeremias compôs lamentações por ele.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A Queda de Jerusalém -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">A Queda de Jerusalém — 586 a.C. (Cap. 25)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O evento mais traumático da história de Israel. A destruição do Templo de Salomão e o exílio babilônico marcaram Israel de tal forma que o povo judaico ainda chora este dia anualmente — o <strong>Tishá BeAv</strong>, o 9º dia do mês de Av.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-5">
+        <div class="space-y-2">
+          <h3 class="font-display text-sm font-semibold text-ink mb-2">📅 As Três Deportações</h3>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+            <span class="font-display text-xs font-bold text-gold-dark">605 a.C. — 1ª deportação</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Daniel, Ananias, Misael e Azarias levados para a Babilônia — a elite intelectual</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.2);">
+            <span class="font-display text-xs font-bold text-fire">597 a.C. — 2ª deportação</span>
+            <p class="font-body text-xs text-ink-muted mt-1">O rei Joaquim, 10.000 dos melhores artesãos, guerreiros e líderes — Ezequiel entre eles</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.07);border:1px solid rgba(139,32,32,0.25);">
+            <span class="font-display text-xs font-bold text-crimson">586 a.C. — 3ª deportação · A destruição</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Jerusalém destruída, o Templo queimado, Zedequias cego e acorrentado, o resto do povo deportado</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-2">🔥 O que foi destruído</h3>
+          <div class="space-y-1.5">
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.14);">
+              🏛️ O Templo de Salomão — queimado após 374 anos em pé
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.14);">
+              🏰 O palácio real e todas as casas de Jerusalém — incendiados
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.14);">
+              🧱 As muralhas de Jerusalém — arrasadas ao redor
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.14);">
+              🥉 Os tesouros do Templo — colunas de bronze, o mar de bronze, as bases — tudo levado
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.14);">
+              👑 A monarquia davídica — suspensa por 70 anos de exílio
+            </div>
+          </div>
+          <div class="mt-3 p-3 rounded-lg"
+               style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+            <span class="font-display text-xs font-bold text-forest">✨ A centelha de esperança — 25:27–30</span>
+            <p class="font-body text-xs text-ink-muted mt-1">O livro termina com o rei cativo <strong>Joaquim</strong> sendo libertado da prisão pelo rei babilônico Evil-Merodaque, honrado acima dos outros reis cativos e recebendo sustento diário pelo resto da vida. A linhagem de Davi sobrevive — a promessa de 2 Samuel 7 não está morta.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚖️ Julgamento que chega</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌱 Remanescente e esperança</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">📖 A Palavra que cumpre</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🙏 Oração que muda histórias</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🔥 O Espírito que capacita profetas</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📉 Apostasia progressiva e irrecuperável</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌍 Deus soberano sobre impérios</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">👑 A fidelidade à Aliança Davídica</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">2 Reis no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lc 4:27 — Jesus e Naamã</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus cita a cura de Naamã para mostrar que a graça sempre alcançou gentios — provocando a ira da sinagoga de Nazaré.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Mt 17:3 — Elias na Transfiguração</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Elias, arrebatado em 2 Rs 2, aparece ao lado de Moisés na Transfiguração — representando os profetas na glória de Cristo.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Hb 11:37 — "serrados ao meio"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Referência provável ao martírio de Isaías sob Manassés — incluído no Hall da Fé como testemunha dos que sofreram por fidelidade.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Jo 4 — A mulher samaritana</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O encontro de Jesus com a samaritana pressupõe toda a história de 2 Rs 17 — a mistura de povos que criou Samaria e o abismo entre judeus e samaritanos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Elias — sem morte registrada:</strong> Junto com Enoque (Gn 5:24), Elias é um dos únicos dois personagens do AT que não morreram segundo o texto bíblico. O judaísmo reserva uma cadeira e um copo de vinho para Elias no Seder da Páscoa, aguardando seu retorno prometido (Ml 4:5).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 185.000 assírios (cap. 19):</strong> A morte de 185.000 soldados em uma única noite é confirmada indiretamente pelo historiador grego Heródoto, que menciona que o exército de Senaqueribe foi destruído por camundongos (associados a pragas). Senaqueribe retornou para Nínive e foi assassinado por seus próprios filhos — exatamente como o texto bíblico narra.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A morte de Jezabel (cap. 9):</strong> Jezabel, ao saber que Jeú vinha, pintou os olhos e penteou o cabelo — e se pôs à janela. Jeú ordenou que a jogassem abaixo. Os eunucos a jogaram. Seu sangue salpicou as paredes. Os cães comeram seu corpo — cumprindo precisamente a profecia de Elias em 1 Rs 21:23.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Eliseu após a morte (13:21):</strong> Um homem morto foi jogado por acaso no sepulcro de Eliseu. Ao tocar os ossos do profeta, o morto ressuscitou e ficou de pé. É o único milagre post mortem registrado no AT — e sugere que o poder do Espírito que agia por Eliseu era tão real que nem a morte o apagou.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Manassés — 55 anos:</strong> O reinado mais longo de Judá foi o mais ímpio. Uma ironia perturbadora. 2 Crônicas 33 acrescenta que Manassés foi levado cativo à Babilônia, se arrependeu e foi restaurado — um dos arrependimentos mais surpreendentes do AT. Mesmo assim, o dano ao povo foi irreversível.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Hulda — a profetisa consultada por Josias:</strong> Quando o Livro da Lei foi encontrado, Josias não consultou Jeremias (que já profetizava) — mas a profetisa <strong>Hulda</strong>, esposa do guarda-roupa do Templo. Ela confirmou o julgamento e a exceção para Josias. Uma das poucas mulheres profetisas nomeadas no AT.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Tishá BeAv:</strong> O 9º dia do mês hebraico de Av é o dia mais triste do calendário judaico — dia de jejum e lamento pela destruição do Primeiro Templo (586 a.C.) e do Segundo Templo (70 d.C.). Coincidentemente (ou providencialmente), ambos os templos foram destruídos no mesmo dia do calendário hebraico.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A Prisma de Senaqueribe:</strong> Um prisma de argila assírio descoberto em 1830 confirma o cerco de Senaqueribe a Jerusalém — descrevendo que ele prendeu Ezequias "como um pássaro em gaiola." O documento não menciona a derrota, mas o fato de não ter tomado Jerusalém é historicamente notável e consistente com o relato bíblico.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O fim que é um começo:</strong> 2 Reis termina com Jerusalém destruída, o Templo em cinzas e o povo em cativeiro. Mas o último parágrafo (25:27–30) — sobre Joaquim honrado na corte babilônica — é uma semente deliberada de esperança. Os livros que se seguem (Esdras, Neemias, Ester) mostrarão que Deus não abandonou seu povo. E os profetas do exílio — Isaías, Jeremias, Ezequiel e Daniel — anunciam uma restauração ainda mais gloriosa. O fim de 2 Reis não é o fim da história — é o fundo do poço de onde começa a ascensão.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E sucedeu que, indo eles andando e falando, eis que um carro de fogo com cavalos de fogo os separou um do outro; e Elias subiu ao céu num redemoinho."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Reis 2:11 — O arrebatamento de Elias</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Isto sucedeu porque os filhos de Israel pecaram contra o Senhor seu Deus... e temeram outros deuses... e não ouviram."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Reis 17:7–14 — A autópsia espiritual da queda do norte</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Senhor Deus de Israel, que habitas entre os querubins, tu és o único Deus de todos os reinos da terra. Tu fizeste os céus e a terra."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Reis 19:15 — A oração de Ezequias diante do exército assírio</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · 2 Reis · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

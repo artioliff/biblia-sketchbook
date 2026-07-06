@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rute — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 20% 15%, rgba(30,74,42,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 82%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+
+    /* Linha do tempo de capítulos */
+    .chapter-card {
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .chapter-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(200,145,58,0.13);
+    }
+    .chapter-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    /* Hesed destaque */
+    .hesed-card {
+      border-radius: 10px;
+      padding: 1.25rem;
+      border: 1px solid;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .hesed-card:hover { transform: translateY(-2px); }
+
+    /* Genealogia */
+    .gen-node {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+    }
+    .gen-name {
+      font-family: 'Cinzel', serif;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+    .gen-arrow {
+      font-size: 1rem;
+      color: #c8913a;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 8º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Rute
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>רוּת</em> (Rut) — "Amiga / Companheira"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Um dos apenas <strong>dois livros</strong> da Bíblia nomeados em homenagem a uma mulher · o outro é Ester
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">4</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">85</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Juízes</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Época da narrativa</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Davi</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Bisneto de Rute</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.22);">
+              <span class="font-display text-xs font-bold text-forest">8º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia (cânone cristão)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">3º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Ketuvim</span>
+              <span class="font-body text-sm text-ink">no cânone hebraico pertence aos <strong>Escritos</strong>, não aos Profetas</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Um Oásis em Meio ao Deserto</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Rute se passa <em>"nos dias em que os juízes governavam"</em> (1:1) — exatamente o período mais sombrio da história de Israel. Em contraste radical com a violência, idolatria e caos moral de Juízes, o livro de Rute narra uma história íntima de <strong>lealdade, amor e providência</strong>.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o livro mais curto dos históricos — apenas <strong>85 versículos</strong> — mas um dos mais amados de toda a Bíblia. O Talmude atribui sua autoria a <strong>Samuel</strong>. Na tradição judaica, é lido anualmente na festa de <strong>Shavuot</strong> (Pentecostes), durante a colheita do trigo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura: Um capítulo por cena -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura — Quatro Capítulos, Quatro Cenas</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Rute é uma obra literária magistral. Cada um dos quatro capítulos é uma cena distinta e progressiva — da <strong>perda</strong> à <strong>plenitude</strong>, da morte à vida, do vazio à abundância.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="chapter-card"
+             style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl"
+               style="background:rgba(92,61,30,0.4);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-earth opacity-30">1</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-earth">A Perda — Em Moabe</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulo 1</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Elimeleque leva a família de Belém para Moabe por causa da fome. Ele morre. Os filhos Máalom e Quilião casam com moabitas — Rute e Orpá — e também morrem. Naoми, viúva e sem filhos, decide voltar para Belém. Orpá volta para sua família, mas <strong>Rute se recusa a abandonar Naoми</strong> com as palavras mais belas do livro. As duas chegam a Belém no início da colheita de cevada.
+          </p>
+        </div>
+
+        <div class="chapter-card"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.22);">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl"
+               style="background:rgba(30,74,42,0.5);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-forest opacity-30">2</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-forest">A Provisão — No Campo de Boaz</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulo 2</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Rute vai espigar nos campos — direito garantido pela Lei para pobres e estrangeiros (Lv 19:9–10). "Por acaso" vai parar no campo de <strong>Boaz</strong>, parente rico de Elimeleque. Boaz já ouviu falar da lealdade de Rute a Naoми e a trata com generosidade excepcional: manda os servos deixarem espigas propositalmente no caminho dela. Naoми reconhece a providência de Deus.
+          </p>
+        </div>
+
+        <div class="chapter-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl"
+               style="background:rgba(30,58,95,0.5);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-sapphire opacity-30">3</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-sapphire">O Pedido — Na Eira de Boaz</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulo 3</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Por instrução de Naoми, Rute vai à eira onde Boaz dorme após a colheita, descobre seus pés e se deita ali. À meia-noite Boaz acorda e a encontra. Rute pede que ele "estenda sua asa sobre ela" — linguagem de aliança e proteção. Boaz reconhece o pedido como um ato de <em>hesed</em> ainda maior do que o anterior. Promete agir como <strong>goel</strong> (redentor), mas avisa que há um parente mais próximo com direito de precedência.
+          </p>
+        </div>
+
+        <div class="chapter-card"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="absolute top-0 left-0 right-0 h-0.5 rounded-t-xl"
+               style="background:rgba(200,145,58,0.5);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-gold-dark opacity-30">4</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-gold-dark">A Redenção — Na Porta da Cidade</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulo 4</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Boaz reúne os anciãos à porta da cidade — o tribunal público de Israel. O parente mais próximo inicialmente aceita resgatar a terra de Naoми, mas recua quando descobre que precisa casar com Rute (uma moabita). Boaz assume a redenção. O parente remove a sandália — rito legal confirmando a renúncia. Boaz casa com Rute. Nasce <strong>Obed</strong>, pai de Jessé, pai de <strong>Davi</strong>.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Personagens</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="person-card"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">🌾</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-gold-dark mb-1">Rute</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Moabita, viúva, estrangeira — tudo que a qualificaria como excluída do povo de Israel. No entanto, seu <em>hesed</em> radical a Naoми revela uma fé genuína no Deus de Israel que supera a de muitos israelitas natos. Está na genealogia de Jesus (Mt 1:5) e é citada como modelo de lealdade até hoje.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.22);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">😢</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-earth mb-1">Naoми</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Israelita que perdeu marido e dois filhos em terra estrangeira. Ao voltar a Belém pede para ser chamada <em>Mara</em> ("amarga") — "pois o Todo-Poderoso me tratou muito amargamente" (1:20). Sua jornada do desespero à plenitude é paralela à de Rute. Ao final, as mulheres de Belém declaram que Obed "nasceu para Naoми" (4:17).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">⚖️</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-forest mb-1">Boaz — O Goel</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Homem rico, piedoso, generoso — o <strong>parente-redentor</strong> (<em>goel</em>) de Naoми e Rute. Age com honra em cada etapa: cuida de Rute nos campos, age legalmente na porta da cidade, loa publicamente o caráter de Rute. É o tipo mais claro de Cristo como Redentor em todo o AT. Descendente de Salmom e <strong>Raabe</strong> (a prostituta de Jericó).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">👟</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-sapphire mb-1">O Parente Anônimo</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                O parente mais próximo que tinha precedência legal sobre Boaz para resgatar a terra e casar com Rute. Aceitou resgatar a terra, mas recusou casar com Rute — temendo prejudicar sua própria herança. O livro deliberadamente <strong>não registra seu nome</strong> — em contraste com a honra eterna dada a Boaz, Rute e Naoми.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Hesed -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">חֶסֶד — Hesed: A Palavra Central do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        A palavra hebraica <em>hesed</em> (חֶסֶד) é o coração teológico do livro de Rute. É praticamente intraduzível em uma única palavra — carrega ao mesmo tempo <strong>lealdade, amor, bondade, misericórdia e graça</strong>. Aparece três vezes estrategicamente posicionadas:
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+        <div class="hesed-card"
+             style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.25);">
+          <div class="font-display text-2xl font-bold text-earth mb-1" dir="rtl">חֶסֶד</div>
+          <div class="font-display text-xs font-bold text-earth tracking-widest mb-2">1ª OCORRÊNCIA</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Naoми pede ao Senhor que trate Rute e Orpá com <em>hesed</em> como elas trataram os mortos e a ela (1:8). O <em>hesed</em> de Deus é invocado como resposta ao <em>hesed</em> humano.
+          </p>
+        </div>
+        <div class="hesed-card"
+             style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+          <div class="font-display text-2xl font-bold text-forest mb-1" dir="rtl">חֶסֶד</div>
+          <div class="font-display text-xs font-bold text-forest tracking-widest mb-2">2ª OCORRÊNCIA</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Naoми abençoa Boaz: "Bendito seja ele do Senhor, que não retirou o seu <em>hesed</em> dos vivos nem dos mortos" (2:20). Deus age através do <em>hesed</em> de Boaz.
+          </p>
+        </div>
+        <div class="hesed-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="font-display text-2xl font-bold text-sapphire mb-1" dir="rtl">חֶסֶד</div>
+          <div class="font-display text-xs font-bold text-sapphire tracking-widest mb-2">3ª OCORRÊNCIA</div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Boaz elogia Rute: "Tens mostrado maior <em>hesed</em> agora do que antes" — ao escolhê-lo a ela como goel em vez de buscar homens mais jovens (3:10). O <em>hesed</em> de Rute supera o esperado.
+          </p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl"
+           style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">O padrão do hesed em Rute:</strong> O livro mostra que o <em>hesed</em> humano (Rute → Naoми, Boaz → Rute) é o canal pelo qual o <em>hesed</em> divino chega às pessoas. Deus não aparece em visões ou milagres neste livro — ele age através da bondade fiel de pessoas comuns. É uma das mais belas imagens da providência divina na Bíblia.
+        </p>
+      </div>
+    </section>
+
+    <!-- Boaz como Goel -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Goel — O Parente-Redentor</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">A Lei do Goel</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            O <em>goel</em> (גֹּאֵל — "redentor / resgatador") era o parente mais próximo com obrigação legal e moral de:
+          </p>
+          <div class="space-y-2">
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="text-base flex-shrink-0">🏡</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed"><strong>Resgatar a terra</strong> da família que havia sido vendida por pobreza (Lv 25:25)</p>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="text-base flex-shrink-0">💍</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed"><strong>Casar com a viúva</strong> sem filhos (lei do levirato — Dt 25:5–10) para perpetuar o nome do falecido</p>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="text-base flex-shrink-0">⚖️</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed"><strong>Vingar o sangue</strong> de um parente morto injustamente (Nm 35:19)</p>
+            </div>
+            <div class="flex gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="text-base flex-shrink-0">🔓</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed"><strong>Resgatar da escravidão</strong> o parente que se vendeu por dívida (Lv 25:47–49)</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Boaz como Tipo de Cristo</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Parente próximo</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Para ser goel, Boaz precisava ser parente. Cristo se fez humano — tornou-se nosso "parente" — para ter o direito de nos resgatar (Hb 2:14–17).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Capaz de resgatar</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Boaz era rico e tinha recursos. Cristo, sendo Deus, tinha poder suficiente para pagar o preço da redenção (1 Pe 1:18–19).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Disposto a resgatar</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Boaz não foi obrigado — escolheu agir por amor e hesed. Cristo não foi forçado — "ninguém me tira a vida, eu a dou voluntariamente" (Jo 10:18).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">Resgata a estrangeira</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Boaz resgatou Rute — uma moabita, gentia, excluída. Cristo resgata judeus e gentios, os distantes e os próximos (Ef 2:12–13).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Genealogia -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Genealogia — De Rute a Davi e a Jesus</div>
+      <p class="font-body text-sm text-ink-muted mb-6 leading-relaxed">
+        O livro termina com uma genealogia de dez gerações (4:18–22) que liga Pérez (filho de Judá) ao Rei Davi. Rute, a moabita, está no centro desta linha que culmina no próprio Jesus Cristo.
+      </p>
+
+      <!-- Genealogia visual -->
+      <div class="overflow-x-auto pb-2">
+        <div class="flex items-center gap-1 min-w-max mx-auto justify-center flex-wrap gap-y-3">
+
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(200,145,58,0.12);color:#7a4a10;">Pérez</span>
+            <span class="font-body text-xs text-ink-faint">filho de Judá</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(200,145,58,0.12);color:#7a4a10;">Hezrom</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(200,145,58,0.12);color:#7a4a10;">Rão</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(200,145,58,0.12);color:#7a4a10;">Aminadabe</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(139,32,32,0.1);color:#8b2020;">Salmom + Raabe</span>
+            <span class="font-body text-xs text-ink-faint">pai de Boaz</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(30,74,42,0.1);color:#1e4a2a;font-size:0.75rem;">Boaz + Rute</span>
+            <span class="font-body text-xs text-forest font-semibold">⭐ nosso livro</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(30,74,42,0.1);color:#1e4a2a;">Obede</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(30,74,42,0.1);color:#1e4a2a;">Jessé</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(30,58,95,0.12);color:#1e3a5f;font-size:0.75rem;">Rei Davi</span>
+            <span class="font-body text-xs text-sapphire font-semibold">👑 o grande rei</span>
+          </div>
+          <span class="gen-arrow">→</span>
+          <div class="gen-node">
+            <span class="gen-name" style="background:rgba(139,32,32,0.12);color:#8b2020;font-size:0.75rem;">Jesus Cristo</span>
+            <span class="font-body text-xs text-crimson font-semibold">✝️ Mt 1:5</span>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-crimson">Rute em Mateus 1:</strong> Mateus 1:5 lista Rute explicitamente na genealogia de Jesus — uma moabita, descendente de Ló, de um povo proibido de entrar na assembleia de Israel até a décima geração (Dt 23:3). Sua inclusão proclama que a graça de Deus ultrapassa toda barreira étnica, cultural e religiosa.
+        </p>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">❤️ Hesed — Amor leal</span>
+            <span class="theme-badge"
+                  style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🛡️ Redenção</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌍 Inclusão dos Gentios</span>
+            <span class="theme-badge"
+                  style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">✨ Providência silenciosa</span>
+            <span class="theme-badge"
+                  style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🌾 A Lei como proteção</span>
+            <span class="theme-badge"
+                  style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">👨‍👩‍👧 Lealdade familiar</span>
+            <span class="theme-badge"
+                  style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">👑 Preparação para Davi</span>
+            <span class="theme-badge"
+                  style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🍞 Da fome à plenitude</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">A Providência Silenciosa de Deus</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Algo único em Rute: <strong>Deus não fala diretamente</strong> em nenhuma passagem do livro. Não há visões, sonhos, milagres visíveis ou aparições angélicas — apenas a vida comum de pessoas comuns.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            No entanto, a providência divina é claramente visível nos bastidores:
+          </p>
+          <div class="space-y-1">
+            <div class="flex gap-2 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🌾 Rute "por acaso" chegou ao campo de Boaz (2:3)
+            </div>
+            <div class="flex gap-2 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              💨 A colheita começou exatamente quando Naoми retornou (1:22)
+            </div>
+            <div class="flex gap-2 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              ⏰ Boaz chegou à eira no momento exato (3:8)
+            </div>
+            <div class="flex gap-2 p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              👟 O parente próximo recusou — abrindo o caminho para Boaz (4:6)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Uma das 5 mulheres em Mt 1:</strong> Mateus 1 lista 5 mulheres na genealogia de Jesus — Tamar, Raabe, Rute, Bate-Seba e Maria. Todas têm histórias marcadas por irregularidade, sofrimento ou exclusão social. A graça de Deus atravessa tudo isso.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Rute lida em Shavuot:</strong> Na tradição judaica, o livro de Rute é lido integralmente durante a festa de Shavuot (Pentecostes) — a festa da colheita do trigo. A ambientação agrícola do livro e a adesão de Rute à Lei de Israel tornam a escolha perfeita.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Onde tu morreres, morrerei eu":</strong> Rute 1:16–17 é um dos textos mais citados sobre lealdade e amor na história da literatura mundial — usado em cerimônias de casamento, votos de amizade e discursos de despedida há 3.000 anos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Boaz descendente de Raabe:</strong> Mt 1:5 afirma que Salmom — pai de Boaz — casou com Raabe, a prostituta de Jericó. Isso significa que Boaz, o homem piedoso e generoso, era filho de uma ex-prostituta cananeia. Deus trabalha através de histórias improvadas.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A sandália como documento legal:</strong> Em 4:7–8, remover a sandália confirmava publicamente a transferência de um direito legal. O texto explica o costume para leitores que já não o conheciam — indicando que foi escrito algum tempo após os eventos narrados.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Mara — "amarga":</strong> Naoми pede para ser chamada de Mara ao voltar a Belém (1:20). O nome Mara reaparece na narrativa do Êxodo — as águas amargas que Deus tornou doces (Ex 15:23–25). Em ambos os casos, Deus transforma a amargura em doçura.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A lei da espigagem:</strong> O fato de Rute poder espigar nos campos (cap. 2) é uma aplicação direta da lei de Levítico 19:9–10 e Deuteronômio 24:19 — que mandava os proprietários deixar as beiradas dos campos e os feixes caídos para os pobres e estrangeiros. A Lei de Deus protege os vulneráveis.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Um filho nasceu para Naoми":</strong> As mulheres de Belém proclamam que Obede "nasceu para Naoми" (4:17) — não para Rute. É uma declaração de restauração: a mulher que voltou vazia (1:21) agora está plena. A história de Naoми tem um final que espelha o de Jó.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O contraste com Juízes:</strong> Rute se passa no mesmo período de Juízes — a época mais sombria de Israel. Enquanto Juízes termina com violência, idolatria e guerra civil, Rute termina com casamento, nascimento e genealogia real. Os dois livros são as duas faces da mesma moeda: o que acontece quando o povo segue seus próprios olhos (Juízes) versus quando indivíduos vivem o hesed de Deus (Rute). A esperança não vem do sistema ou das instituições — vem de pessoas fiéis em lugares ordinários.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-5">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Onde tu morreres, morrerei eu, e ali serei sepultada. Assim me faça o Senhor, e outro tanto, se não for só a morte que nos separar."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Rute 1:17 — A declaração de Rute a Naoми</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O Senhor te recompense o teu trabalho, e seja cumprido o teu galardão da parte do Senhor Deus de Israel, sob cujas asas vieste buscar refúgio."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Rute 2:12 — Boaz abençoa Rute</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Bendito seja ele do Senhor, que não retirou a sua benevolência dos vivos nem dos mortos."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Rute 2:20 — Naoми reconhece o hesed de Deus através de Boaz</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Rute · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

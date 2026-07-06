@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Êxodo — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="absolute inset-0 opacity-5" style="background-image:repeating-linear-gradient(0deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px),repeating-linear-gradient(90deg,#c8913a 0px,#c8913a 1px,transparent 1px,transparent 40px);"></div>
+
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PENTATEUCO · 2º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em;text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Êxodo
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>שְׁמוֹת</em> (Shemot) — "Nomes"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do grego <em>Ἔξοδος</em> (Éxodos) — "Saída / Partida"
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <!-- Stats -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">40</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.213</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Moisés</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Autor tradicional</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Hebraico</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Idioma original</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main -->
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(184,74,16,0.07);border:1px solid rgba(184,74,16,0.22);">
+              <span class="font-display text-xs font-bold text-fire">2º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia e do Antigo Testamento</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">2º</span>
+              <span class="font-body text-sm text-ink">dos 5 livros do <strong>Pentateuco</strong> (Torá)</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">AT</span>
+              <span class="font-body text-sm text-ink">pertence à seção da <strong>Lei</strong> (Torá / Pentateuco)</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Cenário Histórico</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O livro começa onde Gênesis termina — com o povo de Israel escravizado no <strong>Egito</strong>. Os acontecimentos são estimados entre os séculos <strong>XV e XIII a.C.</strong>, durante o reinado de um dos faraós da XVIII ou XIX dinastia.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o livro fundacional da <strong>identidade nacional de Israel</strong>: aqui o povo recebe sua lei, sua forma de culto e sua identidade como nação escolhida por Deus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Êxodo se divide em três grandes blocos: a opressão e libertação do Egito, a jornada pelo deserto e a revelação da Lei, e a construção do Tabernáculo.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 1–12</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Israel no Egito — Opressão e Libertação</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O crescimento do povo hebreu, a opressão do Faraó, o nascimento e chamado de Moisés na sarça ardente, as negociações com o Faraó, as 10 pragas do Egito e a instituição da <strong>Páscoa</strong> como memorial eterno da libertação.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 13–18</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Jornada pelo Deserto</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A travessia miraculosa do Mar Vermelho, o afogamento do exército egípcio, o cântico de Moisés e Miriam, o maná e as codornizes como provisão divina, a água brotando da rocha e a primeira batalha contra os amalequitas.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 19–24</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Lei no Monte Sinai</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A chegada ao Monte Sinai, a teofania (manifestação de Deus com fogo, fumaça e tremor), os <strong>Dez Mandamentos</strong>, o Código da Aliança (leis civis e cerimoniais) e a ratificação da Aliança com sangue de animais.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:70px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 25–40</span>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">O Tabernáculo — Presença de Deus</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              As instruções detalhadas para a construção do Tabernáculo (santuário portátil), o pecado do <strong>Bezerro de Ouro</strong>, a intercessão de Moisés, os 40 dias no monte e a construção efetiva do Tabernáculo. O livro termina com a glória de Deus preenchendo o santuário.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Personagens Principais</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+        <div class="person-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="text-2xl mb-2">🔥</div>
+          <h4 class="font-display text-sm font-semibold text-fire mb-1">Moisés</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O grande líder e libertador de Israel. Recebeu a Lei de Deus e é o personagem central do livro e de todo o Pentateuco.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <div class="text-2xl mb-2">🎺</div>
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Arão</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Irmão de Moisés, porta-voz diante do Faraó e primeiro sumo sacerdote de Israel. Infelizmente, envolvido no episódio do Bezerro de Ouro.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">👑</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">Faraó</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O antagonista do livro. Seu coração endurecido diante das pragas serve de pano de fundo para a demonstração do poder de Deus sobre os deuses do Egito.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🥁</div>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">Miriã</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Irmã de Moisés e profetisa. Liderou as mulheres de Israel no cântico de louvor após a travessia do Mar Vermelho (cap. 15).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">⚔️</div>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Josué</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Aparece pela primeira vez em Êxodo, como comandante militar na batalha contra os amalequitas (cap. 17). Será o sucessor de Moisés.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.22);">
+          <div class="text-2xl mb-2">🏕️</div>
+          <h4 class="font-display text-sm font-semibold text-earth mb-1">Jetro</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Sogro de Moisés e sacerdote de Midiã. Aconselhou Moisés a delegar responsabilidades ao povo — um dos primeiros registros bíblicos de gestão e liderança (cap. 18).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- As 10 Pragas -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As 10 Pragas do Egito</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Cada praga representou um julgamento de Deus sobre as principais divindades egípcias, demonstrando sua soberania absoluta sobre todos os deuses falsos.
+      </p>
+      <div class="grid grid-cols-2 md:grid-cols-5 gap-2">
+        <div class="plague-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.22);">
+          <div class="text-xl mb-1">🩸</div>
+          <div class="font-display text-xs font-bold text-crimson">1ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Água em Sangue</div>
+        </div>
+        <div class="plague-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.2);">
+          <div class="text-xl mb-1">🐸</div>
+          <div class="font-display text-xs font-bold text-forest">2ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Rãs</div>
+        </div>
+        <div class="plague-card" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.22);">
+          <div class="text-xl mb-1">🦟</div>
+          <div class="font-display text-xs font-bold text-earth">3ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Piolhos</div>
+        </div>
+        <div class="plague-card" style="background:rgba(184,74,16,0.06);border-color:rgba(184,74,16,0.22);">
+          <div class="text-xl mb-1">🪰</div>
+          <div class="font-display text-xs font-bold text-fire">4ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Moscas</div>
+        </div>
+        <div class="plague-card" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.2);">
+          <div class="text-xl mb-1">🐄</div>
+          <div class="font-display text-xs font-bold text-sapphire">5ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Pestilência no Gado</div>
+        </div>
+        <div class="plague-card" style="background:rgba(200,145,58,0.08);border-color:rgba(200,145,58,0.28);">
+          <div class="text-xl mb-1">🤒</div>
+          <div class="font-display text-xs font-bold text-gold-dark">6ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Úlceras</div>
+        </div>
+        <div class="plague-card" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.2);">
+          <div class="text-xl mb-1">⛈️</div>
+          <div class="font-display text-xs font-bold text-sapphire">7ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Granizo</div>
+        </div>
+        <div class="plague-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.2);">
+          <div class="text-xl mb-1">🦗</div>
+          <div class="font-display text-xs font-bold text-forest">8ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Gafanhotos</div>
+        </div>
+        <div class="plague-card" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.22);">
+          <div class="text-xl mb-1">🌑</div>
+          <div class="font-display text-xs font-bold text-earth">9ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Trevas</div>
+        </div>
+        <div class="plague-card" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);">
+          <div class="text-xl mb-1">💀</div>
+          <div class="font-display text-xs font-bold text-crimson">10ª</div>
+          <div class="font-body text-xs text-ink-muted mt-1">Morte dos Primogênitos</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🔥 Redenção</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">📜 A Lei (Torá)</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🌟 Presença de Deus</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🐑 Páscoa</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🤝 Aliança no Sinai</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🕍 Culto e Sacerdócio</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚡ Poder de Deus</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🗿 Os Dez Mandamentos</span>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Elementos Tipológicos</h3>
+          <p class="font-body text-xs text-ink-faint italic mb-2">Prefigurações de Cristo no Novo Testamento</p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">O Cordeiro Pascal</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Sangue aplicado nas portas protege da morte — tipo de Cristo, "nosso Cordeiro Pascal" (1 Coríntios 5:7).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">O Maná</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Pão do céu que sustenta o povo — Jesus se declara "o pão da vida" (João 6:35, 48–51).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">A Rocha no Deserto</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Água que jorra da rocha — Paulo identifica a rocha com Cristo (1 Coríntios 10:4).</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Os Dez Mandamentos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Os Dez Mandamentos — Êxodo 20</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Entregues a Moisés no Monte Sinai, escritos por Deus em duas tábuas de pedra. Estruturados em dois grupos: os primeiros tratam da relação com Deus, os demais, da relação com o próximo.
+      </p>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div>
+          <p class="font-display text-xs font-bold text-gold-dark tracking-widest mb-2">DEVERES PARA COM DEUS</p>
+          <div class="space-y-2">
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark w-4 flex-shrink-0">I</span>
+              <span class="font-body text-xs text-ink-muted">Não terás outros deuses diante de mim</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark w-4 flex-shrink-0">II</span>
+              <span class="font-body text-xs text-ink-muted">Não farás imagens de escultura para adorar</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark w-4 flex-shrink-0">III</span>
+              <span class="font-body text-xs text-ink-muted">Não tomarás o nome do Senhor em vão</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark w-4 flex-shrink-0">IV</span>
+              <span class="font-body text-xs text-ink-muted">Guardarás o dia de sábado (dia de descanso)</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="font-display text-xs font-bold text-sapphire tracking-widest mb-2">DEVERES PARA COM O PRÓXIMO</p>
+          <div class="space-y-2">
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-4 flex-shrink-0">V</span>
+              <span class="font-body text-xs text-ink-muted">Honra teu pai e tua mãe</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-4 flex-shrink-0">VI</span>
+              <span class="font-body text-xs text-ink-muted">Não matarás</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-4 flex-shrink-0">VII</span>
+              <span class="font-body text-xs text-ink-muted">Não adulterarás</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-4 flex-shrink-0">VIII</span>
+              <span class="font-body text-xs text-ink-muted">Não furtarás</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-4 flex-shrink-0">IX</span>
+              <span class="font-body text-xs text-ink-muted">Não dirás falso testemunho</span>
+            </div>
+            <div class="p-2 rounded-lg flex gap-3" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire w-4 flex-shrink-0">X</span>
+              <span class="font-body text-xs text-ink-muted">Não cobiçarás a casa, a mulher ou os bens do próximo</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O nome Moisés:</strong> significa "tirado das águas" em egípcio — referência ao seu resgate no rio Nilo (Ex 2:10).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>40 dias no monte:</strong> Moisés subiu ao Sinai por 40 dias duas vezes — na primeira, o povo fez o Bezerro de Ouro (Ex 24 e 34).</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Nome de Deus revelado:</strong> É em Êxodo (3:14) que Deus revela seu nome: <em>"EU SOU O QUE SOU"</em> — <strong>YHWH</strong> (יְהוָה), o Tetragrama Sagrado.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Páscoa e Cristo:</strong> Paulo afirma que "Cristo, nosso Cordeiro Pascal, foi imolado" (1 Co 5:7), ligando diretamente a Páscoa do Êxodo à crucificação.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>O Tabernáculo:</strong> Construído com ouro, prata e bronze dados pelos próprios egípcios ao povo na saída do Egito (Ex 12:35–36) — um "saque" ordenado por Deus.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Moisés no NT:</strong> É o personagem do AT mais citado no Novo Testamento, com mais de 80 referências diretas. Jesus o menciona diversas vezes.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>A sarça ardente:</strong> O episódio (Ex 3) é considerado uma das mais importantes teofanias (aparições de Deus) do AT. João 8:58 — "Antes que Abraão existisse, EU SOU" — é uma referência direta.</p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Os Mandamentos repetidos:</strong> Os Dez Mandamentos aparecem duas vezes na Bíblia — em Êxodo 20 e em Deuteronômio 5, com pequenas variações de ênfase.</p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed"><strong>Fim do livro:</strong> Êxodo termina com a glória de Deus (Shekinah — שְׁכִינָה) preenchendo o Tabernáculo de tal forma que nem Moisés conseguia entrar (Ex 40:34–35). Uma imagem que ecoa no Templo de Salomão, no Evangelho de João (1:14) e no Apocalipse (21:3).</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "EU SOU O QUE SOU... Assim dirás aos filhos de Israel: EU SOU me enviou a vós."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Êxodo 3:14 — Deus revela seu nome a Moisés</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Eu sou o Senhor, teu Deus, que te tirei da terra do Egito, da casa da servidão."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Êxodo 20:2 — Prólogo dos Dez Mandamentos</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Êxodo · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

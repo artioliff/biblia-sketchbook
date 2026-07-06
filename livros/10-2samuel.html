@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Samuel — Guia de Estudos</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+
+  <style>
+    /* Arco narrativo — glória → queda → restauração */
+    .arc-card {
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 1.25rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .arc-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(200,145,58,0.13);
+    }
+    .arc-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+    }
+
+    /* Linha do tempo das consequências */
+    .consequence-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid;
+      transition: transform 0.2s ease;
+    }
+    .consequence-item:hover { transform: translateX(4px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 10º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        2 Samuel
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Continuação direta de 1 Samuel — originalmente <strong>um único livro</strong> no hebraico
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O livro inteiro é dedicado ao reinado de <strong>Davi</strong> — sua glória, sua queda e sua restauração
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">24</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">695</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">40 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">reinado de Davi</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">1 rei</div>
+          <div class="font-body text-sm text-ink-muted mt-1">todo o livro sobre Davi</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.22);">
+              <span class="font-display text-xs font-bold text-sapphire">10º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">5º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Davi</span>
+              <span class="font-body text-sm text-ink">único rei narrado — reinou <strong>7 anos em Hebrom</strong> e <strong>33 em Jerusalém</strong></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro de Davi</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Enquanto 1 Samuel apresenta Davi em ascensão, 2 Samuel narra o reinado completo — a glória do rei mais amado de Israel, mas também sua queda moral mais profunda e as consequências devastadoras que se seguiram por décadas.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É um dos retratos mais honestos e psicologicamente complexos da Bíblia. Davi é simultaneamente o rei ideal, o pecador confesso, o pai fracassado e o adorador restaurado. O livro não protege a imagem do herói — e é exatamente isso que o torna tão poderoso.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura: O arco de Davi -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura — Glória · Queda · Consequências · Restauração</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        2 Samuel se organiza em torno do capítulo 11 — o pecado com Bate-Seba — como ponto de virada. Tudo antes é ascensão; tudo depois é consequência.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="arc-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:rgba(30,58,95,0.5);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-sapphire opacity-25">I</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-sapphire">A Glória de Davi</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulos 1–10</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O lamento de Davi pela morte de Saul e Jônatas, a unção como rei de Judá em <strong>Hebrom</strong> (7 anos), a guerra civil com a casa de Saul, a unção como rei de todo Israel, a conquista de <strong>Jerusalém</strong> como capital, a dança de Davi diante da Arca, a <strong>Aliança Davídica</strong> (cap. 7) — a promessa de um trono eterno para sua descendência — e as grandes vitórias militares sobre os inimigos de Israel.
+          </p>
+        </div>
+
+        <div class="arc-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:rgba(139,32,32,0.5);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-crimson opacity-25">II</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-crimson">A Queda e as Consequências</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulos 11–20</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O adultério com <strong>Bate-Seba</strong> e o assassinato de <strong>Urias</strong> (cap. 11). A confrontação de <strong>Natã</strong> com a parábola da ovelhinha (cap. 12). A morte do filho nascido do pecado. O estupro de <strong>Tamar</strong> pelo meio-irmão Amnom. A vingança e fuga de <strong>Absalão</strong>. A revolta de Absalão, a fuga de Davi de Jerusalém, a morte de Absalão e o lamento dilacerante de Davi: <em>"Meu filho Absalão, Absalão, meu filho!"</em>
+          </p>
+        </div>
+
+        <div class="arc-card md:col-span-2" style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.28);">
+          <div class="absolute top-0 left-0 right-0 h-0.5" style="background:rgba(200,145,58,0.5);"></div>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="font-display text-2xl font-bold text-gold-dark opacity-25">III</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-gold-dark">Apêndices — Restauração e Memória</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulos 21–24</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Quatro apêndices que enquadram o reinado: a fome por causa de Saul e os gibeonitas, as guerras com os gigantes filisteus, o <strong>Cântico de Ação de Graças de Davi</strong> (cap. 22 — quase idêntico ao Salmo 18), as <strong>últimas palavras de Davi</strong> (cap. 23:1–7), o catálogo dos seus guerreiros valentes e o censo que provocou uma praga — encerrado com a compra da <strong>eira de Araúna</strong>, o local onde Salomão construiria o Templo.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A Aliança Davídica -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Aliança Davídica — Cap. 7 · O Coração Teológico do Livro</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Davi quis construir um templo para o Senhor. Deus respondeu com algo muito maior: não Davi construiria uma casa para Deus, mas Deus construiria uma <strong>casa (dinastia) para Davi</strong>. É a aliança mais importante entre Abraão e o NT — e a base da esperança messiânica.
+          </p>
+          <div class="p-5 rounded-xl italic"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "Estabelecerei depois de ti a tua descendência... e estabelecerei o trono do seu reino para sempre. Eu lhe serei pai, e ele me será filho... E a tua casa e o teu reino serão estáveis para sempre diante de ti; o teu trono será firme para sempre."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-3 tracking-widest">2 Samuel 7:12–16</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Cumprimento Progressivo</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">Cumprimento imediato</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Salomão — filho de Davi — constrói o Templo e seu reino é estabelecido (1 Rs 2–8).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Cumprimento dinástico</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A linhagem de Davi permanece no trono de Judá por 400 anos — até o exílio babilônico em 586 a.C.</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Cumprimento messiânico</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus Cristo — "Filho de Davi" (Mt 1:1) — ocupa o trono eterno prometido. O anjo Gabriel cita 2 Sm 7 ao anunciar o nascimento de Jesus a Maria (Lc 1:32–33).</p>
+            </div>
+            <div class="p-3 rounded-lg"
+                 style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Cumprimento eterno</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Apocalipse 22:16 — "Eu sou a raiz e a geração de Davi" — Jesus reivindica o cumprimento final da aliança.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Pecado com Bate-Seba -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Ponto de Virada — Cap. 11–12</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 11 começa com a frase mais carregada de ironia do livro: <em>"Na primavera, quando os reis saem para a guerra, Davi ficou em Jerusalém."</em> Tudo que se segue nasce deste afastamento do dever.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6 mb-5">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">🩸 Os Dois Pecados — Cap. 11</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">Adultério</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Davi viu Bate-Seba banhando-se do terraço do palácio, mandou buscá-la e se deitou com ela. Ela ficou grávida. Bate-Seba era esposa de <strong>Urias, o heteu</strong> — um dos trinta guerreiros valentes de Davi.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">Assassinato</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Davi tentou encobrir o adultério chamando Urias da batalha para que dormisse com Bate-Seba. Urias, por honra de soldado, recusou ir à sua casa enquanto seus companheiros estavam em campo. Davi então enviou Urias de volta à batalha com uma carta ordenando sua morte — e Urias carregou sua própria sentença.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">🐑 A Parábola de Natã — Cap. 12</h3>
+          <div class="p-4 rounded-xl italic mb-3"
+               style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Havia dois homens numa cidade: um rico e outro pobre. O rico tinha muitíssimas ovelhas e bois; mas o pobre não tinha senão uma só cordeirinha... O homem rico, ao receber um viajante, poupou as suas ovelhas e tomou a cordeirinha do pobre."
+            </p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+            Davi ardeu de ira contra o homem da parábola. Natã então pronunciou as três palavras mais pesadas da literatura bíblica:
+          </p>
+          <div class="p-3 rounded-lg text-center"
+               style="background:rgba(139,32,32,0.07);border:1px solid rgba(139,32,32,0.28);">
+            <span class="font-display text-base font-bold text-crimson tracking-widest">
+              "TU ÉS O HOMEM"
+            </span>
+            <p class="font-body text-xs text-ink-faint mt-1">2 Samuel 12:7</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mt-3">
+            Davi respondeu imediatamente: <em>"Pequei contra o Senhor."</em> O Salmo 51 é a oração de arrependimento que nasceu deste momento — um dos textos de confissão mais profundos de toda a literatura humana.
+          </p>
+        </div>
+      </div>
+
+      <!-- As consequências -->
+      <h3 class="font-display text-sm font-semibold text-ink mb-3">⚖️ "A espada nunca se afastará de tua casa" — As Consequências (12:10)</h3>
+      <div class="space-y-2">
+        <div class="consequence-item" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-lg flex-shrink-0">👶</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">O filho de Bate-Seba morreu</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5 leading-relaxed">O filho nascido do adultério adoeceu e morreu após sete dias. Davi jejuou enquanto a criança vivia; ao morrer, levantou-se e comeu — "Eu irei ter com ele, mas ele não voltará para mim" (12:23).</p>
+          </div>
+        </div>
+        <div class="consequence-item" style="background:rgba(184,74,16,0.04);border-color:rgba(184,74,16,0.2);">
+          <span class="text-lg flex-shrink-0">😱</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">Amnom estuprou Tamar</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5 leading-relaxed">O filho mais velho de Davi violentou sua meia-irmã Tamar. Davi ficou com ira mas não a puniu — repetindo em sua própria casa o pecado de encobrir a injustiça (cap. 13).</p>
+          </div>
+        </div>
+        <div class="consequence-item" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="text-lg flex-shrink-0">🗡️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">Absalão matou Amnom e fugiu</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5 leading-relaxed">Dois anos depois, Absalão — irmão de Tamar — vingou a irmã matando Amnom num banquete. Fugiu para Gesur por três anos (cap. 13).</p>
+          </div>
+        </div>
+        <div class="consequence-item" style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.2);">
+          <span class="text-lg flex-shrink-0">👑</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">Absalão se rebelou contra Davi</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5 leading-relaxed">Restaurado mas nunca genuinamente reconciliado, Absalão passou 4 anos roubando os corações do povo. Proclamou-se rei em Hebrom. Davi fugiu de Jerusalém a pé, descalço e chorando (cap. 15). Absalão tomou as concubinas de Davi publicamente — cumprindo à letra a profecia de Natã (12:11).</p>
+          </div>
+        </div>
+        <div class="consequence-item" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-lg flex-shrink-0">💔</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Absalão foi morto — e Davi lamentou</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5 leading-relaxed">Absalão foi morto por Joabe enquanto pendurado pelo cabelo num carvalho. Davi ordenara que o poupasse. Seu lamento é um dos mais tocantes da Bíblia: <em>"Ó meu filho Absalão, meu filho, meu filho Absalão! Quem me dera que eu morresse em teu lugar!"</em> (18:33).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Personagens de Destaque</div>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+
+        <div class="person-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">🎶</div>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Davi</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O protagonista absoluto. Rei, guerreiro, poeta e adorador — mas também adúltero e homicida indireto. Sua humanidade torna sua fé ainda mais crível.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="text-2xl mb-2">🐑</div>
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Natã</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O profeta que confrontou Davi com a parábola da ovelhinha. Modelo de coragem profética: dizer a verdade ao poder sem dissimulação. Também foi o mensageiro da Aliança Davídica (cap. 7).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">💔</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">Bate-Seba</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Esposa de Urias. O texto não a apresenta como cúmplice — ela foi buscada pelo rei. Depois da morte do filho do pecado, tornou-se mãe de Salomão. Está na genealogia de Jesus (Mt 1:6).</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="text-2xl mb-2">⚔️</div>
+          <h4 class="font-display text-sm font-semibold text-fire mb-1">Joabe</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Sobrinho e general de Davi. Leal, eficaz e brutal — executou Absalão contra a ordem de Davi, matou Abner e Amasa em tempo de paz. Davi dependia dele mas temia sua violência. Um antiherói complexo.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <div class="text-2xl mb-2">👸</div>
+          <h4 class="font-display text-sm font-semibold text-violet mb-1">Absalão</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">"Em todo Israel não havia homem tão louvado por sua formosura" (14:25). Carismático, vingativo e ambicioso — roubou o coração do povo antes de roubar o trono. Sua revolta e morte produzem o lamento mais doloroso de Davi.</p>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🦽</div>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">Mefibosete</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Filho de Jônatas, neto de Saul, aleijado dos dois pés desde os cinco anos. Davi o buscou para honrar sua aliança com Jônatas — e o fez comer à sua mesa como um filho (cap. 9). Bela imagem da graça imerecida.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">👑 A Aliança Davídica</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">💔 Pecado e Consequências</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🙏 Confissão e Perdão</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌟 A esperança messiânica</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">⚖️ Justiça divina</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🏛️ Jerusalém como capital</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">👨‍👧 Paternidade e fracasso</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🎶 Adoração em meio ao caos</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">2 Samuel no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Lc 1:32–33 — O anúncio a Maria</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Gabriel cita 2 Sm 7:12–16 ao anunciar o nascimento de Jesus: "o Senhor Deus lhe dará o trono de Davi, seu pai."</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">At 2:30 — Pedro no Pentecostes</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Pedro cita a promessa davídica para provar que Jesus — ressuscitado — ocupa o trono eterno prometido.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Hb 1:5 — "Eu lhe serei Pai"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Hebreus cita 2 Sm 7:14 como uma das provas da superioridade de Cristo sobre os anjos.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Ap 22:16 — "Raiz e geração de Davi"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus reivindica o cumprimento final da Aliança Davídica no último capítulo da Bíblia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Davi e a Arca (cap. 6):</strong> Davi dançou com toda a força diante da Arca ao levá-la a Jerusalém — despindo suas vestes reais. Sua esposa Mical o desprezou pela indignidade. Davi respondeu que se humilharia ainda mais diante do Senhor. Mical morreu sem ter filhos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Mefibosete à mesa do rei (cap. 9):</strong> Davi buscou um sobrevivente da casa de Saul para honrar Jônatas — e encontrou Mefibosete, aleijado. O fez sentar à mesa real como um filho. Muitos veem aqui uma imagem da graça: o aleijado que não merecia honra é trazido à mesa do rei.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Salmo 51:</strong> Nascido da confissão após o pecado com Bate-Seba, é um dos textos de arrependimento mais profundos da história da literatura. A frase <em>"Cria em mim, ó Deus, um coração puro"</em> (Sl 51:10) resume toda a teologia da transformação interior.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Absalão e o cabelo:</strong> O texto diz que Absalão cortava seu cabelo uma vez por ano — e pesava cerca de <strong>2 kg</strong> (14:26). Foi exatamente o cabelo que o prendeu no carvalho enquanto fugia, tornando-o vulnerável ao golpe de Joabe.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Simei amaldiçoa Davi (cap. 16):</strong> Enquanto Davi fugia de Absalão, Simei — da casa de Saul — jogava pedras e o amaldiçoava publicamente. Davi não permitiu que seus homens o matassem: <em>"Deixai-o; talvez o Senhor olhe para a minha aflição."</em> Modelo de humildade no sofrimento.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A eira de Araúna (cap. 24):</strong> Davi comprou a eira do jebuseu Araúna para construir um altar após a praga causada pelo censo. É o mesmo monte Moriá onde Abraão quase sacrificou Isaque (Gn 22) — e onde Salomão construiria o Templo (2 Cr 3:1). O local mais sagrado da história de Israel foi comprado por Davi por 50 siclos de prata.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O censo e a praga (cap. 24):</strong> Davi mandou contar o povo — ato condenado por Joabe como sinal de orgulho e falta de fé. Uma praga matou 70.000 homens. Davi assumiu a culpa: <em>"Sou eu quem pecou... mas estas ovelhas, que fizeram?"</em> A punição coletiva pelo pecado do rei reflete a teologia da liderança que permeia 2 Samuel.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Tu és o homem" (12:7):</strong> A confrontação de Natã com Davi é considerada por muitos estudiosos literários como um dos momentos dramaticamente mais perfeitos de toda a literatura antiga. A parábola cria empatia, o veredito de Davi o condena, e a revelação o destrói — tudo em três versículos.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A grandeza de 2 Samuel:</strong> O livro não seria tão poderoso se apenas mostrasse a glória de Davi. O que o torna extraordinário é que mostra a queda de um homem que amava a Deus com todo o coração — e as consequências reais, duradouras e devastadoras desta queda sobre sua família, seu reino e seu povo. Não há whitewashing. E ao mesmo tempo, o Deus que perde a paciência com Saul permanece fiel a Davi — não porque Davi mereça, mas por causa da aliança. Esta é a graça que o NT chama de evangelho.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "A tua casa e o teu reino serão estáveis para sempre diante de ti; o teu trono será firme para sempre."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Samuel 7:16 — A Aliança Davídica</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Pequei contra o Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Samuel 12:13 — A confissão de Davi a Natã · quatro palavras que mudaram tudo</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Ó meu filho Absalão, meu filho, meu filho Absalão! Quem me dera que eu morresse em teu lugar, ó Absalão, meu filho, meu filho!"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Samuel 18:33 — O lamento de Davi pela morte de Absalão</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · 2 Samuel · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>
