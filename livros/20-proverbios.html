@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Provérbios — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(139,69,19,0.08) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+
+    /* Provérbio individual */
+    .proverb-card {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      border-left: 4px solid;
+      background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(200,145,58,0.04) 100%);
+      transition: all 0.3s ease;
+    }
+    .proverb-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Contraste antitético */
+    .antithetical-proverb {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 0.75rem;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px solid;
+    }
+
+    /* Mulher de Provérbios 31 */
+    .virtuous-woman-trait {
+      border-radius: 8px;
+      padding: 0.875rem;
+      border: 1px solid;
+      background: rgba(255,255,255,0.4);
+      transition: transform 0.2s ease;
+    }
+    .virtuous-woman-trait:hover {
+      transform: scale(1.02);
+    }
+
+    /* Personificação da Sabedoria */
+    .wisdom-personified {
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 2px solid;
+      background: linear-gradient(135deg, rgba(200,145,58,0.06) 0%, rgba(255,255,255,0.4) 100%);
+      position: relative;
+    }
+    .wisdom-personified::before {
+      content: '👑';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      background: #fdf8ef;
+      padding: 0 12px;
+    }
+
+    /* Tópicos de sabedoria */
+    .wisdom-topic {
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      border: 1px solid;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      transition: all 0.2s ease;
+    }
+    .wisdom-topic:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Paralelismo visual */
+    .parallelism-visual {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      border: 1px dashed;
+    }
+
+    /* Citação de provérbio */
+    .proverb-quote {
+      font-style: italic;
+      padding: 1rem 1.5rem;
+      border-left: 4px solid;
+      background: rgba(200,145,58,0.04);
+      line-height: 1.7;
+    }
+
+    /* Contraste forte */
+    .contrast-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      padding: 1rem;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS POÉTICOS · 20º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(139,69,19,0.2);">
+        Provérbios
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>מִשְׁלֵי</em> (Mishlei) — "Ditados", "Comparações", "Aforismos de Sabedoria"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O manual de sabedoria prática · <strong>como viver bem</strong> · a arte de aplicar temor do Senhor ao cotidiano · onde fé encontra habilidade
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">31</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">915</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~800</div>
+          <div class="font-body text-sm text-ink-muted mt-1">provérbios individuais</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">5 coleções</div>
+          <div class="font-body text-sm text-ink-muted mt-1">compilações distintas</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,69,19,0.07);border:1px solid rgba(139,69,19,0.22);">
+              <span class="font-display text-xs font-bold text-earth">20º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">3º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Poéticos/Sapienciais</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Sabedoria</span>
+              <span class="font-body text-sm text-ink">Literatura sapiencial <strong>par excellence</strong> — junto com Jó e Eclesiastes</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Manual de Sabedoria Prática</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Provérbios não é teologia sistemática — é <strong>sabedoria aplicada</strong>. Ensina a viver <em>habilmente</em> (<span class="hebrew-term">חָכְמָה</span>, <em>chokmah</em>) no mundo real: trabalho, dinheiro, família, amizades, sexualidade, língua, caráter. É a fé tornada prática.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Diferente de Salmos (oração) ou Jó (sofrimento do justo), Provérbios trata do <strong>ordinário</strong>: como escolher amigos, educar filhos, administrar dinheiro, controlar a língua, evitar adultério, trabalhar com diligência. <em>"O temor do Senhor é o princípio da sabedoria"</em> (9:10) — e essa sabedoria se manifesta em escolhas cotidianas sábias.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O que é um Provérbio -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Que é um Provérbio? — Natureza da Literatura Sapiencial</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Definição e Características</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            <strong>Provérbio</strong> (hebraico <span class="hebrew-term">מָשָׁל</span>, <em>mashal</em>) = comparação, ditado, aforismo. É declaração <strong>curta, memorável, geralmente poética</strong>, que encapsula verdade observada sobre a vida. Não é lei absoluta — é <em>princípio geral</em>.
+          </p>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">✓ Princípio geral, não promessa garantida</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Instrui o menino no caminho em que deve andar, e, até quando envelhecer, não se desviará dele"</em> (22:6) — não é garantia automática, mas princípio: educação sábia <em>tende</em> a produzir adultos sábios. Há exceções (filhos rebeldes de pais piedosos), mas a regra permanece válida.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">✓ Observação da ordem criada</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Provérbios não é revelação sobrenatural (como profecia). É <strong>sabedoria observacional</strong> — como Deus embutiu ordem moral no universo. <em>"Vai ter com a formiga, ó preguiçoso..."</em> (6:6) — aprendendo com a natureza.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">✓ Forma poética para memorização</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Maioria usa <strong>paralelismo</strong> (especialmente antitético — contraste). Ritmo, aliteração, imagens vívidas facilitam decorar. Eram ensinados oralmente de pais para filhos.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">✓ Prático, não teórico</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Foco em <em>como viver</em>, não <em>por que crer</em>. Assume que você já conhece Deus — agora ensina a aplicar esse conhecimento ao trabalho, casamento, finanças, amizades.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Que Provérbios NÃO é</h3>
+          <div class="space-y-3 mb-5">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">❌ Não é teologia do pacto</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Não menciona Abraão, Moisés, Êxodo, Aliança Davídica. É sabedoria <em>universal</em> — aplicável a qualquer ser humano, não apenas israelitas. Por isso dialoga com sabedoria egípcia, mesopotâmica, etc.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">❌ Não é promessa de prosperidade automática</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"O preguiçoso passa fome"</em> é verdade geral — mas Jó (justo) sofreu, e ímpios às vezes prosperam (Sl 73). Provérbios descreve mundo <em>como deveria funcionar</em> (ordem criada), não como sempre funciona (mundo caído).
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">❌ Não é lista de regras jurídicas</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Provérbios não é Lei (Torá). É <em>sabedoria</em> (<em>chokmah</em>) — arte de viver bem. Não diz <em>"Faça isso ou será punido"</em>, mas <em>"Se fizer isso, colherá aquilo."</em> Causa e consequência natural, não punição legal.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">❌ Não é para ser lido como narrativa sequencial</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Provérbios 10–29 são <strong>coleções</strong> de ditados sem ordem temática rígida. Não há "enredo". Leia devagar, medite em provérbios individuais, aplique conforme situações da vida.
+              </p>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-2">Interpretação Correta</h4>
+          <div class="p-4 rounded-xl"
+               style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Regra de ouro:</strong> Provérbios descrevem <em>padrões gerais</em> em mundo ordenado por Deus, não <em>garantias mecânicas</em> em mundo caído. Exemplo: <em>"A resposta branda desvia o furor"</em> (15:1) — geralmente verdade, mas nem sempre (alguns ficam mais furiosos com brandura). Provérbios dá sabedoria para a maioria dos casos; Jó explica as exceções trágicas; Eclesiastes lida com frustrações quando provérbios parecem falhar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro — Cinco Coleções Distintas</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Provérbios não foi escrito de uma vez — é <strong>antologia</strong> (compilação) de pelo menos cinco coleções separadas, editadas em forma final provavelmente durante reinado de Ezequias (cerca de 700 a.C.). Cada seção tem estilo e propósito próprios.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 1–9</span>
+            <div class="font-body text-xs text-ink-faint mt-1">PRÓLOGO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Discursos Paternos — Fundamentos da Sabedoria</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong>Estilo:</strong> Poemas longos, não provérbios curtos. Pai instruindo filho (<em>"Filho meu, ouve..."</em> — 15×). <strong>Temas:</strong> Sabedoria personificada como mulher nobre (cap. 8–9), advertência contra adultério (caps. 5, 7), contraste entre Sabedoria e Loucura.
+            </p>
+            <div class="text-xs">
+              <strong class="text-sapphire">Versículo-chave:</strong> <em>"O temor do Senhor é o princípio do saber"</em> (1:7) — fundamento de tudo que segue.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 10:1–22:16</span>
+            <div class="font-body text-xs text-ink-faint mt-1">COLEÇÃO I</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Provérbios de Salomão — Contrastes Antitéticos</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong>Estilo:</strong> Provérbios curtos (1–2 versículos), maioria usando <strong>paralelismo antitético</strong> (sábio vs. tolo, justo vs. ímpio). <strong>375 provérbios</strong> nesta seção. Tópicos variam aleatoriamente — não há ordem temática sistemática.
+            </p>
+            <div class="text-xs">
+              <strong class="text-gold-dark">Exemplo típico:</strong> <em>"O filho sábio alegra a seu pai, mas o filho insensato é a tristeza de sua mãe"</em> (10:1)
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 22:17–24:34</span>
+            <div class="font-body text-xs text-ink-faint mt-1">COLEÇÃO II</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">"Palavras dos Sábios" — Provérbios Internacionais</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong>Estilo:</strong> Provérbios ligeiramente mais longos, alguns de <strong>2–4 versículos.</strong> Forte paralelo com <em>Ensinamentos de Amenemope</em> (sabedoria egípcia, ~1200 a.C.) — sugere diálogo com literatura sapiencial internacional.
+            </p>
+            <div class="text-xs">
+              <strong class="text-forest">Nota editorial:</strong> <em>"Inclinam o teu ouvido e ouve as palavras dos sábios"</em> (22:17) — indica nova seção, autores anônimos.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-violet">Cap. 25–29</span>
+            <div class="font-body text-xs text-ink-faint mt-1">COLEÇÃO III</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">Mais Provérbios de Salomão — Editados por Ezequias</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong>Atribuição:</strong> <em>"Também estes são provérbios de Salomão, os quais transcreveram os homens de Ezequias, rei de Judá"</em> (25:1). Salomão escreveu ~700 a.C.; Ezequias compilou ~250 anos depois. <strong>Estilo:</strong> Mais uso de símiles (<em>"como... assim..."</em>), menos antíteses que caps. 10–22.
+            </p>
+            <div class="text-xs">
+              <strong class="text-violet">Exemplo típico:</strong> <em>"Como maçãs de ouro em salvas de prata, assim é a palavra dita a seu tempo"</em> (25:11)
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 30–31</span>
+            <div class="font-body text-xs text-ink-faint mt-1">APÊNDICES</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Palavras de Agur e Lemuel + Mulher Virtuosa</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong>Cap. 30 — Agur:</strong> Autor desconhecido, estilo único (provérbios numéricos: <em>"Três coisas... quatro..."</em>). Humildade intelectual notável (30:2–4).<br/>
+              <strong>Cap. 31:1–9 — Lemuel:</strong> Rei não-israelita? Instruções de sua mãe sobre governo justo e sobriedade.<br/>
+              <strong>Cap. 31:10–31 — Mulher Virtuosa:</strong> Poema acróstico alfabético (22 versos = 22 letras hebraicas) — clímax do livro.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl text-center"
+           style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">Unidade na diversidade:</strong> Apesar de cinco fontes diferentes ao longo de séculos, há coerência teológica: <em>(1) Temor do Senhor como fundamento; (2) Ordem moral no universo; (3) Sabedoria vs. Loucura como escolha fundamental; (4) Consequências práticas de escolhas morais.</em> A compilação final forma manual integrado de sabedoria aplicada.
+        </p>
+      </div>
+    </section>
+
+    <!-- Temor do Senhor -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Temor do Senhor — Fundamento de Toda Sabedoria</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl mb-4 text-center"
+               style="background:rgba(30,58,95,0.08);border:2px solid rgba(30,58,95,0.3);">
+            <div class="text-5xl mb-3">🔑</div>
+            <div class="proverb-quote mb-3" style="border-color:rgba(30,58,95,0.4);">
+              <p class="font-body text-lg text-ink leading-relaxed">
+                "O temor do <span style="font-variant: small-caps;">Senhor</span> é o princípio do saber, mas os loucos desprezam a sabedoria e o ensino."
+              </p>
+            </div>
+            <p class="font-display text-xs text-sapphire tracking-widest">Provérbios 1:7</p>
+          </div>
+
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Que é "Temor do Senhor"?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Hebraico: <span class="hebrew-term">יִרְאַת יְהוָה</span> (<em>yir'at YHWH</em>). Não é <em>terror</em> (pavor servil), mas <strong>reverência respeitosa</strong> — reconhecimento da santidade, autoridade e sabedoria de Deus que resulta em obediência alegre.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">Dimensão intelectual:</strong> Reconhecer que Deus é fonte de toda verdade e ordem
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Dimensão emocional:</strong> Admiração reverente, não terror; amor respeitoso, não servilismo
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">Dimensão volitiva:</strong> Submissão da vontade — escolher obedecer mesmo quando inconveniente
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">Dimensão prática:</strong> Afastar-se do mal (3:7; 8:13; 16:6)
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Textos-Chave sobre Temor do Senhor</h3>
+          <div class="space-y-2">
+            <div class="proverb-card" style="border-color:rgba(30,58,95,0.35);">
+              <p class="font-body text-sm text-ink italic leading-relaxed mb-1">
+                "O temor do Senhor é o princípio do saber, mas os loucos desprezam a sabedoria e o ensino."
+              </p>
+              <p class="font-display text-xs text-sapphire">1:7</p>
+            </div>
+            <div class="proverb-card" style="border-color:rgba(30,74,42,0.35);">
+              <p class="font-body text-sm text-ink italic leading-relaxed mb-1">
+                "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento."
+              </p>
+              <p class="font-display text-xs text-forest">3:5</p>
+            </div>
+            <div class="proverb-card" style="border-color:rgba(200,145,58,0.35);">
+              <p class="font-body text-sm text-ink italic leading-relaxed mb-1">
+                "O temor do Senhor é o princípio da sabedoria, e o conhecimento do Santo é prudência."
+              </p>
+              <p class="font-display text-xs text-gold-dark">9:10</p>
+            </div>
+            <div class="proverb-card" style="border-color:rgba(139,32,32,0.35);">
+              <p class="font-body text-sm text-ink italic leading-relaxed mb-1">
+                "O temor do Senhor ensina a sabedoria, e a humildade precede a honra."
+              </p>
+              <p class="font-display text-xs text-crimson">15:33</p>
+            </div>
+            <div class="proverb-card" style="border-color:rgba(74,30,110,0.35);">
+              <p class="font-body text-sm text-ink italic leading-relaxed mb-1">
+                "O temor do Senhor é fonte de vida para evitar os laços da morte."
+              </p>
+              <p class="font-display text-xs text-violet">14:27</p>
+            </div>
+            <div class="proverb-card" style="border-color:rgba(92,61,30,0.35);">
+              <p class="font-body text-sm text-ink italic leading-relaxed mb-1">
+                "O galardão da humildade e o temor do Senhor são riquezas, honra e vida."
+              </p>
+              <p class="font-display text-xs text-earth">22:4</p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">Conclusão teológica:</strong> Provérbios não é <em>secular</em> — todo conselho prático (trabalho, dinheiro, sexo, amizade) está enraizado em temor do Senhor. Sabedoria autônoma (desconectada de Deus) é, na verdade, <strong>loucura.</strong> <em>"Há caminho que ao homem parece direito, mas ao cabo dá em caminhos de morte"</em> (14:12). Apenas temor do Senhor orienta para vida verdadeira.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sabedoria Personificada -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Sabedoria Personificada — Mulher Nobre (Cap. 8–9)</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="wisdom-personified mb-4" style="border-color:rgba(200,145,58,0.4);">
+            <h3 class="font-display text-base font-bold text-gold-dark mb-3 text-center">Lady Wisdom — A Mulher que Clama nas Ruas</h3>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+              Provérbios 8–9 apresenta <strong>Sabedoria como pessoa feminina</strong> (<span class="hebrew-term">חָכְמָה</span>, <em>chokmah</em> — substantivo feminino) que clama publicamente, convidando todos a aprender dela. É personificação literária — mas com profundidade teológica impressionante.
+            </p>
+            <div class="proverb-quote mb-2" style="border-color:rgba(200,145,58,0.4);">
+              <p class="font-body text-base text-ink leading-relaxed">
+                "O Senhor me possuía no início de suas obras, antes de suas obras mais antigas... Quando ele preparava os céus, aí estava eu... Então, eu estava com ele como arquiteto; e era cada dia as suas delícias, folgando perante ele em todo o tempo."
+              </p>
+            </div>
+            <p class="font-display text-xs text-gold-dark text-center">Provérbios 8:22, 27, 30</p>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-2">Atributos da Sabedoria Personificada:</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong>Pré-existente:</strong> Existia antes da criação (8:22–26)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              <strong>Co-criadora:</strong> Estava com Deus na criação como "arquiteto" (<em>amon</em>) (8:27–30)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              <strong>Delícia de Deus:</strong> <em>"Era cada dia as suas delícias"</em> (8:30)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>Pública e acessível:</strong> Clama nas praças, portas, ruas (8:1–3) — não é esotérica
+            </div>
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+              <strong>Fonte de vida:</strong> <em>"O que me achar achará a vida"</em> (8:35)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.15);">
+              <strong>Oposta à morte:</strong> <em>"O que pecar contra mim violenta a sua alma; todos os que me aborrecem amam a morte"</em> (8:36)
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Banquete das Duas Mulheres (Cap. 9)</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Provérbios 9 dramatiza a escolha entre sabedoria e loucura como convite de <strong>duas mulheres rivais</strong>, ambas chamando transeuntes para seus banquetes:
+          </p>
+
+          <div class="contrast-box mb-4">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+              <h4 class="font-display text-xs font-bold text-gold-dark mb-2">👑 DONA SABEDORIA (9:1–6)</h4>
+              <ul class="text-xs space-y-1 text-ink-muted">
+                <li>🏛️ Edificou sua casa com 7 colunas (perfeição)</li>
+                <li>🍖 Preparou banquete: carne, vinho misturado, mesa posta</li>
+                <li>📣 Envia convite público: <em>"Vinde, comei do meu pão e bebei do vinho que misturei"</em></li>
+                <li>🎯 Promessa: <em>"Deixai a insensatez e vivei; andai pelo caminho do entendimento"</em></li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <h4 class="font-display text-xs font-bold text-crimson mb-2">💀 DONA LOUCURA (9:13–18)</h4>
+              <ul class="text-xs space-y-1 text-ink-muted">
+                <li>🗣️ Alvoroçadora, néscia, não sabe coisa alguma</li>
+                <li>🚪 Senta-se à porta de sua casa, em lugar alto da cidade</li>
+                <li>🎣 Convite sedutor: <em>"As águas roubadas são doces, e o pão comido às ocultas é agradável"</em></li>
+                <li>⚰️ Realidade: <em>"Os mortos ali estão; os seus convidados estão nas profundezas do Seol"</em></li>
+              </ul>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-2">Interpretação Cristológica</h4>
+          <div class="p-4 rounded-xl"
+               style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+              <strong class="text-sapphire">NT identifica Cristo como Sabedoria de Deus:</strong>
+            </p>
+            <div class="space-y-2 text-xs">
+              <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+                <strong>1Co 1:24, 30:</strong> <em>"Cristo, poder de Deus e sabedoria de Deus... o qual se nos tornou da parte de Deus sabedoria."</em>
+              </div>
+              <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+                <strong>Cl 2:3:</strong> <em>"Em Cristo estão escondidos todos os tesouros da sabedoria e do conhecimento."</em>
+              </div>
+              <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+                <strong>Jo 1:1–3:</strong> <em>"No princípio era o Verbo... Todas as coisas foram feitas por ele"</em> — paralelo com Sabedoria pré-existente, co-criadora (Pv 8:22–30).
+              </div>
+              <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+                <strong>Mt 11:28–29:</strong> Jesus convida: <em>"Vinde a mim... e achareis descanso"</em> — eco do convite da Sabedoria (Pv 9:5).
+              </div>
+            </div>
+            <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed italic">
+              Pais da Igreja (Justino, Ireneu, Atanásio) viram Pv 8 como referência ao Logos pré-encarnado — Cristo como Sabedoria eterna de Deus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Principais -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Práticos — Sabedoria Aplicada à Vida</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Provérbios trata de praticamente <strong>toda área da vida humana.</strong> Não há separação entre "sagrado" e "secular" — tudo é terreno de aplicação do temor do Senhor. Eis os temas mais recorrentes:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="wisdom-topic" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-2xl flex-shrink-0">💬</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-sapphire mb-1">1. A Língua — Poder de Vida e Morte</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              <strong>Tema mais frequente.</strong> A língua pode curar ou destruir, construir ou demolir. Controlar a fala é sinal supremo de sabedoria.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"A morte e a vida estão no poder da língua"</em> (18:21)</p>
+              <p class="italic">• <em>"A resposta branda desvia o furor"</em> (15:1)</p>
+              <p class="italic">• <em>"Até o tolo, quando se cala, é tido por sábio"</em> (17:28)</p>
+              <p class="italic">• <em>"Há os que falam como que espada penetrante, mas a língua dos sábios é saúde"</em> (12:18)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <span class="text-2xl flex-shrink-0">💰</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-forest mb-1">2. Riqueza e Pobreza</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              Visão equilibrada: riqueza não é má, mas não é fim último. Pobreza não é virtuosa, mas preferível à riqueza desonesta. <strong>Caráter > dinheiro.</strong>
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"Melhor é o pouco com o temor do Senhor do que um grande tesouro onde há inquietação"</em> (15:16)</p>
+              <p class="italic">• <em>"Quem confia nas suas riquezas cairá"</em> (11:28)</p>
+              <p class="italic">• <em>"O que dá ao pobre não terá necessidade"</em> (28:27)</p>
+              <p class="italic">• <em>"Não me dês nem pobreza nem riqueza... para que, farto, não te negue... ou, empobrecido, não venha a furtar"</em> (30:8–9)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-2xl flex-shrink-0">🛠️</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-gold-dark mb-1">3. Trabalho e Preguiça</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              Trabalho diligente é virtude; preguiça é vício autodestrutivo. Provérbios não tem paciência com preguiçoso — usa ironia mordaz.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"Vai ter com a formiga, ó preguiçoso, considera os seus caminhos e sê sábio"</em> (6:6)</p>
+              <p class="italic">• <em>"A mão dos diligentes dominará, mas os indolentes serão tributários"</em> (12:24)</p>
+              <p class="italic">• <em>"O preguiçoso deseja e nada alcança, mas a alma dos diligentes se farta"</em> (13:4)</p>
+              <p class="italic">• <em>"O preguiçoso mete a mão no prato e não quer dar sequer um bocado à boca"</em> (19:24 — ironia hilária!)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="text-2xl flex-shrink-0">👨‍👩‍👧‍👦</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-violet mb-1">4. Família e Educação de Filhos</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              Pais devem ensinar sabedoria ativamente. Disciplina (não abuso) é amor; permissividade é negligência.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"Instrui o menino no caminho em que deve andar, e, até quando envelhecer, não se desviará dele"</em> (22:6)</p>
+              <p class="italic">• <em>"O que retém a vara aborrece a seu filho, mas o que o ama, cedo, o disciplina"</em> (13:24)</p>
+              <p class="italic">• <em>"A estultícia está ligada ao coração do menino, mas a vara da disciplina a afastará dele"</em> (22:15)</p>
+              <p class="italic">• <em>"O filho sábio alegra a seu pai, mas o filho insensato é a tristeza de sua mãe"</em> (10:1)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <span class="text-2xl flex-shrink-0">💔</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-crimson mb-1">5. Sexualidade e Adultério</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              <strong>Advertências severas</strong> contra adultério (caps. 5, 6:20–35, 7). A "mulher estranha" (<em>ishah zarah</em>) seduz jovem tolo — resulta em morte espiritual.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"Pode um homem pôr fogo no peito sem que as suas vestes se queimem?"</em> (6:27)</p>
+              <p class="italic">• <em>"Os lábios da mulher estranha destilam mel... mas o seu fim é amargoso como o absinto"</em> (5:3–4)</p>
+              <p class="italic">• <em>"O que adultera com uma mulher está fora de si; só mesmo quem quer arruinar-se é que pratica tal coisa"</em> (6:32)</p>
+              <p class="italic">• <em>"Bebe a água da tua própria cisterna... Seja bendito o teu manancial, e alegra-te com a mulher da tua mocidade"</em> (5:15, 18)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="text-2xl flex-shrink-0">🤝</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-earth mb-1">6. Amizade e Companhia</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              Escolha de amigos molda caráter. Amigo verdadeiro é tesouro; companhias más destroem.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"Quem anda com os sábios será sábio, mas o companheiro dos tolos sofre aflição"</em> (13:20)</p>
+              <p class="italic">• <em>"Em todo tempo ama o amigo, e na angústia se faz o irmão"</em> (17:17)</p>
+              <p class="italic">• <em>"O homem que tem muitos amigos pode congratular-se, mas há amigo mais chegado do que um irmão"</em> (18:24)</p>
+              <p class="italic">• <em>"Leais são as feridas feitas pelo que ama, porém os beijos de quem aborrece são enganosos"</em> (27:6)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.2);">
+          <span class="text-2xl flex-shrink-0">😤</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-fire mb-1">7. Ira e Autocontrole</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              Pessoa sábia controla temperamento. Ira descontrolada destrói relacionamentos e decisões.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"O iracundo levanta contendas, mas o longânimo apazigua a luta"</em> (15:18)</p>
+              <p class="italic">• <em>"Melhor é o longânimo do que o herói da guerra, e o que domina o seu espírito, do que o que toma uma cidade"</em> (16:32)</p>
+              <p class="italic">• <em>"A insensatez do homem perverte o seu caminho, mas é contra o Senhor que se irrita o seu coração"</em> (19:3)</p>
+              <p class="italic">• <em>"Não te associes com o iracundo, nem andes com o homem colérico"</em> (22:24)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="wisdom-topic" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="text-2xl flex-shrink-0">👑</span>
+          <div>
+            <h3 class="font-display text-sm font-bold text-violet mb-1">8. Governo e Justiça</h3>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              Provérbios contém <strong>teologia política</strong> — reis devem governar com justiça; justiça exalta nação.
+            </p>
+            <div class="space-y-1 text-xs">
+              <p class="italic">• <em>"A justiça exalta as nações, mas o pecado é o opróbrio dos povos"</em> (14:34)</p>
+              <p class="italic">• <em>"Quando os justos governam, o povo se alegra; quando, porém, o ímpio domina, o povo geme"</em> (29:2)</p>
+              <p class="italic">• <em>"Tirai o perverso da presença do rei, e o seu trono se firmará na justiça"</em> (25:5)</p>
+              <p class="italic">• <em>"Abominação é para os reis praticarem impiedade, porque com justiça se estabelece o trono"</em> (16:12)</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Provérbios Antitéticos -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Paralelismo Antitético — A Estrutura Mais Comum</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        <strong>Paralelismo antitético</strong> é a estrutura dominante em Provérbios 10–15: duas linhas que <em>contrastam</em> verdades opostas. Palavra-chave no meio: <strong>mas</strong> (hebraico <span class="hebrew-term">וְ</span>, <em>ve</em> — "mas/porém"). Facilita memorização e força escolha entre dois caminhos.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="antithetical-proverb" style="border-color:rgba(30,58,95,0.3);">
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"O filho sábio alegra a seu pai"</p>
+          </div>
+          <div class="text-2xl font-bold text-ink-faint">⚖️</div>
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"mas o filho insensato é a tristeza de sua mãe"</p>
+          </div>
+        </div>
+        <div class="text-center p-2">
+          <p class="font-display text-xs text-sapphire">Provérbios 10:1</p>
+        </div>
+
+        <div class="antithetical-proverb" style="border-color:rgba(30,74,42,0.3);">
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"A bênção do Senhor enriquece"</p>
+          </div>
+          <div class="text-2xl font-bold text-ink-faint">⚖️</div>
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"e não lhe acrescenta dores"</p>
+          </div>
+        </div>
+        <div class="text-center p-2">
+          <p class="font-display text-xs text-forest">Provérbios 10:22</p>
+        </div>
+
+        <div class="antithetical-proverb" style="border-color:rgba(200,145,58,0.35);">
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"A resposta branda desvia o furor"</p>
+          </div>
+          <div class="text-2xl font-bold text-ink-faint">⚖️</div>
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"mas a palavra dura suscita a ira"</p>
+          </div>
+        </div>
+        <div class="text-center p-2">
+          <p class="font-display text-xs text-gold-dark">Provérbios 15:1</p>
+        </div>
+
+        <div class="antithetical-proverb" style="border-color:rgba(139,32,32,0.3);">
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"O que encobre as suas transgressões jamais prosperará"</p>
+          </div>
+          <div class="text-2xl font-bold text-ink-faint">⚖️</div>
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"mas o que as confessa e deixa alcançará misericórdia"</p>
+          </div>
+        </div>
+        <div class="text-center p-2">
+          <p class="font-display text-xs text-crimson">Provérbios 28:13</p>
+        </div>
+
+        <div class="antithetical-proverb" style="border-color:rgba(74,30,110,0.3);">
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"O coração alegre aformoseia o rosto"</p>
+          </div>
+          <div class="text-2xl font-bold text-ink-faint">⚖️</div>
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"mas com a dor do coração o espírito se abate"</p>
+          </div>
+        </div>
+        <div class="text-center p-2">
+          <p class="font-display text-xs text-violet">Provérbios 15:13</p>
+        </div>
+
+        <div class="antithetical-proverb" style="border-color:rgba(92,61,30,0.3);">
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"O homem perverso espalha contendas"</p>
+          </div>
+          <div class="text-2xl font-bold text-ink-faint">⚖️</div>
+          <div class="text-center">
+            <p class="font-body text-sm text-ink italic">"e o difamador separa amigos íntimos"</p>
+          </div>
+        </div>
+        <div class="text-center p-2">
+          <p class="font-display text-xs text-earth">Provérbios 16:28</p>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">Efeito pedagógico:</strong> Paralelismo antitético força leitor a <em>escolher.</em> Não há meio-termo. Ou sabedoria ou loucura. Ou diligência ou preguiça. Ou humildade ou arrogância. Contraste agudo clarifica opções morais — e consequências.
+        </p>
+      </div>
+    </section>
+
+    <!-- Provérbios 31 -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Provérbios 31:10–31 — A Mulher Virtuosa</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl mb-4 text-center"
+               style="background:rgba(200,145,58,0.08);border:2px solid rgba(200,145,58,0.35);">
+            <div class="text-5xl mb-3">👸</div>
+            <h3 class="font-display text-lg font-bold text-gold-dark mb-2">אֵשֶׁת־חַיִל — Eshet Chayil</h3>
+            <p class="font-body text-sm text-ink-muted">"Mulher de Valor" / "Mulher Virtuosa" / "Mulher de Força"</p>
+            <div class="mt-3 p-3 rounded" style="background:rgba(255,255,255,0.5);">
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                <strong>Estrutura:</strong> Poema acróstico alfabético — 22 versículos, cada um começando com letra sucessiva do alfabeto hebraico (Alef → Tav). Simboliza <em>completude</em> — de A a Z da excelência feminina.
+              </p>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Por que Terminar Provérbios Assim?</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">1. Contraponto à "mulher estranha"</strong>
+              <p class="text-ink-muted mt-1">Caps. 5, 7 advertem contra mulher adúltera. Cap. 31 apresenta <em>oposto</em> — mulher sábia, fiel, trabalhadora. É conclusão moral do livro.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">2. Personificação da Sabedoria encarnada</strong>
+              <p class="text-ink-muted mt-1">Assim como cap. 8–9 personificam sabedoria como mulher, cap. 31 mostra sabedoria <em>vivida</em> — não abstração, mas vida concreta.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">3. Modelo de tudo que Provérbios ensinou</strong>
+              <p class="text-ink-muted mt-1">Trabalho diligente, gestão de casa, generosidade, autocontrole, temor do Senhor — todos temas do livro concentrados numa pessoa.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">4. Valorização da mulher numa cultura patriarcal</strong>
+              <p class="text-ink-muted mt-1">Texto celebra competência, inteligência, habilidade empreendedora feminina — notável para contexto antigo.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Características da Mulher Virtuosa</h3>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="virtuous-woman-trait" style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.18);">
+              <div class="text-lg mb-1">💎</div>
+              <p class="font-body text-xs text-ink"><strong>Valor inestimável</strong> (v.10) — <em>"muito mais que joias preciosas"</em></p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.18);">
+              <div class="text-lg mb-1">🤝</div>
+              <p class="font-body text-xs text-ink"><strong>Confiável</strong> (v.11) — marido confia nela totalmente</p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.2);">
+              <div class="text-lg mb-1">💪</div>
+              <p class="font-body text-xs text-ink"><strong>Trabalhadora</strong> (v.13–19) — faz lã, linho, providencia comida, planta vinha</p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.18);">
+              <div class="text-lg mb-1">🏪</div>
+              <p class="font-body text-xs text-ink"><strong>Empreendedora</strong> (v.16, 18, 24) — compra campo, faz negócios</p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.18);">
+              <div class="text-lg mb-1">❤️</div>
+              <p class="font-body text-xs text-ink"><strong>Generosa</strong> (v.20) — <em>"abre a mão ao aflito e estende os braços aos necessitados"</em></p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(92,61,30,0.04);border-color:rgba(92,61,30,0.18);">
+              <div class="text-lg mb-1">👗</div>
+              <p class="font-body text-xs text-ink"><strong>Digna</strong> (v.22, 25) — veste linho fino e púrpura; força e dignidade são suas vestes</p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(184,74,16,0.04);border-color:rgba(184,74,16,0.18);">
+              <div class="text-lg mb-1">🗣️</div>
+              <p class="font-body text-xs text-ink"><strong>Sábia ao falar</strong> (v.26) — <em>"abre a boca com sabedoria, e a lei da bondade está na sua língua"</em></p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.18);">
+              <div class="text-lg mb-1">👨‍👩‍👧‍👦</div>
+              <p class="font-body text-xs text-ink"><strong>Mãe atenta</strong> (v.27–28) — filhos a chamam bem-aventurada; marido a louva</p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.18);">
+              <div class="text-lg mb-1">😊</div>
+              <p class="font-body text-xs text-ink"><strong>Alegre</strong> (v.25) — <em>"ri-se do dia de amanhã"</em> (sem ansiedade paralisante)</p>
+            </div>
+            <div class="virtuous-woman-trait" style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.2);">
+              <div class="text-lg mb-1">🙏</div>
+              <p class="font-body text-xs text-ink"><strong>Temente a Deus</strong> (v.30) — <em>"a mulher que teme ao Senhor, essa será louvada"</em></p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong class="text-gold-dark">Interpretação correta:</strong> Não é lista de tarefas para mulher perfeita cumprir (impossível!) — é <em>retrato composto</em> de sabedoria aplicada ao longo de vida inteira. Nenhuma mulher faz tudo isso simultaneamente. É ideal a aspirar, não padrão para condenar.
+            </p>
+            <p class="font-body text-xs text-ink-muted leading-relaxed italic">
+              Versículo-chave: <em>"Enganosa é a graça, e vã a formosura, mas a mulher que teme ao Senhor, essa será louvada."</em> (31:30) — beleza externa é passageira; caráter piedoso é eterno.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-7">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salomão escreveu 3.000 provérbios — só ~800 estão na Bíblia:</strong> <em>"Também Salomão compôs três mil provérbios"</em> (1Rs 4:32). Provérbios canônico contém seleção editada — os melhores, mais úteis, mais alinhados com revelação de Yahweh. Restante se perdeu ou foi descartado como inferior.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Paralelos com sabedoria egípcia — especialmente "Ensinamentos de Amenemope":</strong> Provérbios 22:17–24:22 tem paralelos impressionantes com texto egípcio <em>Instrução de Amenemope</em> (~1200 a.C.). Não é plágio — é diálogo com sabedoria internacional. Israel reconhecia verdade universal onde a encontrasse, mas sempre filtrada por temor do Senhor.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"O preguiçoso mete a mão no prato..." (19:24; 26:15):</strong> Este provérbio aparece <strong>duas vezes</strong> — mostrando que compiladores juntaram coleções sem eliminar duplicatas. Há cerca de 20 provérbios repetidos (com leves variações) em diferentes seções do livro. Não é erro — é característica de antologia.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Provérbios 26:4–5 — contradição deliberada?</strong> Verso 4: <em>"Não respondas ao tolo segundo a sua estultícia."</em> Verso 5: <em>"Responde ao tolo segundo a sua estultícia."</em> Contraditórios? Não — ensinam <strong>sabedoria situacional.</strong> Às vezes ignorar tolo é melhor; às vezes confrontar é necessário. Sabedoria é saber quando aplicar qual princípio.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Provérbio mais longo — 6:1–19:</strong> Discurso de 19 versículos sobre fiador de dívidas alheias, preguiça da formiga, e sete coisas que Deus abomina. Maioria dos provérbios tem 1–2 versículos; este é mini-ensaio.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Provérbios numéricos — estilo de Agur (cap. 30):</strong> <em>"Três coisas há que nunca se fartam; sim, quatro que não dizem: Basta!"</em> (30:15). Estrutura poética chamada <em>gradação numérica</em> (x / x+1) — cria ritmo, suspense. Aparece em caps. 6, 30.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Tiago 3 — comentário do NT sobre Provérbios:</strong> Tiago 3:1–12 (controle da língua) é meditação sobre Provérbios. <em>"A língua é fogo... nenhum homem pode domar a língua"</em> (Tg 3:6, 8) — eco de <em>"A morte e a vida estão no poder da língua"</em> (Pv 18:21). Tiago aplica Provérbios à igreja primitiva.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jesus citou/aludiu a Provérbios:</strong> <em>"Mais bem-aventurada coisa é dar que receber"</em> (At 20:35, palavras de Jesus) — eco de Pv 11:25. <em>"Quando deres um jantar... convida os pobres"</em> (Lc 14:12–13) — eco de Pv 14:31; 19:17. Jesus vivia Provérbios.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Brasas vivas sobre a cabeça" (25:21–22):</strong> <em>"Se o teu inimigo tiver fome, dá-lhe pão para comer... porque assim lhe amontoarás brasas vivas sobre a cabeça."</em> Paulo cita em Rm 12:20. Significado debatido: (1) metáfora para vergonha/arrependimento; (2) ritual egípcio de penitência (carregar braseiro na cabeça); (3) gentileza que "queima" consciência do inimigo. Resultado: vença o mal com o bem.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Leitura judaica de Provérbios 31 — todo shabat:</strong> Judeus ortodoxos cantam <em>Eshet Chayil</em> (Pv 31:10–31) toda sexta ao anoitecer, quando o shabat começa. Marido canta para esposa, honrando-a publicamente. Transformou texto em liturgia semanal de apreciação matrimonial.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Derek Kidner sobre Provérbios — "não são cheques em branco, mas bússolas":</strong> Teólogo britânico Derek Kidner (1913–2008) resumiu perfeitamente: <em>"Provérbios não são promessas automáticas (cheques em branco que Deus é obrigado a honrar se cumprirmos condições), mas bússolas — indicam direção geral em mundo ordenado por Deus. Apontam para norte moral, mas travessia real envolve terreno acidentado, exceções, mistérios (veja Jó e Eclesiastes). Sabedoria é arte, não ciência exata. Requer discernimento situacional, não aplicação mecânica."</em> Esta distinção é crucial para não transformar Provérbios em <strong>teologia da prosperidade</strong> (faça X, ganhe Y automaticamente) ou descartar como "não funciona" quando vida não segue padrão esperado. Provérbios descreve mundo como <em>deveria</em> funcionar (ordem criada); Jó explica exceções trágicas; Eclesiastes lida com frustrações quando sabedoria parece falhar. <strong>Os três livros juntos formam teologia sapiencial completa.</strong>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave finais -->
+    <section class="text-center py-8 animate-fade-up animate-delay-8">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O temor do Senhor é o princípio do saber, mas os loucos desprezam a sabedoria e o ensino."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Provérbios 1:7 — Fundamento de toda sabedoria</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Confia no Senhor de todo o teu coração e não te estribes no teu próprio entendimento."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Provérbios 3:5 — Dependência radical de Deus</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Há caminho que ao homem parece direito, mas ao cabo dá em caminhos de morte."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Provérbios 14:12 — Perigo da autonomia moral</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "A morte e a vida estão no poder da língua; o que bem a utiliza come do seu fruto."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Provérbios 18:21 — Poder criador e destrutivo da fala</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Enganosa é a graça, e vã a formosura, mas a mulher que teme ao Senhor, essa será louvada."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Provérbios 31:30 — Caráter acima de aparência</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Provérbios · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

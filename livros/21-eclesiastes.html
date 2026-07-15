@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Eclesiastes — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Refrão "Vaidade de vaidades" */
+    .vanity-refrain {
+      border-radius: 10px;
+      padding: 1.25rem;
+      border: 2px solid;
+      background: linear-gradient(135deg, rgba(60,60,60,0.06) 0%, rgba(255,255,255,0.4) 100%);
+      font-style: italic;
+      text-align: center;
+      position: relative;
+    }
+    .vanity-refrain::before {
+      content: '💨';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      background: #fdf8ef;
+      padding: 0 10px;
+    }
+
+    /* Experimentos de Qohelet */
+    .experiment-card {
+      border-radius: 10px;
+      padding: 1rem;
+      border-left: 4px solid;
+      background: rgba(255,255,255,0.5);
+      transition: all 0.3s ease;
+    }
+    .experiment-card:hover {
+      transform: translateX(6px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+
+    /* Paradoxos */
+    .paradox-statement {
+      border-radius: 8px;
+      padding: 1rem;
+      border: 1px dashed;
+      display: flex;
+      gap: 0.875rem;
+      align-items: flex-start;
+    }
+
+    /* "Debaixo do sol" */
+    .under-sun {
+      display: inline-block;
+      background: rgba(200,145,58,0.12);
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      border: 1px solid rgba(200,145,58,0.25);
+      font-size: 0.875rem;
+    }
+
+    /* "Tempo para cada coisa" grid */
+    .time-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem;
+      padding: 1rem;
+      border-radius: 8px;
+      background: rgba(30,58,95,0.04);
+      border: 1px solid rgba(30,58,95,0.15);
+    }
+
+    /* Citação sombria */
+    .dark-quote {
+      border-left: 4px solid rgba(60,60,60,0.4);
+      padding-left: 1.5rem;
+      font-style: italic;
+      color: #4a4a4a;
+      line-height: 1.8;
+    }
+
+    /* Conclusão final */
+    .final-conclusion {
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 3px solid;
+      background: linear-gradient(135deg, rgba(200,145,58,0.08) 0%, rgba(30,58,95,0.06) 100%);
+      position: relative;
+    }
+    .final-conclusion::before {
+      content: '⚖️';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.2rem;
+      background: #fdf8ef;
+      padding: 0 12px;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS POÉTICOS · 21º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(60,60,60,0.2);">
+        Eclesiastes
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>קֹהֶלֶת</em> (Qohelet) — "Pregador", "Assembleia", "O que Reúne"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O livro mais sombrio e honesto da Bíblia · <strong>a crise existencial inspirada</strong> · onde fé confronta futilidade · vaidade sob o sol, eternidade no coração
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">12</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">222</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">38×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">"Vaidade" (הֶבֶל)</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">29×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">"Debaixo do sol"</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(60,60,60,0.06);border:1px solid rgba(60,60,60,0.18);">
+              <span class="font-display text-xs font-bold text-ink-faint">21º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">4º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Poéticos/Sapienciais</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Megillot</span>
+              <span class="font-body text-sm text-ink">Um dos <strong>cinco rolos</strong> — lido na Festa dos Tabernáculos</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro Mais Controverso do AT</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Eclesiastes quase não entrou no cânon. Rabinos debateram intensamente: é muito pessimista? Contradiz Torá? Mas prevaleceu — porque confronta <strong>honestamente</strong> as perguntas que todos fazem mas poucos verbalizam: <em>A vida tem sentido? Por que trabalhamos se tudo acaba? Por que os justos sofrem e ímpios prosperam?</em>
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o <strong>antídoto contra otimismo superficial de Provérbios.</strong> Provérbios diz: <em>"O justo prospera."</em> Eclesiastes responde: <em>"Nem sempre. E mesmo quando prospera, a morte nivela tudo."</em> Juntos, formam teologia realista: esperança sem ingenuidade, sabedoria sem ilusões.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vaidade de Vaidades -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">הֶבֶל הֲבָלִים — "Vaidade de Vaidades"</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="vanity-refrain mb-4" style="border-color:rgba(60,60,60,0.3);">
+            <p class="font-body text-2xl text-ink leading-relaxed mb-2">
+              "Vaidade de vaidades, diz o Pregador, vaidade de vaidades! Tudo é vaidade."
+            </p>
+            <p class="font-display text-sm text-ink-faint tracking-widest">Eclesiastes 1:2 (e 12:8)</p>
+          </div>
+
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Que Significa הֶבֶל (Hevel)?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            <strong>Hevel</strong> (הֶבֶל) literalmente = <em>"sopro", "vapor", "névoa".</em> Aparece <strong>38 vezes</strong> em Eclesiastes (mais que todo resto do AT combinado). Não é apenas "vaidade" no sentido de orgulho — é algo muito mais profundo:
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>1. Transitoriedade:</strong> Como vapor que aparece e desaparece — fugaz, efêmero
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>2. Futilidade:</strong> Esforço sem resultado permanente — como tentar agarrar vento
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>3. Mistério/Absurdo:</strong> Vida que não faz sentido quando vista <span class="under-sun">debaixo do sol</span>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>4. Insignificância:</strong> Pequenez humana diante da imensidão do cosmos e tempo
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Traduções de הֶבֶל em Diferentes Versões</h3>
+          <div class="space-y-2 text-sm">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong class="text-sapphire">ARC/ARA:</strong> <em>"Vaidade"</em> — tradicional, mas pode dar impressão errada (orgulho)
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              <strong class="text-forest">NVI:</strong> <em>"Que grande inutilidade!"</em> — captura futilidade
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="text-gold-dark">NTLH:</strong> <em>"Nada faz sentido"</em> — captura absurdo existencial
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong class="text-violet">KJV/ESV:</strong> <em>"Vanity"</em> — mantém ambiguidade do hebraico
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+              <strong class="text-crimson">The Message:</strong> <em>"Smoke, nothing but smoke"</em> — literal, metafórico
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.15);">
+              <strong class="text-earth">Eruditos modernos:</strong> <em>"Absurdo", "Enigma", "Vapor"</em> — enfatizam mistério
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(60,60,60,0.05);border:1px solid rgba(60,60,60,0.15);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-ink">Melhor tradução:</strong> Deixar sem traduzir — <strong>hevel</strong> — porque nenhuma palavra portuguesa captura toda riqueza semântica. É simultaneamente vapor, futilidade, absurdo, mistério. <em>"Hevel havalim, tudo é hevel."</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Debaixo do Sol -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">"Debaixo do Sol" — A Perspectiva Limitada</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(200,145,58,0.08);border:2px solid rgba(200,145,58,0.3);">
+            <div class="text-5xl text-center mb-3">☀️</div>
+            <h3 class="font-display text-base font-bold text-gold-dark mb-2 text-center">תַּחַת הַשָּׁמֶשׁ</h3>
+            <p class="font-body text-sm text-ink-muted text-center italic">"Tachat ha-shamesh" — "Debaixo do sol"</p>
+            <div class="mt-3 p-2 rounded text-center" style="background:rgba(255,255,255,0.5);">
+              <p class="font-body text-xs text-ink-muted">Aparece <strong>29 vezes</strong> em Eclesiastes — mais que todo resto da Bíblia (0×)</p>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">O Que Significa?</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            <span class="under-sun">Debaixo do sol</span> = <strong>perspectiva terrestre, temporal, limitada ao mundo visível.</strong> É a vida vista <em>sem revelação de Deus</em>, sem esperança de eternidade, sem ressurreição. É filosofia <em>imanente</em> — presa neste mundo.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.15);">
+              ☀️ <strong>Horizontalismo:</strong> Só o que se vê, toca, mede. Sem transcendência.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.15);">
+              ⏳ <strong>Temporalidade:</strong> Tudo é temporário; morte é fim absoluto.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.15);">
+              🔄 <strong>Ciclos sem progresso:</strong> História se repete; nada de novo (1:9–10).
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.15);">
+              ❓ <strong>Injustiça não resolvida:</strong> Ímpios prosperam; justos sofrem — e ninguém corrige.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Contraste: "Acima do Sol"</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Eclesiastes <em>ocasionalmente</em> aponta para além do sol — momentos onde perspectiva eterna irrompe:
+          </p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire text-xs">3:11 — Eternidade no coração</strong>
+              <p class="font-body text-xs text-ink-muted mt-1 italic leading-relaxed">
+                <em>"Tudo fez Deus formoso no seu tempo; também pôs a eternidade no coração do homem, sem que este possa descobrir as obras que Deus fez desde o princípio até ao fim."</em> — Humanos têm senso de transcendência, mas não conseguem compreender plenamente.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest text-xs">12:7 — Espírito retorna a Deus</strong>
+              <p class="font-body text-xs text-ink-muted mt-1 italic leading-relaxed">
+                <em>"O pó volte à terra, como o era, e o espírito volte a Deus, que o deu."</em> — Morte não é aniquilação total; há dimensão espiritual que sobrevive.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark text-xs">12:14 — Juízo final</strong>
+              <p class="font-body text-xs text-ink-muted mt-1 italic leading-relaxed">
+                <em>"Porque Deus há de trazer a juízo toda obra e até tudo o que está encoberto, quer seja bom, quer seja mau."</em> — Injustiças <span class="under-sun">debaixo do sol</span> serão corrigidas <em>acima do sol</em> no tribunal divino.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-violet">Interpretação teológica:</strong> Eclesiastes opera em <strong>duas perspectivas simultâneas</strong> — <span class="under-sun">debaixo do sol</span> (imanente, temporal, frustrante) e <em>acima do sol</em> (transcendente, eterna, esperançosa). Maioria do livro descreve primeira; conclusão aponta para segunda. É tensão deliberada: vida <em>sem Deus</em> é hevel; vida <em>com Deus</em> (mesmo não compreendendo tudo) tem sentido último.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Estrutura do Livro — Experimentos e Conclusões</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Eclesiastes não é linear — é <strong>cíclico e experimental.</strong> Qohelet testa diferentes caminhos para felicidade/sentido, todos falham <span class="under-sun">debaixo do sol</span>, mas pequenas alegrias e temor de Deus emergem como refúgio parcial. Estrutura geral:
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(60,60,60,0.05);border-color:rgba(60,60,60,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-ink-faint">1:1–11</span>
+            <div class="font-body text-xs text-ink-faint mt-1">PRÓLOGO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-ink mb-1">Tese — "Tudo é Vaidade"</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Introdução do tema:</strong> <em>"Vaidade de vaidades! Tudo é vaidade."</em> (1:2). Descrição de ciclos naturais sem progresso — sol nasce/põe, vento gira, rios correm ao mar mas mar nunca enche. <em>"Nada há de novo debaixo do sol"</em> (1:9). História é repetição sem avanço real.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-sapphire">1:12–2:26</span>
+            <div class="font-body text-xs text-ink-faint mt-1">EXPERIMENTOS</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Qohelet Testa Tudo — Sabedoria, Prazer, Trabalho, Riqueza</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              Qohelet (identificado como rei em Jerusalém — presumivelmente Salomão em velhice) <strong>experimenta sistematicamente</strong> tudo que humanidade busca para felicidade:
+            </p>
+            <div class="grid md:grid-cols-2 gap-2 text-xs">
+              <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                🧠 <strong>Sabedoria/Conhecimento (1:12–18):</strong> <em>"Apliquei meu coração... busquei sabedoria"</em> → Resultado: <em>"Quanto maior a sabedoria, maior o sofrimento"</em> (1:18)
+              </div>
+              <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                🎉 <strong>Prazer/Hedonismo (2:1–11):</strong> Vinho, construções, jardins, servos, cantores, concubinas — <em>"Nada neguei aos meus olhos"</em> → Resultado: <em>"Tudo era vaidade"</em> (2:11)
+              </div>
+              <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                💼 <strong>Trabalho/Realização (2:18–23):</strong> Construir império, deixar legado → Resultado: <em>"Odeio todo meu trabalho... terei que deixá-lo a outro"</em> (2:18)
+              </div>
+              <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                💀 <strong>Conclusão parcial (2:24–26):</strong> Primeira aparição do <em>carpe diem</em> — <em>"Não há nada melhor... que comer, beber e alegrar-se"</em> — mas mesmo isso vem de Deus, não é autônomo
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 3–6</span>
+            <div class="font-body text-xs text-ink-faint mt-1">OBSERVAÇÕES</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Reflexões sobre Tempo, Morte, Injustiça, Riqueza</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Cap. 3:</strong> "Tempo para cada coisa" (3:1–8) — poema famoso. Mas contexto é fatalismo: humanos não controlam tempos. <em>"Eternidade no coração"</em> (3:11) mas incapacidade de compreender.<br/>
+              <strong>Cap. 4:</strong> Opressão, inveja, solidão — <em>"Melhor é o morto que o vivo; e melhor que ambos é não ter nascido"</em> (4:2–3).<br/>
+              <strong>Cap. 5:</strong> Riqueza não satisfaz; quanto mais tem, mais quer (5:10).<br/>
+              <strong>Cap. 6:</strong> Homem rico sem herdeiro — <em>"Aborto seria melhor"</em> (6:3).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 7–11</span>
+            <div class="font-body text-xs text-ink-faint mt-1">SABEDORIA PRÁTICA</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">Provérbios Realistas — Como Viver Apesar do Absurdo</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Seção mais parecida com Provérbios, mas com tom sombrio. Conselhos práticos para viver em mundo que não faz sentido: não seja excessivamente justo nem excessivamente ímpio (7:16–17); ninguém é perfeitamente justo (7:20); <em>"Lança teu pão sobre as águas"</em> (11:1) — arrisque apesar de incerteza. Mas sempre tensão: sabedoria ajuda, mas não resolve mistério fundamental.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:90px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 12</span>
+            <div class="font-body text-xs text-ink-faint mt-1">CONCLUSÃO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Velhice, Morte e Veredicto Final</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>12:1–8:</strong> Poema alegórico sobre velhice/morte — corpo decadente descrito metaforicamente. Termina repetindo refrão: <em>"Vaidade de vaidades! Tudo é vaidade."</em><br/>
+              <strong>12:9–14:</strong> Epílogo (provavelmente editor) — Qohelet foi sábio, ensinou povo. <strong>Conclusão final:</strong> <em>"Teme a Deus e guarda seus mandamentos, porque isto é o dever de todo homem. Porque Deus há de trazer a juízo toda obra."</em> (12:13–14)
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Tempo para Tudo -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Eclesiastes 3:1–8 — "Tempo para Tudo"</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(30,58,95,0.06);border:2px solid rgba(30,58,95,0.25);">
+            <h3 class="font-display text-base font-bold text-sapphire mb-3 text-center">O Poema Mais Famoso de Eclesiastes</h3>
+            <div class="dark-quote text-sm mb-3" style="border-color:rgba(30,58,95,0.4);">
+              <p class="leading-relaxed">
+                "Tudo tem o seu tempo determinado, e há tempo para todo propósito debaixo do céu:<br/>
+                Tempo de nascer e tempo de morrer; tempo de plantar e tempo de arrancar o que se plantou;<br/>
+                Tempo de matar e tempo de curar; tempo de derribar e tempo de edificar..."
+              </p>
+            </div>
+            <p class="font-display text-xs text-sapphire text-center">Eclesiastes 3:1–8 (parcial)</p>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-2">Os 14 Pares de Opostos</h4>
+          <div class="time-grid text-xs">
+            <div>⏳ Nascer</div><div>💀 Morrer</div>
+            <div>🌱 Plantar</div><div>🔨 Arrancar</div>
+            <div>⚔️ Matar</div><div>💊 Curar</div>
+            <div>🏚️ Derribar</div><div>🏗️ Edificar</div>
+            <div>😢 Chorar</div><div>😂 Rir</div>
+            <div>😭 Prantear</div><div>💃 Dançar</div>
+            <div>🪨 Espalhar pedras</div><div>🤲 Ajuntar pedras</div>
+            <div>🤗 Abraçar</div><div>🚫 Afastar abraços</div>
+            <div>🔍 Buscar</div><div>❌ Perder</div>
+            <div>💰 Guardar</div><div>🗑️ Lançar fora</div>
+            <div>✂️ Rasgar</div><div>🪡 Coser</div>
+            <div>🤐 Calar</div><div>🗣️ Falar</div>
+            <div>❤️ Amar</div><div>💔 Aborrecer</div>
+            <div>⚔️ Guerra</div><div>🕊️ Paz</div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Interpretações Divergentes</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <span class="font-display text-xs font-bold text-gold-dark">❌ Leitura otimista (popular mas equivocada)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Há tempo certo para tudo; seja paciente, seu tempo chegará."</em> — Transformado em clichê motivacional. Mas contexto de Eclesiastes não é otimista. Versículo seguinte (3:9): <em>"Que proveito tem o trabalhador naquilo em que trabalha?"</em> — tom é resignação, não esperança.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">✓ Leitura fatalista (mais coerente com contexto)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Humanos não controlam os tempos."</em> Nascer/morrer, plantar/arrancar — não escolhemos. Somos <em>sujeitos</em> aos tempos, não <em>senhores</em> deles. Verso 11: <em>"Deus pôs eternidade no coração, mas o homem não pode descobrir a obra que Deus fez desde o princípio até ao fim."</em> — Sentimos que deveria haver sentido, mas não conseguimos apreendê-lo.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">📖 Leitura cristã (redentiva)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                NT transforma fatalismo em esperança: <em>"Quando chegou a plenitude do tempo, Deus enviou seu Filho"</em> (Gl 4:4). Deus não apenas impõe tempos arbitrários — Ele age <em>dentro</em> dos tempos, redimindo-os. Cristo entrou na história no "tempo certo" para transformar morte em ressurreição, choro em alegria eterna.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-violet">Uso litúrgico e cultural:</strong> Este poema transcendeu Eclesiastes — foi musicado (The Byrds, <em>"Turn! Turn! Turn!"</em>, 1965), citado em funerais, casamentos, formaturas. Ironia: muitos que o citam desconhecem tom sombrio original. Mas talvez captura verdade profunda: vida <em>é</em> ciclos de opostos, e sabedoria é aceitar ritmos que não controlamos — mas com esperança (cristã) de que há Deus soberano sobre os tempos, não apenas ciclo cego.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Experimentos de Qohelet -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Os Experimentos de Qohelet — Testando Caminhos para Felicidade</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Qohelet (o Pregador) relata em primeira pessoa seus <strong>experimentos existenciais.</strong> Com recursos ilimitados (rei rico), testou sistematicamente o que humanidade persegue. Todos falharam. Eis o registro:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="experiment-card" style="border-color:rgba(30,58,95,0.3);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-2xl">🧠</span>
+            <div>
+              <h3 class="font-display text-sm font-bold text-sapphire">Experimento 1 — Sabedoria e Conhecimento</h3>
+              <p class="font-body text-xs text-ink-faint">1:12–18</p>
+            </div>
+          </div>
+          <div class="dark-quote text-sm mb-2" style="border-color:rgba(30,58,95,0.3);">
+            <p class="leading-relaxed">"Apliquei o coração a conhecer a sabedoria... e vim a saber que também isto era aflição de espírito."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            <strong>Teste:</strong> Dedicar-se totalmente ao conhecimento, filosofia, ciência.<br/>
+            <strong>Resultado:</strong> <em>"Quanto maior a sabedoria, maior o sofrimento; quanto maior o conhecimento, maior a dor"</em> (1:18). Saber mais = ver mais problemas sem solução. Ignorância é, em certo sentido, felicidade.
+          </p>
+        </div>
+
+        <div class="experiment-card" style="border-color:rgba(184,74,16,0.3);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-2xl">🎉</span>
+            <div>
+              <h3 class="font-display text-sm font-bold text-fire">Experimento 2 — Prazer e Hedonismo</h3>
+              <p class="font-body text-xs text-ink-faint">2:1–11</p>
+            </div>
+          </div>
+          <div class="dark-quote text-sm mb-2" style="border-color:rgba(184,74,16,0.3);">
+            <p class="leading-relaxed">"Disse comigo: Vem, agora, eu te provarei com a alegria; goza, pois, a felicidade..."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            <strong>Teste:</strong> Vinho, festas, música, <em>"cantores e cantoras"</em>, <em>"as delícias dos filhos dos homens, concubinas em grande número"</em> (2:8).<br/>
+            <strong>Resultado:</strong> <em>"Nada neguei aos meus olhos... porém, olhei eu para todas as obras... e tudo era vaidade"</em> (2:10–11). Prazer é fugaz; após excesso vem vazio.
+          </p>
+        </div>
+
+        <div class="experiment-card" style="border-color:rgba(200,145,58,0.35);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-2xl">🏗️</span>
+            <div>
+              <h3 class="font-display text-sm font-bold text-gold-dark">Experimento 3 — Grandes Obras e Legado</h3>
+              <p class="font-body text-xs text-ink-faint">2:4–11</p>
+            </div>
+          </div>
+          <div class="dark-quote text-sm mb-2" style="border-color:rgba(200,145,58,0.35);">
+            <p class="leading-relaxed">"Fiz grandes obras; edifiquei casas, plantei vinhas... fiz jardins e pomares... reservatórios de água..."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            <strong>Teste:</strong> Construir império, criar beleza, deixar legado arquitetônico (eco de Salomão construindo Templo, palácios, etc.).<br/>
+            <strong>Resultado:</strong> <em>"Aborreci todo o meu trabalho... porque tenho de deixá-lo ao homem que virá depois de mim. E quem sabe se será sábio ou tolo?"</em> (2:18–19). Morte anula conquistas.
+          </p>
+        </div>
+
+        <div class="experiment-card" style="border-color:rgba(30,74,42,0.3);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-2xl">💰</span>
+            <div>
+              <h3 class="font-display text-sm font-bold text-forest">Experimento 4 — Riqueza e Acumulação</h3>
+              <p class="font-body text-xs text-ink-faint">5:10–20; 6:1–9</p>
+            </div>
+          </div>
+          <div class="dark-quote text-sm mb-2" style="border-color:rgba(30,74,42,0.3);">
+            <p class="leading-relaxed">"Quem ama o dinheiro jamais dele se farta; e quem ama a abundância nunca se farta da renda..."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            <strong>Teste:</strong> Acumular riqueza máxima — ouro, prata, servos (2:7–8).<br/>
+            <strong>Resultado:</strong> (1) Quanto mais tem, mais quer — insaciabilidade (5:10); (2) Riqueza atrai parasitas (5:11); (3) Pode perdê-la em má aventura (5:14); (4) Leva nada para túmulo (5:15). Pior: homem rico sem herdeiro (6:2–3) — riqueza sem significado.
+          </p>
+        </div>
+
+        <div class="experiment-card" style="border-color:rgba(74,30,110,0.3);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-2xl">⚖️</span>
+            <div>
+              <h3 class="font-display text-sm font-bold text-violet">Experimento 5 — Justiça e Moralidade</h3>
+              <p class="font-body text-xs text-ink-faint">3:16–22; 4:1–3; 8:10–14</p>
+            </div>
+          </div>
+          <div class="dark-quote text-sm mb-2" style="border-color:rgba(74,30,110,0.3);">
+            <p class="leading-relaxed">"Vi mais: que o lugar do juízo, que ali estava a iniquidade; e que o lugar da justiça, que ali estava a impiedade."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            <strong>Teste:</strong> Observar se moralidade garante bem-estar.<br/>
+            <strong>Resultado:</strong> <em>"Há justos que perecem na sua justiça, e há ímpios que prolongam os seus dias na sua maldade"</em> (7:15). Sistema moral do universo parece quebrado <span class="under-sun">debaixo do sol</span>. Opressão sem consolo (4:1). Melhor não ter nascido (4:3).
+          </p>
+        </div>
+
+        <div class="experiment-card" style="border-color:rgba(139,32,32,0.3);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-2xl">🙏</span>
+            <div>
+              <h3 class="font-display text-sm font-bold text-crimson">Experimento 6 — Religião e Piedade</h3>
+              <p class="font-body text-xs text-ink-faint">5:1–7</p>
+            </div>
+          </div>
+          <div class="dark-quote text-sm mb-2" style="border-color:rgba(139,32,32,0.3);">
+            <p class="leading-relaxed">"Guarda o teu pé, quando entrares na Casa de Deus... Não te precipites com a tua boca..."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            <strong>Teste:</strong> Religiosidade externa — votos, orações, rituais.<br/>
+            <strong>Resultado:</strong> <em>"De que servem muitas palavras? Senão para multiplicar a vaidade"</em> (6:11). Religião mecânica não resolve. Mas temor genuíno de Deus (<em>diferente</em> de religiosidade) é recorrentemente afirmado como único fundamento sólido (3:14; 5:7; 7:18; 8:12–13; 12:13).
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-5 rounded-xl text-center"
+           style="background:rgba(60,60,60,0.05);border:1px solid rgba(60,60,60,0.15);">
+        <p class="font-body text-base text-ink-muted leading-relaxed italic mb-2">
+          "Vi todas as obras que se fazem debaixo do sol, e eis que tudo era vaidade e correr atrás do vento."
+        </p>
+        <p class="font-display text-sm text-ink-faint">Eclesiastes 1:14</p>
+        <p class="font-body text-sm text-ink-muted mt-3 leading-relaxed">
+          <strong>Conclusão dos experimentos:</strong> Nenhum caminho <em>autônomo</em> (sem Deus) leva a satisfação duradoura. Sabedoria sem Deus = dor. Prazer sem Deus = vazio. Trabalho sem Deus = futilidade. Riqueza sem Deus = insaciabilidade. Moralidade sem Deus = injustiça não resolvida. Religião sem Deus = vaidade multiplicada. <strong>Única âncora:</strong> temor de Deus + alegria humilde nas pequenas dádivas (comer, beber, trabalho com satisfação) — mas sempre consciente de que até isso é dom, não conquista.
+        </p>
+      </div>
+    </section>
+
+    <!-- Carpe Diem -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">O "Carpe Diem" de Eclesiastes — Alegria como Dádiva</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(200,145,58,0.08);border:2px solid rgba(200,145,58,0.35);">
+            <div class="text-4xl text-center mb-3">🍞🍷</div>
+            <h3 class="font-display text-base font-bold text-gold-dark mb-3 text-center">O Refrão da Alegria Moderada</h3>
+            <p class="font-body text-sm text-ink-muted text-center mb-3">
+              Aparece <strong>7 vezes</strong> ao longo do livro — sempre após descrição de vaidade/frustração:
+            </p>
+            <div class="text-xs space-y-1">
+              <p>📍 2:24–26 · 3:12–13 · 3:22 · 5:18–20 · 8:15 · 9:7–10 · 11:7–10</p>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Exemplo Típico — 9:7–10</h4>
+          <div class="dark-quote mb-3" style="border-color:rgba(200,145,58,0.4);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Vai, come com alegria o teu pão e bebe com coração contente o teu vinho... Goza a vida com a mulher que amas... porque esta é a tua porção nesta vida... Tudo quanto te vier à mão para fazer, faze-o conforme as tuas forças, porque no Seol, para onde tu vais, não há obra, nem projetos, nem conhecimento, nem sabedoria alguma."
+            </p>
+          </div>
+          <p class="font-display text-xs text-gold-dark">Eclesiastes 9:7–10</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Interpretações Divergentes</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">❌ Hedonismo secular (leitura equivocada)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Aproveite agora porque depois acaba tudo."</em> — Leitura ateísta: se não há Deus nem eternidade, maximize prazer antes de morrer. <strong>Problema:</strong> Qohelet <em>não</em> nega Deus (menciona 40×) nem eternidade (3:11; 12:7). "Carpe diem" dele não é autônomo.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">✓ Alegria como dádiva de Deus (leitura correta)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Cada passagem <em>qualifica</em> a alegria: <em>"Isto vem da mão de Deus"</em> (2:24); <em>"É dom de Deus"</em> (3:13; 5:19); <em>"Deus já aceitou as tuas obras"</em> (9:7). Não é <em>"viva sem Deus"</em>, mas <em>"aceite os pequenos prazeres que Deus concede mesmo num mundo caído."</em> É alegria <strong>apesar</strong> de hevel, não <strong>por causa</strong> de hevel.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">🤔 Tensão irresolvida (característica de Eclesiastes)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Qohelet não reconcilia plenamente vaidade e alegria. Oscila entre <em>"Tudo é fútil"</em> e <em>"Aproveite o que Deus dá."</em> Não é contradição — é <strong>realismo.</strong> Vida <em>é</em> mistura de frustração e momentos de graça. Sabedoria é aceitar ambos sem cinismo nem otimismo ingênuo.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-violet">Leitura cristã:</strong> NT radicaliza e transforma. Jesus: <em>"Não andeis ansiosos pela vossa vida"</em> (Mt 6:25) — eco de aceitar dádivas de Deus. Mas acrescenta: <em>"Buscai primeiro o Reino de Deus"</em> (Mt 6:33) — eternidade não apenas "no coração" (Ec 3:11), mas <em>garantida</em> em Cristo. Paulo: <em>"Regozijai-vos sempre no Senhor"</em> (Fp 4:4) — alegria não apesar de sofrimento, mas <em>através</em> dele, porque ressurreição venceu morte. Eclesiastes diagnostica problema (hevel); Cristo oferece solução (vida eterna).
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Conclusão Final -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">A Conclusão Final — 12:13–14</div>
+      <div class="final-conclusion mb-5" style="border-color:rgba(30,58,95,0.35);">
+        <div class="dark-quote text-center mb-4" style="border:none;">
+          <p class="font-body text-xl text-ink leading-relaxed mb-3">
+            "De tudo o que se tem ouvido, a suma é: <strong>Teme a Deus e guarda os seus mandamentos</strong>; porque isto é o dever de todo homem. Porque Deus há de trazer a juízo toda obra e até tudo o que está encoberto, quer seja bom, quer seja mau."
+          </p>
+          <p class="font-display text-sm text-sapphire tracking-widest">Eclesiastes 12:13–14</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Por Que Esta Conclusão?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Após 12 capítulos de frustração, dúvida, questionamento — <strong>súbito pivô para ortodoxia.</strong> Alguns críticos veem epílogo (12:9–14) como adição editorial posterior para "corrigir" ceticismo de Qohelet. Mas mesmo que seja, tornou-se <em>chave hermenêutica</em> para ler o livro inteiro.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">Temor de Deus — a única âncora</strong>
+              <p class="text-ink-muted mt-1">Mencionado ao longo (3:14; 5:7; 7:18; 8:12–13) mas sempre obliquamente. Agora explícito: é <em>"o dever de todo homem"</em> — não opção, mas fundamento existencial.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Juízo final — correção da injustiça</strong>
+              <p class="text-ink-muted mt-1"><span class="under-sun">Debaixo do sol</span>, injustiça prevalece (3:16; 4:1; 8:14). Mas <em>acima do sol</em>, há tribunal divino. <em>"Tudo o que está encoberto"</em> será julgado — nada escapa.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">Mandamentos — resposta prática</strong>
+              <p class="text-ink-muted mt-1">Qohelet raramente menciona Torá diretamente, mas aqui: <em>"guarda os seus mandamentos."</em> Obediência não garante prosperidade (Jó prova isso), mas é caminho de sabedoria em mundo caótico.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Como Eclesiastes Funciona no Cânon</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">🔀 Contrapeso a Provérbios</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Provérbios: <em>"O justo será recompensado."</em> Eclesiastes: <em>"Nem sempre. E se for, a morte nivela tudo."</em> Juntos = teologia realista: princípios gerais (Provérbios) + exceções misteriosas (Eclesiastes).
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">🤝 Complemento a Jó</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Jó: sofrimento do <em>justo individual</em>. Eclesiastes: futilidade <em>universal</em> — todos sofrem hevel, não só justos. Jó recebe resposta pessoal (teofania). Eclesiastes não — mas aponta para juízo futuro.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <span class="font-display text-xs font-bold text-earth">💡 Preparação para Evangelho</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Eclesiastes diagnostica problema que só Cristo resolve: morte, futilidade, injustiça. <em>"Se a esperança que temos em Cristo se limita apenas a esta vida, somos os mais infelizes de todos os homens"</em> (1Co 15:19) — Paulo ecoa Qohelet. Mas acrescenta: <em>"Cristo ressuscitou!"</em> (1Co 15:20) — esperança que Eclesiastes anseia mas não alcança.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">Agostinho sobre Eclesiastes:</strong> <em>"Nosso coração está inquieto até que descanse em Ti."</em> Eclesiastes é o <strong>coração inquieto</strong> buscando descanso em todos os lugares errados. Conclusão aponta: só Deus basta. Mas aguarda encarnação para revelar <em>como</em> Deus sacia — através de Cristo, que venceu hevel (morte/futilidade) pela ressurreição.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paradoxos -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Paradoxos de Eclesiastes — Sabedoria Contraditória?</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Eclesiastes frequentemente <strong>afirma e nega</strong> a mesma coisa. Críticos veem incoerência; defensores veem <em>tensão deliberada</em> refletindo complexidade da vida. Eis paradoxos principais:
+      </p>
+      <div class="space-y-3">
+
+        <div class="paradox-statement" style="border-color:rgba(30,58,95,0.3);">
+          <span class="text-2xl flex-shrink-0">⚖️</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-sapphire mb-1">Sabedoria é Valiosa vs. Sabedoria é Inútil</h4>
+            <div class="grid md:grid-cols-2 gap-2 text-xs">
+              <div>
+                <strong>✓ Pró-sabedoria:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Melhor é a sabedoria do que a força"</em> (9:16); <em>"Os olhos do sábio estão na sua cabeça, mas o tolo anda em trevas"</em> (2:14)</p>
+              </div>
+              <div>
+                <strong>✗ Anti-sabedoria:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Quanto maior a sabedoria, maior o sofrimento"</em> (1:18); <em>"O sábio morre como morre o tolo"</em> (2:16)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="paradox-statement" style="border-color:rgba(30,74,42,0.3);">
+          <span class="text-2xl flex-shrink-0">💼</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-forest mb-1">Trabalho é Bom vs. Trabalho é Vaidade</h4>
+            <div class="grid md:grid-cols-2 gap-2 text-xs">
+              <div>
+                <strong>✓ Pró-trabalho:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Não há nada melhor para o homem do que... se alegrar no seu trabalho"</em> (3:22); <em>"Melhor é... trabalhar"</em> (4:9)</p>
+              </div>
+              <div>
+                <strong>✗ Anti-trabalho:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Aborreci todo o meu trabalho"</em> (2:18); <em>"Que proveito tem o trabalhador?"</em> (3:9)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="paradox-statement" style="border-color:rgba(200,145,58,0.35);">
+          <span class="text-2xl flex-shrink-0">⚖️</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-gold-dark mb-1">Justiça Existe vs. Injustiça Prevalece</h4>
+            <div class="grid md:grid-cols-2 gap-2 text-xs">
+              <div>
+                <strong>✓ Justiça divina:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Deus há de trazer a juízo toda obra"</em> (12:14); <em>"Bem irá aos que temem a Deus"</em> (8:12)</p>
+              </div>
+              <div>
+                <strong>✗ Injustiça observada:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Há justos que perecem na sua justiça, e há ímpios que prolongam os seus dias"</em> (7:15); <em>"O lugar da justiça... ali estava a impiedade"</em> (3:16)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="paradox-statement" style="border-color:rgba(139,32,32,0.3);">
+          <span class="text-2xl flex-shrink-0">💀</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-crimson mb-1">Viver é Melhor vs. Melhor Não Ter Nascido</h4>
+            <div class="grid md:grid-cols-2 gap-2 text-xs">
+              <div>
+                <strong>✓ Pró-vida:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Melhor é um cão vivo do que um leão morto"</em> (9:4); <em>"Doce é a luz, e agradável... ver o sol"</em> (11:7)</p>
+              </div>
+              <div>
+                <strong>✗ Anti-vida:</strong>
+                <p class="text-ink-muted italic mt-1"><em>"Melhor é o morto que o vivo; e melhor que ambos é não ter nascido"</em> (4:2–3); <em>"O dia da morte, melhor que o dia do nascimento"</em> (7:1)</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="paradox-statement" style="border-color:rgba(74,30,110,0.3);">
+          <span class="text-2xl flex-shrink-0">⚖️</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-violet mb-1">Não Seja Excessivamente Justo nem Ímpio (7:16–18)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed italic mb-2">
+              <em>"Não sejas demasiadamente justo, nem demasiadamente sábio... Não sejas demasiadamente ímpio, nem sejas louco..."</em>
+            </p>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong>Paradoxo supremo:</strong> Moderação até na moralidade? Interpretações: (1) Não seja farisaico/legalista; (2) Não confie em própria justiça para salvação; (3) Reconheça que ninguém é perfeitamente justo (7:20), então não seja hipócrita; (4) Sabedoria situacional — às vezes flexibilidade é necessária. Verso mais enigmático do livro.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(60,60,60,0.05);border:1px solid rgba(60,60,60,0.15);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong>Como resolver paradoxos?</strong> Não são contradições lógicas — são <strong>perspectivas diferentes</strong> da mesma realidade complexa. Qohelet não é filósofo sistemático; é observador honesto. Sabedoria <em>é</em> melhor que loucura (utilidade prática), mas não evita morte (limite final). Trabalho <em>pode</em> trazer satisfação (dom de Deus), mas não garante significado último (futilidade). Justiça <em>existe</em> no tribunal divino (fé), mas não é sempre visível agora (experiência). Eclesiastes recusa simplificações — prefere tensões não resolvidas a respostas fáceis.
+        </p>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-7">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Qohelet = "Pregador" ou "Assembleia"?</strong> Palavra hebraica <em>קֹהֶלֶת</em> (Qohelet) vem de raiz <em>qahal</em> (reunir, convocar). Pode significar: (1) aquele que reúne assembleia — "Pregador"; (2) participante de assembleia — membro de conselho de sábios; (3) aquele que coleciona ditados. LXX traduziu <em>Ekklesiastes</em> (grego) = "membro da assembleia" (ekklesia). Latim: <em>Ecclesiastes.</em> Português manteve forma latina.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Autoria salomônica — pseudônima?</strong> Livro se identifica como <em>"filho de Davi, rei em Jerusalém"</em> (1:1) — claramente Salomão. Mas nunca diz <em>"Salomão"</em> explicitamente. Linguagem hebraica contém aramismos tardios (pós-exílio). Consenso moderno: escrito séculos após Salomão, mas <em>atribuído</em> a ele (pseudônimo literário) porque (1) Salomão = ápice de sabedoria e riqueza; (2) Quem melhor que rei mais rico/sábio para dizer <em>"Tudo é vaidade"</em>? Ironia dramática.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Debate rabínico sobre canonicidade:</strong> Escola de Shamai (séc. I d.C.) queria excluir Eclesiastes — <em>"contradiz Torá"</em>, <em>"muito pessimista"</em>. Escola de Hillel defendeu: (1) atribuição salomônica garante autoridade; (2) conclusão (12:13–14) redime o livro; (3) honestidade brutal é necessária — fé sem dúvida é superficial. Hillel venceu. Eclesiastes permaneceu.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Lido na Festa dos Tabernáculos (Sucot):</strong> Judaísmo lê Eclesiastes durante Sucot — festa de alegria, mas também lembrança de fragilidade (habitar em tendas). Por quê? Justamente porque <em>não</em> é livro alegre — equilibra festividade com sobriedade. Lembra: alegria sem Deus é vazia; mas com Deus, até no hevel há dádivas para celebrar.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Nada de novo sob o sol" (1:9) — confirmado pela história?</strong> Qohelet diz que história é cíclica, não progressiva. Modernidade discorda — crê em progresso linear. Mas historiador Arnold Toynbee (séc. XX) argumentou que civilizações seguem padrões cíclicos (ascensão → ápice → declínio → queda). Qohelet pode estar certo: tecnologia avança, mas natureza humana (ganância, violência, orgulho) permanece constante.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Hemingway, Camus e Eclesiastes:</strong> Escritores existencialistas do séc. XX ecoam Qohelet. Ernest Hemingway: <em>"O homem pode ser destruído mas não derrotado"</em> — heroísmo niilista. Albert Camus (<em>O Mito de Sísifo</em>): <em>"Devemos imaginar Sísifo feliz"</em> — aceitar absurdo sem Deus. Diferença: Eclesiastes aponta para Deus como resposta; existencialismo secular permanece na vaidade sem saída.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>C.S. Lewis sobre Eclesiastes:</strong> Lewis chamou de <em>"livro mais deprimente e libertador simultaneamente."</em> Deprimente: expõe futilidade sem piedade. Libertador: <em>"Para de buscar significado onde não há. Aceite limites. Tema a Deus. Aproveite pequenas alegrias sem culpa."</em> É antídoto contra utopismo — não espere céu na terra; espere céu <em>após</em> terra.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Tradução de hevel como "absurdo" (Camus?):</strong> Alguns eruditos modernos preferem <em>"absurdo"</em> a <em>"vaidade"</em> — captura melhor sentido existencial. Mas cuidado: <em>absurdo</em> em Camus = sem sentido <em>porque não há Deus</em>. Hevel em Eclesiastes = sem sentido <span class="under-sun">debaixo do sol</span>, mas <em>com sentido último em Deus acima do sol.</em> Nuance crucial.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Influência em música secular:</strong> The Byrds, <em>"Turn! Turn! Turn!"</em> (1965) — musicou Ec 3:1–8 e se tornou hino hippie. Pete Seeger adicionou única linha não-bíblica: <em>"A time for peace, I swear it's not too late"</em> (tempo de paz, juro que não é tarde demais) — otimismo ausente no original! Ironia: geração peace-and-love usou texto sobre fatalismo.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Derek Kidner — Eclesiastes como "evangelismo pela negativa":</strong> Teólogo Derek Kidner chamou Eclesiastes de <em>"evangelismo pela negativa"</em> — mostra o que a vida <em>não é</em> sem Deus, preparando terreno para revelar o que ela <em>pode ser</em> com Deus. Paulo em Romanos 1–3 faz similar: expõe pecado/futilidade universal antes de apresentar Cristo (Rm 3:21–26). Eclesiastes é <em>lei</em> (diagnóstico), não <em>evangelho</em> (cura) — mas diagnóstico correto é primeiro passo para cura. <strong>Aplicação pastoral:</strong> Eclesiastes valida sentimentos de futilidade que todos experimentam — não nega nem minimiza. <em>"Sim, vida é muitas vezes absurda, injusta, frustrante. Você não está louco; está vendo claramente."</em> Mas aponta além: temor de Deus, pequenas alegrias como dádivas, juízo final que corrigirá injustiças, e (na leitura cristã) Cristo que venceu morte — transformando hevel em esperança. <strong>Eclesiastes sem conclusão (12:13–14) é niilismo. Com conclusão, é realismo redentor.</strong>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave finais -->
+    <section class="text-center py-8 animate-fade-up animate-delay-8">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Vaidade de vaidades, diz o Pregador, vaidade de vaidades! Tudo é vaidade."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Eclesiastes 1:2 — O refrão que define o livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Tudo fez Deus formoso no seu tempo; também pôs a eternidade no coração do homem."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Eclesiastes 3:11 — O anseio transcendente que não pode ser satisfeito debaixo do sol</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Vai, come com alegria o teu pão e bebe com coração contente o teu vinho, porque Deus já aceitou as tuas obras."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Eclesiastes 9:7 — Carpe diem como dádiva divina, não hedonismo autônomo</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "De tudo o que se tem ouvido, a suma é: Teme a Deus e guarda os seus mandamentos; porque isto é o dever de todo homem."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Eclesiastes 12:13 — A conclusão que redime o livro</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Eclesiastes · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

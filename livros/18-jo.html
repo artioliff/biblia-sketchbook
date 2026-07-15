@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jó — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Ciclos de discurso */
+    .discourse-cycle {
+      border-radius: 10px;
+      padding: 1rem;
+      border-left: 4px solid;
+      transition: transform 0.2s ease;
+    }
+    .discourse-cycle:hover { transform: translateX(6px); }
+
+    /* Perguntas de Deus */
+    .god-question {
+      border-radius: 10px;
+      border: 2px solid;
+      padding: 1.25rem;
+      position: relative;
+      font-style: italic;
+      background: linear-gradient(135deg, rgba(30,58,95,0.04) 0%, rgba(92,61,30,0.04) 100%);
+    }
+    .god-question::before {
+      content: '❓';
+      position: absolute;
+      top: -12px; left: 16px;
+      font-size: 1.5rem;
+      background: #fdf8ef;
+      padding: 0 8px;
+    }
+
+    /* Paradoxo do sofrimento */
+    .paradox-box {
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 1.25rem;
+      background: rgba(0,0,0,0.02);
+      position: relative;
+    }
+    .paradox-box::after {
+      content: '⚖️';
+      position: absolute;
+      bottom: 8px; right: 12px;
+      font-size: 2rem;
+      opacity: 0.1;
+    }
+
+    /* Teologia da retribuição */
+    .retribution-theology {
+      border-radius: 8px;
+      padding: 1rem;
+      border: 1px dashed;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    /* Citações de Jó */
+    .job-quote {
+      border-left: 4px solid rgba(30,58,95,0.3);
+      padding-left: 1.25rem;
+      font-style: italic;
+      color: #3a3a3a;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS POÉTICOS · 18º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(0,0,0,0.2);">
+        Jó
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>אִיּוֹב</em> (Iyyov) — possivelmente "perseguido" ou "onde está o Pai?"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O livro mais antigo da Bíblia · o drama do sofrimento injusto · <strong>a obra-prima da literatura sapiencial</strong> · onde Deus não explica — mas Se revela
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">42</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.070</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~2.000 a.C.</div>
+          <div class="font-body text-sm text-ink-muted mt-1">época provável</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">3 ciclos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de diálogos</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(92,61,30,0.07);border:1px solid rgba(92,61,30,0.22);">
+              <span class="font-display text-xs font-bold text-earth">18º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">1º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Poéticos/Sapienciais</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Atemporal</span>
+              <span class="font-body text-sm text-ink">Não menciona Israel, Lei, Templo ou eventos históricos israelitas</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro do Mistério do Sofrimento</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Jó é provavelmente o <strong>livro mais antigo da Bíblia</strong> — anterior a Moisés, situado na época dos patriarcas (Abraão, Isaque, Jacó). Não é história israelita, mas drama humano universal. Não oferece respostas fáceis, mas expõe a inadequação das teologias simplistas.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            É o confronto direto com a pergunta que nenhuma religião pode evitar: <em><strong>Por que os justos sofrem?</strong></em> A resposta de Deus não é uma explicação teológica — é uma revelação de Si mesmo. Deus não responde as perguntas de Jó; Ele faz perguntas a Jó. E isso muda tudo.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Grande Questão -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Questão Central — "Por Que o Justo Sofre?"</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl mb-4 text-center"
+               style="background:rgba(139,32,32,0.06);border:2px solid rgba(139,32,32,0.25);">
+            <div class="text-4xl mb-3">⚡</div>
+            <h3 class="font-display text-lg font-bold text-crimson mb-2">O Problema</h3>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Jó é <em>"íntegro, reto, temente a Deus e que se desvia do mal"</em> (1:1) — o próprio Deus o declara <em>"não há ninguém na terra semelhante a ele"</em> (1:8). Ainda assim, perde <strong>tudo</strong>: filhos, riquezas, saúde, dignidade. Não por pecado — mas por ser <em>justo demais</em>.
+            </p>
+          </div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">As Perdas de Jó (Cap. 1–2)</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.12);">
+              <span class="flex-shrink-0">💀</span>
+              <div><strong>1ª catástrofe:</strong> Sabeus roubam bois e jumentas, matam servos</div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.12);">
+              <span class="flex-shrink-0">⚡</span>
+              <div><strong>2ª catástrofe:</strong> "Fogo de Deus" (raio) queima ovelhas e servos</div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.12);">
+              <span class="flex-shrink-0">🏹</span>
+              <div><strong>3ª catástrofe:</strong> Caldeus roubam camelos, matam servos</div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(0,0,0,0.04);border:1px solid rgba(0,0,0,0.12);">
+              <span class="flex-shrink-0">🌪️</span>
+              <div><strong>4ª catástrofe:</strong> Vento derruba casa, mata todos os 10 filhos de Jó</div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+              <span class="flex-shrink-0">🦠</span>
+              <div><strong>5ª catástrofe:</strong> Chagas malignas da cabeça aos pés — dor física extrema</div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+              <span class="flex-shrink-0">💔</span>
+              <div><strong>Golpe final:</strong> Esposa diz <em>"Amaldiçoa a Deus e morre"</em> (2:9)</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Que Torna Jó Único?</h3>
+          <div class="space-y-3">
+            <div class="paradox-box" style="border-color:rgba(30,58,95,0.25);">
+              <span class="font-display text-xs font-bold text-sapphire">❌ Não é castigo por pecado</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Deus mesmo atesta a integridade de Jó <em>antes</em> das catástrofes (1:8; 2:3). Satanás questiona se Jó serve a Deus por interesse ou por amor genuíno — <em>"Acaso Jó teme a Deus debalde?"</em> (1:9). O sofrimento de Jó é <strong>teste de fé desinteressada</strong>, não punição.
+              </p>
+            </div>
+            <div class="paradox-box" style="border-color:rgba(30,74,42,0.25);">
+              <span class="font-display text-xs font-bold text-forest">❌ Não é educativo ou corretivo</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Jó não precisa ser corrigido — ele já é o homem mais justo da terra. Deus não está "ensinando uma lição" a Jó. Isso destrói a teologia comum de que todo sofrimento é pedagógico.
+              </p>
+            </div>
+            <div class="paradox-box" style="border-color:rgba(200,145,58,0.3);">
+              <span class="font-display text-xs font-bold text-gold-dark">❌ Não é proporcional</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Se houvesse pequenos pecados, perder <strong>tudo</strong> — filhos, saúde, riqueza — seria desproporcional. Mas Jó não tem nem pequenos pecados. É sofrimento totalmente <em>injusto</em> — e é isso que torna o livro tão perturbador.
+              </p>
+            </div>
+            <div class="paradox-box" style="border-color:rgba(74,30,110,0.25);">
+              <span class="font-display text-xs font-bold text-violet">✓ É teste cósmico</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                O prólogo (caps. 1–2) revela o que Jó nunca soube: há um debate no conselho celestial. Satanás acusa que toda religião é <em>do ut des</em> (dou para que dês) — ninguém ama a Deus gratuitamente. Jó se torna evidência viva de que fé desinteressada existe.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura do Livro -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro — Prosa, Poesia, Prosa</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Jó tem estrutura em <strong>sanduíche</strong>: prólogo em prosa (caps. 1–2), corpo poético gigante (caps. 3–41), epílogo em prosa (cap. 42). A prosa conta a história; a poesia explora o mistério. É uma das obras literárias mais sofisticadas da antiguidade.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-earth">Cap. 1–2</span>
+            <div class="font-body text-xs text-ink-faint mt-1">PRÓLOGO (prosa)</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-earth mb-1">O Teste — Cena na Corte Celestial</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Cenário:</strong> Jó, homem íntegro e próspero de Uz. <strong>Ato 1:</strong> Satanás desafia Deus — <em>"Tira as bênçãos e Jó te amaldiçoará."</em> Jó perde tudo, mas não peca. <strong>Ato 2:</strong> Satanás escala — <em>"Pele por pele; tudo o que o homem tem dará pela sua vida. Toca-lhe os ossos e a carne."</em> Jó adoece gravemente, mas não amaldiçoa a Deus. <em>"Nu saí do ventre de minha mãe e nu tornarei para lá. O Senhor deu, o Senhor tirou; bendito seja o nome do Senhor."</em> (1:21)
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 3</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Lamento</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Jó Amaldiçoa o Dia do Seu Nascimento</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Após sete dias de silêncio, Jó explode em lamento poético devastador: <em>"Pereça o dia em que nasci!"</em> (3:3). Não amaldiçoa a Deus — mas deseja nunca ter existido. É o grito mais honesto de desespero na Escritura. Deus permite lamento autêntico — não exige otimismo forçado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 4–31</span>
+            <div class="font-body text-xs text-ink-faint mt-1">DIÁLOGOS (poesia)</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Três Ciclos de Discursos — Jó vs. os Três Amigos</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+              <strong>Elifaz, Bildade e Zofar</strong> vêm consolar Jó — mas acabam acusando-o. Defendem a <em>teologia da retribuição</em>: se você sofre, é porque pecou. Jó refuta: ele é inocente. Três ciclos completos de discurso (amigo → Jó → amigo → Jó...). O terceiro ciclo se desintegra — os amigos ficam sem argumentos.
+            </p>
+            <div class="grid md:grid-cols-3 gap-2 text-xs">
+              <div class="p-2 rounded" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+                <strong>Ciclo 1 (caps. 4–14):</strong> Amigos sugerem que Jó pecou. Jó nega e clama a Deus.
+              </div>
+              <div class="p-2 rounded" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+                <strong>Ciclo 2 (caps. 15–21):</strong> Amigos insistem — sofrimento = culpa. Jó protesta sua inocência.
+              </div>
+              <div class="p-2 rounded" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+                <strong>Ciclo 3 (caps. 22–31):</strong> Acusações explícitas. Jó faz juramento de inocência solene.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-violet">Cap. 32–37</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Intervenção</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">Eliú — O Quarto Amigo Jovem e Impaciente</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Surge Eliú, jovem que esperou os anciãos falarem. Enfurecido com Jó por "justificar-se a si mesmo em vez de a Deus" e com os três amigos por condenarem Jó sem responder. Discurso longo (6 caps.) argumentando que Deus fala através do sofrimento para impedir pecado maior. <strong>Prepara o terreno para Deus falar.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 38–41</span>
+            <div class="font-body text-xs text-ink-faint mt-1">DISCURSOS DE DEUS</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">YAHWEH Responde do Redemoinho</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Finalmente, <strong>Deus fala.</strong> Não explica o sofrimento de Jó. Não responde "por quê?" Faz mais de <strong>70 perguntas retóricas</strong> sobre a criação, mostrando a Jó sua ignorância sobre o cosmos. <em>"Onde estavas tu quando eu fundava a terra?"</em> (38:4). Dois discursos. Jó silencia. Reconhece que exigiu respostas que não poderia compreender. <em>"Eu te conhecia só de ouvir, mas agora os meus olhos te veem."</em> (42:5)
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 42</span>
+            <div class="font-body text-xs text-ink-faint mt-1">EPÍLOGO (prosa)</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Restauração — Jó Recebe o Dobro</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Deus repreende os três amigos: <em>"Minha ira se acendeu contra ti... porque não falastes de mim o que era reto, como o meu servo Jó"</em> (42:7). Jó intercede pelos amigos. Deus restaura Jó em <strong>dobro</strong>: 14.000 ovelhas (antes 7.000), 6.000 camelos (antes 3.000), etc. Mais 10 filhos. Vive 140 anos. Morre <em>"velho e farto de dias"</em> (42:17). <strong>Fim feliz — mas não apaga a dor nem responde a pergunta.</strong>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Os Três Amigos -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Três Amigos — Consoladores Cruéis</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Elifaz, Bildade e Zofar vêm de longe para consolar Jó. Veem-no desfigurado e <strong>ficam sete dias em silêncio</strong> — o melhor que fazem no livro inteiro. Quando começam a falar, transformam-se de consoladores em acusadores. Representam a <em>teologia da retribuição</em> — ortodoxia correta aplicada de forma cruel.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+
+        <div class="character-card" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.25);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">👴</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-sapphire">Elifaz, o Temanita</h3>
+              <p class="font-body text-xs text-ink-faint">O mais velho e suave</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Fala baseado em <strong>experiência pesada</strong> e visão mística. Começa educado, mas endurece. Argumento: <em>"Quem, sendo inocente, jamais pereceu?"</em> (4:7) — ninguém sofre sem culpa. Sugere que Jó "corrija-se" e aceite disciplina de Deus.
+          </p>
+          <div class="text-xs">
+            <p class="font-body text-ink-muted">📍 <strong>Discursos:</strong> caps. 4–5, 15, 22</p>
+            <p class="font-body text-ink-muted mt-1">🎯 <strong>Abordagem:</strong> Religiosa e mística — apela à tradição</p>
+          </div>
+        </div>
+
+        <div class="character-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.25);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">📜</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-forest">Bildade, o Suíta</h3>
+              <p class="font-body text-xs text-ink-faint">O tradicionalista</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Apela à <strong>tradição dos antigos</strong>. Discursos mais curtos, lógica mais simples. Argumento: <em>"Porventura Deus perverteria o direito?"</em> (8:3). Se seus filhos morreram, foi porque pecaram. Jó deveria buscar a Deus humildemente.
+          </p>
+          <div class="text-xs">
+            <p class="font-body text-ink-muted">📍 <strong>Discursos:</strong> caps. 8, 18, 25 (o mais curto)</p>
+            <p class="font-body text-ink-muted mt-1">🎯 <strong>Abordagem:</strong> Tradicional — "os pais disseram..."</p>
+          </div>
+        </div>
+
+        <div class="character-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">⚔️</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-crimson">Zofar, o Naamatita</h3>
+              <p class="font-body text-xs text-ink-faint">O mais agressivo</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            O mais duro e dogmático. Não tem paciência para nuances. Argumento: <em>"Sabes tu as profundezas de Deus?"</em> (11:7) — você não entende nada, Jó. Seus pecados devem ser <em>piores</em> do que você pensa, porque Deus está sendo <em>misericordioso</em> ao não puni-lo mais.
+          </p>
+          <div class="text-xs">
+            <p class="font-body text-ink-muted">📍 <strong>Discursos:</strong> caps. 11, 20 (desiste no 3º ciclo)</p>
+            <p class="font-body text-ink-muted mt-1">🎯 <strong>Abordagem:</strong> Dogmática e acusatória</p>
+          </div>
+        </div>
+
+      </div>
+
+      <h3 class="font-display text-sm font-semibold text-ink mb-3">🔥 A Teologia da Retribuição — O Erro Fatal dos Amigos</h3>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <div class="retribution-theology mb-3" style="border-color:rgba(30,58,95,0.3);">
+            <span class="text-2xl flex-shrink-0">➕</span>
+            <div>
+              <span class="font-display text-xs font-bold text-sapphire">Fórmula simplista:</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Justiça = Bênção · Pecado = Sofrimento · <strong>Sempre.</strong></p>
+            </div>
+          </div>
+          <div class="retribution-theology mb-3" style="border-color:rgba(30,74,42,0.3);">
+            <span class="text-2xl flex-shrink-0">⚖️</span>
+            <div>
+              <span class="font-display text-xs font-bold text-forest">Lógica inversa fatal:</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Se você sofre muito, deve ter pecado muito. Jó perde tudo? Pecado secreto gigante!</p>
+            </div>
+          </div>
+          <div class="retribution-theology" style="border-color:rgba(139,32,32,0.3);">
+            <span class="text-2xl flex-shrink-0">🎯</span>
+            <div>
+              <span class="font-display text-xs font-bold text-crimson">Conclusão cruel:</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Você é culpado. Confesse. Aceite que Deus é justo punindo você.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-display text-xs font-semibold text-ink mb-2">Por que Deus repreende os amigos? (42:7)</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>1. Teologia mecanicista:</strong> Transformaram Deus em máquina automática de recompensa/punição — previsível, manipulável, sem mistério.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>2. Falta de compaixão:</strong> Usaram teologia como arma contra um homem destroçado — ortodoxia sem amor é crueldade espiritual.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>3. Defenderam Deus com mentiras:</strong> Acusaram Jó falsamente para "proteger" a justiça divina — Deus não precisa de advogados mentirosos.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>4. Não falaram "o que era reto":</strong> Jó, em sua honestidade brutal, estava mais perto da verdade que eles em sua ortodoxia polida. <em>Deus prefere lamento honesto a louvor hipócrita.</em>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eliú -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Eliú — O Quarto Amigo Misterioso</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="character-card mb-4" style="background:rgba(74,30,110,0.06);border-color:rgba(74,30,110,0.25);">
+            <div class="flex items-start gap-3 mb-3">
+              <span class="text-3xl">⚡</span>
+              <div>
+                <h3 class="font-display text-base font-bold text-violet">Eliú, filho de Baraquel, o Buzita</h3>
+                <p class="font-body text-xs text-ink-faint">O jovem impaciente que não aguenta mais</p>
+              </div>
+            </div>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Eliú surge de repente no cap. 32 e monopoliza seis capítulos inteiros (32–37) — quase tanto quanto os três amigos juntos. Depois desaparece sem rastro. Não é mencionado no prólogo, não é repreendido no epílogo. <strong>Enigma literário.</strong>
+            </p>
+          </div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Por que Eliú está enfurecido?</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded flex gap-2"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+              <span class="flex-shrink-0">😡</span>
+              <div><strong>Contra Jó:</strong> <em>"Porque se justificava a si mesmo em vez de a Deus"</em> (32:2)</div>
+            </div>
+            <div class="p-2 rounded flex gap-2"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+              <span class="flex-shrink-0">😤</span>
+              <div><strong>Contra os três amigos:</strong> <em>"Porque não acharam resposta, embora tivessem condenado a Jó"</em> (32:3)</div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Argumento de Eliú — Sofrimento como Prevenção</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Eliú apresenta algo novo: Deus usa sofrimento não para <em>punir</em> pecado passado, mas para <em>prevenir</em> pecado futuro. É disciplina pedagógica, não retributiva. <em>"Deus fala uma e duas vezes... em sonho... para desviar o homem do seu desígnio e esconder do homem a soberba."</em> (33:14–17)
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong class="text-sapphire">Contribuição positiva:</strong> Sofrimento pode ter propósito pedagógico sem ser punitivo. Deus usa dor para salvar, não apenas para castigar.
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+              <strong class="text-crimson">Problema:</strong> Ainda não explica o caso de Jó — ele não precisava ser "prevenido" de nada. Eliú melhora a teologia dos amigos, mas não resolve o mistério.
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="text-gold-dark">Função literária:</strong> Prepara para Deus falar. Eliú termina descrevendo tempestade que se aproxima (cap. 37) — é de dentro dela que Yahweh responderá.
+            </div>
+          </div>
+          <div class="mt-4 p-3 rounded-xl text-center italic"
+               style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.25);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-violet">Curiosidade:</strong> Por que Deus não repreende Eliú como repreendeu os outros três? Silêncio proposital. Alguns veem aprovação implícita; outros veem desprezo — Eliú não merece nem resposta. A ambiguidade é intencional.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Discursos de Deus -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Os Discursos de Yahweh — Deus Responde do Redemoinho</div>
+      <div class="p-5 rounded-xl mb-5 text-center"
+           style="background:rgba(30,58,95,0.08);border:2px solid rgba(30,58,95,0.3);">
+        <div class="text-5xl mb-3">🌪️</div>
+        <p class="font-body text-lg italic text-ink leading-relaxed mb-2">
+          "Então, do meio de um redemoinho, o <strong>Senhor</strong> respondeu a Jó..."
+        </p>
+        <p class="font-display text-sm text-sapphire tracking-widest">Jó 38:1</p>
+      </div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed text-center">
+        Após 35 capítulos de debate humano, <strong>Deus finalmente fala.</strong> Mas não dá as respostas que Jó esperava. Não explica por que ele sofreu. Não justifica a justiça divina. Em vez disso, <em>faz perguntas</em> — mais de 70 perguntas retóricas sobre a criação, mostrando a Jó que ele não entende nem os mistérios da natureza, quanto mais os mistérios da providência.
+      </p>
+
+      <h3 class="font-display text-base font-semibold text-ink mb-4 text-center">📖 Dois Discursos Divinos</h3>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(30,58,95,0.06);border:2px solid rgba(30,58,95,0.25);">
+            <h4 class="font-display text-sm font-bold text-sapphire mb-2">🌍 Primeiro Discurso (38:1–40:2)</h4>
+            <p class="font-display text-xs text-ink-faint mb-3">A CRIAÇÃO CÓSMICA — Terra, Mar, Céu, Estrelas</p>
+            <div class="space-y-2 text-xs">
+              <div class="god-question" style="border-color:rgba(30,58,95,0.3);">
+                <p class="font-body text-sm text-ink">"Onde estavas tu quando eu fundava a terra? Dize-mo, se tens inteligência." (38:4)</p>
+              </div>
+              <div class="god-question" style="border-color:rgba(30,58,95,0.3);">
+                <p class="font-body text-sm text-ink">"Ou fechou com portas o mar... quando eu lhe pus nuvens por vestidura?" (38:8–9)</p>
+              </div>
+              <div class="god-question" style="border-color:rgba(30,58,95,0.3);">
+                <p class="font-body text-sm text-ink">"Porventura deste ordens à madrugada... para que a alva tomasse a terra pelas extremidades?" (38:12–13)</p>
+              </div>
+              <div class="god-question" style="border-color:rgba(30,58,95,0.3);">
+                <p class="font-body text-sm text-ink">"Ou poderás tu ajuntar as delícias das Plêiades ou soltar os cordéis de Órion?" (38:31)</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg"
+               style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong>Resposta de Jó (40:3–5):</strong> <em>"Eis que sou vil; que te responderia? Ponho a mão na minha boca. Uma vez falei, porém não replicarei; até duas vezes, porém não prosseguirei."</em> — Primeiro silêncio de Jó: reconhecimento de ignorância.
+            </p>
+          </div>
+        </div>
+
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(92,61,30,0.06);border:2px solid rgba(92,61,30,0.25);">
+            <h4 class="font-display text-sm font-bold text-earth mb-2">🦏 Segundo Discurso (40:6–41:34)</h4>
+            <p class="font-display text-xs text-ink-faint mb-3">BEEMOTE E LEVIATÃ — Criaturas Indomáveis</p>
+            <div class="space-y-2 text-xs">
+              <div class="god-question" style="border-color:rgba(92,61,30,0.28);">
+                <p class="font-body text-sm text-ink">"Tens braço como Deus? Ou podes trovejar com voz como a dele?" (40:9)</p>
+              </div>
+              <div class="p-3 rounded" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+                <strong>Beemote (40:15–24):</strong> Criatura terrestre gigante (hipopótamo? dinossauro?) — <em>"Eis que sua força está nos seus lombos... seus ossos são como tubos de bronze."</em>
+              </div>
+              <div class="p-3 rounded" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+                <strong>Leviatã (cap. 41 inteiro):</strong> Monstro marinho aterrorizante (crocodilo? criatura mítica?) — <em>"Quem pode abrir as portas do seu rosto? Pavorosas são as fileiras dos seus dentes."</em> Descrição de 34 versículos!
+              </div>
+              <div class="god-question" style="border-color:rgba(92,61,30,0.28);">
+                <p class="font-body text-sm text-ink">"Podes tirar com anzol o Leviatã?... Falarás com ele palavras mansas?" (41:1, 3)</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg"
+               style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong>Resposta de Jó (42:1–6):</strong> <em>"Sei que tudo podes... Falei do que não entendia... Eu te conhecia só de ouvir, mas agora os meus olhos te veem. Por isso, me abomino e me arrependo no pó e na cinza."</em> — Segundo silêncio: não submissão derrotada, mas <strong>encontro transformador.</strong>
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-6 p-5 rounded-xl"
+           style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.25);">
+        <h4 class="font-display text-sm font-semibold text-violet mb-3 text-center">🤔 O Que Deus NÃO Faz nos Discursos</h4>
+        <div class="grid md:grid-cols-3 gap-3 text-xs">
+          <div class="p-3 rounded text-center" style="background:rgba(255,255,255,0.5);">
+            <div class="text-2xl mb-2">❌</div>
+            <strong>Não explica por que Jó sofreu</strong>
+            <p class="text-ink-muted mt-1">Nem menciona o diálogo com Satanás</p>
+          </div>
+          <div class="p-3 rounded text-center" style="background:rgba(255,255,255,0.5);">
+            <div class="text-2xl mb-2">❌</div>
+            <strong>Não defende Sua justiça</strong>
+            <p class="text-ink-muted mt-1">Não argumenta teodiceia racional</p>
+          </div>
+          <div class="p-3 rounded text-center" style="background:rgba(255,255,255,0.5);">
+            <div class="text-2xl mb-2">❌</div>
+            <strong>Não condena Jó por questionar</strong>
+            <p class="text-ink-muted mt-1">Repreende os amigos, não Jó</p>
+          </div>
+        </div>
+        <h4 class="font-display text-sm font-semibold text-violet mb-3 mt-5 text-center">✅ O Que Deus FAZ</h4>
+        <div class="grid md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+            <strong class="text-sapphire">Revela Sua grandeza transcendente:</strong> A criação é tão complexa, bela e misteriosa que ultrapassa compreensão humana. Se você não entende como a chuva cai ou onde a luz mora, como entenderia os propósitos eternos?
+          </div>
+          <div class="p-3 rounded" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+            <strong class="text-forest">Mostra que Ele governa o caos:</strong> Beemote e Leviatã — criaturas indomáveis — estão sob Seu controle. O que parece caos para você é cosmos para Ele.
+          </div>
+          <div class="p-3 rounded" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+            <strong class="text-gold-dark">Oferece Sua presença, não explicações:</strong> Jó não recebe teodiceia (defesa racional da justiça de Deus). Recebe <em>teofania</em> (aparição de Deus). E isso basta. <em>"Eu te conhecia só de ouvir, mas agora os meus olhos te veem."</em>
+          </div>
+          <div class="p-3 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+            <strong class="text-violet">Valida lamento honesto:</strong> Deus reprova os amigos que O defenderam com mentiras, mas valida Jó que O questionou com honestidade. <strong>Deus prefere a verdade bruta à piedade falsificada.</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Epílogo -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">O Epílogo — Restauração em Dobro (Cap. 42)</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">A Restauração Material</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Após Jó interceder pelos três amigos (42:8–9), Deus restaura tudo — mas em <strong>dobro:</strong>
+          </p>
+          <div class="grid grid-cols-2 gap-2 text-xs mb-4">
+            <div class="p-2 rounded text-center" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong>Antes:</strong> 7.000 ovelhas<br/>
+              <strong>Depois:</strong> 14.000 ovelhas
+            </div>
+            <div class="p-2 rounded text-center" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong>Antes:</strong> 3.000 camelos<br/>
+              <strong>Depois:</strong> 6.000 camelos
+            </div>
+            <div class="p-2 rounded text-center" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong>Antes:</strong> 500 juntas de bois<br/>
+              <strong>Depois:</strong> 1.000 juntas
+            </div>
+            <div class="p-2 rounded text-center" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong>Antes:</strong> 500 jumentas<br/>
+              <strong>Depois:</strong> 1.000 jumentas
+            </div>
+          </div>
+          <div class="p-3 rounded-lg mb-3"
+               style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <strong class="text-sapphire text-xs">Detalhe curioso — os filhos:</strong>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Jó teve novamente <strong>10 filhos</strong> (7 filhos + 3 filhas) — o mesmo número de antes, não o dobro. Interpretação rabínica: os primeiros 10 não foram perdidos eternamente (aguardam ressurreição), então Jó teve <em>20 filhos no total</em> — também o dobro, mas em duas eternidades diferentes.
+            </p>
+          </div>
+          <div class="p-3 rounded-lg"
+               style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+            <strong class="text-violet text-xs">As filhas de Jó — únicas nomeadas:</strong>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              <strong>Jemima</strong> (pomba), <strong>Quézia</strong> (canela/fragrância), <strong>Quéren-Hapuque</strong> (porta de pinturas/caixa de cosméticos). <em>"Em toda a terra não se acharam mulheres tão formosas como as filhas de Jó."</em> (42:15) — e receberam herança junto com os irmãos, algo raríssimo na época.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Questões Sobre o Final Feliz</h3>
+          <div class="space-y-3">
+            <div class="paradox-box" style="border-color:rgba(139,32,32,0.25);">
+              <span class="font-display text-xs font-bold text-crimson">🤔 Problema 1 — Volta à retribuição?</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                O livro inteiro desconstrói a teologia da retribuição. Mas o final — Jó restaurado em dobro — não a reafirma? <strong>Resposta:</strong> Não. A restauração vem <em>depois</em> de Jó conhecer a Deus, não <em>por causa</em> de sua justiça. É graça, não salário. E não apaga a dor — 10 novos filhos não substituem os 10 mortos.
+              </p>
+            </div>
+            <div class="paradox-box" style="border-color:rgba(30,58,95,0.25);">
+              <span class="font-display text-xs font-bold text-sapphire">🤔 Problema 2 — E quem não é restaurado?</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                Milhões de "Jós" ao longo da história sofrem injustamente e <strong>morrem no sofrimento.</strong> Jó teve final feliz; eles não. O livro responde isso? <strong>Resposta:</strong> Parcialmente. A restauração de Jó aponta para esperança escatológica — restauração plena só virá na ressurreição. <em>"Eu sei que o meu Redentor vive... e por último se levantará sobre a terra"</em> (19:25).
+              </p>
+            </div>
+            <div class="paradox-box" style="border-color:rgba(30,74,42,0.25);">
+              <span class="font-display text-xs font-bold text-forest">🤔 Problema 3 — Jó nunca soube o motivo</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                O leitor conhece o prólogo (caps. 1–2) — sabe do diálogo celestial. Mas <strong>Jó nunca soube.</strong> Viveu e morreu sem saber que foi teste, não punição. <strong>Lição:</strong> Viver pela fé não significa ter todas as respostas — significa confiar em Deus mesmo quando não entendemos.
+              </p>
+            </div>
+            <div class="paradox-box" style="border-color:rgba(200,145,58,0.3);">
+              <span class="font-display text-xs font-bold text-gold-dark">✅ A verdadeira restauração</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                Não é ter o dobro de camelos. É <em>"agora os meus olhos te veem"</em> (42:5). Jó conhecia Deus <em>sobre</em> Deus — teologia de segunda mão. Agora conhece Deus <em>pessoalmente</em> — encontro direto. Essa é a restauração que importa. O resto é consequência.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2 mb-5">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">💔 Sofrimento do justo</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌌 Soberania divina</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🙏 Fé desinteressada</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">❓ Mistério × explicação</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">👁️ Teofania > teodiceia</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">😭 Lamento legítimo</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚖️ Sabedoria limitada</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🔥 Teste de integridade</span>
+          </div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Conceitos-chave</h3>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong>Teodiceia:</strong> Defesa racional da justiça de Deus diante do mal. Jó <em>não</em> oferece teodiceia — oferece <strong>teofania</strong> (revelação direta de Deus).
+            </div>
+            <div class="p-2 rounded" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              <strong>Sabedoria:</strong> Cap. 28 — hino à sabedoria inacessível ao homem. <em>"Mas onde se achará a sabedoria?"</em> Conclusão: <em>"O temor do Senhor é a sabedoria."</em> (28:28)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              <strong>Redentor vivo (Go'el):</strong> 19:25 — <em>"Eu sei que o meu Redentor vive."</em> Conceito de vingador/resgatador que defenderá Jó mesmo após a morte.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>Servo sofredor:</strong> Jó prefigura Cristo — justo que sofre não por seus pecados, mas pelos propósitos divinos maiores (Is 53).
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Jó no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Tg 5:11 — "a paciência de Jó"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">
+                <em>"Eis que temos por bem-aventurados os que sofreram. Ouvistes qual foi a paciência de Jó e vistes o fim que o Senhor lhe deu; porque o Senhor é muito misericordioso e piedoso."</em> — Jó como modelo de perseverança na provação.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Jó 19:25 → Jo 11:25</span>
+              <p class="font-body text-xs text-ink-muted mt-1">
+                <em>"Eu sei que o meu Redentor vive"</em> — Jesus declara: <em>"Eu sou a ressurreição e a vida."</em> O Go'el que Jó esperava é Cristo, o Redentor vivo que venceu a morte.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Jó → Jesus (Servo Sofredor)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">
+                Jó sofre injustamente, sem pecado próprio. Jesus sofre injustamente pelos pecados de outros. Ambos são "desprezados e rejeitados". Ambos questionam Deus no auge do sofrimento (Jó clama; Jesus: <em>"Por que me desamparaste?"</em>). Ambos são vindicados no final.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">1Co 3:19 → Jó 5:13</span>
+              <p class="font-body text-xs text-ink-muted mt-1">
+                Paulo cita Elifaz: <em>"Ele apanha os sábios na sua própria astúcia."</em> Ironia: mesmo um "consolador cruel" pode falar verdade pontual — Deus usa até teologia imperfeita quando lhe convém.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Rm 11:34–35 → Jó 41:11</span>
+              <p class="font-body text-xs text-ink-muted mt-1">
+                <em>"Quem primeiro deu a ele para que lhe seja recompensado?"</em> (Jó 41:11) — Paulo usa para mostrar que ninguém coloca Deus em dívida. Salvação é graça, não salário. Mesma teologia de Jó: fé sem barganha.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Versículos Monumentais -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Versículos Monumentais de Jó</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="p-4 rounded-xl"
+             style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+          <div class="job-quote mb-2">
+            <p class="font-body text-base leading-relaxed">
+              "Nu saí do ventre de minha mãe e nu tornarei para lá. O Senhor deu, o Senhor tirou; bendito seja o nome do Senhor."
+            </p>
+          </div>
+          <p class="font-display text-xs text-gold-dark tracking-widest">Jó 1:21</p>
+          <p class="font-body text-xs text-ink-muted mt-2">
+            A primeira resposta de Jó às catástrofes — reconhecimento radical de que tudo é dádiva, nada é direito adquirido.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl"
+             style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.25);">
+          <div class="job-quote mb-2">
+            <p class="font-body text-base leading-relaxed">
+              "Ainda que ele me mate, nele esperarei."
+            </p>
+          </div>
+          <p class="font-display text-xs text-sapphire tracking-widest">Jó 13:15 (KJV)</p>
+          <p class="font-body text-xs text-ink-muted mt-2">
+            Fé absoluta mesmo diante da morte. Versão hebraica ambígua — pode ser também <em>"Eis que ele me matará; não tenho esperança"</em> — mostrando tensão entre fé e desespero.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl"
+             style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.25);">
+          <div class="job-quote mb-2">
+            <p class="font-body text-base leading-relaxed">
+              "Porque eu sei que o meu Redentor vive e que por fim se levantará sobre a terra. E, depois de consumida a minha pele, ainda em minha carne verei a Deus."
+            </p>
+          </div>
+          <p class="font-display text-xs text-crimson tracking-widest">Jó 19:25–26</p>
+          <p class="font-body text-xs text-ink-muted mt-2">
+            O ápice da fé de Jó — esperança de vindication pós-morte. Messias Handel usou no <em>Messiah</em>. Texto difícil em hebraico, mas aponta claramente para ressurreição.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl"
+             style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+          <div class="job-quote mb-2">
+            <p class="font-body text-base leading-relaxed">
+              "Mas onde se achará a sabedoria? E onde está o lugar da inteligência?... Deus entende o seu caminho... E disse ao homem: Eis que o temor do Senhor é a sabedoria."
+            </p>
+          </div>
+          <p class="font-display text-xs text-forest tracking-widest">Jó 28:12, 23, 28</p>
+          <p class="font-body text-xs text-ink-muted mt-2">
+            O hino à sabedoria inacessível — depois de minerar ouro, prata e pedras preciosas, o homem ainda não encontra a sabedoria. Só Deus a possui plenamente.
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl"
+             style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.25);">
+          <div class="job-quote mb-2">
+            <p class="font-body text-base leading-relaxed">
+              "Onde estavas tu quando eu fundava a terra? Dize-mo, se tens inteligência."
+            </p>
+          </div>
+          <p class="font-display text-xs text-violet tracking-widest">Jó 38:4</p>
+          <p class="font-body text-xs text-ink-muted mt-2">
+            A primeira pergunta de Deus — estabelece perspectiva cósmica. Todas as 70+ perguntas seguem esse padrão: Jó, você não sabe nem isso — como ousaria julgar Meus caminhos?
+          </p>
+        </div>
+
+        <div class="p-4 rounded-xl"
+             style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.25);">
+          <div class="job-quote mb-2">
+            <p class="font-body text-base leading-relaxed">
+              "Eu te conhecia só de ouvir, mas agora os meus olhos te veem. Por isso, me abomino e me arrependo no pó e na cinza."
+            </p>
+          </div>
+          <p class="font-display text-xs text-earth tracking-widest">Jó 42:5–6</p>
+          <p class="font-body text-xs text-ink-muted mt-2">
+            A resposta final de Jó — não é derrota humilhada, mas encontro transformador. Conhecimento teórico tornou-se experiência pessoal. Essa é a verdadeira restauração.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jó é provavelmente o livro mais antigo da Bíblia:</strong> Evidências: (1) ausência de referências a Israel, Lei, Templo; (2) sacrifícios patriarcais — Jó mesmo atua como sacerdote (1:5); (3) longevidade — Jó vive 140 anos após a provação (42:16), típico da época de Abraão; (4) contexto cultural pré-mosaico. Provavelmente composto entre 2000–1800 a.C., muito antes de Moisés.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A terra de Uz nunca foi localizada com certeza:</strong> Texto diz apenas <em>"havia um homem na terra de Uz"</em> (1:1). Pode ser região de Edom (sul), Hauran (nordeste), ou Arábia. Alguns veem Uz como deliberadamente vaga — Jó é história <em>humana universal</em>, não israelita particular. O sofrimento injusto transcende geografia.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jó usa nome genérico de Deus, não Yahweh:</strong> O livro usa <em>Elohim, El, Eloah, Shaddai</em> — nomes genéricos para divindade. <em>Yahweh</em> (o nome pessoal revelado a Moisés) aparece apenas no prólogo, epílogo e discursos divinos — nunca nas falas humanas. Confirma datação pré-mosaica e caráter universal.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Satanás" em Jó não é nome próprio — é função:</strong> Hebraico: <em>ha-satan</em> (הַשָּׂטָן) = "o adversário" ou "o acusador". Artigo definido indica título, não nome. É membro do conselho celestial (<em>bene Elohim</em>, "filhos de Deus"). Só em textos pós-exílicos tardios "Satanás" vira nome próprio do diabo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Beemote e Leviatã — criaturas reais ou míticas?</strong> Debate milenar. <strong>Beemote</strong> (40:15–24): hipopótamo? dinossauro? criatura mítica? Descrição: <em>"ossos como tubos de bronze"</em>, come grama, força nos lombos. <strong>Leviatã</strong> (cap. 41): crocodilo? dragão marinho? <em>"De suas narinas sai fumaça... Faz ferver o abismo como panela."</em> Propósito literário: símbolos do poder indomável de Deus sobre o caos primordial.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O silêncio de sete dias (2:13):</strong> Quando os três amigos veem Jó pela primeira vez, <em>"assentaram-se com ele na terra sete dias e sete noites; e nenhum lhe dizia palavra alguma, porque viam que a dor era muito grande."</em> Na cultura hebraica, sentar-se no chão é postura de luto. Sete dias é período tradicional de luto intenso (<em>shiva</em>). O melhor que os amigos fazem é ficarem calados.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jó 38:7 e os "filhos de Deus" cantando na criação:</strong> <em>"Quando as estrelas da alva juntas alegremente cantavam, e todos os filhos de Deus rejubilavam?"</em> Sugere que seres angélicos já existiam antes da criação da terra — testemunharam e celebraram a obra criadora. Único texto bíblico que descreve reação celestial à criação.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jó menciona constelações astronômicas (9:9; 38:31–32):</strong> <em>Plêiades</em> (aglomerado de 7 estrelas), <em>Órion</em> (o caçador), <em>Ursa</em> (constelação do norte), <em>câmaras do sul</em> (constelações austrais). Indica conhecimento astronômico sofisticado na antiguidade — e que Deus governa até os astros.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A pele de Jó "sobreviveu" — literalmente:</strong> <em>"Pele por pele"</em> (2:4) é provérbio antigo. Mas após as chagas, Jó diz: <em>"A minha pele se escureceu e caiu de sobre mim"</em> (30:30). Descrição de doença dermatológica severa — possivelmente lepra, pênfigo ou erupções ulcerativas generalizadas. Dor física extrema somada à dor emocional.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Lutero quase rejeitou Jó:</strong> Martinho Lutero, em momentos de frustração, disse que Jó era <em>"muito argumentativo"</em> e que o livro parecia mais filosofia grega que Escritura hebraica. Mas depois reconheceu: <em>"Jó é magnífico e sublime como nenhum outro livro da Escritura."</em> A tensão que incomoda é justamente o ponto — fé real luta, não apenas se conforma.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>C.S. Lewis sobre Jó — "resposta de Deus é esmagamento ou libertação?"</strong> Em <em>A Grief Observed</em> (após morte de sua esposa), Lewis escreve: <em>"O problema não é por que algumas pessoas sofrem humildemente e outras se revoltam; é por que algumas pessoas sofrem e outras não."</em> Depois lê Jó novamente e percebe: <em>"Deus não vem torturar Jó com exibição de poder bruto — vem libertá-lo da prisão de seu próprio intelecto."</em> Jó exigia explicações racionais. Deus ofereceu algo maior: <strong>Sua presença misteriosa.</strong> E Jó percebeu que nunca quis realmente respostas — queria a Deus. <em>"Eu te conhecia só de ouvir, mas agora os meus olhos te veem."</em> Teodiceia fracassa sempre. Teofania é suficiente sempre. Esse é o escândalo e a glória de Jó.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave finais -->
+    <section class="text-center py-8 animate-fade-up animate-delay-7">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Nu saí do ventre de minha mãe e nu tornarei para lá. O Senhor deu, o Senhor tirou; bendito seja o nome do Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jó 1:21 — Primeira resposta à catástrofe total</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porque eu sei que o meu Redentor vive e que por fim se levantará sobre a terra."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jó 19:25 — Esperança de vindication além da morte</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Onde estavas tu quando eu fundava a terra? Dize-mo, se tens inteligência."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jó 38:4 — Deus responde do redemoinho com perguntas, não respostas</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Eu te conhecia só de ouvir, mas agora os meus olhos te veem."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jó 42:5 — Encontro pessoal que torna todas as perguntas secundárias</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Jó · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

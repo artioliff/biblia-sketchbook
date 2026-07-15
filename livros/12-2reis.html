@@ -4,24 +4,23 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>2 Reis — Guia de Estudos</title>
-
+<!-- 1. Tailwind CDN (deve vir antes do config) -->
   <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
   <script src="../tailwind-config.js"></script>
 
+  <!-- 3. Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
 
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
   <link rel="stylesheet" href="../style.css" />
 
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
   <style>
-    .parchment-bg {
-      background-color: #fdf8ef;
-      background-image:
-        radial-gradient(ellipse at 18% 16%, rgba(92,61,30,0.09) 0%, transparent 55%),
-        radial-gradient(ellipse at 82% 82%, rgba(139,32,32,0.09) 0%, transparent 55%);
-    }
-
+    
     /* Card de milagre de Eliseu */
     .miracle-card {
       border-radius: 9px;
@@ -93,7 +92,7 @@
         O livro que narra o fim de dois reinos — <strong>Israel em 722 a.C.</strong> e <strong>Judá em 586 a.C.</strong>
       </p>
 
-      <div class="divider-ornament animate-fade-in animate-delay-2">
+      <div class="divider-ornament animate-fade-in animate-delay-3">
         <span class="ornament">✦</span>
       </div>
 

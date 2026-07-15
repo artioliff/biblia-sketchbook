@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neemias — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(30,58,95,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+
+    /* Seções do muro */
+    .wall-section {
+      border-radius: 8px;
+      padding: 0.75rem 1rem;
+      border: 1px solid;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .wall-section:hover { transform: translateX(4px); }
+
+    /* Oposição de Sambalate */
+    .enemy-card {
+      border-radius: 9px;
+      padding: 0.875rem 1rem;
+      border: 1px solid;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .enemy-card:hover { transform: translateX(4px); }
+
+    /* Oração rápida */
+    .flash-prayer {
+      border-radius: 10px;
+      border: 1px solid rgba(200,145,58,0.3);
+      padding: 1rem 1.25rem;
+      background: rgba(200,145,58,0.05);
+      font-style: italic;
+      position: relative;
+    }
+    .flash-prayer::before {
+      content: '🙏';
+      position: absolute;
+      top: -10px; left: 12px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 16º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Neemias
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>נְחֶמְיָה</em> (Nechemyah) — "O Senhor consola" ou "Consolação do Senhor"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Escrito em <strong>primeira pessoa</strong> — o único livro histórico narrado diretamente pelo protagonista · o livro da reconstrução e da reforma
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">13</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">406</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">52 dias</div>
+          <div class="font-body text-sm text-ink-muted mt-1">para reconstruir o muro</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">445 a.C.</div>
+          <div class="font-body text-sm text-ink-muted mt-1">chegada a Jerusalém</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.22);">
+              <span class="font-display text-xs font-bold text-sapphire">16º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">11º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Pós-exílio</span>
+              <span class="font-body text-sm text-ink">2º dos livros pós-exílicos · <strong>13 anos</strong> após a chegada de Esdras</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro do Construtor</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Enquanto Esdras restaurou a <strong>Lei</strong> e o culto, Neemias restaurou os <strong>muros</strong> e a comunidade. São dois aspectos inseparáveis da reconstrução de Israel: não basta ter o Templo se a cidade está em ruínas e sem proteção. Não basta ter muros se o povo não conhece a Lei de Deus.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Neemias é único por ser escrito em <strong>primeira pessoa</strong> — lemos suas orações, seus planos, suas frustrações e suas lutas exatamente como ele as viveu. É um dos perfis de liderança mais completos e práticos da Bíblia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 1–2</span>
+            <div class="font-body text-xs text-ink-faint mt-1">O chamado</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Da Copa do Rei ao Muro de Jerusalém</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Neemias recebe notícias de que o muro de Jerusalém está em ruínas. Chora, jejua e ora por dias. Diante do rei Artaxerxes, com o coração partido mas o semblante controlado, pede licença para reconstruir a cidade. O rei concede — licença, cartas de apoio e escolta militar. Neemias chega a Jerusalém, inspeciona os muros à noite em segredo e convoca o povo.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 3–7</span>
+            <div class="font-body text-xs text-ink-faint mt-1">O muro</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">A Reconstrução do Muro — 52 Dias</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A organização das equipes de trabalho por famílias e portas, a oposição crescente de <strong>Sambalate, Tobias e Gesém</strong>, os trabalhadores que construíam com uma mão e seguravam uma espada na outra, as tentativas de assassinato de Neemias, o muro concluído em apenas <strong>52 dias</strong> e a lista dos que retornaram do exílio.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 8–10</span>
+            <div class="font-body text-xs text-ink-faint mt-1">A Lei</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">A Grande Assembleia — Esdras Lê a Lei</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Com o muro concluído, Esdras e Neemias convocam todo o povo. Esdras lê a Lei de Moisés do amanhecer ao meio-dia — o povo chora ao ouvir. Os levitas explicam o sentido ao povo enquanto ele ouvia. A Festa dos Tabernáculos é celebrada pela primeira vez desde os dias de Josué. O povo faz uma solene renovação da Aliança.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 11–13</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Reformas</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Dedicação do Muro e as Reformas Finais</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O repovoamento de Jerusalém por sorteio, a dedicação festiva do muro com dois grandes coros marchando em direções opostas sobre ele, e as reformas finais de Neemias após retornar de uma visita à Pérsia: expulsão de Tobias do Templo, restauração dos dízimos, observância do sábado e a questão dos casamentos mistos novamente.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Neemias como líder -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Neemias — Um Perfil de Liderança</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Neemias era <strong>copeiro do rei Artaxerxes</strong> — um cargo de extrema confiança e influência na corte persa. Não era sacerdote nem profeta. Era um administrador, organizador e homem de ação. Seu livro é um manual prático de liderança em crise.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">🙏</div>
+          <h4 class="font-display text-xs font-bold text-sapphire mb-2">Orou antes de agir</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Cada decisão importante é precedida de oração. Suas "orações-relâmpago" no meio da ação são uma das marcas mais notáveis do livro.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">🔍</div>
+          <h4 class="font-display text-xs font-bold text-forest mb-2">Avaliou antes de falar</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Inspecionou os muros à noite em segredo antes de apresentar o plano ao povo. Não anunciou sem entender a situação real (2:11–16).</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="text-2xl mb-2">🤝</div>
+          <h4 class="font-display text-xs font-bold text-gold-dark mb-2">Delegou e organizou</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Dividiu o muro em seções e designou famílias para cada parte — cada grupo trabalhava perto de sua própria casa, o que aumentava a motivação (cap. 3).</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+          <div class="text-2xl mb-2">⚔️</div>
+          <h4 class="font-display text-xs font-bold text-crimson mb-2">Combateu sem parar</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Metade do povo trabalhava, metade guardava com lanças, escudos e arcos. Neemias mesmo nunca tirou as roupas — nem para dormir (4:16–23).</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+          <div class="text-2xl mb-2">⚖️</div>
+          <h4 class="font-display text-xs font-bold text-violet mb-2">Confrontou a injustiça</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Quando ricos cobravam juros dos pobres durante a crise, Neemias os convocou e exigiu restituição — dando o próprio exemplo de não cobrar como governador (cap. 5).</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(184,74,16,0.05);border:1px solid rgba(184,74,16,0.22);">
+          <div class="text-2xl mb-2">🎯</div>
+          <h4 class="font-display text-xs font-bold text-fire mb-2">Não se desviou do foco</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Quando os inimigos o convidaram para "reuniões" que eram armadilhas, respondeu: <em>"Estou fazendo grande obra e não posso descer."</em> (6:3)</p>
+        </div>
+      </div>
+
+      <!-- Orações relâmpago -->
+      <h3 class="font-display text-sm font-semibold text-ink mb-3">⚡ As "Orações-Relâmpago" de Neemias</h3>
+      <p class="font-body text-xs text-ink-muted mb-3 leading-relaxed">
+        Uma das características mais únicas de Neemias são suas orações breves e espontâneas inseridas no meio da narrativa — momentos em que ele para tudo e clama a Deus antes de agir ou responder:
+      </p>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="flash-prayer">
+          <p class="font-body text-sm text-ink leading-relaxed">"Orei ao Deus dos céus. E disse ao rei..." (2:4–5)</p>
+          <p class="font-body text-xs text-ink-faint mt-1">Antes de pedir licença ao rei</p>
+        </div>
+        <div class="flash-prayer">
+          <p class="font-body text-sm text-ink leading-relaxed">"Ouve, ó nosso Deus, que somos desprezados..." (4:4)</p>
+          <p class="font-body text-xs text-ink-faint mt-1">Diante das zombarias de Sambalate</p>
+        </div>
+        <div class="flash-prayer">
+          <p class="font-body text-sm text-ink leading-relaxed">"Agora, fortalece as minhas mãos." (6:9)</p>
+          <p class="font-body text-xs text-ink-faint mt-1">Diante das tentativas de intimidação</p>
+        </div>
+        <div class="flash-prayer">
+          <p class="font-body text-sm text-ink leading-relaxed">"Lembra-te de mim, ó meu Deus, para bem." (13:31)</p>
+          <p class="font-body text-xs text-ink-faint mt-1">A última frase do livro — entrega final a Deus</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Oposição de Sambalate -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Tríade Inimiga — Sambalate, Tobias e Gesém</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Os três opositores de Neemias usaram cada tática possível para impedir a reconstrução. Cada tentativa revela uma estratégia diferente de oposição — e cada resposta de Neemias revela um princípio de resistência espiritual.
+      </p>
+      <div class="space-y-2">
+
+        <div class="enemy-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <span class="text-lg flex-shrink-0">😂</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Tática 1 — Zombaria e Ridicularização (4:1–3)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Sambalate zombou: <em>"O que fazem estes judeus fracos? Acaso restaurarão as pedras das pilhas de entulho?"</em> Tobias acrescentou: <em>"Se uma raposa subir nesse muro de pedra, abri-lo-á."</em> <strong>Resposta de Neemias:</strong> orou pedindo que Deus devolvesse o opróbrio sobre eles — e continuou trabalhando.</p>
+          </div>
+        </div>
+
+        <div class="enemy-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <span class="text-lg flex-shrink-0">⚔️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">Tática 2 — Ameaça de Ataque Físico (4:7–9)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Quando viram que a zombaria não funcionava, conspiraram para atacar fisicamente. <strong>Resposta de Neemias:</strong> organizou guarda dia e noite, armou metade do povo enquanto a outra metade trabalhava. <em>"Lutamos por nossos irmãos, por nossos filhos e nossas filhas."</em> (4:14)</p>
+          </div>
+        </div>
+
+        <div class="enemy-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-lg flex-shrink-0">🤝</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">Tática 3 — Convite para "Diálogo" (6:1–4)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Quatro vezes enviaram mensagem: <em>"Vem, e consultemo-nos juntos."</em> Era uma armadilha para matar Neemias longe de Jerusalém. Quatro vezes a mesma resposta: <em>"Estou fazendo grande obra e não posso descer; por que cessaria a obra enquanto eu a deixasse e descesse a vós?"</em> (6:3)</p>
+          </div>
+        </div>
+
+        <div class="enemy-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="text-lg flex-shrink-0">📰</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">Tática 4 — Carta Aberta com Calúnia (6:5–9)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Enviaram uma carta aberta acusando Neemias de planejar rebelião contra a Pérsia e querer ser rei. Era uma acusação política grave. <strong>Resposta de Neemias:</strong> <em>"Não é assim como dizes; são invenções do teu coração."</em> E orou: <em>"Agora, fortalece as minhas mãos."</em> (6:8–9)</p>
+          </div>
+        </div>
+
+        <div class="enemy-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <span class="text-lg flex-shrink-0">😨</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Tática 5 — Falsa Profecia para Causar Medo (6:10–14)</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Um "profeta" contratado por Tobias disse a Neemias que havia um plano de matá-lo e sugeriu que se refugiasse no Templo. Neemias reconheceu a armadilha — entrar no Templo sem ser sacerdote seria pecado e mancharia sua reputação. <em>"Quem como eu fugiria?"</em> Recusou. (6:11)</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-4 p-4 rounded-xl"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-sapphire">O resultado:</strong> <em>"O muro foi concluído no vigésimo quinto dia do mês de Elul, em cinquenta e dois dias. E aconteceu que, quando o ouviram todos os nossos inimigos, temeram todos os povos em redor de nós, e muito abatidos ficaram aos seus próprios olhos; pois perceberam que esta obra havia sido realizada pelo nosso Deus."</em> (6:15–16)
+        </p>
+      </div>
+    </section>
+
+    <!-- A Leitura da Lei -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Grande Assembleia — Esdras Lê a Lei (Cap. 8)</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Com o muro concluído, todo o povo se reuniu como um só homem na praça diante da Porta das Águas. Esdras trouxe a Lei perante a assembleia — homens, mulheres e todos os que podiam entender — e leu do amanhecer até ao meio-dia.
+          </p>
+          <div class="p-4 rounded-xl italic mb-4"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "Esdras abriu o livro à vista de todo o povo... e quando o abriu, todo o povo se pôs em pé. E Esdras louvou ao Senhor, o grande Deus. E todo o povo respondeu: Amém! Amém! levantando as mãos; e inclinaram-se e adoraram o Senhor com os rostos em terra."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Neemias 8:5–6</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Os levitas circulavam pelo povo explicando o sentido do texto — a primeira descrição bíblica de pregação expositiva. O povo chorou ao ouvir as palavras da Lei. Neemias e Esdras disseram: <em>"Não vos entristeçais, porque a alegria do Senhor é a vossa força."</em> (8:10)
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🎪 A Festa dos Tabernáculos Restaurada</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Ao ler a Lei, descobriram as instruções para a Festa dos Tabernáculos — e a celebraram imediatamente. O texto declara: <em>"desde os dias de Josué até aquele dia os filhos de Israel não haviam feito assim."</em> (8:17) Uma festa não celebrada adequadamente por ~1.000 anos foi restaurada.
+          </p>
+          <div class="space-y-2">
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              🌿 O povo saiu e colheu ramos de oliveira, mirto e palma para construir tendas
+            </div>
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              🏠 Fizeram tendas nos telhados, nos pátios, nas praças da cidade
+            </div>
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              📖 Leram a Lei todos os dias durante os 7 dias da festa
+            </div>
+            <div class="p-2 rounded-lg flex gap-2 text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              🎉 "E havia muito grande alegria" — o povo redescobriu sua identidade
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Oração de Neemias 9 -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">A Grande Oração Histórica — Cap. 9</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Após a Festa dos Tabernáculos, o povo se reuniu para um dia de jejum, confissão e adoração. Os levitas lideraram uma oração histórica que recapitula <em>toda a história de Israel</em> — da criação ao exílio — em um único hino de confissão e fé. É uma das orações mais longas e abrangentes da Bíblia.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+            <span class="font-display text-xs font-bold text-gold-dark">🌟 A Criação e Abraão (v.6–8)</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Deus criou os céus, a terra e o mar; escolheu Abraão e fez aliança com ele — e "cumpriu a tua palavra, porque és justo."</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+            <span class="font-display text-xs font-bold text-gold-dark">🌊 O Êxodo e o Sinai (v.9–14)</span>
+            <p class="font-body text-xs text-ink-muted mt-1">As pragas, o Mar Vermelho, a coluna de nuvem e fogo, o maná, a água da rocha, a Lei no Sinai — "desceste ao monte Sinai e falaste com eles do céu."</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+            <span class="font-display text-xs font-bold text-gold-dark">🏕️ O Deserto (v.15–21)</span>
+            <p class="font-body text-xs text-ink-muted mt-1">O bezerro de ouro, as rebeliões — "mas tu és Deus de perdões, gracioso e misericordioso... não os abandonaste no deserto."</p>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <span class="font-display text-xs font-bold text-sapphire">🏡 A Terra Prometida (v.22–25)</span>
+            <p class="font-body text-xs text-ink-muted mt-1">A conquista de Canaã, as terras férteis, as cidades e vinhas — "comeram e se fartaram e engordaram e se deliciaram."</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+            <span class="font-display text-xs font-bold text-crimson">🔄 O Ciclo dos Juízes e Reis (v.26–31)</span>
+            <p class="font-body text-xs text-ink-muted mt-1">"Mas foram desobedientes e se rebelaram... mataram os teus profetas... mas tu, em tua grande misericórdia, não os consumiste totalmente."</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+            <span class="font-display text-xs font-bold text-forest">🙏 O Presente e o Apelo (v.32–38)</span>
+            <p class="font-body text-xs text-ink-muted mt-1">"Eis que somos hoje escravos... e eis que estamos em grande angústia." Terminam assinando uma aliança — a comunidade inteira, selada com nomes e selos.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🧱 Reconstrução da comunidade</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🙏 Oração como estratégia</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">📖 A Palavra que restaura</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚔️ Trabalho + vigilância</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🎯 Foco diante da oposição</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">⚖️ Justiça social</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🎉 Alegria como força</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🤝 Liderança servidora</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Neemias no Novo Testamento e na Tradição</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Ne 8:10 → Fp 4:4</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"A alegria do Senhor é a vossa força" ecoa em Paulo: "Alegrai-vos no Senhor sempre." A alegria não é emoção — é fundamento de resistência espiritual.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Ne 4:9 → Ef 6:18</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Oramos a Deus e pusemos guarda" — a combinação de oração e ação que Paulo sistematiza como "armadura de Deus" com "oração em todo tempo".</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Os muros de Neemias → Ap 21</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A Nova Jerusalém do Apocalipse tem muros grandes e altos — o cumprimento eterno da reconstrução iniciada por Neemias: uma cidade que nunca mais precisará de proteção humana.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Ne 8 → Lc 4:16–17</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Esdras lendo em pé na sinagoga com o povo de pé (Ne 8:5) prefigura Jesus lendo em pé na sinagoga de Nazaré — a mesma postura de respeito reverente pela Palavra.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>52 dias — confirmado pela arqueologia:</strong> A reconstrução do muro em apenas 52 dias (6:15) foi ridicularizada por críticos. Mas escavações revelaram que Neemias reconstruiu sobre os alicerces originais ainda intactos, usando pedras das ruínas — tornando a velocidade historicamente plausível.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Estou fazendo grande obra" (6:3):</strong> Esta resposta de Neemias tornou-se um dos textos clássicos de liderança focada. O convite para "descer" era tentação de abandonar o essencial pelo urgente — o inimigo sabe que nenhuma arma é mais eficaz contra um líder do que a distração.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Neemias nunca cobrou salário (5:14–18):</strong> Durante 12 anos como governador, Neemias nunca exigiu a ração oficial a que tinha direito, nem comprou terras. Alimentava 150 judeus e líderes à sua mesa diariamente — às suas próprias custas. <em>"Assim fiz, por causa do temor de Deus."</em>
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A dedicação do muro com dois coros (12:31–43):</strong> Na dedicação, Neemias dividiu os líderes em dois grandes coros que marcharam sobre o muro em direções opostas — convergindo no Templo. A celebração foi tão alegre que <em>"o gozo de Jerusalém se ouvia ao longe."</em>
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Tobias dentro do Templo (13:4–9):</strong> Durante a ausência de Neemias na Pérsia, o sacerdote Eliasibe havia cedido um grande aposento do Templo para Tobias — o principal inimigo da reconstrução. Ao retornar, Neemias jogou todos os objetos de Tobias para fora e purificou o aposento. Liderança que não acompanha o que construiu pode ver inimigos instalados dentro da obra.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O fechamento dos portões no sábado (13:19–22):</strong> Mercadores de Tiro vinham vender peixe e toda sorte de mercadorias no sábado. Neemias fechou os portões da cidade antes do sábado e os abriu apenas após o pôr do sol. Quando os mercadores acamparam fora dos muros esperando a abertura, Neemias os ameaçou com prisão — e pararam de vir.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Sambalate identificado arqueologicamente:</strong> Os Papiros de Elefantina, descobertos no Egito, mencionam "Sambalate, governador de Samaria" — confirmando que o antagonista de Neemias era um personagem histórico real com cargo oficial no Império Persa.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A última palavra do livro:</strong> Neemias 13:31 termina com <em>"Lembra-te de mim, ó meu Deus, para bem"</em> — a mesma fórmula que aparece ao longo do livro (5:19; 13:14, 22, 29). Neemias não termina glorificando suas conquistas — entrega tudo a Deus. Uma lição final de humildade do líder mais eficiente do pós-exílio.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Esdras + Neemias — a dupla inseparável:</strong> Esdras restaurou a Lei e a identidade espiritual; Neemias reconstruiu os muros e a estrutura social. O NT apresenta um paralelo perfeito: Jesus disse que os dois maiores mandamentos são amar a Deus (dimensão espiritual — Esdras) e amar o próximo (dimensão comunitária — Neemias). Uma comunidade saudável precisa dos dois. Quando Esdras leu a Lei no capítulo 8, Neemias estava ao seu lado — a união do sacerdote e do governador, do culto e da cidade, é o modelo de shalom que Deus tinha em mente desde o princípio.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O Deus dos céus, ele nos fará prosperar. Nós, seus servos, nos levantaremos e edificaremos."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Neemias 2:20 — A declaração de Neemias ao povo</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Não vos entristeçais, porque a alegria do Senhor é a vossa força."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Neemias 8:10 — Neemias e Esdras ao povo que chorou ao ouvir a Lei</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Estou fazendo grande obra e não posso descer; por que cessaria a obra enquanto eu a deixasse e descesse a vós?"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Neemias 6:3 — Resposta aos inimigos que queriam distraí-lo</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Neemias · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

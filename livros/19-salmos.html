@@ -1,0 +1,1241 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salmos — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    /* Categorias de salmos */
+    .psalm-category {
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid;
+      transition: all 0.3s ease;
+    }
+    .psalm-category:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    /* Salmos individuais destacados */
+    .featured-psalm {
+      border-radius: 12px;
+      padding: 1.25rem;
+      border-left: 4px solid;
+      background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(200,145,58,0.04) 100%);
+      transition: transform 0.2s ease;
+    }
+    .featured-psalm:hover { transform: translateX(6px); }
+
+    /* Paralelismo hebraico */
+    .parallelism-box {
+      border-radius: 8px;
+      border: 1px dashed;
+      padding: 1rem;
+      font-style: italic;
+      position: relative;
+    }
+    .parallelism-box::before {
+      content: '⫸';
+      position: absolute;
+      left: -8px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.5rem;
+      opacity: 0.3;
+    }
+
+    /* Estrutura dos cinco livros */
+    .book-division {
+      border-radius: 10px;
+      padding: 1rem;
+      border: 2px solid;
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* Gêneros literários */
+    .genre-badge {
+      display: inline-block;
+      padding: 0.5rem 0.875rem;
+      border-radius: 20px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border: 1px solid;
+      transition: all 0.2s ease;
+    }
+    .genre-badge:hover {
+      transform: scale(1.05);
+    }
+
+    /* Termos hebraicos */
+    .hebrew-term {
+      background: rgba(200,145,58,0.08);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      border: 1px solid rgba(200,145,58,0.2);
+    }
+
+    /* Citação de salmo */
+    .psalm-quote {
+      border-left: 4px solid rgba(200,145,58,0.4);
+      padding-left: 1.5rem;
+      font-style: italic;
+      color: #4a4a4a;
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS POÉTICOS · 19º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.2);">
+        Salmos
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>תְּהִלִּים</em> (Tehillim) — "Louvores" · Do grego <em>Ψαλμοί</em> (Psalmoi) — "Cânticos"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O hinário de Israel · a oração da humanidade · <strong>o livro mais citado no Novo Testamento</strong> · onde toda emoção humana se torna oração
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">150</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Salmos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">2.461</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~1.000</div>
+          <div class="font-body text-sm text-ink-muted mt-1">anos de composição</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">5 livros</div>
+          <div class="font-body text-sm text-ink-muted mt-1">divisão interna</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">19º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.07);border:1px solid rgba(30,58,95,0.22);">
+              <span class="font-display text-xs font-bold text-sapphire">2º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Poéticos/Sapienciais</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Centro</span>
+              <span class="font-body text-sm text-ink">Livro central do AT — <strong>coração devocional de Israel</strong></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Hinário de Israel</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Salmos não é um livro — é uma <strong>coleção de 150 cânticos</strong> compostos ao longo de aproximadamente <strong>mil anos</strong> (de Moisés a pós-exílio). É o livro de oração de Israel, usado no Templo, nas sinagogas, nas casas, nos momentos de alegria e de desespero.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Diferente de todos os outros livros, Salmos não nos fala <em>sobre</em> Deus — nos ensina a falar <em>com</em> Deus. Toda emoção humana possível está aqui: júbilo, lamento, gratidão, raiva, medo, esperança, desespero, vingança, adoração. <strong>É a Bíblia orando de volta a Deus.</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os Cinco Livros -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Os Cinco Livros — Estrutura do Saltério</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Salmos está dividido em <strong>cinco livros</strong>, cada um terminando com uma doxologia (bênção litúrgica). Esta divisão espelha intencionalmente os <strong>cinco livros de Moisés</strong> (Pentateuco), sugerindo que assim como a Torá é a palavra de Deus ao homem, Salmos é a palavra do homem de volta a Deus.
+      </p>
+      <div class="space-y-3">
+
+        <div class="book-division" style="border-color:rgba(30,58,95,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:80px;">
+              <span class="font-display text-2xl font-bold text-sapphire">I</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Salmos 1–41</div>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Livro de Davi — O Homem e Deus</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Principalmente salmos davídicos. Temas: relacionamento pessoal com Deus, lamento individual, confiança. Paralelo com <strong>Gênesis</strong> (origem, queda, redenção pessoal). <span class="hebrew-term">Yahweh</span> (nome pessoal de Deus) predomina.
+              </p>
+              <div class="text-xs">
+                <strong class="text-sapphire">Doxologia:</strong> <em>"Bendito seja o Senhor, Deus de Israel, de eternidade a eternidade! Amém e Amém."</em> (41:13)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-division" style="border-color:rgba(30,74,42,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:80px;">
+              <span class="font-display text-2xl font-bold text-forest">II</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Salmos 42–72</div>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-display text-sm font-semibold text-forest mb-1">Livro dos Filhos de Coré e Davi — Ruína e Redenção Nacional</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Filhos de Coré (levitas cantores) + Davi. Temas: exílio, ruína, anseio pelo Templo, redenção coletiva. Paralelo com <strong>Êxodo</strong> (escravidão, libertação, peregrinação). <span class="hebrew-term">Elohim</span> (Deus genérico) predomina — dor da distância.
+              </p>
+              <div class="text-xs">
+                <strong class="text-forest">Doxologia:</strong> <em>"Bendito seja o Senhor Deus, o Deus de Israel, que só ele faz maravilhas! Bendito seja para sempre o seu nome glorioso, e encha-se toda a terra da sua glória! Amém e Amém."</em> (72:18–19)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-division" style="border-color:rgba(200,145,58,0.35);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:80px;">
+              <span class="font-display text-2xl font-bold text-gold-dark">III</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Salmos 73–89</div>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Livro de Asafe — Santuário em Ruínas</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Principalmente Asafe (líder de adoração de Davi). Temas: crise do Templo destruído, teodiceia, por que os ímpios prosperam? Paralelo com <strong>Levítico</strong> (santidade, Templo, adoração). O livro mais sombrio — termina em tom de dúvida.
+              </p>
+              <div class="text-xs">
+                <strong class="text-gold-dark">Doxologia:</strong> <em>"Bendito seja o Senhor para sempre! Amém e Amém."</em> (89:52) — mas vem após lamento profundo sobre aliança davídica aparentemente quebrada.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-division" style="border-color:rgba(74,30,110,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:80px;">
+              <span class="font-display text-2xl font-bold text-violet">IV</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Salmos 90–106</div>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-display text-sm font-semibold text-violet mb-1">Livro Anônimo — Deus Reina, Apesar de Tudo</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Maioria anônima; abre com Moisés (Sl 90). Temas: eternidade de Deus vs. fragilidade humana, <em>"O Senhor reina!"</em> (Sl 93, 97, 99), Deus é refúgio antes de Davi, antes do Templo. Paralelo com <strong>Números</strong> (peregrinação no deserto, provisão divina).
+              </p>
+              <div class="text-xs">
+                <strong class="text-violet">Doxologia:</strong> <em>"Bendito seja o Senhor, Deus de Israel, de eternidade em eternidade! E todo o povo diga: Amém! Louvai ao Senhor!"</em> (106:48)
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="book-division" style="border-color:rgba(184,74,16,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:80px;">
+              <span class="font-display text-2xl font-bold text-fire">V</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Salmos 107–150</div>
+            </div>
+            <div class="flex-grow">
+              <h4 class="font-display text-sm font-semibold text-fire mb-1">Livro da Palavra e do Louvor — Aleluia!</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+                Ênfase na <strong>Palavra de Deus</strong> (Sl 119 — maior capítulo da Bíblia, acróstico sobre a Torá) e louvor extático (Sl 145–150 — <em>Hallel</em> final). Paralelo com <strong>Deuteronômio</strong> (segunda lei, renovação de aliança, preparação para Terra Prometida).
+              </p>
+              <div class="text-xs">
+                <strong class="text-fire">Doxologia:</strong> <strong>O Salmo 150 inteiro</strong> é a doxologia final — explosão de louvor que fecha todo o Saltério: <em>"Louvai a Deus no seu santuário... Tudo quanto tem fôlego louve ao Senhor. Louvai ao Senhor!"</em>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl text-center italic"
+           style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">Arco narrativo dos cinco livros:</strong> Livro I (bênção individual) → Livro II (crise nacional) → Livro III (santuário destruído, dúvida) → Livro IV (Deus reina eternamente!) → Livro V (Palavra + Louvor). É jornada da intimidade perdida à adoração restaurada — espelho da história de Israel e da alma humana.
+        </p>
+      </div>
+    </section>
+
+    <!-- Autoria -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Autoria — "De Davi" ou "Para Davi"?</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Atribuições nos Títulos</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Dos 150 salmos, 116 têm <strong>sobrescritos</strong> (títulos) que atribuem autoria, contexto ou instruções musicais. Mas o hebraico <span class="hebrew-term">לְדָוִד</span> (<em>le-David</em>) pode significar tanto "de Davi" quanto "para Davi" ou "no estilo de Davi" — ambiguidade proposital.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">Davi — 73 salmos</strong>
+              <p class="text-ink-muted mt-1">O maior contribuidor. Rei, guerreiro, poeta, músico. <em>"O doce salmista de Israel"</em> (2Sm 23:1). Salmos 3–41 (maioria); alguns em Livros II–V.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Asafe — 12 salmos</strong>
+              <p class="text-ink-muted mt-1">Líder de adoração de Davi (1Cr 16:5). Salmos 50, 73–83. Estilo profético, foco em julgamento e história de Israel.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">Filhos de Coré — 11 salmos</strong>
+              <p class="text-ink-muted mt-1">Família levítica de cantores (descendentes do Coré que se rebelou em Nm 16, mas cujos filhos foram poupados). Salmos 42–49, 84–85, 87–88. Anseio pelo Templo.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">Salomão — 2 salmos</strong>
+              <p class="text-ink-muted mt-1">Salmos 72 (oração pelo rei justo) e 127 (sabedoria doméstica). Filho de Davi, rei da era de ouro.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">Moisés — 1 salmo</strong>
+              <p class="text-ink-muted mt-1">Salmo 90 — o mais antigo. <em>"Oração de Moisés, homem de Deus."</em> Contraste entre eternidade divina e mortalidade humana.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <strong class="text-earth">Outros/Anônimos — 51 salmos</strong>
+              <p class="text-ink-muted mt-1">Sem atribuição. Inclui Hemã (Sl 88), Etã (Sl 89), e muitos salmos pós-exílicos (Sl 107, 137). Alguns podem ser de Esdras ou escribas do segundo Templo.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Davi — O Salmista por Excelência</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Davi não escreveu todos os Salmos (erro comum), mas é o <strong>coração do Saltério</strong>. Músico desde jovem (tocava harpa para Saul), guerreiro, fugitivo, rei, adúltero arrependido, pai enlutado. Toda a gama de experiência humana.
+          </p>
+          <div class="space-y-2 text-xs mb-4">
+            <div class="featured-psalm" style="border-color:rgba(30,58,95,0.35);">
+              <strong class="text-sapphire">Salmo 23 — "O Senhor é o meu pastor"</strong>
+              <p class="text-ink-muted mt-1">O salmo mais amado. Davi, ex-pastor de ovelhas, vê Deus como pastor da alma. Confiança absoluta mesmo "no vale da sombra da morte."</p>
+            </div>
+            <div class="featured-psalm" style="border-color:rgba(139,32,32,0.35);">
+              <strong class="text-crimson">Salmo 51 — "Cria em mim um coração puro"</strong>
+              <p class="text-ink-muted mt-1">Após adultério com Bate-Seba e assassinato de Urias. Quebrantamento total. Modelo de arrependimento genuíno. <em>"Sacrifício agradável a Deus é o espírito quebrantado."</em></p>
+            </div>
+            <div class="featured-psalm" style="border-color:rgba(200,145,58,0.35);">
+              <strong class="text-gold-dark">Salmo 22 — "Deus meu, por que me desamparaste?"</strong>
+              <p class="text-ink-muted mt-1">Lamento profundo que se torna louvor. Jesus citou no Gólgota (Mt 27:46). Versículos 16–18 descrevem crucificação séculos antes de ser inventada.</p>
+            </div>
+          </div>
+          <h4 class="font-display text-xs font-semibold text-ink mb-2">Salmos com contexto histórico explícito:</h4>
+          <div class="space-y-1 text-xs">
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.04);border:1px solid rgba(200,145,58,0.15);">
+              <strong>Sl 3</strong> — Quando fugia de Absalão, seu filho (2Sm 15)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.04);border:1px solid rgba(200,145,58,0.15);">
+              <strong>Sl 34</strong> — Quando fingiu loucura diante de Abimeleque (1Sm 21)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.04);border:1px solid rgba(200,145,58,0.15);">
+              <strong>Sl 51</strong> — Quando o profeta Natã o confrontou após Bate-Seba (2Sm 12)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.04);border:1px solid rgba(200,145,58,0.15);">
+              <strong>Sl 52</strong> — Quando Doegue delatou Davi a Saul (1Sm 22)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.04);border:1px solid rgba(200,145,58,0.15);">
+              <strong>Sl 142</strong> — Quando estava na caverna fugindo de Saul (1Sm 22–24)
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gêneros Literários -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Gêneros Literários — Tipos de Salmos</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Salmos não é uniforme — contém pelo menos <strong>oito gêneros literários</strong> distintos, cada um com estrutura, vocabulário e função próprios. Hermann Gunkel (1862–1932) foi pioneiro na classificação dos gêneros dos Salmos.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="psalm-category" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">🙏</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-sapphire">1. Lamento Individual</h3>
+              <p class="font-body text-xs text-ink-faint">~40 salmos — o gênero mais comum</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Estrutura: <strong>Invocação → Lamento → Petição → Confiança → Voto de louvor.</strong> Não é reclamação — é clamor honesto por socorro. Deus permite, até encoraja, que expressemos dor.
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 3, 5, 6, 7, 13, 22, 25, 31, 38, 39, 42, 43, 51, 54–57, 59, 61, 63, 64, 69–71, 86, 88, 102, 109, 120, 130, 140–143
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">😢</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-crimson">2. Lamento Comunitário</h3>
+              <p class="font-body text-xs text-ink-faint">~15 salmos</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Quando a nação inteira sofre — derrota militar, exílio, fome, opressão. Voz coletiva clamando: <em>"Até quando, Senhor?"</em> Usado em dias de jejum nacional.
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 44, 60, 74, 79, 80, 83, 85, 90, 94, 106, 123, 126, 137 (à beira dos rios de Babilônia)
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.3);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">🎉</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-gold-dark">3. Ação de Graças Individual</h3>
+              <p class="font-body text-xs text-ink-faint">~15 salmos</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Testemunho público de livramento. Geralmente acompanhado de sacrifício de gratidão no Templo. Estrutura: <em>Estava em perigo → Clamei → Deus me livrou → Por isso agradeço publicamente.</em>
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 18, 30, 32, 34, 40, 66, 92, 116, 118, 138
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">🌾</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-forest">4. Ação de Graças Comunitária</h3>
+              <p class="font-body text-xs text-ink-faint">~5 salmos</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Celebração nacional de vitória, colheita, fim de praga. Toda a congregação celebra juntos a bondade de Deus.
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 65, 67, 75, 107, 124, 136
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(74,30,110,0.06);border-color:rgba(74,30,110,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">👑</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-violet">5. Hinos de Louvor</h3>
+              <p class="font-body text-xs text-ink-faint">~25 salmos — adoração pura</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Celebração de quem Deus é (atributos) e o que Deus faz (obras). Estrutura: <em>Convocação ao louvor → Razões para louvar → Conclusão exaltando Deus.</em> Geralmente começam/terminam com <strong>Aleluia!</strong> (הַלְלוּ־יָהּ = "Louvem a Yah!")
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 8, 19, 29, 33, 100, 103, 104, 111, 113, 114, 117, 135, 136, 145–150 (<em>Hallel</em> final)
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(184,74,16,0.06);border-color:rgba(184,74,16,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">🔱</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-fire">6. Salmos de Entronização</h3>
+              <p class="font-body text-xs text-ink-faint">~6 salmos — "Yahweh Reina!"</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Celebram a realeza de Deus sobre toda a criação. Frase-chave: <span class="hebrew-term">יְהוָה מָלָךְ</span> (<em>Yahweh malak</em>) = "O Senhor reina!" Possivelmente usados em festival anual celebrando reinado de Deus.
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 47, 93, 96–99 (núcleo), também 24, 29, 95
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">👑</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-crimson">7. Salmos Reais (Messiânicos)</h3>
+              <p class="font-body text-xs text-ink-faint">~10 salmos</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Celebram o rei davídico (coroação, casamento, guerra, oração pelo rei). Mas linguagem ultrapassa qualquer rei humano — apontam para o <strong>Messias</strong>. NT os aplica extensivamente a Cristo.
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 2, 18, 20, 21, 45, 72, 89, 101, 110, 132, 144
+          </div>
+        </div>
+
+        <div class="psalm-category" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.25);">
+          <div class="flex items-start gap-3 mb-2">
+            <span class="text-3xl">📖</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-earth">8. Salmos Sapienciais (Sabedoria)</h3>
+              <p class="font-body text-xs text-ink-faint">~15 salmos</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Ensinam princípios de vida sábia. Contraste entre justo e ímpio, temente a Deus e arrogante. Paralelos com Provérbios. Mais didáticos que devocionais.
+          </p>
+          <div class="text-xs">
+            <strong>Exemplos:</strong> Sl 1, 14 (=53), 15, 36, 37, 49, 73, 78, 112, 119, 127, 128, 133
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <h4 class="font-display text-sm font-semibold text-sapphire mb-2">Outros subgêneros:</h4>
+        <div class="grid md:grid-cols-3 gap-2 text-xs">
+          <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+            <strong>Salmos de Sião:</strong> Celebram Jerusalém/Monte Sião (Sl 46, 48, 76, 84, 87, 122)
+          </div>
+          <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+            <strong>Salmos Penitenciais:</strong> Confissão de pecado (Sl 6, 32, 38, 51, 102, 130, 143 — os "7 salmos penitenciais" tradicionais)
+          </div>
+          <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+            <strong>Salmos Imprecatórios:</strong> Clamor por vingança contra inimigos (Sl 35, 69, 109, 137, 139:19–22)
+          </div>
+          <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+            <strong>Salmos de Confiança:</strong> Serenidade em Deus (Sl 4, 11, 16, 23, 27, 62, 63, 91, 121, 131)
+          </div>
+          <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+            <strong>Salmos de Peregrinação:</strong> <em>Cânticos de Romagem</em> — Sl 120–134 (15 salmos — cantados subindo a Jerusalém nas festas)
+          </div>
+          <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">
+            <strong>Salmos Históricos:</strong> Recapitulam história de Israel (Sl 78, 105, 106, 135, 136)
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Paralelismo Hebraico -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Paralelismo Hebraico — A Gramática da Poesia</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Poesia hebraica não rima sons (como português) — <strong>rima ideias.</strong> Chama-se <em>paralelismo</em>: dois (ou mais) versos que se relacionam de forma específica. Entender paralelismo é a chave para interpretar Salmos corretamente.
+      </p>
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Tipos de Paralelismo</h3>
+          
+          <div class="mb-4">
+            <h4 class="font-display text-xs font-bold text-sapphire mb-2">1. Paralelismo Sinônimo (repetição da ideia)</h4>
+            <div class="parallelism-box mb-2" style="border-color:rgba(30,58,95,0.3);">
+              <p class="font-body text-sm text-ink">"O Senhor conhece o caminho dos justos,</p>
+              <p class="font-body text-sm text-ink">mas o caminho dos ímpios perecerá."</p>
+              <p class="font-display text-xs text-sapphire mt-1">— Salmo 1:6</p>
+            </div>
+            <p class="font-body text-xs text-ink-muted">A segunda linha repete a ideia da primeira com palavras diferentes — reforço, não nova informação.</p>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-display text-xs font-bold text-forest mb-2">2. Paralelismo Antitético (contraste)</h4>
+            <div class="parallelism-box mb-2" style="border-color:rgba(30,74,42,0.3);">
+              <p class="font-body text-sm text-ink">"Porque o Senhor conhece o caminho dos justos,</p>
+              <p class="font-body text-sm text-ink">mas o caminho dos ímpios perecerá."</p>
+              <p class="font-display text-xs text-forest mt-1">— Salmo 1:6</p>
+            </div>
+            <p class="font-body text-xs text-ink-muted">A segunda linha <em>contrasta</em> com a primeira — justos vs. ímpios. Muito comum em Provérbios.</p>
+          </div>
+
+          <div class="mb-4">
+            <h4 class="font-display text-xs font-bold text-gold-dark mb-2">3. Paralelismo Sintético (complementação)</h4>
+            <div class="parallelism-box mb-2" style="border-color:rgba(200,145,58,0.35);">
+              <p class="font-body text-sm text-ink">"O Senhor é o meu pastor;</p>
+              <p class="font-body text-sm text-ink">nada me faltará."</p>
+              <p class="font-display text-xs text-gold-dark mt-1">— Salmo 23:1</p>
+            </div>
+            <p class="font-body text-xs text-ink-muted">A segunda linha <em>completa</em> o pensamento da primeira — adiciona consequência ou desenvolvimento.</p>
+          </div>
+
+          <div>
+            <h4 class="font-display text-xs font-bold text-violet mb-2">4. Paralelismo Climático (escada)</h4>
+            <div class="parallelism-box mb-2" style="border-color:rgba(74,30,110,0.3);">
+              <p class="font-body text-sm text-ink">"Tributai ao Senhor, filhos de Deus,</p>
+              <p class="font-body text-sm text-ink">tributai ao Senhor glória e força.</p>
+              <p class="font-body text-sm text-ink">Tributai ao Senhor a glória devida ao seu nome..."</p>
+              <p class="font-display text-xs text-violet mt-1">— Salmo 29:1–2</p>
+            </div>
+            <p class="font-body text-xs text-ink-muted">Repete elementos da linha anterior, mas adiciona algo novo — como subir degraus.</p>
+          </div>
+
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Por que Paralelismo Importa?</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">🔍 Interpretação correta</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Evita <em>overinterpretation</em> — quando duas linhas são sinônimas, não diga coisas diferentes sobre cada uma. Exemplo: Sl 19:1 <em>("Os céus proclamam... o firmamento anuncia...")</em> — "céus" e "firmamento" são sinônimos, não duas coisas separadas.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">💡 Clarificação mútua</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                As linhas se interpretam mutuamente. Termo obscuro numa linha é esclarecido pela linha paralela. Exemplo: Sl 119:105 <em>("Lâmpada para os meus pés... luz para os meus caminhos")</em> — "lâmpada" e "luz" = Palavra de Deus; "pés" e "caminhos" = vida prática.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">🎵 Efeito estético e mnemônico</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Paralelismo cria ritmo, beleza, e facilita memorização — essencial numa cultura oral. A repetição variada fixa a verdade na mente e no coração.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">⚖️ Equilíbrio teológico</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Evita unilateralidade. Uma linha apresenta verdade; a paralela adiciona nuance ou contraste. Exemplo: Sl 103:10 <em>("Não nos trata segundo os nossos pecados, nem nos retribui conforme as nossas iniquidades")</em> — misericórdia <em>e</em> justiça equilibradas.
+              </p>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-2 mt-5">Exemplo Completo — Salmo 19:1</h4>
+          <div class="p-4 rounded-xl"
+               style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+            <div class="parallelism-box mb-3" style="border-color:rgba(200,145,58,0.35);">
+              <p class="font-body text-base text-ink leading-relaxed">
+                "Os céus proclamam a glória de Deus,<br/>
+                e o firmamento anuncia as obras das suas mãos."
+              </p>
+            </div>
+            <div class="text-xs space-y-1">
+              <p><strong>Linha A:</strong> Os céus / proclamam / a glória de Deus</p>
+              <p><strong>Linha B:</strong> O firmamento / anuncia / as obras das suas mãos</p>
+              <hr class="my-2" style="border-color:rgba(200,145,58,0.2);" />
+              <p class="text-ink-muted"><strong>Paralelismo sinônimo:</strong></p>
+              <p class="text-ink-muted">• "Céus" = "firmamento" (mesmo referente)</p>
+              <p class="text-ink-muted">• "Proclamam" = "anuncia" (verbos de comunicação)</p>
+              <p class="text-ink-muted">• "Glória de Deus" = "obras das suas mãos" (atributos divinos revelados)</p>
+              <p class="text-ink-muted mt-2"><em>Não são dois testemunhos diferentes — é um testemunho dito de duas formas poéticas.</em></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Salmos Messiânicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Salmos Messiânicos — Profecia de Cristo</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Jesus disse: <em>"Importa que se cumpra tudo o que de mim está escrito na Lei de Moisés, nos Profetas e <strong>nos Salmos</strong>"</em> (Lc 24:44). O NT cita Salmos <strong>mais de 100 vezes</strong>, aplicando muitos diretamente a Cristo. Alguns salmos transcendem qualquer rei davídico — só se cumprem plenamente no Messias.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="featured-psalm" style="border-color:rgba(139,32,32,0.35);background:rgba(139,32,32,0.03);">
+          <h3 class="font-display text-sm font-bold text-crimson mb-2">Salmo 2 — O Rei Ungido</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "Tu és meu Filho, eu, hoje, te gerei... Pede-me, e eu te darei as nações por herança e os confins da terra por possessão." (2:7–8)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Coroação de rei davídico</p>
+            <p><strong>Cumprimento em Cristo:</strong> Batismo (Mt 3:17), Transfiguração (Mt 17:5), Ressurreição (At 13:33), Entronização celestial (Hb 1:5; 5:5)</p>
+            <p class="text-ink-muted">Nenhum rei humano recebeu "as nações" — só Jesus, após ressurreição (Mt 28:18).</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(30,58,95,0.35);background:rgba(30,58,95,0.03);">
+          <h3 class="font-display text-sm font-bold text-sapphire mb-2">Salmo 22 — Sofrimento e Glória</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "Deus meu, Deus meu, por que me desamparaste?... Traspassaram-me as mãos e os pés... repartem entre si as minhas vestes e sobre a minha túnica lançam sortes." (22:1, 16, 18)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Davi em angústia extrema</p>
+            <p><strong>Cumprimento em Cristo:</strong> Palavras de Jesus na cruz (Mt 27:46), crucificação (perfuração de mãos/pés — antes de crucificação ser inventada!), soldados dividindo roupas (Jo 19:23–24)</p>
+            <p class="text-ink-muted">Versículos 22–31 viram louvor — ressurreição implícita.</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(30,74,42,0.35);background:rgba(30,74,42,0.03);">
+          <h3 class="font-display text-sm font-bold text-forest mb-2">Salmo 16 — Ressurreição</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "Pois não deixarás a minha alma no Seol, nem permitirás que o teu Santo veja corrupção." (16:10)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Davi confiando em livramento da morte</p>
+            <p><strong>Cumprimento em Cristo:</strong> Pedro em Pentecostes (At 2:25–31) argumenta que Davi <em>morreu e foi sepultado</em> — mas <em>"falava da ressurreição de Cristo."</em> Corpo de Jesus não viu corrupção (não apodreceu) porque ressuscitou no 3º dia.</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(200,145,58,0.35);background:rgba(200,145,58,0.03);">
+          <h3 class="font-display text-sm font-bold text-gold-dark mb-2">Salmo 110 — Sacerdote e Rei</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "Disse o Senhor ao meu Senhor: Assenta-te à minha direita, até que eu ponha os teus inimigos debaixo dos teus pés... Tu és sacerdote para sempre, segundo a ordem de Melquisedeque." (110:1, 4)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Enigma davidico:</strong> Davi chama alguém de "meu Senhor" — quem seria superior a Davi? (Mt 22:41–46)</p>
+            <p><strong>Cumprimento em Cristo:</strong> Ascensão (Mc 16:19, At 2:34–35, Hb 1:13), Sumo Sacerdote eterno (Hb 5:6; 7:17, 21) — único Rei-Sacerdote verdadeiro.</p>
+            <p class="text-ink-muted">Salmo mais citado no NT — fundamento da cristologia primitiva.</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(74,30,110,0.35);background:rgba(74,30,110,0.03);">
+          <h3 class="font-display text-sm font-bold text-violet mb-2">Salmo 69 — Zelo e Rejeição</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "O zelo da tua casa me consumiu... deram-me fel por mantimento e na minha sede me deram a beber vinagre." (69:9, 21)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Davi perseguido injustamente</p>
+            <p><strong>Cumprimento em Cristo:</strong> Purificação do Templo (Jo 2:17), fel e vinagre na cruz (Mt 27:34, 48; Jo 19:28–29)</p>
+            <p class="text-ink-muted">Sofrimento vicário — padece pelos pecados alheios.</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(92,61,30,0.35);background:rgba(92,61,30,0.03);">
+          <h3 class="font-display text-sm font-bold text-earth mb-2">Salmo 41 — Traição do Amigo</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "Até o meu amigo íntimo, em quem eu confiava, que comia do meu pão, levantou contra mim o calcanhar." (41:9)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Davi traído por conselheiro (Aitofel? — 2Sm 15)</p>
+            <p><strong>Cumprimento em Cristo:</strong> Jesus aplica a Judas (Jo 13:18) — discípulo que comeu à mesma mesa e traiu.</p>
+            <p class="text-ink-muted">"Levantou o calcanhar" = virou as costas, chutou (imagem de desprezo total).</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(184,74,16,0.35);background:rgba(184,74,16,0.03);">
+          <h3 class="font-display text-sm font-bold text-fire mb-2">Salmo 118 — Pedra Rejeitada</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "A pedra que os construtores rejeitaram, essa veio a ser a principal pedra angular." (118:22)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Israel rejeitado pelas nações, mas escolhido por Deus</p>
+            <p><strong>Cumprimento em Cristo:</strong> Jesus rejeitado por líderes religiosos, mas se torna fundamento da Igreja (Mt 21:42; At 4:11; 1Pe 2:7)</p>
+            <p class="text-ink-muted">Paradoxo divino: o rejeitado torna-se essencial.</p>
+          </div>
+        </div>
+
+        <div class="featured-psalm" style="border-color:rgba(139,32,32,0.35);background:rgba(139,32,32,0.03);">
+          <h3 class="font-display text-sm font-bold text-crimson mb-2">Salmo 40 — Corpo Preparado</h3>
+          <div class="psalm-quote text-sm mb-2">
+            "Sacrifício e oferta não quiseste... corpo me formaste... Eis aqui estou... para fazer, ó Deus, a tua vontade." (40:6–8 LXX)
+          </div>
+          <div class="text-xs space-y-1">
+            <p><strong>Contexto original:</strong> Obediência superior a rituais</p>
+            <p><strong>Cumprimento em Cristo:</strong> Hebreus 10:5–10 aplica à encarnação — Cristo veio com corpo preparado para oferecer-se como sacrifício definitivo, substituindo sistema levítico.</p>
+            <p class="text-ink-muted">A Septuaginta (grega) traduz <em>"orelhas abriste"</em> (hebraico) como <em>"corpo preparaste"</em> — Hebreus usa essa versão.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl text-center"
+           style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">Tipologia vs. Profecia Direta:</strong> Alguns salmos são <em>profecia direta</em> (Sl 2, 110 — linguagem ultrapassa qualquer rei humano). Outros são <em>tipologia</em> (Sl 22, 69 — experiência de Davi prefigura Cristo, mas Davi não sabia que estava profetizando). O NT vê padrões divinos: sofrimento → vindicação (Davi) aponta para morte → ressurreição (Cristo). Salmos é cristológico não porque cada verso fala de Jesus, mas porque toda a <strong>trama</strong> — rei davídico ungido, sofredor, vindicado, eterno — só se completa Nele.
+        </p>
+      </div>
+    </section>
+
+    <!-- Salmos Imprecatórios -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Salmos Imprecatórios — O Problema das Maldições</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(139,32,32,0.06);border:2px solid rgba(139,32,32,0.25);">
+            <h3 class="font-display text-base font-bold text-crimson mb-3 text-center">O Escândalo das Imprecações</h3>
+            <div class="psalm-quote text-sm mb-3">
+              "Feliz aquele que pegar teus filhos e der com eles nas pedras!" (137:9)
+            </div>
+            <div class="psalm-quote text-sm mb-3">
+              "Sejam os seus dias poucos, e outro tome o seu ofício. Fiquem órfãos os seus filhos, e viúva, sua mulher." (109:8–9)
+            </div>
+            <div class="psalm-quote text-sm">
+              "Derrama sobre eles a tua indignação... Seja riscado o seu nome do livro da vida." (69:24, 28)
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Estes textos chocam leitores cristãos. Como harmonizar com <em>"amai os vossos inimigos"</em> (Mt 5:44)? C.S. Lewis chamou de <em>"o problema dos salmos imprecatórios"</em> — um dos mais difíceis do AT.
+          </p>
+          <h4 class="font-display text-sm font-semibold text-ink mb-2">Principais Salmos Imprecatórios:</h4>
+          <div class="text-xs space-y-1">
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              <strong>Salmo 35:</strong> <em>"Sejam envergonhados... sejam lançados para trás e confundidos..."</em>
+            </div>
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              <strong>Salmo 69:</strong> <em>"Derrama sobre eles a tua indignação... acrescenta iniquidade à iniquidade..."</em>
+            </div>
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              <strong>Salmo 109:</strong> O mais severo — 20 versículos de maldições detalhadas contra inimigos
+            </div>
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              <strong>Salmo 137:</strong> <em>"Feliz aquele que pegar teus filhos e der com eles nas pedras!"</em> (v.9)
+            </div>
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              <strong>Salmo 139:19–22:</strong> <em>"Não aborreço eu, Senhor, aqueles que te aborrecem?"</em>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Como Entender as Imprecações?</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">1. Não são vingança pessoal — são zelo pela justiça</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Os salmistas não clamam por vingança egoísta, mas por <strong>vindicação da justiça de Deus</strong>. Contexto: opressão brutal, inocentes massacrados, nome de Deus blasfemado. O clamor é: <em>"Deus, Tu és justo? Então age!"</em> (Sl 94:1–3)
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">2. Entregam vingança a Deus — não a tomam</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Salmistas <em>oram</em> pedindo justiça, não <em>agem</em> fazendo vingança. Paulo cita Sl 94:1 em Rm 12:19: <em>"Minha é a vingança; eu recompensarei, diz o Senhor."</em> Orar imprecações pode ser alternativa piedosa à violência pessoal — <strong>transfere ira a Deus.</strong>
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">3. Expressam emoções reais sem censura</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Deus quer <strong>honestidade brutal</strong> na oração. Raiva, ódio, desejo de vingança — são sentimentos reais. Salmos ensina: traga tudo a Deus, não reprima. Expressar raiva em oração é mais saudável que suprimi-la ou agir sobre ela. <em>"É permitido sentir; não é permitido pecar nesse sentimento."</em>
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">4. Refletem revelação progressiva</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                AT opera sob antiga aliança — <em>lex talionis</em> (olho por olho). NT eleva o padrão — <em>"amai os vossos inimigos"</em> (Mt 5:44). Mas mesmo Jesus expulsou cambistas violentamente (Jo 2:15) e pronunciou "ais" (maldições) sobre fariseus (Mt 23). Há lugar para <strong>ira santa.</strong>
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">5. Aplicação cristológica — Cristo sofreu essas maldições</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Sl 22, 69, 109 descrevem sofrimento injusto que Jesus viveu. As imprecações não foram executadas sobre <em>inimigos de Jesus</em>, mas sobre <strong>o próprio Jesus</strong> na cruz — Ele levou a maldição que merecíamos (Gl 3:13). Imprecações revelam <em>peso do pecado</em> que Cristo carregou.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <span class="font-display text-xs font-bold text-earth">6. C.S. Lewis — "voz do sangue de Abel"</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Lewis sugere: imprecações são a voz dos <em>inocentes massacrados</em> clamando por justiça (Gn 4:10; Ap 6:10). Não são pessoais — são <strong>cósmicas.</strong> O mal não pode ficar impune eternamente. Sl 137:9 (crianças esmagadas) ecoa Sl 137:8 (Babilônia fez isso a crianças israelitas). É clamor: <em>"Justo Juiz, essa crueldade não pode ficar sem resposta!"</em>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed text-center">
+          <strong class="text-sapphire">Conclusão pastoral:</strong> Cristãos podem orar salmos imprecatórios? <em>Sim</em> — mas aplicando inimigos <em>espirituais</em> (pecado, Satanás, injustiça sistêmica), não pessoas de carne e osso (Ef 6:12). Ou orar pela <em>destruição do mal</em> (que é conversão — o velho homem morto, não a pessoa aniquilada). Dietrich Bonhoeffer, preso pelos nazistas, orou Sl 58 contra Hitler — não desejando sua morte pessoal, mas o <em>fim da tirania</em>. Imprecações são legítimas quando direcionadas contra opressão, injustiça, e o próprio inferno — nunca como desejo pessoal de vingança.
+        </p>
+      </div>
+    </section>
+
+    <!-- Salmo 119 -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Salmo 119 — Ode à Torá</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4 text-center"
+               style="background:rgba(200,145,58,0.08);border:2px solid rgba(200,145,58,0.35);">
+            <div class="text-5xl mb-3">📜</div>
+            <h3 class="font-display text-lg font-bold text-gold-dark mb-2">O Maior Capítulo da Bíblia</h3>
+            <div class="grid grid-cols-3 gap-3 text-sm">
+              <div>
+                <div class="font-display text-2xl font-bold text-gold-dark">176</div>
+                <div class="font-body text-xs text-ink-muted">versículos</div>
+              </div>
+              <div>
+                <div class="font-display text-2xl font-bold text-gold-dark">22</div>
+                <div class="font-body text-xs text-ink-muted">estrofes</div>
+              </div>
+              <div>
+                <div class="font-display text-2xl font-bold text-gold-dark">8</div>
+                <div class="font-body text-xs text-ink-muted">sinônimos para "Lei"</div>
+              </div>
+            </div>
+          </div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Estrutura Acróstica Perfeita</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O Salmo 119 é um <strong>acróstico alfabético gigante</strong>. O alfabeto hebraico tem 22 letras. Cada estrofe tem 8 versículos começando com a mesma letra, seguindo ordem alfabética:
+          </p>
+          <div class="text-xs space-y-1 mb-4">
+            <div class="p-2 rounded flex gap-2" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong style="min-width:40px;">א Alef</strong> <span class="text-ink-muted">versículos 1–8 (cada verso começa com Alef)</span>
+            </div>
+            <div class="p-2 rounded flex gap-2" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong style="min-width:40px;">ב Bet</strong> <span class="text-ink-muted">versículos 9–16 (cada verso começa com Bet)</span>
+            </div>
+            <div class="p-2 rounded flex gap-2" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong style="min-width:40px;">ג Gimel</strong> <span class="text-ink-muted">versículos 17–24...</span>
+            </div>
+            <div class="p-2 rounded flex gap-2 text-center justify-center" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <span class="text-ink-muted italic">... e assim por diante até...</span>
+            </div>
+            <div class="p-2 rounded flex gap-2" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong style="min-width:40px;">ת Tav</strong> <span class="text-ink-muted">versículos 169–176 (última letra do alfabeto)</span>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Propósito: <strong>memorização.</strong> Numa cultura oral, estrutura acróstica facilita decorar. Também simboliza <em>completude</em> — de A a Z (ou Alef a Tav), tudo sobre a Palavra de Deus.
+          </p>
+        </div>
+        <div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Os 8 Sinônimos para "Palavra de Deus"</h4>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Quase cada versículo menciona a Palavra de Deus usando um de oito termos hebraicos. Juntos, pintam retrato completo da revelação divina:
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">1. תּוֹרָה (Torá) — "Lei/Instrução"</strong>
+              <p class="text-ink-muted mt-1">Ensino divino, direção. <em>"Bem-aventurados os irrepreensíveis no caminho, que andam na <strong>lei</strong> do Senhor."</em> (v.1)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">2. עֵדוּת (Edut) — "Testemunhos"</strong>
+              <p class="text-ink-muted mt-1">Advertências, alianças registradas. <em>"Bem-aventurados os que guardam os seus <strong>testemunhos</strong>."</em> (v.2)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">3. פִּקּוּדִים (Pikudim) — "Preceitos"</strong>
+              <p class="text-ink-muted mt-1">Ordens específicas, mandamentos detalhados. <em>"Tu ordenaste os teus <strong>preceitos</strong>, para que os cumpríssemos à risca."</em> (v.4)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">4. חֻקִּים (Hukim) — "Estatutos"</strong>
+              <p class="text-ink-muted mt-1">Decretos fixos, leis gravadas. <em>"Então, não teria eu vergonha, quando atentasse para todos os teus <strong>mandamentos</strong>."</em> (v.6)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">5. מִצְוָה (Mitzvá) — "Mandamentos"</strong>
+              <p class="text-ink-muted mt-1">Ordens diretas. <em>"Escondi a tua palavra no meu coração, para não pecar contra ti."</em> (v.11 — implícito)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <strong class="text-earth">6. מִשְׁפָּטִים (Mishpatim) — "Juízos/Ordenanças"</strong>
+              <p class="text-ink-muted mt-1">Decisões judiciais, jurisprudência divina. <em>"Com os meus lábios declarei todos os <strong>juízos</strong> da tua boca."</em> (v.13)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.05);border:1px solid rgba(184,74,16,0.18);">
+              <strong class="text-fire">7. דָּבָר (Dabar) — "Palavra"</strong>
+              <p class="text-ink-muted mt-1">Termo genérico — a comunicação divina. <em>"Lâmpada para os meus pés é a tua <strong>palavra</strong>."</em> (v.105)</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">8. אִמְרָה (Imrá) — "Promessa/Dito"</strong>
+              <p class="text-ink-muted mt-1">Pronunciamento, palavra falada. <em>"A tua <strong>promessa</strong> é muito pura; por isso, o teu servo a ama."</em> (v.140)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-3 text-center">Versículos Famosos do Salmo 119</h4>
+        <div class="grid md:grid-cols-2 gap-3 text-xs">
+          <div class="psalm-quote">
+            <p>"De que maneira poderá o jovem guardar puro o seu caminho? Observando-o segundo a tua palavra." (v.9)</p>
+          </div>
+          <div class="psalm-quote">
+            <p>"Escondi a tua palavra no meu coração, para não pecar contra ti." (v.11)</p>
+          </div>
+          <div class="psalm-quote">
+            <p>"Desvenda os meus olhos, para que veja as maravilhas da tua lei." (v.18)</p>
+          </div>
+          <div class="psalm-quote">
+            <p>"Lâmpada para os meus pés é a tua palavra e luz, para os meus caminhos." (v.105)</p>
+          </div>
+          <div class="psalm-quote">
+            <p>"A revelação das tuas palavras esclarece e dá entendimento aos símplices." (v.130)</p>
+          </div>
+          <div class="psalm-quote">
+            <p>"Toda a tua palavra é verdade, e cada uma das tuas justas ordenanças dura para sempre." (v.160)</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Termos Musicais -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Termos Musicais nos Títulos — Mistérios Perdidos</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Muitos salmos têm <strong>sobrescritos</strong> com instruções musicais ou litúrgicas. Problema: <em>não sabemos o que significam.</em> O conhecimento se perdeu — são como partituras sem som. Mas revelam que Salmos era cantado, não apenas lido.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Termos Comuns</h3>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="hebrew-term">מִזְמוֹר (Mizmor)</strong> — "Salmo/Cântico" · Aparece 57× · Indica acompanhamento instrumental
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="hebrew-term">שִׁיר (Shir)</strong> — "Cântico" · Aparece 30× · Música vocal
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="hebrew-term">תְּפִלָּה (Tefilá)</strong> — "Oração" · Aparece 5× (Sl 17, 86, 90, 102, 142) · Modo de lamento
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="hebrew-term">תְּהִלָּה (Tehilá)</strong> — "Louvor" · Aparece 1× (Sl 145) · Só este tem o título que nomeia o livro inteiro
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="hebrew-term">מַשְׂכִּיל (Maskil)</strong> — Significado incerto · Aparece 13× · Talvez "contemplativo", "instrutivo" ou tipo de melodia
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong class="hebrew-term">מִכְתָּם (Miktam)</strong> — Significado incerto · Aparece 6× (Sl 16, 56–60) · Talvez "inscrição em ouro" ou "expiação"
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Indicações Musicais Misteriosas</h3>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong class="hebrew-term">סֶלָה (Selah)</strong> — Aparece 71× no meio de salmos · <em>Ninguém sabe o que significa.</em> Teorias: pausa musical, interlúdio instrumental, elevação de volume, momento de reflexão. LXX traduz <em>diapsalma</em> (pausa/interlúdio).
+            </div>
+            <div class="p-2 rounded" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              <strong>"Ao mestre de canto"</strong> (<em>lamnatseach</em>) — Aparece 55× · Indica que o salmo pertencia à coleção do diretor musical do Templo
+            </div>
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>"Sobre Gitite"</strong> (Sl 8, 81, 84) — Instrumento de Gate? Melodia filisteia? Tom alegre?
+            </div>
+            <div class="p-2 rounded" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.15);">
+              <strong>"Sobre Alamote"</strong> (Sl 46) — Talvez vozes femininas (<em>alamot</em> = donzelas) ou registro soprano
+            </div>
+            <div class="p-2 rounded" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.15);">
+              <strong>"Sobre Seminite"</strong> (Sl 6, 12) — Talvez oitava abaixo (registro grave) ou instrumento de 8 cordas
+            </div>
+            <div class="p-2 rounded" style="background:rgba(184,74,16,0.05);border:1px solid rgba(184,74,16,0.15);">
+              <strong>"A corça da alva"</strong> (Sl 22) — Primeira linha de melodia conhecida? Tema? Contexto litúrgico?
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              <strong>"Não destruas"</strong> (Sl 57–59, 75) — Talvez refrão conhecido ou contexto de perigo
+            </div>
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong>"A pomba silenciosa dos lugares distantes"</strong> (Sl 56) — Uma das mais enigmáticas · Nome de melodia?
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="mt-5 p-4 rounded-xl text-center"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-sapphire">O silêncio musical:</strong> Perdemos as melodias, os ritmos, os instrumentos. Mas isso torna Salmos <em>universal</em> — cada geração, cada cultura cria nova música para os mesmos textos. Do canto gregoriano ao hip-hop cristão, Salmos é sempre contemporâneo. <em>A letra permanece; a música se reinventa.</em> Talvez Deus intencionalmente não preservou as melodias originais para que cada povo pudesse fazer Salmos <em>seu.</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- Salmos na Liturgia -->
+    <section class="section-card animate-fade-up animate-delay-7">
+      <div class="section-label">Salmos na Liturgia — Do Templo à Igreja</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Uso no Templo e Sinagoga</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Salmos era o <strong>hinário oficial</strong> de Israel. Levitas cantavam salmos específicos em dias específicos, festas, e sacrifícios. Estruturou toda a vida litúrgica.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">Salmo do Dia (Mishná registra):</strong>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-ink-muted">
+                <li>Domingo — Sl 24 (primeiro dia da criação)</li>
+                <li>Segunda — Sl 48 (segundo dia, separação das águas)</li>
+                <li>Terça — Sl 82 (terra seca aparece)</li>
+                <li>Quarta — Sl 94 (sol e lua criados)</li>
+                <li>Quinta — Sl 81 (aves e peixes)</li>
+                <li>Sexta — Sl 93 (animais terrestres e homem)</li>
+                <li>Sábado — Sl 92 (descanso)</li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">Salmos de Peregrinação (Sl 120–134):</strong>
+              <p class="text-ink-muted mt-1">Cantados por peregrinos subindo a Jerusalém nas três festas anuais (Páscoa, Pentecostes, Tabernáculos). <em>"Cânticos de Subida"</em> — literalmente, porque Jerusalém fica no alto.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Hallel Egípcio (Sl 113–118):</strong>
+              <p class="text-ink-muted mt-1">Cantado na Páscoa. Jesus cantou isso na Última Ceia antes de ir ao Getsêmani (Mt 26:30). Sl 118 — <em>"A pedra que os construtores rejeitaram"</em> — cantado horas antes de ser rejeitado.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">Grande Hallel (Sl 136):</strong>
+              <p class="text-ink-muted mt-1">Salmo responsivo — líder canta evento da história; povo responde: <em>"Porque a sua misericórdia dura para sempre"</em> (26 vezes!).</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Uso Cristão dos Salmos</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A igreja primitiva herdou Salmos da sinagoga. Continuou sendo hinário cristão por séculos. Monges medievais cantavam <em>todos os 150 salmos por semana.</em>
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">Jesus cantou Salmos:</strong>
+              <p class="text-ink-muted mt-1">Na cruz citou Sl 22:1 (<em>"Deus meu, por que me desamparaste?"</em>) e Sl 31:5 (<em>"Nas tuas mãos entrego o meu espírito"</em>). Última coisa que fez antes de ser preso foi cantar Hallel (Mt 26:30).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">Paulo mandou cantar Salmos:</strong>
+              <p class="text-ink-muted mt-1"><em>"Falando entre vós com salmos, entoando e louvando de coração ao Senhor"</em> (Ef 5:19). <em>"A palavra de Cristo habite em vós... ensinando-vos com salmos..."</em> (Cl 3:16).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">Liturgia das Horas (Católica/Ortodoxa):</strong>
+              <p class="text-ink-muted mt-1">Monges rezam/cantam ofícios diários baseados em Salmos — Matinas, Laudes, Vésperas, Completas. Salmos estrutura o dia inteiro.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Reforma Protestante:</strong>
+              <p class="text-ink-muted mt-1">Calvino produziu <em>Saltério de Genebra</em> (1562) — 150 salmos em métrica francesa para canto congregacional. Influenciou hinódia protestante por séculos.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">Salmos metrificados:</strong>
+              <p class="text-ink-muted mt-1">Tradições reformadas (escocesa, holandesa) cantam <em>só</em> Salmos — versões métricas adaptadas para melodias. Ainda hoje em igrejas presbiterianas conservadoras.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <strong class="text-earth">Música contemporânea:</strong>
+              <p class="text-ink-muted mt-1">Inúmeras canções modernas são Salmos musicados — <em>"Como o cervo brame"</em> (Sl 42), <em>"Mil cairão"</em> (Sl 91), <em>"Feliz é o homem"</em> (Sl 1), etc.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-7">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmos é o livro mais citado do AT no NT:</strong> Mais de <strong>100 citações diretas</strong> ou alusões. Jesus citou Salmos mais que qualquer outro livro. Apóstolos usaram para provar messianidade de Jesus, especialmente Sl 2, 16, 22, 69, 110, 118.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmo 117 — o mais curto da Bíblia:</strong> Apenas <strong>2 versículos.</strong> Mas é o <em>centro exato</em> da Bíblia (medido em capítulos) — 594 capítulos antes, 594 depois. Curiosidade numérica ou design intencional? Texto: convocação universal ao louvor.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmo 119 — o maior capítulo da Bíblia:</strong> <strong>176 versículos.</strong> Maior que 14 livros inteiros do AT. Levaria ~15 minutos para ler em voz alta. Acróstico alfabético gigante sobre a Torá.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Numeração divergente — hebraico vs. grego:</strong> Bíblias hebraicas/protestantes vs. católicas/ortodoxas (que seguem Septuaginta) têm numeração diferente em Salmos 9–147. Por quê? LXX combinou alguns salmos (Sl 9+10 vira Sl 9; Sl 114+115 vira Sl 113) e dividiu outros (Sl 116, 147). Resultado: mesmo texto, números diferentes. Sl 51 (protestante) = Sl 50 (católico).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmo 151 (e outros apócrifos):</strong> Bíblias ortodoxas (grega, siríaca) incluem <strong>Salmo 151</strong> — curto salmo atribuído a Davi após matar Golias. Hebraico e protestantes não o aceitam como canônico. Siríaco tem até Sl 155. Manuscritos de Qumran continham ainda mais salmos não-canônicos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmo 137 — "Junto aos rios de Babilônia":</strong> Lamento exílico comovente que se tornou hino de resistência. Bob Marley adaptou (<em>"By the Rivers of Babylon"</em>). Versículo 9 (<em>"Feliz aquele que pegar teus filhos e der com eles nas pedras!"</em>) é um dos mais chocantes — expressão crua de dor por Babilônia ter feito isso a crianças israelitas.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmos órfãos:</strong> 51 salmos <strong>não têm atribuição de autor</strong> nos títulos. São chamados <em>"salmos órfãos"</em>. Muitos são provavelmente pós-exílicos (após 538 a.C.). Alguns podem ser de Esdras ou escribas do segundo Templo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Athanasius mandou decorar todos os 150:</strong> Atanásio de Alexandria (296–373 d.C.) exigia que candidatos ao episcopado <strong>memorizassem o Saltério inteiro.</strong> Na igreja primitiva, saber Salmos de cor era esperado de líderes — era a "escola de oração" definitiva.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Martinho Lutero — "Pequena Bíblia":</strong> Lutero chamou Salmos de <em>"Pequena Bíblia"</em> porque contém, em resumo, tudo que está na Escritura inteira — Lei, Evangelho, história, profecia, louvor, lamento. Disse: <em>"Se a Bíblia inteira se perdesse e só restasse o livro de Salmos, ainda teríamos quase toda a essência da Escritura."</em>
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Dietrich Bonhoeffer sobre Salmos:</strong> Preso pelos nazistas, Bonhoeffer escreveu: <em>"A oração da Bíblia, especialmente os Salmos, é a grande escola onde aprendemos o que e como devemos orar. A Bíblia não apenas nos dá palavras; ela põe em nossa boca as mesmas palavras que Deus quer ouvir."</em> Salmos imprecatórios não são nossos sentimentos — são <em>orações dadas por Deus</em> para expressar o que não conseguiríamos sozinhos.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Salmos — onde toda emoção humana se torna oração:</strong> C.S. Lewis disse que a grande lição de Salmos é que <em>"Deus quer toda a pessoa"</em> — não apenas a versão educada, censurada, "espiritual". Raiva, dúvida, desespero, alegria selvagem, tédio, gratidão, inveja, medo — <strong>tudo pode ser trazido a Deus.</strong> Não precisamos "limpar" nossas emoções antes de orar. Salmos ensina: <em>ore exatamente como você está.</em> Deus prefere honestidade brutal a piedade falsa. <strong>Não há sentimento humano que não possa ser transformado em oração.</strong> Por isso Salmos é o livro mais universal já escrito — atravessa culturas, épocas, religiões. Judeus, cristãos, até alguns muçulmanos (que admiram os <em>Zabur</em> de Davi) encontram sua voz em Salmos. Porque é, afinal, a voz da humanidade diante de Deus — nua, tremendo, gritando, dançando, chorando, rindo, questionando, adorando. <em>Sempre real. Sempre honesta. Sempre oração.</em>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave finais -->
+    <section class="text-center py-8 animate-fade-up animate-delay-8">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O Senhor é o meu pastor; nada me faltará."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Salmo 23:1 — Confiança absoluta</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Cria em mim, ó Deus, um coração puro e renova dentro de mim um espírito inabalável."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Salmo 51:10 — Quebrantamento e renovação</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Eu sei que o meu Redentor vive."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jó 19:25 (citado frequentemente em contexto sálmico)</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Lâmpada para os meus pés é a tua palavra e luz, para os meus caminhos."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Salmo 119:105 — A Palavra que ilumina</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Tudo quanto tem fôlego louve ao Senhor. Louvai ao Senhor!"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Salmo 150:6 — Doxologia final de todo o Saltério</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Salmos · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

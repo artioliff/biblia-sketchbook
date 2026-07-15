@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ester — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>    
+    /* Estilo para os personagens principais */
+    .character-card {
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .character-card:hover { 
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+
+    /* Cronologia do livro */
+    .timeline-event {
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      border-left: 3px solid;
+      background: rgba(200,145,58,0.04);
+      transition: transform 0.2s ease;
+    }
+    .timeline-event:hover { transform: translateX(6px); }
+
+    /* Reversões dramáticas */
+    .reversal-box {
+      border-radius: 10px;
+      border: 2px solid;
+      padding: 1rem 1.25rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .reversal-box::before {
+      content: '↻';
+      position: absolute;
+      top: -8px; right: 12px;
+      font-size: 2rem;
+      opacity: 0.15;
+    }
+
+    /* Versículo escondido (sem menção a Deus) */
+    .hidden-god {
+      border-radius: 10px;
+      border: 1px dashed rgba(74,30,110,0.3);
+      padding: 1.25rem;
+      background: linear-gradient(135deg, rgba(74,30,110,0.03) 0%, rgba(200,145,58,0.03) 100%);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 17º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(74,30,110,0.15);">
+        Ester
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>אֶסְתֵּר</em> (Ester) — possivelmente "estrela" (do persa <em>stara</em>) ou relacionado à deusa Ishtar
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O único livro bíblico que nunca menciona <strong>explicitamente o nome de Deus</strong> — mas onde Sua providência é mais visível · a história que salvou o povo judeu da extinção
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">10</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">167</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">0×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">menções a "Deus"</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~475 a.C.</div>
+          <div class="font-body text-sm text-ink-muted mt-1">época de Xerxes I</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(74,30,110,0.07);border:1px solid rgba(74,30,110,0.22);">
+              <span class="font-display text-xs font-bold text-violet">17º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">12º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Diáspora</span>
+              <span class="font-body text-sm text-ink">Única história do AT situada <strong>totalmente fora de Israel</strong></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro da Providência Oculta</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Ester é paradoxal: Deus nunca é mencionado, mas nenhum livro mostra mais claramente Sua providência. Não há milagres sobrenaturais, mas cada "coincidência" é tão perfeitamente cronometrada que revela a mão invisível de Deus orquestrando os acontecimentos.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Enquanto Esdras e Neemias tratam dos que <strong>voltaram</strong> à Terra Prometida, Ester trata dos que <strong>ficaram</strong> no exílio. Mostra que Deus não abandona Seu povo mesmo quando estão geograficamente distantes da terra da promessa — e que Ele pode usar até a corte de um rei pagão para proteger Israel.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Nome de Deus Oculto -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Grande Paradoxo — Deus Invisível mas Onipresente</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="hidden-god mb-4">
+            <p class="font-body text-sm text-ink leading-relaxed mb-2">
+              <strong class="text-violet">Nenhuma menção explícita:</strong> Ester é o único livro do Antigo Testamento que não menciona "Deus", "Senhor", "Yahweh", altar, sacrifício, oração explícita ou qualquer ritual religioso.
+            </p>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              E ainda assim, os rabinos identificaram o nome de Deus <strong>escondido em acrósticos</strong> — as primeiras ou últimas letras de palavras consecutivas formam YHWH em hebraico em pelo menos quatro passagens estratégicas do livro.
+            </p>
+          </div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">🔍 Acrósticos do Nome Divino</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>Ester 1:20</strong> — YHWH nas primeiras letras (ordem inversa): "todas as mulheres darão honra..."
+            </div>
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>Ester 5:4</strong> — YHWH nas últimas letras: "Venha o rei com Hamã hoje..."
+            </div>
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>Ester 5:13</strong> — YHWH nas primeiras letras (inverso): Hamã diz "tudo isto não me serve..."
+            </div>
+            <div class="p-2 rounded" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.15);">
+              <strong>Ester 7:7</strong> — YHWH nas primeiras letras: "O mal estava determinado contra ele..."
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Por que Deus está "oculto"?</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">🎭 Teoria 1 — Contexto persa</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O livro foi escrito para circular no Império Persa. Menções explícitas a Yahweh poderiam ser problemáticas politicamente — mas os judeus que lessem em hebraico identificariam os acrósticos.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">📖 Teoria 2 — Teologia da providência</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O livro ensina que Deus age <em>através</em> de eventos aparentemente naturais. Não há sarça ardente ou Mar Vermelho — mas a insônia do rei na hora exata é tão milagrosa quanto.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">🌍 Teoria 3 — Experiência do exílio</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Para os judeus na diáspora, longe do Templo, Deus parecia "ausente". Ester ensina que Ele está presente mesmo quando parece escondido — trabalhando nos bastidores da história.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.2);">
+              <span class="font-display text-xs font-bold text-violet">⏱️ Teoria 4 — A arte das "coincidências"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O autor quer que o leitor perceba: quando "coincidências" se acumulam de forma tão perfeita, não são coincidências. São providência. <em>"E quem sabe se não foi para um tempo como este que você chegou à posição de rainha?"</em> (4:14)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro — Uma Trama Perfeitamente Simétrica</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Ester é construído como um <strong>quiasmo perfeito</strong> — uma estrutura literária em espelho onde a primeira metade reflete a segunda, com o ponto central sendo o momento decisivo. É uma das narrativas mais bem construídas da literatura mundial.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 1–2</span>
+            <div class="font-body text-xs text-ink-faint mt-1">A ascensão</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Deposição de Vasti e a Coroação de Ester</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              O rei Assuero (Xerxes I) dá um banquete de 180 dias exibindo suas riquezas. No clímax, ordena que a rainha Vasti se apresente usando a coroa real — ela se recusa. Enfurecido, o rei a depõe. Um concurso de beleza para escolher nova rainha é organizado — Ester, uma judia órfã criada pelo primo Mardoqueu, é escolhida. Ela esconde sua identidade judaica por orientação de Mardoqueu.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 3</span>
+            <div class="font-body text-xs text-ink-faint mt-1">A conspiração</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">O Decreto de Extermínio de Hamã</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Hamã, o agagita, é promovido a primeiro-ministro. Todos devem se curvar a ele — exceto Mardoqueu, que se recusa por motivos religiosos. Enfurecido, Hamã trama exterminar não só Mardoqueu, mas <strong>todos os judeus do império</strong>. Ele lança <em>pur</em> (sortes) para determinar a data — 13 de Adar. Convence o rei a assinar um édito irrevogável de genocídio, oferecendo 10.000 talentos de prata.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 4–5</span>
+            <div class="font-body text-xs text-ink-faint mt-1">A decisão</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">"Para um Tempo Como Este" — Ester Decide Arriscar a Vida</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Mardoqueu envia recado a Ester pedindo que interceda junto ao rei. Ela hesita — aproximar-se sem ser chamada é punível com morte. Mardoqueu responde com a frase-chave: <em>"Quem sabe se não foi para um tempo como este que você chegou à posição de rainha?"</em> (4:14). Ester decide: <em>"Se perecer, pereci."</em> Ela pede jejum de três dias — <strong>a única referência religiosa no livro, mas sem mencionar Deus ou oração.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-violet">Cap. 6</span>
+            <div class="font-body text-xs text-ink-faint mt-1">🔄 PONTO CENTRAL</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">A Insônia do Rei — O Eixo da Reversão</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Esta é a noite que muda tudo.</strong> O rei não consegue dormir — pede que leiam os registros do reino. "Coincidentemente" encontram o registro de que Mardoqueu salvou o rei de um assassinato anos antes, mas nunca foi recompensado. Na manhã seguinte, o rei pergunta a Hamã: <em>"O que se deve fazer ao homem a quem o rei deseja honrar?"</em> Hamã, pensando ser ele mesmo, sugere honras extravagantes. O rei ordena: <em>"Faça isso a Mardoqueu, o judeu."</em> Hamã tem que liderar Mardoqueu pelas ruas proclamando sua honra — a maior humilhação de sua vida.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 7–8</span>
+            <div class="font-body text-xs text-ink-faint mt-1">A revelação</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Ester Revela Sua Identidade e a Conspiração de Hamã</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              No segundo banquete de Ester, ela revela que é judia e que o édito de Hamã a condenaria à morte. O rei, furioso, sai ao jardim. Hamã se lança aos pés de Ester suplicando pela vida — exatamente quando o rei volta e interpreta como ataque sexual. <em>"Ousa ele violentar a rainha na minha presença, neste palácio?"</em> Hamã é enforcado na forca de 23 metros que ele mesmo construiu para Mardoqueu. Mardoqueu recebe o anel de Hamã. Um novo édito é emitido permitindo que os judeus se defendam.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-fire">Cap. 9–10</span>
+            <div class="font-body text-xs text-ink-faint mt-1">A vitória</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-fire mb-1">A Festa de Purim — Lamento Transformado em Alegria</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              No dia 13 de Adar — data marcada para o extermínio — os judeus vencem seus inimigos. Matam 75.000 adversários, incluindo os dez filhos de Hamã (enforcados publicamente). No dia seguinte, 14 de Adar, celebram. Mardoqueu e Ester instituem a Festa de <strong>Purim</strong> (das "sortes" que Hamã lançou) — celebrada até hoje pelos judeus. O livro termina exaltando Mardoqueu como segundo no comando do império, <em>"grande entre os judeus e estimado pela multidão de seus irmãos, porque procurou o bem-estar do seu povo."</em>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens principais -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Personagens — Ester, Mardoqueu, Hamã e Assuero</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="character-card" style="background:rgba(74,30,110,0.06);border-color:rgba(74,30,110,0.25);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">👑</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-violet">Ester (Hadassa)</h3>
+              <p class="font-body text-xs text-ink-faint">הֲדַסָּה — "Murta" (nome hebraico) / אֶסְתֵּר — "Estrela" (nome persa)</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Órfã judia criada pelo primo Mardoqueu. Beleza excepcional, mas o texto enfatiza que ela "alcançou graça" (חֵן, <em>chen</em>) aos olhos de todos — há algo além da aparência física. Inicialmente passiva e obediente, transforma-se em líder corajosa.
+          </p>
+          <div class="text-xs space-y-1">
+            <p class="font-body text-ink-muted">✦ <strong>Qualidade central:</strong> Coragem estratégica — não age por impulso, mas calcula o momento certo</p>
+            <p class="font-body text-ink-muted">✦ <strong>Momento decisivo:</strong> <em>"Se perecer, pereci"</em> (4:16) — aceitação do risco mortal</p>
+            <p class="font-body text-ink-muted">✦ <strong>Estratégia:</strong> Dois banquetes — ganha tempo, aumenta curiosidade, escolhe momento perfeito</p>
+          </div>
+        </div>
+
+        <div class="character-card" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.25);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">🛡️</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-sapphire">Mardoqueu (Mordecai)</h3>
+              <p class="font-body text-xs text-ink-faint">מָרְדֳּכַי — possivelmente relacionado ao deus babilônico Marduk</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Benjamita, descendente de Quis (ancestral do rei Saul). Trabalha no portão do rei — posição de autoridade menor. Guardião de Ester, patriota leal (salva o rei de conspiração), mas se recusa a curvar-se a Hamã. Sua recusa desencadeia toda a crise — mas também toda a salvação.
+          </p>
+          <div class="text-xs space-y-1">
+            <p class="font-body text-ink-muted">✦ <strong>Qualidade central:</strong> Integridade inflexível — não negocia princípios, mesmo sob ameaça de morte</p>
+            <p class="font-body text-ink-muted">✦ <strong>Momento decisivo:</strong> <em>"Quem sabe se não foi para um tempo como este...?"</em> (4:14)</p>
+            <p class="font-body text-ink-muted">✦ <strong>Paradoxo:</strong> Sua teimosia quase destrói o povo — e depois o salva</p>
+          </div>
+        </div>
+
+        <div class="character-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">⚔️</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-crimson">Hamã, o Agagita</h3>
+              <p class="font-body text-xs text-ink-faint">הָמָן הָאֲגָגִי — descendente de Agague, rei amalequita</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Primeiro-ministro do império. O termo "agagita" conecta-o a Agague, rei amalequita que Saul (ancestral de Mardoqueu) deveria ter executado mas poupou (1Sm 15). <strong>Ester retoma uma guerra antiga.</strong> Hamã é movido por ego gigantesco — não suporta que um único homem não se curve.
+          </p>
+          <div class="text-xs space-y-1">
+            <p class="font-body text-ink-muted">✦ <strong>Defeito fatal:</strong> Orgulho — <em>"Tudo isto não me serve de nada enquanto eu vir o judeu Mardoqueu sentado à porta do rei"</em> (5:13)</p>
+            <p class="font-body text-ink-muted">✦ <strong>Momento de reversão:</strong> Ter que honrar publicamente quem ele queria enforcar</p>
+            <p class="font-body text-ink-muted">✦ <strong>Fim irônico:</strong> Morre na forca que construiu para Mardoqueu — 23 metros de altura</p>
+          </div>
+        </div>
+
+        <div class="character-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.3);">
+          <div class="flex items-start gap-3 mb-3">
+            <span class="text-3xl">🤴</span>
+            <div>
+              <h3 class="font-display text-base font-bold text-gold-dark">Assuero (Xerxes I)</h3>
+              <p class="font-body text-xs text-ink-faint">אֲחַשְׁוֵרֹשׁ — rei da Pérsia (486–465 a.C.)</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-2">
+            Rei do maior império da época (127 províncias, da Índia à Etiópia). Historicamente identificado como <strong>Xerxes I</strong>, que invadiu a Grécia e perdeu em Salamina (480 a.C.). Impulsivo, vaidoso, manipulável — age por emoção, não por reflexão. Mas também tem senso de honra e justiça.
+          </p>
+          <div class="text-xs space-y-1">
+            <p class="font-body text-ink-muted">✦ <strong>Característica:</strong> Poder absoluto com discernimento limitado — precisa de conselheiros</p>
+            <p class="font-body text-ink-muted">✦ <strong>Decisões erráticas:</strong> Depõe Vasti por capricho, assina genocídio sem investigar, muda de lado ao descobrir a verdade</p>
+            <p class="font-body text-ink-muted">✦ <strong>Instrumento divino:</strong> Deus usa até reis pagãos para cumprir Seus propósitos</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Reversões -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As Grandes Reversões — A Simetria da Providência</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Ester é estruturado em torno de <strong>reversões dramáticas</strong> — situações que se invertem completamente de forma inesperada mas perfeitamente cronometrada. Cada reversão aponta para a providência divina trabalhando através de eventos aparentemente coincidentes.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="reversal-box" style="border-color:rgba(74,30,110,0.3);background:rgba(74,30,110,0.04);">
+          <h4 class="font-display text-sm font-bold text-violet mb-2">👑 Vasti deposta → Ester coroada</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            A recusa de Vasti em se apresentar cria a vaga que coloca uma judia no trono do maior império do mundo — exatamente quando seu povo precisará de uma intercessora com acesso direto ao rei. <strong>Timing perfeito.</strong>
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(139,32,32,0.3);background:rgba(139,32,32,0.04);">
+          <h4 class="font-display text-sm font-bold text-crimson mb-2">⚔️ Hamã exaltado → Hamã executado</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Promovido a primeiro-ministro no capítulo 3, enforcado no capítulo 7. Do ápice do poder à morte ignominiosa em 4 capítulos. <em>"A cova que cavou para outros tornou-se sua própria sepultura."</em> (Sl 7:15)
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(30,58,95,0.3);background:rgba(30,58,95,0.04);">
+          <h4 class="font-display text-sm font-bold text-sapphire mb-2">🎯 Forca para Mardoqueu → Forca para Hamã</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            A forca de 23 metros que Hamã constrói para enforcar Mardoqueu visivelmente torna-se o instrumento de sua própria execução. A esposa e conselheiros de Hamã profetizam: <em>"Se Mardoqueu é da descendência dos judeus, você não prevalecerá, mas certamente cairá."</em> (6:13)
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(200,145,58,0.35);background:rgba(200,145,58,0.05);">
+          <h4 class="font-display text-sm font-bold text-gold-dark mb-2">🏆 Hamã honra Mardoqueu</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Na manhã em que Hamã planejava pedir a execução de Mardoqueu, o rei ordena que ele próprio lidere Mardoqueu em procissão pelas ruas, proclamando: <em>"Assim se faz ao homem a quem o rei deseja honrar!"</em> A maior humilhação possível — público, irônico, irreversível.
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(30,74,42,0.3);background:rgba(30,74,42,0.04);">
+          <h4 class="font-display text-sm font-bold text-forest mb-2">📜 Decreto de morte → Decreto de defesa</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            O édito de Hamã não pode ser revogado (lei persa irrevogável). Mas Mardoqueu emite um segundo édito — permitindo que os judeus se defendam. A lei que os condenava torna-se a lei que os protege. <em>"O que o inimigo planejou para mal, Deus reverteu para bem."</em>
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(74,30,110,0.3);background:rgba(74,30,110,0.04);">
+          <h4 class="font-display text-sm font-bold text-violet mb-2">🎲 Pur (sortes) → Purim (festa)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Hamã lançou <em>pur</em> (sortes) para determinar o dia de extermínio dos judeus. Esse mesmo dia tornou-se <strong>Purim</strong> — a festa de libertação celebrada até hoje. O instrumento da destruição virou símbolo de salvação. <em>"Lamento transformado em dança."</em> (Sl 30:11)
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(184,74,16,0.3);background:rgba(184,74,16,0.05);">
+          <h4 class="font-display text-sm font-bold text-fire mb-2">😢 Luto → Alegria</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Quando o édito de extermínio foi publicado, houve <em>"grande pranto entre os judeus, com jejum, choro e lamentação; muitos se deitavam em pano de saco e cinza"</em> (4:3). No capítulo 9: <em>"Os judeus tiveram luz, alegria, regozijo e honra... dia de banquetes e de alegria"</em> (8:16; 9:17). Reversão completa de emoção coletiva.
+          </p>
+        </div>
+
+        <div class="reversal-box" style="border-color:rgba(92,61,30,0.3);background:rgba(92,61,30,0.05);">
+          <h4 class="font-display text-sm font-bold text-earth mb-2">🏛️ Casa de Hamã → Casa de Ester</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            O rei confisca toda a propriedade de Hamã e a dá a Ester. Mardoqueu recebe o anel que o rei havia dado a Hamã — símbolo de autoridade total. A casa do opressor torna-se herança dos oprimidos. <em>"A riqueza do pecador está reservada para o justo."</em> (Pv 13:22)
+          </p>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl italic text-center"
+           style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.25);">
+        <p class="font-body text-base text-ink leading-relaxed mb-2">
+          <strong class="text-violet">O padrão das reversões revela a teologia central de Ester:</strong>
+        </p>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Quando Deus age, Ele não apenas <em>impede</em> o mal — Ele <strong>inverte</strong> completamente as circunstâncias, transformando as próprias armas do inimigo em instrumentos de salvação. O que era maldição vira bênção. O que era morte vira vida. O que era opressão vira libertação.
+        </p>
+      </div>
+    </section>
+
+    <!-- A Insônia do Rei -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">🌙 A Noite que Mudou a História — Cap. 6:1</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4 italic"
+               style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+            <p class="font-body text-lg text-ink leading-relaxed">
+              "Naquela noite, o rei não conseguia dormir; então ordenou que trouxessem o livro das crônicas, os registros históricos, e que os lessem na sua presença."
+            </p>
+            <p class="font-display text-xs text-sapphire mt-2 tracking-widest">Ester 6:1</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Esta é a frase-eixo do livro inteiro. Uma única noite de insônia — aparentemente trivial — desencadeia uma cascata de eventos que salva uma nação inteira.
+          </p>
+          <h4 class="font-display text-sm font-semibold text-ink mb-2">Por que esta noite é tão crucial?</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>Timing perfeito:</strong> A insônia acontece exatamente entre o primeiro e segundo banquete de Ester — no momento em que Hamã está no auge de sua arrogância
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>"Coincidência" impossível:</strong> Dos inúmeros registros do império, justamente encontram a passagem sobre Mardoqueu salvando o rei
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>Momento estratégico:</strong> O rei descobre a dívida com Mardoqueu horas antes de Hamã pedir sua execução
+            </div>
+            <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.18);">
+              <strong>Reversão dramática:</strong> Hamã entra no palácio pensando ser o homem a ser honrado — sai tendo que honrar seu inimigo mortal
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🎭 A Ironia da Cena (6:4–11)</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+              <p class="font-body text-sm text-ink-muted leading-relaxed">
+                <strong class="text-violet">O rei pergunta:</strong> <em>"O que se deve fazer ao homem a quem o rei deseja honrar?"</em>
+              </p>
+              <p class="font-body text-xs text-ink-faint mt-1">Hamã, certo de que é ele, sugere honras extravagantes...</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <p class="font-body text-sm text-ink-muted leading-relaxed">
+                <strong class="text-crimson">O rei ordena:</strong> <em>"Apressa-te, toma as vestes e o cavalo, como disseste, e faze assim para com o judeu Mardoqueu."</em>
+              </p>
+              <p class="font-body text-xs text-ink-faint mt-1">A maior humilhação possível — pública, irônica, irreversível.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <p class="font-body text-sm text-ink-muted leading-relaxed">
+                <strong class="text-forest">Hamã volta para casa:</strong> <em>"De luto e com a cabeça coberta"</em> (6:12). Sua esposa e amigos declaram: <em>"Se Mardoqueu é da descendência dos judeus, você não prevalecerá contra ele, mas certamente cairá diante dele."</em>
+              </p>
+              <p class="font-body text-xs text-ink-faint mt-1">Até seus conselheiros reconhecem que há uma força maior trabalhando.</p>
+            </div>
+          </div>
+          <div class="mt-4 p-3 rounded-lg text-center"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">A providência oculta em ação:</strong> Uma noite de insônia. Um livro aberto "ao acaso". Uma leitura cronometrada. Um pedido de honra interpretado errado. Uma humilhação pública inevitável. <em>Nenhum milagre visível — mas cada peça encaixa com precisão divina.</em>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Para um tempo como este -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">"Para um Tempo Como Este" — Ester 4:14</div>
+      <div class="p-5 rounded-xl mb-5 text-center italic"
+           style="background:rgba(74,30,110,0.08);border:2px solid rgba(74,30,110,0.3);">
+        <p class="font-body text-xl text-ink leading-relaxed mb-3">
+          "Porque, se de todo te calares neste tempo, socorro e livramento de outra parte virão para os judeus, mas tu e a casa de teu pai perecereis; e quem sabe se para <strong>uma ocasião como esta</strong> chegaste a este reino?"
+        </p>
+        <p class="font-display text-sm text-violet tracking-widest">Mardoqueu a Ester — Ester 4:14</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Contexto da Frase</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Ester hesita em se apresentar ao rei sem ser convocada — é punível com morte. Ela não vê o rei há 30 dias; pode estar em desgraça. Mardoqueu responde com esta frase — uma das declarações mais profundas sobre propósito e providência em toda a Escritura.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong>1. Deus não depende de você —</strong> <em>"Socorro e livramento de outra parte virão"</em> — Deus cumprirá Seus propósitos com ou sem sua cooperação. Mas você pode perder o privilégio de participar.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong>2. Silêncio tem consequências —</strong> <em>"Mas tu e a casa de teu pai perecereis"</em> — não agir quando você pode é também uma escolha. Neutralidade diante da injustiça é cumplicidade.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <strong>3. Posição é providencial —</strong> <em>"Quem sabe se para uma ocasião como esta...?"</em> — talvez toda sua trajetória até aqui tenha sido preparação para este momento específico.
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Resposta de Ester (4:15–16)</h3>
+          <div class="p-4 rounded-xl mb-4 italic"
+               style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "Vai, ajunta todos os judeus que se acharem em Susã, e jejuai por mim, e não comais nem bebais por três dias, nem de noite nem de dia; eu e as minhas servas também assim jejuaremos. Então irei ter com o rei, ainda que não seja segundo a lei; <strong>se perecer, pereci.</strong>"
+            </p>
+          </div>
+          <h4 class="font-display text-xs font-semibold text-ink mb-2">Três Elementos da Decisão de Ester:</h4>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">🙏 Jejum coletivo (3 dias)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Embora não mencione oração explicitamente, jejum no contexto judaico <strong>sempre</strong> envolve oração. É a única prática religiosa mencionada no livro — e é coletiva, envolvendo toda a comunidade.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">🎯 Ação corajosa</span>
+              <p class="font-body text-xs text-ink-muted mt-1"><em>"Irei ter com o rei, ainda que não seja segundo a lei"</em> — não é passividade piedosa esperando que Deus faça tudo. É fé que age apesar do risco.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">💀 Aceitação do custo</span>
+              <p class="font-body text-xs text-ink-muted mt-1"><em>"Se perecer, pereci"</em> — uma das declarações de coragem mais concisas da literatura. Hebraico: <strong>וְכַאֲשֶׁר אָבַדְתִּי אָבָדְתִּי</strong> (<em>ve-ka'asher avadti avadti</em>) — três palavras que mudam a história.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-forest">Aplicação teológica:</strong> "Para um tempo como este" tornou-se expressão clássica da teologia da providência e do chamado. Sugere que: (1) Deus posiciona pessoas estrategicamente; (2) há momentos únicos onde decisão individual tem impacto desproporcional; (3) privilégio vem com responsabilidade; (4) às vezes o propósito de toda uma vida se concentra em um único ato de coragem. Martinho Lutero resumiu: <em>"Aqui estou; não posso fazer de outra forma."</em> Mesma teologia — momento decisivo onde recuar seria traição ao propósito.
+        </p>
+      </div>
+    </section>
+
+    <!-- Purim -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">🎉 A Festa de Purim — Celebração da Reversão</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Origem do Nome</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            <strong>Purim</strong> (פּוּרִים) vem de <strong>pur</strong> (פּוּר) — palavra persa para "sortes" ou "dados". Hamã lançou sortes para determinar o dia mais propício astrológico para exterminar os judeus (3:7). Escolheu 13 de Adar (mês de fevereiro/março).
+          </p>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed italic">
+              "No primeiro mês, que é o mês de Nisã... lançaram <strong>pur</strong> (isto é, a sorte) diante de Hamã, de dia em dia e de mês em mês, até ao duodécimo mês, que é o mês de Adar."
+            </p>
+            <p class="font-display text-xs text-crimson mt-2">Ester 3:7</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            A ironia teológica: Hamã confiou em <strong>sorte</strong> e astrologia para garantir sucesso. Mas o Deus de Israel não é sujeito a sortes ou astros — Ele é soberano sobre todos os acasos. O dia escolhido pelas "sortes" para destruição tornou-se dia de libertação. <em>Por isso a festa se chama "Purim" — zombaria santa das sortes que falharam.</em>
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Como Purim É Celebrado</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Purim é celebrado em <strong>14 de Adar</strong> (nas cidades muradas, como Jerusalém, em 15 de Adar). É a festa mais alegre do calendário judaico — única onde beber vinho até ficar "confuso" é permitido e até encorajado.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="flex-shrink-0">📜</span>
+              <div>
+                <strong>Leitura da Meguilá (rolo de Ester):</strong> O livro inteiro é lido em voz alta na sinagoga. Cada vez que o nome "Hamã" é mencionado, as crianças fazem barulho com chocalhos (<em>graggers</em>) para "apagar" seu nome.
+              </div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="flex-shrink-0">🎁</span>
+              <div>
+                <strong>Mishloach Manot (envio de porções):</strong> Enviar cestas de comida a amigos — baseado em Ester 9:22, <em>"dias de banquetes e de alegria, e de mandarem presentes uns aos outros."</em>
+              </div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="flex-shrink-0">💰</span>
+              <div>
+                <strong>Matanot La'evyonim (presentes aos pobres):</strong> Dar a pelo menos dois pobres — ninguém deve ficar fora da celebração (baseado em 9:22).
+              </div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="flex-shrink-0">🍽️</span>
+              <div>
+                <strong>Seudat Purim (banquete festivo):</strong> Grande refeição com vinho. É tradicional comer <em>hamantaschen</em> (biscoitos triangulares representando o chapéu de Hamã).
+              </div>
+            </div>
+            <div class="p-2 rounded flex gap-2 items-start"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="flex-shrink-0">🎭</span>
+              <div>
+                <strong>Fantasias e peças teatrais:</strong> Muitos se vestem de personagens do livro. Crianças encenam a história. Atmosfera quase carnavalesca — única festa judaica com esse caráter.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mt-5 p-4 rounded-xl text-center"
+           style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-violet">Purim hoje:</strong> É celebrado por judeus no mundo inteiro. Durante o Holocausto, muitos judeus celebraram Purim secretamente em guetos e campos de concentração — prova de que a história de Hamã não é apenas antiga, mas arquetípica. A tentativa de extermínio dos judeus se repete na história, mas <em>"socorro e livramento"</em> sempre vêm — cumprindo a promessa abraâmica: <em>"Abençoarei os que te abençoarem e amaldiçoarei os que te amaldiçoarem"</em> (Gn 12:3). Purim celebra que essa promessa permanece.
+        </p>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">👁️ Providência oculta</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🔄 Reversão divina</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🎯 Chamado e propósito</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">💪 Coragem diante do risco</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">⚖️ Justiça poética</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🏛️ Soberania de Deus</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🛡️ Proteção do povo de Deus</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🎉 Lamento → alegria</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Ester no NT e na Tradição</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Et 4:14 → Mt 26:53</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Socorro virá de outra parte" — Deus não depende de instrumentos humanos. Jesus no Getsêmani: <em>"Pensas que não posso rogar a meu Pai, e ele me daria mais de doze legiões de anjos?"</em> Mas escolheu o caminho da cruz.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Ester → Maria (mãe de Jesus)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Ambas mulheres judias escolhidas "para um tempo como este". Ester arrisca a vida dizendo <em>"Se perecer, pereci"</em>; Maria aceita o risco dizendo <em>"Eis aqui a serva do Senhor"</em> (Lc 1:38). Instrumentos femininos em momentos decisivos da história da salvação.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Hamã → Herodes / Faraó</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Tentativa de exterminar o povo/semente de Deus se repete: Faraó (Êx 1), Hamã (Et 3), Herodes (Mt 2), Anticristo (Ap 12). Sempre fracassa. Padrão: quanto mais tentam destruir, mais Deus multiplica.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Purim → Páscoa</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Ambas celebram libertação de extermínio: Páscoa da escravidão egípcia, Purim do genocídio persa. Páscoa aponta para Cristo (1Co 5:7); Purim aponta para a preservação da linhagem messiânica — sem Ester, não haveria Maria, não haveria Jesus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Controvérsias -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Questões Controversas e Debates Históricos</div>
+      <div class="space-y-4">
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">1. Por que Ester Quase Foi Excluído do Cânon?</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Argumentos contra inclusão:</span>
+              <ul class="font-body text-xs text-ink-muted mt-2 space-y-1 list-disc list-inside">
+                <li>Não menciona Deus, oração, Lei, Templo ou qualquer prática religiosa</li>
+                <li>Retrata violência excessiva (75.000 mortos em 9:16)</li>
+                <li>Ester participa de concurso de beleza pagão, vive em harém, casa com gentio</li>
+                <li>Parece mais literatura de corte que texto sagrado</li>
+                <li>Não foi encontrado em Qumran (único livro do AT ausente dos Manuscritos do Mar Morto)</li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Argumentos a favor (que prevaleceram):</span>
+              <ul class="font-body text-xs text-ink-muted mt-2 space-y-1 list-disc list-inside">
+                <li>Providência divina óbvia mesmo sem mencionar Deus explicitamente</li>
+                <li>Única explicação da origem de Purim — festa amplamente celebrada</li>
+                <li>Cumprimento da promessa abraâmica de proteção (Gn 12:3)</li>
+                <li>Preservação da linhagem messiânica — sem Ester, não há Cristo</li>
+                <li>Modelo de coragem e fé em contexto de exílio/diáspora</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">2. A Violência de Ester 9 — Os 75.000 Mortos</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            <em>"Mataram e destruíram os seus inimigos... em todo o reino do rei... setenta e cinco mil..."</em> (9:16). Este número choca leitores modernos. Como entender?
+          </p>
+          <div class="grid md:grid-cols-3 gap-3">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              <span class="font-display text-xs font-bold text-sapphire">Defesa legítima</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O texto enfatiza: <em>"mas no despojo não tocaram"</em> (9:10, 15, 16) — não foi pilhagem ou ganância, mas autodefesa contra quem tentava exterminá-los.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              <span class="font-display text-xs font-bold text-gold-dark">Contexto antigo</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Números de batalhas antigas são frequentemente aproximados ou simbólicos. O ponto: vitória completa, não genocídio ofensivo.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              <span class="font-display text-xs font-bold text-forest">Justiça poética</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Hamã planejou exterminar <strong>todos</strong> os judeus do império (milhões). A reversão é proporcional à ameaça — quem planejou genocídio sofre as consequências.</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">3. Ester Violou a Lei ao Casar com Gentio e Viver no Palácio?</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Crítica rabínica (alguns):</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                Ester violou a Lei ao participar de concurso de beleza pagão, viver em harém, casar com gentio, comer comida não-kosher. Deveria ter recusado como Daniel recusou a comida do rei (Dn 1).
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Defesa tradicional:</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                (1) Ester foi <strong>levada à força</strong> — não se ofereceu voluntariamente (2:8); (2) situação de <em>pikuach nefesh</em> (salvar vida) — princípio judaico que permite violar leis menores para salvar vidas; (3) Deus usou a situação para bem maior — salvação de toda a nação; (4) jejum de 3 dias mostra que ela manteve fé mesmo em contexto pagão.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">4. Historicidade — Ester Realmente Aconteceu?</h3>
+          <div class="space-y-2 text-sm">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Evidências históricas a favor:</span>
+              <ul class="font-body text-xs text-ink-muted mt-1 space-y-1 list-disc list-inside">
+                <li><strong>Xerxes I (Assuero):</strong> rei persa documentado (486–465 a.C.), conhecido por campanhas militares e extravagância</li>
+                <li><strong>Susã:</strong> capital administrativa persa confirmada arqueologicamente — palácio de inverno dos reis</li>
+                <li><strong>Sistema de correios:</strong> descrito em 3:13–15 — correspondente ao sistema postal persa documentado</li>
+                <li><strong>Detalhes de corte:</strong> os 180 dias de banquete (1:4) correspondem a reuniões de planejamento militar antes da invasão da Grécia (Heródoto confirma)</li>
+                <li><strong>Leis irrevogáveis:</strong> conceito persa documentado (Dn 6:8; Et 1:19; 8:8)</li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Dificuldades históricas:</span>
+              <ul class="font-body text-xs text-ink-muted mt-1 space-y-1 list-disc list-inside">
+                <li>Heródoto (historiador grego) diz que a rainha de Xerxes era <strong>Amestris</strong>, não Vasti ou Ester</li>
+                <li>Nenhuma fonte persa menciona Mardoqueu ou Hamã (mas fontes persas são limitadas)</li>
+                <li>Alguns detalhes parecem exagerados (banquete de 180 dias, 75.000 mortos)</li>
+              </ul>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">
+                <strong>Consenso:</strong> Núcleo histórico provável (crise política real envolvendo judeus na Pérsia), mas narrado com liberdade literária típica de narrativa épica. Como Jó ou Jonas — baseado em realidade mas contado como arte, não como reportagem jornalística.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Ester tem dois nomes — e ambos problemáticos:</strong> <em>Hadassa</em> (הֲדַסָּה) significa "murta" em hebraico — planta aromática usada na Festa dos Tabernáculos. <em>Ester</em> (אֶסְתֵּר) pode vir do persa <em>stara</em> (estrela) ou estar relacionado à deusa babilônica <em>Ishtar</em>. Mardoqueu também tem nome pagão (do deus Marduk). Reflete a realidade dos judeus da diáspora — vivendo entre duas culturas.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A Meguilá (rolo de Ester) é lida duas vezes em Purim:</strong> Na véspera e na manhã. Cada menção do nome "Hamã" é abafada por gritos, batidas de pés e graggers (chocalhos) — especialmente quando é chamado <em>"Hamã, o agagita, inimigo dos judeus"</em>. É única leitura bíblica onde fazer barulho é mandamento.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 10 filhos de Hamã enforcados (9:7–10):</strong> Na Meguilá tradicional, os nomes dos dez filhos são escritos em <strong>coluna vertical</strong>, não horizontal — para serem lidos de uma vez, indicando que foram executados simultaneamente. Tradição rabínica proíbe celebrar a morte de inimigos — mas permite celebrar a <em>libertação</em>, que veio através dessa justiça.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Vasti — heroína ou vilã?</strong> Interpretações rabínicas divergem. Alguns a retratam como orgulhosa e rebelde; outros como mulher corajosa que se recusou a ser objetificada sexualmente perante nobres embriagados. Algumas feministas judias celebram "Vasti, a primeira feminista" — modelo de mulher que disse "não" ao poder patriarcal, mesmo custando sua posição.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A forca de 23 metros de Hamã (5:14):</strong> Hebraico diz literalmente "50 côvados" — cerca de 23 metros de altura, equivalente a prédio de 7 andares. Não era forca comum — era monumento de humilhação pública visível de longe. Hamã queria que todo Susã visse Mardoqueu pendurado. Acabou sendo ele mesmo o espetáculo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Ester nunca voltou a Israel:</strong> Ao contrário de Esdras e Neemias, que lideram retorno à Jerusalém, Ester permanece na Pérsia como rainha. Representa os judeus que escolheram ficar na diáspora — e mostra que Deus os protege mesmo fora da Terra Prometida. A proteção de Deus não depende de geografia.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Adições gregas a Ester:</strong> A Septuaginta (tradução grega do AT) adiciona <strong>107 versículos</strong> a Ester — incluindo orações explícitas de Mardoqueu e Ester, sonho profético, e menções diretas a Deus. Católicos e ortodoxos aceitam como deuterocanônicos; protestantes consideram apócrifos. Reflete desconforto antigo com a ausência de Deus no texto hebraico.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Purim durante o Holocausto:</strong> Julius Streicher, editor nazista do jornal antissemita <em>Der Stürmer</em>, foi executado em 16 de outubro de 1946 — <strong>Purim de 1946 no calendário judaico.</strong> Suas últimas palavras foram: <em>"Fest Purim, 1946"</em> ("Festa de Purim, 1946"). Rabinos viram nisso cumprimento profético — novo Hamã enforcado em Purim.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Deus está oculto?</strong> Elie Wiesel, sobrevivente do Holocausto e Prêmio Nobel, disse: <em>"Ester é o livro do exílio e da ocultação. Deus está escondido, e cabe ao homem encontrá-Lo — ou descobrir que Ele está presente mesmo quando parece ausente."</em> Após Auschwitz, muitos judeus se identificaram com Ester: Deus parece em silêncio, mas Sua providência continua trabalhando. O Talmude ensina: <em>"Onde está Deus indicado na Torá? 'E eu certamente esconderei minha face' (Dt 31:18) — mas mesmo escondido, está presente."</em> Ester é o livro dessa presença oculta — e por isso, o livro mais relevante para épocas de crise de fé, quando Deus parece ausente mas está, na verdade, orquestrando reversões inimagináveis nos bastidores da história.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-7">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porque, se de todo te calares neste tempo, socorro e livramento de outra parte virão para os judeus... e quem sabe se para uma ocasião como esta chegaste a este reino?"
+      </blockquote>
+      <cite class="font-display text-xs text-violet block mt-3 tracking-widest">Ester 4:14 — Mardoqueu a Ester: o chamado ao propósito</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Então irei ter com o rei, ainda que não seja segundo a lei; se perecer, pereci."
+      </blockquote>
+      <cite class="font-display text-xs text-violet block mt-3 tracking-widest">Ester 4:16 — A decisão de Ester: coragem diante do risco mortal</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Naquela noite, o rei não conseguia dormir..."
+      </blockquote>
+      <cite class="font-display text-xs text-violet block mt-3 tracking-widest">Ester 6:1 — A insônia providencial que mudou a história</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Assim se faz ao homem a quem o rei deseja honrar!"
+      </blockquote>
+      <cite class="font-display text-xs text-violet block mt-3 tracking-widest">Ester 6:9 — A frase que Hamã teve que proclamar sobre Mardoqueu</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Ester · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

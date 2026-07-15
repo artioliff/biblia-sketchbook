@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaías — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Profecia messiânica */
+    .messianic-prophecy {
+      border-radius: 10px;
+      padding: 1.25rem;
+      border-left: 4px solid;
+      background: linear-gradient(135deg, rgba(200,145,58,0.06) 0%, rgba(255,255,255,0.5) 100%);
+      font-style: italic;
+      transition: all 0.3s ease;
+    }
+    .messianic-prophecy:hover {
+      transform: translateX(6px);
+      box-shadow: 0 4px 12px rgba(200,145,58,0.15);
+    }
+
+    /* Servo Sofredor */
+    .servant-song {
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 2px solid;
+      background: linear-gradient(135deg, rgba(139,32,32,0.08) 0%, rgba(255,255,255,0.5) 100%);
+      position: relative;
+    }
+    .servant-song::before {
+      content: '✟';
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2rem;
+      background: #fdf8ef;
+      padding: 0 12px;
+      color: #8b2020;
+    }
+
+    /* Divisão do livro */
+    .isaiah-section {
+      border-radius: 10px;
+      padding: 1rem;
+      border: 2px solid;
+      background: rgba(255,255,255,0.4);
+    }
+
+    /* Oráculo de julgamento */
+    .judgment-oracle {
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      border-left: 3px solid;
+      background: rgba(139,32,32,0.05);
+      transition: transform 0.2s ease;
+    }
+    .judgment-oracle:hover { transform: translateX(4px); }
+
+    /* Promessa de restauração */
+    .restoration-promise {
+      border-radius: 8px;
+      padding: 0.875rem 1rem;
+      border-left: 3px solid;
+      background: rgba(30,74,42,0.05);
+      transition: transform 0.2s ease;
+    }
+    .restoration-promise:hover { transform: translateX(4px); }
+
+    /* Visão celestial */
+    .heavenly-vision {
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 3px solid;
+      background: linear-gradient(135deg, rgba(74,30,110,0.08) 0%, rgba(30,58,95,0.06) 100%);
+      position: relative;
+    }
+    .heavenly-vision::before {
+      content: '👁️';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.2rem;
+      background: #fdf8ef;
+      padding: 0 12px;
+    }
+
+    /* Nome divino */
+    .divine-name {
+      display: inline-block;
+      background: rgba(200,145,58,0.15);
+      padding: 0.25rem 0.625rem;
+      border-radius: 4px;
+      font-family: 'Cinzel', serif;
+      font-weight: 600;
+      border: 1px solid rgba(200,145,58,0.3);
+      font-size: 0.875rem;
+    }
+
+    /* Cumprimento no NT */
+    .nt-fulfillment {
+      border-radius: 8px;
+      padding: 1rem;
+      border: 1px dashed;
+      background: rgba(30,58,95,0.04);
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MAIORES · 23º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(139,32,32,0.2);">
+        Isaías
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>יְשַׁעְיָהוּ</em> (Yeshayahu) — "Yahweh é Salvação" ou "Salvação do Senhor"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O profeta evangélico do AT · <strong>o "quinto evangelho"</strong> · visões de julgamento e glória · servo sofredor que carrega pecados · nova criação vindoura
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">66</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.292</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~700 a.C.</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Época de Isaías</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">65×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">citado no NT</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.07);border:1px solid rgba(139,32,32,0.22);">
+              <span class="font-display text-xs font-bold text-crimson">23º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">1º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Profetas Maiores</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Maior livro</span>
+              <span class="font-body text-sm text-ink">profético do AT — <strong>66 capítulos</strong></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O "Quinto Evangelho"</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Isaías é chamado de <strong>"quinto evangelho"</strong> ou <strong>"evangelho do AT"</strong> porque contém as profecias messiânicas <em>mais claras e numerosas</em> de toda Escritura. Descreve nascimento virginal, ministério, morte substitutiva, ressurreição e reino do Messias com detalhes que parecem relato de testemunha ocular — escrito 700 anos antes de Cristo!
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            NT cita Isaías <strong>mais de 65 vezes</strong> — mais que qualquer outro profeta. Jesus leu Isaías 61 na sinagoga e declarou: <em>"Hoje se cumpriu a Escritura que acabais de ouvir"</em> (Lc 4:21). Paulo chama Isaías de <em>"ousado"</em> (Rm 10:20). Livro é eixo entre AT e NT.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Profeta Isaías -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Profeta Isaías — Contexto Histórico</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(200,145,58,0.08);border:2px solid rgba(200,145,58,0.3);">
+            <div class="flex items-start gap-3 mb-3">
+              <span class="text-3xl">👤</span>
+              <div>
+                <h3 class="font-display text-base font-bold text-gold-dark">Isaías ben Amoz</h3>
+                <p class="font-body text-xs text-ink-faint">ישעיהו בן־אמוץ — "Filho de Amoz"</p>
+              </div>
+            </div>
+            <div class="space-y-2 text-xs">
+              <p><strong>Época:</strong> ~740–680 a.C. (reinados de Uzias, Jotão, Acaz, Ezequias)</p>
+              <p><strong>Localização:</strong> Jerusalém, reino de Judá</p>
+              <p><strong>Classe social:</strong> Provavelmente aristocrata/nobre — acesso direto ao rei</p>
+              <p><strong>Família:</strong> Casado com "profetisa" (8:3); dois filhos com nomes proféticos</p>
+              <p><strong>Ministério:</strong> ~60 anos — um dos mais longos do AT</p>
+            </div>
+          </div>
+
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Filhos como Sinais Proféticos</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">1. Sear-Jasube (שְׁאָר יָשׁוּב)</strong>
+              <p class="text-ink-muted mt-1"><em>"Um remanescente voltará"</em> (7:3) — tema central: nem todos serão destruídos; Deus preservará remanescente fiel.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">2. Maher-Shalal-Hash-Baz (מַהֵר שָׁלָל חָשׁ בַּז)</strong>
+              <p class="text-ink-muted mt-1"><em>"Rápido despojo, presa veloz"</em> (8:1–3) — profecia de invasão assíria iminente contra Damasco e Samaria.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Contexto Histórico — Crise Assíria</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Isaías viveu durante <strong>maior crise geopolítica da história de Judá</strong> até então — ascensão do Império Assírio. Reino do Norte (Israel) foi conquistado (722 a.C.); Judá sobreviveu por milagre.
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">740 a.C. — Chamado de Isaías</strong>
+              <p class="text-ink-muted mt-1">Visão no templo, ano da morte do rei Uzias (cap. 6). Comissão: profetizar julgamento e, depois, restauração.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">734–732 a.C. — Guerra Siro-Efraimita</strong>
+              <p class="text-ink-muted mt-1">Síria e Israel atacam Judá para forçar aliança anti-assíria. Acaz, rei de Judá, entra em pânico. Isaías profetiza: <em>"Não temas... não prevalecerão"</em> (7:4–9). Oferece sinal: Emanuel (7:14).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">722 a.C. — Queda de Samaria</strong>
+              <p class="text-ink-muted mt-1">Assíria conquista reino do Norte (Israel). Dez tribos exiladas — nunca retornarão. Isaías havia alertado: julgamento virá sobre rebeldes.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">701 a.C. — Cerco de Jerusalém</strong>
+              <p class="text-ink-muted mt-1">Senaqueribe, rei assírio, invade Judá e cerca Jerusalém. Ezequias ora; Isaías profetiza livramento. <strong>Anjo do Senhor mata 185.000 soldados assírios numa noite</strong> (37:36) — milagre histórico. Jerusalém é poupada.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <strong class="text-earth">~680 a.C. (?) — Morte de Isaías</strong>
+              <p class="text-ink-muted mt-1">Tradição judaica (não-bíblica): Isaías foi serrado ao meio durante reinado ímpio de Manassés. Hebreus 11:37 pode aludir a isso (<em>"serrados"</em>).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura do Livro -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro — Três Seções Principais</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Isaías tem <strong>66 capítulos</strong> — mesma quantidade de livros da Bíblia inteira (coincidência simbólica?). Divide-se em três seções claras, cada uma com tom, época e teologia distintos. Debate sobre autoria ("Dêutero-Isaías", "Trito-Isaías") existe, mas unidade teológica é inegável.
+      </p>
+      <div class="space-y-3">
+
+        <div class="isaiah-section" style="border-color:rgba(139,32,32,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:90px;">
+              <span class="font-display text-2xl font-bold text-crimson">I</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Caps. 1–39</div>
+            </div>
+            <div class="flex-grow">
+              <h3 class="font-display text-base font-bold text-crimson mb-2">Julgamento — "Ai!" (Livro de Emanuel)</h3>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+                <strong>Época:</strong> Pré-exílio (antes de 586 a.C.) — Jerusalém ainda de pé, mas sob ameaça assíria.<br/>
+                <strong>Tom:</strong> Predominantemente julgamento, advertências, oráculos contra nações.<br/>
+                <strong>Tema:</strong> Pecado de Judá (idolatria, injustiça social, falsa religiosidade) resultará em julgamento — mas haverá remanescente.<br/>
+                <strong>Paralelo bíblico:</strong> Como os <strong>39 livros do AT</strong> — Lei, condenação, profecia.
+              </p>
+              <div class="grid md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.12);">
+                  <strong>Caps. 1–12:</strong> Profecias contra Judá/Jerusalém + promessas messiânicas (7:14; 9:6–7; 11:1–10)
+                </div>
+                <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.12);">
+                  <strong>Caps. 13–23:</strong> Oráculos contra nações estrangeiras (Babilônia, Assíria, Moabe, Egito, etc.)
+                </div>
+                <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.12);">
+                  <strong>Caps. 24–27:</strong> "Apocalipse de Isaías" — julgamento cósmico e ressurreição futura
+                </div>
+                <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.12);">
+                  <strong>Caps. 28–35:</strong> Ais contra Judá rebelde; confiança em Assíria vs. confiança em Yahweh
+                </div>
+                <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.12);" colspan="2">
+                  <strong>Caps. 36–39:</strong> Narrativa histórica — cerco de Jerusalém (701 a.C.); doença de Ezequias; embaixadores babilônios
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="isaiah-section" style="border-color:rgba(30,74,42,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:90px;">
+              <span class="font-display text-2xl font-bold text-forest">II</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Caps. 40–55</div>
+            </div>
+            <div class="flex-grow">
+              <h3 class="font-display text-base font-bold text-forest mb-2">Consolação — "Consolai!" (Livro do Servo)</h3>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+                <strong>Época:</strong> Exílio babilônico (~586–539 a.C.) — Jerusalém destruída, povo cativo.<br/>
+                <strong>Tom:</strong> Consolação, esperança, promessas de libertação iminente.<br/>
+                <strong>Tema:</strong> Yahweh é soberano sobre história; usará Ciro (rei persa) para libertar Israel; <strong>Servo Sofredor</strong> (caps. 52–53) carregará pecados.<br/>
+                <strong>Paralelo bíblico:</strong> Como os <strong>27 livros do NT</strong> — graça, redenção, boas novas.
+              </p>
+              <div class="grid md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded" style="background:rgba(30,74,42,0.04);border:1px solid rgba(30,74,42,0.12);">
+                  <strong>Caps. 40–48:</strong> Yahweh vs. ídolos — só Ele prevê futuro; Ciro como ungido de Deus (45:1)
+                </div>
+                <div class="p-2 rounded" style="background:rgba(30,74,42,0.04);border:1px solid rgba(30,74,42,0.12);">
+                  <strong>Caps. 49–55:</strong> Quatro "Cânticos do Servo" (42:1–4; 49:1–6; 50:4–9; <strong>52:13–53:12</strong>)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="isaiah-section" style="border-color:rgba(30,58,95,0.3);">
+          <div class="flex items-start gap-4">
+            <div class="flex-shrink-0 text-center" style="min-width:90px;">
+              <span class="font-display text-2xl font-bold text-sapphire">III</span>
+              <div class="font-body text-xs text-ink-faint mt-1">Caps. 56–66</div>
+            </div>
+            <div class="flex-grow">
+              <h3 class="font-display text-base font-bold text-sapphire mb-2">Glória Futura — "Levanta-te!" (Livro da Nova Criação)</h3>
+              <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+                <strong>Época:</strong> Pós-exílio (~539 a.C. em diante) — retorno à Terra, mas glória esperada não veio ainda.<br/>
+                <strong>Tom:</strong> Misto — realismo (pecado persistente) + esperança escatológica (novos céus e nova terra).<br/>
+                <strong>Tema:</strong> Restauração parcial agora, plena no futuro; Messias virá trazer justiça e paz universal; inclusão de gentios.<br/>
+                <strong>Paralelo bíblico:</strong> Como <strong>Apocalipse</strong> — visões de consumação final, nova criação.
+              </p>
+              <div class="grid md:grid-cols-2 gap-2 text-xs">
+                <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                  <strong>Caps. 56–59:</strong> Pecado impede restauração plena; necessidade de redentor externo
+                </div>
+                <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                  <strong>Caps. 60–62:</strong> Glória de Sião restaurada; luz para nações; ano do favor do Senhor
+                </div>
+                <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                  <strong>Caps. 63–64:</strong> Lamento comunitário — onde está Deus? Por que permite sofrimento?
+                </div>
+                <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                  <strong>Caps. 65–66:</strong> <strong>Novos céus e nova terra</strong> (65:17); julgamento final; gentios adorando em Jerusalém
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl text-center"
+           style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">Unidade literária e teológica:</strong> Apesar de possíveis múltiplos autores/editores, livro final é <strong>coerente</strong>. Temas se repetem: santidade de Deus, julgamento + salvação, Messias vindouro, remanescente fiel, glória futura de Sião. Nome <span class="divine-name">Santo de Israel</span> aparece 25× (12× em caps. 1–39, 13× em 40–66) — unindo as seções.
+        </p>
+      </div>
+    </section>
+
+    <!-- Visão do Trono (Cap. 6) -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Isaías 6 — A Visão do Trono e o Chamado Profético</div>
+      <div class="heavenly-vision mb-5" style="border-color:rgba(74,30,110,0.35);">
+        <div class="text-center mb-4">
+          <p class="font-body text-xl italic text-ink leading-relaxed mb-3">
+            "No ano da morte do rei Uzias, eu vi o <strong>Senhor</strong> assentado sobre um alto e sublime trono, e as abas de suas vestes enchiam o templo... Serafins estavam por cima dele... E clamavam uns para os outros:<br/>
+            <strong style="font-size:1.3em;color:#4a1e6e;">'Santo, Santo, Santo é o <span style="font-variant:small-caps;">Senhor</span> dos Exércitos; toda a terra está cheia da sua glória!'</strong>"
+          </p>
+          <p class="font-display text-sm text-violet tracking-widest">Isaías 6:1–3</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Análise da Visão</h3>
+          <div class="space-y-3 text-sm">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">"Ano da morte do rei Uzias" (~740 a.C.)</strong>
+              <p class="text-ink-muted text-xs mt-1 leading-relaxed">
+                Rei Uzias reinou 52 anos — era de prosperidade e estabilidade. Sua morte = crise. Mas Isaías vê: <em>Rei verdadeiro permanece no trono</em> — Yahweh é eterno. Reis terrenos morrem; Rei celestial reina para sempre.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">"Serafins" (שְׂרָפִים) — Seres Ardentes</strong>
+              <p class="text-ink-muted text-xs mt-1 leading-relaxed">
+                Única menção a serafins na Bíblia. Nome vem de raiz <em>saraf</em> (queimar). Seis asas: duas cobrindo rosto (reverência), duas cobrindo pés (humildade), duas para voar (serviço). Função: adorar constantemente a santidade de Deus.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">"Santo, Santo, Santo" — Trishagion</strong>
+              <p class="text-ink-muted text-xs mt-1 leading-relaxed">
+                Repetição tripla = <strong>superlativo máximo</strong> em hebraico. Deus não é apenas santo — é <em>santíssimo.</em> Esta visão moldou toda teologia de Isaías: Deus é <strong>separado, transcendente, puro</strong> — e pecado humano é ofensa intolerável contra Sua santidade.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">"Ai de mim! Estou perdido!" (6:5)</strong>
+              <p class="text-ink-muted text-xs mt-1 leading-relaxed">
+                Diante de santidade absoluta, Isaías se desintegra: <em>"Sou homem de lábios impuros, habito no meio de povo de lábios impuros, e meus olhos viram o Rei, o Senhor dos Exércitos!"</em> Ver Deus = morte (Êx 33:20). Isaías espera ser consumido.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Purificação — Brasa do Altar (6:6–7)</strong>
+              <p class="text-ink-muted text-xs mt-1 leading-relaxed">
+                Serafim toca lábios de Isaías com brasa tirada do altar: <em>"Eis que isto tocou os teus lábios; a tua iniquidade foi tirada, e purificado, o teu pecado."</em> Fogo = purificação dolorosa mas necessária. Altar = expiação. Isaías é perdoado antes de ser comissionado.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Comissão Profética — Missão Paradoxal</h3>
+          <div class="p-4 rounded-xl mb-4"
+               style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.22);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed italic mb-3">
+              <strong>Deus pergunta:</strong> <em>"A quem enviarei, e quem há de ir por nós?"</em><br/>
+              <strong>Isaías responde:</strong> <em>"Eis-me aqui, envia-me a mim!"</em> (6:8)<br/>
+              <strong>Deus comissiona:</strong> <em>"Vai e dize a este povo: 'Ouvi, ouvi, e não entendais; vede, vede, mas não percebais.' Torna insensível o coração deste povo, endurece-lhe os ouvidos e fecha-lhe os olhos, para que não veja com os olhos, nem ouça com os ouvidos, nem entenda com o coração, nem se converta, e seja salvo."</em> (6:9–10)
+            </p>
+            <p class="font-display text-xs text-crimson">Isaías 6:8–10</p>
+          </div>
+
+          <h4 class="font-display text-xs font-semibold text-ink mb-2">Paradoxo da Missão</h4>
+          <div class="space-y-2 text-xs">
+            <div class="p-2 rounded" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>Pregação que endurece:</strong> Isaías não prega <em>para</em> conversão, mas sabendo que maioria rejeitará — e rejeição os endurecerá mais. Paradoxo: mesma mensagem salva alguns, condena outros.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>NT aplica a Jesus:</strong> Jesus cita Is 6:9–10 explicando por que fala em parábolas (Mt 13:14–15; Jo 12:40). Paulo cita ao final de Atos (28:26–27) — Israel rejeita Messias, cumprindo Isaías.
+            </div>
+            <div class="p-2 rounded" style="background:rgba(60,60,60,0.04);border:1px solid rgba(60,60,60,0.12);">
+              <strong>"Até quando, Senhor?" (6:11)</strong> — Isaías pergunta quanto tempo durará julgamento. Resposta: <em>"Até que cidades fiquem desertas... terra desolada."</em> Mas sempre há remanescente: <em>"Como terebinto... cuja semente é santa"</em> (6:13).
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">Significado teológico:</strong> Santidade de Deus não tolera pecado. Profeta deve pregar verdade mesmo sabendo que será rejeitada. Julgamento vem, mas sempre com promessa de remanescente. <strong>Esta visão (cap. 6) deveria vir primeiro (cap. 1), mas está no meio — por quê?</strong> Talvez porque leitor precisa primeiro ver pecado de Israel (caps. 1–5) para entender por que santidade de Deus exige julgamento.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profecias Messiânicas (Primeira Parte) -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Profecias Messiânicas — Parte I: Nascimento e Reino</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Isaías contém as <strong>profecias messiânicas mais claras</strong> do AT. Descrevem nascimento miraculoso, caráter divino-humano, ministério, morte substitutiva e reino eterno do Messias com precisão surpreendente.
+      </p>
+      <div class="space-y-4">
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3" style="color:#c8913a;">👶 Isaías 7:14 — O Sinal de Emanuel</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="messianic-prophecy" style="border-color:rgba(200,145,58,0.4);">
+              <p class="font-body text-base text-ink leading-relaxed mb-2">
+                "Portanto, o próprio Senhor vos dará um sinal: eis que a <strong>virgem</strong> conceberá e dará à luz um filho e lhe chamará <strong>Emanuel</strong>."
+              </p>
+              <p class="font-display text-xs text-gold-dark">Isaías 7:14</p>
+            </div>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-ink mb-2">Análise e Cumprimento</h4>
+              <div class="space-y-2 text-xs">
+                <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                  <strong>Contexto histórico:</strong> Rei Acaz em pânico (guerra siro-efraimita). Isaías oferece sinal; Acaz recusa. Deus dá sinal mesmo assim: <em>virgem conceberá.</em>
+                </div>
+                <div class="p-2 rounded" style="background:rgba(74,30,110,0.04);border:1px solid rgba(74,30,110,0.12);">
+                  <strong>Debate — "virgem" ou "jovem"?</strong> Hebraico: <em>עַלְמָה</em> (almah) = jovem mulher. LXX traduziu <em>παρθένος</em> (parthenos) = virgem. Mateus 1:23 cita LXX aplicando a Maria.
+                </div>
+                <div class="nt-fulfillment" style="border-color:rgba(30,58,95,0.3);">
+                  <strong class="text-sapphire">Cumprimento no NT:</strong>
+                  <p class="text-ink-muted mt-1"><em>"Eis que a virgem conceberá e dará à luz um filho, e ele será chamado pelo nome de Emanuel"</em> (Mt 1:23). Maria concebe virginalmente pelo Espírito Santo. <strong>Emanuel</strong> (עִמָּנוּאֵל) = "Deus conosco" — Jesus é Deus encarnado.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3" style="color:#c8913a;">👑 Isaías 9:6–7 — O Filho Dado, Governo Eterno</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="messianic-prophecy" style="border-color:rgba(200,145,58,0.4);">
+              <p class="font-body text-base text-ink leading-relaxed mb-2">
+                "Porque um menino nos nasceu, um filho se nos deu; o <strong>governo está sobre os seus ombros</strong>; e o seu nome será: <strong>Maravilhoso Conselheiro, Deus Forte, Pai da Eternidade, Príncipe da Paz</strong>. Do aumento deste governo e da paz não haverá fim, sobre o trono de Davi e no seu reino... desde agora e para sempre."
+              </p>
+              <p class="font-display text-xs text-gold-dark">Isaías 9:6–7</p>
+            </div>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-ink mb-2">Os Quatro Nomes do Messias</h4>
+              <div class="space-y-2 text-xs">
+                <div class="p-2 rounded" style="background:rgba(74,30,110,0.04);border:1px solid rgba(74,30,110,0.12);">
+                  <strong>1. פֶּלֶא יוֹעֵץ — Maravilhoso Conselheiro:</strong> Sabedoria sobrenatural; planos que ultrapassam entendimento humano
+                </div>
+                <div class="p-2 rounded" style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.12);">
+                  <strong>2. אֵל גִּבּוֹר — Deus Forte:</strong> Não apenas "ungido de Deus", mas <em>Deus mesmo</em> — divindade explícita
+                </div>
+                <div class="p-2 rounded" style="background:rgba(30,74,42,0.04);border:1px solid rgba(30,74,42,0.12);">
+                  <strong>3. אֲבִיעַד — Pai da Eternidade:</strong> Eterno, fonte de vida eterna; relacionamento paternal com Seu povo
+                </div>
+                <div class="p-2 rounded" style="background:rgba(30,58,95,0.04);border:1px solid rgba(30,58,95,0.12);">
+                  <strong>4. שַׂר־שָׁלוֹם — Príncipe da Paz:</strong> Trará paz definitiva (shalom) — não apenas ausência de guerra, mas plenitude/bem-estar total
+                </div>
+                <div class="nt-fulfillment" style="border-color:rgba(30,58,95,0.3);">
+                  <strong class="text-sapphire">Cumprimento no NT:</strong>
+                  <p class="text-ink-muted mt-1">Jesus nasce em Belém (Lc 2:11); anjos proclamam paz (Lc 2:14); João 1:1 confirma divindade (<em>"o Verbo era Deus"</em>); reino sem fim (Lc 1:33; Ap 11:15).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3" style="color:#c8913a;">🌿 Isaías 11:1–10 — Renovo de Jessé</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="messianic-prophecy" style="border-color:rgba(200,145,58,0.4);">
+              <p class="font-body text-base text-ink leading-relaxed mb-2">
+                "Do tronco de Jessé sairá um <strong>rebento</strong>, e das suas raízes, um <strong>renovo</strong>. Repousará sobre ele o <strong>Espírito do Senhor</strong>... Não julgará segundo a vista dos seus olhos... mas julgará com justiça os pobres... O lobo habitará com o cordeiro... não se fará mal nem dano algum em todo o meu santo monte."
+              </p>
+              <p class="font-display text-xs text-gold-dark">Isaías 11:1–10 (resumido)</p>
+            </div>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-ink mb-2">Análise</h4>
+              <div class="space-y-2 text-xs">
+                <div class="p-2 rounded" style="background:rgba(30,74,42,0.04);border:1px solid rgba(30,74,42,0.12);">
+                  <strong>"Tronco de Jessé" (pai de Davi):</strong> Dinastia davídica parecia cortada (exílio), mas novo broto surgirá — Messias da linhagem de Davi.
+                </div>
+                <div class="p-2 rounded" style="background:rgba(74,30,110,0.04);border:1px solid rgba(74,30,110,0.12);">
+                  <strong>Sete espíritos (11:2–3):</strong> Espírito do Senhor + sabedoria + entendimento + conselho + fortaleza + conhecimento + temor do Senhor = plenitude do Espírito (Ap 1:4; 4:5 — sete espíritos diante do trono).
+                </div>
+                <div class="p-2 rounded" style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.15);">
+                  <strong>Reino messiânico de paz:</strong> Lobos com cordeiros, leopardos com cabritos — reversão da Queda; criação reconciliada. Ainda futuro (segunda vinda).
+                </div>
+                <div class="nt-fulfillment" style="border-color:rgba(30,58,95,0.3);">
+                  <strong class="text-sapphire">Cumprimento no NT:</strong>
+                  <p class="text-ink-muted mt-1">Jesus = filho de Davi (Mt 1:1; Lc 3:31); Espírito desce sobre Ele (Mt 3:16); reino inaugurado mas não consumado — aguarda Parusia.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Continuação na próxima seção devido ao tamanho -->
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Isaías (Parte 1) · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

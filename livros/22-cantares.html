@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cantares — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    /* Poema de amor */
+    .love-poem {
+      border-radius: 10px;
+      padding: 1.25rem;
+      border-left: 4px solid;
+      background: linear-gradient(135deg, rgba(255,255,255,0.6) 0%, rgba(219,112,147,0.06) 100%);
+      font-style: italic;
+      transition: all 0.3s ease;
+    }
+    .love-poem:hover {
+      transform: translateX(6px);
+      box-shadow: 0 4px 12px rgba(219,112,147,0.15);
+    }
+
+    /* Diálogo entre amados */
+    .dialogue-box {
+      border-radius: 8px;
+      padding: 1rem;
+      border: 1px solid;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Metáforas sensuais */
+    .metaphor-card {
+      border-radius: 10px;
+      padding: 1rem;
+      border: 1px solid;
+      background: rgba(255,255,255,0.5);
+      transition: transform 0.2s ease;
+    }
+    .metaphor-card:hover {
+      transform: scale(1.02);
+    }
+
+    /* Interpretação alegórica */
+    .allegorical-reading {
+      border-radius: 12px;
+      padding: 1.25rem;
+      border: 2px solid;
+      background: linear-gradient(135deg, rgba(74,30,110,0.05) 0%, rgba(255,255,255,0.5) 100%);
+      position: relative;
+    }
+    .allegorical-reading::before {
+      content: '📜';
+      position: absolute;
+      top: -14px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 1.8rem;
+      background: #fdf8ef;
+      padding: 0 10px;
+    }
+
+    /* Jardim/Natureza */
+    .garden-imagery {
+      border-radius: 8px;
+      padding: 0.875rem;
+      border: 1px solid;
+      display: flex;
+      gap: 0.75rem;
+      align-items: flex-start;
+      background: rgba(144,238,144,0.08);
+    }
+
+    /* Refrão */
+    .refrain-box {
+      border-radius: 10px;
+      padding: 1rem 1.25rem;
+      border: 2px dashed;
+      background: rgba(219,112,147,0.06);
+      font-style: italic;
+      text-align: center;
+    }
+
+    /* Selo de amor */
+    .seal-of-love {
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 3px solid;
+      background: linear-gradient(135deg, rgba(139,32,32,0.08) 0%, rgba(219,112,147,0.08) 100%);
+      position: relative;
+    }
+    .seal-of-love::before {
+      content: '💖';
+      position: absolute;
+      top: -18px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 2.2rem;
+      background: #fdf8ef;
+      padding: 0 12px;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS POÉTICOS · 22º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(219,112,147,0.2);">
+        Cantares
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>שִׁיר הַשִּׁירִים</em> (Shir HaShirim) — "Cântico dos Cânticos" ou "O Mais Sublime dos Cânticos"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        A celebração bíblica do amor humano · <strong>poesia erótica sacralizada</strong> · onde corpo e espírito não se opõem · alegorizado como amor entre Deus e Seu povo
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card" style="border-color:rgba(219,112,147,0.3);">
+          <div class="font-display text-3xl font-bold text-gold-dark">8</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card" style="border-color:rgba(219,112,147,0.3);">
+          <div class="font-display text-3xl font-bold text-gold-dark">117</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card" style="border-color:rgba(219,112,147,0.3);">
+          <div class="font-display text-2xl font-bold text-gold-dark">0×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">menções a "Deus"</div>
+        </div>
+        <div class="stat-card" style="border-color:rgba(219,112,147,0.3);">
+          <div class="font-display text-2xl font-bold text-gold-dark">52×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">palavras de amor</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(219,112,147,0.08);border:1px solid rgba(219,112,147,0.25);">
+              <span class="font-display text-xs font-bold" style="color:#db7093;">22º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">5º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Poéticos/Sapienciais</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Megillot</span>
+              <span class="font-body text-sm text-ink">Um dos <strong>cinco rolos</strong> — lido na Páscoa</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro Mais Controverso da Bíblia</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Cantares é escandaloso: <strong>poesia erótica explícita</strong> sem uma única menção a Deus, Lei, aliança, pecado, redenção. Descreve corpos com linguagem sensual, celebra desejo sexual mútuo, exalta beleza física. Rabino Akiva (séc. II d.C.) disse: <em>"O mundo inteiro não vale o dia em que Cantares foi dado a Israel — todos os escritos são santos, mas Cantares é <strong>santíssimo</strong>."</em>
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Como entrou no cânon? <strong>Interpretação alegórica</strong> salvou-o: judeus leram como amor entre Deus e Israel; cristãos como amor entre Cristo e Igreja. Mas texto literal celebra <em>amor humano, físico, sexual</em> — e isso é também teológico. Deus criou sexualidade; Cantares a sacraliza.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Grande Debate -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Grande Debate — Literal ou Alegórico?</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3" style="color:#db7093;">👫 Leitura Literal — Amor Humano Celebrado</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            <strong>Tese:</strong> Cantares é exatamente o que parece — <strong>poesia de amor erótico</strong> entre homem e mulher. Celebra sexualidade como criação boa de Deus, sem culpa nem vergonha. É Gênesis 2:25 em forma poética: <em>"Estavam ambos nus... e não se envergonhavam."</em>
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(219,112,147,0.06);border:1px solid rgba(219,112,147,0.2);">
+              <strong style="color:#db7093;">✓ Argumentos a favor:</strong>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-ink-muted">
+                <li>Linguagem sensorial explícita — beijos (1:2), seios (4:5; 7:3, 7–8), abraços (2:6; 8:3)</li>
+                <li>Desejo mútuo — mulher tão ativa quanto homem (não patriarcal passivo)</li>
+                <li>Nenhuma alegoria óbvia no texto — não há "código" evidente</li>
+                <li>Outras culturas antigas tinham poesia de amor similar (Egito, Mesopotâmia)</li>
+                <li>Deus criou sexo; celebrá-lo glorifica Criador</li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">Implicação teológica:</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Sexualidade humana não é "mal necessário" para procriação — é <strong>dom bom</strong> para prazer, intimidade, união. Dualismo platônico (corpo = mau, espírito = bom) é <em>antibíblico.</em> Cantares rejeita isso radicalmente.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3 text-violet">📖 Leitura Alegórica — Amor Divino Simbolizado</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            <strong>Tese:</strong> Cantares usa linguagem de amor humano para descrever <strong>amor entre Deus e povo</strong> (judaísmo) ou <strong>Cristo e Igreja</strong> (cristianismo). Metáfora matrimonial é comum em profetas (Os 1–3; Jr 2–3; Ez 16; Is 54).
+          </p>
+          <div class="space-y-2 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <strong class="text-violet">✓ Argumentos a favor:</strong>
+              <ul class="mt-1 space-y-1 list-disc list-inside text-ink-muted">
+                <li>AT usa casamento como metáfora de aliança (Ex 19; Os 2:19–20)</li>
+                <li>NT chama Igreja de "noiva de Cristo" (Ef 5:25–32; Ap 19:7; 21:2)</li>
+                <li>Judaísmo sempre leu assim — sem alegoria, não teria entrado no cânon</li>
+                <li>Bernard de Claraval pregou <strong>86 sermões</strong> sobre Cantares — todo alegórico</li>
+                <li>Evita "escândalo" de erotismo na Bíblia</li>
+              </ul>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">Problema:</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Alegoria pode ignorar texto literal completamente. Exemplo: <em>"Teus seios são como dois filhos gêmeos de gazela"</em> (4:5) vira "Moisés e Arão" ou "Antigo e Novo Testamento" (interpretações medievais). Forçado? Sim. Texto resiste a essa leitura.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-5 p-5 allegorical-reading" style="border-color:rgba(200,145,58,0.35);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-3 text-center">🤝 Síntese — Ambas as Leituras São Válidas</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+          <strong>Posição moderna equilibrada:</strong> Cantares funciona em <strong>dois níveis simultâneos</strong> — não é <em>ou</em> literal <em>ou</em> alegórico, mas <em>ambos.</em>
+        </p>
+        <div class="grid md:grid-cols-2 gap-3 text-xs">
+          <div class="p-3 rounded" style="background:rgba(255,255,255,0.6);">
+            <strong>Nível 1 — Literal/Primário:</strong>
+            <p class="text-ink-muted mt-1">Celebração do amor conjugal humano. Deus aprova, até <em>ordena</em> deleite sexual no casamento (Gn 1:28; Pv 5:18–19; 1Co 7:3–5). Cantares é "manual poético" de amor erótico santificado.</p>
+          </div>
+          <div class="p-3 rounded" style="background:rgba(255,255,255,0.6);">
+            <strong>Nível 2 — Tipológico/Secundário:</strong>
+            <p class="text-ink-muted mt-1">Casamento humano é <em>tipo</em> (sombra) de realidade maior — união Cristo-Igreja (Ef 5:31–32). Paulo diz que Gn 2:24 (<em>"deixará pai e mãe..."</em>) sempre apontou para Cristo. Cantares também.</p>
+          </div>
+        </div>
+        <p class="font-body text-sm text-ink-muted mt-3 leading-relaxed text-center italic">
+          <strong>Conclusão:</strong> Ler Cantares <em>apenas</em> literal = perder profundidade teológica. Ler <em>apenas</em> alegórico = desprezar bondade do corpo/sexo. <strong>Leia literal primeiro; depois veja Cristo refletido no amor humano perfeito.</strong>
+        </p>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro — Drama ou Coleção?</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Cantares não tem narrativa clara — é <strong>série de poemas</strong> trocados entre amados. Estudiosos debatem: é drama (enredo)? Antologia (coleção de poemas separados)? Musical (libreto)? Consenso: <strong>poesia lírica</strong> sem trama linear, mas com progressão emocional — cortejo → consumação → separação temporária → reunião → celebração.
+      </p>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(219,112,147,0.06);border-color:rgba(219,112,147,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold" style="color:#db7093;">1:1–2:7</span>
+            <div class="font-body text-xs text-ink-faint mt-1">DESEJO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold" style="color:#db7093;" class="mb-1">Anseio Inicial — "Beija-me com os Beijos da Tua Boca"</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Ela:</strong> <em>"Beija-me... porque melhor é o teu amor do que o vinho"</em> (1:2) — abertura escandalosamente erótica. Mulher <em>inicia</em>, não espera passivamente.<br/>
+              <strong>Ele:</strong> Elogia beleza dela com metáforas (égua de Faraó, olhos de pomba).<br/>
+              <strong>Refrão 1:</strong> <em>"Conjuro-vos... que não acordeis nem desperteis o amor até que este o queira"</em> (2:7) — amor tem timing próprio, não pode ser forçado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(144,238,144,0.08);border-color:rgba(144,238,144,0.3);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-forest">2:8–3:5</span>
+            <div class="font-body text-xs text-ink-faint mt-1">BUSCA</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">Primavera e Busca Noturna — "Levanta-te, Minha Querida"</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Ele:</strong> <em>"Levanta-te, minha querida... porque eis que passou o inverno... surgem as flores na terra"</em> (2:10–12) — primavera = despertar sexual.<br/>
+              <strong>Ela:</strong> Sonha que o busca pelas ruas à noite, perguntando guardas: <em>"Vistes aquele a quem ama a minha alma?"</em> (3:3). Finalmente o encontra, leva-o à casa da mãe.<br/>
+              <strong>Refrão 2:</strong> Repete advertência (3:5) — não apressar amor.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-gold-dark">3:6–5:1</span>
+            <div class="font-body text-xs text-ink-faint mt-1">CASAMENTO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">Procissão Nupcial e Descrição dos Amados</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Procissão:</strong> <em>"Quem é esta que sobe do deserto... em colunas de fumaça?"</em> (3:6) — cortejo real.<br/>
+              <strong>Ele descreve ela (cap. 4):</strong> <em>"Que formosa és, minha querida!... Teus olhos são como pombas... teu cabelo como rebanho... teus seios como dois filhos gêmeos de gazela"</em> — <strong>wasf</strong> (gênero poético de descrição física head-to-toe).<br/>
+              <strong>Consumação (4:16–5:1):</strong> <em>"Entre no seu jardim... comi o meu favo com o meu mel"</em> — metáfora sexual explícita. Voz divina: <em>"Comei, amigos, bebei abundantemente, ó amados"</em> (5:1) — <strong>única vez que voz externa (Deus?) aparece, abençoando união física.</strong>
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-crimson">5:2–6:3</span>
+            <div class="font-body text-xs text-ink-faint mt-1">CRISE</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Segundo Sonho — Perda Temporária</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Ela:</strong> Sonha que ele bate à porta à noite: <em>"Abre-me, minha irmã, minha querida"</em> (5:2). Ela hesita; quando abre, ele já foi. Busca-o desesperadamente, apanha dos guardas (5:7). Pergunta às filhas de Jerusalém sobre ele.<br/>
+              <strong>Ela descreve ele (5:10–16):</strong> <strong>Wasf</strong> masculino — <em>"Meu amado é alvo e rosado... sua cabeça é ouro puro... seus olhos como pombas... totalmente desejável"</em> (5:16 — única vez que palavra hebraica <em>machamadim</em>, "desejos/delícias", aparece para pessoa).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-violet">6:4–8:4</span>
+            <div class="font-body text-xs text-ink-faint mt-1">REUNIÃO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">Reconciliação e Nova Celebração</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>Ele:</strong> <em>"Formosa és, minha querida... terrível como um exército com bandeiras"</em> (6:4) — beleza que inspira reverência.<br/>
+              <strong>Ela (cap. 7):</strong> <strong>Wasf</strong> feminino — <em>"Que formosos são os teus pés nas sandálias!... Teu umbigo é como uma taça redonda... teu ventre como montão de trigo... teus seios como cachos da vide... tua estatura é semelhante à palmeira"</em> (7:1–7).<br/>
+              <strong>Ele:</strong> <em>"Subirei à palmeira, pegarei em seus ramos... teus seios sejam como cachos da vide"</em> (7:8) — imagem sensual de escalada/abraço.<br/>
+              <strong>Refrão 3:</strong> Repete (8:4).
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:80px;">
+            <span class="font-display text-sm font-bold text-sapphire">8:5–14</span>
+            <div class="font-body text-xs text-ink-faint mt-1">CONCLUSÃO</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Selo do Amor e Convite Final</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong>O versículo mais famoso (8:6–7):</strong> <em>"Põe-me como selo sobre o teu coração... porque o amor é forte como a morte... as muitas águas não podem apagar o amor... Se alguém desse todos os bens da sua casa pelo amor, seria de todo desprezado."</em><br/>
+              <strong>Fragmentos finais:</strong> Irmã pequena (8:8–9), vinha pessoal (8:11–12).<br/>
+              <strong>Último verso (8:14):</strong> Ela convida: <em>"Foge, meu amado, e faze-te semelhante ao gamo sobre os montes aromáticos!"</em> — convite para encontro final? Livro termina em suspense erótico.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Quem São os Amados? — Debate sobre Personagens</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Teoria 1 — Dois Personagens (Tradicional)</h3>
+          <div class="space-y-3 mb-4">
+            <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+              <div class="flex items-start gap-3 mb-2">
+                <span class="text-2xl">👑</span>
+                <div>
+                  <h4 class="font-display text-sm font-bold text-sapphire">O AMADO (דּוֹד, <em>dod</em>)</h4>
+                  <p class="font-body text-xs text-ink-faint">Identificado como Salomão (1:1; 3:9, 11)</p>
+                </div>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Rei rico, eloquente, apaixonado. Se for Salomão literal, é <em>antes</em> das 700 esposas/300 concubinas (1Rs 11:3) — jovem Salomão em amor monogâmico ideal.
+              </p>
+            </div>
+            <div class="p-4 rounded-xl" style="background:rgba(219,112,147,0.08);border:1px solid rgba(219,112,147,0.25);">
+              <div class="flex items-start gap-3 mb-2">
+                <span class="text-2xl">👰</span>
+                <div>
+                  <h4 class="font-display text-sm font-bold" style="color:#db7093;">A AMADA (רַעְיָה, <em>ra'yah</em>)</h4>
+                  <p class="font-body text-xs text-ink-faint">Sulamita (6:13) — nome ou origem geográfica</p>
+                </div>
+              </div>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Mulher de origem humilde (<em>"Fizeram-me guarda das vinhas; a minha vinha, que era minha, não guardei"</em> — 1:6), pele bronzeada pelo sol (1:5–6), mas de beleza excepcional. <strong>Voz ativa, desejante, não passiva.</strong>
+              </p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            <strong>Problema:</strong> Salomão teve harém gigante — seria hipócrita celebrar monogamia. Solução: texto é <em>ideal</em>, não biográfico. Ou é Salomão jovem <em>antes</em> de corrupção.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Teoria 2 — Três Personagens (Minoritária)</h3>
+          <div class="space-y-2 mb-4 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">1. Sulamita (pastora rural)</strong>
+              <p class="text-ink-muted mt-1">Jovem camponesa, moralmente pura, apaixonada.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">2. Pastor (verdadeiro amor)</strong>
+              <p class="text-ink-muted mt-1">Amor original da Sulamita — simples, genuíno, fiel.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">3. Salomão (sedutor rejeitado)</strong>
+              <p class="text-ink-muted mt-1">Tenta seduzir Sulamita com riquezas, mas ela permanece fiel ao pastor.</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            <strong>Enredo (nesta leitura):</strong> Salomão rapta Sulamita, tenta seduzi-la com luxo palaciano (caps. 1–3). Ela resiste, sonha com pastor amado (caps. 3, 5). No fim, rejeita Salomão, retorna ao pastor. Moral: amor verdadeiro > riqueza; fidelidade > sedução.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            <strong>Problema:</strong> Texto nunca distingue claramente dois homens. Maioria rejeita essa teoria como forçada.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+        <h4 class="font-display text-sm font-semibold text-violet mb-2 text-center">Personagens Secundários</h4>
+        <div class="grid md:grid-cols-3 gap-3 text-xs">
+          <div class="p-2 rounded text-center" style="background:rgba(255,255,255,0.5);">
+            <strong>Filhas de Jerusalém</strong>
+            <p class="text-ink-muted mt-1">Coro que interage com Sulamita (1:5; 2:7; 3:5, 10–11; 5:8–9; 8:4) — amigas/testemunhas</p>
+          </div>
+          <div class="p-2 rounded text-center" style="background:rgba(255,255,255,0.5);">
+            <strong>Guardas Noturnos</strong>
+            <p class="text-ink-muted mt-1">Batem na Sulamita quando ela procura amado (5:7) — representam obstáculos/oposição?</p>
+          </div>
+          <div class="p-2 rounded text-center" style="background:rgba(255,255,255,0.5);">
+            <strong>Irmãos da Sulamita</strong>
+            <p class="text-ink-muted mt-1">Mencionados brevemente (1:6; 8:8–9) — protetores da honra familiar</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Metáforas e Imagens -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Metáforas e Imagens — Linguagem Sensorial Exuberante</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Cantares usa <strong>linguagem metafórica hiperbólica</strong> — compara corpos a paisagens, animais, arquitetura, especiarias. Para ouvidos modernos soa estranho (<em>"Teus dentes são como rebanho de ovelhas tosquiadas"</em> — 4:2), mas era convenção poética do Antigo Oriente Médio. <strong>Wasf</strong> = gênero que descreve beleza física de cima para baixo (ou vice-versa) com metáforas elaboradas.
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="garden-imagery" style="border-color:rgba(144,238,144,0.4);">
+          <span class="text-2xl flex-shrink-0">🌳</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-forest mb-1">Jardim e Natureza</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+              <strong>Tema central:</strong> Jardim = corpo feminino (fechado/virgem em 4:12; aberto/acessível em 5:1). Frutas, flores, especiarias = prazeres sensuais.
+            </p>
+            <div class="text-xs space-y-1">
+              <p class="italic">• <em>"Jardim fechado és tu, minha irmã, noiva minha; manancial fechado, fonte selada"</em> (4:12)</p>
+              <p class="italic">• <em>"Entre no seu jardim e coma os seus frutos excelentes"</em> (4:16)</p>
+              <p class="italic">• <em>"Meu amado desceu ao seu jardim... para colher lírios"</em> (6:2)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="metaphor-card" style="border-color:rgba(219,112,147,0.3);">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">🦌</span>
+            <h4 class="font-display text-xs font-bold" style="color:#db7093;">Animais — Beleza e Vitalidade</h4>
+          </div>
+          <div class="text-xs space-y-1">
+            <p class="italic">• <em>"Semelhante é o meu amado ao gamo ou ao filho do veado"</em> (2:9) — agilidade, graça</p>
+            <p class="italic">• <em>"Teus seios são como dois filhos gêmeos de gazela"</em> (4:5) — simetria, delicadeza</p>
+            <p class="italic">• <em>"Teu cabelo é como o rebanho de cabras"</em> (4:1) — ondulado, abundante</p>
+            <p class="italic">• <em>"Como égua entre os carros de Faraó, assim te considero"</em> (1:9) — valorosa, rara</p>
+          </div>
+        </div>
+
+        <div class="metaphor-card" style="border-color:rgba(200,145,58,0.3);">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">🏛️</span>
+            <h4 class="font-display text-xs font-bold text-gold-dark">Arquitetura — Solidez e Majestade</h4>
+          </div>
+          <div class="text-xs space-y-1">
+            <p class="italic">• <em>"Teu pescoço é como a torre de Davi, edificada para arsenal"</em> (4:4) — elegância, força</p>
+            <p class="italic">• <em>"Teu nariz como a torre do Líbano"</em> (7:4) — proeminente, nobre (!)</p>
+            <p class="italic">• <em>"Tua estatura é semelhante à palmeira"</em> (7:7) — alta, ereta</p>
+          </div>
+        </div>
+
+        <div class="metaphor-card" style="border-color:rgba(74,30,110,0.3);">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">🍯</span>
+            <h4 class="font-display text-xs font-bold text-violet">Comida e Bebida — Prazer Sensorial</h4>
+          </div>
+          <div class="text-xs space-y-1">
+            <p class="italic">• <em>"Mel e leite estão debaixo da tua língua"</em> (4:11) — beijos doces</p>
+            <p class="italic">• <em>"Comi o meu favo com o meu mel, bebi o meu vinho com o meu leite"</em> (5:1) — consumação</p>
+            <p class="italic">• <em>"Melhor é o teu amor do que o vinho"</em> (1:2; 4:10) — intoxicante, superior</p>
+            <p class="italic">• <em>"Teu umbigo é como taça redonda, a que não falta bebida misturada"</em> (7:2) — fertilidade?</p>
+          </div>
+        </div>
+
+        <div class="metaphor-card" style="border-color:rgba(139,32,32,0.3);">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">💎</span>
+            <h4 class="font-display text-xs font-bold text-crimson">Metais e Pedras Preciosas — Valor</h4>
+          </div>
+          <div class="text-xs space-y-1">
+            <p class="italic">• <em>"Sua cabeça é ouro puro... suas pernas, colunas de mármore"</em> (5:11, 15)</p>
+            <p class="italic">• <em>"Teu pescoço com colares... faces com pendentes... colar de ouro com incrustações de prata"</em> (1:10–11)</p>
+            <p class="italic">• <em>"Mais preciosos que o ouro"</em> — amor inestimável</p>
+          </div>
+        </div>
+
+        <div class="metaphor-card" style="border-color:rgba(30,58,95,0.3);">
+          <div class="flex items-start gap-2 mb-2">
+            <span class="text-xl">🌹</span>
+            <h4 class="font-display text-xs font-bold text-sapphire">Flores e Especiarias — Fragrância</h4>
+          </div>
+          <div class="text-xs space-y-1">
+            <p class="italic">• <em>"Eu sou a rosa de Sarom, o lírio dos vales"</em> (2:1) — beleza singela</p>
+            <p class="italic">• <em>"Como o lírio entre os espinhos, tal é a minha amada"</em> (2:2) — distinta, pura</p>
+            <p class="italic">• <em>"Nardo e açafrão, cálamo e cinamomo... mirra e aloés"</em> (4:13–14) — perfume exótico</p>
+            <p class="italic">• <em>"Seu cheiro é como o do Líbano"</em> (4:11) — cedros aromáticos</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="mt-5 p-4 rounded-xl"
+           style="background:rgba(219,112,147,0.08);border:1px solid rgba(219,112,147,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong style="color:#db7093;">Por que metáforas tão elaboradas?</strong> (1) Convenção poética — <em>wasf</em> era gênero reconhecido; (2) Pudor cultural — falar diretamente seria crasso; metáforas permitem erotismo velado; (3) Sacralização — transformar corpo em paisagem divina eleva sexo a arte, não reduz a biologia; (4) <strong>Prazer estético</strong> — não é apenas "manual sexual", mas celebração poética de beleza que glorifica Criador.
+        </p>
+      </div>
+    </section>
+
+    <!-- O Selo do Amor -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">8:6–7 — O Selo do Amor (Clímax Teológico)</div>
+      <div class="seal-of-love mb-5" style="border-color:rgba(139,32,32,0.35);">
+        <div class="dark-quote text-center mb-3" style="border:none;">
+          <p class="font-body text-xl text-ink leading-relaxed mb-3">
+            "Põe-me como <strong>selo</strong> sobre o teu coração, como <strong>selo</strong> sobre o teu braço, porque o <strong>amor é forte como a morte</strong>, e duro como o Seol, o ciúme; as suas brasas são brasas de fogo, <strong>labaredas do Senhor</strong>. As muitas águas não podem apagar o amor, nem os rios afogá-lo; ainda que alguém desse todos os bens da sua casa pelo amor, seria de todo desprezado."
+          </p>
+          <p class="font-display text-sm text-crimson tracking-widest">Cantares 8:6–7</p>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Análise Verso a Verso</h3>
+          <div class="space-y-3 text-xs">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">"Põe-me como selo sobre o teu coração... sobre o teu braço"</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                <strong>Selo</strong> (חוֹתָם, <em>chotam</em>) = anel-sinete ou amuleto usado no peito ou braço — símbolo de posse, identidade, autoridade. <em>"Põe-me como selo"</em> = <em>"Marca-me como tua propriedade permanente, identifica-te comigo totalmente."</em> Coração = centro emocional; braço = ação. Amor total — sentimento <em>e</em> atos.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <strong class="text-crimson">"O amor é forte como a morte"</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Morte é força irresistível, inevitável. <strong>Amor verdadeiro também.</strong> Ninguém escapa da morte; ninguém (que ama de verdade) escapa do amor. Paralelo surpreendente — amor = força cósmica tão poderosa quanto morte.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <strong class="text-forest">"Duro como o Seol, o ciúme"</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Seol = reino dos mortos — implacável, não liberta. <strong>Ciúme</strong> (קִנְאָה, <em>qin'ah</em>) aqui não é inveja patológica, mas <em>zelo possessivo</em> — amor que não tolera rival. Deus tem <em>qin'ah</em> por Seu povo (Êx 20:5; 34:14) — ciúme santo.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.05);border:1px solid rgba(184,74,16,0.18);">
+              <strong class="text-fire">"Brasas de fogo, labaredas do Senhor"</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Hebraico: <strong>שַׁלְהֶבֶתְיָה</strong> (<em>shalhevety-ah</em>) — <em>"labaredas de Yah"</em> (forma abreviada de Yahweh). <strong>ÚNICA menção ao nome divino em Cantares!</strong> Amor humano = reflexo do fogo divino. Deus é fonte última de paixão/amor.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <strong class="text-sapphire">"As muitas águas não podem apagar o amor"</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Águas/rios = caos, provações, tempo. Amor verdadeiro <strong>sobrevive</strong> a tudo — adversidades, distância, envelhecimento. Indestrutível.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <strong class="text-gold-dark">"Ainda que alguém desse todos os bens... seria desprezado"</strong>
+              <p class="text-ink-muted mt-1 leading-relaxed">
+                Amor não se compra. Riqueza material é inútil para adquirir amor genuíno. Quem tenta <em>comprar</em> amor revela que não o entende — e será ridicularizado.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Significado Teológico</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">🔥 Amor como Atributo Divino</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Labaredas de Yah"</em> revela: amor humano intenso é <strong>participação no amor divino.</strong> 1Jo 4:8 confirma: <em>"Deus é amor."</em> Paixão conjugal não é <em>inferior</em> a amor ágape — é <em>tipo</em> (sombra) dele. Amor humano verdadeiro reflete Amor que criou universo.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">💀 Amor vs. Morte — Empate Cósmico</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                AT raramente fala de vitória sobre morte (exceto Daniel, Isaías tardio). Cantares não diz que amor <em>vence</em> morte, mas que é <em>igual</em> a ela em força. NT completa: Cristo ressuscitou — <em>"Tragada foi a morte pela vitória"</em> (1Co 15:54). Amor (encarnado em Cristo) <strong>derrotou</strong> morte.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">💍 Aliança Indissolúvel</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Selo sobre o coração"</em> = compromisso permanente. Casamento não é contrato rescindível, mas <strong>aliança</strong> (בְּרִית, <em>berit</em>) — como aliança Deus-Israel. Malaquias 2:14 chama esposa de <em>"companheira da tua aliança."</em> Divórcio = quebra de berit sagrado.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">🌊 Provações Não Extinguem</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>"Muitas águas não podem apagar"</em> — amor verdadeiro sobrevive a: doenças, pobreza, envelhecimento, traições superadas, distância, tempo. Não é sentimento volátil, mas <strong>compromisso de vontade</strong> enraizado em caráter divino.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 p-4 rounded-xl"
+               style="background:rgba(219,112,147,0.08);border:1px solid rgba(219,112,147,0.25);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong style="color:#db7093;">Este é o coração de Cantares.</strong> Após 7,5 capítulos de poesia sensual, o livro declara: amor não é apenas atração física (embora a celebre), nem sentimento passageiro. É <strong>força cósmica, fogo divino, aliança indestrutível.</strong> Sexo sem amor = vazio. Amor sem compromisso = ilusão. Mas amor verdadeiro — selado, forte como morte, chama de Yah, indestrutível — esse é <em>santo.</em> Por isso Cantares está na Bíblia.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interpretações Históricas -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">História da Interpretação — Judeus, Cristãos, Reformadores</div>
+      <div class="space-y-4">
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">📖 Judaísmo — Yahweh e Israel</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Targum e Midrash</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Targum (tradução aramaica) interpreta todo Cantares como alegoria do Êxodo: Amado = Yahweh; Amada = Israel; Beijos = entrega da Torá no Sinai; Jardim = Terra Prometida; etc. Midrash Rabbah aplica cada verso a eventos da história de Israel.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Rabino Akiva (séc. II)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Defendeu veementemente Cantares: <em>"Ninguém em Israel jamais discutiu sobre Cantares... todos os Escritos são santos, mas Cantares é o Santo dos Santos."</em> Sem alegorização, teria sido rejeitado. Com ela, tornou-se <em>mais</em> santo que Torá.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Leitura na Páscoa</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Judaísmo lê Cantares durante Páscoa (festa do Êxodo). Por quê? Porque Êxodo = "lua de mel" entre Yahweh e Israel. Deserto = noivado; Sinai = casamento; Terra = consumação. Cantares celebra esse romance.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Misticismo Judaico (Kabbalah)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Zohar (texto cabalístico) vê Cantares como união mística entre <em>Kadosh Baruch Hu</em> (Santo, Bendito Seja Ele) e <em>Shekhinah</em> (presença divina feminina). Eros humano = sombra de eros divino interno.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">✝️ Cristianismo Primitivo — Cristo e Igreja</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Orígenes (185–254 d.C.)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Escreveu 10 volumes de comentário alegórico sobre Cantares. Amado = Cristo; Amada = Igreja (coletivo) ou alma individual. <em>"Beijos"</em> = revelação progressiva (AT = beijo nos pés; Encarnação = beijo nos lábios). Influenciou toda patrística.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <span class="font-display text-xs font-bold text-earth">Bernardo de Claraval (1090–1153)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Pregou <strong>86 sermões</strong> sobre Cantares — só chegou ao cap. 3! Cada verso = tesouro místico. <em>"Beije-me"</em> = alma clamando por união com Logos. Influenciou espiritualidade contemplativa/mística medieval.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(184,74,16,0.05);border:1px solid rgba(184,74,16,0.18);">
+              <span class="font-display text-xs font-bold text-fire">Teresa de Ávila (1515–1582)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Usou linguagem de Cantares para descrever união mística com Cristo. <em>"Êxtase"</em> = encontro erótico-espiritual. Escultura de Bernini (<em>Êxtase de Santa Teresa</em>) captura isso — ambiguidade entre êxtase sexual e espiritual.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">João da Cruz (1542–1591)</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <em>Cântico Espiritual</em> — poema místico baseado em Cantares. <em>"Noite escura da alma"</em> = busca da Amada (cap. 3, 5). União transformante com Deus descrita em termos nupciais-eróticos.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">⚔️ Reforma Protestante — Retorno ao Literal (?)</h3>
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lutero</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Hesitou. Primeiro aceitou alegoria (Deus-Israel). Depois sugeriu: Salomão agradecendo a Deus por governo pacífico. Nunca totalmente confortável com Cantares. Chamou de <em>"cântico carnal de amor carnal."</em>
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Calvino</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                <strong>Nunca comentou Cantares</strong> — único livro do AT que evitou! Provavelmente por desconforto com alegoria excessiva <em>e</em> com erotismo literal. Silêncio eloquente.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Puritanos</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Mantiveram alegoria Cristo-Igreja. Razão: proteger contra erotismo "perigoso". Mas alguns (como Matthew Henry) começaram a ver <em>ambas</em> leituras — literal (casamento santificado) <em>e</em> alegórica (Cristo-Igreja) como compatíveis.
+              </p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Modernidade</span>
+              <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+                Século XIX–XX: erudição crítica rejeitou alegoria como eisegese (ler <em>no</em> texto, não <em>do</em> texto). Retorno ao literal — Cantares é poesia de amor, ponto. Mas teologia evangélica recuperou <em>tipologia</em>: literal é primário; alegórico é válido <em>secundariamente</em> porque casamento humano <em>é tipo</em> de união Cristo-Igreja (Ef 5:31–32).
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-6">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Shir HaShirim" — Superlativo hebraico:</strong> Hebraico não tem forma de superlativo como português (<em>-íssimo</em>). Usa construção <em>"X dos X"</em> = <em>"o maior X."</em> Exemplos: <em>"Santo dos Santos"</em> = Santíssimo; <em>"Rei dos reis"</em> = Supremo Rei; <em>"Vaidade de vaidades"</em> = Totalmente vão. <strong>Shir HaShirim</strong> = <em>"O mais excelente de todos os cânticos."</em> Salomão escreveu 1.005 cânticos (1Rs 4:32) — este é o melhor.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Único livro sem menção explícita a Deus — mas יָהּ aparece uma vez:</strong> Cantares e Ester são únicos livros do AT que nunca mencionam "Deus", "Senhor" (Yahweh), "Elohim", etc. <em>Exceto</em> Ct 8:6 — <em>"shalhevety-<strong>ah</strong>"</em> (labaredas de <strong>Yah</strong>) — forma abreviada de Yahweh. Pode ser apenas intensificador (<em>"chamas tremendas"</em>), mas tradição vê como única menção divina no livro — justamente no verso mais teológico.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Rabinos proibiram jovens de ler Cantares:</strong> Mishná (Yadaim 3:5, séc. II d.C.) declara Cantares como Escritura sagrada. Mas Talmude adverte: <em>"Quem canta trechos de Cantares em banquetes, tratando-o como canção secular, não tem parte no mundo vindouro."</em> Jovens menores de 30 anos eram desencorajados — medo de interpretação erótica sem maturidade espiritual.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Sulamita" (6:13) — quem é?</strong> Hebraico <em>Shulammit</em> (שׁוּלַמִּית). Teorias: (1) Feminino de <em>Shelomo</em> (Salomão) — "a Salomônica", par perfeito do rei; (2) Natural de Suném (cidade de Abisague, 1Rs 1:3); (3) Derivado de <em>shalom</em> (paz) — "a pacífica". Maioria prefere (1) ou (3).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Paralelos com poesia egípcia antiga:</strong> <em>Papiro Harris 500</em> e <em>Cânticos de Amor de Chester Beatty</em> (Egito, ~1300–1100 a.C.) contêm poesia erótica similar — jardins, flores, metáforas corporais, diálogos entre amantes. Não é plágio — gênero literário comum no Antigo Oriente Médio. Israel santificou forma secular.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Raposas pequenas que destroem vinhas" (2:15):</strong> Verso enigmático. Literal: raposas comem uvas; metaforicamente: <em>pequenos</em> pecados/problemas que destroem relacionamento (vinhas = amor nascente). Alguns veem advertência contra terceiros que tentam sabotar amor. Outros: pragas que atacam romance (ciúme, desconfiança, etc.).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Cantares influenciou arte ocidental massivamente:</strong> Pinturas renascentistas de Cristo-Noiva (Botticelli, Fra Angelico); <em>Êxtase de Santa Teresa</em> (Bernini); poesia mística (João da Cruz, Teresa); músicas (Monteverdi, Palestrina musicaram trechos); literatura (Dante — Beatriz como tipo da Amada; Milton). Até românticos seculares (Goethe) citaram.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Uso na liturgia matrimonial cristã:</strong> Muitas liturgias nupciais citam Ct 8:6–7 (<em>"Põe-me como selo..."</em>). Casamento cristão não é apenas contrato civil — é <em>sacramento</em> (catolicismo/ortodoxia) ou <em>ordenança sagrada</em> (protestantismo) que reflete Cristo-Igreja. Cantares fornece linguagem teológica para isso.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Feminismo e Cantares:</strong> Estudiosas feministas celebram Cantares: (1) Mulher tem voz <em>ativa</em> — não é objeto passivo; (2) Ela inicia ("Beije-me"), busca, deseja tão intensamente quanto ele; (3) Não há punição divina por sensualidade — celebração mútua sem culpa; (4) Contraste com textos patriarcais do AT — aqui há <em>mutualidade</em> edênica (Gn 2, antes da Queda).
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Cantares está na Bíblia?</strong> Pergunta que incomodou até teólogos ortodoxos. Resposta histórica: alegoria salvou-o. Resposta teológica moderna: porque <strong>Deus criou sexualidade</strong> — não é concessão ao pecado, mas dom bom (Gn 1:31; 2:24–25). Dualismo gnóstico/platônico (corpo = mal) é heresia. Encarnação confirma: Deus assumiu corpo; Cristo celebrou casamento em Caná; Paulo chama leito conjugal de <em>"honroso"</em> (Hb 13:4). Cantares é <em>anti-gnóstico</em> — celebra corpo, eros, prazer físico como <strong>dádivas divinas.</strong> Não é menos santo que Levítico — apenas celebra aspecto diferente (igualmente criado) da existência humana. E tipologicamente aponta para união Cristo-Igreja (Ef 5:31–32) — mistério supremo do universo. <strong>Cantares ensina: amor humano verdadeiro — físico, emocional, espiritual, comprometido — é mais próximo que chegamos de experimentar amor divino nesta vida.</strong> Por isso é <em>"santíssimo."</em>
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave finais -->
+    <section class="text-center py-8 animate-fade-up animate-delay-7">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Beija-me com os beijos da tua boca; porque melhor é o teu amor do que o vinho."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Cantares 1:2 — Abertura escandalosamente erótica</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Conjuro-vos, ó filhas de Jerusalém... que não acordeis nem desperteis o amor até que este o queira."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Cantares 2:7 — Amor tem timing próprio, não pode ser forçado</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Eu sou do meu amado, e o meu amado é meu."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Cantares 6:3 — Posse mútua, entrega recíproca</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Põe-me como selo sobre o teu coração... porque o amor é forte como a morte... as suas brasas são labaredas do Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Cantares 8:6 — O clímax teológico — amor como fogo divino</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Cantares · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

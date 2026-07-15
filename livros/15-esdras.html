@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Esdras — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(30,74,42,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+
+    /* Card das três ondas de retorno */
+    .wave-card {
+      border-radius: 12px;
+      border: 1px solid;
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .wave-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(200,145,58,0.13);
+    }
+    .wave-number {
+      position: absolute;
+      top: 12px; right: 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      font-weight: 700;
+      opacity: 0.07;
+      line-height: 1;
+    }
+
+    /* Oposição / etapas */
+    .opposition-item {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      border: 1px solid;
+      transition: transform 0.2s ease;
+    }
+    .opposition-item:hover { transform: translateX(4px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 15º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Esdras
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>עֶזְרָא</em> (Ezrá) — "Ajuda" ou "O Senhor ajuda"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Originalmente <strong>um único livro</strong> com Neemias no hebraico · o livro do retorno do exílio e da restauração da identidade de Israel
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">10</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">280</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">2 ondas</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de retorno do exílio</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~80 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.22);">
+              <span class="font-display text-xs font-bold text-forest">15º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">10º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Pós-exílio</span>
+              <span class="font-body text-sm text-ink">1º dos três livros do período pós-exílico: <strong>Esdras, Neemias e Ester</strong></span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro do Retorno</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Esdras começa exatamente onde 2 Crônicas termina — com o <strong>decreto de Ciro</strong>. É o livro do cumprimento: as promessas de Jeremias sobre os 70 anos de exílio (Jr 29:10) se realizam. O povo volta. O Templo é reconstruído. A Lei é restaurada.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O livro está escrito em duas línguas: a maior parte em <strong>hebraico</strong> e alguns trechos em <strong>aramaico</strong> (4:8–6:18 e 7:12–26) — a língua oficial do Império Persa, usada nos documentos reais citados diretamente no texto.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha do Tempo -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Linha do Tempo — O Contexto Histórico</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Esdras não narra eventos contínuos — há uma lacuna de <strong>~60 anos</strong> entre os capítulos 6 e 7. O livro cobre dois momentos separados de retorno e restauração.
+      </p>
+
+      <div class="space-y-2">
+        <div class="opposition-item" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 mt-0.5" style="min-width:56px;">538 a.C.</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Decreto de Ciro · 1ª onda de retorno</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">~50.000 exilados voltam com Zorobabel e o sumo sacerdote Jesua</p>
+          </div>
+        </div>
+        <div class="opposition-item" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.18);">
+          <span class="font-display text-xs font-bold text-sapphire flex-shrink-0 mt-0.5" style="min-width:56px;">536 a.C.</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Fundações do 2º Templo lançadas</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">Alegria e choro misturados — os velhos que viram o 1º Templo choraram</p>
+          </div>
+        </div>
+        <div class="opposition-item" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.18);">
+          <span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5" style="min-width:56px;">536–520</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">A obra é paralisada por ~16 anos</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">Oposição dos povos da terra, carta ao rei Artaxerxes que interrompe a construção</p>
+          </div>
+        </div>
+        <div class="opposition-item" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.2);">
+          <span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5" style="min-width:56px;">520 a.C.</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Profetas Ageu e Zacarias motivam o povo</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">A obra recomeça sob o estímulo profético — um dos poucos casos em que profecia e ação histórica se cruzam tão explicitamente</p>
+          </div>
+        </div>
+        <div class="opposition-item" style="background:rgba(30,74,42,0.07);border-color:rgba(30,74,42,0.25);">
+          <span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5" style="min-width:56px;">516 a.C.</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">O 2º Templo é concluído e dedicado</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">Exatamente 70 anos após a destruição do 1º Templo em 586 a.C. — cumprindo a profecia de Jeremias</p>
+          </div>
+        </div>
+        <div class="opposition-item" style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.2);">
+          <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 mt-0.5" style="min-width:56px;">~480 a.C.</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Período de Ester (entre os cap. 6 e 7)</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">A história de Ester acontece durante esta lacuna de ~60 anos — os judeus que ficaram na Pérsia</p>
+          </div>
+        </div>
+        <div class="opposition-item" style="background:rgba(74,30,110,0.06);border-color:rgba(74,30,110,0.2);">
+          <span class="font-display text-xs font-bold text-violet flex-shrink-0 mt-0.5" style="min-width:56px;">458 a.C.</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Esdras chega a Jerusalém · 2ª onda de retorno</p>
+            <p class="font-body text-xs text-ink-muted mt-0.5">O escriba e sacerdote Esdras parte da Babilônia com ~1.500 homens e suas famílias, autorizado pelo decreto de Artaxerxes</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura — Duas Ondas de Restauração</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="wave-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.22);">
+          <span class="wave-number text-forest">1</span>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-display text-xl font-bold text-forest opacity-40">I</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-forest">A 1ª Onda — O Templo</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulos 1–6 · 538–516 a.C.</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O decreto de Ciro, a lista dos que retornaram (~50.000 pessoas), o retorno dos objetos sagrados do Templo roubados por Nabucodonosor, o lançamento das fundações, a oposição dos povos da terra, a paralisação de 16 anos, a retomada sob Ageu e Zacarias e a dedicação do <strong>Segundo Templo</strong> em 516 a.C.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="font-display text-xs font-bold text-forest">Líderes:</span>
+            <span class="font-body text-xs text-ink-muted">Zorobabel (político) + Jesua (sacerdote)</span>
+          </div>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="font-display text-xs font-bold text-forest">Missão:</span>
+            <span class="font-body text-xs text-ink-muted">Reconstruir o <strong>Templo</strong></span>
+          </div>
+        </div>
+
+        <div class="wave-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="wave-number text-violet">2</span>
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-display text-xl font-bold text-violet opacity-40">II</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-violet">A 2ª Onda — A Lei</h4>
+              <p class="font-body text-xs text-ink-faint">Capítulos 7–10 · 458 a.C.</p>
+            </div>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O decreto de Artaxerxes enviando Esdras com autoridade real e recursos, a lista dos que retornaram com ele, o jejum junto ao rio Aava pedindo proteção para a jornada, a chegada a Jerusalém, a descoberta do casamento com mulheres estrangeiras e a <strong>crise dos casamentos mistos</strong> — o grande dilema espiritual do livro.
+          </p>
+          <div class="flex items-center gap-2">
+            <span class="font-display text-xs font-bold text-violet">Líder:</span>
+            <span class="font-body text-xs text-ink-muted">Esdras — escriba, sacerdote, mestre da Lei</span>
+          </div>
+          <div class="flex items-center gap-2 mt-1">
+            <span class="font-display text-xs font-bold text-violet">Missão:</span>
+            <span class="font-body text-xs text-ink-muted">Restaurar a <strong>Lei e a identidade</strong> de Israel</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Personagens -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Personagens Principais</div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <div class="person-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">🏛️</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-forest mb-1">Zorobabel</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Neto do rei Joaquim — da linhagem davídica. Governador da Judeia sob o domínio persa e líder da 1ª onda de retorno. Supervisionou a reconstrução do Templo apesar da oposição feroz. É mencionado nas genealogias de Jesus tanto em Mateus (1:12–13) quanto em Lucas (3:27).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">🎺</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-gold-dark mb-1">Jesua (Josué)</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Sumo sacerdote que retornou com Zorobabel. Parceiro inseparável de Zorobabel — o eixo civil-sacerdotal que Zacarias 4 chama de "dois ungidos". O profeta Zacarias teve visões sobre ele sendo acusado pelo diabo e purificado por Deus (Zc 3:1–5).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">📜</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-violet mb-1">Esdras</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                Sacerdote, escriba e mestre da Lei de Moisés. Sua genealogia (7:1–5) traça sua linhagem diretamente até Arão. O texto o descreve com uma frase lapidar: <em>"Esdras tinha posto o coração em estudar a lei do Senhor, e em a cumprir, e em ensinar em Israel os seus estatutos e juízos."</em> (7:10) — o modelo do líder espiritual comprometido com a Palavra.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="person-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex gap-4">
+            <span class="text-3xl flex-shrink-0">👑</span>
+            <div>
+              <h4 class="font-display text-base font-semibold text-sapphire mb-1">Ciro e Artaxerxes — Reis Persas</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">
+                <strong>Ciro</strong> (538 a.C.) emitiu o decreto inicial de retorno — cumprindo a profecia de Isaías. <strong>Dario</strong> confirmou o decreto após a oposição. <strong>Artaxerxes</strong> (458 a.C.) enviou Esdras com uma carta extraordinária dando-lhe plena autoridade legal e financeira. Três reis pagãos usados por Deus para restaurar seu povo.
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A Oposição e a Reconstrução -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Oposição à Reconstrução — Cap. 4–5</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Nenhuma obra de Deus avança sem resistência. A reconstrução do Templo enfrentou oposição organizada e estratégica por parte dos "povos da terra" — possivelmente descendentes dos povos que a Assíria havia instalado em Samaria (2 Rs 17).
+      </p>
+
+      <div class="space-y-2 mb-5">
+
+        <div class="opposition-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+          <span class="text-lg flex-shrink-0">🤝</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">1ª Tática: Oferta de Colaboração</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Os adversários se aproximaram dizendo: "Edificaremos convosco, porque, como vós, buscamos o vosso Deus." Zorobabel e Jesua recusaram: "Não é para vós e para nós edificar a casa ao nosso Deus." A pureza do testemunho exigia separação. (4:2–3)</p>
+          </div>
+        </div>
+
+        <div class="opposition-item" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <span class="text-lg flex-shrink-0">😱</span>
+          <div>
+            <span class="font-display text-xs font-bold text-fire">2ª Tática: Intimidação e Desânimo</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">"Afrouxaram as mãos do povo de Judá e os perturbaram na edificação." Contrataram conselheiros para frustrar o projeto durante todos os dias de Ciro até Dario — uma campanha de assédio sistemático. (4:4–5)</p>
+          </div>
+        </div>
+
+        <div class="opposition-item" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-lg flex-shrink-0">📨</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">3ª Tática: Carta ao Rei</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Enviaram uma carta ao rei Artaxerxes acusando os judeus de construírem uma cidade rebelde que havia sido "indomável" historicamente. O rei consultou os arquivos e emitiu ordem de parar a obra. A construção foi interrompida por ~16 anos. (4:6–23)</p>
+          </div>
+        </div>
+
+        <div class="opposition-item" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+          <span class="text-lg flex-shrink-0">🔥</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">A Virada: Ageu e Zacarias Profetizam</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Os profetas Ageu e Zacarias profetizaram e motivaram o povo a retomar a obra. Governantes locais questionaram novamente a autoridade — desta vez o rei Dario foi consultado, encontrou o decreto original de Ciro nos arquivos, confirmou a autorização e até ordenou que os adversários custeassem a obra! (5:1–6:12)</p>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-sapphire">Princípio teológico:</strong> A oposição adiou a obra mas não a impediu. O decreto de Ciro que os adversários tentaram anular estava nos arquivos reais — e quando consultado por Dario, se tornou a própria ferramenta que garantiu a conclusão do Templo. O que os inimigos usaram para destruir, Deus usou para construir.
+        </p>
+      </div>
+    </section>
+
+    <!-- A Crise dos Casamentos Mistos -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Grande Crise — Os Casamentos Mistos (Cap. 9–10)</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">😢 O Problema</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Ao chegar a Jerusalém, Esdras foi informado de que os líderes e sacerdotes haviam tomado esposas dos povos da terra — cananeus, heteus, ferezeus, jebuseus, amonitas, moabitas, egípcios e amorreus. A mistura não era apenas étnica — era religiosa e ia contra a Lei de Moisés (Dt 7:3–4).
+          </p>
+          <div class="p-4 rounded-xl italic mb-3"
+               style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+            <p class="font-body text-sm text-ink leading-relaxed">
+              "Quando ouvi isto, rasguei as minhas vestes e o meu manto, e arranquei os cabelos da minha cabeça e da minha barba, e assentei-me pasmado."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Esdras 9:3 — A reação de Esdras</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Esdras ficou prostrado em oração e confissão até a tarde. Sua oração (9:6–15) é uma das mais humildes do AT — ele usa o plural "nós" identificando-se com o pecado do povo mesmo sendo pessoalmente inocente.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">⚖️ A Solução</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A proposta de separar as esposas estrangeiras não partiu de Esdras — foi sugerida pelo povo liderado por <strong>Secanias</strong>: <em>"Façamos aliança com nosso Deus de mandar embora todas as mulheres e os nascidos delas."</em> Esdras aceitou e convocou uma assembleia geral.
+          </p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <p class="font-body text-xs text-ink-muted">📅 Uma assembleia foi convocada em Jerusalém — quem não viesse em 3 dias teria seus bens confiscados</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <p class="font-body text-xs text-ink-muted">🌧️ Era o nono mês — chuva torrencial. O povo estava tremendo "por causa da chuva e da gravidade do negócio"</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <p class="font-body text-xs text-ink-muted">📋 Uma comissão examinou os casos por 3 meses — o capítulo 10 termina com a lista de ~110 homens que se separaram de suas esposas</p>
+            </div>
+          </div>
+          <div class="mt-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Uma tensão real:</strong> Esta resolução é uma das mais controversas do AT — divórcio em massa, mulheres e filhos expulsos. O NT apresenta Rute (uma moabita) e Raabe (uma cananeia) como modelos de fé incorporados ao povo de Deus. A questão não era raça, mas <em>fidelidade religiosa</em>. O contexto pós-exílico temia a repetição do erro de Salomão.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Decreto de Artaxerxes -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Decreto de Artaxerxes — Um Documento Real Preservado (Cap. 7:11–26)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 7 preserva o texto (em aramaico) do decreto que Artaxerxes deu a Esdras. É um dos documentos mais extraordinários do livro — um rei pagão concedendo a um sacerdote judeu autoridade quase ilimitada:
+      </p>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="space-y-2">
+          <div class="prep-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+            <span class="text-lg flex-shrink-0">💰</span>
+            <div>
+              <p class="font-body text-xs font-semibold text-violet">Autoridade financeira total</p>
+              <p class="font-body text-xs text-ink-faint mt-0.5">Ouro, prata, trigo, vinho, azeite e sal do tesouro real em quantidades ilimitadas para o serviço do Templo</p>
+            </div>
+          </div>
+          <div class="prep-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+            <span class="text-lg flex-shrink-0">⚖️</span>
+            <div>
+              <p class="font-body text-xs font-semibold text-violet">Autoridade judicial</p>
+              <p class="font-body text-xs text-ink-faint mt-0.5">Poder de nomear juízes e magistrados para toda a província da Síria e Fenícia, conforme a Lei de Deus</p>
+            </div>
+          </div>
+          <div class="prep-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+            <span class="text-lg flex-shrink-0">🚫</span>
+            <div>
+              <p class="font-body text-xs font-semibold text-violet">Isenção fiscal total</p>
+              <p class="font-body text-xs text-ink-faint mt-0.5">Sacerdotes, levitas, cantores, porteiros e servos do Templo isentos de tributos, impostos e pedágios</p>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.22);">
+          <h4 class="font-display text-sm font-semibold text-violet mb-3">A Reação de Esdras (7:27–28)</h4>
+          <div class="italic mb-3" style="">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "Bendito seja o Senhor Deus de nossos pais, que assim pôs no coração do rei para honrar a casa do Senhor em Jerusalém, e que inclinou para mim a sua misericórdia diante do rei."
+            </p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Esdras não atribui o decreto à sabedoria política de Artaxerxes — mas à mão de Deus inclinando o coração do rei. Este é o princípio de Provérbios 21:1: <em>"O coração do rei está na mão do Senhor como ribeiros de águas; ele o inclina para onde quer."</em>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🔄 Cumprimento das profecias</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">📖 Centralidade da Lei de Deus</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🙏 A "mão boa" de Deus</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🔥 Santidade e separação</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🌍 Deus usa líderes pagãos</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🏛️ Reconstrução do culto</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">📋 Liderança com integridade</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚔️ Oposição como teste de fé</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">A "Mão de Deus" — Frase-chave de Esdras</h3>
+          <p class="font-body text-xs text-ink-muted mb-3 italic">A expressão "a mão boa do Senhor" aparece 5 vezes no livro (7:6, 9, 28; 8:18, 22, 31) — mais do que em qualquer outro livro da Bíblia.</p>
+          <div class="space-y-2">
+            <div class="p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🤲 "A mão do Senhor era sobre Esdras" — por isso o rei lhe concedeu tudo o que pediu (7:6)
+            </div>
+            <div class="p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🤲 "A mão boa de Deus estava sobre ele" — na jornada da Babilônia a Jerusalém (7:9)
+            </div>
+            <div class="p-2 rounded-lg text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🤲 "A mão do nosso Deus estava sobre nós" — proteção na viagem sem escolta militar (8:31)
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed">
+            Esdras havia recusado pedir ao rei uma escolta militar — não queria contradizer sua fé declarada de que "a mão de Deus está sobre todos os que o buscam." (8:22) A jornada sem guarda foi um ato deliberado de fé pública.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Esdras e Neemias — um único livro:</strong> No hebraico original e na LXX, Esdras e Neemias formavam um único livro chamado "Esdras". A divisão foi introduzida por Orígenes (séc. III d.C.) e adotada pela Vulgata Latina — e daí pelas Bíblias cristãs.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Choro e alegria misturados (3:12–13):</strong> Quando as fundações do 2º Templo foram lançadas, os velhos que haviam visto o 1º Templo choraram — enquanto os jovens gritavam de alegria. O choro e o canto eram tão altos que "o som se ouvia ao longe". Uma das cenas mais emocionalmente complexas da Bíblia.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O aramaico de Esdras:</strong> Os capítulos 4:8–6:18 e 7:12–26 estão em aramaico — não em hebraico. São documentos reais (cartas ao rei, decretos) citados literalmente na língua em que foram escritos. Isso é uma das provas da autenticidade histórica do livro.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Zorobabel na genealogia de Jesus:</strong> Mt 1:12–13 e Lc 3:27 incluem Zorobabel na linhagem de Jesus. O governador que reconstruiu o Templo físico em 516 a.C. é ancestral do que Jesus chamaria de "o templo do seu corpo" (Jo 2:21).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A viagem sem escolta (8:21–22):</strong> Esdras partiu com ouro e prata equivalentes a fortunas — sem nenhuma guarda militar. Havia declarado ao rei que "a mão de Deus é boa sobre todos que o buscam." Pedir soldados seria contradizer sua fé. Declarou um jejum coletivo pedindo proteção — e chegaram sãos e salvos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Cilindro de Ciro:</strong> O decreto de Ciro em Esdras 1:2–4 é consistente com o Cilindro de Ciro descoberto em 1879 — que documenta sua política de liberar povos exilados e restaurar seus santuários. A arqueologia confirma a plausibilidade histórica do decreto bíblico.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Esdras e a Grande Sinagoga:</strong> A tradição judaica credita a Esdras a fundação da "Grande Sinagoga" — o corpo de 120 escribas que compilou o cânone do AT, estabeleceu a leitura pública da Torá e criou as bênçãos litúrgicas do judaísmo. Muitas práticas judaicas modernas remontam a Esdras.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O padrão de liderança de Esdras (7:10):</strong> O versículo que descreve Esdras é um dos mais citados sobre ministério: ele <em>primeiro estudou</em>, depois <em>praticou</em>, depois <em>ensinou</em>. A ordem importa — quem ensina o que não pratica não é modelo, é hipócrita. Este padrão influenciou toda a tradição rabínica.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A lacuna entre os capítulos 6 e 7:</strong> Entre a dedicação do Templo (cap. 6, 516 a.C.) e a chegada de Esdras (cap. 7, 458 a.C.) há uma lacuna de ~58 anos que Esdras não narra. É exatamente neste período que acontece a história de <strong>Ester</strong> — os judeus que permaneceram na Pérsia, o complô de Hamã e a salvação milagrosa do povo. Esdras, Neemias e Ester são três janelas para o mesmo período pós-exílico, cada uma mostrando uma faceta diferente da providência de Deus.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Esdras tinha posto o coração em estudar a lei do Senhor, e em a cumprir, e em ensinar em Israel os seus estatutos e juízos."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Esdras 7:10 — O modelo do líder espiritual</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "A mão boa do nosso Deus estava sobre nós, e livrou-nos da mão do inimigo e dos que nos armavam ciladas pelo caminho."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Esdras 8:31 — A proteção divina na jornada sem escolta militar</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Ó Senhor Deus de Israel, tu és justo, pois ficamos como um remanescente que escapou, como hoje se vê. Eis que estamos diante de ti nas nossas culpas, embora por causa delas não possamos subsistir diante de ti."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Esdras 9:15 — A confissão de Esdras pelo pecado do povo</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Esdras · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

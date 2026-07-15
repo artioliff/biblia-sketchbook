@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2 Crônicas — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Card dos reis bons e maus */
+    .king-card {
+      border-radius: 10px;
+      padding: 0.875rem 1rem;
+      border: 1px solid;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .king-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(200,145,58,0.12);
+    }
+
+    /* Linha do decreto de Ciro */
+    .decree-card {
+      border-radius: 12px;
+      border: 2px solid;
+      padding: 1.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .decree-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(200,145,58,0.06), transparent 60%);
+    }
+
+    /* Versículo 7:14 em destaque */
+    .verse-714 {
+      border-radius: 14px;
+      border: 2px solid rgba(200,145,58,0.4);
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.7), rgba(247,237,218,0.5));
+      text-align: center;
+      position: relative;
+    }
+    .verse-714::before {
+      content: '7:14';
+      position: absolute;
+      top: -1px; right: 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #c8913a;
+      background: #fdf8ef;
+      padding: 0 8px;
+    }
+
+    /* Condições de 7:14 */
+    .condition-card {
+      border-radius: 9px;
+      padding: 0.875rem 1rem;
+      border: 1px solid;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .condition-card:hover { transform: translateX(4px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · LIVROS HISTÓRICOS · 14º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        2 Crônicas
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Continuação direta de 1 Crônicas — originalmente <strong>um único livro</strong> no hebraico
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do Templo de Salomão à sua destruição · da glória ao exílio · e ao decreto que abre o caminho de volta
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-3">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">36</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">822</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~450 anos</div>
+          <div class="font-body text-sm text-ink-muted mt-1">de história coberta</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Judá</div>
+          <div class="font-body text-sm text-ink-muted mt-1">único reino narrado</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Posição na Bíblia</h3>
+          <div class="space-y-2">
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark">14º</span>
+              <span class="font-body text-sm text-ink">livro da Bíblia</span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">9º</span>
+              <span class="font-body text-sm text-ink">dos <strong>Livros Históricos</strong></span>
+            </div>
+            <div class="flex items-center gap-3 p-3 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Último</span>
+              <span class="font-body text-sm text-ink">livro do <strong>Tanakh hebraico</strong> — a Bíblia hebraica termina com o decreto de Ciro</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Arco Completo</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            2 Crônicas cobre o período mais longo de qualquer livro histórico — do esplendor do reinado de <strong>Salomão</strong> até o decreto do rei persa <strong>Ciro</strong> autorizando o retorno dos exilados. Em ~450 anos de história, o livro narra a glória, a decadência, o julgamento e o início da restauração de Judá.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Diferente de Reis, que acompanha tanto Israel quanto Judá, Crônicas foca <strong>exclusivamente em Judá e na linhagem davídica</strong> — porque é nela que repousa a promessa messiânica. O Reino do Norte é mencionado apenas quando interage com Judá.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Estrutura -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Estrutura do Livro</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item"
+             style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.28);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 1–9</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Salomão</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">O Reinado de Salomão e o Templo</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A sabedoria de Salomão em Gibeão, a construção do Templo com a ajuda de <strong>Hirão de Tiro</strong>, a dedicação solene com a <strong>Shekinah</strong> preenchendo o Templo, a aparição de Deus a Salomão com a promessa de <strong>2 Crônicas 7:14</strong>, a visita da Rainha de Sabá e a glória do reinado. A queda de Salomão é brevíssima — apenas mencionada — antes de sua morte após 40 anos de reinado.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 10–28</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Os Reis</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Os Reis de Judá — Ciclos de Reforma e Apostasia</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A divisão do reino sob <strong>Roboão</strong>, seguida por uma longa sequência de reis avaliados pelo critério de Crônicas: <em>buscaram a Deus?</em> Reis bons como <strong>Asa, Josafá, Jeoás, Uzias e Ezequias</strong> alternam com reis maus como <strong>Acaz e Atalia</strong>. Cada bom rei promove uma reforma — cada reforma é seguida por recaída. O padrão é dolorosamente repetitivo.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 29–32</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Ezequias</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Ezequias — A Grande Reforma e a Páscoa</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              A maior reforma religiosa antes de Josias: purificação do Templo, restauração do culto levítico, e a celebração de uma <strong>Páscoa extraordinária</strong> — a maior desde os dias de Salomão, com convidados de todo o norte de Israel. A Assíria cerca Jerusalém e é destruída por um anjo. Crônicas dá a este episódio o dobro de espaço que 2 Reis — ele é central para a teologia do livro.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-violet">Cap. 33–35</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Manassés e Josias</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-violet mb-1">Manassés Que se Arrependeu e Josias o Reformador</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Crônicas acrescenta um dado ausente em Reis: <strong>Manassés se arrependeu</strong> na Babilônia e foi restaurado — um dos episódios mais surpreendentes do AT. Josias descobre o Livro da Lei, promove a reforma mais radical de Judá e celebra a maior Páscoa desde Samuel. Morre prematuramente em Megido contra o Egito — e Jeremias lamenta publicamente por ele.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item"
+             style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-earth">Cap. 36</span>
+            <div class="font-body text-xs text-ink-faint mt-1">O Fim e o Início</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-earth mb-1">A Queda de Jerusalém e o Decreto de Ciro</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              Quatro reis em rápida sucessão, três deportações babilônicas, a destruição do Templo e de Jerusalém. O texto explica: Deus enviou mensageiros repetidamente, mas o povo os escarneceu. O exílio dura <strong>70 anos</strong> — o sábado que a terra não havia descansado. Então: o decreto do rei Ciro da Pérsia — as últimas duas linhas de 2 Crônicas e do Tanakh hebraico: <em>"Suba!"</em>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 2 Cr 7:14 — O versículo mais famoso -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">2 Crônicas 7:14 — O Versículo Central de Todo o Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-6 leading-relaxed">
+        Após a dedicação do Templo, Deus apareceu a Salomão pela segunda vez — a primeira havia sido em Gibeão (cap. 1). Esta aparição contém a promessa mais citada de todo o livro, estruturada em <strong>4 condições</strong> e <strong>3 promessas</strong>.
+      </p>
+
+      <div class="verse-714 mb-6">
+        <p class="font-body text-2xl text-ink leading-relaxed italic mb-3">
+          "Se o meu povo, que se chama pelo meu nome,<br/>
+          se humilhar, e orar, e buscar a minha face,<br/>
+          e se converter dos seus maus caminhos,<br/>
+          então eu ouvirei dos céus, e perdoarei os seus pecados,<br/>
+          e sararei a sua terra."
+        </p>
+        <p class="font-display text-sm font-bold text-gold-dark tracking-widest">2 Crônicas 7:14</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">⚠️ As 4 Condições — O que o povo deve fazer</h3>
+          <div class="space-y-2">
+            <div class="condition-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson w-4 flex-shrink-0 mt-0.5">1</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Se humilhar</p>
+                <p class="font-body text-xs text-ink-muted">Reconhecer a própria insuficiência e dependência de Deus — o oposto do orgulho nacional</p>
+              </div>
+            </div>
+            <div class="condition-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson w-4 flex-shrink-0 mt-0.5">2</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Orar</p>
+                <p class="font-body text-xs text-ink-muted">Não oração formal ou ritual — oração como expressão genuína de dependência e clamor</p>
+              </div>
+            </div>
+            <div class="condition-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson w-4 flex-shrink-0 mt-0.5">3</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Buscar a minha face</p>
+                <p class="font-body text-xs text-ink-muted">Buscar a <em>pessoa</em> de Deus, não apenas suas bênçãos — o critério central de todo Crônicas</p>
+              </div>
+            </div>
+            <div class="condition-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson w-4 flex-shrink-0 mt-0.5">4</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Se converter dos seus maus caminhos</p>
+                <p class="font-body text-xs text-ink-muted">Arrependimento com mudança de direção — não apenas sentimento, mas ação concreta</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">✅ As 3 Promessas — O que Deus fará</h3>
+          <div class="space-y-2 mb-4">
+            <div class="condition-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest w-4 flex-shrink-0 mt-0.5">1</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Ouvirei dos céus</p>
+                <p class="font-body text-xs text-ink-muted">Deus não está ausente — está no céu, ouvindo. A distância não é abandono.</p>
+              </div>
+            </div>
+            <div class="condition-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest w-4 flex-shrink-0 mt-0.5">2</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Perdoarei os seus pecados</p>
+                <p class="font-body text-xs text-ink-muted">A causa raiz dos problemas de Israel era sempre espiritual — o perdão vem antes da restauração</p>
+              </div>
+            </div>
+            <div class="condition-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest w-4 flex-shrink-0 mt-0.5">3</span>
+              <div>
+                <p class="font-body text-sm font-semibold text-ink">Sararei a sua terra</p>
+                <p class="font-body text-xs text-ink-muted">A restauração tem dimensão física — a terra, a nação, a comunidade são curadas quando o coração é curado</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Contexto original:</strong> A promessa foi dada especificamente a Israel diante do Templo — mas a estrutura espiritual (humildade → oração → busca → arrependimento) é universalmente aplicada pelo NT como caminho de renovação para qualquer comunidade crente.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Eventos exclusivos de Crônicas -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Eventos Únicos de 2 Crônicas — Não Estão em Reis</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O nome grego do livro — <em>Paraleipomena</em> ("coisas omitidas") — é literal: Crônicas registra episódios ausentes em Reis que transformam nossa compreensão de vários personagens.
+      </p>
+      <div class="space-y-3">
+
+        <div class="rebellion-card"
+             style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.2);">
+          <span class="text-xl flex-shrink-0">😢</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">O Arrependimento de Manassés — Cap. 33:10–17</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              2 Reis 21 apresenta Manassés como o rei mais ímpio de Judá, sem redenção. Crônicas acrescenta: ele foi levado cativo à <strong>Babilônia</strong> com anzóis na boca. Na angústia, humilhou-se profundamente diante de Deus. Deus o ouviu e o restaurou ao trono. Manassés removeu os ídolos e restaurou o altar do Senhor. É um dos arrependimentos mais surpreendentes da Bíblia — e uma das provas mais fortes da misericórdia de Deus: mesmo o pior rei de Judá encontrou graça ao se humilhar.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-xl flex-shrink-0">🎶</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">A Batalha Vencida pelo Louvor — Cap. 20</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Uma das histórias mais extraordinárias da Bíblia. Uma coalizão de Moabe, Amom e Edom marchava contra Josafá. Ele declarou jejum e orou publicamente: <em>"Não sabemos o que fazer, mas os nossos olhos estão postos em ti."</em> Deus respondeu por um profeta: "A batalha não é vossa, mas de Deus." Josafá enviou cantores na frente do exército — cantando louvores. Quando começaram a cantar, os inimigos se voltaram uns contra os outros e se destruíram. Judá chegou ao campo de batalha apenas para recolher os despojos — por três dias.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.2);">
+          <span class="text-xl flex-shrink-0">🍷</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">A Grande Páscoa de Ezequias — Cap. 30</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Ezequias enviou mensageiros a todo Israel — até as tribos do norte já destruídas pela Assíria — convidando para celebrar a Páscoa em Jerusalém. Muitos escarneceram, mas alguns de Aser, Manassés e Zebulom se humilharam e foram. A celebração foi tão grande e alegre que estenderam por mais 7 dias além dos 7 originais. O narrador declara: "desde os dias de Salomão não havia sido feita coisa semelhante em Jerusalém."
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-xl flex-shrink-0">📜</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">A Carta do Profeta Elias — Cap. 21:12–15</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Único caso na Bíblia de uma profecia entregue por carta. O rei ímpio <strong>Jeorão</strong> recebeu uma carta escrita pelo profeta <strong>Elias</strong> — mesmo após Elias já ter sido arrebatado ao céu segundo 2 Reis 2. Isso sugere que a carta foi escrita antes do arrebatamento mas entregue depois, ou que há uma ordem cronológica diferente. De qualquer forma, é um episódio totalmente ausente em Reis.
+            </p>
+          </div>
+        </div>
+
+        <div class="rebellion-card"
+             style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-xl flex-shrink-0">👸</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Atalia — A Única Rainha de Judá — Cap. 22–23</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">
+              Filha de Acabe e Jezabel — e nora de Josafá. Ao saber da morte do filho, <strong>Atalia</strong> matou todos os herdeiros reais e usurpou o trono por 6 anos. O bebê <strong>Jeoás</strong> foi escondido no Templo pela irmã. Aos 7 anos, o sumo sacerdote <strong>Joiada</strong> o coroou numa cerimônia guardada por levitas armados. Atalia foi morta fora do Templo. A linhagem davídica sobreviveu por um fio — e um bebê escondido num Templo.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Os Reis de Judá em 2 Crônicas -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Os Reis de Judá — Avaliados pelo Critério de Crônicas</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O critério de Crônicas é simples e consistente: o rei <strong>buscou a Deus?</strong> Reis que buscaram prosperaram; os que não buscaram, fracassaram — independentemente de poder militar ou talento político.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-5">
+
+        <!-- Bons -->
+        <div>
+          <h3 class="font-display text-xs font-bold text-forest tracking-widest mb-3">✅ REIS QUE BUSCARAM A DEUS</h3>
+          <div class="space-y-2">
+            <div class="king-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-forest">Asa</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 14–16 · 41 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Removeu altares e colunas idólatras. Orou diante do exército etíope e venceu. Mas na velhice buscou médicos em vez de Deus quando adoeceu — uma nota sombria ao fim de um reinado brilhante.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-forest">Josafá</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 17–20 · 25 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Ensinou a Lei pelo território, enviou levitas como professores. A batalha vencida pelo louvor (cap. 20) é seu legado maior. Seu erro: alianças com a casa de Acabe.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-forest">Jeoás</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 24 · 40 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Restaurou o Templo enquanto Joiada o sacerdote viveu. Após a morte do mentor, voltou à idolatria e mandou apedrejar Zacarias, filho de Joiada — que profetizou contra ele.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.22);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-forest">Uzias (Azarias)</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 26 · 52 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Grande rei militar e agrícola — "seu nome se divulgou até muito longe." Mas invadiu o Templo para queimar incenso — função exclusiva dos sacerdotes. Ficou leproso até morrer. Sua lepra era visível na testa quando os sacerdotes o expulsaram.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(30,74,42,0.07);border-color:rgba(30,74,42,0.28);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-bold text-forest">Ezequias</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 29–32 · 29 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">O rei mais elogiado de 2 Crônicas. Purificou o Templo, restaurou o culto levítico, celebrou a maior Páscoa desde Salomão. Confrontou a Assíria com oração. Crônicas lhe dedica 4 capítulos — mais do que qualquer outro rei.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(30,74,42,0.07);border-color:rgba(30,74,42,0.28);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-forest flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-bold text-forest">Josias</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 34–35 · 31 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Aos 8 anos assumiu o trono. Encontrou o Livro da Lei aos 26. Maior Páscoa desde os dias de Samuel. Morreu em Megido. Jeremias compôs lamentações por ele — e o povo ainda as cantava gerações depois (35:25).</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maus -->
+        <div>
+          <h3 class="font-display text-xs font-bold text-crimson tracking-widest mb-3">❌ REIS QUE ABANDONARAM A DEUS</h3>
+          <div class="space-y-2">
+            <div class="king-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-crimson flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-crimson">Roboão</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 10–12 · 17 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Causou a divisão do reino. Depois que Sisaque do Egito saqueou Jerusalém, humilhou-se — e Crônicas regista: Deus não o destruiu completamente por causa disto.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-crimson flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-crimson">Jeorão</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 21 · 8 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Casou com filha de Acabe e Jezabel. Matou seus irmãos. Adoeceu de enfermidade nas entranhas por 2 anos e morreu — "sem ser desejado." Recebeu a carta profética de Elias.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full" style="background:#8b2020; flex-shrink:0; margin-top:6px;"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-semibold text-crimson">Atalia</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 22–23 · 6 anos · única rainha</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Filha de Acabe e Jezabel. Usurpou o trono matando todos os herdeiros reais. Governou 6 anos até ser deposta e morta pelo sumo sacerdote Joiada.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-crimson flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-bold text-crimson">Acaz</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 28 · 16 anos</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Passou seus filhos pelo fogo. Fechou as portas do Templo e instalou altares em cada esquina de Jerusalém. Pai de Ezequias — um dos maiores contrastes de pai/filho da Bíblia.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-crimson flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-bold text-crimson">Manassés</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 33 · 55 anos · o mais longo</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">Filho de Ezequias. O pior rei de Judá — e também o que mais reinou. Mas <em>único em Crônicas</em>: foi levado cativo, se arrependeu genuinamente, e foi restaurado. O arrependimento mais inesperado do AT.</p>
+                </div>
+              </div>
+            </div>
+            <div class="king-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.25);">
+              <div class="flex items-start gap-3">
+                <div class="w-2 h-2 rounded-full bg-crimson flex-shrink-0 mt-1.5"></div>
+                <div>
+                  <div class="flex items-center gap-2 flex-wrap">
+                    <span class="font-display text-sm font-bold text-crimson">Zedequias</span>
+                    <span class="font-body text-xs text-ink-faint">cap. 36 · 11 anos · o último</span>
+                  </div>
+                  <p class="font-body text-xs text-ink-muted mt-1">O último rei de Judá. Endureceu o coração sem retornar ao Senhor. Escarneceu dos mensageiros de Deus "até não haver remédio." Jerusalém caiu. O exílio começou.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O Decreto de Ciro -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">O Fim que É um Começo — O Decreto de Ciro (Cap. 36:22–23)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        As últimas linhas de 2 Crônicas — e do <strong>Tanakh hebraico</strong> — são as mais esperançosas de todo o livro. Após o julgamento, após a destruição, após 70 anos de exílio: uma porta se abre.
+      </p>
+
+      <div class="decree-card mb-5"
+           style="border-color:rgba(200,145,58,0.4);background:linear-gradient(135deg,rgba(255,255,255,0.7),rgba(247,237,218,0.5));">
+        <p class="font-body text-xl italic text-ink leading-loose relative z-10 mb-3">
+          "Assim diz Ciro, rei da Pérsia: O Senhor, o Deus dos céus, deu-me todos os reinos da terra, e me encarregou de lhe edificar uma casa em Jerusalém, que está em Judá. Quem há entre vós de todo o seu povo? O Senhor seu Deus seja com ele, e <strong>suba!</strong>"
+        </p>
+        <p class="font-display text-xs text-gold-dark tracking-widest relative z-10">2 Crônicas 36:23 · As últimas palavras do livro · As últimas palavras do Tanakh hebraico</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.2);">
+          <div class="text-2xl mb-2">🎯</div>
+          <h4 class="font-display text-xs font-bold text-sapphire mb-2">Profecia cumprida</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Isaías havia profetizado o nome "Ciro" ~150 anos antes (Is 44:28; 45:1) — chamando-o pelo nome antes de nascer, como o escolhido para autorizar a reconstrução do Templo.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+          <div class="text-2xl mb-2">⏱️</div>
+          <h4 class="font-display text-xs font-bold text-forest mb-2">Os 70 anos de Jeremias</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O texto de 2 Cr 36:21 cita explicitamente que o exílio cumpriu a palavra de Jeremias sobre os 70 anos (Jr 25:11–12; 29:10) — os sábados não descansados que a terra precisava recuperar.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <div class="text-2xl mb-2">🚪</div>
+          <h4 class="font-display text-xs font-bold text-gold-dark mb-2">"Suba!" — O imperativo final</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A última palavra do Tanakh hebraico é um imperativo: <em>ya'al</em> (יַעַל) — "suba". A Bíblia hebraica não termina com lamento, mas com um convite: levante-se e vá. A história continua em Esdras 1:1 — quase idêntico a este versículo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🔍 "Buscar a Deus" como critério</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🙏 Oração que restaura nações</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚠️ Julgamento como consequência</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">😢 Arrependimento sempre possível</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🎶 Adoração como arma espiritual</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🏛️ O Templo como centro da vida</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📖 A Palavra de Deus sempre cumprida</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🌅 Esperança além do julgamento</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">2 Crônicas no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Mt 23:35 — "Até Zacarias filho de Baraquias"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus menciona o sangue de Zacarias (2 Cr 24:20–22) como o último mártir — pois Crônicas é o último livro do Tanakh. "De Abel a Zacarias" = do primeiro ao último livro da Bíblia hebraica.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">2 Cr 7:14 → Tiago 4:10 / 1 Pe 5:6</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Humilhai-vos diante do Senhor, e ele vos exaltará" — eco direto da condição central de 2 Cr 7:14 aplicada à Igreja no NT.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Jo 2:19–21 — O novo Templo</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O Templo físico de 2 Crônicas é cumprido e superado em Cristo — "destruí este templo e em três dias o levantarei." O novo Templo é o corpo de Cristo e a Igreja (1 Co 6:19; Ef 2:21).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Is 44:28 / 45:1 → 2 Cr 36:22–23</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O cumprimento da profecia de Isaías sobre Ciro — citada por Paulo como exemplo de como Deus usa líderes pagãos para seus propósitos soberanos (Rm 9:17).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A batalha do louvor (cap. 20):</strong> Josafá nomeou cantores para marchar à frente do exército cantando: <em>"Louvai ao Senhor, porque a sua misericórdia dura para sempre."</em> Quando começaram a cantar, Deus pôs emboscadas contra os inimigos. É o exemplo mais explícito da Bíblia de adoração como estratégia de guerra espiritual.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O arrependimento de Manassés:</strong> Crônicas registra uma "Oração de Manassés" como parte de sua restauração — um texto que não está no cânone protestante mas existe nos apócrifos e em alguns manuscritos da LXX. É uma das orações de arrependimento mais belas da literatura judaica antiga.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Uzias e Isaías:</strong> O rei Uzias ficou leproso por invadir o sacerdócio. Isaías 6:1 começa: <em>"no ano em que morreu o rei Uzias, vi o Senhor."</em> O ano da morte do rei leproso foi o ano da visão gloriosa do profeta — Deus enche o vácuo deixado pela queda dos reis.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Até não haver remédio" (36:16):</strong> A expressão hebraica <em>ad ein marpe</em> é uma das mais trágicas da Bíblia — literalmente "até não haver cura". O narrador a usa para descrever o ponto de não retorno em que Israel chegou: não por incapacidade de Deus, mas por endurecimento irreversível do povo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A Páscoa de Ezequias e a unidade:</strong> A Páscoa de 2 Cr 30 é única porque convidou israelitas do norte já destruído pela Assíria. Alguns de Aser, Manassés e Zebulom foram e se humilharam. É um lampejo de reunificação espiritual — o norte que havia sido perdido politicamente se juntou ao sul em adoração.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A leitura pública da Torá:</strong> Tanto Ezequias (29–30) quanto Josias (34–35) promovem reformas que começam com a leitura pública da Palavra de Deus. Este padrão será repetido por Esdras (Ne 8) e ressoa no mandato de Paulo a Timóteo: "dedica-te à leitura pública das Escrituras" (1 Tm 4:13).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 70 anos sabáticos:</strong> 2 Cr 36:21 explica o exílio como os "sábados da terra" que Israel havia negligenciado. Levítico 25–26 havia ordenado que a terra descansasse um ano a cada sete. Os israelitas não observaram por 490 anos — 70 sábados perdidos. O exílio de 70 anos foi a terra "gozando seus sábados" (Lv 26:34).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Ciro no Cilindro de Ciro:</strong> O Cilindro de Ciro — descoberto em 1879 e hoje no Museu Britânico — confirma que Ciro, rei da Pérsia, tinha uma política de liberar povos exilados e restaurar seus santuários. O decreto de 2 Cr 36:22–23 é historicamente consistente com esta política bem documentada.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que a Bíblia hebraica termina com "Suba!":</strong> No Tanakh, a sequência é Torá → Profetas → Escritos, e os Escritos terminam com 2 Crônicas. A última palavra da Bíblia hebraica é um imperativo de movimento — <em>ya'al</em> (suba). Os rabinos identificaram nisto uma intenção teológica: a Bíblia não termina com conclusão, mas com convite. A história não está encerrada. O leitor é chamado a agir, a subir, a reconstruir. Esta abertura deliberada ao futuro aponta — para a comunidade cristã — ao Novo Testamento, onde o "Suba!" ecoa no "Ide por todo o mundo" de Jesus.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Se o meu povo, que se chama pelo meu nome, se humilhar, e orar, e buscar a minha face, e se converter dos seus maus caminhos, então eu ouvirei dos céus, e perdoarei os seus pecados, e sararei a sua terra."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Crônicas 7:14 — A promessa central de todo o livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Não sabemos o que fazer, mas os nossos olhos estão postos em ti."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Crônicas 20:12 — A oração de Josafá antes da batalha vencida pelo louvor</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Quem há entre vós de todo o seu povo? O Senhor seu Deus seja com ele, e suba!"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">2 Crônicas 36:23 — O decreto de Ciro · A última palavra do Tanakh hebraico</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · 2 Crônicas · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>
