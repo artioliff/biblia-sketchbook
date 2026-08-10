@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oseias — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Nomes dos filhos — antes e depois */
+    .name-card {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .name-card:hover { transform: translateY(-2px); }
+
+    /* Paralelo Gomer / Israel */
+    .parallel-col {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1.125rem;
+      flex: 1;
+    }
+
+    /* Versículo de Oseias em destaque */
+    .hosea-verse {
+      border-radius: 10px;
+      border-left: 4px solid;
+      padding: 0.875rem 1rem;
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #3d2f25;
+      background: rgba(255,255,255,0.45);
+      transition: background 0.2s;
+    }
+    .hosea-verse:hover { background: rgba(255,255,255,0.85); }
+    .hosea-ref {
+      font-style: normal;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.08em;
+      margin-top: 4px;
+      display: block;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MENORES · 28º LIVRO · 1º DOS DOZE
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Oseias
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>הוֹשֵׁעַ</em> (Hoshea) — "Salvação" ou "O Senhor salva"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O profeta cuja vida <em>foi</em> a mensagem · o único que recebeu ordem de casar com uma mulher infiel · e o livro do amor de Deus que se recusa a desistir
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">14</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">197</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~755–715</div>
+          <div class="font-body text-sm text-ink-muted mt-1">a.C. — ministério</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">37×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">"Efraim" no livro</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Primeiro dos Profetas Menores</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Oseias abre o bloco dos <strong>Doze Profetas Menores</strong> — chamados "menores" não por importância, mas por tamanho. É o único profeta do Norte (Reino de Israel/Efraim) cujas profecias foram preservadas num livro independente, e provavelmente o mais longo ministério de todos os profetas menores: ~40 anos.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Profetizou durante o auge econômico do reinado de Jeroboão II — um período de riqueza e expansão territorial — mas de profunda corrupção espiritual. Viu o colapso do Reino do Norte e a invasão assíria que culminou em 722 a.C.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-crimson">Contemporâneos:</strong> Oseias profetizou no Norte ao mesmo tempo que <strong>Amós</strong> (também no Norte), <strong>Isaías</strong> e <strong>Miquéias</strong> (em Judá). Era contemporâneo do início do ministério de Isaías.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Livro mais Pessoal dos Profetas</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Oseias é único: sua vida privada — seu casamento, suas dores, sua fidelidade a uma esposa infiel — tornou-se a própria mensagem profética. Nenhum outro profeta foi chamado a <em>viver</em> o que pregava de forma tão literal e dolorosa.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O resultado é o livro mais emocionalmente denso do AT: raiva, compaixão, ternura, lamento e amor quase inacreditável convivem nos mesmos capítulos. O Deus de Oseias não é frio nem distante — é apaixonado, ferido e inabalável.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Oseias e Gômer -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Casamento Profético — Oseias, Gômer e a Alegoria de Israel</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O livro começa com um dos comandos mais perturbadores da Bíblia: <em>"Vai, toma uma mulher de prostituições."</em> (1:2) Deus ordenou a Oseias que casasse com Gômer, uma mulher infiel — porque Israel havia "se prostituído" ao abandonar o Senhor pelos Baais. O casamento de Oseias foi uma parábola viva, não apenas uma metáfora.
+      </p>
+
+      <div class="flex gap-4 mb-5">
+        <div class="parallel-col" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <h4 class="font-display text-sm font-semibold text-crimson mb-3">💔 Gômer — A Esposa</h4>
+          <div class="space-y-2 text-xs font-body text-ink-muted">
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Casou com Oseias mas foi infiel — buscou outros "amantes"</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Acreditava que seus amantes lhe davam pão, água, lã e vinho (2:5)</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Partiu — foi viver com outros homens</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Oseias a resgatou — pagou 15 siclos de prata por ela (3:2)</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Recebida de volta com amor e restaurada</div>
+          </div>
+        </div>
+        <div class="flex items-center justify-center flex-shrink-0">
+          <div class="text-center">
+            <div class="font-display text-2xl text-gold-dark">⟺</div>
+            <div class="font-display text-xs text-gold-dark tracking-widest mt-1">ESPELHA</div>
+          </div>
+        </div>
+        <div class="parallel-col" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-3">💙 Israel — O Povo</h4>
+          <div class="space-y-2 text-xs font-body text-ink-muted">
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Entrou em aliança com o Senhor no Sinai mas buscou os Baais</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Acreditava que os Baais davam o trigo, o vinho e o azeite (2:8)</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Foi levado ao exílio — afastado da presença de Deus</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Deus prometeu resgatá-lo e falar ao coração do povo (2:14)</div>
+            <div class="p-2 rounded" style="background:rgba(255,255,255,0.5);">Prometido: nova aliança, "chamarei-te 'meu marido'" (2:16)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Os três filhos -->
+      <h3 class="font-display text-sm font-semibold text-ink mb-3">👶 Os Três Filhos com Nomes Proféticos</h3>
+      <div class="grid md:grid-cols-3 gap-4 mb-4">
+        <div class="name-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.25);">
+          <div class="text-2xl mb-1">🌾</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">Jezreel</h4>
+          <p class="font-body text-xs text-ink-faint mb-2">"Deus semeia / dispersa"</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O lugar onde Jeú derramou sangue inocente — o julgamento que vem sobre a casa de Israel pelo sangue derramado</p>
+        </div>
+        <div class="name-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.25);">
+          <div class="text-2xl mb-1">😢</div>
+          <h4 class="font-display text-sm font-semibold text-earth mb-1">Lo-Ruama</h4>
+          <p class="font-body text-xs text-ink-faint mb-2">"Não-amada / sem misericórdia"</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">"Não terei mais compaixão da casa de Israel, pois de maneira nenhuma os perdoarei" (1:6) — a retirada temporária da misericórdia</p>
+        </div>
+        <div class="name-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <div class="text-2xl mb-1">✋</div>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Lo-Ami</h4>
+          <p class="font-body text-xs text-ink-faint mb-2">"Não-meu-povo"</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">"Vós não sois o meu povo, e eu não serei o vosso Deus" (1:9) — a mais severa das três: a ruptura da aliança declarada verbalmente</p>
+        </div>
+      </div>
+
+      <!-- Reversão dos nomes -->
+      <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.25);">
+        <h4 class="font-display text-sm font-semibold text-forest mb-3">✨ A Reversão — O Evangelho nos Nomes</h4>
+        <div class="grid md:grid-cols-3 gap-3">
+          <div class="p-3 rounded-lg text-center" style="background:rgba(255,255,255,0.5);">
+            <div class="font-display text-xs text-crimson mb-1 line-through">Jezreel (dispersão)</div>
+            <div class="font-display text-xs font-bold text-forest">→ "Grande é o dia de Jezreel!" (2:22)</div>
+            <p class="font-body text-xs text-ink-faint mt-1">Dispersão → Plantio / colheita de bênção</p>
+          </div>
+          <div class="p-3 rounded-lg text-center" style="background:rgba(255,255,255,0.5);">
+            <div class="font-display text-xs text-earth mb-1 line-through">Lo-Ruama (sem amor)</div>
+            <div class="font-display text-xs font-bold text-forest">→ "Ruama" (1:6 / 2:23)</div>
+            <p class="font-body text-xs text-ink-faint mt-1">Sem misericórdia → Recebida com amor</p>
+          </div>
+          <div class="p-3 rounded-lg text-center" style="background:rgba(255,255,255,0.5);">
+            <div class="font-display text-xs text-sapphire mb-1 line-through">Lo-Ami (não meu povo)</div>
+            <div class="font-display text-xs font-bold text-forest">→ "Ami meu povo" (2:23)</div>
+            <p class="font-body text-xs text-ink-faint mt-1">Ruptura da aliança → Restauração plena</p>
+          </div>
+        </div>
+        <p class="font-body text-xs text-ink-muted mt-3 leading-relaxed text-center italic">
+          Paulo cita a reversão de Lo-Ami / Lo-Ruama em Romanos 9:25–26 como fundamento para a inclusão dos gentios no povo de Deus — o que Israel recusou, os gentios receberão.
+        </p>
+      </div>
+    </section>
+
+    <!-- O Amor que Persiste -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Amor de Deus que se Recusa a Desistir — Cap. 2 e 11</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-gold-dark mb-3">💍 A Nova Aliança do Noivado — Cap. 2:14–20</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Após anunciar o julgamento, Deus faz uma das promessas mais líricas do AT: <em>"Eis que a atrairei e a levarei ao deserto e falarei ao seu coração."</em> O deserto não é punição — é o lugar do recomeço, como no Êxodo. E então:
+          </p>
+          <div class="space-y-2 mb-3">
+            <div class="hosea-verse" style="border-color:#c8913a;">
+              "Desposar-te-ei para mim para sempre; desposar-te-ei para mim em justiça, em juízo, em benignidade e em mercê. Desposar-te-ei para mim em fidelidade, e conhecerás o Senhor."
+              <span class="hosea-ref text-gold-dark">Oseias 2:19–20</span>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Cinco atributos do noivado eterno: justiça, juízo, benignidade (<em>chesed</em>), misericórdia e fidelidade. Não é um casamento de conveniência — é uma aliança de caráter divino. "Conhecerás o Senhor" — o objetivo final não é obediência, mas intimidade.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">😭 "Como Poderei Abandonar-te?" — Cap. 11</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O capítulo 11 é o clímax emocional do livro — Deus fala como pai de um filho rebelde, não como marido de uma esposa infiel. É a passagem mais patética (no sentido de pathé — emoção profunda) de toda a profecia:
+          </p>
+          <div class="hosea-verse mb-3" style="border-color:#8b2020;">
+            "Como poderei abandonar-te, ó Efraim? Como poderei entregar-te, ó Israel?... O meu coração se comove dentro de mim; as minhas compaixões se inflamam juntamente. Não executarei o ardor da minha ira, não tornarei a destruir Efraim, porque sou Deus e não homem."
+            <span class="hosea-ref text-crimson">Oseias 11:8–9</span>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Esta é a teologia do amor imutável de Deus em sua expressão mais humana. O "coração que se comove" usa a mesma palavra hebraica usada para o útero de uma mãe — o amor mais instintivo e visceral possível. E a conclusão: "sou Deus e não homem" — um homem humano abandonaria; Deus não abandona.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- As Acusações Proféticas -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">As Acusações — O que Israel Fez (Cap. 4–13)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Os capítulos 4–13 contêm uma série de acusações proféticas contra Israel — não apenas idolatria, mas a decomposição moral, religiosa e política de uma sociedade que rompeu com seu fundamento. Oseias 4:1 apresenta o processo judicial: "O Senhor tem contenda com os habitantes da terra."
+      </p>
+      <div class="grid md:grid-cols-2 gap-3 mb-5">
+        <div class="hosea-verse" style="border-color:#8b2020;">
+          "Não há verdade, nem misericórdia, nem conhecimento de Deus na terra. Só há maldição, mentira, homicídio, roubo e adultério." (4:1–2)
+          <span class="hosea-ref text-crimson">O diagnóstico social</span>
+        </div>
+        <div class="hosea-verse" style="border-color:#8b2020;">
+          "O meu povo perece por falta de conhecimento; porque tu rejeitaste o conhecimento, eu também te rejeitarei." (4:6)
+          <span class="hosea-ref text-crimson">O diagnóstico espiritual</span>
+        </div>
+        <div class="hosea-verse" style="border-color:#b84a10;">
+          "Efraim misturou-se com os povos; Efraim é um bolo não virado." (7:8)
+          <span class="hosea-ref text-fire">A assimilação sem identidade</span>
+        </div>
+        <div class="hosea-verse" style="border-color:#b84a10;">
+          "Efraim é como pomba simples, sem entendimento; eles clamam ao Egito, eles vão para a Assíria." (7:11)
+          <span class="hosea-ref text-fire">A política de alianças humanas em vez de confiança em Deus</span>
+        </div>
+        <div class="hosea-verse" style="border-color:#5c3d1e;">
+          "Vós arais o ímpio, ceifais a maldade, comeis o fruto da mentira; porque confiaste no teu caminho, nos teus muitos guerreiros." (10:13)
+          <span class="hosea-ref text-earth">A confiança no poder militar</span>
+        </div>
+        <div class="hosea-verse" style="border-color:#5c3d1e;">
+          "Voltai ao Senhor vosso Deus; porque estais caídos pela vossa iniquidade." (14:1)
+          <span class="hosea-ref text-earth">O convite final — sempre há um convite</span>
+        </div>
+      </div>
+
+      <!-- 6:6 em destaque -->
+      <div class="p-5 rounded-xl" style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.3);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-3">⭐ Oseias 6:6 — O Versículo que Jesus Citou Duas Vezes</h4>
+        <div class="italic text-center mb-3">
+          <p class="font-body text-xl text-ink leading-relaxed">
+            "Porque misericórdia quero e não sacrifício, e o conhecimento de Deus mais do que holocaustos."
+          </p>
+          <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Oseias 6:6</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg" style="background:rgba(255,255,255,0.5);">
+            <span class="font-display text-xs font-bold text-sapphire">Mt 9:13 — Jesus aos fariseus</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Quando criticado por comer com publicanos e pecadores, Jesus citou Oseias 6:6: "Ide e aprendei o que significa: misericórdia quero e não sacrifício — porque não vim chamar os justos, mas os pecadores."</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(255,255,255,0.5);">
+            <span class="font-display text-xs font-bold text-sapphire">Mt 12:7 — Sobre o sábado</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Quando criticado por os discípulos arrancarem espigas no sábado, Jesus citou novamente: "Se soubésseis o que significa misericórdia quero e não sacrifício, não condenariais os inocentes." Duas citações do mesmo versículo nos contextos mais críticos da vida de Jesus.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Chamado ao Retorno -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Chamado ao Retorno — Cap. 14 · O Fim Mais Esperançoso</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Depois de 13 capítulos de acusação, lamento e julgamento, Oseias termina com o mais límpido convite ao arrependimento da profecia menor — e com a mais extravagante promessa de restauração:
+          </p>
+          <div class="hosea-verse mb-3" style="border-color:#1e4a2a;">
+            "Voltai, ó Israel, ao Senhor vosso Deus; porque estais caídos pela vossa iniquidade. Tomai convosco palavras e voltai ao Senhor; dizei-lhe: Perdoa toda a iniquidade... Assíria não nos salvará."
+            <span class="hosea-ref text-forest">Oseias 14:1–3 · O modelo bíblico de arrependimento</span>
+          </div>
+          <div class="hosea-verse" style="border-color:#1e4a2a;">
+            "Eu sararei a sua apostasia; eu os amarei voluntariamente, porque a minha ira se afastou deles. Serei como o orvalho para Israel; ele florescerá como o lírio."
+            <span class="hosea-ref text-forest">Oseias 14:4–5 · A resposta de Deus ao arrependimento</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Promessa de Restauração (14:4–8)</h3>
+          <div class="space-y-2">
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              🌿 "Florescerá como o lírio" — beleza renovada
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              🌳 "Lançará as suas raízes como o Líbano" — estabilidade profunda
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              🫒 "Os seus ramos se estenderão; a sua glória será como a oliveira" — prosperidade
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              🌾 "Voltarão e habitarão à sua sombra; criarão trigo e florescerão como a vinha" — vida plena
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.15);">
+              💧 "Eu serei para Israel como o orvalho" — sustento invisível e contínuo
+            </div>
+          </div>
+          <div class="mt-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed italic">
+              "Quem é sábio, que entenda estas coisas; e quem é prudente, que as conheça; porque os caminhos do Senhor são retos, e os justos andarão neles, mas os transgressores neles tropeçarão." — Oseias 14:9 · A conclusão sapiencial
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.08);border-color:rgba(139,32,32,0.3);color:#8b2020;">💔 Idolatria como adultério espiritual</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">💛 O amor (chesed) que não desiste</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🔄 Retorno e restauração</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">📖 Conhecimento de Deus</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🌾 Nova aliança / novo noivado</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">⚖️ Misericórdia sobre ritual</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🌍 Deus dos gentios</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">👨‍👦 Deus como pai e marido</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Oseias no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Os 6:6 → Mt 9:13 e 12:7</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Misericórdia quero e não sacrifício" — citado duas vezes por Jesus nos momentos mais críticos de seu ministério, definindo o coração de Deus sobre ritual versus relacionamento.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Os 11:1 → Mt 2:15</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Do Egito chamei o meu filho" — Mateus aplica tipologicamente ao retorno de Jesus do Egito: Jesus recapitula a história de Israel, sendo o Israel perfeito que cumpre tudo que Israel falhou em ser.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Os 2:23 → Rm 9:25 e 1 Pe 2:10</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Chamarei 'meu povo' o que não era meu povo" — Paulo e Pedro citam a reversão dos nomes de Oseias como fundamento bíblico para a inclusão dos gentios na família de Deus.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Os 13:14 → 1 Co 15:55</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Onde está, ó morte, a tua pestilência? Onde está, ó sepulcro, a tua destruição?" — Paulo transforma este texto em cântico de vitória sobre a morte na maior passagem sobre ressurreição do NT.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O casamento — literal ou alegórico?</strong> Estudiosos debatem se Oseias realmente se casou com Gômer ou se foi uma visão/alegoria. A maioria dos intérpretes defende a literalidade — porque o impacto emocional do livro, o preço pago para recuperá-la (3:2) e os detalhes biográficos são muito concretos para ser apenas metáfora. Deus pediu ao profeta que vivesse o que pregava.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Efraim" — 37 vezes:</strong> Oseias usa "Efraim" (a tribo dominante do Norte) para se referir ao Reino de Israel mais do que qualquer outro nome. É uma escolha deliberada: Efraim era o filho preferido de José, o filho de promessa — e é exatamente este filho de promessa que rejeitou seu pai. A profundidade da traição é proporcional ao privilégio recebido.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 15 siclos de prata (3:2):</strong> Para recuperar Gômer, Oseias pagou 15 siclos de prata e uma homer e meia de cevada — aproximadamente o preço de meia escrava (Ex 21:32 fixa 30 siclos como preço de um escravo). Gômer havia se vendido tão barato. E mesmo assim Oseias a comprou de volta. Este ato é um dos retratos mais tocantes da redenção na Bíblia.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A "prostituição" religiosa:</strong> Quando Oseias fala de Israel se "prostituindo", a referência é ao culto de Baal — que incluía rituais de fertilidade com prostituição sagrada nos santuários. Era literalmente prostituição ritual. A metáfora de Oseias não era apenas poética — era uma descrição factual do que acontecia nos altares de Israel.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os 4:6 — "Meu povo perece por falta de conhecimento":</strong> O "conhecimento" (<em>da'at</em>) em Oseias não é informação teológica — é intimidade relacional. O mesmo verbo é usado para relações conjugais ("Adão conheceu sua esposa"). Israel não perdeu informação sobre Deus — perdeu o relacionamento íntimo com ele. A diferença entre saber <em>sobre</em> Deus e <em>conhecer</em> Deus.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O bolo não virado (7:8):</strong> "Efraim misturou-se com os povos; Efraim é um bolo não virado" — uma imagem culinária poderosa: um pão cozido de um lado e cru do outro é inútil para qualquer finalidade. A assimilação cultural sem identidade espiritual produz exatamente isto: nem judeu nem gentio, nem fiel nem completamente mundano — inutilizável.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Como o orvalho para Israel" (14:5):</strong> No clima seco e quente de Israel, onde a chuva é escassa no verão, o orvalho noturno era a única fonte de umidade que mantinha as plantas vivas. Deus promete ser "como o orvalho" — o sustento invisível, silencioso e constante que chega enquanto Israel dorme. Uma das metáforas mais belas de graça sustentadora do AT.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A conclusão sapiencial (14:9):</strong> O último versículo de Oseias parece vir de Provérbios — "Quem é sábio, que entenda estas coisas." É um convite ao leitor para que tome o livro como sabedoria a ser aplicada, não apenas história a ser lida. Os profetas e os sábios não eram mundos separados — Oseias conecta ambos deliberadamente.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Oseias ainda ressoa:</strong> Em toda geração, há quem deixou o primeiro amor (Ap 2:4), quem serviu a Deus por hábito ou conveniência, quem misturou a fé com os valores do mundo ao redor até não reconhecer mais nenhum dos dois. Oseias é para eles — não apenas julgamento, mas o grito de um Deus que ainda está de pé à porta esperando. O profeta que foi ferido pela esposa infiel e mesmo assim a comprou de volta é a imagem mais humana de um Deus que poderia ter desistido mas nunca desistiu. E a promessa de 2:19 — "desposar-te-ei para mim para sempre" — é a última palavra do livro: não o divórcio, mas o noivado eterno.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Desposar-te-ei para mim para sempre; desposar-te-ei para mim em justiça, em juízo, em benignidade e em mercê... e conhecerás o Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Oseias 2:19–20 · O noivado eterno · A promessa mais linda do livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porque misericórdia quero e não sacrifício, e o conhecimento de Deus mais do que holocaustos."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Oseias 6:6 · Citado duas vezes por Jesus · O coração de Deus sobre o culto</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Como poderei abandonar-te, ó Efraim?... O meu coração se comove dentro de mim; as minhas compaixões se inflamam juntamente."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Oseias 11:8 · A pergunta que Deus não pode responder com "sim" · O amor que não desiste</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Oseias · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

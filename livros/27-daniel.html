@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daniel — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Estátua dos reinos */
+    .statue-section {
+      border-radius: 0;
+      padding: 0.75rem 1rem;
+      border: 1px solid;
+      border-bottom: none;
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      transition: transform 0.15s ease;
+    }
+    .statue-section:first-child { border-radius: 10px 10px 0 0; }
+    .statue-section:last-child  { border-radius: 0 0 10px 10px; border-bottom: 1px solid; }
+    .statue-section:hover { transform: translateX(4px); }
+
+    /* Escrita na parede */
+    .mene-letter {
+      font-family: 'Cinzel', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #8b2020;
+      text-shadow: 0 0 20px rgba(139,32,32,0.4);
+    }
+
+    /* Os 4 animais */
+    .beast-card {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .beast-card:hover { transform: translateY(-3px); }
+
+    /* As 70 semanas */
+    .week-block {
+      border-radius: 8px;
+      padding: 0.75rem;
+      border: 1px solid;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MAIORES · 27º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Daniel
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>דָּנִיֵּאל</em> (Daniël) — "Deus é meu juiz" ou "Deus julga"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O livro de dois idiomas · histórias de fidelidade e visões apocalípticas · a <strong>estátua dos reinos</strong> · a <strong>escrita na parede</strong> · o <strong>Filho do Homem nas nuvens</strong>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">12</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">357</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">2 idiomas</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Hebraico + Aramaico</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">605–536</div>
+          <div class="font-body text-sm text-ink-muted mt-1">a.C. — do exílio a Ciro</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Quem foi Daniel?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Daniel foi deportado para a Babilônia na <strong>primeira onda do exílio</strong> (605 a.C.), ainda jovem — parte da elite intelectual judaica escolhida para ser treinada na corte de Nabucodonosor. Junto com seus três amigos <strong>Hananias, Misael e Azarias</strong> (renomeados Sadraque, Mesaque e Abede-Nego), serviu na corte babilônica e depois na persa por décadas.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            É o único profeta bíblico que nunca pregou ao povo — seu ministério foi inteiramente dentro de cortes reais pagãs. Sua fidelidade foi demonstrada não num altar, mas num sistema político hostil, ao longo de setenta anos de exílio.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Um livro bilíngue:</strong> Daniel 1:1–2:4a e capítulos 8–12 estão em <strong>hebraico</strong>. Daniel 2:4b–7:28 está em <strong>aramaico</strong> — a língua franca do Império Persa. A transição ocorre no meio de um versículo (2:4) quando os conselheiros começam a falar aramaico ao rei.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Dois Livros em Um</h3>
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+              <span class="font-display text-xs font-bold text-sapphire block mb-1">Cap. 1–6 — As Histórias</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">Narrativas históricas de fidelidade: Daniel e a comida do rei, o sonho da estátua, a fornalha ardente, a loucura de Nabucodonosor, a escrita na parede, a cova dos leões. São histórias destinadas a fortalecer os exilados a permanecerem fiéis em terra estrangeira.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+              <span class="font-display text-xs font-bold text-violet block mb-1">Cap. 7–12 — As Visões</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">Visões apocalípticas sobre o futuro dos impérios e o estabelecimento do reino de Deus: os quatro animais, o Filho do Homem, o carneiro e o bode, as 70 semanas, a visão final. São profecias que revelam a soberania de Deus sobre a história.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Estátua dos Reinos — Cap. 2 -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Estátua dos Reinos — Cap. 2 · A Visão de Nabucodonosor</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Nabucodonosor sonhou com uma estátua colossal de materiais decrescentes em valor mas crescentes em fragilidade — e uma pedra cortada sem mãos humanas a destruiu. Daniel não apenas interpretou o sonho: revelou o próprio sonho ao rei sem que ele o contasse — o que nenhum sábio do mundo poderia fazer.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <!-- Estátua visual -->
+          <div class="max-w-xs mx-auto">
+            <div class="statue-section" style="background:rgba(200,145,58,0.12);border-color:rgba(200,145,58,0.4);">
+              <span class="text-2xl">👑</span>
+              <div>
+                <span class="font-display text-xs font-bold text-gold-dark">OURO — Cabeça</span>
+                <p class="font-body text-xs text-ink-muted">Babilônia · Nabucodonosor</p>
+              </div>
+              <span class="ml-auto font-display text-xs text-gold-dark">605–539</span>
+            </div>
+            <div class="statue-section" style="background:rgba(200,200,220,0.15);border-color:rgba(150,150,180,0.4);">
+              <span class="text-2xl">🛡️</span>
+              <div>
+                <span class="font-display text-xs font-bold" style="color:#6060a0;">PRATA — Peito e braços</span>
+                <p class="font-body text-xs text-ink-muted">Medo-Pérsia · Ciro e Dario</p>
+              </div>
+              <span class="ml-auto font-display text-xs" style="color:#6060a0;">539–331</span>
+            </div>
+            <div class="statue-section" style="background:rgba(184,115,51,0.10);border-color:rgba(184,115,51,0.4);">
+              <span class="text-2xl">⚔️</span>
+              <div>
+                <span class="font-display text-xs font-bold" style="color:#b84a10;">BRONZE — Ventre e coxas</span>
+                <p class="font-body text-xs text-ink-muted">Grécia · Alexandre o Grande</p>
+              </div>
+              <span class="ml-auto font-display text-xs text-fire">331–146</span>
+            </div>
+            <div class="statue-section" style="background:rgba(70,70,70,0.07);border-color:rgba(100,100,100,0.3);">
+              <span class="text-2xl">🗡️</span>
+              <div>
+                <span class="font-display text-xs font-bold" style="color:#404040;">FERRO — Pernas</span>
+                <p class="font-body text-xs text-ink-muted">Roma · fragmenta todos os outros</p>
+              </div>
+              <span class="ml-auto font-display text-xs" style="color:#505050;">146 a.C–</span>
+            </div>
+            <div class="statue-section" style="background:rgba(100,70,40,0.07);border-color:rgba(120,90,60,0.3);">
+              <span class="text-2xl">🦶</span>
+              <div>
+                <span class="font-display text-xs font-bold" style="color:#7a5030;">FERRO + BARRO — Pés</span>
+                <p class="font-body text-xs text-ink-muted">Reino dividido · não se liga</p>
+              </div>
+              <span class="ml-auto font-display text-xs" style="color:#7a5030;">futuro</span>
+            </div>
+            <div class="p-3 rounded-b-xl text-center mt-0"
+                 style="background:rgba(30,74,42,0.10);border:2px solid rgba(30,74,42,0.35);border-top:none;">
+              <span class="text-2xl">🪨</span>
+              <p class="font-display text-xs font-bold text-forest mt-1">PEDRA SEM MÃOS</p>
+              <p class="font-body text-xs text-ink-muted">O reino eterno de Deus · destruiu tudo e encheu a terra</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Pedra que Derrubou Tudo</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A pedra "cortada sem mãos" — não de origem humana — atingiu os pés da estátua, a destruiu completamente e cresceu até encher a terra toda. Daniel interpreta: <em>"Nos dias desses reis, o Deus dos céus suscitará um reino que jamais será destruído."</em> (2:44)
+          </p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">A pedra no NT</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus se identifica com a "pedra que os edificadores rejeitaram" (Mt 21:42 / Sl 118:22). Paulo chama Cristo de "pedra angular" (Ef 2:20). A pedra de Daniel 2 e a pedra dos Salmos apontam para o mesmo Messias.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">O paralelo com Daniel 7</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A estátua de cap. 2 e os quatro animais de cap. 7 descrevem os mesmos reinos — um do ponto de vista humano (uma estátua gloriosa) e outro do ponto de vista divino (animais selvagens). A diferença de perspectiva é intencional.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os Episódios Históricos -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Os Grandes Episódios — Fé em Cortes Pagãs</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:60px;">
+            <span class="text-2xl">🥗</span>
+            <div class="font-display text-xs font-bold text-forest mt-1">Cap. 1</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">O Alimento do Rei — A Primeira Decisão</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Daniel e seus amigos recusaram a comida e o vinho da mesa do rei — provavelmente por razões de pureza cerimonial judaica (o alimento teria sido oferecido a ídolos). Propuseram dez dias de legumes e água como teste. Resultado: eram mais saudáveis e mais sábios que todos os outros jovens. A fidelidade nos detalhes cotidianos foi o alicerce de toda a carreira profética de Daniel.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:60px;">
+            <span class="text-2xl">🔥</span>
+            <div class="font-display text-xs font-bold text-fire mt-1">Cap. 3</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-fire mb-1">A Fornalha Ardente — "Mas Mesmo Que Não..."</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Nabucodonosor ergueu uma estátua de ouro de 27 metros e ordenou que todos se prostrassem ao som da música. Sadraque, Mesaque e Abede-Nego recusaram. Foram jogados numa fornalha aquecida sete vezes mais do que o normal — tão quente que matou os soldados que os jogaram. O rei viu quatro pessoas dentro da fornalha: <em>"e o aspecto do quarto é semelhante a um filho dos deuses."</em> (3:25) Saíram sem nem cheirar fumaça.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:60px;">
+            <span class="text-2xl">🐄</span>
+            <div class="font-display text-xs font-bold text-earth mt-1">Cap. 4</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-earth mb-1">A Loucura de Nabucodonosor — O Rei que Comeu Capim</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Nabucodonosor sonhou com uma árvore imensa cortada por um mensageiro celestial — com um cepo amarrado até que passassem "sete tempos". Daniel interpretou: era o próprio rei, que seria abatido até reconhecer que "o Altíssimo governa sobre o reino dos homens." Cumpriu-se: o rei viveu como um animal por sete anos (unhas como garras de pássaro, cabelos como penas de águia, comendo capim). Ao final, levantou os olhos ao céu, reconheceu a Deus e foi restaurado. É a conversão mais extraordinária de um monarca na Bíblia.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:60px;">
+            <span class="text-2xl">✍️</span>
+            <div class="font-display text-xs font-bold text-crimson mt-1">Cap. 5</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">A Escrita na Parede — MENE MENE TEQUEL PARSIM</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Belsazar, rei da Babilônia, fez um grande banquete e mandou trazer os vasos sagrados do Templo de Jerusalém para beber neles. Naquele momento, dedos de uma mão humana escreveram na parede do palácio. Daniel foi chamado e interpretou: <em>Mene</em> (contado — seus dias estão contados), <em>Tequel</em> (pesado — foi pesado e achado em falta), <em>Parsim</em> (dividido — seu reino será dado aos medos e persas). Naquela mesma noite Belsazar foi morto e Dario, o Medo, tomou o reino.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:60px;">
+            <span class="text-2xl">🦁</span>
+            <div class="font-display text-xs font-bold text-sapphire mt-1">Cap. 6</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Cova dos Leões — Conspiração contra a Oração</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Sob Dario, o Medo, invejosos tentaram destruir Daniel criando um edito que tornava ilegal orar a qualquer deus que não o rei por 30 dias. Daniel continuou orando três vezes ao dia com as janelas abertas voltadas para Jerusalém — exatamente como sempre. Foi jogado na cova dos leões. Na manhã seguinte, Dario correu e chamou: "Daniel, servo do Deus vivente, o teu Deus, a quem serves continuamente, pôde livrar-te dos leões?" — e Daniel respondeu do fundo da cova.</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- O "Mas mesmo que não" -->
+      <div class="mt-5 p-5 rounded-xl"
+           style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.3);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-3">⚡ "Mas Mesmo Que Não" — A Frase Mais Corajosa do Livro</h4>
+        <div class="italic mb-3">
+          <p class="font-body text-base text-ink leading-relaxed">
+            "Eis o nosso Deus, a quem servimos, é poderoso para nos livrar da fornalha ardente... <strong>Mas mesmo que não</strong>, fica sabendo, ó rei, que não serviremos aos teus deuses nem adoraremos a estátua de ouro que levantaste."
+          </p>
+          <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Daniel 3:17–18</p>
+        </div>
+        <p class="font-body text-xs text-ink-muted leading-relaxed">
+          Esta é a declaração de fé mais corajosa e teologicamente honesta do AT. Eles não pregaram um Deus que sempre livra — pregaram um Deus que <em>pode</em> livrar, mas cuja adoração não depende de resultados. O "mas mesmo que não" é o coração da fé não-transacional — seguimos a Deus independentemente das consequências. Esta frase ecoou ao longo de toda a história cristã em momentos de perseguição.
+        </p>
+      </div>
+    </section>
+
+    <!-- O Filho do Homem — Cap. 7 -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Quatro Animais e o Filho do Homem — Cap. 7</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 7 é o mais importante de Daniel para o NT — porque é a fonte do título que Jesus mais usou para si mesmo: <strong>"Filho do Homem"</strong>. É também o paralelo apocalíptico do cap. 2, mostrando os mesmos reinos do ponto de vista divino.
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+        <div class="beast-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.3);">
+          <div class="text-3xl mb-2">🦁</div>
+          <h4 class="font-display text-xs font-bold text-gold-dark mb-1">Leão com asas de águia</h4>
+          <p class="font-body text-xs text-ink-muted">Babilônia · Nabucodonosor · as asas arrancadas = o rei humilhado (cap. 4)</p>
+        </div>
+        <div class="beast-card" style="background:rgba(100,100,150,0.07);border-color:rgba(100,100,150,0.3);">
+          <div class="text-3xl mb-2">🐻</div>
+          <h4 class="font-display text-xs font-bold mb-1" style="color:#5060a0;">Urso levantado de um lado</h4>
+          <p class="font-body text-xs text-ink-muted">Medo-Pérsia · os 3 ossos na boca = Babilônia, Lídia e Egito conquistados</p>
+        </div>
+        <div class="beast-card" style="background:rgba(184,74,16,0.07);border-color:rgba(184,74,16,0.3);">
+          <div class="text-3xl mb-2">🐆</div>
+          <h4 class="font-display text-xs font-bold text-fire mb-1">Leopardo com 4 asas e 4 cabeças</h4>
+          <p class="font-body text-xs text-ink-muted">Grécia · Alexandre · velocidade das conquistas · as 4 cabeças = os 4 generais após sua morte</p>
+        </div>
+        <div class="beast-card" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.3);">
+          <div class="text-3xl mb-2">👾</div>
+          <h4 class="font-display text-xs font-bold text-earth mb-1">Fera terrível com dentes de ferro</h4>
+          <p class="font-body text-xs text-ink-muted">Roma · diferente de todos os outros · os 10 chifres e o "pequeno chifre" · o mais debatido</p>
+        </div>
+      </div>
+
+      <div class="p-5 rounded-xl mb-4"
+           style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.25);">
+        <h4 class="font-display text-sm font-semibold text-violet mb-3">👤 "Um Ser Semelhante a Filho do Homem" — 7:13–14</h4>
+        <div class="italic mb-3">
+          <p class="font-body text-base text-ink leading-relaxed">
+            "Vi nas visões da noite, e eis que vinha com as nuvens do céu um ser semelhante a filho do homem; dirigiu-se ao Ancião de Dias e foi levado à sua presença. E foi-lhe dado domínio, e glória, e reino; e todos os povos, nações e línguas o serviram. O seu domínio é domínio eterno, que não passará, e o seu reino nunca será destruído."
+          </p>
+          <p class="font-display text-xs text-violet mt-2 tracking-widest">Daniel 7:13–14</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg" style="background:rgba(255,255,255,0.5);">
+            <span class="font-display text-xs font-bold text-crimson">Uso por Jesus</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Jesus usa "Filho do Homem" ~80 vezes nos Evangelhos — sempre em referência a Daniel 7. No julgamento diante do Sumo Sacerdote (Mt 26:64): "vereis o Filho do Homem sentado à direita do Poder e vindo sobre as nuvens do céu." Os sacerdotes entenderam a referência imediatamente.</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(255,255,255,0.5);">
+            <span class="font-display text-xs font-bold text-sapphire">A tensão humano / divino</span>
+            <p class="font-body text-xs text-ink-muted mt-1">O "Filho do Homem" de Daniel 7 é paradoxal: vem "nas nuvens" (movimento divino no AT) mas é "semelhante a homem". Esta tensão — figura humana com atributos divinos — é exatamente a que Jesus encarna e que os judeus reconheceram como blasfêmia ao ouvi-la reivindicada para si mesmo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- As 70 Semanas -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As 70 Semanas — Cap. 9:24–27 · A Profecia Mais Calculada da Bíblia</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Após a oração de confissão de Daniel (9:1–23), o anjo Gabriel veio com uma das profecias mais densas do AT — as "70 semanas" (70 × 7 = <strong>490 anos</strong>). É a profecia sobre a qual mais tinta foi gasta na história da interpretação bíblica.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-3 mb-5">
+        <div class="week-block" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.28);">
+          <span class="font-display text-xs font-bold text-gold-dark block mb-1">7 SEMANAS · 49 anos</span>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Do decreto de reconstruir Jerusalém até o surgimento de "um Ungido, um Príncipe" — possivelmente Esdras ou Neemias como líderes restauradores</p>
+        </div>
+        <div class="week-block" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.22);">
+          <span class="font-display text-xs font-bold text-sapphire block mb-1">62 SEMANAS · 434 anos</span>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Após estas 62 semanas "o Ungido será cortado, mas não por si mesmo" — interpretado por cristãos como a morte do Messias. A cidade e o santuário serão destruídos.</p>
+        </div>
+        <div class="week-block" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.22);">
+          <span class="font-display text-xs font-bold text-crimson block mb-1">1 SEMANA · 7 anos</span>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A "semana" final — a mais debatida. Um "príncipe que há de vir" confirma uma aliança e a viola no meio da semana, cessando o sacrifício. Referência ao Antioco IV ou figura futura?</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl mb-4" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+        <h4 class="font-display text-sm font-semibold text-forest mb-2">O Cálculo que Aponta para Jesus</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Partindo do decreto de Artaxerxes (445 a.C. — Ne 2:1–8) e contando 69 semanas de 7 anos usando o calendário profético de 360 dias/ano: 69 × 7 × 360 = 173.880 dias = ~476 anos solares — que termina aproximadamente em 33 d.C., no ano da crucificação de Jesus. Este cálculo foi desenvolvido pelo explorador e arqueólogo britânico Sir Robert Anderson em <em>The Coming Prince</em> (1894) e permanece um dos argumentos mais citados da profecia cristã.
+        </p>
+      </div>
+
+      <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">O que as 70 Semanas definitivamente ensinam (9:24)</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">Independentemente do debate sobre a última "semana", o versículo 24 declara claramente o propósito das 490 semanas: "acabar a transgressão, por fim ao pecado, expiar a iniquidade, trazer a justiça eterna, selar a visão e a profecia, e ungir o Santíssimo." São seis realizações que descrevem o escopo completo da obra do Messias — exatamente o que o NT afirma que Jesus cumpriu.</p>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">👑 Deus soberano sobre os impérios</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🦁 Fidelidade em terra estranha</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">👤 O Filho do Homem</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">📅 O tempo na mão de Deus</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🔥 Resistência à idolatria</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌱 Ressurreição dos mortos</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🪨 O reino eterno de Deus</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🙏 Oração como arma política</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Daniel no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.2);">
+              <span class="font-display text-xs font-bold text-violet">"Filho do Homem" — ~80× nos Evangelhos</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O título favorito de Jesus para si mesmo vem diretamente de Daniel 7:13. Ao reivindicá-lo diante do Sinédrio (Mt 26:64), Jesus foi condenado por blasfêmia — porque os sacerdotes entenderam que estava se identificando com a figura divina de Daniel 7.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Dn 12:2–3 — Ressurreição</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Muitos dos que dormem no pó da terra ressuscitarão" — uma das declarações mais claras de ressurreição no AT. João 5:28–29 e 1 Co 15 constroem sobre esta fundação.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Ap 13 e Daniel</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A besta de Apocalipse 13 combina características dos quatro animais de Daniel 7 (corpo de leopardo, pés de urso, boca de leão). João retoma o quadro profético de Daniel para descrever o poder opositor ao povo de Deus na era cristã.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Mt 24:15 — "A abominação da desolação"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus cita Daniel 9:27 e 11:31 ao profetizar a destruição de Jerusalém: "quando virdes a abominação da desolação, da qual falou o profeta Daniel, no lugar santo..." — confirmando a autenticidade profética do livro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Belsazar confirmado arqueologicamente:</strong> Por séculos, críticos apontaram que nenhum registro histórico mencionava Belsazar como rei da Babilônia — a história secular conhecia apenas Nabonido como último rei. Em 1854, a Crônica de Nabonido foi descoberta, confirmando que Belsazar era filho de Nabonido e governava a Babilônia enquanto o pai estava em campanha. O "segundo no reino" prometido a Daniel (5:29) agora faz sentido perfeito.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A doença de Nabucodonosor:</strong> O cap. 4 descreve o rei comendo capim, vivendo ao relento, com cabelos como penas e unhas como garras. Psiquiatras modernos identificam isto com <em>boanthropia</em> ou <em>zoanthropia</em> — uma condição em que o paciente acredita ser um animal. Um relato fragmentado da Biblioteca de Nippur menciona Nabucodonosor sofrendo de uma "doença mental" por um período de seu reinado.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O debate da autoria:</strong> Muitos estudiosos críticos datam Daniel no período macabeu (~165 a.C.) — argumentando que é história disfarçada de profecia, escrita durante a perseguição de Antíoco IV Epifânio. Estudiosos conservadores defendem a autoria danielina do séc. VI a.C., citando confirmações arqueológicas (Belsazar, vocabulário persa), o uso do livro nos Rolos do Mar Morto (~125 a.C.) e a citação de Jesus (Mt 24:15).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Mene Mene Tequel Parsim" — frases que entraram nas línguas:</strong> "Mene mene tequel" tornou-se expressão em várias línguas para "foi pesado e encontrado em falta." Em inglês, "the writing on the wall" (a escrita na parede) significa um sinal óbvio de desastre iminente — diretamente de Daniel 5.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Daniel 12:2–3 — A ressurreição mais clara do AT:</strong> "Muitos dos que dormem no pó da terra ressuscitarão, uns para a vida eterna, e outros para vergonha e horror eterno." Esta passagem, junto com Jó 19:25 e Is 26:19, forma a base do ensino do AT sobre a ressurreição individual — que Jesus afirmou, Paulo desenvolveu (1 Co 15) e o Apocalipse completou.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O "quarto" na fornalha (3:25):</strong> Nabucodonosor viu quatro pessoas na fornalha e declarou que o quarto "é semelhante a um filho dos deuses." O rei pagão usou sua própria categoria religiosa. Pais da Igreja desde os primeiros séculos identificaram este personagem como uma teofania pré-encarnada de Cristo — o mesmo que apareceu a Abraão em Gênesis 18 e a Josué em Josué 5:13–15.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Daniel nos Rolos do Mar Morto:</strong> Oito manuscritos de Daniel foram encontrados em Qumrã, datando do séc. II e I a.C. — muito próximos da suposta data de composição da teoria crítica. O texto é virtualmente idêntico ao hebraico/aramaico masorético posterior, não mostrando nenhuma evidência de ser um documento recente "disfarçado" como antigo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A oração de Daniel — o modelo da confissão coletiva:</strong> A oração de Daniel no capítulo 9 (v.4–19) é uma das maiores orações de confissão coletiva da Bíblia — Daniel orou "nós pecamos" mesmo sendo pessoalmente justo. É o modelo que Neemias seguiu (Ne 1:6–7) e que Esdras seguiu (Ed 9:6–15): o intercessor fiel que se identifica com o pecado da comunidade.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Daniel importa hoje:</strong> Daniel viveu setenta anos num sistema político que exigia comprometimento e usou todos os meios — desde a promoção na carreira até a ameaça de morte — para fazê-lo curvar. Ele nunca curvou. Não se retirou do sistema (como os Essênios fariam depois) nem se integrou comprometendo a fé (como a maioria dos exilados). Encontrou um caminho de presença fiel — influente sem ser corruptível. Para crentes que vivem em contextos seculares, hostis ou pluralistas, Daniel é o mais prático dos profetas: mostra que é possível servir Deus dentro de Babel sem se tornar babilônico.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O nosso Deus, a quem servimos, é poderoso para nos livrar... Mas mesmo que não, fica sabendo, ó rei, que não serviremos aos teus deuses."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Daniel 3:17–18 · A fé não-transacional · O "mas mesmo que não"</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Vi nas visões da noite um ser semelhante a filho do homem... e foi-lhe dado domínio, e glória, e reino; e todos os povos, nações e línguas o serviram."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Daniel 7:13–14 · O Filho do Homem · A visão que Jesus reivindicou para si mesmo</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E muitos dos que dormem no pó da terra ressuscitarão, uns para a vida eterna, e outros para vergonha e horror eterno."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Daniel 12:2 · A declaração de ressurreição mais clara do Antigo Testamento</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Daniel · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

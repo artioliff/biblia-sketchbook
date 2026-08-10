@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Miquéias — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Miquéias 6:8 — os três pilares */
+    .pillar {
+      border-radius: 12px;
+      border: 2px solid;
+      padding: 1.5rem 1.25rem;
+      text-align: center;
+      flex: 1;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .pillar:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.1);
+    }
+    .pillar-heb {
+      font-size: 1.8rem;
+      font-family: serif;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    /* Belém — a profecia */
+    .bethlehem-tag {
+      display: inline-block;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid;
+      vertical-align: middle;
+      margin-left: 6px;
+    }
+
+    /* O processo jurídico de Deus */
+    .court-block {
+      border-radius: 9px;
+      border: 1px solid;
+      padding: 0.875rem 1rem;
+      transition: transform 0.15s;
+    }
+    .court-block:hover { transform: translateX(3px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MENORES · 33º LIVRO · 6º DOS DOZE
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Miquéias
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>מִיכָה</em> (Mikah) — "Quem é como Deus?" · uma pergunta embutida num nome
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O profeta rural que nomeou <strong>Belém</strong> como berço do Messias · o livro da mais densa ética bíblica em um versículo · e a pergunta que o próprio nome responde: <em>"Quem é um Deus como tu?"</em>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">7</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">105</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~735–700</div>
+          <div class="font-body text-sm text-ink-muted mt-1">a.C. — ministério</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Moresheth</div>
+          <div class="font-body text-sm text-ink-muted mt-1">aldeia rural · não a capital</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Profeta do Interior</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Miquéias era de <strong>Moresheth-Gate</strong> — uma aldeia agrícola no sopé das colinas da Judeia (Shephelah), a cerca de 35 km a sudoeste de Jerusalém. Enquanto seu contemporâneo Isaías circulava nos palácios e cortes reais, Miquéias vinha do campo. Via a injustiça de baixo para cima — como os camponeses que perdiam suas terras para os latifundiários urbanos.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Profetizou durante os reinados de <strong>Jotão, Acaz e Ezequias</strong> — o mesmo período turbulento de Isaías, que incluiu a queda de Samaria (722 a.C.) e o cerco de Jerusalém por Senaqueribe (701 a.C.).
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-forest">Contemporâneos:</strong> Isaías (Jerusalém), Oseias (Norte) e Amós (Norte) eram contemporâneos de Miquéias. A semelhança entre Mq 4:1–4 e Is 2:2–4 — quase palavra por palavra — é o paralelo literário mais impressionante entre dois profetas da Bíblia.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Nome como Teologia</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O nome hebraico <em>Mikah</em> é uma pergunta: <strong>מִי כָּמוֹךָ</strong> (<em>Mi kamokha</em>) — "Quem é como tu?" O livro responde com sua última estrofe (7:18): <em>"Quem é um Deus como tu, que perdoa a iniquidade?"</em> O nome do profeta e a conclusão do livro são a mesma pergunta retórica — cuja resposta é: ninguém.
+          </p>
+          <div class="p-4 rounded-xl italic"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "Quem é um Deus como tu, que perdoa a iniquidade... que não retém para sempre a sua ira... lançará no fundo do mar todos os nossos pecados."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Miquéias 7:18–19 · A pergunta que é o nome do profeta</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Miquéias 6:8 -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Versículo Mais Denso da Ética Bíblica — Miquéias 6:8</div>
+      <div class="p-5 rounded-xl italic text-center mb-6"
+           style="background:rgba(30,74,42,0.06);border:2px solid rgba(30,74,42,0.3);">
+        <p class="font-body text-2xl text-ink leading-relaxed mb-2">
+          "Ele te declarou, ó homem, o que é bom; e que é o que o Senhor pede de ti, senão que pratiques a justiça, e ames a misericórdia, e andes humildemente com o teu Deus?"
+        </p>
+        <p class="font-display text-xs text-forest mt-3 tracking-widest">Miquéias 6:8 · Possivelmente o resumo mais denso da religião em toda a Bíblia</p>
+      </div>
+
+      <div class="flex gap-4 mb-5">
+        <div class="pillar" style="background:rgba(30,58,95,0.06);border-color:rgba(30,58,95,0.35);">
+          <span class="pillar-heb" style="color:rgba(30,58,95,0.4);">מִשְׁפָּט</span>
+          <h4 class="font-display text-sm font-bold text-sapphire mb-2">Praticar a Justiça</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2"><em>Mishpat</em> — "direito, julgamento correto." Não é sentimento — é ação. Praticar a justiça é agir corretamente nos tribunais, nos negócios, nas relações de poder. É o componente <strong>externo e social</strong> da fé.</p>
+          <div class="mt-2 p-2 rounded text-xs font-body italic text-ink-faint"
+               style="background:rgba(255,255,255,0.5);">Ecoa Amós 5:24 — "que a justiça corra como águas"</div>
+        </div>
+        <div class="pillar" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.3);">
+          <span class="pillar-heb" style="color:rgba(139,32,32,0.3);">חֶסֶד</span>
+          <h4 class="font-display text-sm font-bold text-crimson mb-2">Amar a Misericórdia</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2"><em>Chesed</em> — amor leal de aliança, bondade inabalável. Não basta praticá-la — é preciso <em>amá-la</em>. A motivação importa tanto quanto o ato. É o componente <strong>relacional e afetivo</strong> da fé.</p>
+          <div class="mt-2 p-2 rounded text-xs font-body italic text-ink-faint"
+               style="background:rgba(255,255,255,0.5);">Ecoa Oseias 6:6 — "misericórdia quero e não sacrifício"</div>
+        </div>
+        <div class="pillar" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.3);">
+          <span class="pillar-heb" style="color:rgba(92,61,30,0.3);">צְנָעָה</span>
+          <h4 class="font-display text-sm font-bold text-earth mb-2">Andar Humildemente</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2"><em>Tzne'ah</em> — modesto, discreto, sem ostentação. Caminhar na presença de Deus ciente do que se é. É o componente <strong>vertical e espiritual</strong> da fé — a orientação interior que sustenta os outros dois.</p>
+          <div class="mt-2 p-2 rounded text-xs font-body italic text-ink-faint"
+               style="background:rgba(255,255,255,0.5);">Contrasta com o orgulho de Edom (Abdias 3) e dos líderes de 3:1</div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">O Contexto da Pergunta — O Processo Jurídico (6:1–7)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Miquéias 6:8 é a resposta a uma pergunta feita pelo povo exasperado com o ritual: "Com o que me apresentarei ao Senhor? Com holocaustos? Milhares de carneiros? Dez mil rios de azeite? Meu primogênito pelos meus pecados?" A resposta de Deus não pede mais ritual — pede menos religião exterior e mais ética interior. O versículo 8 começa com "ele já te declarou" — Deus não está inventando novas exigências. Já havia dito o tempo todo.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">Mq 6:8 e o Sermão da Montanha</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Os três pilares de Miquéias 6:8 encontram paralelos diretos nas Bem-aventuranças: "Bem-aventurados os misericordiosos" (<em>chesed</em>), "os que têm fome e sede de justiça" (<em>mishpat</em>), "os mansos" (<em>tzne'ah</em>). Quando Jesus resumiu a Lei nos dois mandamentos — amar a Deus e ao próximo — estava condensando a mesma estrutura de Miquéias: vertical (andar com Deus) e horizontal (justiça e misericórdia).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Profecia de Belém -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Profecia de Belém — 5:2 · O Único Profeta que Nomeou a Cidade</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">
+              "E tu, Belém Efrata, posto que és pequena entre os milhares de Judá, de ti me sairá o que há de ser dominador em Israel; e as suas saídas são desde os tempos antigos, desde os dias da eternidade."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Miquéias 5:2 · Escrito ~700 a.C. · Citado em Mateus 2:5–6</p>
+          </div>
+          <div class="space-y-2">
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              📍 <strong>Belém Efrata</strong> — distingue esta Belém (de Judá) de outra Belém em Zebulom (Js 19:15)
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              🏘️ <strong>"Pequena entre os milhares de Judá"</strong> — Belém era demograficamente insignificante; o Messias viria de onde ninguém esperava
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);">
+              ♾️ <strong>"Saídas desde os tempos da eternidade"</strong> — aponta para a pre-existência do governante — não apenas uma origem davídica histórica, mas uma origem além do tempo
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Profecia que Herod Conhecia</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Quando os magos chegaram a Jerusalém perguntando onde havia nascido "o rei dos judeus", Herodes convocou os principais sacerdotes e escribas. Eles responderam imediatamente — citando Miquéias 5:2 de memória (Mt 2:5–6). A profecia de Belém era conhecimento teológico padrão na época de Jesus.
+          </p>
+          <div class="p-3 rounded-lg mb-2" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+            <span class="font-display text-xs font-bold text-forest">Mt 2:5–6 — Os Magos e Herodes</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Os escribas de Herodes citaram Mq 5:2 como resposta imediata à pergunta sobre o local do nascimento do Messias — confirmando que esta profecia era amplamente conhecida e reconhecida como messiânica.</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <span class="font-display text-xs font-bold text-sapphire">Jo 7:41–42 — O Debate na Multidão</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Alguns na multidão duvidavam que Jesus fosse o Messias porque achavam que ele era da Galileia — sem saber que nascera em Belém. João cita Mq 5:2 como a profecia que a multidão usava como critério.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Julgamento dos Líderes -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Corrupção dos Líderes — Cap. 3 · O Capítulo Mais Feroz</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 3 é a acusação mais severa contra a liderança religiosa e política em toda a profecia menor. Miquéias ataca três grupos simultaneamente — governantes, profetas e sacerdotes — e conclui com a profecia mais audaciosa do livro: Jerusalém será destruída.
+      </p>
+      <div class="space-y-3 mb-5">
+        <div class="court-block" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="flex gap-3">
+            <span class="text-xl flex-shrink-0">👑</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-crimson mb-1">Os Governantes — "Que Odeiam o Bem e Amam o Mal"</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed">"Que arrancais a pele de cima deles e a carne de cima dos seus ossos; que comeis a carne do meu povo, e lhes arrancais a pele, e lhes quebras os ossos." (3:2–3) — uma metáfora de carnificina que descreve como os líderes tratavam os camponeses pobres: como animais a serem esquartejados para consumo pessoal. No dia em que clamarem ao Senhor, "ele esconderá o rosto deles".</p>
+            </div>
+          </div>
+        </div>
+        <div class="court-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <div class="flex gap-3">
+            <span class="text-xl flex-shrink-0">🗣️</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-earth mb-1">Os Profetas — "Que Enganam o Meu Povo"</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed">"Que profetizam paz quando têm o que comer, mas declaram guerra santa contra aquele que não lhes mete nada na boca." (3:5) — profetas de aluguel cuja mensagem variava conforme o pagamento. Para os que pagavam: "paz." Para os que não pagavam: "guerra." A visão desaparecerá deles, dirá Miquéias — ficarão sem palavra alguma de Deus.</p>
+            </div>
+          </div>
+        </div>
+        <div class="court-block" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <div class="flex gap-3">
+            <span class="text-xl flex-shrink-0">⛪</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-sapphire mb-1">Os Sacerdotes e Profetas — "Edificam Sião com Sangue"</h4>
+              <p class="font-body text-sm text-ink-muted leading-relaxed">"Os seus chefes julgam por suborno, os seus sacerdotes ensinam por paga, e os seus profetas profetizam por dinheiro; e ainda assim se apoiam no Senhor, dizendo: Não está o Senhor no meio de nós? Nenhum mal nos sobrevirá." (3:11) — A combinação mais explosiva: corrupção total + confiança religiosa inabalável. Exatamente a ilusão que o Sermão do Templo de Jeremias (Jr 7) também atacou.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- A profecia contra Jerusalém -->
+      <div class="p-5 rounded-xl" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.25);">
+        <h4 class="font-display text-sm font-semibold text-sapphire mb-3">⚡ A Profecia que Salvou Jeremias — Mq 3:12</h4>
+        <div class="italic mb-3">
+          <p class="font-body text-base text-ink leading-relaxed">"Portanto, por causa de vós, Sião será lavrada como um campo, e Jerusalém se tornará em montões de ruínas, e o monte desta casa em altos de uma floresta."</p>
+        </div>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Esta foi a profecia mais ousada de Miquéias — e quase 100 anos depois, quando <strong>Jeremias</strong> pregou algo semelhante no Templo (Jr 7) e foi julgado por morte, os anciãos o defenderam citando exatamente este versículo de Miquéias (Jr 26:18–19): <em>"Miquéias de Moreste profetizou nos dias de Ezequias... E Ezequias... não o matou."</em> A profecia de Miquéias 3:12 salvou literalmente a vida de Jeremias — tornando-se um precedente legal de que profetas podem pregar julgamento sem ser executados.
+        </p>
+      </div>
+    </section>
+
+    <!-- Espadas em Arados -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Espadas em Arados — Cap. 4:1–4 · A Visão da Paz Universal</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4"
+               style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">
+              "E converterão as suas espadas em relhas de arado, e as suas lanças em foices; uma nação não levantará espada contra outra nação, nem aprenderão mais a guerra. Mas assentar-se-ão cada um debaixo da sua vide e debaixo da sua figueira, sem haver quem os amedronte."
+            </p>
+            <p class="font-display text-xs text-forest mt-2 tracking-widest">Miquéias 4:3–4</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Paralelo com Isaías</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Miquéias 4:1–3 e Isaías 2:2–4 são quase palavra por palavra idênticos — dois profetas contemporâneos compartilhando a mesma visão da paz messiânica universal. Qual citou o outro, ou se ambos compartilham uma fonte comum, é debatido. O que é certo: esta visão era o horizonte compartilhado da esperança profética do séc. VIII a.C.
+          </p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">A ONU e Miquéias/Isaías</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O versículo sobre "espadas em arados" (Is 2:4 / Mq 4:3) está inscrito numa parede de granito no jardim da sede da ONU em Nova York — presenteada pela União Soviética em 1959. O texto profético de 2.700 anos tornou-se o ideal das Nações Unidas.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">"Debaixo de sua vide e figueira" (4:4)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A imagem de cada pessoa sentada em paz sob sua própria vide e figueira — sem medo — aparece 1 Rs 4:25 (paz de Salomão) e é retomada em Zc 3:10. É a imagem bíblica da paz doméstica como sinal do reino de Deus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Processo Jurídico de Deus -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Processo Jurídico de Deus — Cap. 6:1–8 · "Que Fiz a Ti?"</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 6 abre com Deus convocando as montanhas e os fundamentos da terra como testemunhas de um processo jurídico (<em>rib</em> — "contenda, processo") contra Israel. A pergunta de Deus é ao mesmo tempo acusação e lamento — e é uma das mais comoventes do AT.
+      </p>
+      <div class="space-y-2 mb-5">
+        <div class="court-block" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="font-display text-xs font-bold text-sapphire">Deus convoca as testemunhas (6:1–2)</span>
+          <p class="font-body text-xs text-ink-muted mt-1">"Levantai-vos, contentai-vos perante os montes, e ouçam os outeiros a vossa voz. Ouvi, ó montes, a contenda do Senhor, e vós fortes fundamentos da terra." As montanhas antigas e os fundamentos da terra são convocados como tribunal — por terem sido testemunhas de toda a história de Israel com Deus.</p>
+        </div>
+        <div class="court-block" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="font-display text-xs font-bold text-sapphire">A pergunta de Deus (6:3)</span>
+          <p class="font-body text-xs text-ink-muted mt-1 italic">"Povo meu, que te fiz eu? Em que te cansei? Testifica contra mim." — Esta é uma das perguntas mais desconcertantes da Bíblia: Deus perguntando ao povo o que fez de errado. Não é fraqueza — é a demonstração da absurdidade da rebelião de Israel: não havia motivo legítimo para abandona-lo.</p>
+        </div>
+        <div class="court-block" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="font-display text-xs font-bold text-sapphire">O argumento de Deus (6:4–5)</span>
+          <p class="font-body text-xs text-ink-muted mt-1">Deus apresenta suas evidências: o Êxodo, Moisés, Arão e Miriã, a proteção contra Balaque e Balaão, a travessia do Jordão. Toda a história da salvação é a defesa de Deus: "Para que conheças os atos de justiça do Senhor."</p>
+        </div>
+        <div class="court-block" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.25);">
+          <span class="font-display text-xs font-bold text-forest">A sentença e a alternativa (6:6–8)</span>
+          <p class="font-body text-xs text-ink-muted mt-1">Israel pergunta desesperado: "Com o que me apresentarei? Holocaustos? Milhares de carneiros? O meu primogênito?" A resposta de Deus (v.8) não pede mais religião — pede menos ostentação e mais integridade: <em>mishpat, chesed, tzne'ah.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">⚖️ Justiça, misericórdia, humildade</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">⭐ O Messias de Belém</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">❌ Liderança corrupta</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🕊️ Paz universal</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🌾 O remanescente fiel</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🙏 Perdão incomparável</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">📜 Deus como advogado e juiz</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">👨‍🌾 Voz do campo contra a cidade</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Miquéias no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Mt 2:5–6 — A profecia de Belém</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Mq 5:2 citado pelos escribas de Herodes como o local do nascimento do Messias. É o primeiro cumprimento profético registrado após o nascimento de Jesus.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Mt 10:35–36 — Divisão familiar</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Vim trazer não a paz, mas a espada... o inimigo do homem serão os da sua própria casa" — Jesus cita quase literalmente Miquéias 7:6, aplicando a divisão descrita por Miquéias ao impacto do seu próprio ministério.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lc 1:72–73 — O Magnificat e Miquéias</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O cântico de Zacarias ("para exercer misericórdia com nossos pais, e se lembrar da sua santa aliança") ecoa a promessa de Miquéias 7:20: "Tu darás a Jacó a verdade e a Abraão a misericórdia."</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Jo 7:42 — A controvérsia sobre Belém</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A multidão debatia se Jesus poderia ser o Messias pois "o Cristo virá da semente de Davi e de Belém" — citando Miquéias 5:2. A profecia era critério de reconhecimento messiânico.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Miquéias 3:12 salvou Jeremias:</strong> Quando Jeremias pregou o "Sermão do Templo" (~609 a.C.) e foi acusado de merec a morte, os anciãos de Judá o defenderam citando Mq 3:12 como precedente — Miquéias havia profetizado a destruição de Jerusalém e Ezequias não o matou (Jr 26:17–19). A profecia de um profeta morto ~90 anos antes salvou a vida de um profeta vivo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O paralelismo com Isaías 2:2–4:</strong> Os quatro versículos de Mq 4:1–4 e Is 2:2–4 são tão similares que estudiosos debatem há séculos qual profeta foi a fonte original. A teoria mais aceita é que ambos citavam uma tradição litúrgica já estabelecida em Jerusalém — uma visão de paz messiânica cantada nos cultos do Templo e que ambos incorporaram.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Mq 6:8 na filosofia e na política:</strong> Miquéias 6:8 é provavelmente o versículo bíblico mais citado em contextos de ética secular, filosofia política e direitos humanos. A tríade "justiça, misericórdia, humildade" foi incorporada em constituições, cartas de valores e discursos políticos ao longo do séc. XX — muitas vezes sem que os citantes soubessem a origem bíblica.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Saídas desde os dias da eternidade" (5:2b):</strong> A segunda parte da profecia de Belém é teologicamente a mais densa: o governante que sairá de Belém tem "saídas desde a eternidade" (<em>mikedem mime olam</em> — literalmente "de antigamente, desde os dias da eternidade"). É uma afirmação de pre-existência — utilizada pelos Padres da Igreja como prova da divindade de Cristo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O remanescente como leão (5:7–8):</strong> Miquéias usa duas metáforas contrastantes para o remanescente de Israel: como "orvalho do Senhor" (silencioso, sustentador, invisível) e como "leão entre os animais da floresta" (irresistível, temível). O mesmo grupo tem dois papéis — bênção e julgamento — dependendo de como as nações os tratam.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Lançará... todos os nossos pecados no fundo do mar" (7:19):</strong> Esta imagem — pecados lançados no fundo do mar — tornou-se a base da tradição judaica do <em>Tashlich</em>: na tarde de Rosh Hashaná, judeus vão a um corpo de água e jogam pedaços de pão simbolizando seus pecados, baseando-se em Miquéias 7:19. É uma prática religiosa derivada diretamente de Miquéias observada há séculos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Miquéias e a "voz do povo":</strong> A perspectiva de Miquéias é consistentemente a dos camponeses oprimidos — não dos cortesãos, não dos sacerdotes. Ele descreve como os poderosos "cobiçam campos e os tomam, casas e as arrebatam" (2:2) — os latifundiários urbanos que expropriavam propriedades rurais por dívidas. É a voz da periferia contra o centro, do campo contra a cidade.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Miquéias ainda ressoa:</strong> Em toda geração, a Igreja e a sociedade são tentadas a substituir o v.8 por outro conjunto de exigências — mais rituais, mais doutrina, mais regulamentos, mais ostentação religiosa. Miquéias responde com três palavras: <em>mishpat, chesed, tzne'ah</em>. Ele não pede menos fé — pede que a fé se torne carne na forma de justiça para o vulnerável, amor leal nos relacionamentos e humildade diante de Deus. E do mesmo profeta que nos deu este resumo ético, viemos o nome da cidade onde o Senhor desta ética nasceu: Belém.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Ele te declarou, ó homem, o que é bom; e que é o que o Senhor pede de ti, senão que pratiques a justiça, e ames a misericórdia, e andes humildemente com o teu Deus?"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Miquéias 6:8 · O maior resumo da ética bíblica em um versículo</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E tu, Belém Efrata... de ti me sairá o que há de ser dominador em Israel; e as suas saídas são desde os dias da eternidade."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Miquéias 5:2 · A profecia de Belém · ~700 a.C. · Citada quando os Magos chegaram a Jerusalém</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Quem é um Deus como tu, que perdoa a iniquidade... lançará no fundo do mar todos os nossos pecados."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Miquéias 7:18–19 · A resposta do nome do profeta · o maior elogio ao perdão divino no livro</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Miquéias · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

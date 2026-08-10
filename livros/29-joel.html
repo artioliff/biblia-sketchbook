@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joel — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Os 4 nomes de gafanhotos */
+    .locust-card {
+      border-radius: 9px;
+      border: 1px solid;
+      padding: 0.875rem;
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .locust-card:hover { transform: translateY(-3px); }
+
+    /* Derramamento do Espírito — os grupos */
+    .spirit-group {
+      border-radius: 9px;
+      border: 1px solid;
+      padding: 0.875rem 1rem;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .spirit-group:hover { transform: translateX(4px); }
+
+    /* Dia do Senhor — zoom */
+    .day-card {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .day-card:hover { transform: translateY(-2px); }
+    .day-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      opacity: 0.04;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MENORES · 29º LIVRO · 2º DOS DOZE
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Joel
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>יוֹאֵל</em> (Yoel) — "O Senhor é Deus" ou "YHWH é Deus"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Do gafanhoto ao Pentecostes · o profeta do <strong>Dia do Senhor</strong> · e o texto que Pedro citou quando o Espírito Santo foi derramado sobre toda carne
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">3</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">73</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">5×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">"Dia do Senhor" — mais que qualquer livro pequeno</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">4</div>
+          <div class="font-body text-sm text-ink-muted mt-1">palavras hebraicas para "gafanhoto"</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Um Livro Sem Data Fixada</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Joel é um dos poucos livros proféticos que <strong>não menciona nenhum rei</strong> — tornando sua datação um dos maiores debates da introdução bíblica. Estudiosos propõem desde o século IX a.C. (período do rei Joás, ~830 a.C.) até o período pós-exílico (~400 a.C.). A Bíblia hebraica o coloca após Oseias e antes de Amós, sugerindo uma sequência temática, não necessariamente cronológica.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O que é certo: Joel foi provocado por uma <strong>devastação de gafanhotos sem precedente</strong> que atingiu Judá. Desta calamidade agrícola, o profeta extrai uma das mais abrangentes visões proféticas da Bíblia — do inseto ao Espírito Santo, do campo ao cosmos.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Movimento do Livro</h3>
+          <div class="space-y-2">
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.2);">
+              <span class="font-display text-xs font-bold text-fire flex-shrink-0 mt-0.5">Cap. 1</span>
+              <span class="font-body text-xs text-ink-muted">O gafanhoto presente — lamento, jejum, convocação da assembleia</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5">Cap. 2a</span>
+              <span class="font-body text-xs text-ink-muted">O gafanhoto como tipo — o Dia do Senhor que se aproxima, o exército celestial</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 mt-0.5">Cap. 2b</span>
+              <span class="font-body text-xs text-ink-muted">A resposta de Deus — restauração, "anos que o gafanhoto comeu", chuva da graça</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.22);">
+              <span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5">Cap. 2:28–32</span>
+              <span class="font-body text-xs text-ink-muted font-semibold text-forest">O derramamento do Espírito sobre toda carne — o Pentecostes</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+              <span class="font-display text-xs font-bold text-violet flex-shrink-0 mt-0.5">Cap. 3</span>
+              <span class="font-body text-xs text-ink-muted">O julgamento das nações no Vale de Josafá — o Dia do Senhor escatológico</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os Gafanhotos -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Praga dos Gafanhotos — Cap. 1 · Um Desastre em Quatro Ondas</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Joel 1:4 usa quatro palavras hebraicas distintas para descrever diferentes estágios ou espécies de gafanhotos — um nível de detalhamento que sugere descrição de uma praga real e catastrófica. A devastação foi total: vinhas, figueiras, romanzeiros, tamareiras, maçãs, todos os campos — "a alegria dos homens secou-se."
+      </p>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 mb-5">
+        <div class="locust-card" style="background:rgba(184,74,16,0.07);border-color:rgba(184,74,16,0.3);">
+          <div class="text-2xl mb-1">🦗</div>
+          <h4 class="font-display text-xs font-bold text-fire mb-1">Gazam</h4>
+          <p class="font-body text-xs text-ink-faint mb-1">"o que corta"</p>
+          <p class="font-body text-xs text-ink-muted">Possivelmente o gafanhoto adulto cortador</p>
+        </div>
+        <div class="locust-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.28);">
+          <div class="text-2xl mb-1">🦗</div>
+          <h4 class="font-display text-xs font-bold text-crimson mb-1">Arbeh</h4>
+          <p class="font-body text-xs text-ink-faint mb-1">"o multiplicador"</p>
+          <p class="font-body text-xs text-ink-muted">O gafanhoto migratório em enxame — o mais comum no AT</p>
+        </div>
+        <div class="locust-card" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.28);">
+          <div class="text-2xl mb-1">🦗</div>
+          <h4 class="font-display text-xs font-bold text-earth mb-1">Yeleq</h4>
+          <p class="font-body text-xs text-ink-faint mb-1">"o lambedor"</p>
+          <p class="font-body text-xs text-ink-muted">Larva jovem que devora o que restou</p>
+        </div>
+        <div class="locust-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <div class="text-2xl mb-1">🦗</div>
+          <h4 class="font-display text-xs font-bold text-sapphire mb-1">Chasil</h4>
+          <p class="font-body text-xs text-ink-faint mb-1">"o devorador"</p>
+          <p class="font-body text-xs text-ink-muted">O que consome completamente — nada sobra</p>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl italic mb-4"
+           style="background:rgba(184,74,16,0.06);border:1px solid rgba(184,74,16,0.25);">
+        <p class="font-body text-base text-ink leading-relaxed text-center">
+          "O que sobrou do gafanhoto palmeiro, comeu o gafanhoto saltador; o que sobrou do gafanhoto saltador, comeu o gafanhoto destruidor; e o que sobrou do gafanhoto destruidor, comeu o gafanhoto consumidor."
+        </p>
+        <p class="font-display text-xs text-fire mt-2 tracking-widest text-center">Joel 1:4 — Quatro ondas de devastação crescente</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+          <h4 class="font-display text-sm font-semibold text-crimson mb-2">📯 O Chamado ao Luto (1:13–14)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Joel convoca os sacerdotes para rasgar as vestes, lamuriarem-se e passar a noite em pano de saco. Ordena uma assembleia sagrada de jejum — jovens e velhos, crianças e anciãos, até os noivos devem sair dos seus quartos. A catástrofe demanda resposta litúrgica coletiva.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.22);">
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">🌾 O que foi Destruído</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">"A vinha está destruída, a figueira murchou; a romanzeira, a tamareira, a maçãzeira, todas as árvores do campo estão secas; e a alegria dos homens secou-se." (1:12) — A devastação não é apenas econômica: a alegria (<em>simchah</em>) secou com as árvores. A prosperidade e o bem-estar foram extintos junto com a colheita.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Dia do Senhor -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Dia do Senhor — יוֹם יְהוָה (Yom YHWH)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        A expressão "<strong>Dia do Senhor</strong>" aparece 5 vezes em Joel — mais concentrada do que em qualquer outro livro pequeno. Joel é o profeta que mais desenvolveu esta teologia. Para ele, o Dia do Senhor tem múltiplas camadas: é a praga presente, um exército apocalíptico futuro e o julgamento escatológico final das nações.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+        <div class="day-card" style="background:rgba(184,74,16,0.06);border-color:rgba(184,74,16,0.28);">
+          <div class="absolute inset-0" style="background:rgba(184,74,16,0.03);"></div>
+          <div class="relative">
+            <h4 class="font-display text-sm font-semibold text-fire mb-2">🦗 Camada 1 — Praga Presente</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">A devastação dos gafanhotos <em>já</em> é um "Dia do Senhor" — uma intervenção divina histórica de julgamento. O imediato aponta para o escatológico. Joel usa o desastre presente como janela para uma realidade maior.</p>
+          </div>
+        </div>
+        <div class="day-card" style="background:rgba(139,32,32,0.06);border-color:rgba(139,32,32,0.28);">
+          <div class="relative">
+            <h4 class="font-display text-sm font-semibold text-crimson mb-2">⚔️ Camada 2 — O Exército Apocalíptico</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"É grande o Dia do Senhor e muito temível; quem o poderá suportar?" (2:11) Um exército avança que escurece o sol e a lua — "nunca houve coisa semelhante desde os tempos antigos." Os gafanhotos se transformam em metáfora de um poder militar aterrador.</p>
+          </div>
+        </div>
+        <div class="day-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.25);">
+          <div class="relative">
+            <h4 class="font-display text-sm font-semibold text-violet mb-2">🌌 Camada 3 — Julgamento Final</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">No cap. 3, o Dia do Senhor é o julgamento escatológico das nações no Vale de Josafá. "Multidões, multidões no vale da decisão! Pois o Dia do Senhor está perto, no vale da decisão." (3:14)</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- O chamado ao arrependimento -->
+      <div class="p-5 rounded-xl italic mb-4"
+           style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.3);">
+        <p class="font-body text-xl text-ink leading-relaxed text-center mb-2">
+          "Rasgai o vosso coração e não as vossas vestes, e convertei-vos ao Senhor vosso Deus, porque ele é gracioso e misericordioso, tardio em irar-se e grande em benignidade."
+        </p>
+        <p class="font-display text-xs text-gold-dark tracking-widest text-center">Joel 2:13 · O convite ao arrependimento verdadeiro</p>
+      </div>
+      <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+        <p class="font-body text-xs text-ink-muted leading-relaxed">
+          <strong class="text-forest">"Rasgai o coração e não as vestes":</strong> Na cultura do AT, rasgar as vestes era o gesto externo de luto e arrependimento (cf. Job, Ezequiel). Joel pede algo mais difícil: o gesto interno antes do externo — porque um coração partido sem vestes rasgadas vale mais do que vestes rasgadas sem coração partido. Rasgue por dentro, não por fora.
+        </p>
+      </div>
+    </section>
+
+    <!-- O Derramamento do Espírito -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Derramamento do Espírito — 2:28–32 · O Texto do Pentecostes</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Esta é a profecia mais citada de Joel no NT. Pedro, no Dia de Pentecostes, se levantou com os Onze e declarou: <em>"Isto é o que foi dito pelo profeta Joel."</em> (At 2:16) É a interpretação apostólica definitiva de Joel 2:28–32 — a efusão do Espírito Santo sobre toda carne é o cumprimento do que Joel anunciou.
+      </p>
+
+      <div class="p-5 rounded-xl italic mb-5"
+           style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+        <p class="font-body text-base text-ink leading-relaxed mb-2">
+          "E acontecerá depois disto que derramarei o meu Espírito sobre toda a carne; e vossos filhos e vossas filhas profetizarão, os vossos velhos terão sonhos, os vossos jovens terão visões. Também sobre os servos e sobre as servas derramarei o meu Espírito naqueles dias... E todo aquele que invocar o nome do Senhor será salvo."
+        </p>
+        <p class="font-display text-xs text-forest mt-2 tracking-widest">Joel 2:28–29, 32</p>
+      </div>
+
+      <h3 class="font-display text-sm font-semibold text-ink mb-4">Os Quatro Grupos que Recebem o Espírito</h3>
+      <div class="space-y-2 mb-5">
+        <div class="spirit-group" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <span class="text-xl flex-shrink-0">👨‍👧‍👦</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">Filhos E Filhas — Igualdade de Gênero</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">No AT, a profecia era predominantemente masculina e de acesso restrito. Joel anuncia: filhas profetizarão ao lado dos filhos. No Pentecostes, as 120 pessoas no cenáculo incluíam mulheres (At 1:14) — e todas receberam o Espírito (At 2:4). As quatro filhas de Filipe (At 21:9) e outras prophetisas na Igreja primitiva são cumprimento direto.</p>
+          </div>
+        </div>
+        <div class="spirit-group" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-xl flex-shrink-0">👴👦</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">Velhos E Jovens — Igualdade de Idade</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Os velhos terão sonhos, os jovens terão visões. Ambas são formas de revelação divina (Nm 12:6). O Espírito não respeita hierarquia etária — a sabedoria acumulada dos velhos e a energia visionária dos jovens são igualmente canais da revelação divina.</p>
+          </div>
+        </div>
+        <div class="spirit-group" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.22);">
+          <span class="text-xl flex-shrink-0">👨‍🦱👩</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">Servos E Servas — Igualdade Social</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">A mais radical das três: até os escravos, a camada mais baixa da sociedade antiga, receberão o Espírito. Paulo ecoa esta visão em Gálatas 3:28: "não há judeu nem grego, escravo nem livre, homem nem mulher — todos são um em Cristo." Joel antecipou a igualdade da nova criação.</p>
+          </div>
+        </div>
+        <div class="spirit-group" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.22);">
+          <span class="text-xl flex-shrink-0">🌍</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">Toda Carne — Alcance Universal</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">"Toda carne" (<em>kol-basar</em>) é a expressão mais abrangente possível — não apenas Israel, não apenas os judeus, mas a humanidade. O Espírito que antes repousava sobre profetas e reis específicos seria derramado universalmente. A era do Espírito é a era da democratização da revelação divina.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Todo aquele que invocar -->
+      <div class="p-5 rounded-xl" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.25);">
+        <h4 class="font-display text-sm font-semibold text-crimson mb-3">📣 "Todo Aquele que Invocar o Nome do Senhor Será Salvo" (2:32)</h4>
+        <div class="grid md:grid-cols-2 gap-3">
+          <div class="p-3 rounded-lg" style="background:rgba(255,255,255,0.5);">
+            <span class="font-display text-xs font-bold text-sapphire">At 2:21 — Pedro no Pentecostes</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Pedro cita este versículo como o convite que encerra sua pregação — quem quiser ser salvo deve invocar o nome do Senhor. O "Senhor" de Joel era YHWH; o "Senhor" de Pedro era Jesus ressuscitado.</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(255,255,255,0.5);">
+            <span class="font-display text-xs font-bold text-crimson">Rm 10:13 — Paulo aos Romanos</span>
+            <p class="font-body text-xs text-ink-muted mt-1">Paulo cita o mesmo versículo no argumento sobre a salvação dos gentios: "todo aquele que invocar o nome do Senhor será salvo." Ao aplicar a YHWH de Joel ao Senhor Jesus, Paulo faz uma das mais explícitas identificações de Jesus com YHWH no NT.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Restauração e Vale de Josafá -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Restauração e o Vale de Josafá — Cap. 2:25 e Cap. 3</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-gold-dark mb-3">🌾 "Os Anos que o Gafanhoto Comeu" — 2:25</h3>
+          <div class="p-4 rounded-xl italic mb-3"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "E vos restituirei os anos que a lagarta, o gafanhoto saltador, o gafanhoto destruidor e o gafanhoto consumidor comeram — o meu grande exército que enviei contra vós."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Joel 2:25</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+            Uma das promessas de restauração mais amadas do AT — Deus não apenas para o dano; ele <em>compensa</em> o tempo perdido. O mesmo Deus que enviou o gafanhoto como julgamento promete devolver o que o gafanhoto comeu.
+          </p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            A restauração inclui: chuva no tempo certo (chuva anterior e posterior), colheitas transbordantes, eiras cheias de trigo e lagares de vinho e azeite. A bênção será tão abundante que Israel "saberá que eu estou no meio de Israel" (2:27).
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-violet mb-3">⚖️ O Vale de Josafá — O Julgamento Final</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            No capítulo 3, o Dia do Senhor alcança sua dimensão escatológica: Deus convoca todas as nações para o <strong>Vale de Josafá</strong> — que significa "YHWH julga" — para o julgamento por como trataram Israel.
+          </p>
+          <div class="space-y-2">
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              ⚔️ "Forjai vossas relhas em espadas e vossas foices em lanças" (3:10) — <em>o oposto</em> de Is 2:4 e Mq 4:3 ("espadas em relhas de arado"). As nações precisam se armar — para enfrentar o julgamento divino
+            </div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              🌑 "O sol e a lua escurecerão, e as estrelas retirarão o seu brilho" (3:15) — sinais cósmicos do julgamento (citado em Mt 24:29; Ap 6:12)
+            </div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              🏔️ "Então sabereis que eu sou o Senhor vosso Deus, que habito em Sião" (3:17) — o objetivo final: o conhecimento de Deus
+            </div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              🌊 "Naquele dia, as montanhas destilarão vinho novo, os outeiros correrão com leite" (3:18) — a abundância escatológica final
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🔥 O Dia do Senhor</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🕊️ O derramamento do Espírito</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🌾 Restauração total</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">💔 Arrependimento genuíno</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">⚖️ Julgamento das nações</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌍 Salvação universal</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📯 O gafanhoto como mensagem</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🏔️ Sião como morada de Deus</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Joel no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">At 2:16–21 — O maior cumprimento de Joel</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Pedro cita Joel 2:28–32 integralmente no Dia de Pentecostes — a maior citação de Joel no NT. "Isto é o que foi dito pelo profeta Joel" — o derramamento do Espírito é a fulfillment direta da profecia.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Rm 10:13 — "Todo aquele que invocar"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo cita Joel 2:32 em seu argumento sobre a salvação universal — judeus e gentios podem chamar pelo mesmo Senhor (Jesus) e ser salvos.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Ap 6:12–17 — Sinais cósmicos</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Os sinais do sol, da lua e das estrelas de Joel 2:30–31 são retomados no Apocalipse (Ap 6:12–17) como descrição do dia do julgamento final.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Mt 24:29 — O discurso escatológico de Jesus</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus cita a linguagem de Joel 2:10 e 3:15 ("o sol escurecerá e a lua não dará a sua luz") ao descrever os sinais que precederão sua vinda.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O sermão de Pentecostes e Joel:</strong> A citação de Joel 2:28–32 em Atos 2 é a mais longa citação do AT em todo o livro de Atos. Pedro não interpretou — declarou: "isto é aquilo." O Pentecostes não era algo semelhante ao que Joel previu; era o próprio cumprimento. A era do Espírito havia chegado.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O livro bilíngue hebraico:</strong> Na Bíblia hebraica, Joel tem 4 capítulos — o que em nossas Bíblias é o capítulo 2 (versículos 28–32) corresponde ao capítulo 3 hebraico, e nosso capítulo 3 é o capítulo 4 hebraico. A divisão do capítulo 2 foi introduzida pela numeração cristã medieval.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Rasgai o coração, não as vestes" (2:13):</strong> Esta distinção entre gesto externo e disposição interna tornou-se um dos princípios centrais da espiritualidade bíblica — retomada por Jesus no Sermão da Montanha ("os que choram", os "puros de coração") e por Paulo ("a circuncisão do coração", Rm 2:29).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>As "relhas em espadas" — a inversão de Isaías:</strong> Joel 3:10 ("forjai vossas relhas em espadas") é a inversão deliberada de Isaías 2:4 e Miquéias 4:3 ("converterão suas espadas em relhas"). Isaías e Miquéias descrevem a era da paz messiânica; Joel descreve o julgamento que a precede. Ambas as visões são verdadeiras — em ordens e contextos diferentes.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Gafanhotos como exército de Deus (2:25):</strong> "O meu grande exército que enviei contra vós" — Deus chama os gafanhotos de <em>seu exército</em>. A praga não foi acaso ou natureza cega — foi instrumento divino deliberado. Isto explica porque o arrependimento é a resposta adequada: o juiz pode retirar a sentença se o réu se arrepende.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O "gracioso e misericordioso" de Joel 2:13:</strong> A descrição de Deus como "gracioso e misericordioso, tardio em irar-se e grande em benignidade" ecoa a auto-revelação de Deus a Moisés em Êxodo 34:6–7 — o texto mais citado no AT sobre a natureza de Deus. Joel o usa como fundamento do apelo ao arrependimento: <em>porque</em> Deus é assim, há esperança no retorno.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A "chuva anterior e posterior" (2:23):</strong> Em Israel, as chuvas ocorrem em duas estações — a chuva anterior (outubro-novembro, que prepara o solo para semear) e a chuva posterior (março-abril, que enche os grãos antes da colheita). Joel promete que Deus restaurará o ritmo natural das chuvas — uma promessa agrícola que era também promessa de graça.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O movimento do particular ao universal:</strong> Joel começa com o menor dos eventos possíveis — um gafanhoto — e termina com o maior: o julgamento de todas as nações e a habitação de Deus em Sião para sempre. Este movimento do microcósmico ao macrocósmico é uma das características mais belas do livro. O que parece local e agrícola é na verdade o ponto de entrada para a escatologia universal.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Joel ainda ressoa:</strong> Joel foi escrito para uma geração que havia perdido tudo — colheita, alegria, esperança. Sua mensagem não minimiza a perda: "o trigo se secou, a alegria dos homens secou." Mas transforma o luto em liturgia (convoca a assembleia de lamento) e o lamento em esperança (os anos perdidos serão restituídos). Em toda geração que atravessa colapso econômico, ambiental ou comunitário, Joel é a voz que diz: o mesmo Deus que permite o gafanhoto promete restituir o que o gafanhoto comeu. E sua maior promessa — o Espírito derramado sobre toda carne — transcende qualquer recuperação material: é a presença de Deus habitando em toda pessoa que invocar seu nome.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Rasgai o vosso coração e não as vossas vestes, e convertei-vos ao Senhor vosso Deus, porque ele é gracioso e misericordioso."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Joel 2:13 · O arrependimento verdadeiro — por dentro, não por fora</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E acontecerá depois disto que derramarei o meu Espírito sobre toda a carne; e vossos filhos e vossas filhas profetizarão."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Joel 2:28 · Citado por Pedro no Pentecostes (At 2:16) — "isto é aquilo"</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E vos restituirei os anos que a lagarta, o gafanhoto saltador, o gafanhoto destruidor e o gafanhoto consumidor comeram."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Joel 2:25 · A promessa de restauração do tempo perdido</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Joel · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

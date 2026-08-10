@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeremias — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Confissões de Jeremias */
+    .confession-card {
+      border-radius: 10px;
+      border-left: 4px solid;
+      padding: 1rem 1.125rem;
+      transition: transform 0.2s ease;
+    }
+    .confession-card:hover { transform: translateX(4px); }
+
+    /* Nova Aliança — comparação */
+    .covenant-row {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 8px;
+      align-items: start;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(200,145,58,0.12);
+    }
+    .covenant-row:last-child { border-bottom: none; }
+    .covenant-antiga { text-align: right; font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: #8b2020; }
+    .covenant-nova   { text-align: left;  font-family: 'Crimson Pro', serif; font-size: 0.85rem; color: #1e4a2a; }
+    .covenant-label  {
+      font-family: 'Cinzel', serif; font-size: 0.58rem; font-weight: 600;
+      letter-spacing: 0.06em; text-align: center; color: #b8a898; white-space: nowrap;
+    }
+
+    /* Paralelo Jeremias × Jesus */
+    .parallel-row {
+      display: flex;
+      gap: 10px;
+      padding: 7px 10px;
+      border-radius: 8px;
+      border: 1px solid;
+      align-items: flex-start;
+      transition: transform 0.2s;
+    }
+    .parallel-row:hover { transform: translateX(3px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MAIORES · 24º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Jeremias
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>יִרְמְיָהוּ</em> (Yirmeyahu) — "O Senhor exalta" ou "O Senhor lança/estabelece"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O livro mais longo da Bíblia em contagem de palavras · o <strong>"profeta choroso"</strong> · e o único profeta que registrou sua própria crise de fé · o livro da <strong>Nova Aliança</strong>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">52</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.364</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">~627–585</div>
+          <div class="font-body text-sm text-ink-muted mt-1">a.C. — 40+ anos de ministério</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">6 reis</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Josias a Zedequias</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Quem foi Jeremias?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Jeremias, filho do sacerdote Hilquias de Anatote, foi chamado ao ministério profético sendo ainda jovem — provavelmente um adolescente — em ~627 a.C., o 13º ano do rei Josias. Profetizou por mais de 40 anos, atravessando os reinados dos últimos seis reis de Judá, testemunhando a destruição de Jerusalém e do Templo em 586 a.C.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Não se casou, não teve filhos — por ordem divina (16:2), como sinal profético do que viria sobre o povo. Escreveu com a ajuda do seu secretário <strong>Baruque</strong>, filho de Nerias, que registrou, preservou e eventualmente publicou as profecias.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">O livro mais longo:</strong> Jeremias é o livro mais longo da Bíblia em número de palavras no hebraico original — ultrapassando até Salmos, que tem mais versículos mas menos palavras no total.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Um Livro Fora de Ordem</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Jeremias é único entre os profetas: <strong>não está em ordem cronológica</strong>. Os capítulos saltam entre diferentes reinados e períodos sem sequência temporal aparente. Isso confunde leitores e estudiosos — e a versão grega (LXX) tem uma ordem completamente diferente da hebraica (TM), sendo inclusive 1/8 mais curta.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            A disposição temática (em vez de cronológica) sugere que o livro foi organizado por Baruque e seus sucessores para enfatizar temas — não para contar uma história linear. O leitor precisa de ajuda extra para navegar o livro.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Chamado -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Chamado de Jeremias — Cap. 1</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-4 rounded-xl italic mb-4"
+               style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-lg text-ink leading-relaxed">
+              "Antes que eu te formasse no ventre materno, te conheci; e antes que saísses da madre, te santifiquei; às nações te dei por profeta."
+            </p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Jeremias 1:5 · O texto mais citado sobre a vida antes do nascimento</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A resposta de Jeremias é a de um jovem honesto: <em>"Ah, Senhor Deus! Eis que não sei falar, porque sou uma criança."</em> (1:6) Deus não aceita a desculpa — toca seus lábios e diz: "Eis que ponho as minhas palavras na tua boca." O chamado precede o consentimento; a capacidade é dada, não pré-existente.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">As Duas Visões do Chamado</h3>
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">🌿 O Ramo de Amendoeira (1:11–12)</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">Deus mostra um ramo de amendoeira (<em>shaqed</em> em hebraico) e explica: "Estou vigilante (<em>shoqed</em>) sobre a minha palavra para a cumprir." Um trocadilho profético: a amendoeira era a primeira árvore a florescer no inverno — símbolo de que Deus age cedo, antes que as outras árvores "acordem".</p>
+            </div>
+            <div class="p-4 rounded-xl" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson">🍲 O Caldeirão Fervente (1:13–15)</span>
+              <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">Um caldeirão fervendo voltado para o norte — o julgamento que vem da Babilônia. As nações do norte serão convocadas e cada uma estabelecerá seu trono nas portas de Jerusalém. Uma profecia do cerco babilônico 40 anos antes de acontecer.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- As Confissões de Jeremias -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">As Confissões de Jeremias — A Alma do Profeta Exposta</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Nenhum outro profeta do AT revela tanto de sua vida interior quanto Jeremias. Em seis passagens — chamadas pelos estudiosos de "Confissões" — ele se dirige diretamente a Deus com angústia, queixa, raiva e dúvida. São os textos mais pessoalmente vulneráveis de qualquer profeta bíblico.
+      </p>
+      <div class="space-y-3">
+
+        <div class="confession-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.5);">
+          <div class="flex items-start gap-3">
+            <span class="font-display text-xs font-bold text-sapphire flex-shrink-0 mt-0.5">11:18–23</span>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-sapphire mb-1">A Conspiração de Anatote</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">Os próprios parentes de Jeremias, da cidade natal de Anatote, conspiraram para matá-lo. "Não profetizes no nome do Senhor, ou morrerás por nossa mão." O chamado que veio de Deus era rejeitado pelos da própria casa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="confession-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.5);">
+          <div class="flex items-start gap-3">
+            <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 mt-0.5">12:1–6</span>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-gold-dark mb-1">Por que os Ímpios Prosperam?</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Por que prospera o caminho dos ímpios? Por que vivem sossegados todos os que procedem aleivosamente?" — a mesma pergunta de Jó, de Asafe (Sl 73) e de Habacuque. Deus responde com um provérbio desconcertante: "Se correndo com os de pé te cansas, como podes competir com os cavalos?" — o desafio vai aumentar, não diminuir.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="confession-card" style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.45);">
+          <div class="flex items-start gap-3">
+            <span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5">15:10–21</span>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-forest mb-1">Maldito o Dia em que Nasci</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Ai de mim, minha mãe, que me deste à luz, homem de contenda e homem de discórdia para toda a terra!" Jeremias nunca emprestou dinheiro nem o tomou — e ainda assim todos o amaldiçoam. Deus responde com a promessa de restauração: "Eu te farei um muro de bronze." A crise não é negada — é confrontada com uma promessa.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="confession-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.45);">
+          <div class="flex items-start gap-3">
+            <span class="font-display text-xs font-bold text-earth flex-shrink-0 mt-0.5">17:14–18</span>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-earth mb-1">Cura-me, Senhor</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Cura-me, Senhor, e serei curado; salva-me e serei salvo, porque tu és o meu louvor." Uma oração mais quieta — pedindo cura sem especificar qual. E depois: "Eis que me dizem: Onde está a palavra do Senhor? Venha já!" Os oponentes zombavam porque as profecias demoravam a se cumprir.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="confession-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.45);">
+          <div class="flex items-start gap-3">
+            <span class="font-display text-xs font-bold text-fire flex-shrink-0 mt-0.5">18:18–23</span>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-fire mb-1">A Vingança que Pediu</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Lembra-te de que me apresentei diante de ti para falar bem deles, para desviar de ti o teu furor." Jeremias intercedeu pelo povo — e eles cavaram uma cova para ele. Sua oração final desta seção pede punição sobre seus inimigos — um dos pedidos mais perturbadores dos Salmos Imprecatórios, mas aqui na boca de um profeta.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="confession-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.5);">
+          <div class="flex items-start gap-3">
+            <span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5">20:7–18</span>
+            <div>
+              <h4 class="font-display text-xs font-semibold text-crimson mb-1">A Confissão Mais Radical — "Tu Me Seduziste"</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Seduziste-me, Senhor, e eu me deixei seduzir; foste mais forte do que eu e prevaleceste." Após ser posto no tronco por Pasur (cap. 20), Jeremias acusa Deus de tê-lo enganado com uma chamada que só trouxe sofrimento. Decide parar de profetizar — mas "havia no meu coração como um fogo ardente, encerrado nos meus ossos; esforcei-me por o conter, mas não pude." Termina com "Maldito seja o dia em que nasci." É a crise de fé mais completa registrada na Bíblia — de um homem que continuou mesmo assim.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Eventos Históricos -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Grandes Episódios Históricos</div>
+      <div class="space-y-3">
+
+        <div class="timeline-item" style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.25);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-gold-dark">Cap. 7</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Templo</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">O Sermão do Templo</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Na porta do Templo, Jeremias proclama: "Não confiais em palavras mentirosas, dizendo: O templo do Senhor, o templo do Senhor, o templo do Senhor!" O povo acreditava que o Templo os protegia automaticamente — um talismã mágico. Jeremias destrói esta ilusão: Siló, onde o Tabernáculo havia estado, foi destruído. O Templo não era garantia. Isto quase lhe custou a vida (cap. 26).</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-forest">Cap. 18</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Oleiro</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-forest mb-1">A Casa do Oleiro</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Deus manda Jeremias à casa de um oleiro. Ele observa o oleiro trabalhando — o vaso se estragou e ele o refez. A mensagem: "Como o barro na mão do oleiro, assim sois vós na minha mão, ó casa de Israel." Deus tem liberdade soberana de refazer o que foi deformado — mas o barro precisa estar na mão do oleiro. Paulo retoma esta imagem em Romanos 9:20–21.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-sapphire">Cap. 29</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Carta</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Carta aos Exilados na Babilônia</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Após a 1ª deportação (597 a.C.), Jeremias escreve uma carta aos exilados na Babilônia — contra os falsos profetas que diziam que voltariam em breve. A mensagem chocante: construam casas, plantem jardins, casem seus filhos, <em>busquem a paz da cidade onde foram deportados e orem por ela</em>. O exílio durará 70 anos. Dentro desta mensagem de rendição realista está o versículo mais citado de Jeremias: "Porque eu bem sei os pensamentos que tenho a vosso respeito... pensamentos de paz e não de mal." (29:11)</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(184,74,16,0.04);border-color:rgba(184,74,16,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-fire">Cap. 36</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Rolo</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-fire mb-1">O Rolo Queimado e Reescrito</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Deus ordena que Jeremias dite todas as suas profecias a Baruque, que as escreve num rolo. O rolo é lido no Templo, depois aos príncipes, depois ao rei Jeoaquim. O rei recorta e queima o rolo seção por seção enquanto o liam. Resposta de Deus: dite novamente — e desta vez com adições. A Palavra de Deus não pode ser destruída pela rejeição humana. É uma das cenas mais dramáticas da formação da Bíblia.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-crimson">Cap. 38</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Cisterna</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-crimson mb-1">Jeremias na Cisterna de Lama</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Os príncipes acusaram Jeremias de desanimar os soldados ao profetizar a queda da cidade. O rei Zedequias — fraco, indeciso — permitiu que o lançassem numa cisterna de lama. Jeremias afundou até a lama. Um eunuco etíope chamado <strong>Ebede-Meleque</strong> convenceu o rei a resgatá-lo com trapos velhos sob as axilas para amortizar as cordas. Um estrangeiro salva o profeta que os judeus queriam matar.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item" style="background:rgba(92,61,30,0.04);border-color:rgba(92,61,30,0.22);">
+          <div class="flex-shrink-0 text-center" style="min-width:74px;">
+            <span class="font-display text-sm font-bold text-earth">Cap. 32</span>
+            <div class="font-body text-xs text-ink-faint mt-1">Campo</div>
+          </div>
+          <div>
+            <h4 class="font-display text-sm font-semibold text-earth mb-1">A Compra do Campo em Anatote</h4>
+            <p class="font-body text-sm text-ink-muted leading-relaxed">Com Jeremias preso no pátio da guarda e os babilônios cercando Jerusalém, Deus o instrui a comprar um campo em Anatote — sua cidade natal, já em território inimigo. Jeremias compra, pesa a prata, assina e sela o contrato. Uma ação de fé radical: investir em terra que será conquistada, porque "ainda se comprarão casas, campos e vinhas nesta terra." O julgamento não é o fim.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A Nova Aliança -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Nova Aliança — Cap. 31:31–34 · O Coração Teológico do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O texto mais importante de Jeremias — e um dos mais importantes do AT inteiro. É a única vez em toda a Bíblia hebraica que a expressão "<em>nova aliança</em>" aparece explicitamente. Citado integralmente em Hebreus 8:8–12 — a citação mais longa do AT no NT inteiro.
+      </p>
+
+      <div class="p-5 rounded-xl italic mb-5"
+           style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.22);">
+        <p class="font-body text-base text-ink leading-relaxed mb-2">
+          "Eis que dias vêm, diz o Senhor, em que farei nova aliança com a casa de Israel e com a casa de Judá; não conforme a aliança que fiz com seus pais no dia em que os tomei pela mão para os tirar da terra do Egito... Mas esta é a aliança que farei: porei a minha lei no seu interior e a escreverei no seu coração; e eu serei o seu Deus, e eles serão o meu povo."
+        </p>
+        <p class="font-display text-xs text-sapphire tracking-widest">Jeremias 31:31–33</p>
+      </div>
+
+      <div class="rounded-xl overflow-hidden border mb-5" style="border-color:rgba(200,145,58,0.2);">
+        <div class="grid grid-cols-3 gap-0 px-3 py-2"
+             style="background:rgba(200,145,58,0.1);font-family:'Cinzel',serif;font-size:0.58rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8a6020;">
+          <span class="text-right">Aliança Mosaica</span>
+          <span class="text-center">Elemento</span>
+          <span class="text-left">Nova Aliança</span>
+        </div>
+        <div class="px-3 py-1">
+          <div class="covenant-row">
+            <span class="covenant-antiga">Tábuas de pedra</span>
+            <span class="covenant-label">Suporte</span>
+            <span class="covenant-nova">Coração e interior</span>
+          </div>
+          <div class="covenant-row">
+            <span class="covenant-antiga">Transmitida por ensino humano</span>
+            <span class="covenant-label">Conhecimento</span>
+            <span class="covenant-nova">"Todos me conhecerão" — do menor ao maior</span>
+          </div>
+          <div class="covenant-row">
+            <span class="covenant-antiga">Quebrada pelo povo</span>
+            <span class="covenant-label">Resultado</span>
+            <span class="covenant-nova">Fundada sobre melhores promessas (Hb 8:6)</span>
+          </div>
+          <div class="covenant-row">
+            <span class="covenant-antiga">Expia por sacrifícios animais anuais</span>
+            <span class="covenant-label">Perdão</span>
+            <span class="covenant-nova">"Não me lembrarei mais dos seus pecados"</span>
+          </div>
+          <div class="covenant-row">
+            <span class="covenant-antiga">Mediada por Moisés</span>
+            <span class="covenant-label">Mediador</span>
+            <span class="covenant-nova">Mediada por Cristo (Hb 9:15) — o "sangue da nova aliança" (Mt 26:28)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-forest">Na Última Ceia (Lc 22:20 / 1 Co 11:25):</strong> Jesus tomou o cálice e disse: "Este cálice é a nova aliança no meu sangue." Ao usar exatamente as palavras de Jeremias 31, Jesus declarou ser o cumprimento desta profecia — o mediador da aliança que Jeremias anunciou 600 anos antes. Toda vez que a Ceia do Senhor é celebrada, Jeremias 31 está implícito.
+        </p>
+      </div>
+    </section>
+
+    <!-- Jeremias e Jesus -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Jeremias e Jesus — O Profeta Como Tipo do Messias</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Em Mateus 16:14, quando Jesus pergunta "Quem dizem os homens que eu sou?", alguns responderam: "Jeremias." Não era coincidência — havia paralelos profundos entre a vida do profeta e a do Messias que confundiam os contemporâneos de Jesus.
+      </p>
+      <div class="grid md:grid-cols-2 gap-2">
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">🏠</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Rejeitado pela cidade natal</p>
+            <p class="font-body text-xs text-ink-faint">Jr 11:21 — Anatote · Lc 4:28–29 — Nazaré</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">😭</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Chorou sobre Jerusalém</p>
+            <p class="font-body text-xs text-ink-faint">Jr 9:1; Lm 1–5 · Lc 19:41 — Jesus chora sobre Jerusalém</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">🏛️</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Condenou o abuso do Templo</p>
+            <p class="font-body text-xs text-ink-faint">Jr 7:11 — "covil de ladrões" · Mt 21:13 — Jesus usa as mesmas palavras</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">🗡️</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Traído por pessoas próximas</p>
+            <p class="font-body text-xs text-ink-faint">Jr 12:6 — família e amigos · Mt 26:14–16 — Judas</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">⛓️</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Preso injustamente</p>
+            <p class="font-body text-xs text-ink-faint">Jr 37:15–16 — preso no porão · Mt 26:50 — Jesus preso em Getsêmani</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">🤐</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Silêncio diante dos acusadores</p>
+            <p class="font-body text-xs text-ink-faint">Jr 11:19 — "como cordeiro manso" · Mt 27:12–14 — Jesus não responde</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">👶</span>
+          <div>
+            <p class="font-body text-xs font-semibold text-ink">Raquel chora pelos filhos</p>
+            <p class="font-body text-xs text-ink-faint">Jr 31:15 — choro pelo exílio · Mt 2:18 — choro pelo massacre dos inocentes</p>
+          </div>
+        </div>
+        <div class="parallel-row" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-base flex-shrink-0">🌱</span>
+          <div>
+            <p class="font-body text-xs font-semibind text-ink">Nunca se casou, sem filhos</p>
+            <p class="font-body text-xs text-ink-faint">Jr 16:2 — celibato como sinal profético · Jesus também não se casou</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">📜 A Nova Aliança</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">😭 O custo da fidelidade</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🏺 O oleiro e o barro</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌱 Esperança dentro do julgamento</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📣 Falsos vs. verdadeiros profetas</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🙏 Lamento como oração legítima</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🌍 Deus soberano sobre os impérios</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">💔 O coração enganoso</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Jeremias no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Hb 8:8–12 — A citação mais longa do AT no NT</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O autor de Hebreus cita Jr 31:31–34 integralmente para provar que a aliança mosaica era temporária por design — Deus mesmo anunciou que seria substituída.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lc 22:20 — "O cálice da nova aliança"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Na Última Ceia, Jesus usa as palavras exatas de Jeremias 31 para interpretar o significado de sua morte iminente. A nova aliança é selada com seu sangue.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Mt 2:17–18 — "Raquel chorando"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Mateus cita Jr 31:15 ao descrever o massacre dos inocentes por Herodes — Raquel, enterrada perto de Belém, chora por seus descendentes mortos.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Mt 21:13 — "Covil de ladrões"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Ao expulsar os mercadores do Templo, Jesus cita Jr 7:11 — o mesmo texto do Sermão do Templo de Jeremias. Jesus repetiu a ação e as palavras do profeta.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Jeremiada" — o legado linguístico:</strong> A palavra inglesa <em>jeremiad</em> (e a portuguesa <em>jeremíada</em>) significa uma longa lamentação ou protesto — derivada diretamente das queixas de Jeremias. O profeta que chorou mais explicitamente deu seu nome a um gênero literário inteiro.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Duas versões do livro — Hebraica e Grega:</strong> A versão grega (LXX) de Jeremias é ~1/8 mais curta que a hebraica e tem os capítulos em ordem diferente (os oráculos contra as nações ficam no meio, não no final). Os Rolos do Mar Morto incluem fragmentos que confirmam que ambas as versões existiam em hebraico — são duas edições distintas do mesmo livro.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jr 17:9 — "O coração é enganoso":</strong> "Enganoso é o coração, mais do que todas as coisas, e desesperadamente corrupto; quem o conhecerá?" — um dos versículos mais citados sobre a natureza humana. Antecipa o diagnóstico paulino do pecado (Rm 3) e a necessidade da transformação pelo Espírito (Ez 36:26).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Ebede-Meleque — o etíope que salvou Jeremias:</strong> O eunuco etíope que resgatou Jeremias da cisterna recebeu uma promessa pessoal de proteção quando Jerusalém caísse (39:15–18). Um estrangeiro, um eunuco, um africano — recebe uma das mais belas promessas individuais do livro. O reino de Deus sempre alcança além das fronteiras esperadas.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Hananias — o falso profeta (cap. 27–28):</strong> O profeta Hananias publicamente quebrou o jugo de madeira que Jeremias usava como sinal profético e prometeu que a Babilônia seria derrubada em 2 anos. Jeremias respondeu: "Amém! Assim o faça o Senhor." Mas acrescentou: os verdadeiros profetas profetizavam guerra e calamidade — os que profetizavam paz, só o tempo provava. Hananias morreu naquele mesmo ano (28:17). A morte foi o cumprimento da profecia de Jeremias.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jeremias nunca viu o fim da história que profetizou:</strong> Após a queda de Jerusalém, Jeremias foi levado à força para o Egito por um grupo de fugitivos — contra sua vontade. Morreu no Egito sem ver o retorno do exílio, sem ver a restauração, sem ver o cumprimento das promessas do Livro da Consolação (cap. 30–33). Profetizou esperança que ele mesmo não viveu para ver.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jr 33:3 — "Clama a mim":</strong> "Clama a mim, e eu te responderei, e te anunciarei coisas grandes e firmes que não sabes." Um dos versículos mais usados em chamados à oração. Dito a Jeremias enquanto estava preso — a promessa de revelação vem especificamente em circunstâncias de confinamento e impossibilidade.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Bula de Baruque confirmada arqueologicamente:</strong> Em 1975, um pesquisador identificou numa coleção privada uma bula (selo de argila) com a inscrição: "Pertencente a Berequiahu filho de Neriau, o escriba." — exatamente Baruque filho de Nerias (Jr 36:4). A bula data do séc. VI a.C. e é uma das confirmações arqueológicas mais diretas de um personagem bíblico secundário.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Jeremias importa hoje:</strong> Jeremias viveu em colapso total — religioso, político, social. Sua cidade foi destruída, seu povo deportado, suas profecias ignoradas por décadas. E ainda assim continuou — não porque não sentiu o peso, mas porque "havia no meu coração como um fogo ardente" (20:9) que não conseguia conter. O legado de Jeremias não é a vitória, mas a fidelidade sem resultado visível. É o livro para quem serve a Deus em contextos de aparente fracasso — e a Nova Aliança que ele anunciou (cap. 31) é a prova de que Deus sempre tem o último capítulo.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Antes que te formasse no ventre materno, te conheci; e antes que saísses da madre, te santifiquei; às nações te dei por profeta."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jeremias 1:5 · O chamado antes do nascimento</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porque eu bem sei os pensamentos que tenho a vosso respeito, diz o Senhor; pensamentos de paz e não de mal, para vos dar um futuro e uma esperança."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jeremias 29:11 · O versículo mais citado do livro — dito a exilados, não a prósperos</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Porei a minha lei no seu interior e a escreverei no seu coração; e eu serei o seu Deus, e eles serão o meu povo."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jeremias 31:33 · A Nova Aliança · Cumprida na Última Ceia e no Pentecostes</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Jeremias · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

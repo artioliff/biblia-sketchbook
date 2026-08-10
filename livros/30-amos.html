@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amós — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Oráculos das nações — espiral retórica */
+    .oracle-nation {
+      border-radius: 8px;
+      padding: 0.625rem 0.875rem;
+      border: 1px solid;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      transition: transform 0.15s;
+    }
+    .oracle-nation:hover { transform: translateX(3px); }
+
+    /* As 5 visões */
+    .vision-card {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1rem;
+      transition: transform 0.2s ease;
+      position: relative;
+    }
+    .vision-card:hover { transform: translateY(-2px); }
+    .vision-num {
+      position: absolute;
+      top: 8px; right: 12px;
+      font-family: 'Cinzel', serif;
+      font-size: 2rem;
+      font-weight: 700;
+      opacity: 0.07;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MENORES · 30º LIVRO · 3º DOS DOZE
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Amós
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>עָמוֹס</em> (Amos) — "Fardo" ou "Carregador de fardo"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Um pastor de ovelhas e cultivador de sicômoros · o primeiro profeta literário da Bíblia · o grande profeta da <strong>justiça social</strong> · e a voz que disse "que a justiça corra como águas"
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">9</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">146</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">8 nações</div>
+          <div class="font-body text-sm text-ink-muted mt-1">julgadas nos cap. 1–2</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">5 visões</div>
+          <div class="font-body text-sm text-ink-muted mt-1">nos cap. 7–9</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Profeta que Não Era Profeta</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Amós era <strong>pastor de ovelhas e cultivador de sicômoros</strong> em Técua, uma vila de Judá, quando Deus o chamou para ir ao Reino do Norte e profetizar. Ele não pertencia a nenhuma escola de profetas nem era filho de profeta. Era um trabalhador rural — o que torna seu vocabulário poético e sua acuidade teológica ainda mais surpreendentes.
+          </p>
+          <div class="p-4 rounded-xl italic mb-3"
+               style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed">
+              "Não sou profeta nem filho de profeta; antes sou pastor, e cultivador de sicômoros. E o Senhor me tomou de atrás do rebanho e me disse: Vai, profetiza ao meu povo Israel."
+            </p>
+            <p class="font-display text-xs text-earth mt-2 tracking-widest">Amós 7:14–15 · A identidade mais honesta de um profeta bíblico</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            Amós é o <strong>primeiro profeta literário</strong> da Bíblia — o primeiro cujas profecias foram registradas por escrito num livro independente. Antes dele, os profetas (Elias, Eliseu) agiram; Amós escreveu.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Contexto Histórico — Prosperidade com Injustiça</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Amós profetizou durante o reinado de <strong>Jeroboão II</strong> (~786–746 a.C.) no Norte — o período de maior prosperidade e expansão territorial do Reino de Israel desde Salomão. A Assíria estava temporariamente enfraquecida; as rotas comerciais floresciam; as classes altas de Samaria viviam em casas de marfim e verões em mansões.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Mas por baixo desta superfície lustrosa havia uma podridão: os pobres eram vendidos como escravos por dívidas mínimas, os juízes eram subornados, as balanças do mercado eram fraudadas e os cultos religiosos continuavam — como se o ritual compensasse a injustiça. Amós chegou para dizer: não compensa.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Armadilha Retórica dos Oráculos -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Armadilha Retórica — Os 8 Oráculos das Nações (Cap. 1–2)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Amós abre com um dos golpes retóricos mais brilhantes da Bíblia. Usando a fórmula repetida <em>"por três transgressões... e por quatro"</em>, ele condena nação após nação — crimes de guerra, tráfico de escravos, violência brutal. O público israelita aplaudia a cada condenação. Então virou a mesa.
+      </p>
+
+      <div class="space-y-1.5 mb-5">
+        <div class="oracle-nation" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 w-24">Damasco (Síria)</span>
+          <span class="font-body text-xs text-ink-muted">Trilharam Gileade com trilhos de ferro — guerra brutal contra civis (1:3)</span>
+        </div>
+        <div class="oracle-nation" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 w-24">Gaza (Filisteia)</span>
+          <span class="font-body text-xs text-ink-muted">Deportaram populações inteiras para vendê-las como escravas a Edom (1:6)</span>
+        </div>
+        <div class="oracle-nation" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 w-24">Tiro (Fenícia)</span>
+          <span class="font-body text-xs text-ink-muted">Entregaram populações inteiras a Edom e não se lembraram da aliança fraternal (1:9)</span>
+        </div>
+        <div class="oracle-nation" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 w-24">Edom</span>
+          <span class="font-body text-xs text-ink-muted">Perseguiu seu irmão (Israel) com a espada sem misericórdia — raiva perpétua (1:11)</span>
+        </div>
+        <div class="oracle-nation" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 w-24">Amom</span>
+          <span class="font-body text-xs text-ink-muted">Abriram mulheres grávidas de Gileade para ampliar seu território (1:13)</span>
+        </div>
+        <div class="oracle-nation" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);">
+          <span class="font-display text-xs font-bold text-earth flex-shrink-0 w-24">Moabe</span>
+          <span class="font-body text-xs text-ink-muted">Queimou os ossos do rei de Edom até virar cal — violação da dignidade mesmo após a morte (2:1)</span>
+        </div>
+        <div class="oracle-nation" style="background:rgba(200,145,58,0.08);border-color:rgba(200,145,58,0.35);">
+          <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 w-24">⚠️ JUDÁ</span>
+          <span class="font-body text-xs text-ink-muted font-semibold">Rejeitou a lei do Senhor e não guardou os seus estatutos — seguiu os ídolos de seus pais (2:4) · <em>o público começa a se desconfortar</em></span>
+        </div>
+        <div class="oracle-nation"
+             style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.35);border-width:2px;">
+          <span class="font-display text-xs font-bold text-crimson flex-shrink-0 w-24">🎯 ISRAEL</span>
+          <span class="font-body text-xs text-ink font-semibold">Vendem o justo por dinheiro e o necessitado por um par de sandálias · calcam a cabeça dos pobres no pó · desviam o caminho dos humildes · profanam o nome de Deus (2:6–8) · <em>o golpe final: era sobre eles o tempo todo</em></span>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-sapphire">A genialidade retórica:</strong> Amós conduziu o público israelita por sete condenações de inimigos — a cada "por três transgressões e por quatro, não reverterei o castigo", o povo concordava e aplaudia. Quando chegou a Judá (seu próprio país!), houve inquietação. Então veio o golpe: Israel. E o oráculo contra Israel é o mais longo de todos — com crimes não de guerra, mas de injustiça econômica interna. Amós os pegou no momento exato em que se sentiam mais superiores moralmente.
+        </p>
+      </div>
+    </section>
+
+    <!-- Justiça Social -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Grande Profeta da Justiça Social — Cap. 3–6</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Amós é o profeta bíblico mais explicitamente focado em justiça econômica e social. Sua acusação central: Israel havia separado o culto religioso da ética social — continuava sacrificando no Templo enquanto explorava os pobres. Para Amós, isto não é apenas hipocrisia; é uma inversão de tudo que Deus é.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-4 mb-5">
+        <div class="space-y-2">
+          <div class="rebellion-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+            <span class="text-xl flex-shrink-0">🪙</span>
+            <div>
+              <span class="font-display text-xs font-bold text-crimson">Os Pobres Vendidos (2:6–7)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Vendem o justo por dinheiro e o necessitado por um par de sandálias" — dívidas mínimas levavam famílias inteiras à escravidão por dívidas. O sistema judicial era comprado.</p>
+            </div>
+          </div>
+          <div class="rebellion-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+            <span class="text-xl flex-shrink-0">🐄</span>
+            <div>
+              <span class="font-display text-xs font-bold text-crimson">As "Vacas de Basã" (4:1)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Ouvi esta palavra, vós vacas de Basã... que oprimis os pobres, que esmagais os necessitados, que dizeis a vossos maridos: Trazei, e bebamos!" — As mulheres ricas de Samaria, símbolo do consumo que se alimenta da exploração.</p>
+            </div>
+          </div>
+          <div class="rebellion-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.2);">
+            <span class="text-xl flex-shrink-0">⚖️</span>
+            <div>
+              <span class="font-display text-xs font-bold text-crimson">A Fraude no Mercado (8:5–6)</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Quando passará a lua nova para que vendamos o trigo? E o sábado para que abramos os celeiros? Diminuindo o efa e aumentando o siclo, e falsificando as balanças enganosas?" — A impaciência com os dias santos revela as prioridades reais.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <!-- 5:21-24 em destaque -->
+          <div class="p-5 rounded-xl italic mb-3"
+               style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">
+              "Odeio, desprezo as vossas festas, e não me comprazo nas vossas assembleias solenes. E ainda que me ofereçais holocaustos e ofertas de manjares, não as aceitarei... Antes corra o juízo como as águas, e a justiça como ribeiro perene."
+            </p>
+            <p class="font-display text-xs text-sapphire mt-2 tracking-widest">Amós 5:21–24 · O texto mais citado de Amós</p>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Martin Luther King Jr. e Amós 5:24:</strong> No discurso "I Have a Dream" (1963) e em outros discursos, MLK citou Amós 5:24 — "que a justiça corra como águas, e a retidão como ribeiro perene" — tornando-o o versículo profético mais citado no movimento pelos direitos civis. O profeta rural de Técua tornou-se a voz do séc. XX por justiça racial.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3:3 e outros textos famosos -->
+      <h3 class="font-display text-sm font-semibold text-ink mb-3">📜 Textos Famosos dos Cap. 3–6</h3>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(200,145,58,0.2);">
+          <p class="font-body text-sm text-ink">"Andarão dois juntos, se não estiverem de acordo?" (3:3)</p>
+          <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">— A aliança quebrada torna a caminhada impossível</p>
+        </div>
+        <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(200,145,58,0.2);">
+          <p class="font-body text-sm text-ink">"O Senhor Deus não fará coisa alguma sem revelar o seu segredo aos seus servos os profetas." (3:7)</p>
+          <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">— O profeta como confidente de Deus</p>
+        </div>
+        <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(200,145,58,0.2);">
+          <p class="font-body text-sm text-ink">"Somente a vós conheci de todas as famílias da terra; portanto vos punirei por todas as vossas iniquidades." (3:2)</p>
+          <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">— Privilégio gera responsabilidade maior, não imunidade</p>
+        </div>
+        <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(200,145,58,0.2);">
+          <p class="font-body text-sm text-ink">"Ai dos que estão descansados em Sião e seguros no monte de Samaria." (6:1)</p>
+          <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">— Conforto enquanto a nação apodrece — "ai de vós"</p>
+        </div>
+        <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(200,145,58,0.2);">
+          <p class="font-body text-sm text-ink">"Preparai-vos para encontrardes o vosso Deus, ó Israel." (4:12)</p>
+          <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">— Após cinco julgamentos históricos ignorados — o aviso final</p>
+        </div>
+        <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(200,145,58,0.2);">
+          <p class="font-body text-sm text-ink">"Buscai-me e vivereis... Buscai o bem e não o mal, para que vivais." (5:4, 14)</p>
+          <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">— A alternativa ao julgamento sempre existiu</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- As 5 Visões -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">As Cinco Visões de Julgamento — Cap. 7–9</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        A segunda metade do livro contém cinco visões em sequência crescente de severidade — as duas primeiras são interrompidas por intercessão de Amós, as três seguintes são irreversíveis.
+      </p>
+      <div class="grid md:grid-cols-2 gap-3 mb-5">
+
+        <div class="vision-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.25);">
+          <span class="vision-num text-forest">1</span>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">🦗 Os Gafanhotos (7:1–3)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Deus forma um enxame de gafanhotos que devora toda a colheita. Amós intercede: "Senhor, perdoa! Como subsistirá Jacó? Ele é tão pequeno!" Deus se arrepende: "Não acontecerá."</p>
+          <div class="font-display text-xs text-forest">✅ Deus recua — intercessão funciona</div>
+        </div>
+
+        <div class="vision-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.25);">
+          <span class="vision-num text-forest">2</span>
+          <h4 class="font-display text-sm font-semibold text-forest mb-1">🔥 O Fogo (7:4–6)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Um fogo devora o grande abismo e começa a consumir a terra. Amós intercede novamente com as mesmas palavras. Deus novamente recua: "Isto também não acontecerá."</p>
+          <div class="font-display text-xs text-forest">✅ Deus recua — intercessão funciona</div>
+        </div>
+
+        <div class="vision-card" style="background:rgba(200,145,58,0.07);border-color:rgba(200,145,58,0.32);">
+          <span class="vision-num text-gold-dark">3</span>
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-1">🔩 O Fio de Prumo (7:7–9)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Deus fica junto a um muro com um fio de prumo — instrumento para verificar se a construção está reta. Aplica a Israel: está torto. "Não passarei mais por eles; os altos de Israel serão assolados." Desta vez Amós não intercede.</p>
+          <div class="font-display text-xs text-crimson">❌ Sem recuo — o padrão está fixado</div>
+        </div>
+
+        <div class="vision-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.25);">
+          <span class="vision-num text-crimson">4</span>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-1">🧺 O Cesto de Frutas Maduras (8:1–3)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Deus mostra um cesto de frutas de verão (<em>qaitz</em>). Diz: "O fim (<em>qetz</em>) chegou para o meu povo Israel." Um dos trocadilhos mais brilhantes da profecia — as duas palavras soam quase iguais em hebraico. As frutas maduras estão prontas para ser colhidas — Israel está "maduro" para o julgamento.</p>
+          <div class="font-display text-xs text-crimson">❌ O fim foi declarado — sem retrocesso</div>
+        </div>
+
+        <div class="vision-card md:col-span-2"
+             style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.28);border-width:2px;">
+          <span class="vision-num text-earth">5</span>
+          <h4 class="font-display text-sm font-semibold text-earth mb-1">⛪ O Senhor no Altar (9:1–10)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Amós vê o Senhor de pé junto ao altar, ordenando que as colunas sejam abatidas sobre as cabeças. "Não haverá fugitivo nem escapado." Onde quer que Israel tente se esconder — no Sheol, no céu, no Carmelo, no fundo do mar — Deus os encontrará. É a visão do julgamento sem saída.</p>
+          <div class="grid md:grid-cols-2 gap-2 mt-2">
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(255,255,255,0.5);">"Se subirem ao céu, de lá os farei descer" (9:2)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(255,255,255,0.5);">"Se se esconderem no cume do Carmelo, de lá os buscarei" (9:3)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(255,255,255,0.5);">"Se se esconderem do meu olhar no fundo do mar, ali ordenarei à serpente que os morda" (9:3)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(255,255,255,0.5);">"Os meus olhos estarão sobre eles para mal e não para bem" (9:4)</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- O confronto com Amazias -->
+      <div class="p-4 rounded-xl" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.22);">
+        <h4 class="font-display text-sm font-semibold text-violet mb-2">⚔️ O Confronto com Amazias — 7:10–17</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Entre a terceira e a quarta visão, o sacerdote <strong>Amazias</strong> de Betel enviou mensagem ao rei Jeroboão acusando Amós de conspiração. Depois disse a Amós: "Vidente, vai, foge para a terra de Judá... e não profetizes mais em Betel." A resposta de Amós é uma das mais corajosas da Bíblia: "Não sou profeta nem filho de profeta... mas o Senhor me tomou... e disse: vai, profetiza." E então profetizou julgamento sobre a própria família de Amazias — sua esposa seria prostituída, seus filhos mortos, ele mesmo morreria em terra imunda.
+        </p>
+      </div>
+    </section>
+
+    <!-- A Restauração Final -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Restauração Final — 9:11–15 · A Cabana Caída de Davi</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Após oito capítulos de julgamento implacável, os últimos cinco versículos de Amós são de restauração total — tão radical que alguns estudiosos os consideram uma adição posterior. Mas a estrutura de "julgamento → restauração" é padrão em toda a profecia bíblica: a última palavra é sempre de Deus reconstruindo o que o julgamento derrubou.
+          </p>
+          <div class="p-4 rounded-xl italic"
+               style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">
+              "Naquele dia levantarei a cabana caída de Davi, e repararei as suas brechas; e levantarei as suas ruínas, e a edificarei como nos dias da antiguidade."
+            </p>
+            <p class="font-display text-xs text-forest mt-1 tracking-widest">Amós 9:11</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Citação de Tiago no Concílio de Jerusalém</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Em Atos 15, o grande debate sobre se os gentios precisavam ser circuncidados foi resolvido quando Tiago citou Amós 9:11–12: <em>"Depois disto voltarei e reedificarei o tabernáculo de Davi, que está caído... para que o restante dos homens busque ao Senhor, e todos os gentios."</em>
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">A lógica de Tiago (At 15:16–17):</strong> A "cabana caída de Davi" é a linhagem davídica — restaurada em Jesus. E a promessa inclui "todos os gentios que buscam ao Senhor." Portanto, a inclusão dos gentios sem circuncisão não é novidade — era o plano de Amós desde o início. O profeta rural do séc. VIII a.C. se tornou o argumento decisivo do Concílio de Jerusalém do séc. I d.C.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">⚖️ Justiça social como culto</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🌍 Deus de todas as nações</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🚫 Culto sem ética = abominação</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌊 Justiça como torrente</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🪙 Privilegio = responsabilidade</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">📯 O Dia do Senhor</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🔩 O padrão da integridade</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌱 Restauração após julgamento</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Amós no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest">At 15:16–17 — O Concílio de Jerusalém</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Tiago cita Am 9:11–12 para fundamentar a inclusão dos gentios — a "cabana caída de Davi" restaurada em Jesus, para que os gentios busquem o Senhor.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">At 7:42–43 — Estêvão e Am 5:25–27</span>
+              <p class="font-body text-xs text-ink-muted mt-1">No seu discurso antes do martírio, Estêvão cita Am 5:25–27 para mostrar que Israel nunca foi completamente fiel — mesmo no deserto levavam ídolos junto com o Tabernáculo.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Tg 5:1–6 — Os ricos condenados</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A condenação dos ricos opressores em Tiago 5 é a versão neotestamentária das acusações de Amós — salários retidos, luxo enquanto outros sofrem, condenação do inocente.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Mt 25:31–46 — Servindo a Cristo nos pobres</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O julgamento das nações baseado em como trataram os famintos, sedentos, estrangeiros e presos ecoa a ética de Amós — a relação com Deus é inseparável da relação com os vulneráveis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O primeiro profeta literário:</strong> Amós foi o primeiro profeta cujas mensagens foram reunidas em um livro escrito. Antes dele, os profetas agiam (Elias, Eliseu) ou suas palavras eram incluídas em livros históricos. Amós marca o início da tradição dos "profetas escritores" que inclui Isaías, Jeremias, Ezequiel e os Doze.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Martin Luther King Jr. e Amós 5:24:</strong> MLK citou Amós 5:24 no discurso "I Have a Dream" (1963), no Discurso de Memphis (véspera de seu assassinato, 1968) e em outros dezenas de ocasiões. O profeta rural do século VIII a.C. tornou-se a voz bíblica do movimento pelos direitos civis americano.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Amós e a universalidade do julgamento moral:</strong> Em Am 9:7, Deus diz: "Não sois vós para mim como os filhos dos etíopes, ó filhos de Israel?... Não fiz eu subir Israel da terra do Egito, e os filisteus de Caftor, e os sírios de Quir?" — Deus opera na história de <em>todas</em> as nações, não apenas de Israel. As nações vizinhas são julgadas pelos mesmos padrões morais que Israel.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O trocadilho qaitz/qetz (8:1–2):</strong> A visão do cesto de frutas maduras (<em>qaitz</em>) e o julgamento que chega (<em>qetz</em> — fim) são palavras quase homófonas em hebraico. É um trocadilho profético que só funciona no original — a maturidade da fruta diz que chegou a hora da colheita do julgamento.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Por três transgressões e por quatro" (1:3, 6, 9...):</strong> Esta fórmula numérica (<em>x</em> e <em>x+1</em>) é um recurso literário hebraico de "lista crescente" — não significa literalmente três ou quatro crimes, mas "crimes suficientes para esgotar a paciência divina." O mesmo padrão aparece em Provérbios 30 (os provérbios numéricos de Agur).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>As "casas de marfim" (3:15):</strong> Amós menciona "casas de marfim" dos ricos de Samaria — e arqueólogos descobriram no séc. XX centenas de painéis de marfim entalhado nas ruínas do palácio de Samaria, datando exatamente do período de Jeroboão II. É uma das confirmações arqueológicas mais diretas de um detalhe social de Amós.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"O Dia do Senhor — trevas e não luz" (5:18):</strong> Israel esperava o "Dia do Senhor" como um dia de vitória nacional — Deus destruindo seus inimigos. Amós inverte: para quem pratica injustiça, o Dia do Senhor será trevas, não luz. "Como se alguém fugisse de um leão e lhe saísse ao encontro um urso." A expectativa religiosa sem ética produz surpresas desagradáveis.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Amós e a Teologia da Libertação:</strong> No séc. XX, Amós se tornou o texto central da Teologia da Libertação Latino-Americana — sua preferência pelos pobres, sua condenação dos ricos opressores e sua insistência de que o culto sem justiça é inaceitável tornaram-no o "profeta do povo" em contextos de desigualdade extrema.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Amós ainda ressoa:</strong> Em toda sociedade onde a prosperidade econômica coexiste com injustiça estrutural — onde os rituais religiosos continuam enquanto os pobres são explorados — Amós é a voz que interrompe o conforto. Sua mensagem central não mudou: Deus não se impressiona com celebrações, ofertas e santuários de quem trata injustamente o vulnerável. A adoração que Deus aceita é inseparável da justiça que Deus exige. "Que a justiça corra como águas" não é um slogan político — é a definição de vida covenantal com o Deus de Israel.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Antes corra o juízo como as águas, e a justiça como ribeiro perene."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Amós 5:24 · Citado por Martin Luther King Jr. · O versículo mais conhecido do livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Não sou profeta nem filho de profeta; antes sou pastor, e cultivador de sicômoros. E o Senhor me tomou de atrás do rebanho."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Amós 7:14–15 · O chamado mais honesto da profecia bíblica</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Odeio, desprezo as vossas festas... Mas corra o juízo como as águas."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Amós 5:21, 24 · Culto sem justiça é abominação — justiça é o culto que Deus aceita</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Amós · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jonas — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Os 4 capítulos como atos */
+    .act-card {
+      border-radius: 11px;
+      border: 2px solid;
+      padding: 1.25rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .act-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .act-num {
+      position: absolute;
+      top: 10px; right: 14px;
+      font-family: 'Cinzel', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      opacity: 0.06;
+      line-height: 1;
+    }
+
+    /* O mapa da fuga */
+    .route-step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 6px 0;
+    }
+    .route-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    /* A oração no peixe — frases dos Salmos */
+    .psalm-line {
+      padding: 0.5rem 0.75rem;
+      border-radius: 7px;
+      border: 1px solid;
+      font-family: 'Crimson Pro', serif;
+      font-style: italic;
+      font-size: 0.9rem;
+      color: #3d2f25;
+      background: rgba(255,255,255,0.45);
+      transition: background 0.2s;
+    }
+    .psalm-line:hover { background: rgba(255,255,255,0.85); }
+    .psalm-source {
+      font-style: normal;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      letter-spacing: 0.07em;
+      margin-top: 3px;
+      display: block;
+      color: #8a6020;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MENORES · 32º LIVRO · 5º DOS DOZE
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Jonas
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>יוֹנָה</em> (Yonah) — "Pomba" · símbolo de Israel
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O profeta que fugiu de Deus · foi engolido por um grande peixe · pregou três palavras e converteu uma cidade inteira · e ficou com raiva quando Deus teve misericórdia · o livro que termina com uma <strong>pergunta sem resposta</strong>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">4</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">48</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">120.000+</div>
+          <div class="font-body text-sm text-ink-muted mt-1">pessoas que se arrependeram</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">0</div>
+          <div class="font-body text-sm text-ink-muted mt-1">oráculos proféticos — é uma narrativa</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral — O Livro Diferente de Todos</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Um Livro Ao Contrário</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Jonas é o livro mais singular de toda a profecia bíblica. Enquanto os outros livros proféticos são coleções de oráculos, discursos e visões, Jonas é uma <strong>narrativa em prosa</strong> — uma história sobre um profeta, não uma compilação de suas mensagens. O único oráculo registrado tem cinco palavras em hebraico: <em>"Ainda quarenta dias e Nínive será destruída."</em>
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            É também o único livro profético onde o protagonista <strong>foge da missão</strong>, onde o profeta prega a <strong>estrangeiros</strong> e onde o resultado é a <strong>conversão de uma cidade inteira</strong> — a maior conversão da Bíblia.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Jonas era real:</strong> 2 Reis 14:25 menciona "Jonas, filho de Amitai, profeta de Gate-Héfer" — confirmando que foi um profeta histórico real, contemporâneo de Jeroboão II (~760 a.C.). Gate-Héfer ficava em Zebulom, na Galileia — o mesmo território que Jesus habitaria séculos depois.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Por que Jonas Fugiu?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A razão da fuga só é revelada no final do livro (4:2) — e é surpreendente: Jonas não fugiu por medo. Fugiu porque <em>sabia</em> que Deus era "gracioso e misericordioso, tardio em irar-se e grande em benignidade" e que, se Nínive se arrependesse, Deus a pouparia. Ele não queria que Nínive fosse poupada.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Nínive era a capital do <strong>Império Assírio</strong> — o terror do mundo antigo, famoso por crucificar prisioneiros, empalar cidades conquistadas e deportar populações inteiras. Para um israelita do séc. VIII a.C., Nínive era o mal absoluto. Jonas queria seu julgamento, não sua salvação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os 4 Capítulos -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Narrativa em Quatro Atos</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="act-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.3);">
+          <span class="act-num text-sapphire">1</span>
+          <div class="relative">
+            <h4 class="font-display text-base font-semibold text-sapphire mb-2">🌊 Cap. 1 — A Fuga e a Tempestade</h4>
+            <div class="space-y-1.5 mb-3">
+              <div class="route-step">
+                <div class="route-dot" style="background:#1e3a5f;"></div>
+                <span class="font-body text-xs text-ink-muted">Deus: "Vai a Nínive, clama contra ela" (nordeste)</span>
+              </div>
+              <div class="route-step">
+                <div class="route-dot" style="background:#8b2020;"></div>
+                <span class="font-body text-xs text-ink-muted">Jonas: vai a Jope e embarca para <strong>Társis</strong> (o extremo oposto)</span>
+              </div>
+              <div class="route-step">
+                <div class="route-dot" style="background:#b84a10;"></div>
+                <span class="font-body text-xs text-ink-muted">Tempestade enviada por Deus · marinheiros aterrozados</span>
+              </div>
+              <div class="route-step">
+                <div class="route-dot" style="background:#c8913a;"></div>
+                <span class="font-body text-xs text-ink-muted">Sortes caem sobre Jonas · ele confessa e pede ser jogado ao mar</span>
+              </div>
+              <div class="route-step">
+                <div class="route-dot" style="background:#1e4a2a;"></div>
+                <span class="font-body text-xs text-ink-muted">Mar se acalma · marinheiros temem o Senhor e fazem votos</span>
+              </div>
+              <div class="route-step">
+                <div class="route-dot" style="background:#1e3a5f;"></div>
+                <span class="font-body text-xs text-ink-muted">Deus preparou um <em>dag gadol</em> — "grande peixe" — que engoliu Jonas</span>
+              </div>
+            </div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted italic"
+                 style="background:rgba(255,255,255,0.5);">Os marinheiros pagãos se arrependem antes de Jonas pregá-los. A ironia começa no capítulo 1.</div>
+          </div>
+        </div>
+
+        <div class="act-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.28);">
+          <span class="act-num text-earth">2</span>
+          <div class="relative">
+            <h4 class="font-display text-base font-semibold text-earth mb-2">🐟 Cap. 2 — A Oração no Interior do Peixe</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">
+              "Três dias e três noites no interior do peixe." A oração de Jonas é um Salmo de ação de graças composto inteiramente de frases de outros Salmos — ele orou a Bíblia de memória, no escuro, subaquático. Note: a oração está no <em>tempo passado</em> — ele já havia sido ouvido antes de ser libertado.
+            </p>
+            <div class="space-y-1.5 mb-3">
+              <div class="psalm-line" style="border-color:rgba(92,61,30,0.3);">
+                "Do ventre do Sheol clamei, e tu ouviste a minha voz." (v.2)
+                <span class="psalm-source">← Sl 18:6; 30:3</span>
+              </div>
+              <div class="psalm-line" style="border-color:rgba(92,61,30,0.3);">
+                "Tu me lançaste no profundo... todas as tuas ondas e vagas passaram sobre mim." (v.3)
+                <span class="psalm-source">← Sl 88:7; 42:7</span>
+              </div>
+              <div class="psalm-line" style="border-color:rgba(92,61,30,0.3);">
+                "A salvação pertence ao Senhor." (v.9)
+                <span class="psalm-source">← Sl 3:8 · A confissão central</span>
+              </div>
+            </div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted italic"
+                 style="background:rgba(255,255,255,0.5);">O peixe vomitou Jonas em terra seca — a imagem mais visceral de libertação do AT.</div>
+          </div>
+        </div>
+
+        <div class="act-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.3);">
+          <span class="act-num text-forest">3</span>
+          <div class="relative">
+            <h4 class="font-display text-base font-semibold text-forest mb-2">🏙️ Cap. 3 — Nínive se Arrepende</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">
+              Deus chama Jonas pela <strong>segunda vez</strong> — com as mesmas palavras. Desta vez ele obedeceu. Nínive era "uma cidade excessivamente grande, de três dias de caminho" (provavelmente referindo-se ao Grande Nínive, complexo de cidades da região). Jonas caminhou um dia e proclamou:
+            </p>
+            <div class="p-3 rounded-xl italic mb-3"
+                 style="background:rgba(255,255,255,0.6);border:1px solid rgba(30,74,42,0.2);">
+              <p class="font-body text-base text-ink">"Ainda quarenta dias e Nínive será subvertida!"</p>
+              <p class="font-display text-xs text-forest mt-1 tracking-widest">Jonas 3:4 · O sermão mais curto da história — e o mais eficaz</p>
+            </div>
+            <div class="space-y-1.5">
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.15);">
+                👥 O povo creu em Deus · proclamou jejum · vestiu pano de saco
+              </div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.15);">
+                👑 O rei saiu do trono, tirou o manto, cobriu-se de saco e sentou em cinza
+              </div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.15);">
+                🐄 Decreto real: nem homens nem animais devem comer ou beber — até os animais de saco!
+              </div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.15);">
+                🙏 "Quem sabe? Talvez Deus se arrependa... e não pereçamos." (3:9)
+              </div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted font-semibold"
+                   style="background:rgba(30,74,42,0.08);border:1px solid rgba(30,74,42,0.25);">
+                ✅ Deus viu as obras deles e se arrependeu do mal que havia dito que lhes faria
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="act-card" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.28);">
+          <span class="act-num text-crimson">4</span>
+          <div class="relative">
+            <h4 class="font-display text-base font-semibold text-crimson mb-2">😤 Cap. 4 — A Raiva de Jonas e a Pergunta Final</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">
+              "Isto desagradou muito a Jonas e ele ficou irado." Sua oração de raiva (4:2) revela o motivo original da fuga — e é teologicamente precisa: ele sabia exatamente que Deus é gracioso. E não queria esta graça para Nínive.
+            </p>
+            <div class="space-y-1.5 mb-3">
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(255,255,255,0.5);">😠 Jonas pede para morrer: "melhor é para mim a morte do que a vida"</div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(255,255,255,0.5);">🌿 Deus faz crescer uma planta sobre Jonas para lhe dar sombra — ele fica muito contente</div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(255,255,255,0.5);">🪱 Deus manda um verme que seca a planta — Jonas fica furioso novamente</div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                   style="background:rgba(255,255,255,0.5);">🌬️ Vento leste abrasador — Jonas pede a morte pela segunda vez</div>
+              <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted font-semibold"
+                   style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.25);">
+                ❓ A pergunta final de Deus: "Não deveria eu ter compaixão de Nínive?"
+              </div>
+            </div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted italic"
+                 style="background:rgba(255,255,255,0.5);">O livro termina com a pergunta — sem registrar a resposta de Jonas.</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A Pergunta Final -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Pergunta que Encerra o Livro — 4:10–11</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4"
+               style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+            <p class="font-body text-lg text-ink leading-relaxed mb-2">
+              "Tu tens compaixão da planta, pela qual não trabalhaste nem a fizeste crescer... E não me compadeço eu de Nínive, aquela grande cidade, em que há mais de cento e vinte mil pessoas que não sabem distinguir a sua mão direita da esquerda, e também muitos animais?"
+            </p>
+            <p class="font-display text-xs text-forest mt-2 tracking-widest">Jonas 4:10–11 · A última palavra do livro</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            O argumento de Deus é irrespondível: Jonas se importou profundamente com uma planta que ele não plantou, não cultivou e que durou um dia. Deus se importa com 120.000 pessoas — que não sabem distinguir a direita da esquerda (provavelmente crianças, ou seres humanos moralmente desorientados) — e com muitos animais. A compaixão de Deus excede infinitamente a compaixão de Jonas pela planta.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Por que o Livro Termina com uma Pergunta?</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">A resposta ficou com o leitor</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O livro não registra a resposta de Jonas — porque a resposta esperada é a do <em>leitor</em>. A pergunta de Deus é feita a Israel (representado por Jonas): "Você tem mais compaixão por uma planta do que eu tenho por 120.000 pessoas?"</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">A teologia aberta</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Terminar com uma pergunta é uma técnica literária sofisticada — o texto permanece aberto, interpelando cada geração. Jesus usou a mesma técnica em parábolas (o filho pródigo também termina com o irmão mais velho do lado de fora, sem resposta registrada — Lc 15:32).</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Yom Kippur</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jonas é lido integralmente na sinagoga no <strong>Yom Kippur</strong> — o Dia da Expiação, o dia mais sagrado do calendário judaico. A pergunta final é feita ao povo no seu momento de maior vulnerabilidade espiritual: "Você entende minha compaixão pelos que se arrependem?"</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Sinal de Jonas -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Sinal de Jonas — O que Jesus Disse</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">
+            Jonas é o único profeta do AT que Jesus citou explicitamente como <em>tipo de si mesmo</em>. Quando os fariseus pediram um sinal, Jesus respondeu:
+          </p>
+          <div class="p-4 rounded-xl italic mb-4"
+               style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">
+              "Como Jonas esteve três dias e três noites no ventre do grande peixe, assim o Filho do Homem estará três dias e três noites no coração da terra."
+            </p>
+            <p class="font-display text-xs text-crimson mt-1 tracking-widest">Mateus 12:40</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Jesus fez a comparação explícita: Jonas no peixe = Jesus no sepulcro. A descida ao abismo e o retorno são o padrão — Jonas antecipou tipologicamente a morte e ressurreição de Cristo.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Duplo Sinal de Jonas (Mt 12:39–41)</h3>
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+              <span class="font-display text-xs font-bold text-sapphire block mb-1">1º Sinal — Morte e Ressurreição</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">Jonas 3 dias no peixe → Jesus 3 dias no sepulcro. O fundo do abismo e o retorno à vida. O sinal que os fariseus pediram é exatamente o que não reconhecerão: a ressurreição.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest block mb-1">2º Sinal — A Condenação pelos Ninivitas</span>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Os ninivitas se levantarão no juízo com esta geração e a condenarão; porque se arrependeram com a pregação de Jonas, e eis aqui algo maior do que Jonas." Nínive se arrependeu com um pregador relutante — Israel rejeitou o próprio Filho de Deus.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+              <p class="font-body text-xs text-ink-muted leading-relaxed italic">
+                Lucas 4:26–27: Jesus também usa Jonas e Eliseu para mostrar que Deus sempre estendeu graça a estrangeiros — e que Israel sempre resistiu a isto. A graça para os gentios não era novidade em Jesus; era a lógica de Jonas.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- As Ironias do Livro -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As Grandes Ironias — O Livro foi Escrito para Desconfortar</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Jonas é um livro construído sobre ironias deliberadas — cada capítulo inverte as expectativas e expõe o absurdo da atitude de Jonas (e, por extensão, de Israel). A ironia é o argumento teológico.
+      </p>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+          <h4 class="font-display text-xs font-bold text-sapphire mb-2">🌊 Os Marinheiros Pagãos — Mais Religiosos que o Profeta</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Os marinheiros pagãos clamaram "cada um ao seu deus", jogaram a carga ao mar para salvar a tripulação — e resistiram em lançar Jonas ao mar, tentando remar de volta. Quando o mar se acalmou, "temeram muito ao Senhor e ofereceram sacrifícios" (1:16). Eles agiram com mais humanidade e reverência religiosa do que o profeta de Israel que dormia no porão do navio.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.2);">
+          <h4 class="font-display text-xs font-bold text-forest mb-2">🏙️ Nínive — Mais Penitente que Israel</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A cidade mais famosa por crueldade no mundo antigo se arrependeu com um sermão de cinco palavras de um pregador que não queria estar lá. Israel, com séculos de Torah, profetas e milagres, continuamente não se arrependeu. Nínive pagã respondeu ao primeiro chamado; Israel respondeu ao milésimo com resistência.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.2);">
+          <h4 class="font-display text-xs font-bold text-earth mb-2">😴 O Profeta Dormindo — O Capitão Pagão Pregando</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">No meio da tempestade enviada por Deus, Jonas dormia profundamente no porão. O capitão — pagão — desceu e disse: "Como podes tu dormir? Levanta-te, clama ao teu Deus." Um marinheiro pagão acordou o profeta adormecido e o exortou a orar. A ironia é quase cômica.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+          <h4 class="font-display text-xs font-bold text-crimson mb-2">🌿 A Planta vs. 120.000 Pessoas</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Jonas teve "grande alegria" pela planta — e "grande tristeza" quando ela secou, pedindo a morte. Por Nínive — 120.000 seres humanos — não sentiu nenhuma compaixão. A escala emocional de Jonas está completamente invertida: mais afeto por uma planta de um dia do que por uma cidade inteira.</p>
+        </div>
+        <div class="p-4 rounded-xl md:col-span-2" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <h4 class="font-display text-xs font-bold text-gold-dark mb-2">⭐ A Maior Ironia: Jonas Pregou o que Não Acreditava</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A oração de Jonas no cap. 2 é teologicamente perfeita — "a salvação pertence ao Senhor", gratidão pela misericórdia divina. E no cap. 4 ele usa a mesma teologia contra Deus: "Eu sabia que és gracioso e misericordioso" — como acusação, não como louvor. Jonas sabia a teologia certa e vivia a atitude errada. Conhecia o Deus que prega mas resistia ao Deus que experimenta.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌍 Graça universal de Deus</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🏃 Impossibilidade de fugir de Deus</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🔄 Segunda chance sempre existe</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">😠 O perigo do nacionalismo religioso</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">📖 Conhecimento sem obediência</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">💙 Compaixão por inimigos</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🐟 Morte e ressurreição</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🙏 O arrependimento que Deus aceita</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Jonas no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Mt 12:39–41 — "O sinal de Jonas"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus declara Jonas como o único sinal dado à geração incrédula — 3 dias no peixe = 3 dias no sepulcro. E os ninivitas condenarão Israel no julgamento.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Mt 16:4 — Segunda citação</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus repete "o sinal de Jonas" quando os fariseus e saduceus pedem sinal do céu — confirma a centralidade do sinal da ressurreição como o único argumento definitivo.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lc 15 — O Filho Pródigo como Jonas</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O irmão mais velho da parábola do Filho Pródigo (que ficou de fora com raiva quando o irmão foi recebido) é a versão NT de Jonas no final do livro — mesma atitude, mesma pergunta do pai: "não deverias tu alegrar-te?"</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Rm 10:12 — "Não há distinção entre judeu e grego"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A teologia da universalidade da graça que Paulo desenvolve em Romanos é o argumento de Jonas — Deus tem compaixão de todos os que clamam a ele, independente de origem.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Grande peixe" — não "baleia":</strong> O hebraico diz <em>dag gadol</em> — "grande peixe". A LXX usa <em>ketos</em> (monstro marinho). Mateus 12:40 usa também <em>ketos</em>. A identificação como "baleia" é uma tradução posterior e popular. A Bíblia não especifica a espécie — diz apenas que Deus "preparou" este animal especificamente para a missão.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Nínive e a arqueologia:</strong> Por séculos, críticos questionaram a grandeza de Nínive descrita em Jonas. Escavações iniciadas em 1845 por Austen Henry Layard confirmaram que Nínive era de fato a maior cidade do mundo antigo — com muralhas de 12 km de perímetro, 15 portas monumentais e população estimada em 300.000 pessoas no auge do Império Assírio.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Társis — o fim do mundo conhecido:</strong> Társis é identificada com Tartessos, na Península Ibérica (atual sul da Espanha) — o ponto mais ocidental do Mediterrâneo conhecido pelos israelitas. Era literalmente a direção oposta a Nínive. Jonas não foi apenas na direção errada — foi até onde a terra acabava.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Os animais de saco (3:8):</strong> O decreto do rei de Nínive incluía: "homens e animais, bois e ovelhas... sejam cobertos de saco e clamem com força a Deus." Os animais foram postos em pano de saco. Isto era prática real no Oriente Médio antigo em situações de luto extremo — confirmada em fontes gregas sobre costumes persas e siríacos.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Não sabem distinguir a sua mão direita da esquerda" (4:11):</strong> A expressão é debatida. Pode se referir: (a) às crianças — que ainda não sabem distinguir direita de esquerda; (b) ao povo moralmente desorientado — que não distingue o bem do mal. Ambas as interpretações reforçam a compaixão de Deus: ele tem misericórdia dos mais vulneráveis e dos mais desorientados.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A oração do cap. 2 — um mosaico de Salmos:</strong> A oração de Jonas no peixe é composta inteiramente de frases extraídas de pelo menos 8 Salmos diferentes (18, 30, 31, 42, 69, 86, 88, 116). Jonas não criou poesia original — citou a Bíblia que havia memorizado. No momento mais extremo de sua vida, o que veio à tona foi a Palavra que havia internalizado.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Jonas e o Filho Pródigo — o mesmo argumento em dois formatos:</strong> A parábola do Filho Pródigo (Lc 15) e o livro de Jonas partilham estrutura idêntica: há alguém que foi longe e voltou (o filho / Nínive), e há alguém que ficou perto mas com o coração errado (o irmão mais velho / Jonas). Em ambos, a última cena mostra o pai/Deus fazendo uma pergunta amorosa ao que tem raiva. Em ambos, o livro termina sem registrar a resposta.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O sermão mais curto e mais eficaz da história:</strong> "Ainda quarenta dias e Nínive será subvertida!" — cinco palavras em hebraico (<em>od arbaim yom v'Nineveh nehpakhet</em>). Nenhum argumento teológico, nenhuma prova, nenhum apelo emocional. E toda a cidade — do rei aos animais — se arrependeu. A eficácia do evangelho não depende da eloquência ou do entusiasmo do pregador.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Jonas ainda ressoa:</strong> Jonas não é apenas sobre um profeta e um peixe — é um espelho. Em cada geração há crentes que são gratos pela própria salvação mas ressentem a graça de Deus para grupos que consideram inimigos. Que sabem a teologia da misericórdia divina mas a usam como acusação quando Deus a aplica a quem não aprovam. Que têm mais compaixão por seus projetos e confortos do que por pessoas. A última pergunta de Deus — "não deveria eu ter compaixão?" — não foi feita apenas a Jonas. Foi feita a Israel. E é feita a nós.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Do ventre do Sheol clamei, e tu ouviste a minha voz."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jonas 2:2 · A oração do fundo do abismo · antes da libertação, não depois</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Eu sabia que és Deus gracioso e misericordioso, tardio em irar-te e grande em benignidade."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jonas 4:2 · A teologia certa com a atitude errada · a confissão que deveria ser louvor virou acusação</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E não me compadeço eu de Nínive, aquela grande cidade, em que há mais de cento e vinte mil pessoas... e também muitos animais?"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Jonas 4:11 · A última palavra de Deus no livro · e a pergunta que ficou sem resposta registrada</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Jonas · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

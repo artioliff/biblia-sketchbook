@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lamentações — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Os 5 poemas */
+    .poem-card {
+      border-radius: 11px;
+      border: 1px solid;
+      padding: 1.125rem;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .poem-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(30,58,95,0.12);
+    }
+
+    /* Letras hebraicas do acróstico */
+    .acro-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .acro-letter {
+      width: 24px; height: 24px;
+      border-radius: 5px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.75rem;
+      font-weight: 700;
+      font-family: serif;
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .acro-letter:hover { transform: scale(1.2); }
+
+    /* O versículo central — 3:22-23 */
+    .hope-verse {
+      border-radius: 14px;
+      border: 2px solid rgba(30,74,42,0.4);
+      padding: 2rem;
+      background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(232,245,236,0.5));
+      text-align: center;
+      position: relative;
+    }
+    .hope-verse::before {
+      content: '3:22–23';
+      position: absolute;
+      top: -1px; right: 16px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.58rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      color: #1e4a2a;
+      background: #fdf8ef;
+      padding: 0 8px;
+    }
+
+    /* Estrutura quiástica visual */
+    .chiasm-row {
+      display: flex;
+      align-items: stretch;
+      gap: 0;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MAIORES · 25º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Lamentações
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>אֵיכָה</em> (Eikah) — "Como!" ou "Ai!" · a primeira palavra do livro · um grito de dor
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        Cinco poemas escritos nas ruínas de Jerusalém · o livro mais concentrado de luto da Bíblia · e o único onde a <strong>esperança emerge do fundo do abismo</strong>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">5</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos / Poemas</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">154</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">586 a.C.</div>
+          <div class="font-body text-sm text-ink-muted mt-1">queda de Jerusalém</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">4 de 5</div>
+          <div class="font-body text-sm text-ink-muted mt-1">poemas são acrósticos</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Escrito nas Ruínas</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Lamentações é o único livro da Bíblia escrito imediatamente <em>após</em> uma catástrofe nacional — não para explicá-la, mas para <strong>chorar por ela</strong>. As cinzas de Jerusalém ainda estavam quentes quando estes poemas foram compostos. O Templo de Salomão havia sido queimado, as muralhas derrubadas, o povo deportado para a Babilônia.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A tradição judaica e cristã atribui o livro a <strong>Jeremias</strong> — o profeta que havia predito tudo isso e que ficou entre os escombros. A LXX tem um prefácio explícito: <em>"Após Israel ser levado cativo e Jerusalém destruída, Jeremias sentou-se e chorou, e entoou esta lamentação sobre Jerusalém."</em>
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-sapphire">Megillot:</strong> Lamentações é um dos Cinco Rolos (Megillot) — lido na sinagoga no <strong>Tishá BeAv</strong>, o 9º dia do mês de Av, o dia mais triste do calendário judaico, que marca a destruição do Primeiro e do Segundo Templo.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Um Livro que Legitima o Luto</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A presença de Lamentações no cânone é uma declaração teológica: <strong>o luto tem lugar na vida de fé</strong>. Deus não apenas tolera o pranto — ele o inspirou, preservou e colocou na Escritura. O crente não precisa fingir que está bem quando não está.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O livro não tem final feliz. Não termina com restauração — termina com uma pergunta: <em>"Por que nos esqueces totalmente e nos abandonas por tanto tempo?"</em> (5:20) seguida de um apelo silencioso. O luto é permitido ser luto.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed italic">
+              "Lamentações é o grande livro bíblico que diz: está tudo bem chorar. Não há pecado em sentir profundamente a perda." — Walter Brueggemann
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os 5 Poemas Acrósticos -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Os Cinco Poemas — A Estrutura Acróstica</div>
+      <p class="font-body text-sm text-ink-muted mb-4 leading-relaxed">
+        Quatro dos cinco poemas são <strong>acrósticos hebraicos</strong> — cada versículo começa com uma letra do alfabeto hebraico em sequência (אלפא-בית, 22 letras). Esta é uma escolha literária carregada de significado: a dor é expressa de A a Z — completa, sem nada deixado de fora. O quinto poema quebra o acróstico — a dor transbordou a estrutura.
+      </p>
+
+      <!-- As 22 letras hebraicas visualizadas -->
+      <div class="mb-5 p-4 rounded-xl" style="background:rgba(255,255,255,0.5);border:1px solid rgba(200,145,58,0.2);">
+        <p class="font-display text-xs font-bold text-gold-dark tracking-widest mb-3">AS 22 LETRAS DO ALFABETO HEBRAICO — CADA UMA INICIA UM VERSÍCULO</p>
+        <div class="acro-bar">
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Alef">א</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Bet">ב</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Guimel">ג</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Dalet">ד</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="He">ה</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Vav">ו</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Zayin">ז</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Chet">ח</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Tet">ט</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Yod">י</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Kaf">כ</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Lamed">ל</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Mem">מ</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Nun">נ</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Samech">ס</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Ayin">ע</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Pe">פ</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Tzadi">צ</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Kof">ק</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Resh">ר</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Shin">ש</div>
+          <div class="acro-letter" style="background:rgba(30,58,95,0.12);color:#1e3a5f;" title="Tav">ת</div>
+        </div>
+        <p class="font-body text-xs text-ink-faint mt-2 italic">Passe o cursor sobre as letras para ver os nomes · A estrutura acróstica diz: "Expressamos nossa dor de A a Z — completamente, sem omitir nada"</p>
+      </div>
+
+      <!-- Os 5 poemas -->
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="poem-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.25);">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-display text-2xl font-bold text-sapphire opacity-15">1</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-sapphire">Capítulo 1 — Jerusalém, a Viúva</h4>
+              <p class="font-body text-xs text-ink-faint">22 versículos · acróstico · voz: narrador → cidade</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Jerusalém é personificada como uma viúva desolada — antes cheia de povo, agora solitária. Seus "amantes" (aliados políticos) a abandonaram. Ela chora na noite, lágrimas nas faces. A cidade fala em primeira pessoa na segunda metade: "O Senhor é justo, pois me rebelei contra o seu mandamento."</p>
+          <div class="p-2 rounded italic text-xs font-body text-ink-muted"
+               style="background:rgba(255,255,255,0.5);">"Como está solitária a cidade que era tão populosa! Como se tornou como viúva!" (1:1)</div>
+        </div>
+
+        <div class="poem-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.25);">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-display text-2xl font-bold text-crimson opacity-15">2</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-crimson">Capítulo 2 — A Ira do Senhor</h4>
+              <p class="font-body text-xs text-ink-faint">22 versículos · acróstico · voz: narrador</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">O segundo poema foca na ação de Deus no julgamento — ele mesmo destruiu Israel sem piedade, demoliu as fortalezas de Judá, recusou escutar os profetas. É o poema mais teologicamente difícil: Deus como destruidor. A misericórdia divina desapareceu da vista — mas não da realidade.</p>
+          <div class="p-2 rounded italic text-xs font-body text-ink-muted"
+               style="background:rgba(255,255,255,0.5);">"Como enegreceu o ouro! Como se alterou o ouro fino!" (4:1) · os filhos de Sião, antes preciosos como ouro puro</div>
+        </div>
+
+        <div class="poem-card md:col-span-2"
+             style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.3);border-width:2px;">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-display text-2xl font-bold text-forest opacity-20">3</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-forest">Capítulo 3 — O Homem Sofredor · O CENTRO · 66 Versículos</h4>
+              <p class="font-body text-xs text-ink-faint">66 versículos (3 por letra × 22) · acróstico triplo · voz: primeira pessoa · O PIVÔ DO LIVRO</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">O poema mais longo e mais pessoal — um homem fala em primeira pessoa sobre seu sofrimento extremo. Na primeira metade (v.1–20), ele desce ao fundo da desesperança: Deus o cercou de escuridão, fez sua carne murchar, plantou espinhos em seu caminho, o colocou em trevas "como os que há muito estão mortos." No versículo 20: "A minha alma se lembra disso e se abate em mim." Então — o pivô:</p>
+          <div class="hope-verse mb-3">
+            <p class="font-body text-xl italic text-ink leading-relaxed mb-2">
+              "As misericórdias do Senhor não têm fim; as suas compaixões jamais se extinguem. Renovam-se cada manhã; grande é a tua fidelidade."
+            </p>
+            <p class="font-display text-xs text-forest tracking-widest">Lamentações 3:22–23 · O centro geográfico e teológico do livro</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Esta esperança não é ignorância da dor — é a mesma voz que acabou de descrever o fundo do abismo. A fé não nega o sofrimento; ela escolhe lembrar a fidelidade de Deus mesmo de dentro dele. Este versículo tornou-se a base do hino "Grande é a Tua Fidelidade."</p>
+        </div>
+
+        <div class="poem-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.25);">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-display text-2xl font-bold text-earth opacity-15">4</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-earth">Capítulo 4 — O Cerco e a Queda</h4>
+              <p class="font-body text-xs text-ink-faint">22 versículos · acróstico · voz: narrador</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Descreve o horror do cerco babilônico: crianças pedindo pão sem que ninguém lhes desse, mães que cozinharam seus próprios filhos pela fome, os sacerdotes e profetas mortos nas ruas. O ouro enegreceu — os filhos de Sião, que valiam mais do que ouro, são agora tratados como vasos de barro.</p>
+          <div class="p-2 rounded italic text-xs font-body text-ink-muted"
+               style="background:rgba(255,255,255,0.5);">"Mais felizes foram os traspassados à espada do que os traspassados pela fome." (4:9)</div>
+        </div>
+
+        <div class="poem-card" style="background:rgba(74,30,110,0.05);border-color:rgba(74,30,110,0.25);">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="font-display text-2xl font-bold text-violet opacity-15">5</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-violet">Capítulo 5 — Oração sem Estrutura</h4>
+              <p class="font-body text-xs text-ink-faint">22 versículos · ⚠️ NÃO acróstico · voz: coletiva ("nós")</p>
+            </div>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">O último poema tem 22 versículos — o mesmo número das letras do alfabeto — mas abandona o acróstico. A estrutura se desintegrou assim como a nação. É uma oração coletiva: "Lembra-te, Senhor, do que nos aconteceu." Termina sem resolução: "Por que nos esquecerias para sempre?" Nenhuma resposta. A esperança de 3:22 permanece — mas o presente ainda dói.</p>
+          <div class="p-2 rounded italic text-xs font-body text-ink-muted"
+               style="background:rgba(255,255,255,0.5);">"Renova os nossos dias como outrora." (5:21) — o último pedido do livro</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- A Estrutura Quiástica -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Estrutura Quiástica — A Esperança no Centro da Dor</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Os cinco poemas formam uma estrutura quiástica (A–B–C–B'–A') com o capítulo 3 como pivô central — um recurso deliberado que coloca a esperança literalmente no <strong>coração geométrico</strong> do livro.
+      </p>
+      <div class="space-y-2 mb-5">
+        <div class="flex items-center gap-3">
+          <div class="w-8 text-center font-display text-sm font-bold text-sapphire">A</div>
+          <div class="flex-1 p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.2);">
+            <span class="font-display text-xs font-bold text-sapphire">Cap. 1</span>
+            <span class="font-body text-xs text-ink-muted ml-2">Desolação de Jerusalém · "Como está solitária a cidade"</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 pl-4">
+          <div class="w-8 text-center font-display text-sm font-bold text-crimson">B</div>
+          <div class="flex-1 p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);">
+            <span class="font-display text-xs font-bold text-crimson">Cap. 2</span>
+            <span class="font-body text-xs text-ink-muted ml-2">A ira de Deus que destruiu · o julgamento consumado</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 pl-8">
+          <div class="w-8 text-center font-display text-sm font-bold text-forest">C</div>
+          <div class="flex-1 p-3 rounded-xl font-semibold" style="background:rgba(30,74,42,0.08);border:2px solid rgba(30,74,42,0.35);">
+            <span class="font-display text-xs font-bold text-forest">Cap. 3 — O CENTRO</span>
+            <span class="font-body text-xs text-ink ml-2">"As misericórdias do Senhor não têm fim... grande é a tua fidelidade." (3:22–23)</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 pl-4">
+          <div class="w-8 text-center font-display text-sm font-bold text-earth">B'</div>
+          <div class="flex-1 p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.2);">
+            <span class="font-display text-xs font-bold text-earth">Cap. 4</span>
+            <span class="font-body text-xs text-ink-muted ml-2">O horror do cerco · o passado glorioso destruído</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-3">
+          <div class="w-8 text-center font-display text-sm font-bold text-violet">A'</div>
+          <div class="flex-1 p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+            <span class="font-display text-xs font-bold text-violet">Cap. 5</span>
+            <span class="font-body text-xs text-ink-muted ml-2">Oração pela restauração · "Renova os nossos dias como outrora"</span>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">O que a estrutura revela:</strong> Ao colocar 3:22–23 no centro geométrico exato do livro, o poeta diz: no coração de toda a destruição, no núcleo de toda a dor — há fidelidade. A esperança não está no final da história (o livro não termina bem) nem no começo (já era catástrofe). Ela está no <em>meio</em> — disponível mesmo no ponto mais escuro, para quem escolhe lembrar.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lamentações 3:22–23 em profundidade -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Versículo Mais Luminoso do Livro Mais Sombrio — 3:22–23</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="hope-verse mb-4">
+            <p class="font-body text-xl italic text-ink leading-relaxed">
+              "As misericórdias do Senhor não têm fim; as suas compaixões jamais se extinguem. Renovam-se cada manhã; grande é a tua fidelidade."
+            </p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">
+            <strong>O contexto que a maioria esquece:</strong> O versículo imediatamente anterior diz: "A minha alma se lembra disso e se abate em mim" (3:20). E o versículo seguinte: "O Senhor é a minha porção, diz a minha alma; portanto esperarei nele" (3:24). A esperança de 3:22 não é ingênua — é uma escolha feita de dentro do desespero.
+          </p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">
+            A palavra hebraica traduzida como "misericórdias" é <em>chesed</em> (חֶסֶד) — amor leal, fidelidade de aliança. "Compaixões" é <em>rachamim</em> (רַחֲמִים) — relacionado à palavra "útero" (rechem) — o amor visceral, instintivo de uma mãe. São os dois tipos mais profundos de amor divino, declarados sobre as ruínas.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🎵 "Grande é a Tua Fidelidade" — O Hino</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Thomas O. Chisholm escreveu o hino "Great Is Thy Faithfulness" em 1923, baseado diretamente em Lamentações 3:22–23. William M. Runyan o musicou. Tornou-se um dos hinos cristãos mais cantados do século XX — e é cantado sobre um texto escrito nas ruínas de uma cidade destruída.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed italic">
+              "Grande é a tua fidelidade, Senhor meu Deus! Não há sombra de variação em ti. Tens sido a força que sustenta meus dias; à tua graça e mercê devo tudo o que sou."
+            </p>
+            <p class="font-body text-xs text-ink-faint mt-1">— Tradução brasileira do hino de Chisholm/Runyan (1923)</p>
+          </div>
+          <div class="p-3 rounded-lg mt-2" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-forest">A ironia poderosa:</strong> Um dos hinos mais cantados em cultos de celebração e ação de graças tem sua raiz no livro mais sombrio da Bíblia. A fidelidade de Deus é mais visível quando nada mais permaneceu em pé — porque então ela é tudo o que resta.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos e NT -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2 mb-4">
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">😭 O luto como ato de fé</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🌅 Misericórdias que se renovam</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚖️ Julgamento e sua justiça</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">💎 Fidelidade de Deus imutável</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🙏 Confissão coletiva de pecado</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🏙️ Jerusalém como símbolo</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">⏳ Espera ativa no sofrimento</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🔥 O custo da desobediência</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Lamentações no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Lm 1:12 na Liturgia da Paixão</span>
+              <p class="font-body text-xs text-ink-muted mt-1">"Não vos importa, vós todos que passais pelo caminho? Olhai e vede se há alguma dor como a minha dor." — Usado na liturgia cristã da Sexta-Feira Santa como meditação sobre o sofrimento de Cristo na cruz.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Lc 19:41 — Jesus chora sobre Jerusalém</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus chora sobre Jerusalém antecipando sua destruição em 70 d.C. — ecoando o choro do poeta de Lamentações sobre a destruição de 586 a.C. Dois choros pela mesma cidade, separados por 600 anos.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Ap 18 — A queda da Babilônia</span>
+              <p class="font-body text-xs text-ink-muted mt-1">João usa a linguagem e as imagens de Lamentações para descrever a queda da Babilônia no Apocalipse — o padrão de "cidade destruída e lamentada" é reverso: agora é a cidade inimiga que cai, e os que choravam são consolados.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">2 Co 1:3–4 — O Deus de toda consolação</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo descreve Deus como "Pai das misericórdias e Deus de toda consolação" — linguagem diretamente moldada por Lamentações 3:22 (misericórdias) e pelo próprio livro como exercício de buscar consolação divina no sofrimento.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O acróstico como teologia:</strong> Usar o alfabeto completo não era apenas recurso mnemônico — era uma declaração: "Expressamos nossa dor completamente, de alef a tav (A a Z)." O luto foi nomeado com todas as palavras disponíveis. Não houve repressão, não houve silêncio forçado — toda a extensão da dor foi articulada diante de Deus.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O capítulo 5 sem acróstico — a estrutura que colapsou:</strong> O quinto poema tem 22 versículos (número das letras hebraicas) mas não segue o acróstico. É interpretado como o colapso final da estrutura sob o peso da dor — a forma literária não aguentou. O sofrimento transbordou a ordem. É um recurso literário de extraordinária sofisticação.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Lutero e o "livro de lágrimas":</strong> Martinho Lutero chamou Lamentações de <em>o livro de lágrimas</em> e recomendava sua leitura a qualquer pastor que quisesse entender o ministério do consolo. Ele entendia que sem conhecer a dor profundamente, a consolação seria superficial.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Eikah — a palavra que abre três poemas:</strong> "Eikah" (אֵיכָה — "Como!" ou "Ai!") abre os capítulos 1, 2 e 4. No AT, este grito de espanto diante de uma catástrofe aparece em Dt 1:12 (Moisés lamentando o peso de liderar o povo) e Is 1:21 (Isaías lamentando Jerusalém corrupta). É o grito do que não deveria ter acontecido.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Tishá BeAv — 2.600 anos de luto contínuo:</strong> A cada ano, no 9º dia do mês hebraico de Av (julho/agosto), judeus ao redor do mundo leem Lamentações em sinagoga — sentados no chão, com luzes apagadas, em voz de pranto. Este jejum é observado desde 586 a.C. ininterruptamente, tornando Lamentações um dos textos lidos coletivamente por mais tempo na história humana.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Lm 3:25–27 — A sabedoria do esperar:</strong> "Bom é o Senhor para os que nele esperam, para a alma que o busca. Bom é aguardar em silêncio a salvação do Senhor. Bom é para o homem suportar o jugo na sua mocidade." — Uma das afirmações mais contraculturas da Bíblia: esperar é bom, o silêncio tem valor, o sofrimento jovem tem propósito. Três vezes "bom" onde o mundo diria "ruim".
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Não vos importa?" (1:12) na liturgia cristã:</strong> Esta frase — "não vos importa, vós todos que passais pelo caminho?" — foi adotada pela Igreja Antiga como meditação sobre Cristo na cruz. O que o poeta disse de Jerusalém, a Igreja aplicou ao Gólgota. É cantada na Sexta-Feira Santa em tradições litúrgicas até hoje.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A mãe que cozinhou o filho (2:20 / 4:10):</strong> O texto menciona explicitamente que mães cozinharam seus próprios filhos durante o cerco por fome extrema — cumprindo a mais extrema das maldições de Deuteronômio 28:57. Este horror, quase impossível de imaginar, foi o ponto de chegada do pecado acumulado de gerações. A profecia mais terrível de Moisés tornou-se história.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Lamentações importa hoje:</strong> Em um mundo que pressiona os crentes a sempre estarem bem, a celebrar, a "dar graças em tudo" de forma superficial — Lamentações é uma interrupção sagrada. Ele diz: <em>há momentos em que tudo o que é honesto é chorar</em>. A Bíblia não apenas permite isso — ela o inspirou, o preservou e o colocou no cânone para que cada geração soubesse que seu luto não é incredulidade. E no centro deste luto — não no final, mas no meio — está a mais firme declaração de fidelidade divina que o AT contém: "as misericórdias do Senhor não têm fim." Não porque o sofrimento acabou. Mas porque Deus não acabou.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-5">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Como está solitária a cidade que era tão populosa! Como se tornou como viúva a que era grande entre as nações!"
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Lamentações 1:1 · A abertura · escrita nas ruínas de Jerusalém</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "As misericórdias do Senhor não têm fim; as suas compaixões jamais se extinguem. Renovam-se cada manhã; grande é a tua fidelidade."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Lamentações 3:22–23 · O centro do livro · Base do hino "Grande é a Tua Fidelidade"</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Faze-nos voltar para ti, Senhor, e nós voltaremos; renova os nossos dias como outrora."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Lamentações 5:21 · A última oração do livro · sem resposta registrada · ainda esperando</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Lamentações · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

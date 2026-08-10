@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Abdias — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Os "não devias ter" */
+    .should-not {
+      border-radius: 8px;
+      border: 1px solid rgba(139,32,32,0.22);
+      padding: 0.625rem 0.875rem;
+      background: rgba(139,32,32,0.04);
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      transition: transform 0.15s;
+    }
+    .should-not:hover { transform: translateX(3px); }
+
+    /* Petra — rocha visual */
+    .petra-block {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 1.125rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s ease;
+    }
+    .petra-block:hover { transform: translateY(-2px); }
+
+    /* Lex talionis */
+    .talio-row {
+      display: grid;
+      grid-template-columns: 1fr 40px 1fr;
+      gap: 8px;
+      align-items: center;
+      padding: 7px 0;
+      border-bottom: 1px solid rgba(200,145,58,0.12);
+    }
+    .talio-row:last-child { border-bottom: none; }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MENORES · 31º LIVRO · 4º DOS DOZE
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Abdias
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>עֹבַדְיָה</em> (Ovadyah) — "Servo do Senhor" ou "Adorador do Senhor"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O menor livro do Antigo Testamento · <strong>21 versículos</strong> · <strong>1 capítulo</strong> · inteiramente sobre Edom · e a lei que torna o julgamento inevitável: <em>o que fizeste será feito a ti</em>
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulo — o único</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">21</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos · o menor livro do AT</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">Edom</div>
+          <div class="font-body text-sm text-ink-muted mt-1">o único assunto do livro</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">0</div>
+          <div class="font-body text-sm text-ink-muted mt-1">dados biográficos sobre o autor</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- O menor livro -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">O Menor Livro do Antigo Testamento</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Um Livro que Não Apresenta seu Autor</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Abdias abre com apenas: <em>"Visão de Abdias."</em> Sem pai, sem cidade, sem rei, sem época. É o profeta mais anônimo da Bíblia — nenhum dado biográfico, nenhum contexto familiar, nenhuma datação explícita. O nome "Abdias" era comum em Israel (aparece 13 vezes no AT para pessoas distintas), o que torna impossível identificar qual deles foi o profeta.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            O livro inteiro tem um único tema, um único alvo e uma única mensagem: <strong>Edom será destruído pelo que fez a Judá.</strong>
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">A datação:</strong> A maioria dos estudiosos data Abdias logo após a queda de Jerusalém em <strong>586 a.C.</strong>, quando Edom se comportou de forma particularmente traiçoeira durante a invasão babilônica. Os versículos 10–14 descrevem o comportamento de Edom neste evento com precisão de testemunha ocular.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Quem era Edom?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Edom eram os descendentes de <strong>Esaú</strong>, irmão gêmeo de Jacó. O nome "Edom" significa "vermelho" — relacionado à venda do primogênito por prato de lentilhas vermelhas (Gn 25:30). Habitavam as montanhas rochosas de Seir e as escarpas de Petra, ao sul e sudeste do Mar Morto (atual Jordânia).
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            A relação entre Israel e Edom era de <strong>parentesco constante e hostilidade constante</strong> — duas nações nascidas do mesmo ventre, em conflito desde antes de nascer (Gn 25:22). Moisés pediu passagem pela terra de Edom e foi recusado (Nm 20:14–21). Esta tensão de séculos culminou na traição de 586 a.C.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Edom e sua Fortaleza -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Orgulho de Petra — A Rocha que Prometia Segurança</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4"
+               style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.25);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">
+              "O orgulho do teu coração te enganou, a ti que moras nas fendas da rocha, cuja habitação é lá no alto; que dizes no teu coração: Quem me fará descer à terra?"
+            </p>
+            <p class="font-display text-xs text-earth mt-2 tracking-widest">Abdias 3 · O diagnóstico do pecado de Edom</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">
+            Edom vivia literalmente entalhada nas rochas — suas cidades, incluindo Petra (a "rocha"), eram esculpidas em penhasco de arenito rosa a centenas de metros de altitude, acessíveis apenas por desfiladeiros estreitos. Era uma fortaleza natural praticamente inexpugnável. Isto gerou um senso de invulnerabilidade que Abdias identifica como a raiz de tudo: <em>orgulho.</em>
+          </p>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="petra-block" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.25);">
+            <div class="text-2xl mb-2">🦅</div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">Ninho de Águia</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"Ainda que ergues o teu ninho como a águia, ainda que o ponhas entre as estrelas, de lá te farei descer." (v.4) — Petra está a ~1.000m de altitude</p>
+          </div>
+          <div class="petra-block" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.25);">
+            <div class="text-2xl mb-2">🪨</div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">Sela / Petra</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">Sela (hebraico) = Petra (grego) = "rocha." A capital de Edom era literalmente uma cidade talhada na pedra — geograficamente inatingível por exércitos convencionais</p>
+          </div>
+          <div class="petra-block" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.25);">
+            <div class="text-2xl mb-2">🏹</div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">Guerreiros de Edom</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"Os teus guerreiros, ó Temã, serão apavorados" (v.9) — Temã era famosa por seus guerreiros habilidosos. Esaú também era caçador habilidoso (Gn 25:27)</p>
+          </div>
+          <div class="petra-block" style="background:rgba(92,61,30,0.06);border-color:rgba(92,61,30,0.25);">
+            <div class="text-2xl mb-2">🧠</div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">Sabedoria de Edom</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"Acaso não destruirei os sábios de Edom?" (v.8) — Edom era famosa por sua tradição sapiencial. Elifaz (amigo de Jó) era de Temã</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os "Não Devias Ter" -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Os Oito "Não Devias Ter" — A Acusação (v.10–14)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        A seção central do livro é uma das acusações mais detalhadas e emocionalmente carregadas do AT. Quando Jerusalém caiu para os babilônios em 586 a.C., Edom — o irmão, o descendente de Esaú — não apenas ficou de lado. Participou. Os versículos 10–14 repetem a fórmula "não devias ter" oito vezes — cada repetição é uma facada na traição fraterna.
+      </p>
+
+      <div class="space-y-1.5 mb-5">
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">1️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter ficado de lado</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia em que estranhos levavam cativo o seu exército" (v.11) — a omissão já era crime</p>
+          </div>
+        </div>
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">2️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter te alegrado com os filhos de Judá</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia da sua perdição" (v.12) — schadenfreude como pecado</p>
+          </div>
+        </div>
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">3️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter falado arrogantemente</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia da angústia" (v.12) — zombar do sofrimento do irmão</p>
+          </div>
+        </div>
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">4️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter entrado pela porta do meu povo</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia da sua calamidade" (v.13) — entrou em Jerusalém destruída como conquistador</p>
+          </div>
+        </div>
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">5️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter contemplado a sua aflição</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia da sua calamidade" (v.13) — olhou com satisfação enquanto Judá sofria</p>
+          </div>
+        </div>
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">6️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter posto a mão nos seus bens</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia da sua calamidade" (v.13) — saqueou o que os babilônios deixaram</p>
+          </div>
+        </div>
+        <div class="should-not">
+          <span class="text-base flex-shrink-0">7️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter ficado na encruzilhada</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"Para cortar os seus fugitivos" (v.14) — bloqueou as rotas de escape de refugiados</p>
+          </div>
+        </div>
+        <div class="should-not" style="border-color:rgba(139,32,32,0.4);border-width:2px;">
+          <span class="text-base flex-shrink-0">8️⃣</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">Não devias ter entregado os seus sobreviventes</span>
+            <p class="font-body text-xs text-ink-muted mt-0.5">"No dia da angústia" (v.14) — <strong>o mais grave:</strong> entregou os refugiados que conseguiram escapar diretamente aos babilônios</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-sapphire">Por que a traição de Edom foi pior que a dos babilônios:</strong> Os babilônios eram inimigos declarados — fizeram o que inimigos fazem. Edom era <em>irmão</em> — descendente do irmão gêmeo de Israel. A cumplicidade ativa de um familiar no sofrimento do outro é a traição mais profunda. Abdias diz explicitamente (v.10): "Por causa da violência contra teu irmão Jacó, a vergonha te cobrirá e serás destruído para sempre." O parentesco tornava o crime mais grave, não uma desculpa.
+        </p>
+      </div>
+    </section>
+
+    <!-- A Lex Talionis -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Princípio do Talião — "Como Fizeste Será Feito a Ti" (v.15)</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O versículo 15 é o eixo teológico do livro — a lei moral fundamental que governa todo o julgamento de Edom: <em>"Como tu fizeste, assim se te fará; a tua recompensa tornará sobre a tua própria cabeça."</em> Não é vingança — é a lei da semeadura e da colheita aplicada às nações.
+      </p>
+
+      <div class="rounded-xl overflow-hidden border mb-5" style="border-color:rgba(200,145,58,0.2);">
+        <div class="grid grid-cols-3 gap-0 px-3 py-2"
+             style="background:rgba(200,145,58,0.1);font-family:'Cinzel',serif;font-size:0.58rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8a6020;">
+          <span>O que Edom fez</span><span class="text-center">→</span><span>O que Edom receberá</span>
+        </div>
+        <div class="px-3 py-1 divide-y" style="border-color:rgba(200,145,58,0.1);">
+          <div class="talio-row">
+            <span class="font-body text-xs text-crimson">Se alegrou com a queda de Judá</span>
+            <span class="text-center text-gold-dark font-bold">⇄</span>
+            <span class="font-body text-xs text-forest">As nações beberão continuamente e desaparecerão (v.16)</span>
+          </div>
+          <div class="talio-row">
+            <span class="font-body text-xs text-crimson">Saqueou os bens de Judá</span>
+            <span class="text-center text-gold-dark font-bold">⇄</span>
+            <span class="font-body text-xs text-forest">A casa de Jacó possuirá seus possuidores (v.17)</span>
+          </div>
+          <div class="talio-row">
+            <span class="font-body text-xs text-crimson">Bloqueou as rotas de fuga de refugiados</span>
+            <span class="text-center text-gold-dark font-bold">⇄</span>
+            <span class="font-body text-xs text-forest">Não haverá sobrevivente da casa de Esaú (v.18)</span>
+          </div>
+          <div class="talio-row">
+            <span class="font-body text-xs text-crimson">Entregou fugitivos aos inimigos</span>
+            <span class="text-center text-gold-dark font-bold">⇄</span>
+            <span class="font-body text-xs text-forest">Será como se nunca houvesse existido (v.16)</span>
+          </div>
+          <div class="talio-row">
+            <span class="font-body text-xs text-crimson">Confiou em sua fortaleza rochosa inacessível</span>
+            <span class="text-center text-gold-dark font-bold">⇄</span>
+            <span class="font-body text-xs text-forest">Seus sábios e guerreiros serão destruídos desde dentro (v.8–9)</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.22);">
+          <h4 class="font-display text-sm font-semibold text-forest mb-2">🌍 O Princípio Universal (v.15a)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">"Porque o Dia do Senhor está perto sobre todas as nações" — o julgamento de Edom não é exceção; é exemplo. O que acontece a Edom acontecerá a toda nação que trate os vulneráveis com a mesma violência e alegria perversa. Abdias é um livro sobre Edom mas uma lei para todos.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">📖 O Eco em outras Escrituras</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Gálatas 6:7 — "Deus não se pode escarnecer, pois o que o homem semear isso também ceifará." Apocalipse 18:6 — "Retribuí a ela como ela retribuiu." O princípio talional de Abdias 15 ecoa em todo o NT como lei moral da criação.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Destino Histórico de Edom -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Destino Histórico de Edom — A Profecia Cumprida</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Desaparecimento de um Povo</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            A profecia de Abdias sobre Edom tem uma das verificações históricas mais completas de toda a profecia bíblica. "Não haverá sobrevivente da casa de Esaú" (v.18) — Edom cessou de existir como povo identificável, o que não aconteceu com a maioria dos vizinhos de Israel.
+          </p>
+          <div class="space-y-2">
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <span class="font-display text-xs font-bold text-earth flex-shrink-0">~400 a.C.</span>
+              <span class="font-body text-xs text-ink-muted">Os <strong>Nabateus</strong> — povo árabe — começaram a pressionar e eventualmente deslocar os edomitas de seu território montanhoso</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <span class="font-display text-xs font-bold text-earth flex-shrink-0">~312 a.C.</span>
+              <span class="font-body text-xs text-ink-muted">Os Nabateus conquistam Petra permanentemente — os edomitas são forçados a migrar para o sul de Judá (que passa a ser chamada de <strong>Idumeia</strong>)</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.18);">
+              <span class="font-display text-xs font-bold text-earth flex-shrink-0">~125 a.C.</span>
+              <span class="font-body text-xs text-ink-muted">João Hircano (rei asmoneu) conquista a Idumeia e <strong>força a conversão dos edomitas ao judaísmo</strong> — absorção forçada</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson flex-shrink-0">~37 a.C.</span>
+              <span class="font-body text-xs text-ink-muted"><strong>Herodes, o Grande</strong> — rei de Judeia e um dos homens mais poderosos do mundo — era idumeu, descendente de Esaú/Edom. O último dos edomitas notáveis.</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.2);">
+              <span class="font-display text-xs font-bold text-crimson flex-shrink-0">70 d.C.</span>
+              <span class="font-body text-xs text-ink-muted">A destruição de Jerusalém pelos romanos elimina os idumeus como grupo distinto. Depois disto, os "edomitas" desaparecem completamente da história registrada</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Ironia Histórica Final</h3>
+          <div class="p-4 rounded-xl mb-4" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-sm text-ink-muted leading-relaxed">
+              <strong class="text-gold-dark">Herodes e o Menino de Belém:</strong> O último edomita de destaque na história foi Herodes, o Grande — que ao ouvir sobre o nascimento do "Rei dos Judeus" (Mt 2:1–18), ordenou a morte de todos os meninos de Belém com até dois anos de idade. Um descendente de Esaú tentando matar o descendente de Jacó. O conflito iniciado no ventre de Rebeca chegou a seu clímax na noite de Belém — e o descendente de Jacó sobreviveu.
+            </p>
+          </div>
+          <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.22);">
+            <h4 class="font-display text-sm font-semibold text-forest mb-2">🏔️ A Restauração de Israel (v.17–21)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">Enquanto Edom desaparece, Abdias promete que o Monte Sião será libertado e a casa de Jacó possuirá suas possessões. "E o reino será do Senhor" (v.21) — a última palavra do livro é sobre o reino de Deus, não sobre a queda de Edom. O julgamento é o meio; o reino é o fim.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e NT -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">😈 O orgulho que engana</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">👬 Traição fraterna</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">⚖️ O talião moral universal</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌍 O Dia do Senhor sobre as nações</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">👑 O Reino pertence ao Senhor</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">😂 Alegria perversa com o sofrimento alheio</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🪨 Segurança falsa em fortalezas humanas</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🔄 Restauração após julgamento</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Abdias no Novo Testamento e Tradição</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Rm 9:13 — "Jacó amei, Esaú odiei"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Paulo cita Malaquias 1:2–3 (que por sua vez ecoa o conflito de Abdias) no contexto da eleição soberana. A tensão Jacó/Esaú = Israel/Edom atravessa toda a teologia bíblica da aliança.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson">Ap 18 — A Queda da Babilônia</span>
+              <p class="font-body text-xs text-ink-muted mt-1">A linguagem da queda de Edom em Abdias (orgulho, confiança em si mesma, julgamento repentino) é modelo para a queda de Babilônia no Apocalipse — o padrão se repete em todo poder que se exalta.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Gl 6:7 — "O que o homem semear ceifará"</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O princípio de Abdias 15 — "como fizeste será feito a ti" — é a lei moral que Paulo generaliza: a retribuição não é arbitrária mas estrutural. Deus não se deixa escarnecer.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+              <span class="font-display text-xs font-bold text-sapphire">Mt 2:16–18 — Herodes e o massacre</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O descendente de Esaú/Edom (Herodes Idumeu) tentando matar o descendente de Jacó (Jesus) é o último capítulo do conflito que Abdias descreve — e o Israel verdadeiro, em Jesus, sobreviveu.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O livro mais curto do AT — e o mais focado:</strong> Com apenas 21 versículos e 1 capítulo, Abdias é o menor livro do Antigo Testamento. Mas sua mensagem é densa: em 21 versículos condensa uma teologia completa da justiça retributiva, do orgulho como pecado raiz e do destino das nações que tratam o povo de Deus com violência.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Petra e o arenito vermelho:</strong> A capital de Edom, Petra (chamada Sela no AT — ambas significam "rocha"), foi talhada em penhasco de arenito vermelho-rosado nas montanhas de Seir. O nome "Edom" significa "vermelho" — e a cor das rochas onde viviam era literalmente vermelha. Hoje é patrimônio mundial da UNESCO e um dos sítios arqueológicos mais visitados do mundo.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Abdias e Jeremias 49:</strong> Existe uma sobreposição textual quase palavra por palavra entre Abdias 1–9 e Jeremias 49:7–22 — ambos contêm oráculos contra Edom com linguagem muito similar. Qual copiou o outro (ou ambos compartilham uma fonte comum) é debatido. A maioria dos estudiosos acha que Jeremias usou material de Abdias, sendo Abdias mais antigo nesta seção.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O "schadenfreude" como pecado:</strong> A palavra alemã <em>schadenfreude</em> — alegria pelo sofrimento alheio — descreve exatamente o pecado de Edom em Abdias 12. A Bíblia trata esta atitude como pecado grave: Provérbios 24:17 — "Não te alegres quando teu inimigo cair." O que Edom fez foi praticá-la contra um irmão — tornando-a ainda mais grave.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A sabedoria de Edom — Elifaz de Temã:</strong> Abdias 8 menciona a destruição dos "sábios de Edom e o entendimento do monte de Esaú." Edom era famosa por sua tradição sapiencial — e Elifaz, o principal interlocutor de Jó no Livro de Jó, era de Temã, cidade de Edom. A sabedoria de Edom falhou em reconhecer a gravidade de seus próprios pecados — assim como a sabedoria de Elifaz falhou em compreender a situação de Jó.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"E o reino será do Senhor" (v.21):</strong> A última frase do livro é uma das declarações mais abrangentes do AT sobre o reino de Deus. Após 20 versículos de julgamento de uma nação, a conclusão aponta além de qualquer conflito nacional: o objetivo final da história não é a punição de Edom nem a restauração de Israel — é o reino de Deus sobre toda a criação. Apocalipse 11:15 ecoa isto: "O reino do mundo passou a ser o reino do nosso Senhor e do seu Cristo."
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Nunca citado diretamente no NT — mas onipresente em temas:</strong> Abdias é o único livro profético nunca citado explicitamente no NT. Mas seus temas permeiam o NT: o orgulho que precede a queda (1 Pe 5:5), a retribuição como lei moral (Gl 6:7), a alegria perversa com o sofrimento alheio (1 Co 13:6), a traição de irmãos (Mt 10:21) e o reino final de Deus (Ap 11:15; 19:6).
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Por que Abdias — o menor livro — ainda importa:</strong> Em 21 versículos, Abdias estabelece uma das verdades mais consoladoras e mais sóbrias da Bíblia: Deus não esquece o que as nações fazem ao seu povo. Não é por impaciência — os edomitas esperaram décadas após 586 a.C. antes de ver o cumprimento. Mas a roda moral do universo gira — "como fizeste será feito a ti." Para comunidades que sofreram opressão, traição ou violência fraternal, Abdias diz: o Juiz viu. Para nações e pessoas que tiraram prazer da calamidade alheia, Abdias é um aviso. E para todos, a última palavra é a mais importante: "e o reino será do Senhor."
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-5">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "O orgulho do teu coração te enganou, a ti que moras nas fendas da rocha... Ainda que ergues o teu ninho como a águia, ainda que o ponhas entre as estrelas, de lá te farei descer."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Abdias 3–4 · O orgulho como raiz de toda destruição</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Como tu fizeste, assim se te fará; a tua recompensa tornará sobre a tua própria cabeça."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Abdias 15 · A lei moral que governa as nações · o eixo teológico do livro</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E o reino será do Senhor."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Abdias 21 · A última palavra do livro mais curto do AT · e a mais importante</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Abdias · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>

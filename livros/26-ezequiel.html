@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ezequiel — Guia de Estudos</title>
+  <!-- 1. Tailwind CDN (deve vir antes do config) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Config centralizado (cores, fontes, animações) -->
+  <script src="../tailwind-config.js"></script>
+
+  <!-- 3. Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+
+  <!-- 4. CSS centralizado (classes reutilizáveis) -->
+  <link rel="stylesheet" href="../style.css" />
+
+  <!-- 5. CSS exclusivo deste livro (apenas o que não existe no style.css) -->
+  <style>
+
+    /* Visão da Merkavá */
+    .merkavah-ring {
+      border-radius: 50%;
+      border: 2px solid;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Cinzel', serif;
+      font-weight: 700;
+      transition: transform 0.3s ease;
+    }
+    .merkavah-ring:hover { transform: rotate(15deg) scale(1.05); }
+
+    /* Sinais proféticos */
+    .sign-card {
+      border-radius: 10px;
+      border: 1px solid;
+      padding: 0.875rem 1rem;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      transition: transform 0.2s ease;
+    }
+    .sign-card:hover { transform: translateX(4px); }
+
+    /* Ossos do vale */
+    .bone-step {
+      border-radius: 9px;
+      border: 1px solid;
+      padding: 0.875rem 1rem;
+      position: relative;
+      transition: transform 0.2s ease;
+    }
+    .bone-step:hover { transform: translateY(-2px); }
+    .bone-number {
+      position: absolute;
+      top: -10px; left: 12px;
+      font-family: 'Cinzel', serif;
+      font-size: 0.6rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      padding: 0 8px;
+      background: #fdf8ef;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+
+  <!-- Hero -->
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">
+        A BÍBLIA · PROFETAS MAIORES · 26º LIVRO
+      </p>
+
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up"
+          style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">
+        Ezequiel
+      </h1>
+
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">
+        Do hebraico <em>יְחֶזְקֵאל</em> (Yechezkel) — "Deus fortalece" ou "Deus o fortalecerá"
+      </p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">
+        O profeta sacerdote do exílio · o livro das visões mais extraordinárias da Bíblia · a <strong>Merkavá</strong> · os <strong>ossos secos</strong> · e o retorno da glória de Deus
+      </p>
+
+      <div class="divider-ornament animate-fade-in animate-delay-2">
+        <span class="ornament">✦</span>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">48</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Capítulos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-3xl font-bold text-gold-dark">1.273</div>
+          <div class="font-body text-sm text-ink-muted mt-1">Versículos</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">93×</div>
+          <div class="font-body text-sm text-ink-muted mt-1">"filho do homem" — mais que qualquer outro livro</div>
+        </div>
+        <div class="stat-card">
+          <div class="font-display text-2xl font-bold text-gold-dark">593–571</div>
+          <div class="font-body text-sm text-ink-muted mt-1">a.C. · ministério no exílio</div>
+        </div>
+      </div>
+
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- Contexto Geral -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Quem foi Ezequiel?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Ezequiel, filho do sacerdote Buzi, foi deportado na <strong>segunda vaga do exílio</strong> (597 a.C.) junto com o rei Joaquim e 10.000 dos melhores cidadãos de Judá. Instalado na colônia de exilados em <strong>Tel-Abibe</strong>, às margens do rio Quebar na Babilônia, foi chamado ao ministério profético aos 30 anos — a idade em que os sacerdotes começavam a servir no Templo.
+          </p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            É o único profeta da Bíblia que era também sacerdote — e esta dupla identidade molda todo o livro: suas visões são repletas de linguagem litúrgica, suas preocupações incluem pureza, Templo e sacerdócio.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.22);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-violet">Contemporâneos:</strong> Ezequiel profetizava em Tel-Abibe ao mesmo tempo que <strong>Jeremias</strong> profetizava em Jerusalém e <strong>Daniel</strong> servia na corte de Nabucodonosor — três profetas simultâneos, cada um em contexto diferente, cobrindo todo o espectro da crise nacional.
+            </p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Estrutura em Quatro Blocos</h3>
+          <div class="space-y-2">
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.2);">
+              <span class="font-display text-xs font-bold text-violet flex-shrink-0 mt-0.5">Cap. 1–3</span>
+              <span class="font-body text-xs text-ink-muted">A visão da Merkavá e o chamado — Ezequiel é enviado a um povo rebelde</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.18);">
+              <span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5">Cap. 4–24</span>
+              <span class="font-body text-xs text-ink-muted">Julgamento de Judá e Jerusalém — a partida da glória, a queda anunciada</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(200,145,58,0.05);border:1px solid rgba(200,145,58,0.22);">
+              <span class="font-display text-xs font-bold text-gold-dark flex-shrink-0 mt-0.5">Cap. 25–32</span>
+              <span class="font-body text-xs text-ink-muted">Oráculos contra as nações — Amom, Moabe, Edom, Filisteia, Tiro, Egito</span>
+            </div>
+            <div class="flex items-start gap-3 p-2 rounded-lg"
+                 style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.2);">
+              <span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5">Cap. 33–48</span>
+              <span class="font-body text-xs text-ink-muted">Restauração de Israel — ossos secos, novo coração, Gogue e Magogue, Templo ideal</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Visão da Merkavá -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Visão da Merkavá — Cap. 1 · A Mais Extraordinária da Bíblia</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O capítulo 1 de Ezequiel é o texto que mais perturbou — e mais fascinou — leitores por 2.600 anos. É a descrição mais complexa de uma visão divina em toda a Bíblia. A palavra <em>Merkavá</em> (מֶרְכָּבָה — "carro de guerra/trono") tornou-se o nome desta visão e de toda uma tradição mística judaica.
+      </p>
+
+      <!-- Diagrama visual da Merkavá -->
+      <div class="flex flex-col items-center gap-4 mb-6 py-4">
+        <!-- Trono -->
+        <div class="merkavah-ring w-28 h-28 border-gold text-center flex-col"
+             style="border-color:#c8913a;background:rgba(200,145,58,0.08);">
+          <div class="font-display text-xs font-bold text-gold-dark">👑</div>
+          <div class="font-display text-xs text-gold-dark leading-tight mt-1">TRONO<br/>Glória de Deus</div>
+        </div>
+        <!-- Firmamento -->
+        <div class="merkavah-ring w-44 h-16 rounded-xl border-sapphire"
+             style="border-color:#1e3a5f;background:rgba(30,58,95,0.05);border-radius:8px;">
+          <div class="font-display text-xs text-sapphire text-center">✨ FIRMAMENTO / EXPANSE ✨</div>
+        </div>
+        <!-- 4 Seres Viventes -->
+        <div class="grid grid-cols-3 gap-4 items-center">
+          <div class="p-3 rounded-xl text-center" style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.3);">
+            <div class="text-xl">🦁</div>
+            <div class="font-display text-xs font-bold text-forest mt-1">LEÃO</div>
+            <div class="font-body text-xs text-ink-faint">direita</div>
+          </div>
+          <div class="p-3 rounded-xl text-center" style="background:rgba(74,30,110,0.07);border:1px solid rgba(74,30,110,0.3);">
+            <div class="text-xl">👤</div>
+            <div class="font-display text-xs font-bold text-violet mt-1">HOMEM</div>
+            <div class="font-body text-xs text-ink-faint">frente</div>
+          </div>
+          <div class="p-3 rounded-xl text-center" style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.3);">
+            <div class="text-xl">🦅</div>
+            <div class="font-display text-xs font-bold text-forest mt-1">ÁGUIA</div>
+            <div class="font-body text-xs text-ink-faint">acima</div>
+          </div>
+        </div>
+        <div class="p-3 rounded-xl text-center" style="background:rgba(92,61,30,0.07);border:1px solid rgba(92,61,30,0.3);">
+          <div class="text-xl">🐂</div>
+          <div class="font-display text-xs font-bold text-earth mt-1">TOURO / BOI</div>
+          <div class="font-body text-xs text-ink-faint">esquerda · os 4 formam os Querubins</div>
+        </div>
+        <!-- Rodas -->
+        <div class="flex gap-6">
+          <div class="merkavah-ring w-16 h-16"
+               style="border-color:#8b2020;background:rgba(139,32,32,0.05);">
+            <div class="font-display text-xs text-crimson text-center leading-tight">⚙️<br/>Roda<br/>dentro<br/>de roda</div>
+          </div>
+          <div class="font-body text-xs text-ink-faint self-center text-center max-w-32">Cheias de olhos · movem-se em 4 direções sem virar</div>
+          <div class="merkavah-ring w-16 h-16"
+               style="border-color:#8b2020;background:rgba(139,32,32,0.05);">
+            <div class="font-display text-xs text-crimson text-center leading-tight">⚙️<br/>Roda<br/>dentro<br/>de roda</div>
+          </div>
+        </div>
+        <div class="font-body text-xs text-ink-faint italic text-center max-w-xs">Onde o espírito ia, as rodas iam · sem precisar virar · a glória de Deus não está limitada a nenhuma direção</div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.22);">
+          <h4 class="font-display text-sm font-semibold text-violet mb-2">🔮 Por que esta visão em Tel-Abibe?</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O exílio criou uma crise teológica: "Deus habita em Sião — se estamos na Babilônia, Deus nos abandonou?" A visão da Merkavá responde com a maior das afirmações: <strong>a glória de Deus está aqui, no rio Quebar, na Babilônia</strong>. Deus não ficou em Jerusalém. Ele veio ao exílio com seu povo.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">📖 A Merkavá no NT e na mística judaica</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Os 4 seres viventes (Ap 4:6–8) são diretamente os querubins de Ezequiel 1 — leão, touro, homem e águia. A tradição judaica (Mishnê Torá) considera Ez 1 tão sagrado que só devia ser lido por sábios maduros. A mística <em>Merkavá</em> (séc. III–VII d.C.) foi toda baseada neste capítulo.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Partida e o Retorno da Glória -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Partida e o Retorno da Glória de Deus — O Arco Central do Livro</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        O tema que une todos os 48 capítulos de Ezequiel é o <strong>Kavod YHWH</strong> (כָּבוֹד יְהוָה — a Glória do Senhor). O livro começa com a glória aparecendo no exílio (cap. 1), narra sua partida do Templo (cap. 10–11) e termina com seu solene retorno ao Templo restaurado (cap. 43). É o maior drama de presença e ausência divina de toda a Bíblia.
+      </p>
+      <div class="grid md:grid-cols-3 gap-4">
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(74,30,110,0.07);border:1px solid rgba(74,30,110,0.25);">
+          <div class="text-2xl mb-2">✨</div>
+          <h4 class="font-display text-sm font-semibold text-violet mb-2">Cap. 1 — Aparição</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A glória de Deus aparece no rio Quebar, na Babilônia — longe do Templo. Deus está com os exilados. O início do ministério de Ezequiel.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.25);">
+          <div class="text-2xl mb-2">🚶</div>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-2">Cap. 10–11 — Partida</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Ezequiel vê em visão a glória levantar-se do Templo em etapas — do Santo dos Santos → para a entrada → para o Monte das Oliveiras → e desaparecer. O Templo estava vazio antes de ser destruído.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center"
+             style="background:rgba(30,74,42,0.07);border:1px solid rgba(30,74,42,0.25);">
+          <div class="text-2xl mb-2">🏛️</div>
+          <h4 class="font-display text-sm font-semibold text-forest mb-2">Cap. 43 — Retorno</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">No Templo ideal dos últimos capítulos, Ezequiel vê a glória retornando pelo mesmo caminho oriental de onde partiu. "E eis que a glória do Deus de Israel vinha do oriente" (43:2).</p>
+        </div>
+      </div>
+      <div class="mt-4 p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          <strong class="text-gold-dark">A teologia da partida:</strong> A glória de Deus não foi expulsa do Templo pelos babilônios — ela <em>saiu voluntariamente</em> por causa das abominações do povo (Ez 8–9). Deus não foi derrotado. Ele deixou o Templo vazio para que os babilônios o destruíssem. E a promessa do retorno (cap. 43) é a garantia de que o julgamento não é a última palavra.
+        </p>
+      </div>
+    </section>
+
+    <!-- Os Sinais Proféticos -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Sinais Proféticos — Ezequiel o Profeta-Ator</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        Nenhum profeta do AT realizou tantos <strong>atos simbólicos</strong> quanto Ezequiel. Deus o instruía a executar ações dramáticas que comunicavam a mensagem proférica de forma visceral e inesquecível — "teatro profético" que antecipa as mídias visuais modernas.
+      </p>
+      <div class="space-y-2">
+
+        <div class="sign-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="text-xl flex-shrink-0">🧱</span>
+          <div>
+            <span class="font-display text-xs font-bold text-sapphire">Maquete do Cerco — Cap. 4:1–3</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Ezequiel gravou o mapa de Jerusalém numa tijolada de argila e simulou um cerco com rampas de ataque, acampamentos e arietes. Colocou uma chapa de ferro entre ele e a "cidade" — representando a barreira entre Deus e o povo.</p>
+          </div>
+        </div>
+
+        <div class="sign-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-xl flex-shrink-0">🛌</span>
+          <div>
+            <span class="font-display text-xs font-bold text-earth">Deitado 390 + 40 Dias — Cap. 4:4–8</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Deus mandou Ezequiel deitar sobre o lado esquerdo por 390 dias (representando os anos de iniquidade de Israel) e depois sobre o lado direito por 40 dias (Judá). Cada dia = um ano de pecado acumulado. Ele ficou amarrado com cordas e não podia virar-se.</p>
+          </div>
+        </div>
+
+        <div class="sign-card" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-xl flex-shrink-0">🍞</span>
+          <div>
+            <span class="font-display text-xs font-bold text-crimson">O Pão Imundo — Cap. 4:9–17</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Fez pão com mistura de grãos (trigo, cevada, favas, lentilhas) — um pão de sobrevivência para comer em rações limitadas, representando a escassez durante o cerco. Deus inicialmente ordenou que cozinhasse com excremento humano (sinal da impureza do exílio); após súplica, mudou para esterco bovino.</p>
+          </div>
+        </div>
+
+        <div class="sign-card" style="background:rgba(200,145,58,0.06);border-color:rgba(200,145,58,0.25);">
+          <span class="text-xl flex-shrink-0">✂️</span>
+          <div>
+            <span class="font-display text-xs font-bold text-gold-dark">O Cabelo Cortado — Cap. 5</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Raspou a cabeça com uma espada e pesou o cabelo em três porções: 1/3 queimou no meio da maquete da cidade (morte por fome e fogo), 1/3 cortou ao redor da cidade (morte pela espada), 1/3 lançou ao vento (espalhados pelo mundo). Só alguns fios foram guardados na barra da roupa — o remanescente.</p>
+          </div>
+        </div>
+
+        <div class="sign-card" style="background:rgba(30,74,42,0.04);border-color:rgba(30,74,42,0.2);">
+          <span class="text-xl flex-shrink-0">🧳</span>
+          <div>
+            <span class="font-display text-xs font-bold text-forest">A Bagagem do Exilado — Cap. 12:1–7</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">Em plena luz do dia, preparou bagagem como alguém partindo para o exílio. À tarde, cavam um buraco na parede e passou pela abertura carregando a bagagem, cobrindo o rosto — simbolizando o rei Zedequias que fugiria de noite e seria capturado (cumprido em Jr 39:4–7).</p>
+          </div>
+        </div>
+
+        <div class="sign-card" style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.2);">
+          <span class="text-xl flex-shrink-0">💔</span>
+          <div>
+            <span class="font-display text-xs font-bold text-violet">A Morte da Esposa — Cap. 24:15–27</span>
+            <p class="font-body text-xs text-ink-muted mt-1 leading-relaxed">O sinal mais devastador: Deus disse a Ezequiel que sua esposa — "o deleite dos seus olhos" — morreria naquele dia. E que ele não devia chorar, nem fazer luto, nem aceitar consolações. A morte de sua esposa era sinal da queda de Jerusalém, o Templo que era o "deleite dos olhos" de Israel. O profeta obedeceu.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- O Vale dos Ossos Secos -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Vale dos Ossos Secos — Cap. 37:1–14</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">
+        A visão mais famosa de Ezequiel — e uma das mais dramáticas de toda a Bíblia. O Espírito leva o profeta a um vale coberto de ossos humanos — secos, desarticulados, completamente mortos. E Deus pergunta: <em>"Filho do homem, podem estes ossos viver?"</em>
+      </p>
+
+      <div class="space-y-3 mb-5">
+        <div class="bone-step" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="bone-number text-earth">ESTÁGIO 1</span>
+          <div class="flex gap-3 items-start">
+            <span class="text-xl flex-shrink-0">💀</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-earth mb-1">A Pergunta e a Profecia aos Ossos</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Profetiza sobre estes ossos!" — Ezequiel profetizou conforme ordenado. Enquanto profetizava, houve um ruído, depois um tremor, e os ossos se juntaram — cada osso ao seu lugar. Os tendões os cobriram, depois a carne, depois a pele. Mas não havia neles respiração.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bone-step" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.2);">
+          <span class="bone-number text-sapphire">ESTÁGIO 2</span>
+          <div class="flex gap-3 items-start">
+            <span class="text-xl flex-shrink-0">💨</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-sapphire mb-1">A Profecia ao Vento</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Profetiza ao vento! Diz ao vento: Assim diz o Senhor Deus: Vem dos quatro ventos, ó vento, e sopra sobre estes mortos para que vivam!" O hebraico <em>ruach</em> (רוּחַ) significa simultaneamente vento, sopro e espírito. O mesmo Espírito que pairava sobre as águas na criação (Gn 1:2) agora sopra sobre os mortos.</p>
+            </div>
+          </div>
+        </div>
+        <div class="bone-step" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.3);">
+          <span class="bone-number text-forest">ESTÁGIO 3</span>
+          <div class="flex gap-3 items-start">
+            <span class="text-xl flex-shrink-0">🏃</span>
+            <div>
+              <h4 class="font-display text-sm font-semibold text-forest mb-1">O Exército em Pé</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"E o sopro entrou neles, e viveram, e se puseram em pé — um exército muito, muito grande." O processo foi em dois estágios: primeiro a reconstituição física (ossos → corpo), depois a animação pelo Espírito. O padrão ecoa a criação do homem em Gênesis 2 — Deus formou o corpo do pó, depois soprou o fôlego de vida.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="p-4 rounded-xl mb-4" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">A Interpretação de Deus (37:11–14)</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">
+          Deus mesmo interpreta: "Estes ossos são toda a casa de Israel. Eis que dizem: Os nossos ossos se secaram e a nossa esperança pereceu." A visão é uma promessa de restauração nacional — o povo exilado que se sentia morto voltará à terra. Deus abrirá seus túmulos (as terras do exílio) e os trará de volta.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-3">
+        <div class="p-3 rounded-lg text-center" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);">
+          <span class="font-display text-xs font-bold text-sapphire block mb-1">Cumprimento histórico</span>
+          <p class="font-body text-xs text-ink-muted">O retorno do exílio em 538 a.C. — Israel "ressuscitado" como nação</p>
+        </div>
+        <div class="p-3 rounded-lg text-center" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+          <span class="font-display text-xs font-bold text-forest block mb-1">Cumprimento pneumático</span>
+          <p class="font-body text-xs text-ink-muted">O Pentecostes — o Espírito derramado sobre a Igreja morta (At 2)</p>
+        </div>
+        <div class="p-3 rounded-lg text-center" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+          <span class="font-display text-xs font-bold text-violet block mb-1">Cumprimento escatológico</span>
+          <p class="font-body text-xs text-ink-muted">A ressurreição final dos mortos (1 Co 15; Jo 5:28–29)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Novo Coração e o Novo Espírito -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O Novo Coração e o Novo Espírito — Cap. 36:24–27</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4"
+               style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+            <p class="font-body text-lg text-ink leading-relaxed">
+              "Tirar-vos-ei da entre as nações, e vos congregarei de todas as terras, e vos trarei à vossa terra. E derramarei sobre vós água limpa... Dar-vos-ei um coração novo e porei dentro de vós um espírito novo; e tirarei da vossa carne o coração de pedra e vos darei um coração de carne. E porei dentro de vós o meu Espírito."
+            </p>
+            <p class="font-display text-xs text-sapphire mt-3 tracking-widest">Ezequiel 36:24–27</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Texto que João 3 Pressupõe</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Quando Nicodemos, "mestre em Israel", não entendeu o nascimento de novo (Jo 3:3–8), Jesus o interpelou: <em>"Tu és o mestre em Israel e não sabes estas coisas?"</em> — porque Ezequiel 36 era um texto central da esperança israelita que qualquer mestre devia conhecer.
+          </p>
+          <div class="space-y-2">
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              💧 "Derramarei água limpa" → Jo 3:5 "nascido da água e do Espírito"
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              ❤️ "Coração de pedra → coração de carne" → Jr 31:33 "lei escrita no coração"
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              🕊️ "Porei meu Espírito dentro de vós" → At 2 — o Pentecostes
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">
+              🏡 "Habitareis na terra" → Ap 21 — a nova criação onde Deus habitará com os seus
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Os Pastores e o Bom Pastor -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Os Maus Pastores e o Bom Pastor — Cap. 34</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">❌ Os Pastores que Fracassaram</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            Deus acusa os líderes de Israel — reis, sacerdotes, anciões — de serem pastores que pastoreavam a si mesmos e não ao rebanho. "Comestes a gordura, vestistes a lã, matastes o que estava gordo, mas não apascentastes o rebanho." (34:3)
+          </p>
+          <div class="space-y-1.5">
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              ✗ Não fortaleceram as ovelhas fracas
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              ✗ Não curaram as enfermas nem restauraram as feridas
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              ✗ Não buscaram as perdidas nem as desgarradas
+            </div>
+            <div class="flex gap-2 p-2 rounded text-xs font-body text-ink-muted"
+                 style="background:rgba(139,32,32,0.04);border:1px solid rgba(139,32,32,0.15);">
+              ✗ Dominaram com força e rigor — as ovelhas foram dispersas
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">✅ O Próprio Deus como Pastor</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">
+            "Eis que eu mesmo procurarei as minhas ovelhas e as visitarei." (34:11) Deus demitiu os pastores humanos e assumiu pessoalmente o cargo. As promessas que seguem — buscar as perdidas, curar as feridas, alimentar em bons pastos — são quase palavra por palavra repetidas por Jesus em João 10.
+          </p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);">
+            <p class="font-body text-xs text-ink-muted leading-relaxed">
+              <strong class="text-forest">Ez 34:23 → Jo 10:</strong> "E suscitarei sobre elas um pastor, e ele as apascentará — o meu servo Davi." A promessa do pastor davídico cumprida em Jesus — que se chamou explicitamente de "o Bom Pastor" usando a linguagem de Ezequiel 34.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas Teológicos e NT -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos Centrais</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(74,30,110,0.08);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">✨ A glória de Deus (Kavod)</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">👤 Responsabilidade individual</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">❤️ Novo coração e novo espírito</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🦴 Ressurreição e restauração</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚖️ Julgamento justo e individual</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🏛️ O Templo como morada</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🌊 O rio da vida</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🐑 Deus como pastor</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Ezequiel no Novo Testamento</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display text-xs font-bold text-gold-dark">Jo 3:5 — nascido da água e do Espírito</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus pressupõe que Nicodemos conhecia Ez 36:25–27 — "derramarei água limpa... porei meu Espírito". O novo nascimento é o cumprimento desta promessa ezequielina.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Jo 10 — O Bom Pastor</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Jesus usa diretamente a linguagem e as promessas de Ezequiel 34 — buscando as ovelhas perdidas, cuidando das fracas, dando a vida por elas. É uma declaração implícita de identidade com o Deus de Ezequiel 34.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);">
+              <span class="font-display text-xs font-bold text-violet">Ap 4 — Os quatro seres viventes</span>
+              <p class="font-body text-xs text-ink-muted mt-1">Os quatro seres com faces de leão, touro, homem e águia em Apocalipse 4:6–8 são diretamente os querubins da Merkavá de Ezequiel 1 — o trono celeste permanece o mesmo.</p>
+            </div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);">
+              <span class="font-display text-xs font-bold text-forest">Ap 22:1–2 — O rio da vida</span>
+              <p class="font-body text-xs text-ink-muted mt-1">O rio que flui do Templo (Ez 47) tornando-se cada vez mais fundo, com árvores medicinais nas margens, é o protótipo do rio da vida de Apocalipse 22.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Filho do homem" — 93 vezes:</strong> Deus se dirige a Ezequiel como <em>ben adam</em> (בֶּן אָדָם — "filho do homem") mais de 90 vezes — mais do que em qualquer outro livro. É um lembrete da humanidade do profeta diante da glória divina. Quando Jesus usa este mesmo título para si mesmo nos Evangelhos (~80 vezes), ele ecoa deliberadamente Ezequiel.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Ez 18:20 — A revolução da responsabilidade individual:</strong> "A alma que pecar essa morrerá. O filho não suportará a iniquidade do pai, nem o pai suportará a iniquidade do filho." Em resposta ao provérbio popular "os pais comeram uvas verdes e os filhos têm os dentes embotados" — Ezequiel (e Jeremias, Jr 31:29) introduz a responsabilidade individual como princípio teológico central.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>A Mística Merkavá:</strong> O capítulo 1 tornou-se tão sagrado no judaísmo que o Talmude (Chaguigá 2:1) proibiu lê-lo publicamente e ensina que só pode ser explicado a um único aluno de grande sabedoria. A mística Merkavá (séc. III–VII d.C.) foi uma escola inteira de misticismo judaico baseada em Ez 1, tentando "subir ao trono" em visão contemplativa.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Gogue e Magogue (Ez 38–39):</strong> Um dos textos mais debatidos da profecia bíblica. Uma coalização de nações liderada por "Gogue, da terra de Magogue" invade Israel num futuro indeterminado — e é destruída por Deus com fogo, enxofre, granizo e tremor de terra. O Apocalipse cita estes capítulos (Ap 20:7–8) no contexto do juízo final.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O Templo dos cap. 40–48:</strong> Os últimos 9 capítulos descrevem com precisão arquitetônica um Templo que nunca foi construído — com medidas exatas em côvados, portões, câmaras e altares. Três interpretações principais: (1) um plano literal para um Templo futuro; (2) uma imagem simbólica da comunidade restaurada; (3) cumprida no NT como a Igreja (templo do Espírito) e no futuro como a Nova Jerusalém de Apocalipse 21.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>"Pode estes ossos viver?" (37:3):</strong> A pergunta de Deus a Ezequiel é cuidadosamente respondida: "Senhor Deus, tu o sabes." Ezequiel não disse "sim" (seria ingênuo) nem "não" (seria descrença). Disse: "Só tu sabes." É o modelo de como responder a perguntas impossíveis sobre o futuro — humildade epistêmica combinada com confiança em Deus.
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O rio que cresce (Ez 47):</strong> O rio que flui do Templo ideal começa tornozelo, passa pelo joelho, pela cintura — e torna-se um rio profundo demais para vadear. Quanto mais longe do Templo, mais fundo. A presença de Deus não diminui com a distância — ela aumenta. As árvores nas margens produzem fruto todos os meses e as folhas são para cura das nações (citado quase literalmente em Ap 22:2).
+          </p>
+        </div>
+
+        <div class="curiosity-item">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>O nome final do livro (48:35):</strong> O último versículo de Ezequiel dá o nome da cidade ideal: <em>יְהוָה שָׁמָּה</em> — "YHWH Shammah" — "O Senhor está ali." A promessa que abriu o livro (Deus presente no exílio, Ez 1) é o que fecha o livro (Deus presente na cidade restaurada). O livro começa e termina com a mesma afirmação: Deus está aqui.
+          </p>
+        </div>
+
+        <div class="curiosity-item md:col-span-2">
+          <span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span>
+          <p class="font-body text-sm text-ink leading-relaxed">
+            <strong>Ezequiel como profeta do impossível:</strong> Todo o ministério de Ezequiel foi sobre o impossível — um povo morto voltando à vida, um Templo destruído sendo restaurado, a glória que partiu retornando, ossos secos se levantando como exército. Ele nunca viu nenhum destes cumprimentos em vida. Morreu no exílio. Mas sua fé não era baseada no que via — era baseada em Deus que dissera: <em>"Então sabereis que eu sou o Senhor"</em> — a frase que se repete 72 vezes no livro. O conhecimento de Deus é o objetivo final de toda a história — julgamento e restauração são meios para este fim.
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Versículos-chave -->
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Dar-vos-ei um coração novo e porei dentro de vós um espírito novo; e tirarei da vossa carne o coração de pedra e vos darei um coração de carne."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Ezequiel 36:26 · O versículo que João 3 e o Pentecostes cumprem</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "Filho do homem, podem estes ossos viver? E respondi: Senhor Deus, tu o sabes."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Ezequiel 37:3 · A pergunta impossível e a resposta sábia</cite>
+
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">
+        "E o nome da cidade desde aquele dia será: O Senhor está ali."
+      </blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Ezequiel 48:35 · A última palavra do livro · YHWH Shammah</cite>
+    </section>
+
+  </main>
+
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint"
+          style="border-color:rgba(200,145,58,0.2);">
+    Guia de Estudos Bíblico · Ezequiel · Informações históricas e documentalmente verificadas
+  </footer>
+
+</body>
+</html>
