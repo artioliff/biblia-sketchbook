@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mateus — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(30,58,95,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+    .discourse-card {
+      border-radius: 11px; border: 2px solid; padding: 1.25rem;
+      transition: transform 0.2s ease;
+    }
+    .discourse-card:hover { transform: translateY(-2px); }
+    .beatitude-row {
+      padding: 8px 12px; border-radius: 8px; border: 1px solid;
+      background: rgba(255,255,255,0.45);
+      display: grid; grid-template-columns: 1fr auto;
+      gap: 8px; align-items: center;
+      transition: background 0.2s;
+    }
+    .beatitude-row:hover { background: rgba(255,255,255,0.85); }
+    .fulfill-row {
+      display: grid; grid-template-columns: 90px 1fr 1fr;
+      gap: 8px; align-items: start; padding: 7px 0;
+      border-bottom: 1px solid rgba(200,145,58,0.12);
+      font-family: "Crimson Pro", serif;
+    }
+    .fulfill-row:last-child { border-bottom: none; }
+    .woman-badge {
+      border-radius: 20px; border: 1px solid; padding: 3px 10px;
+      font-family: "Cinzel", serif; font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.08em; display: inline-block;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · NOVO TESTAMENTO · 40º LIVRO · 1º DOS EVANGELHOS</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">Mateus</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>מַתִּתְיָהוּ</em> (Mattityahu) — "Dádiva do Senhor"</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">O primeiro livro do Novo Testamento · o Evangelho para os judeus · Jesus como <strong>novo Moisés</strong> e cumprimento de Israel · 5 grandes discursos · o Sermão do Monte · e a Grande Comissão que abre toda a história da Igreja</p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">28</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">1.071</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">50+</div><div class="font-body text-sm text-ink-muted mt-1">citações diretas do AT</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">5</div><div class="font-body text-sm text-ink-muted mt-1">grandes discursos</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <!-- A Abertura do NT -->
+    <section class="section-card animate-fade-up">
+      <div class="section-label">A Abertura do Novo Testamento</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Evangelho para os Judeus</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Mateus foi escrito primariamente para cristãos de origem judaica — como demonstram suas 50+ citações do AT, o uso de "Reino dos Céus" em vez de "Reino de Deus" (sensibilidade judaica a não pronunciar "Deus"), e a preocupação constante em mostrar que Jesus <em>cumpre</em> as Escrituras de Israel.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">É o Evangelho mais citado na literatura cristã primitiva — a Didaquê, Inácio de Antioquia e Justino Mártir (séc. I–II d.C.) usam principalmente Mateus. Foi o "Evangelho da Igreja" por excelência nos primeiros séculos.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-sapphire">Quem foi Mateus?</strong> Mateus (Levi) era cobrador de impostos para Roma em Cafarnaum — profissão considerada traidora e impura pelos judeus. Quando Jesus lhe disse "Segue-me" (9:9), ele se levantou e o seguiu imediatamente. Tornou-se apóstolo e organizou um grande banquete para apresentar Jesus aos seus colegas marginalizados.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Jesus como Novo Moisés — A Estrutura dos 5 Discursos</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">A estrutura mais marcante de Mateus é a presença de <strong>5 grandes discursos</strong> de Jesus — um espelho deliberado dos <strong>5 livros de Moisés</strong>. Cada discurso termina com a fórmula "E aconteceu que, quando Jesus acabou estas palavras..." (7:28; 11:1; 13:53; 19:1; 26:1).</p>
+          <div class="space-y-1.5">
+            <div class="flex gap-2 items-center p-1.5 rounded text-xs font-body text-ink-muted" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);"><span class="font-display font-bold text-gold-dark flex-shrink-0 w-6">I</span><span><strong>Cap. 5–7</strong> — Sermão do Monte: a ética do Reino</span></div>
+            <div class="flex gap-2 items-center p-1.5 rounded text-xs font-body text-ink-muted" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);"><span class="font-display font-bold text-gold-dark flex-shrink-0 w-6">II</span><span><strong>Cap. 10</strong> — Discurso Missionário: instruções para os doze</span></div>
+            <div class="flex gap-2 items-center p-1.5 rounded text-xs font-body text-ink-muted" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);"><span class="font-display font-bold text-gold-dark flex-shrink-0 w-6">III</span><span><strong>Cap. 13</strong> — Parábolas do Reino: 7 parábolas seguidas</span></div>
+            <div class="flex gap-2 items-center p-1.5 rounded text-xs font-body text-ink-muted" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);"><span class="font-display font-bold text-gold-dark flex-shrink-0 w-6">IV</span><span><strong>Cap. 18</strong> — Discurso da Comunidade: relações na Igreja</span></div>
+            <div class="flex gap-2 items-center p-1.5 rounded text-xs font-body text-ink-muted" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.18);"><span class="font-display font-bold text-gold-dark flex-shrink-0 w-6">V</span><span><strong>Cap. 24–25</strong> — Discurso do Monte das Oliveiras: escatologia</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Genealogia -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">A Genealogia — 1:1–17 · O Resumo da História de Israel em 42 Nomes</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">"Livro da genealogia de Jesus Cristo, filho de Davi, filho de Abraão." — As duas primeiras palavras do NT em grego são <em>Biblos geneseos</em> — "Livro da Geração" — idênticas às primeiras palavras de Gênesis na LXX (Gn 2:4; 5:1). Mateus abre o NT ecoando a abertura do AT: uma nova criação está começando.</p>
+          <div class="grid grid-cols-3 gap-3 mb-4">
+            <div class="p-3 rounded-xl text-center" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+              <div class="font-display text-2xl font-bold text-gold-dark">14</div>
+              <div class="font-body text-xs text-ink-muted mt-1">gerações<br/>Abraão → Davi</div>
+            </div>
+            <div class="p-3 rounded-xl text-center" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+              <div class="font-display text-2xl font-bold text-gold-dark">14</div>
+              <div class="font-body text-xs text-ink-muted mt-1">gerações<br/>Davi → Exílio</div>
+            </div>
+            <div class="p-3 rounded-xl text-center" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+              <div class="font-display text-2xl font-bold text-gold-dark">14</div>
+              <div class="font-body text-xs text-ink-muted mt-1">gerações<br/>Exílio → Jesus</div>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-sapphire">14 = Davi em hebraico:</strong> Na guematria hebraica, ד (Dalet=4) + ו (Vav=6) + ד (Dalet=4) = 14. Mateus estrutura as gerações em múltiplos de 14 para sublinhar que Jesus é o cumprimento da promessa davídica — o Filho de Davi por excelência.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">As 4 Mulheres na Genealogia de Jesus</h3>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">Incluir mulheres em genealogias era incomum no mundo antigo. Mateus inclui quatro — todas com histórias que desafiam as expectativas religiosas e étnicas:</p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="woman-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">TAMAR</span><p class="font-body text-xs text-ink-muted mt-1">Viúva cananeia que se disfarçou de prostituta para ter filhos de Judá seu sogro. O filho gêmeo Perez está na linhagem de Jesus (Gn 38).</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="woman-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">RAABE</span><p class="font-body text-xs text-ink-muted mt-1">Prostituta cananeia de Jericó que escondeu os espias israelitas. Mãe de Boaz — avó de Rute. Hb 11:31 a inclui no salão da fé.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="woman-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">RUTE</span><p class="font-body text-xs text-ink-muted mt-1">Moabita — gentia de nação proibida de entrar na assembleia de Israel até a 10ª geração (Dt 23:3). Bisavó de Davi.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="woman-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">BATE-SEBA</span><p class="font-body text-xs text-ink-muted mt-1">Nomeada como "a mulher de Urias" — lembrando o adulterio de Davi. Mateus preserva a acusação implícita: até o pecado do maior rei de Israel está na linhagem do Messias.</p></div>
+          </div>
+          <div class="p-2 mt-2 rounded text-xs font-body text-ink-muted italic" style="background:rgba(255,255,255,0.5);">A quinta mulher é Maria — também com uma história improvável. O padrão: Deus sempre operou através do inesperado, do marginalizado, do estrangeiro. A graça não segue as regras da exclusão humana.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- O Sermão do Monte -->
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Sermão do Monte — Cap. 5–7 · O Discurso Mais Famoso da História</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">Jesus "subiu ao monte" (5:1) — o novo Moisés subindo ao novo Sinai para dar a nova Torah. O Sermão do Monte é o discurso mais citado, traduzido, debatido e influente da história humana — suas três primeiras palavras em latim (<em>Beati pauperes</em>) moldaram mil anos de espiritualidade ocidental.</p>
+
+      <h3 class="font-display text-sm font-semibold text-ink mb-4">As Bem-Aventuranças (5:3–12) — Os Oito Retratos do Cidadão do Reino</h3>
+      <div class="space-y-1.5 mb-5">
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os pobres em espírito"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ deles é o reino dos céus</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os que choram"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ serão consolados</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os mansos"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ herdarão a terra</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os que têm fome e sede de justiça"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ serão fartos</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os misericordiosos"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ alcançarão misericórdia</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os puros de coração"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ verão a Deus</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os pacificadores"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ serão chamados filhos de Deus</span>
+        </div>
+        <div class="beatitude-row" style="border-color:rgba(30,58,95,0.2);">
+          <span class="font-body text-sm italic text-ink">"Bem-aventurados os perseguidos por causa da justiça"</span>
+          <span class="font-body text-xs text-sapphire text-right">→ deles é o reino dos céus</span>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">Outros Textos Fundamentais do Sermão</h4>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">5:17 — "Não vim abolir, mas cumprir"</span><p class="font-body text-xs text-ink-muted mt-1">A declaração mais importante de Jesus sobre sua relação com o AT. Não abolição mas cumprimento (<em>plêroô</em>) — trazer à plenitude o que estava implícito na Torah.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">5:21–48 — As 6 Antíteses ("Mas eu vos digo")</span><p class="font-body text-xs text-ink-muted mt-1">Jesus contrasta "foi dito aos antigos" com "mas eu vos digo" — elevando os padrões éticos do homicídio à raiva, do adultério ao olhar, do divórcio à fidelidade.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">6:9–13 — O Pai-Nosso</span><p class="font-body text-xs text-ink-muted mt-1">A oração mais recitada da história. Em 57 palavras em grego, Jesus ensina tudo o que é necessário saber sobre oração: relacionamento ("Pai"), reverência, missão, dependência, perdão e proteção.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">6:25–34 — "Não andeis ansiosos"</span><p class="font-body text-xs text-ink-muted mt-1">Os lírios do campo e as aves do céu como argumento contra a ansiedade. "Buscai, pois, em primeiro lugar o reino de Deus" (6:33) — a reorientação de prioridades que ecoa Ageu.</p></div>
+          </div>
+        </div>
+        <div>
+          <h4 class="font-display text-sm font-semibold text-ink mb-3">7:24–27 — As Duas Fundações</h4>
+          <div class="p-4 rounded-xl italic mb-3" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed">"Todo aquele que ouve estas minhas palavras e as pratica... é como o homem prudente que edificou a sua casa sobre a rocha... mas todo aquele que ouve estas minhas palavras e não as pratica... é como o homem insensato que edificou a sua casa sobre a areia."</p>
+          </div>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">A conclusão do Sermão do Monte é sobre <em>prática</em>, não apenas audição. O critério não é ouvir mas fazer. E o impacto: "as multidões se admiravam da sua doutrina, porque ele as ensinava como quem tem autoridade, e não como os escribas." (7:28–29)</p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-gold-dark">"Como quem tem autoridade":</strong> Os escribas ensinavam citando autoridades rabínicas — "Rabbi Akiva diz..." Jesus ensinava na própria autoridade: "Eu vos digo." A diferença foi imediatamente percebida pelas multidões.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- As Citações de Cumprimento -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">As "Citações de Cumprimento" — Jesus como Fulfillment de Israel</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">Mateus usa a fórmula <em>"para que se cumprisse o que foi dito pelo profeta"</em> mais de 10 vezes — única entre os Evangelhos. Cada evento da vida de Jesus é apresentado como o cumprimento de uma profecia específica do AT.</p>
+      <div class="rounded-xl overflow-hidden border mb-5" style="border-color:rgba(200,145,58,0.2);">
+        <div class="grid grid-cols-3 gap-0 px-3 py-2" style="background:rgba(200,145,58,0.1);font-family:\'Cinzel\',serif;font-size:0.58rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:#8a6020;">
+          <span>Evento em Mateus</span><span>Profecia citada</span><span>Origem no AT</span>
+        </div>
+        <div class="divide-y px-3" style="border-color:rgba(200,145,58,0.1);">
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">1:22–23</span><span class="text-sm text-ink-muted">Nascimento virginal</span><span class="text-xs text-forest">Isaías 7:14 — "a virgem conceberá"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">2:5–6</span><span class="text-sm text-ink-muted">Nascimento em Belém</span><span class="text-xs text-forest">Miquéias 5:2 — "de ti me sairá"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">2:15</span><span class="text-sm text-ink-muted">Fuga para o Egito</span><span class="text-xs text-forest">Oseias 11:1 — "do Egito chamei meu filho"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">2:17–18</span><span class="text-sm text-ink-muted">Massacre dos inocentes</span><span class="text-xs text-forest">Jeremias 31:15 — "Raquel chora pelos seus filhos"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">3:3</span><span class="text-sm text-ink-muted">João Batista</span><span class="text-xs text-forest">Isaías 40:3 — "voz que clama no deserto"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">4:14–16</span><span class="text-sm text-ink-muted">Ministério na Galileia</span><span class="text-xs text-forest">Isaías 9:1–2 — "o povo viu uma grande luz"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">8:17</span><span class="text-sm text-ink-muted">As curas de Jesus</span><span class="text-xs text-forest">Isaías 53:4 — "tomou as nossas enfermidades"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">21:5</span><span class="text-sm text-ink-muted">Entrada em Jerusalém</span><span class="text-xs text-forest">Zacarias 9:9 — "montado num jumentinho"</span></div>
+          <div class="fulfill-row"><span class="font-display text-xs font-bold text-gold-dark">27:9–10</span><span class="text-sm text-ink-muted">Os 30 siclos de prata</span><span class="text-xs text-forest">Zacarias 11:12–13 / Jeremias 32</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pedro e a Igreja -->
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Pedro e a Igreja — 16:13–19 · O Único Evangelho com "Igreja"</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.25);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Tu és o Cristo, o Filho do Deus vivo."</p>
+            <p class="font-body text-base text-ink leading-relaxed mb-2">"Bem-aventurado és tu, Simão Barjonas... e sobre esta pedra edificarei a minha Igreja, e as portas do Inferno não prevalecerão contra ela."</p>
+            <p class="font-display text-xs text-sapphire mt-2 tracking-widest">Mateus 16:16, 18</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Mateus é o único Evangelho a usar a palavra <em>ekklesia</em> (Igreja) — duas vezes (16:18 e 18:17). O contexto é a confissão de Pedro em Cesareia de Filipo. A promessa sobre "as portas do Inferno" refere-se às forças da morte — a Igreja não será superada pela morte, assim como Cristo não foi.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Debate Sobre "Esta Pedra"</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Interpretação Católica Romana</span><p class="font-body text-xs text-ink-muted mt-1">A pedra é Pedro (<em>Petros/Petra</em>) — o fundamento do papado. A Igreja é edificada sobre Pedro e seus sucessores (bispos de Roma).</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Interpretação Reformada / Protestante</span><p class="font-body text-xs text-ink-muted mt-1">A pedra é a <em>confissão</em> de Pedro ("tu és o Cristo") — a Igreja é edificada sobre esta verdade, não sobre a pessoa. Apoio em 1 Co 3:11: "ninguém pode pôr outro fundamento além do que está posto, que é Jesus Cristo."</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Interpretação Patrística</span><p class="font-body text-xs text-ink-muted mt-1">Agostinho oscilou entre as duas. Orígenes e João Crisóstomo viram a pedra como Cristo mesmo — retomando Is 28:16 e 1 Pe 2:6–8.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- A Grande Comissão -->
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Grande Comissão — 28:18–20 · As Últimas Palavras de Jesus em Mateus</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,74,42,0.07);border:2px solid rgba(30,74,42,0.3);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Todo o poder me foi dado no céu e na terra. Portanto ide, fazei discípulos de todas as nações, batizando-os em nome do Pai, e do Filho, e do Espírito Santo; ensinando-os a guardar todas as coisas que vos tenho mandado; e eis que estou convosco todos os dias, até a consumação dos séculos."</p>
+            <p class="font-display text-xs text-forest mt-2 tracking-widest">Mateus 28:18–20 · A Grande Comissão</p>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">A Estrutura da Grande Comissão</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">A autoridade — "todo o poder"</span><p class="font-body text-xs text-ink-muted mt-1">Fundamento da missão: não é uma sugestão humana mas uma ordem divina baseada na autoridade ressurreccional de Cristo sobre todo o universo.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">O mandado central — "fazei discípulos"</span><p class="font-body text-xs text-ink-muted mt-1">O único verbo no imperativo é <em>mathêteusate</em> (fazei discípulos). "Ide," "batizando" e "ensinando" são participios que descrevem <em>como</em> fazer discípulos.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">A fórmula trinitária</span><p class="font-body text-xs text-ink-muted mt-1">"em nome do Pai, e do Filho, e do Espírito Santo" — uma das declarações mais claras da Trindade no NT. Usada nos batismos cristãos desde o séc. I (confirmado pela Didaquê).</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">A promessa — "estou convosco"</span><p class="font-body text-xs text-ink-muted mt-1">O Evangelho abre com "Emanuel — Deus conosco" (1:23) e fecha com "estou convosco todos os dias" (28:20). O nome e a promessa formam um arco: o livro inteiro é sobre a presença de Deus com seu povo.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Temas e curiosidades -->
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">📜 Jesus como cumprimento do AT</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">⛰️ Jesus como novo Moisés</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">👑 O Reino dos Céus</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚖️ Julgamento e discipulado</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🌍 Inclusão dos gentios</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🏛️ A Igreja (ekklesia)</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">📖 Ensino e prática</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">✨ Emanuel — Deus conosco</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Exclusivo de Mateus</h3>
+          <div class="grid grid-cols-2 gap-2">
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">🌟 Os Magos do Oriente (2:1–12)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">🏃 A fuga para o Egito (2:13–23)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">🌊 Pedro andando nas águas (14:28–31)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">🐟 A moeda na boca do peixe (17:24–27)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">👰 As 10 virgens (25:1–13)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">💰 Os talentos (25:14–30)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">🐑 Ovelhas e bodes (25:31–46)</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.15);">💸 A morte de Judas (27:3–10)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong><em>Biblos geneseos</em> — a nova Gênesis:</strong> As primeiras palavras de Mateus em grego são <em>Biblos geneseos</em> — "Livro da Geração" — idênticas às primeiras palavras de Gênesis na LXX. Não é coincidência: Mateus apresenta Jesus como o início de uma nova criação, o novo Adão, o novo começo da história humana.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O único Evangelho citado na Didaquê (séc. I):</strong> A Didaquê ("O Ensinamento dos Doze Apóstolos"), datada do séc. I ou início do II d.C., cita o Pai-Nosso de Mateus 6:9–13 e ordena: "como o Senhor ordenou no seu Evangelho." Mateus era "o Evangelho" para a Igreja primitiva.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>"Reino dos Céus" vs. "Reino de Deus":</strong> Mateus usa "Reino dos Céus" (basileia tôn ouranôn) 32 vezes e nunca "Reino de Deus" (exceto em 12:28; 19:24; 21:31,43). Os outros Evangelhos usam exclusivamente "Reino de Deus." A diferença é cultural: escritores judeus evitavam pronunciar "Deus" desnecessariamente — confirmando o público judaico de Mateus.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>11:28–30 — "Vinde a mim, todos os que estais cansados":</strong> Um dos textos mais amados do NT — exclusivo de Mateus. "O meu jugo é suave e o meu fardo é leve" contrasta com a lei farisaica que "amarram cargas pesadas" (23:4). Jesus não apenas cura e ensina — ele convida ao descanso.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A parábola do Juízo Final (25:31–46) — "o menor destes":</strong> A cena das ovelhas e bodes é única de Mateus — o critério do julgamento final é o tratamento dado ao faminto, sedento, estrangeiro, nu, doente e preso. "Na medida em que o fizestes a um destes meus irmãos, a mim o fizestes." Nenhum outro texto do NT é mais citado em contextos de justiça social.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A Transfiguração (17:1–9) e o Monte Sinai:</strong> Jesus leva Pedro, Tiago e João a um alto monte; seu rosto resplandece "como o sol" (17:2) — exatamente como o rosto de Moisés após o Sinai (Êx 34:29–30). Aparecem Moisés E Elias — a Lei e os Profetas. A voz divina repete o batismo (3:17): "Este é o meu Filho amado." A Transfiguração é a certificação da identidade revelada em Cesareia.</p></div>
+        <div class="curiosity-item md:col-span-2"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Por que Mateus inaugura o NT:</strong> A colocação de Mateus como primeiro livro do NT não é cronológica (Paulo escreveu antes) mas teológica: Mateus é a ponte. Começa com a genealogia de Abraão (o começo de Israel), cita o AT mais do que qualquer outro Evangelho, apresenta Jesus como o cumprimento de tudo que veio antes — e termina com a missão para "todas as nações." É a chave de transição: o Deus que prometeu a Abraão, legislou por Moisés, reinou por Davi, lamentou por Jeremias, cantou por Sofonias e prometeu Elias por Malaquias — este mesmo Deus agora diz: "Eis que estou convosco todos os dias, até a consumação dos séculos."</p></div>
+      </div>
+    </section>
+
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Bem-aventurados os pobres em espírito, porque deles é o reino dos céus."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Mateus 5:3 · A primeira bem-aventurança · abertura do discurso mais famoso da história</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Vinde a mim, todos os que estais cansados e oprimidos, e eu vos darei descanso."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Mateus 11:28 · O convite de Jesus · exclusivo de Mateus</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Ide, portanto, fazei discípulos de todas as nações... e eis que estou convosco todos os dias, até a consumação dos séculos."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Mateus 28:19–20 · A Grande Comissão · Emanuel do início ao fim</cite>
+    </section>
+  </main>
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">Guia de Estudos Bíblico · Mateus · 1º Livro do Novo Testamento · Informações históricas e documentalmente verificadas</footer>
+</body>
+</html>

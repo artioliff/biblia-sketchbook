@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sofonias — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(139,32,32,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(30,74,42,0.09) 0%, transparent 55%);
+    }
+    .dies-irae-line {
+      padding: 0.5rem 0.875rem; border-radius: 7px; border: 1px solid;
+      font-family: "Crimson Pro", serif; font-style: italic; font-size: 0.9rem;
+      color: #3d2f25; background: rgba(255,255,255,0.45);
+      transition: background 0.2s;
+    }
+    .dies-irae-line:hover { background: rgba(255,255,255,0.85); }
+    .nation-block {
+      border-radius: 9px; border: 1px solid; padding: 0.75rem 0.875rem;
+      display: flex; gap: 10px; align-items: flex-start;
+      transition: transform 0.15s;
+    }
+    .nation-block:hover { transform: translateX(3px); }
+    .joy-card {
+      border-radius: 12px; border: 2px solid; padding: 1.25rem;
+      transition: transform 0.2s ease;
+    }
+    .joy-card:hover { transform: translateY(-2px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · PROFETAS MENORES · 36º LIVRO · 9º DOS DOZE</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">Sofonias</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>צְפַנְיָה</em> (Tzefanyah) — "O Senhor ocultou" ou "Oculto pelo Senhor"</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">O profeta que inspirou o <em>Dies Irae</em> medieval · a descrição mais extensa do Dia do Senhor nos Profetas Menores · e o livro que termina com a imagem mais extraordinária do AT: <strong>Deus cantando sobre o seu povo</strong></p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">3</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">53</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">4 gerações</div><div class="font-body text-sm text-ink-muted mt-1">genealogia do profeta</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">~630–620</div><div class="font-body text-sm text-ink-muted mt-1">a.C. · reinado de Josias</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Profeta de Sangue Real?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Sofonias tem a genealogia mais longa de qualquer profeta bíblico — quatro gerações listadas: "filho de Cusi, filho de Gedalias, filho de Amarias, filho de Ezequias." Este Ezequias é quase certamente o <strong>rei Ezequias</strong> de Judá — tornando Sofonias bisneto de um rei e primo do rei Josias, durante cujo reinado profetizou.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Se for assim, Sofonias é o único profeta de sangue real que conhecemos — o que explica sua intimidade com os costumes da corte que ele critica (1:8–9) e talvez seu acesso especial ao rei Josias.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-gold-dark">"Cusi" — ancestral etíope?</strong> O pai de Sofonias se chama Cusi (כּוּשִׁי) — palavra hebraica que significa "etíope" ou "cushita." Alguns estudiosos propõem que Sofonias tinha ancestralidade africana pelo lado paterno, tornando-o possivelmente o único profeta bíblico de origem parcialmente africana.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Contexto Histórico — Antes da Reforma de Josias</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Sofonias profetizou no início do reinado de <strong>Josias</strong> (~640–609 a.C.) — provavelmente antes da grande descoberta do Livro da Lei em 622 a.C. que desencadeou a reforma. Após décadas de apostasia sob Manassés e Amom, Judá estava mergulhada em sincretismo religioso: o culto a Baal, a Milcom (deus amonita) e a veneração dos astros eram praticados abertamente em Jerusalém.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Muitos estudiosos veem Sofonias como o profeta que <em>preparou o terreno</em> para a reforma de Josias — sua pregação sobre o Dia do Senhor pode ter criado a urgência que levou o rei a agir quando o Livro da Lei foi encontrado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Dia do Senhor — Cap. 1 · A Descrição Mais Extensa dos Profetas Menores</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O capítulo 1 de Sofonias contém a mais longa e mais detalhada descrição do "Dia do Senhor" nos Profetas Menores. Começa com uma afirmação cósmica ("destruirei tudo de sobre a face da terra") e vai estreitando o foco: toda a terra → Judá → Jerusalém → grupos específicos dentro da cidade.</p>
+
+      <div class="p-5 rounded-xl italic mb-5" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.25);">
+        <p class="font-body text-base text-ink leading-relaxed mb-2">"O grande dia do Senhor está perto, está perto e se apressa muito... Aquele dia é dia de ira, dia de tribulação e angústia, dia de desolação e assolamento, dia de trevas e escuridão, dia de nuvem e de espessa cerração, dia de trombeta e de alarido."</p>
+        <p class="font-display text-xs text-crimson mt-2 tracking-widest">Sofonias 1:14–16 · A passagem que inspirou o Dies Irae</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Os Grupos Julgados em Jerusalém</h3>
+          <div class="space-y-2">
+            <div class="nation-block" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);"><span class="text-base flex-shrink-0">🙏</span><div><span class="font-display text-xs font-bold text-crimson">Os que se prostram diante do exército do céu</span><p class="font-body text-xs text-ink-muted mt-0.5">A veneração assíria dos astros havia penetrado em Jerusalém — culto do sol, lua e estrelas nos telhados das casas (1:5)</p></div></div>
+            <div class="nation-block" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);"><span class="text-base flex-shrink-0">🤝</span><div><span class="font-display text-xs font-bold text-crimson">Os que juram pelo Senhor E por Milcom</span><p class="font-body text-xs text-ink-muted mt-0.5">O sincretismo — manter o culto ao Senhor como uma das opções religiosas, ao lado do deus amonita (1:5)</p></div></div>
+            <div class="nation-block" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);"><span class="text-base flex-shrink-0">👔</span><div><span class="font-display text-xs font-bold text-crimson">Os que vestem roupas estrangeiras (1:8)</span><p class="font-body text-xs text-ink-muted mt-0.5">Filhos dos príncipes adotando costumes assírios — a assimilação cultural como sinal de apostasia espiritual</p></div></div>
+            <div class="nation-block" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);"><span class="text-base flex-shrink-0">💰</span><div><span class="font-display text-xs font-bold text-crimson">Os comerciantes do Bairro do Mercado (1:11)</span><p class="font-body text-xs text-ink-muted mt-0.5">"Todo o povo de Canaã será destruído" — "Canaã" era sinônimo de "mercador"; o comércio desonesto é julgado</p></div></div>
+            <div class="nation-block" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);"><span class="text-base flex-shrink-0">😴</span><div><span class="font-display text-xs font-bold text-crimson">Os que dizem "o Senhor não fará bem nem mal" (1:12)</span><p class="font-body text-xs text-ink-muted mt-0.5">O deísmo prático — Deus existe mas é indiferente às ações humanas. Sofonias os chama de "homens que estão assentados sobre as suas fezes de vinho."</p></div></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">🎵 O Dies Irae — Do Profeta à Missa</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Tomás de Celano (séc. XIII) escreveu a sequência <em>Dies irae, dies illa</em> baseada quase literalmente em Sofonias 1:14–16. Tornou-se a sequência obrigatória da Missa de Réquiem no rito romano — usada por séculos.</p>
+          <div class="space-y-2 mb-3">
+            <div class="dies-irae-line" style="border-color:rgba(139,32,32,0.3);">
+              "Dies irae, dies illa" — "Dia de ira, aquele dia"
+              <span class="font-display text-xs text-crimson block mt-1 not-italic" style="font-style:normal !important;font-size:0.58rem;letter-spacing:0.08em;">← Sf 1:15: "dia de ira"</span>
+            </div>
+            <div class="dies-irae-line" style="border-color:rgba(139,32,32,0.3);">
+              "Solvet saeclum in favilla" — "Dissolverá o mundo em cinzas"
+              <span class="font-display text-xs text-crimson block mt-1 not-italic" style="font-style:normal !important;font-size:0.58rem;letter-spacing:0.08em;">← Sf 1:18: "toda a terra será devorada pelo fogo"</span>
+            </div>
+            <div class="dies-irae-line" style="border-color:rgba(139,32,32,0.3);">
+              "Tuba mirum spargens sonum" — "A trombeta espalhando som admirável"
+              <span class="font-display text-xs text-crimson block mt-1 not-italic" style="font-style:normal !important;font-size:0.58rem;letter-spacing:0.08em;">← Sf 1:16: "dia de trombeta e de alarido"</span>
+            </div>
+          </div>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><p class="font-body text-xs text-ink-muted leading-relaxed">Mozart (Réquiem em Ré menor), Verdi (Messa da Requiem), Berlioz (Grande Messe des Morts) e Brahms (Um Réquiem Alemão) todos beberam desta tradição que remonta a Sofonias 1:14–16. O profeta menor do séc. VII a.C. tornou-se a fonte da música funerária ocidental.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">"Buscai o Senhor" — 2:3 · Os Humildes da Terra</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Buscai o Senhor, todos vós os humildes da terra, que tendes praticado os seus decretos; buscai a justiça, buscai a mansidão; talvez sejais escondidos no dia da ira do Senhor."</p>
+            <p class="font-display text-xs text-sapphire mt-2 tracking-widest">Sofonias 2:3 · O convite central do livro</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">A palavra hebraica <em>anawim</em> (עֲנָוִים — humildes, pobres, mansos) é o conceito central de Sofonias. Não é pobreza econômica mas atitude espiritual — os que reconhecem sua dependência de Deus, não se apoiam em riqueza ou poder próprios, e confiam no Senhor nos momentos de crise.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Os <em>Anawim</em> e as Bem-Aventuranças</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">Sf 2:3 → Mt 5:3–5</span><p class="font-body text-xs text-ink-muted mt-1">"Buscai a justiça, buscai a mansidão" — Jesus proclama: "Bem-aventurados os pobres de espírito... os mansos... os que têm fome e sede de justiça." Os três critérios de Sofonias tornam-se as três primeiras bem-aventuranças.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">Sf 3:12 — O Remanescente Humilde</span><p class="font-body text-xs text-ink-muted mt-1">"Deixarei no meio de ti um povo humilde e pobre, que confiará no nome do Senhor." O remanescente que sobreviverá ao julgamento não é o poderoso ou rico — é o humilde que se refugia em Deus.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">Lc 1:52 — O Magnificat</span><p class="font-body text-xs text-ink-muted mt-1">"Derrubou os poderosos de seus tronos e exaltou os humildes" — Maria canta no Magnificat a teologia dos <em>anawim</em> que Sofonias, Isaías e os Salmos desenvolveram. Ela própria era uma das "humildes da terra."</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Julgamento das Nações — Cap. 2 · A Bússola dos Quatro Pontos</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O capítulo 2 expande o julgamento de Judá para todas as nações ao redor — organizadas nos quatro pontos cardeais ao redor de Judá, demonstrando a universalidade do Dia do Senhor.</p>
+      <div class="grid md:grid-cols-2 gap-3 mb-5">
+        <div class="nation-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-2xl flex-shrink-0">🌊</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">OESTE — Filístia (2:4–7)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">Gaza, Ascalon, Asdode, Ecrom — as cinco cidades filistéias. "Gaza será abandonada e Ascalon se tornará uma desolação." O litoral mediterrâneo dos inimigos históricos de Israel julgado.</p>
+          </div>
+        </div>
+        <div class="nation-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-2xl flex-shrink-0">🌄</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">LESTE — Moabe e Amom (2:8–11)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"Como Sodoma... como Gomorra." Os primos de Israel (descendentes de Ló) que zombaram e ameaçaram seu povo. "Moabe será como Sodoma" — a comparação mais severa possível.</p>
+          </div>
+        </div>
+        <div class="nation-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-2xl flex-shrink-0">☀️</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">SUL — Etiópia/Cuxe (2:12)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"Também vós, os etíopes, sereis mortos pela minha espada." A potência africana que havia dominado o Egito — incluída no julgamento universal. Apenas um versículo, mas suficiente para a universalidade.</p>
+          </div>
+        </div>
+        <div class="nation-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <span class="text-2xl flex-shrink-0">🦁</span>
+          <div>
+            <h4 class="font-display text-xs font-bold text-earth mb-1">NORTE — Assíria/Nínive (2:13–15)</h4>
+            <p class="font-body text-xs text-ink-muted leading-relaxed">"E estenderá a mão contra o norte, e destruirá Assíria." Nínive se tornará desolação, morada de animais — paralelo contemporâneo com Naum. "Esta é a cidade jubilosa que habitava segura."</p>
+          </div>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);"><p class="font-body text-sm text-ink-muted leading-relaxed"><strong class="text-sapphire">A universalidade teológica:</strong> Os quatro pontos cardeais cobrem toda a terra habitada conhecida por Israel — o Dia do Senhor não é um evento nacional judaico mas um julgamento cósmico. Deus não é apenas Deus de Israel; é Deus de todas as nações, e todas as nações são responsáveis perante ele.</p></div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">A Reversão de Babel — 3:9 · A Língua Pura Restaurada</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(74,30,110,0.06);border:1px solid rgba(74,30,110,0.22);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Porque então darei aos povos lábios puros, para que todos invoquem o nome do Senhor, para que o sirvam de comum acordo."</p>
+            <p class="font-display text-xs text-violet mt-2 tracking-widest">Sofonias 3:9 · A reversão da maldição de Babel</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Em Gênesis 11, Deus confundiu as línguas em Babel — e as nações se dispersaram. Sofonias 3:9 promete a reversão: "darei aos povos lábios puros" — a comunicação unificada para adoração coletiva. Não a volta ao hebraico, mas o dom de uma linguagem de comunhão com Deus que transcende barreiras.</p>
+        </div>
+        <div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">Atos 2 — O Pentecostes como cumprimento</span><p class="font-body text-xs text-ink-muted mt-1">No Pentecostes, pessoas de "toda nação debaixo do céu" ouviram as maravilhas de Deus cada um na sua própria língua (At 2:5–11). Não é coincidência: o Espírito Santo reverteu Babel ao dar a cada povo acesso à mensagem divina na própria língua. Sofonias 3:9 antecipou a obra do Espírito.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);"><span class="font-display text-xs font-bold text-violet">Ap 7:9 — Toda nação e língua diante do trono</span><p class="font-body text-xs text-ink-muted mt-1">"Uma grande multidão que ninguém podia contar, de todas as nações, tribos, povos e línguas" adorando diante do trono — o cumprimento escatológico de Sofonias 3:9.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Sf 3:9–10 — Dispersos retornando</span><p class="font-body text-xs text-ink-muted mt-1">"Da região além dos rios da Etiópia os meus adoradores... me trarão oferta." Os dispersos de todas as nações trazendo ofertas — a missão universal do povo de Deus cumprida.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Deus Canta — 3:14–17 · O Versículo Mais Incomum do AT</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">A virada final do livro é a mais surpreendente. Após capítulos de julgamento, Sofonias termina com uma sinfonia de alegria — e a imagem mais extraordinária de Deus em toda a profecia: o Criador cantando sobre a sua criação.</p>
+      <div class="grid md:grid-cols-2 gap-4 mb-5">
+        <div class="joy-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.32);">
+          <h4 class="font-display text-sm font-semibold text-forest mb-2">🎶 O Chamado à Alegria (3:14)</h4>
+          <p class="font-body text-base italic text-ink leading-relaxed mb-2">"Canta, ó filha de Sião; exulta, ó Israel; alegra-te e regozija-te de todo o coração, ó filha de Jerusalém!"</p>
+          <p class="font-body text-xs text-ink-muted">O imperativo é triplo — cantar, exultar, alegrar-se. Este versículo é ecoado quase palavra por palavra na saudação do anjo a Maria em Lucas 1:28 ("Alegra-te, cheia de graça").</p>
+        </div>
+        <div class="joy-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.28);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">🛡️ O Guerreiro que Salva (3:15–16)</h4>
+          <p class="font-body text-base italic text-ink leading-relaxed mb-2">"O Senhor, o Rei de Israel, está no meio de ti; nunca mais temerás o mal... O Senhor teu Deus está no meio de ti, como poderoso que salva."</p>
+          <p class="font-body text-xs text-ink-muted">A presença de Deus no meio do povo elimina o medo — "nunca mais temerás o mal." O Guerreiro Divino que julga as nações é o mesmo que protege o remanescente humilde.</p>
+        </div>
+      </div>
+
+      <!-- O verso central: Deus cantando -->
+      <div class="p-6 rounded-xl text-center mb-5" style="background:linear-gradient(135deg,rgba(30,74,42,0.08),rgba(200,145,58,0.06));border:2px solid rgba(30,74,42,0.3);">
+        <p class="font-display text-xs text-forest tracking-widest mb-3">O VERSÍCULO MAIS INCOMUM DO ANTIGO TESTAMENTO</p>
+        <p class="font-body text-2xl italic text-ink leading-relaxed mb-3">"O Senhor teu Deus está no meio de ti, como poderoso que salva; ele se regozijará sobre ti com alegria, renovar-te-á com o seu amor, <strong>ele se alegrará sobre ti com cânticos</strong>."</p>
+        <p class="font-display text-xs text-gold-dark tracking-widest">Sofonias 3:17 · O Criador da música cantando sobre sua criação</p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">🎤 "Ele se alegrará com cânticos"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">O hebraico <em>yasis alayich b'rina</em> — "ele irromperá em grito de alegria sobre ti." Em todo o AT, é o povo que canta para Deus (os Salmos, os hinos, os cânticos). Aqui é o único momento em que Deus canta. O Criador da música, a fonte de toda melodia, cantando de júbilo sobre o ser amado. É a reciprocidade última: nós cantamos para Deus e Deus canta sobre nós.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">Conexões com o NT</h4>
+          <div class="space-y-2">
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(255,255,255,0.5);">Lc 1:28 — "Alegra-te, cheia de graça" · o anjo usa a linguagem de Sf 3:14 ao saudar Maria</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(255,255,255,0.5);">Hb 2:12 — "Cantarei louvores a ti no meio da assembleia" · o Filho cantando com os irmãos</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(255,255,255,0.5);">Jo 15:11 — "Para que a minha alegria esteja em vós" · Deus querendo que sua alegria habite em nós</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🔥 O Dia do Senhor universal</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🙏 Os humildes (anawim)</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🎵 A alegria de Deus sobre seu povo</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🗣️ Reversão de Babel</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">🌍 Salvação de todas as nações</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🔄 Reversão da fortuna</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Sofonias no NT e na Tradição</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);"><span class="font-display text-xs font-bold text-forest">Lc 1:28 — A saudação do anjo a Maria</span><p class="font-body text-xs text-ink-muted mt-1">"Alegra-te, cheia de graça, o Senhor é contigo" ecoa Sf 3:14–15: "Canta... o Senhor, o Rei de Israel, está no meio de ti." Maria é apresentada como a filha de Sião que recebe a presença divina.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);"><span class="font-display text-xs font-bold text-crimson">Mt 5:3–5 — As Bem-Aventuranças</span><p class="font-body text-xs text-ink-muted mt-1">Os pobres de espírito, os mansos e os que têm fome de justiça são o retrato NT dos <em>anawim</em> de Sofonias 2:3 — "buscai a justiça, buscai a mansidão."</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">Dies Irae — 800 anos de liturgia</span><p class="font-body text-xs text-ink-muted mt-1">Sf 1:14–16 inspirou o Dies Irae (séc. XIII), que foi a sequência obrigatória da Missa de Réquiem por 800 anos — presente em Mozart, Verdi, Berlioz, Brahms. Sf 3:17 é o contraponto perfeito: o mesmo Deus do Dies Irae canta sobre seu povo.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A genealogia mais longa — e o que ela implica:</strong> Listar quatro gerações (Sofonias → Cusi → Gedalias → Amarias → Ezequias) era incomum para profetas. A razão mais provável: estabelecer que este Ezequias era o rei — tornando Sofonias um profeta de sangue real, primo do rei Josias. Nenhum outro profeta bíblico tem credenciais dinásticas tão claras.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O Dies Irae e a música ocidental:</strong> Sf 1:14–16 é a origem do "Dies irae, dies illa" de Tomás de Celano (séc. XIII), que se tornou a sequência do Réquiem por 700 anos. Compositores que o utilizaram: Mozart (Réquiem, 1791 — inacabado), Verdi (Messa da Requiem, 1874), Berlioz (Grande Messe des Morts, 1837), Liszt, Dvořák. Sofonias é indiretamente o pai de um gênero inteiro da música clássica ocidental.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Cafarnaum no 1:10-11 — "Bairro do Mercado":</strong> Sofonias menciona o "Mishne" (segundo bairro/bairro novo) e o "Makhtesh" (morteiro/bairro do mercado) de Jerusalém — nomes de bairros confirmados arqueologicamente. O nível de detalhe geográfico sugere alguém com conhecimento íntimo da cidade — coerente com alguém da família real.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Os "assentados sobre as fezes do vinho" (1:12):</strong> Uma das imagens mais incomuns da profecia — Deus vasculhará Jerusalém com lanternas e punirá "os homens assentados sobre as suas fezes de vinho." A metáfora é do vinho que não foi clarificado — vinho parado que se acomoda sobre o sedimento, tornando-se imundo. É uma imagem de estagnar na indiferença espiritual.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Sf 3:9 — "Lábios puros" e o Pentecostes:</strong> A promessa de restaurar "lábios puros" a todos os povos (3:9) foi interpretada pelos Padres da Igreja como antecipação do Pentecostes — onde o Espírito Santo deu à Igreja a capacidade de falar em todas as línguas, revertendo a confusão de Babel (Gn 11). Agostinho e Gregório Magno citam este versículo neste contexto.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Sf 3:17 — Deus cantando:</strong> No Talmude babilônico (Megillah 10b), há um debate sobre por que os anjos não cantaram quando os egípcios foram afogados no Mar Vermelho — "as minhas criaturas estão se afogando e vós cantais?" A lógica inversa de Sofonias 3:17 é: quando seu povo é restaurado, Deus canta — porque as criaturas amadas estão salvas, não afogadas.</p></div>
+        <div class="curiosity-item md:col-span-2"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Por que Sofonias ainda ressoa:</strong> Sofonias é o livro do contraste mais radical da profecia bíblica — do julgamento mais sombrio ("dia de ira, dia de trevas") à alegria mais pura ("Deus cantará sobre ti"). A mesma voz que descreve o Dies Irae descreve Deus jubilando sobre os humildes. O livro ensina que o Dia do Senhor é experienciado diferentemente dependendo de onde se está: é destruição para o arrogante, o sincretista e o indiferente; é libertação e cântico para o humilde que buscou a Deus. E a última imagem — um Deus que canta — é a resposta definitiva à pergunta "Deus se importa?" Não apenas se importa: irrompe em canto de alegria.</p></div>
+      </div>
+    </section>
+
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Buscai o Senhor, todos vós os humildes da terra; buscai a justiça, buscai a mansidão."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Sofonias 2:3 · Os <em>anawim</em> · origem das Bem-Aventuranças de Jesus</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"O grande dia do Senhor está perto... aquele dia é dia de ira, dia de tribulação e angústia, dia de trevas e escuridão."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Sofonias 1:14–15 · O Dies Irae · origem da música funerária ocidental</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"O Senhor teu Deus está no meio de ti, como poderoso que salva; ele se regozijará sobre ti com alegria... ele se alegrará sobre ti com cânticos."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Sofonias 3:17 · A imagem mais extraordinária de Deus no AT · o Criador cantando</cite>
+    </section>
+  </main>
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">Guia de Estudos Bíblico · Sofonias · Informações históricas e documentalmente verificadas</footer>
+</body>
+</html>

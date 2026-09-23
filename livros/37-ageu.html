@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ageu — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(92,61,30,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(30,74,42,0.08) 0%, transparent 55%);
+    }
+    .oracle-card {
+      border-radius: 11px; border: 2px solid; padding: 1.25rem;
+      transition: transform 0.2s ease;
+    }
+    .oracle-card:hover { transform: translateY(-2px); }
+    .date-badge {
+      font-family: "Cinzel", serif; font-size: 0.58rem; font-weight: 700;
+      letter-spacing: 0.08em; padding: 3px 10px; border-radius: 20px;
+      border: 1px solid; display: inline-block; margin-bottom: 8px;
+    }
+    .economy-row {
+      border-radius: 8px; border: 1px solid rgba(139,32,32,0.2);
+      padding: 0.625rem 0.875rem; background: rgba(139,32,32,0.04);
+      display: flex; gap: 10px; align-items: center;
+    }
+    .holiness-col {
+      border-radius: 10px; border: 1px solid; padding: 1rem; flex: 1;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · PROFETAS MENORES · 37º LIVRO · 10º DOS DOZE</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">Ageu</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>חַגַּי</em> (Chaggai) — "Festivo" ou "O meu festejo" · possivelmente nascido num dia de festa</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">O livro mais <strong>precisamente datado</strong> do AT · quatro oráculos com datas exatas em 520 a.C. · o profeta do povo que construía casas de cedro enquanto o Templo de Deus jazia em ruínas · e a promessa: "a glória deste segundo Templo será maior do que a do primeiro"</p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">2</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">38</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">4 oráculos</div><div class="font-body text-sm text-ink-muted mt-1">todos com data exata</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">520 a.C.</div><div class="font-body text-sm text-ink-muted mt-1">ano do ministério completo</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral — O Profeta Pós-Exílico</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Contexto Histórico</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Em 538 a.C., o édito de Ciro permitiu que os judeus voltassem da Babilônia. A primeira leva de exilados retornou sob <strong>Zorobabel</strong> (governador persa de Judá) e o sumo sacerdote <strong>Josué</strong>. Em 536 a.C., lançaram o alicerce do Templo — e pararam. Oposição dos povos vizinhos, dificuldades econômicas e desânimo paralisaram a obra por <strong>16 anos</strong>.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Em 520 a.C., no 2º ano do rei Dario I da Pérsia, Ageu recebeu quatro oráculos em apenas <strong>quatro meses</strong> — um dos ministérios mais breves e mais eficazes da profecia bíblica. O Templo foi concluído em 516 a.C., quatro anos depois.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-forest">O livro mais datado do AT:</strong> Nenhum outro livro profético é tão precisamente datado. Os quatro oráculos têm datas exatas no calendário hebraico que podemos converter: 29 de agosto, 17 de outubro e 18 de dezembro de 520 a.C. Ageu é um livro com marcas de timestamp.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Os Personagens</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><span class="font-display text-xs font-bold text-gold-dark">👑 Zorobabel, filho de Salatiel</span><p class="font-body text-xs text-ink-muted mt-1">Governador persa de Judá — descendente do rei Jeconias (Joaquim). Era o líder político do povo retornado e o alvo do 4º oráculo messiânico (2:23). Seu nome aparece na genealogia de Jesus (Mt 1:12).</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">🏛️ Josué (Jesua), filho de Jeozadaque</span><p class="font-body text-xs text-ink-muted mt-1">O Sumo Sacerdote — líder espiritual da comunidade retornada. Ageu e Zacarias dirigem seus oráculos tanto ao governador quanto ao sacerdote — a liderança dual do período pós-exílico.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth">📜 Dario I da Pérsia</span><p class="font-body text-xs text-ink-muted mt-1">O rei persa cujo 2º ano de reinado fornece o marco cronológico. Dario I (521–486 a.C.) era um governante que respeitava as tradições religiosas dos povos conquistados — confirmado pela Crônica de Dario (Behistun Inscription).</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">Os Quatro Oráculos — Precisamente Datados</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="oracle-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.28);">
+          <span class="date-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">1º dia do 6º mês · 29 ago 520 a.C.</span>
+          <h4 class="font-display text-sm font-semibold text-crimson mb-2">1º Oráculo — "Considerai os Vossos Caminhos!"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">"Será agora tempo de habitardes em vossas casas forradas de madeira, enquanto esta casa está em ruínas?" (1:4) — A acusação central: o povo havia reconstruído suas próprias casas com painéis de cedro (luxo) enquanto o Templo jazia em escombros.</p>
+          <div class="space-y-1.5">
+            <div class="economy-row"><span class="text-sm">🌾</span><span class="font-body text-xs text-ink-muted">"Semeaste muito e colheste pouco" (1:6)</span></div>
+            <div class="economy-row"><span class="text-sm">🍽️</span><span class="font-body text-xs text-ink-muted">"Comeis mas não vos fartais" (1:6)</span></div>
+            <div class="economy-row"><span class="text-sm">🍷</span><span class="font-body text-xs text-ink-muted">"Bebeis mas não vos satisfazeis" (1:6)</span></div>
+            <div class="economy-row"><span class="text-sm">🧥</span><span class="font-body text-xs text-ink-muted">"Vestis mas ninguém se aquece" (1:6)</span></div>
+            <div class="economy-row"><span class="text-sm">💰</span><span class="font-body text-xs text-ink-muted">"O que ganha salário mete-o em bolsa furada" (1:6)</span></div>
+          </div>
+          <div class="mt-3 p-2 rounded text-xs font-body text-ink-muted italic" style="background:rgba(255,255,255,0.5);">Resultado: o povo obedeceu em 23 dias (1:15 — "24º dia do 6º mês").</div>
+        </div>
+
+        <div class="oracle-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.28);">
+          <span class="date-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">21º dia do 7º mês · 17 out 520 a.C.</span>
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">2º Oráculo — "A Glória Deste Segundo Templo"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">O 21º dia do 7º mês era o último dia da Festa dos Tabernáculos — quando os anciãos que haviam visto o 1º Templo (de Salomão) chorariam ao ver a modéstia do novo. Ageu responde ao desânimo:</p>
+          <div class="p-3 rounded-lg italic mb-3" style="background:rgba(255,255,255,0.6);border:1px solid rgba(30,58,95,0.2);"><p class="font-body text-base text-ink">"Sede fortes... porque eu sou convosco, diz o Senhor dos exércitos." (2:4)</p></div>
+          <div class="p-3 rounded-xl italic" style="background:rgba(30,58,95,0.08);border:1px solid rgba(30,58,95,0.28);"><p class="font-body text-base text-ink leading-relaxed">"A glória deste último templo será maior do que a do primeiro, diz o Senhor dos Exércitos; e neste lugar darei paz." (2:9)</p></div>
+        </div>
+
+        <div class="oracle-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.28);">
+          <span class="date-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.3);color:#5c3d1e;">24º dia do 9º mês · 18 dez 520 a.C.</span>
+          <h4 class="font-display text-sm font-semibold text-earth mb-2">3º Oráculo — A Pergunta aos Sacerdotes</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-2">Ageu faz duas perguntas teológicas aos sacerdotes sobre transferência de santidade e impureza:</p>
+          <div class="space-y-2">
+            <div class="p-2 rounded text-xs" style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.2);"><strong class="text-earth font-body">P: "Se alguém toca carne santa, torna-se santo o pão que toca?"</strong><br/><span class="text-ink-muted">Resposta sacerdotal: <em>Não</em> — a santidade não é transferida por contato</span></div>
+            <div class="p-2 rounded text-xs" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);"><strong class="text-crimson font-body">P: "Se quem é imundo toca carne, torna-se ela imunda?"</strong><br/><span class="text-ink-muted">Resposta sacerdotal: <em>Sim</em> — a impureza se transfere facilmente</span></div>
+          </div>
+          <p class="font-body text-xs text-ink-muted mt-2 leading-relaxed">Aplicação: Israel estava impura, e sua impureza contaminou todo o trabalho — incluindo a obra do Templo. Mas "desde hoje vos abençoarei" (2:19) — o ponto de virada.</p>
+        </div>
+
+        <div class="oracle-card" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.32);">
+          <span class="date-badge" style="background:rgba(30,74,42,0.07);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">24º dia do 9º mês · 18 dez 520 a.C. (mesmo dia)</span>
+          <h4 class="font-display text-sm font-semibold text-forest mb-2">4º Oráculo — Zorobabel como Sinete</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed mb-3">No mesmo dia do 3º oráculo, Ageu recebeu uma palavra pessoal para Zorobabel — a reversão da maldição de Jeconias (Jr 22:24):</p>
+          <div class="p-4 rounded-xl italic" style="background:rgba(30,74,42,0.08);border:1px solid rgba(30,74,42,0.28);">
+            <p class="font-body text-base text-ink leading-relaxed mb-1">"Naquele dia... tomar-te-ei, ó Zorobabel... meu servo, e pôr-te-ei como sinete, porque te escolhi."</p>
+            <p class="font-display text-xs text-forest mt-1 tracking-widest">Ageu 2:23 · A maldição de Jeconias revertida</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">"A Bolsa Furada" — 1:6 · A Imagem Econômica Mais Memorável da Profecia</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">Ageu 1:6 é um dos versículos mais relacionáveis de toda a profecia bíblica — descreve a frustração de trabalhar muito e conseguir pouco. Cada linha descreve um bem essencial que não satisfaz: a colheita não nutre, a comida não sacia, a bebida não mata a sede, a roupa não aquece e o salário evaporiza.</p>
+          <div class="p-4 rounded-xl italic mb-3" style="background:rgba(139,32,32,0.06);border:1px solid rgba(139,32,32,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">"E o que ganha salário, ganha-o para o meter numa bolsa furada."</p>
+            <p class="font-display text-xs text-crimson mt-1 tracking-widest">Ageu 1:6b · Uma das metáforas mais duradouras da Bíblia</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">A "bolsa furada" entrou no vocabulário popular de várias línguas como imagem de riqueza que escoa sem acumular. No contexto de Ageu, é diagnóstico econômico-teológico: a frustração não é azar — é disciplina divina. A causa do problema não é econômica mas espiritual: "Por causa da minha casa que está em ruínas, ao passo que cada um de vós corre para a sua própria casa." (1:9)</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">O Argumento Teológico de Ageu</h3>
+          <div class="space-y-3">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><span class="font-display text-xs font-bold text-gold-dark">O problema das prioridades</span><p class="font-body text-xs text-ink-muted mt-1">Israel não havia recusado reconstruir o Templo — havia <em>adiado</em> indefinidamente: "não chegou o tempo de se reedificar a casa do Senhor" (1:2). O pecado não era a negação direta mas a procrastinação confortável. As casas próprias já estavam prontas; o Templo podia esperar.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><span class="font-display text-xs font-bold text-gold-dark">A inversão da bênção</span><p class="font-body text-xs text-ink-muted mt-1">Deuteronômio prometia bênçãos materiais pela obediência — safras abundantes, chuvas na estação certa. Ageu argumenta o inverso: a seca e a escassez são sinal de algo errado. "Por isso os céus retiveram de vós o orvalho, e a terra reteve o seu fruto." (1:10)</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">A resposta da obediência</span><p class="font-body text-xs text-ink-muted mt-1">O versículo mais notável do livro não é uma profecia mas uma nota histórica (1:12–14): "E Zorobabel... e Josué... e todo o restante do povo obedeceram à voz do Senhor... e o povo temeu o Senhor. E o Senhor... despertou o espírito." A obediência foi em 23 dias.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">"A Glória Deste Último Templo" — 2:6–9 · A Profecia que Hebreus Cita</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.25);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Porque assim diz o Senhor dos Exércitos: Ainda uma vez — e será daqui a pouco — farei tremer os céus e a terra, o mar e a terra seca; farei tremer todas as nações; e virão os tesouros de todas as nações, e encherei de glória esta casa."</p>
+            <p class="font-display text-xs text-sapphire mt-2 tracking-widest">Ageu 2:6–7</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Quando os anciãos que haviam visto o Templo de Salomão choraram ao ver as fundações do novo (Esdras 3:12) — porque pareciam tão modestas — Ageu respondeu com a promessa mais audaciosa: este Templo, que parece menor, será maior. O critério não é arquitetônico mas teológico.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Como o Segundo Templo Teve Glória Maior</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">Jesus entrou neste Templo (reformado por Herodes)</span><p class="font-body text-xs text-ink-muted mt-1">O Templo de Salomão nunca recebeu a visita do Messias. O Segundo Templo (ampliado por Herodes) recebeu. Malaquias 3:1 anuncia: "de repente virá ao seu templo o Senhor que buscais." A presença de Jesus cumpriu a promessa de Ageu de forma que excedeu qualquer expectativa material.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Hb 12:26–27 — "Ainda uma vez farei tremer"</span><p class="font-body text-xs text-ink-muted mt-1">O autor de Hebreus cita Ag 2:6 para falar da Nova Aliança que "abala" não apenas a terra mas também o céu — removendo o que pode ser abalado para que o inabalaável permaneça. O "abalar das nações" é a obra do Espírito Santo sobre o mundo.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">"Os tesouros de todas as nações" (2:7)</span><p class="font-body text-xs text-ink-muted mt-1">Interpretado pelos Pais da Igreja como referência aos Magos (Mt 2) — gentios trazendo tesouros para adorar o Rei no Templo — e às ofertas das nações ao longo de toda a era da Igreja.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Zorobabel como Sinete — 2:23 · A Maldição Revertida</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">❌ A Maldição de Jeconias — Jeremias 22:24</h3>
+          <div class="p-4 rounded-xl italic mb-3" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.22);">
+            <p class="font-body text-base text-ink leading-relaxed">"Ainda que Conias... fosse o sinete na minha mão direita, dali te arrancaria." (Jr 22:24)</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Jeconias (Joaquim/Conias) foi o rei de Judá deportado pela Babilônia em 597 a.C. Deus declarou que nenhum de seus descendentes sentaria no trono de Davi para reinar sobre Judá (Jr 22:30) — a "maldição de Jeconias." O sinete foi removido.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-forest mb-3">✅ A Reversão em Zorobabel — Ageu 2:23</h3>
+          <div class="p-4 rounded-xl italic mb-3" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed">"Tomar-te-ei, ó Zorobabel... meu servo... e pôr-te-ei como sinete, porque te escolhi." (Ag 2:23)</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Zorobabel era neto de Jeconias — o descendente direto sobre quem pesava a maldição. Ageu declara que Deus o fará "como sinete" — reversão exata da metáfora de Jeremias. O sinete restaurado.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">Mt 1:12–13 — Na Genealogia de Jesus</span><p class="font-body text-xs text-ink-muted mt-1">Mateus inclui Zorobabel na genealogia de Jesus — passando pelo "canal bloqueado" da linhagem de Jeconias. Mas Lucas 3:27 sugere uma linhagem alternativa via Natã (outro filho de Davi). As duas genealogias convergem na linhagem davídica de Jesus, cumprindo tanto Jeremias quanto Ageu.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🏛️ Prioridades — Deus em primeiro</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">💰 Bênção material e fidelidade</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">✨ Glória progressiva da presença</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌍 O abalar das nações</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">💍 Sinete real restaurado</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🙏 Obediência imediata como resposta</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Ageu no NT</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Hb 12:26 — "Ainda uma vez farei tremer"</span><p class="font-body text-xs text-ink-muted mt-1">O autor cita Ag 2:6 para mostrar que a Nova Aliança produz um abalo maior que o do Sinai — removendo o que é criado para que o eterno permaneça.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">Ml 3:1 — "O Senhor virá ao seu Templo"</span><p class="font-body text-xs text-ink-muted mt-1">Malaquias (o livro seguinte) completa a promessa de Ageu: o Templo que Zorobabel construiu seria o Templo onde o Messias apareceria repentinamente.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">Mt 6:33 — "Buscai primeiro o reino"</span><p class="font-body text-xs text-ink-muted mt-1">O argumento de Jesus sobre prioridades ecoa Ageu: quem busca primeiro as coisas de Deus descobre que as demais necessidades são providas. Ageu demonstrou isto historicamente — a seca cessou quando o povo reorientou suas prioridades.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Os timestamps exatos — e o que eles nos dizem:</strong> Convertendo as datas hebraicas para o calendário juliano, os quatro oráculos de Ageu ocorreram em: 29 de agosto, 17 de outubro e 18 de dezembro de 520 a.C. Isto é verificado pela Crônica de Dario e pelos registros persas. Ageu é um dos poucos livros bíblicos cujos eventos podemos localizar com precisão de dia no calendário moderno.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O 21º dia do 7º mês — o dia mais emotivo:</strong> O 2º oráculo foi dado no último dia da Festa dos Tabernáculos — a festa da colheita que celebrava a jornada pelo deserto. Era tradição que os anciãos que haviam visto o 1º Templo chorassem neste dia (Esdras 3:12–13), pois o novo parecia tão menor. Ageu escolheu exatamente este momento de desânimo para proclamar a promessa maior.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>"Paneled houses" — casas de cedro:</strong> O "madeiramento" (1:4) refere-se a painéis de cedro no interior das casas — o mesmo material e técnica usados no Templo de Salomão (1 Rs 6:15). O povo usou o mesmo luxo para suas moradias que o Templo merecia. É uma ironia arquitetônica deliberada de Ageu.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Zorobabel desaparece da história:</strong> Após os oráculos de Ageu e Zacarias (~520 a.C.), Zorobabel desaparece completamente dos registros históricos e bíblicos. Nenhuma fonte — bíblica, persa ou grega — registra sua morte ou seu destino. É um dos maiores mistérios históricos do período pós-exílico.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O Templo de Herodes e a promessa de Ageu:</strong> O Segundo Templo foi demolido e reconstruído magnificamente por Herodes o Grande (~20 a.C. – 64 d.C.) — tornando-se uma das sete maravilhas da Antiguidade. Seus discípulos disseram a Jesus: "Mestre, vê que pedras e que edifícios!" (Mc 13:1). Era literalmente maior que o de Salomão. E foi este Templo que Jesus frequentou — cumprindo Ag 2:9 de duas formas.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A pergunta sacerdotal e a transferência da impureza (2:10–14):</strong> O princípio de Ageu — que a santidade não se transfere por contato mas a impureza sim — tem base no Pentateuco (Lv 6:27; Nm 19:22). A aplicação pastoral: nenhuma quantidade de prática religiosa externa pode santificar uma comunidade com coração impuro, mas a impureza interior contamina até as ações religiosas mais corretas.</p></div>
+        <div class="curiosity-item md:col-span-2"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Por que Ageu ainda ressoa:</strong> Ageu é o profeta mais prático e mais concreto da Bíblia — sem visões dramáticas, sem poesia elaborada, sem teologia abstrata. Apenas uma pergunta direta: "Onde estão suas prioridades?" Em toda geração há crentes que constroem seus próprios projetos com excelência enquanto as prioridades de Deus ficam para depois — "quando tivermos tempo, quando a situação melhorar, quando estivermos mais estáveis." Ageu diz: a instabilidade é a consequência das prioridades invertidas, não a causa do adiamento. "Considerai os vossos caminhos" — examine onde você está investindo sua vida. A bolsa furada está sempre cheia de buracos, exceto quando as prioridades estão certas.</p></div>
+      </div>
+    </section>
+
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Será agora tempo de habitardes em vossas casas forradas de madeira, enquanto esta casa está em ruínas?"</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Ageu 1:4 · A pergunta das prioridades · casas de cedro vs. Templo em ruínas</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"A glória deste último templo será maior do que a do primeiro, diz o Senhor dos Exércitos; e neste lugar darei paz."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Ageu 2:9 · Cumprida quando Jesus entrou neste Templo</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Tomar-te-ei, ó Zorobabel, meu servo... e pôr-te-ei como sinete, porque te escolhi."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Ageu 2:23 · A maldição de Jeconias revertida · Zorobabel na genealogia de Jesus</cite>
+    </section>
+  </main>
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">Guia de Estudos Bíblico · Ageu · Informações históricas e documentalmente verificadas</footer>
+</body>
+</html>

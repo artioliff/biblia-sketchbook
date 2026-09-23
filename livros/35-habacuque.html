@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Habacuque — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(30,58,95,0.09) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(200,145,58,0.09) 0%, transparent 55%);
+    }
+    .dialogue-block {
+      border-radius: 11px; border: 2px solid; padding: 1.25rem;
+      transition: transform 0.2s ease;
+    }
+    .dialogue-block:hover { transform: translateY(-2px); }
+    .woe-row {
+      border-radius: 8px; border: 1px solid; padding: 0.625rem 0.875rem;
+      display: flex; gap: 10px; align-items: flex-start;
+      transition: transform 0.15s;
+    }
+    .woe-row:hover { transform: translateX(3px); }
+    .harvest-item {
+      border-radius: 9px; border: 1px solid; padding: 0.875rem;
+      text-align: center; transition: transform 0.2s;
+    }
+    .harvest-item:hover { transform: translateY(-3px); }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · PROFETAS MENORES · 35º LIVRO · 8º DOS DOZE</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">Habacuque</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>חֲבַקּוּק</em> (Chavakkuk) — possivelmente "abraço" ou "aquele que luta"</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">O único profeta estruturado como <strong>diálogo com Deus</strong> · o profeta que perguntou "por que?" e esperou a resposta · e o versículo que acendeu a <strong>Reforma Protestante</strong>: "o justo viverá pela sua fé"</p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">3</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">56</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">3×</div><div class="font-body text-sm text-ink-muted mt-1">Hab 2:4 citado no NT</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">~612–600</div><div class="font-body text-sm text-ink-muted mt-1">a.C. — ministério</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral — O Livro que Começa com uma Queixa</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">O Profeta que Argumentou com Deus</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Habacuque é único entre os profetas: enquanto todos os outros traziam mensagens <em>de</em> Deus <em>ao</em> povo, Habacuque registrou sua conversa pessoal <em>com</em> Deus — suas queixas, as respostas divinas, e a resolução que chegou não como argumento mas como adoração.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Profetizou provavelmente entre 612 a.C. (queda de Nínive, que marca o início do poder babilônico) e 605 a.C. (Batalha de Carquemis, quando a Babilônia tornou-se potência dominante). Contemporâneo de Jeremias e Naum.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-sapphire">O movimento do livro:</strong> Queixa → Diálogo → Torre de vigia → Silêncio → Adoração. Habacuque não terminou com respostas — terminou com fé. A resolução não é intelectual mas espiritual.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">A Estrutura Dialogal</h3>
+          <div class="space-y-2">
+            <div class="flex items-start gap-3 p-2 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);"><span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5">1:1–4</span><span class="font-body text-xs text-ink-muted"><strong>1ª Queixa:</strong> "Por que tolerais a iniquidade?" — violência e injustiça internas em Judá</span></div>
+            <div class="flex items-start gap-3 p-2 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 mt-0.5">1:5–11</span><span class="font-body text-xs text-ink-muted"><strong>1ª Resposta de Deus:</strong> "Estou levantando os caldeus" — a Babilônia como instrumento de julgamento</span></div>
+            <div class="flex items-start gap-3 p-2 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);"><span class="font-display text-xs font-bold text-crimson flex-shrink-0 mt-0.5">1:12–2:1</span><span class="font-body text-xs text-ink-muted"><strong>2ª Queixa:</strong> "Mas os babilônios são piores!" — como usar o ímpio para punir o menos ímpio?</span></div>
+            <div class="flex items-start gap-3 p-2 rounded-lg" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 mt-0.5">2:2–20</span><span class="font-body text-xs text-ink-muted"><strong>2ª Resposta:</strong> "O justo viverá pela sua fé" + os cinco ais contra a Babilônia + o silêncio</span></div>
+            <div class="flex items-start gap-3 p-2 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.2);"><span class="font-display text-xs font-bold text-forest flex-shrink-0 mt-0.5">Cap. 3</span><span class="font-body text-xs text-ink-muted"><strong>A Oração Final:</strong> Teofania do Guerreiro Divino → "ainda assim me alegrarei"</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Diálogo — As Duas Queixas e as Duas Respostas</div>
+      <div class="space-y-4 mb-5">
+        <div class="dialogue-block" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.3);">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-display text-sm font-bold text-crimson">HABACUQUE</span>
+            <span class="font-body text-xs text-ink-faint">— 1ª Queixa (1:2–4)</span>
+          </div>
+          <p class="font-body text-base italic text-ink leading-relaxed mb-2">"Até quando, Senhor, clamarei, e tu não ouvirás? Gritarei a ti: Violência! e tu não salvarás? Por que me fazes ver iniquidade e contemplar a opressão? A destruição e a violência estão diante de mim."</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A queixa inicial é sobre injustiça <em>interna</em> — o povo de Judá em desordem moral, os tribunais corrompidos, a lei sem força. Habacuque não reclama de sofrimento pessoal — reclama da aparente indiferença de Deus diante do mal coletivo.</p>
+        </div>
+
+        <div class="dialogue-block" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.28);">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-display text-sm font-bold text-earth">DEUS</span>
+            <span class="font-body text-xs text-ink-faint">— 1ª Resposta (1:5–11)</span>
+          </div>
+          <p class="font-body text-base italic text-ink leading-relaxed mb-2">"Olhai entre as nações e observai, e ficai muito espantados; porque farei uma obra em vossos dias que vós não crereis quando for contada. Porque eis que estou levantando os caldeus, nação cruel e impetuosa."</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Deus responde com uma notícia que Habacuque não esperava: em vez de eliminar a injustiça de Judá, ele usará um poder ainda maior — a Babilônia — como instrumento de julgamento. A resposta à queixa é mais desconcertante que a queixa. Esta resposta é citada por Paulo em Atos 13:41.</p>
+        </div>
+
+        <div class="dialogue-block" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.3);">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-display text-sm font-bold text-crimson">HABACUQUE</span>
+            <span class="font-body text-xs text-ink-faint">— 2ª Queixa (1:12–2:1)</span>
+          </div>
+          <p class="font-body text-base italic text-ink leading-relaxed mb-2">"Os teus olhos são mui puros para verem o mal, e não podes olhar para a iniquidade; por que, pois, olhas para os que procedem aleivosamente, e te calas quando o ímpio devora o que é mais justo do que ele?"</p>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A segunda queixa é mais teologicamente sofisticada — usa a própria santidade de Deus como argumento: se Deus é puro demais para tolerar o mal, como pode usar a Babilônia (mais corrupta que Judá) como seu instrumento? Habacuque sobe à sua torre de vigia para esperar a resposta.</p>
+        </div>
+
+        <div class="dialogue-block" style="background:rgba(30,74,42,0.06);border-color:rgba(30,74,42,0.32);">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="font-display text-sm font-bold text-forest">DEUS</span>
+            <span class="font-body text-xs text-ink-faint">— 2ª Resposta (2:2–20) — o clímax teológico do livro</span>
+          </div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(30,74,42,0.2);"><p class="font-body text-base text-ink">"Escreve a visão e grava-a claramente nas tábuas, para que se possa ler correndo. Porque a visão é ainda para um tempo determinado... se tardar, espera-a; porque certamente virá, não tardará."</p><p class="font-display text-xs text-forest mt-1 tracking-widest">2:2–3 · A visão que espera seu tempo</p></div>
+            <div class="p-4 rounded-xl text-center" style="background:rgba(30,74,42,0.08);border:2px solid rgba(30,74,42,0.35);">
+              <p class="font-body text-2xl italic text-ink leading-relaxed mb-1">"Mas o justo viverá pela sua fé."</p>
+              <p class="font-display text-xs text-forest tracking-widest">Habacuque 2:4b · O versículo que mudou a história da Igreja</p>
+            </div>
+            <div class="p-3 rounded-lg italic" style="background:rgba(255,255,255,0.6);border:1px solid rgba(30,74,42,0.2);"><p class="font-body text-base text-ink">"Mas o Senhor está no seu santo templo; cale-se diante dele toda a terra."</p><p class="font-display text-xs text-forest mt-1 tracking-widest">2:20 · A resposta final — o silêncio como adoração</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Habacuque 2:4 — O Versículo que Acendeu a Reforma Protestante</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,58,95,0.06);border:2px solid rgba(30,58,95,0.28);">
+            <p class="font-body text-2xl text-ink leading-relaxed mb-2">"Mas o justo viverá pela sua fé."</p>
+            <p class="font-display text-xs text-sapphire mt-2 tracking-widest">Habacuque 2:4b · Hebraico: <em>u'tzaddik be'emunatô yichyeh</em></p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">No contexto original, "fé" (<em>emunah</em>) significa <strong>fidelidade, confiança inabalável</strong> — a firmeza do justo que persiste mesmo quando não entende os caminhos de Deus. Em contraste com o orgulhoso babilônico (2:4a), o justo se sustenta pela sua confiança em Deus.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-gold-dark">O hebraico <em>emunah</em>:</strong> Diferente de "fé" como crença abstrata, <em>emunah</em> vem da raiz <em>aman</em> — firmeza, solidez, confiabilidade. É a mesma raiz de "amém." O justo não apenas <em>acredita</em> — ele <em>permanece firme</em>, inabalável, como fundação sólida.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">As Três Citações no NT — e a Reforma</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Rm 1:17 — O fundamento de Paulo</span><p class="font-body text-xs text-ink-muted mt-1">"Porque nele a justiça de Deus se revela de fé em fé; como está escrito: O justo viverá pela fé." — Paulo usa Hab 2:4 como fundamento de toda sua teologia da justificação pela fé — o tema central de Romanos.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Gl 3:11 — Fé vs. Lei</span><p class="font-body text-xs text-ink-muted mt-1">"E que pela lei ninguém é justificado diante de Deus é evidente, porque: O justo viverá pela fé." — Paulo o usa para provar que a salvação sempre foi pela fé, não pela observância da lei.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Hb 10:38 — Perseverança</span><p class="font-body text-xs text-ink-muted mt-1">"Mas o meu justo viverá pela fé; e se recuar, a minha alma não se agradará nele." — Hebreus usa Hab 2:4 para encorajar a perseverança sob perseguição.</p></div>
+            <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.08);border:1px solid rgba(200,145,58,0.3);"><span class="font-display text-xs font-bold text-gold-dark">🔥 Lutero e a Torre — A Reforma Nasce de Hab 2:4</span><p class="font-body text-xs text-ink-muted mt-1">Martinho Lutero descreveu uma experiência em sua "torre" (Turmerlebnis) em que leu Rm 1:17 citando Hab 2:4 e de repente compreendeu: a "justiça de Deus" não é o padrão que condena o pecador, mas o presente que justifica pela fé. Esta leitura de 1515–1517 foi o estopim da Reforma Protestante — nascida de três palavras de um profeta do séc. VII a.C.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Cinco "Ais" contra a Babilônia — Cap. 2:6–20</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">A segunda resposta de Deus inclui cinco declarações de julgamento ("ai") contra a Babilônia — estruturadas como uma canção de escárnio que as nações cantarão sobre o opressor caído. Cada "ai" é o inverso do crime.</p>
+      <div class="space-y-2 mb-5">
+        <div class="woe-row" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 w-8">1º</span><div><span class="font-display text-xs font-bold text-earth">Ai do que amontoa o que não é seu — a ganância (2:6–8)</span><p class="font-body text-xs text-ink-muted mt-0.5">Os que saquearam as nações serão saqueados. Os devedores se levantarão de repente. "Porque derramaste o sangue dos homens... a pedra clamará da parede."</p></div></div>
+        <div class="woe-row" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 w-8">2º</span><div><span class="font-display text-xs font-bold text-earth">Ai do que constrói a sua casa com ganho injusto (2:9–11)</span><p class="font-body text-xs text-ink-muted mt-0.5">Aquele que construiu seu ninho alto para escapar do mal — a própria madeira da construção clamará por julgamento.</p></div></div>
+        <div class="woe-row" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 w-8">3º</span><div><span class="font-display text-xs font-bold text-earth">Ai do que edifica uma cidade com sangue (2:12–14)</span><p class="font-body text-xs text-ink-muted mt-0.5">"Porque a terra se encherá do conhecimento da glória do Senhor, como as águas cobrem o mar" — a glória de Deus tornará obsoletas as obras dos impérios.</p></div></div>
+        <div class="woe-row" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 w-8">4º</span><div><span class="font-display text-xs font-bold text-earth">Ai do que embriaga os seus vizinhos (2:15–17)</span><p class="font-body text-xs text-ink-muted mt-0.5">Que faz as nações beberem do cálice da humilhação — beberá do cálice da destra do Senhor. A violência contra o Líbano os cobrirá.</p></div></div>
+        <div class="woe-row" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.2);"><span class="font-display text-xs font-bold text-earth flex-shrink-0 w-8">5º</span><div><span class="font-display text-xs font-bold text-earth">Ai do que diz ao ídolo: Desperta! (2:18–19)</span><p class="font-body text-xs text-ink-muted mt-0.5">A mais absurda das idolatrias: construir um ídolo com ouro e prata e dizer-lhe "ensina-me." "Acaso ensinará isso? Eis que está coberto de ouro e prata, e não há nenhum espírito dentro dele."</p></div></div>
+      </div>
+      <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.06);border:1px solid rgba(30,58,95,0.25);">
+        <h4 class="font-display text-sm font-semibold text-sapphire mb-2">🤫 "Cale-se Diante Dele Toda a Terra" (2:20)</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">Após os cinco "ais" e toda a argumentação, a conclusão de Deus não é mais uma explicação — é um convite ao silêncio. "Mas o Senhor está no seu santo templo; cale-se diante dele toda a terra." A resposta definitiva à teodiceia não é argumento filosófico — é adoração. O silêncio diante de Deus é mais profundo que qualquer explicação.</p>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">O "Ainda Assim" Final — Habacuque 3:17–19</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O capítulo 3 é uma oração/hino com notações musicais (sela) — usada no culto do Templo. Após a teofania do Guerreiro Divino que faz tremer as montanhas, o profeta chega à conclusão mais extraordinária do livro: uma declaração de alegria total mesmo na ausência total de recursos.</p>
+      <div class="grid grid-cols-2 md:grid-cols-3 gap-3 mb-5">
+        <div class="harvest-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-1">🌿</div>
+          <span class="font-display text-xs font-bold text-crimson">A figueira não floresceu</span>
+          <p class="font-body text-xs text-ink-faint mt-1">Sem figos</p>
+        </div>
+        <div class="harvest-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-1">🍇</div>
+          <span class="font-display text-xs font-bold text-crimson">Nenhum fruto na vide</span>
+          <p class="font-body text-xs text-ink-faint mt-1">Sem vinho</p>
+        </div>
+        <div class="harvest-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-1">🫒</div>
+          <span class="font-display text-xs font-bold text-crimson">Oliveira falhou</span>
+          <p class="font-body text-xs text-ink-faint mt-1">Sem azeite</p>
+        </div>
+        <div class="harvest-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-1">🌾</div>
+          <span class="font-display text-xs font-bold text-crimson">Campos sem mantimento</span>
+          <p class="font-body text-xs text-ink-faint mt-1">Sem grãos</p>
+        </div>
+        <div class="harvest-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-1">🐑</div>
+          <span class="font-display text-xs font-bold text-crimson">Rebanho cortado do aprisco</span>
+          <p class="font-body text-xs text-ink-faint mt-1">Sem ovelhas</p>
+        </div>
+        <div class="harvest-item" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <div class="text-2xl mb-1">🐄</div>
+          <span class="font-display text-xs font-bold text-crimson">Bois ausentes nos currais</span>
+          <p class="font-body text-xs text-ink-faint mt-1">Sem gado</p>
+        </div>
+      </div>
+      <div class="p-5 rounded-xl text-center mb-4" style="background:rgba(30,74,42,0.07);border:2px solid rgba(30,74,42,0.35);">
+        <p class="font-display text-xs text-forest tracking-widest mb-3">E MESMO ASSIM —</p>
+        <p class="font-body text-2xl italic text-ink leading-relaxed mb-2">"Ainda assim me alegrarei no Senhor, e me regozijarei no Deus da minha salvação. O Senhor Deus é a minha força, e ele fará os meus pés como os da corça, e me fará andar sobre as minhas alturas."</p>
+        <p class="font-display text-xs text-forest mt-3 tracking-widest">Habacuque 3:18–19 · A declaração de fé mais ousada do AT</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);"><h4 class="font-display text-sm font-semibold text-gold-dark mb-2">Seis Pilares Econômicos Zerados</h4><p class="font-body text-xs text-ink-muted leading-relaxed">Os seis itens listados por Habacuque cobrem toda a economia de subsistência de Israel — horticultura (figo, vide, oliveira), agricultura (grãos) e pecuária (ovelhas e gado). Quando todos os seis falham simultaneamente, não há sobrevivência. E Habacuque diz: "ainda assim."</p></div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.2);"><h4 class="font-display text-sm font-semibold text-sapphire mb-2">O Paralelo com Daniel 3:17–18</h4><p class="font-body text-xs text-ink-muted leading-relaxed">O "ainda assim" de Habacuque ecoa o "mas mesmo que não" de Sadraque, Mesaque e Abede-Nego — a fé não-transacional que persiste independente de resultados. É o padrão bíblico do crente maduro: não "Deus me dará X, portanto o sirvo", mas "sirvo a Deus independentemente de X."</p></div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🤔 Teodiceia — por que o mal prospera?</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">⏳ A visão que espera seu tempo</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🌿 Fé como firmeza, não sentimento</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🤫 O silêncio como resposta</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🙏 Adoração como resolução</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🏹 Deus soberano sobre a história</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Habacuque no NT</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Rm 1:17 — A pedra angular da Reforma</span><p class="font-body text-xs text-ink-muted mt-1">Paulo cita Hab 2:4 como fundamento de toda a carta de Romanos e de sua teologia da justificação. Lutero leu este versículo e compreendeu a graça — nasceu a Reforma.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Gl 3:11 — Fé contra lei</span><p class="font-body text-xs text-ink-muted mt-1">Paulo cita Hab 2:4 para provar que a salvação sempre foi pela fé — Abraão foi justificado pela fé antes da lei existir.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Hb 10:37–38 — Perseverança</span><p class="font-body text-xs text-ink-muted mt-1">"Aquele que há de vir virá, e não tardará" (eco de Hab 2:3) + Hab 2:4 — exortação à perseverança da fé sob perseguição.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">At 13:41 — Paulo em Antioquia</span><p class="font-body text-xs text-ink-muted mt-1">Paulo cita Hab 1:5 ("uma obra que vós não crereis quando for contada") ao anunciar a ressurreição — a obra incrível que Deus fez e que Israel não reconheceu.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O Pesher de Habacuque — Rolos do Mar Morto:</strong> Um dos primeiros documentos encontrados em Qumrã (1947) foi um extenso comentário (pesher) sobre Habacuque 1–2, datando do séc. I a.C. A comunidade de Qumrã aplicava as profecias de Habacuque a sua própria situação — os "caldeus" tornavam-se os romanos. É um dos mais antigos comentários bíblicos existentes.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O "Turmerlebnis" de Lutero:</strong> Martinho Lutero descreveu ter lido Romanos 1:17 (citando Hab 2:4) em sua cela monástica/torre em Wittenberg e, pela primeira vez, compreender que a "justiça de Deus" não é a justiça que condena mas a que é imputada pela fé. Esta leitura (~1515) foi o estopim intelectual da Reforma — um versículo de 7 palavras hebraicas mudou o curso do Ocidente.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A torre de vigia (2:1):</strong> "Atar-me-ei ao meu posto de guarda, e me colocarei sobre a torre de vigia, e estarei alerta para ver o que Deus me dirá." A imagem do profeta na torre esperando a resposta é uma das mais poderosas da Bíblia — ele fez sua pergunta, não desistiu, mas tomou uma postura de espera ativa e expectante. A fé não é passiva.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Hab 2:14 — "Como as águas cobrem o mar":</strong> "Porque a terra se encherá do conhecimento da glória do Senhor, como as águas cobrem o mar" — este versículo é paralelo a Isaías 11:9 (quase palavra por palavra). É uma das afirmações mais abrangentes de missão universal na profecia do AT.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Hab 3 com "sela" — usado no Templo:</strong> O capítulo 3 tem a notação "shiguionoth" no título (talvez um tipo musical) e "sela" no corpo (pausa musical, como nos Salmos). Foi composto para uso litúrgico no Templo — a oração mais angustiada do profeta tornou-se hino de adoração coletiva.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>"Escreve a visão nas tábuas" (2:2):</strong> Este comando é raro na profecia — Deus ordenou explicitamente que a mensagem fosse escrita de forma legível, "para que se possa ler correndo." A comunicação clara da mensagem profética era responsabilidade do profeta. É um dos poucos momentos em que o processo de registro da revelação é ele mesmo parte da revelação.</p></div>
+        <div class="curiosity-item md:col-span-2"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Por que Habacuque ainda ressoa:</strong> Habacuque fez a pergunta que toda pessoa de fé eventualmente faz: "Deus, onde estás quando o mal triunfa?" O livro não oferece uma resposta filosófica completa — oferece algo mais valioso: um modelo de como fazer a pergunta (honestamente, sem abandonar a fé), como esperar a resposta (ativamente, na torre de vigia) e como resolver a tensão (não com explicações, mas com adoração). E ao final, quando todos os sustentáculos materiais da vida desaparecem — a figueira, a vide, a oliveira, o gado — Habacuque encontra um ponto de apoio que nenhuma calamidade pode remover: "ainda assim me alegrarei no Senhor."</p></div>
+      </div>
+    </section>
+
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Mas o justo viverá pela sua fé."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Habacuque 2:4 · 7 palavras hebraicas · citadas 3× no NT · estopim da Reforma Protestante</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Mas o Senhor está no seu santo templo; cale-se diante dele toda a terra."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Habacuque 2:20 · A resposta final à teodiceia · o silêncio como adoração</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Ainda assim me alegrarei no Senhor, e me regozijarei no Deus da minha salvação."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Habacuque 3:18 · O "ainda assim" — fé que persiste quando tudo desaparece</cite>
+    </section>
+  </main>
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">Guia de Estudos Bíblico · Habacuque · Informações históricas e documentalmente verificadas</footer>
+</body>
+</html>

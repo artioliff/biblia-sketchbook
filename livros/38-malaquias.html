@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Malaquias — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(200,145,58,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(30,74,42,0.09) 0%, transparent 55%);
+    }
+    .dispute-card {
+      border-radius: 11px; border: 1px solid; padding: 1.125rem;
+      transition: transform 0.2s ease;
+    }
+    .dispute-card:hover { transform: translateY(-2px); }
+    .dispute-q {
+      font-family: "Crimson Pro", serif; font-style: italic;
+      font-size: 0.9rem; color: #8b2020; padding: 6px 10px;
+      background: rgba(139,32,32,0.05); border-radius: 6px;
+      border-left: 3px solid rgba(139,32,32,0.35);
+      margin: 6px 0;
+    }
+    .dispute-a {
+      font-family: "Crimson Pro", serif; font-size: 0.88rem;
+      color: #3d2f25; padding: 6px 10px;
+      background: rgba(30,74,42,0.05); border-radius: 6px;
+      border-left: 3px solid rgba(30,74,42,0.35);
+    }
+    .silence-block {
+      border-radius: 12px; border: 2px solid; padding: 1.5rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · PROFETAS MENORES · 39º LIVRO · 12º DOS DOZE · ÚLTIMO LIVRO DO ANTIGO TESTAMENTO</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">Malaquias</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>מַלְאָכִי</em> (Mal\'akhi) — "Meu mensageiro" · possivelmente um título, não um nome próprio</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">A última voz profética do AT · 6 disputas dialógicas entre Deus e o povo · o mensageiro que preparará o caminho · Elias que voltará · o <strong>Sol de Justiça</strong> — e depois, ~400 anos de silêncio</p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">4</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">55</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">6 disputas</div><div class="font-body text-sm text-ink-muted mt-1">estrutura dialogal única</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">~400 anos</div><div class="font-body text-sm text-ink-muted mt-1">de silêncio após Malaquias</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral — A Última Voz</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Quem foi Malaquias?</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Malaquias é o único profeta do AT cujo nome pode ser um título em vez de nome próprio — <em>Mal\'akhi</em> significa "meu mensageiro." A Septuaginta (LXX) traduz como "seu mensageiro." Não sabemos nada de sua família, cidade ou contexto pessoal.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">O contexto histórico aponta para <strong>~450–430 a.C.</strong> — o período pós-exílico tardio, contemporâneo de Neemias. Os problemas que Malaquias ataca (casamentos mistos, dízimos negligenciados, sacerdócio corrupto) são os mesmos que Esdras e Neemias combateram. O entusiasmo do retorno do exílio havia esfriado; a rotina havia se instalado.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-gold-dark">A estrutura das disputas:</strong> Malaquias usa uma forma literária única na profecia — a <em>disputa dialogal</em> (<em>Streitgespräch</em>): Deus faz uma afirmação, o povo questiona ("Como?", "Em que?"), Deus responde com evidências. São 6 rodadas, cada vez mais directas.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">As 6 Disputas em Sequência</h3>
+          <div class="space-y-1.5">
+            <div class="flex items-start gap-2 p-2 rounded text-xs font-body" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display font-bold text-gold-dark flex-shrink-0">1</span>
+              <span class="text-ink-muted"><strong>"Eu vos amei"</strong> / "Em que nos amaste?" → Olhai para Edom destruído (1:2–5)</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded text-xs font-body" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display font-bold text-gold-dark flex-shrink-0">2</span>
+              <span class="text-ink-muted"><strong>"Honrai-me"</strong> / "Em que te desprezamos?" → As ofertas imundas no altar (1:6–2:9)</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded text-xs font-body" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display font-bold text-gold-dark flex-shrink-0">3</span>
+              <span class="text-ink-muted"><strong>"Fostes infiéis"</strong> / "Em que fomos infiéis?" → Casamentos mistos e divórcio (2:10–16)</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded text-xs font-body" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display font-bold text-gold-dark flex-shrink-0">4</span>
+              <span class="text-ink-muted"><strong>"Me cansastes"</strong> / "Como te cansamos?" → Chamando o mal de bem (2:17–3:5)</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded text-xs font-body" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display font-bold text-gold-dark flex-shrink-0">5</span>
+              <span class="text-ink-muted"><strong>"Voltai a mim"</strong> / "Como voltaremos?" → Roubando a Deus nos dízimos (3:6–12)</span>
+            </div>
+            <div class="flex items-start gap-2 p-2 rounded text-xs font-body" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);">
+              <span class="font-display font-bold text-gold-dark flex-shrink-0">6</span>
+              <span class="text-ink-muted"><strong>"Vossas palavras são duras"</strong> / "Como falamos?" → Dizendo que é inútil servir a Deus (3:13–4:3)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">As Seis Disputas em Detalhe</div>
+      <div class="grid md:grid-cols-2 gap-4">
+
+        <div class="dispute-card" style="background:rgba(200,145,58,0.05);border-color:rgba(200,145,58,0.25);">
+          <span class="font-display text-xs font-bold text-gold-dark block mb-2">1ª Disputa · 1:2–5 — "Eu vos Amei"</span>
+          <div class="dispute-q">"Em que nos amaste?"</div>
+          <div class="dispute-a">"Não era Esaú irmão de Jacó? E todavia amei a Jacó, e odiei a Esaú, e fiz das suas montanhas uma desolação." O amor de Deus se demonstra na história — Israel existe; Edom foi destruído. A prova do amor é o fato de Israel ainda estar de pé. Citado por Paulo em Rm 9:13.</div>
+        </div>
+
+        <div class="dispute-card" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.22);">
+          <span class="font-display text-xs font-bold text-crimson block mb-2">2ª Disputa · 1:6–2:9 — As Ofertas Imundas</span>
+          <div class="dispute-q">"Em que desprezamos o teu nome?"</div>
+          <div class="dispute-a">"Quando ofereceis sobre o meu altar pão contaminado... animais cegos, coxos, doentes." A pergunta devastadora: "Oferece isso ao teu governador! Porventura te agradaria ele, ou te receberia bem?" (1:8) — o povo aceitava de Deus o que não ousava oferecer ao rei persa.</div>
+          <div class="p-2 mt-2 rounded text-xs font-body italic text-ink-muted" style="background:rgba(255,255,255,0.5);">1:11 — "Desde o nascer do sol até ao seu pôr, grande é o meu nome entre as nações" — um dos versículos mais universalistas do AT, lido pelos Padres da Igreja como profecia da Eucaristia.</div>
+        </div>
+
+        <div class="dispute-card" style="background:rgba(30,58,95,0.04);border-color:rgba(30,58,95,0.22);">
+          <span class="font-display text-xs font-bold text-sapphire block mb-2">3ª Disputa · 2:10–16 — Casamento e Divórcio</span>
+          <div class="dispute-q">"Como fomos infiéis?"</div>
+          <div class="dispute-a">Dois pecados: (1) casamentos com mulheres de outros deuses — quebrando a "aliança de vossos pais"; (2) divórcio da "mulher da vossa mocidade." A resposta mais citada: "Porque o Senhor Deus de Israel diz que ele odeia o repúdio." (2:16 — tradução debatida) O casamento como aliança sagrada paralela à aliança de Deus com Israel.</div>
+        </div>
+
+        <div class="dispute-card" style="background:rgba(92,61,30,0.04);border-color:rgba(92,61,30,0.22);">
+          <span class="font-display text-xs font-bold text-earth block mb-2">4ª Disputa · 2:17–3:5 — "Onde Está o Deus da Justiça?"</span>
+          <div class="dispute-q">"Como te cansamos?"</div>
+          <div class="dispute-a">"Quando dizeis: Todo aquele que faz o mal agrada ao Senhor, e nele se compraz; ou: Onde está o Deus da justiça?" — A teodiceia invertida: o povo não pergunta "onde está Deus?" por sofrimento, mas porque vê os maus prosperando. A resposta de Deus é a 5ª promessa: ele mesmo virá purificar (3:1–5).</div>
+        </div>
+
+        <div class="dispute-card" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.25);">
+          <span class="font-display text-xs font-bold text-forest block mb-2">5ª Disputa · 3:6–12 — "Roubais a Deus"</span>
+          <div class="dispute-q">"Como voltaremos?" e "Como te roubamos?"</div>
+          <div class="dispute-a">"Nos dízimos e nas ofertas... Trazei todos os dízimos à casa do Tesouro para que haja mantimento na minha casa, e provai-me nisso, diz o Senhor dos Exércitos, se eu não vos abrir as janelas do céu e não derramar sobre vós uma bênção sem medida." (3:10) — Uma das poucas vezes que Deus convida ser testado.</div>
+        </div>
+
+        <div class="dispute-card" style="background:rgba(74,30,110,0.04);border-color:rgba(74,30,110,0.22);">
+          <span class="font-display text-xs font-bold text-violet block mb-2">6ª Disputa · 3:13–4:3 — "É Inútil Servir a Deus"</span>
+          <div class="dispute-q">"Como falamos contra ti?"</div>
+          <div class="dispute-a">"Quando dizeis: É inútil servir a Deus; e qual o proveito de guardarmos os seus preceitos... pois os soberbos são chamados felizes." (3:14–15) — O cinismo espiritual: a conclusão de que a fidelidade não vale a pena porque os ímpios parecem mais prósperos. A resposta: o Livro de Memórias e o Sol de Justiça.</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">"O Meu Mensageiro" — 3:1 · A Profecia Que João Batista Cumpriu</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Eis que envio o meu mensageiro para preparar o caminho diante de mim; e o Senhor, a quem vós buscais, virá de repente ao seu Templo — o mensageiro da aliança, em quem vós vos deleitais. Eis que ele vem, diz o Senhor dos Exércitos."</p>
+            <p class="font-display text-xs text-gold-dark mt-2 tracking-widest">Malaquias 3:1 · A profecia mais citada de Malaquias no NT</p>
+          </div>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Mt 11:10 / Mc 1:2 / Lc 7:27</span><p class="font-body text-xs text-ink-muted mt-1">Jesus cita Ml 3:1 ao falar de João Batista: "Este é de quem está escrito: Eis que envio o meu mensageiro diante da tua face, o qual preparará o teu caminho diante de ti." João é o mensageiro; Jesus é "o Senhor" que veio ao Templo.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Mc 1:2 — A combinação de Is 40:3 e Ml 3:1</span><p class="font-body text-xs text-ink-muted mt-1">Marcos abre seu Evangelho combinando Malaquias 3:1 e Isaías 40:3 numa única citação — o começo do Evangelho está na última voz do AT e na voz que preparou o caminho para o exílio. A Bíblia inteira converge em João Batista.</p></div>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">As Duas Figuras de Malaquias 3:1</h3>
+          <div class="space-y-3">
+            <div class="p-4 rounded-xl" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.22);">
+              <h4 class="font-display text-xs font-bold text-earth mb-1">🏃 "O Meu Mensageiro" — O Precursor</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">Preparará o caminho <em>diante de mim</em> — antes de Deus vir. Identificado pelo NT como João Batista (Mt 11:14; Lc 1:17). Em Ml 4:5 este mensageiro é chamado de "Elias" — o que Jesus confirma em Mt 17:12.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+              <h4 class="font-display text-xs font-bold text-forest mb-1">👑 "O Senhor" e "o Mensageiro da Aliança"</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">Virá "de repente ao seu Templo" — o mesmo Templo que Ageu prometeu que receberia glória maior. Jesus visitou o Templo repetidamente, o "purificou" ao expulsar os mercadores (Mt 21:12–13) e profetizou sua destruição. A chegada de Jesus ao Templo cumpriu Malaquias 3:1.</p>
+            </div>
+            <div class="p-4 rounded-xl" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.22);">
+              <h4 class="font-display text-xs font-bold text-violet mb-1">🔥 O Purificador (3:2–3)</h4>
+              <p class="font-body text-xs text-ink-muted leading-relaxed">"Mas quem poderá suportar o dia da sua vinda? E quem estará em pé quando ele aparecer? Porque ele é como o fogo de fundidor e como o sabão dos lavandeiros." A chegada do Messias traz purificação — especialmente para os líderes religiosos. Hebreus 12:29 ecoa: "o nosso Deus é um fogo consumidor."</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">O Livro de Memórias e o Sol de Justiça — 3:16–4:3</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-sm font-semibold text-gold-dark mb-3">📖 O Livro de Memórias (3:16–18)</h3>
+          <div class="p-4 rounded-xl italic mb-3" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">"Então os que temem o Senhor falaram uns com os outros; e o Senhor atentou e ouviu, e foi escrito diante dele um livro de memórias acerca dos que temem o Senhor e dos que pensam no seu nome."</p>
+            <p class="font-display text-xs text-gold-dark mt-1 tracking-widest">Malaquias 3:16</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Enquanto outros diziam "é inútil servir a Deus," havia um grupo que se reunia e conversava sobre o Senhor. Deus os ouviu. E registrou — o "Livro de Memórias" (paralelo ao Livro da Vida em Ap 3:5; 20:12) preserva os nomes dos fiéis. A fidelidade em tempos de cinismo não é ignorada: é anotada.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-crimson mb-3">☀️ O Sol de Justiça (4:2)</h3>
+          <div class="p-4 rounded-xl italic mb-3" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+            <p class="font-body text-base text-ink leading-relaxed mb-2">"Mas para vós outros que temeis o meu nome, nascerá o Sol de Justiça, e a saúde estará nas suas asas; e vós saireis e saltareis como bezerros criados na estrebaria."</p>
+            <p class="font-display text-xs text-forest mt-1 tracking-widest">Malaquias 4:2</p>
+          </div>
+          <div class="space-y-2">
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(255,255,255,0.5);border:1px solid rgba(30,74,42,0.15);">☀️ "Sol de Justiça" — título messiânico usado pelos Padres da Igreja para Cristo, a Luz do Mundo</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(255,255,255,0.5);border:1px solid rgba(30,74,42,0.15);">🪶 "Saúde nas suas asas" — a aba/borda do manto; a mulher que tocou a aba do manto de Jesus (Mt 9:20) pode estar cumprindo esta imagem</div>
+            <div class="p-2 rounded text-xs font-body text-ink-muted" style="background:rgba(255,255,255,0.5);border:1px solid rgba(30,74,42,0.15);">🎵 "Hark the Herald Angels Sing" — Charles Wesley (1739) baseou o hino de Natal em Ml 4:2: "Hail, the heaven-born Prince of Peace / Hail, the Sun of Righteousness!"</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">As Últimas Palavras do AT — Malaquias 4:4–6</div>
+      <div class="p-5 rounded-xl italic text-center mb-5" style="background:rgba(139,32,32,0.05);border:2px solid rgba(139,32,32,0.25);">
+        <p class="font-display text-xs text-crimson tracking-widest mb-3">AS ÚLTIMAS PALAVRAS DO ANTIGO TESTAMENTO</p>
+        <p class="font-body text-xl text-ink leading-relaxed mb-3">"Lembrai-vos da lei de Moisés, meu servo... Eis que vos enviarei o profeta Elias antes que venha o grande e terrível Dia do Senhor. E ele tornará o coração dos pais para os filhos, e o coração dos filhos para os pais; para que eu não venha e fira a terra com maldição."</p>
+        <p class="font-display text-xs text-crimson tracking-widest">Malaquias 4:4–6 · Último versículo do AT · Hebraico: termina em <em>cherem</em> — "maldição"</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-4 mb-5">
+        <div class="p-4 rounded-xl text-center" style="background:rgba(92,61,30,0.05);border:1px solid rgba(92,61,30,0.22);">
+          <div class="text-2xl mb-2">📜</div>
+          <h4 class="font-display text-xs font-bold text-earth mb-1">Moisés</h4>
+          <p class="font-body text-xs text-ink-muted">Lembrem da Torah — a lei dada no Sinai permanece o padrão de fidelidade. O AT fecha olhando para trás: Moisés.</p>
+        </div>
+        <div class="p-4 rounded-xl text-center" style="background:rgba(184,74,16,0.05);border:1px solid rgba(184,74,16,0.22);">
+          <div class="text-2xl mb-2">🔥</div>
+          <h4 class="font-display text-xs font-bold text-fire mb-1">Elias</h4>
+          <p class="font-body text-xs text-ink-muted">Elias voltará antes do Dia do Senhor — olha para frente: o precursor. No Monte da Transfiguração aparecem Moisés E Elias com Jesus (Mt 17:3).</p>
+        </div>
+        <div class="p-4 rounded-xl text-center" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.22);">
+          <div class="text-2xl mb-2">👨‍👧</div>
+          <h4 class="font-display text-xs font-bold text-forest mb-1">Reconciliação</h4>
+          <p class="font-body text-xs text-ink-muted">"Tornará o coração dos pais aos filhos" — a missão de Elias é restaurar relações fraturas antes do julgamento. Lc 1:17 aplica isto a João Batista.</p>
+        </div>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.22);">
+          <h4 class="font-display text-sm font-semibold text-sapphire mb-2">O AT termina em "maldição"</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">A última palavra do AT em hebraico é <em>cherem</em> — "maldição/destruição total." O AT fecha com uma ameaça condicional. O NT abre com "graça e verdade vieram por meio de Jesus Cristo" (Jo 1:17). A gramática das Escrituras: do <em>cherem</em> de Malaquias à <em>charis</em> (graça) de João.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+          <h4 class="font-display text-sm font-semibold text-forest mb-2">A tradição judaica inverte a ordem</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Para não terminar a leitura da Torah e dos Profetas com a palavra "maldição," a tradição judaica determinou que ao terminar de ler Malaquias na sinagoga, o versículo 4:5 deve ser relido — terminando com "Elias" e a esperança, não com a maldição. O AT não foi feito para encerrar em destruição.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">Os ~400 Anos de Silêncio — De Malaquias a João Batista</div>
+      <div class="silence-block mb-5" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.25);">
+        <div class="font-display text-xs text-sapphire tracking-widest mb-4">A LINHA DO TEMPO DO SILÊNCIO</div>
+        <div class="grid grid-cols-5 gap-2 text-center text-xs font-body text-ink-muted mb-4">
+          <div class="p-2 rounded" style="background:rgba(200,145,58,0.12);"><strong class="font-display text-gold-dark block">~430 a.C.</strong>Malaquias — última voz</div>
+          <div class="p-2 rounded" style="background:rgba(30,58,95,0.07);"><strong class="font-display text-sapphire block">331 a.C.</strong>Alexandre conquista</div>
+          <div class="p-2 rounded" style="background:rgba(139,32,32,0.06);"><strong class="font-display text-crimson block">175–164 a.C.</strong>Antíoco IV Epifânio</div>
+          <div class="p-2 rounded" style="background:rgba(92,61,30,0.06);"><strong class="font-display text-earth block">63 a.C.</strong>Roma (Pompeu)</div>
+          <div class="p-2 rounded" style="background:rgba(30,74,42,0.08);border:1px solid rgba(30,74,42,0.3);"><strong class="font-display text-forest block">~28 d.C.</strong>João Batista — voz no deserto</div>
+        </div>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">Por cerca de 400 anos — enquanto o poder mudou da Pérsia para a Grécia (Alexandre), depois para os reinos helenísticos (Ptolomeus e Selêucidas), depois para Roma — não houve voz profética reconhecida em Israel. O Talmude (Yoma 9b) registra: "Após Ageu, Zacarias e Malaquias, o Espírito Santo se afastou de Israel."</p>
+      </div>
+      <div class="grid md:grid-cols-2 gap-4">
+        <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+          <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">O "Silêncio" que não foi vazio</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Os 400 anos não foram estáticos. Neste período: os judeus foram deportados pelo mundo (diáspora), o AT foi traduzido para o grego (LXX), os Macabeus reconquistaram o Templo (167–164 a.C.), Herodes reconstruiu o Templo magnificamente — e as esperanças messiânicas atingiram seu ponto mais alto.</p>
+        </div>
+        <div class="p-4 rounded-xl" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+          <h4 class="font-display text-sm font-semibold text-forest mb-2">A quebra do silêncio</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed">Lucas 1:11–17: Quando o anjo aparece a Zacarias e anuncia João, cita explicitamente Malaquias 4:5–6 — João virá "no espírito e no poder de Elias... para tornar os corações dos pais para os filhos." O silêncio foi quebrado com a palavra exata que o havia selado.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">💛 Amor de Deus como história</span>
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">🏛️ Culto honesto — não aparente</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">💍 Fidelidade no casamento</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">📖 O Livro de Memórias</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">☀️ O Sol de Justiça</span>
+            <span class="theme-badge" style="background:rgba(74,30,110,0.07);border-color:rgba(74,30,110,0.3);color:#4a1e6e;">🔥 Elias como precursor</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">⚖️ Deus imutável em sua aliança</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">🌍 O nome de Deus entre as nações</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Malaquias no NT</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">Ml 3:1 → Mt 11:10; Mc 1:2; Lc 7:27</span><p class="font-body text-xs text-ink-muted mt-1">Jesus cita Ml 3:1 como cumprido em João Batista — o mensageiro que preparou o caminho.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.18);"><span class="font-display text-xs font-bold text-crimson">Ml 1:2–3 → Rm 9:13</span><p class="font-body text-xs text-ink-muted mt-1">"Jacob amei, Esaú odiei" — Paulo usa o contraste Jacó/Esaú no argumento sobre a eleição soberana de Deus.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><span class="font-display text-xs font-bold text-forest">Ml 4:5–6 → Lc 1:17; Mt 11:14; 17:12</span><p class="font-body text-xs text-ink-muted mt-1">O anjo a Zacarias cita Ml 4:5–6 ao descrever a missão de João. Jesus confirma: "Elias já veio" — identificando João com o Elias prometido.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">Ml 4:2 → "Hark the Herald Angels Sing"</span><p class="font-body text-xs text-ink-muted mt-1">Charles Wesley (1739) baseou o hino mais cantado no Natal em Ml 4:2: "Hail, the Sun of Righteousness!" — o Sol de Justiça se tornou o Cristo nascido em Belém.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>"Malaquias" — nome ou título?</strong> Em hebraico, <em>Mal\'akhi</em> significa "meu mensageiro" — idêntico à palavra de Malaquias 3:1 ("envio o meu mensageiro"). A LXX traduz o título do livro como "pela mão do seu mensageiro" em vez de pelo nome "Malaquias." O Talmude (Megillah 15a) debate se foi Ezra quem realmente escreveu o livro — reconhecendo a ambiguidade do nome.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Ml 1:11 e a Eucaristia:</strong> "Desde o nascer do sol até ao pôr do sol, o meu nome é grande entre as nações; em todo o lugar se oferecem ao meu nome incenso e uma oferta pura" — os Padres da Igreja (Justino Mártir, ~155 d.C.; Ireneu, ~180 d.C.; Didaquê, séc. I–II) identificaram este versículo como profecia da Eucaristia — o sacrifício puro oferecido em todo o mundo por todas as nações. É a profecia mais usada na apologética cristã primitiva sobre a missa.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>"Eu não mudo" — Ml 3:6 e a imutabilidade divina:</strong> "Porque eu, o Senhor, não mudo; por isso vós, filhos de Jacó, não fostes consumidos." A imutabilidade (<em>immutabilitas</em>) de Deus não é um conceito filosófico abstrato em Malaquias — é a razão existencial da sobrevivência de Israel. Se Deus mudasse de propósito como muda o humor humano, Israel teria sido aniquilado por suas infidelidades.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A tradição judaica que relê o v.5:</strong> Para evitar que a leitura pública de Malaquias termine com a palavra "maldição" (v.6 = "cherem"), a tradição judaica estabelece que após o último versículo, o penúltimo (v.5 — "Eis que vos enviarei o profeta Elias") deve ser repetido. Esta prática se aplica igualmente a Isaías, ao Eclesiastes e às Lamentações — livros que também terminam com tensão negativa.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>A pergunta ao governador (1:8) — exatamente o contexto persa:</strong> "Oferece isso ao teu governador; porventura te agradará ele, ou te receberá bem?" O termo "governador" (<em>pechah</em>) é um título persa — confirmando o contexto do período aquemênida (Pérsia). A comparação com o padrão do governador persa era imediata e poderosa para o público de Malaquias.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Mc 1:2 e a atribuição a Isaías:</strong> Marcos cita Malaquias 3:1 E Isaías 40:3 mas atribui tudo a "Isaías, o profeta." Assim como Mateus atribuiu Zacarias 11 a "Jeremias," Marcos atribuiu Malaquias a "Isaías" — provavelmente porque a citação de Isaías era a mais conhecida, e a prática rabínica permitia citar pela figura mais proeminente de uma compilação.</p></div>
+        <div class="curiosity-item md:col-span-2"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Por que Malaquias — o encerramento do AT — ainda ressoa:</strong> Malaquias escreveu para pessoas que haviam perdido o entusiasmo — não por perseguição ou catástrofe, mas pelo desgaste da normalidade. Ofertas mediocres, casamentos descuidados, dízimos sonegados, ceticismo sobre se Deus realmente age. Não é um livro de crise dramática — é um livro para quando a fé vira hábito vazio. E a resposta de Deus não é trovoada ou terremoto: é uma conversa. Seis rodadas de diálogo em que Deus argumenta, questiona, prova e convida. E no final — um sol que vai nascer, uma memória que foi escrita, e um mensageiro a caminho. O AT não fecha com resolução — fecha com expectativa. "Elias virá." E o NT abre com: "Naqueles dias apareceu João Batista." A espera foi real. O cumprimento também.</p></div>
+      </div>
+    </section>
+
+    <!-- O fechamento do AT -->
+    <section class="text-center py-10 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Eis que envio o meu mensageiro para preparar o caminho diante de mim; e o Senhor... virá de repente ao seu Templo."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Malaquias 3:1 · Cumprido em João Batista e Jesus · citado três vezes nos Evangelhos</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Para vós outros que temeis o meu nome, nascerá o Sol de Justiça, e a saúde estará nas suas asas."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Malaquias 4:2 · Base do hino de Natal de Charles Wesley (1739) — "Hail, the Sun of Righteousness!"</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Eis que vos enviarei o profeta Elias antes que venha o grande e terrível Dia do Senhor... para que eu não venha e fira a terra com maldição."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Malaquias 4:5–6 · As últimas palavras do Antigo Testamento · ~400 anos de silêncio começam aqui</cite>
+
+      <!-- A ponte para o NT -->
+      <div class="mt-12 p-6 rounded-2xl max-w-2xl mx-auto" style="background:linear-gradient(135deg,rgba(200,145,58,0.08),rgba(30,74,42,0.06));border:2px solid rgba(200,145,58,0.3);">
+        <p class="font-display text-xs text-gold-dark tracking-widest mb-4">A PONTE — DO ANTIGO AO NOVO TESTAMENTO</p>
+        <div class="grid grid-cols-2 gap-4 text-center">
+          <div>
+            <p class="font-display text-sm font-bold text-crimson mb-2">MALAQUIAS 4:5</p>
+            <p class="font-body text-sm italic text-ink-muted">"Eis que vos enviarei o profeta Elias"</p>
+            <p class="font-body text-xs text-ink-faint mt-1">~430 a.C. · última palavra profética</p>
+          </div>
+          <div>
+            <p class="font-display text-sm font-bold text-forest mb-2">MATEUS 3:1–3</p>
+            <p class="font-body text-sm italic text-ink-muted">"Naqueles dias apareceu João Batista, pregando no deserto"</p>
+            <p class="font-body text-xs text-ink-faint mt-1">~28 d.C. · o silêncio quebrado</p>
+          </div>
+        </div>
+        <div class="mt-4 font-display text-xs text-gold-dark tracking-widest">~400 ANOS · UM POVO ESPERANDO · UMA PROMESSA CUMPRIDA</div>
+      </div>
+    </section>
+
+  </main>
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">Guia de Estudos Bíblico · Malaquias · Último Livro do Antigo Testamento · Informações históricas e documentalmente verificadas</footer>
+</body>
+</html>

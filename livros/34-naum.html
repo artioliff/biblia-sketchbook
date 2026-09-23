@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Naum — Guia de Estudos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="../tailwind-config.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .parchment-bg {
+      background-color: #fdf8ef;
+      background-image:
+        radial-gradient(ellipse at 16% 18%, rgba(92,61,30,0.10) 0%, transparent 55%),
+        radial-gradient(ellipse at 84% 80%, rgba(139,32,32,0.08) 0%, transparent 55%);
+    }
+    .battle-card {
+      border-radius: 10px; border: 1px solid; padding: 1rem;
+      transition: transform 0.2s ease;
+    }
+    .battle-card:hover { transform: translateY(-2px); }
+    .sin-row {
+      display: flex; gap: 10px; align-items: flex-start;
+      padding: 7px 10px; border-radius: 8px; border: 1px solid;
+      transition: transform 0.15s;
+    }
+    .sin-row:hover { transform: translateX(3px); }
+    .jonah-naum-col {
+      border-radius: 10px; border: 1px solid; padding: 1.125rem; flex: 1;
+    }
+  </style>
+</head>
+<body class="parchment-bg min-h-screen font-body">
+  <header class="relative overflow-hidden py-20 px-6 text-center">
+    <div class="header-grid"></div>
+    <div class="relative max-w-3xl mx-auto">
+      <p class="font-display text-xs tracking-widest text-gold-dark opacity-70 mb-6 animate-fade-in">A BÍBLIA · PROFETAS MENORES · 34º LIVRO · 7º DOS DOZE</p>
+      <h1 class="font-display text-5xl md:text-6xl font-bold text-ink mb-3 animate-fade-up" style="letter-spacing:0.04em; text-shadow:0 2px 4px rgba(200,145,58,0.15);">Naum</h1>
+      <p class="font-body text-lg text-ink-muted italic animate-fade-up animate-delay-1 mb-1">Do hebraico <em>נַחוּם</em> (Nachum) — "Consolação" ou "Conforto"</p>
+      <p class="font-body text-sm text-ink-faint animate-fade-up animate-delay-1">O livro que completa Jonas · enquanto Jonas anunciou misericórdia a Nínive que se arrependeu, Naum anuncia destruição a Nínive que voltou ao mal · e a <strong>destruição de Nínive foi tão completa que o mundo a esqueceu por 2.500 anos</strong></p>
+      <div class="divider-ornament animate-fade-in animate-delay-2"><span class="ornament">✦</span></div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-3 animate-fade-up animate-delay-3">
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">3</div><div class="font-body text-sm text-ink-muted mt-1">Capítulos</div></div>
+        <div class="stat-card"><div class="font-display text-3xl font-bold text-gold-dark">47</div><div class="font-body text-sm text-ink-muted mt-1">Versículos</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">663–612</div><div class="font-body text-sm text-ink-muted mt-1">a.C. — janela histórica</div></div>
+        <div class="stat-card"><div class="font-display text-2xl font-bold text-gold-dark">612 a.C.</div><div class="font-body text-sm text-ink-muted mt-1">queda real de Nínive</div></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-4xl mx-auto px-6 pb-20 space-y-8">
+
+    <section class="section-card animate-fade-up">
+      <div class="section-label">Contexto Geral — O Complemento de Jonas</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Naum de Elcosh</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Naum, filho de Elcosh, é o mais misterioso dos profetas menores — não sabemos nada de sua vida além do nome e da cidade natal, e nem mesmo a localização de <strong>Elcosh</strong> é conhecida com certeza. Algumas tradições a colocam na Galileia (perto de Cafarnaum — "aldeia de Naum"), outras no sul de Judá.</p>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">O livro pode ser datado com precisão incomum: foi escrito <em>depois</em> da queda de Tebas/No-Amom (663 a.C., citada em 3:8) e <em>antes</em> da queda de Nínive (612 a.C., que é o tema do livro). Provavelmente por volta de 630–620 a.C., quando a Assíria ainda era potência mas já mostrava sinais de decadência.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(92,61,30,0.06);border:1px solid rgba(92,61,30,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-earth">O livro como poesia:</strong> Naum é amplamente reconhecido como uma das obras poéticas mais belas do AT — sua descrição da batalha de Nínive (2:3–13) é considerada de qualidade literária comparável à épica grega. Cada cena é cinematográfica, cada verso é preciso.</p></div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Jonas e Naum — Dois Livros, Uma Cidade</h3>
+          <div class="flex gap-4">
+            <div class="jonah-naum-col" style="background:rgba(30,74,42,0.05);border-color:rgba(30,74,42,0.25);">
+              <h4 class="font-display text-xs font-bold text-forest mb-2">🐟 JONAS (~760 a.C.)</h4>
+              <div class="space-y-1.5 text-xs font-body text-ink-muted">
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">Nínive <strong>se arrepende</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">Deus tem <strong>misericórdia</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">120.000 pessoas <strong>salvas</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">O profeta fica <strong>irado</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">Termina com uma <strong>pergunta</strong></div>
+              </div>
+            </div>
+            <div class="jonah-naum-col" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.25);">
+              <h4 class="font-display text-xs font-bold text-crimson mb-2">⚔️ NAUM (~630 a.C.)</h4>
+              <div class="space-y-1.5 text-xs font-body text-ink-muted">
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">Nínive <strong>voltou ao mal</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">Deus executa <strong>julgamento</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">A cidade é <strong>destruída</strong></div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">O profeta anuncia <strong>conforto</strong> a Judá</div>
+                <div class="p-1.5 rounded" style="background:rgba(255,255,255,0.5);">Termina com uma <strong>sentença</strong></div>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 p-3 rounded-lg" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.22);"><p class="font-body text-xs text-ink-muted leading-relaxed">Os dois livros juntos ensinam: a misericórdia de Deus tem um prazo — é sempre oferecida, mas não é indefinidamente disponível para quem conscientemente a rejeita e retorna ao mal.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-1">
+      <div class="section-label">O Caráter de Deus — 1:2–8 · O Hino do Guerreiro Divino</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-4">O livro abre com uma descrição do caráter de Deus que é ao mesmo tempo aterrorizante e consoladora. Em apenas 7 versículos, Naum estabelece que o Deus que julgará Nínive é o mesmo Deus que protege Judá.</p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(139,32,32,0.05);border:1px solid rgba(139,32,32,0.2);"><span class="font-display text-xs font-bold text-crimson">1:2 — O Deus Zeloso</span><p class="font-body text-xs text-ink-muted mt-1 italic">"O Senhor é Deus zeloso e vingador; o Senhor é vingador e cheio de ira; o Senhor se vinga dos seus adversários e guarda rancor contra os seus inimigos."</p><p class="font-body text-xs text-ink-faint mt-1">O hebraico <em>naqqam</em> (vingança) não é rancor pessoal — é retribuição justa pelo sofrimento dos inocentes. É o Deus que não fica indiferente ao mal.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.18);"><span class="font-display text-xs font-bold text-sapphire">1:3a — O Deus Paciente mas Poderoso</span><p class="font-body text-xs text-ink-muted mt-1 italic">"O Senhor é tardio em irar-se e grande em poder, e não inocentará o culpado."</p><p class="font-body text-xs text-ink-faint mt-1">Ecoa Êx 34:6–7 — a mesma descrição que Jonas usou (4:2). A paciência de Deus não é fraqueza — ela convive com poder absoluto. Nínive teve décadas de paciência (desde Jonas).</p></div>
+          </div>
+        </div>
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,74,42,0.07);border:2px solid rgba(30,74,42,0.3);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"O Senhor é bom, um refúgio nos dias de angústia; e conhece os que confiam nele."</p>
+            <p class="font-display text-xs text-forest mt-2 tracking-widest">Naum 1:7 · O verso mais luminoso no livro mais sombrio</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">O versículo 1:7 é uma joia teológica encravada no meio de uma descrição de julgamento devastador. O mesmo Deus que persegue seus adversários com vento e tempestade é um refúgio para os que confiam nele. A bondade e o julgamento não se contradizem — dependem de qual lado da aliança se está.</p>
+          <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><p class="font-body text-xs text-ink-muted leading-relaxed">Esta estrutura — o Deus que julga os opressores É o refúgio dos oprimidos — é o coração da teodiceia de Naum. O livro responde à pergunta: "onde está Deus quando o mal reina?" A resposta: ele está chegando, e chega como refúgio para uns e como tempestade para outros.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">A Batalha de Nínive — Cap. 2 · Poesia Bélica de Precisão Cinematográfica</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O capítulo 2 é uma das descrições de batalha mais vívidas da Bíblia — e do mundo antigo. Naum descreve o cerco, a invasão e o saque de Nínive com uma velocidade e precisão de imagem que antecipa o cinema moderno. Cada cena dura dois ou três versículos.</p>
+      <div class="grid md:grid-cols-2 gap-3 mb-5">
+        <div class="battle-card" style="background:rgba(30,58,95,0.05);border-color:rgba(30,58,95,0.22);">
+          <h4 class="font-display text-xs font-bold text-sapphire mb-2">⚔️ Os Escudos Vermelhos (2:3)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed italic mb-1">"Os escudos dos seus guerreiros são vermelhos; os valentes estão vestidos de escarlate."</p>
+          <p class="font-body text-xs text-ink-faint leading-relaxed">Os soldados medos e babilônios tinham escudos e vestes vermelhas — confirmado por fontes assírias e persas. A cena de abertura da batalha é visualmente precisa.</p>
+        </div>
+        <div class="battle-card" style="background:rgba(184,74,16,0.05);border-color:rgba(184,74,16,0.22);">
+          <h4 class="font-display text-xs font-bold text-fire mb-2">🔥 Os Carros de Fogo (2:4)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed italic mb-1">"Os carros reluzem como tochas de fogo no dia do seu preparo, e os ciprestes são abalados com violência."</p>
+          <p class="font-body text-xs text-ink-faint leading-relaxed">Uma das primeiras descrições de carros de guerra em velocidade total que alguns estudiosos comparam a descrições modernas de tráfego urbano veloz.</p>
+        </div>
+        <div class="battle-card" style="background:rgba(92,61,30,0.05);border-color:rgba(92,61,30,0.22);">
+          <h4 class="font-display text-xs font-bold text-earth mb-2">🌊 As Comportas do Rio (2:6)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed italic mb-1">"As comportas dos rios serão abertas, e o palácio será dissolvido."</p>
+          <p class="font-body text-xs text-ink-faint leading-relaxed">A Crônica de Nabopolassar e fontes gregas (Diodoro Sículo) confirmam: o rio Tigre inundou e derrubou parte das muralhas de Nínive durante o cerco de 612 a.C. — cumprimento literal.</p>
+        </div>
+        <div class="battle-card" style="background:rgba(139,32,32,0.05);border-color:rgba(139,32,32,0.22);">
+          <h4 class="font-display text-xs font-bold text-crimson mb-2">🦁 A Toca dos Leões (2:11–12)</h4>
+          <p class="font-body text-xs text-ink-muted leading-relaxed italic mb-1">"Onde está agora a toca dos leões... onde o leão andava, e o leãozinho, sem ninguém os atemorizar?"</p>
+          <p class="font-body text-xs text-ink-faint leading-relaxed">Os reis assírios se representavam como leões — caçavam leões como demonstração de poder real. Naum usa sua própria iconografia contra eles: o leão assírio sumiu para sempre.</p>
+        </div>
+      </div>
+      <div class="p-4 rounded-xl" style="background:rgba(200,145,58,0.07);border:1px solid rgba(200,145,58,0.25);">
+        <h4 class="font-display text-sm font-semibold text-gold-dark mb-2">🏛️ Nínive Encontrada — A Arqueologia Confirma</h4>
+        <p class="font-body text-sm text-ink-muted leading-relaxed">Nínive foi destruída tão completamente em 612 a.C. que, por volta de 401 a.C., quando o exército grego de Xenofonte passou pelo local, ele <em>não sabia</em> que as ruínas que via eram de Nínive — uma das maiores cidades do mundo. Só em <strong>1845–1847</strong>, quando Austen Henry Layard escavou o Morro de Kuyunjik (atual Mosul, Iraque), é que Nínive foi redescoberta. O profeta havia dito: "ela será consumida como restolho seco" (1:10) — e por 2.400 anos foi literalmente esquecida.</p>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-2">
+      <div class="section-label">Os Pecados de Nínive — Cap. 3 · "Ai da Cidade Sanguinária"</div>
+      <p class="font-body text-sm text-ink-muted mb-5 leading-relaxed">O capítulo 3 apresenta a acusação formal contra Nínive. A "cidade sanguinária" não é retórica — é descrição histórica confirmada. Os relevos das paredes do palácio assírio de Nínive (hoje no Museu Britânico) mostram com riqueza de detalhes as práticas de guerra assíria.</p>
+      <div class="space-y-2 mb-5">
+        <div class="sin-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-base flex-shrink-0">🗡️</span>
+          <div><span class="font-display text-xs font-bold text-crimson">Cidade de sangue (3:1)</span><p class="font-body text-xs text-ink-muted mt-0.5">Os assírios empurravam estacas pelo corpo de prisioneiros vivos e os deixavam expostos fora das cidades conquistadas — documentado em seus próprios relevos de palácio.</p></div>
+        </div>
+        <div class="sin-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-base flex-shrink-0">💰</span>
+          <div><span class="font-display text-xs font-bold text-crimson">Cheia de mentiras e rapina (3:1)</span><p class="font-body text-xs text-ink-muted mt-0.5">Os tratados assírios eram constantemente violados; as deportações em massa roubavam populações inteiras de suas terras e recursos.</p></div>
+        </div>
+        <div class="sin-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-base flex-shrink-0">🧿</span>
+          <div><span class="font-display text-xs font-bold text-crimson">Feitiçaria e prostituição (3:4)</span><p class="font-body text-xs text-ink-muted mt-0.5">"Por causa das muitas prostituições da meretriz formosa... que vende as nações por suas prostituições" — referência à religião assíria e sua influência sedutora sobre as nações que cooptavam culturalmente antes de conquistar militarmente.</p></div>
+        </div>
+        <div class="sin-row" style="background:rgba(139,32,32,0.04);border-color:rgba(139,32,32,0.2);">
+          <span class="text-base flex-shrink-0">🏙️</span>
+          <div><span class="font-display text-xs font-bold text-crimson">A comparação com Tebas/No-Amom (3:8–10)</span><p class="font-body text-xs text-ink-muted mt-0.5">"Acaso és melhor do que Amom-Nô?" — A própria Assíria havia destruído Tebas em 663 a.C. (o evento mais chocante do mundo antigo). Naum vira o argumento: o mesmo destino de Tebas espera Nínive. Nenhuma cidade é invencível.</p></div>
+        </div>
+      </div>
+      <div class="p-5 rounded-xl italic" style="background:rgba(30,58,95,0.05);border:1px solid rgba(30,58,95,0.22);">
+        <p class="font-body text-lg text-ink leading-relaxed mb-2">"Todos os que ouvirem as novas de ti baterão palmas sobre ti; porque sobre quem não passou continuamente a tua maldade?"</p>
+        <p class="font-display text-xs text-sapphire mt-1 tracking-widest">Naum 3:19 · A última palavra do livro · Ninguém chorou por Nínive</p>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-3">
+      <div class="section-label">"Que Belos São os Pés" — 1:15 · A Boa Notícia do Fim da Opressão</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <div class="p-5 rounded-xl italic mb-4" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.25);">
+            <p class="font-body text-xl text-ink leading-relaxed mb-2">"Eis que sobre os montes os pés do que anuncia boas novas, do que proclama a paz! Celebra, ó Judá, as tuas festas, cumpre os teus votos; porque nunca mais passará por ti o perverso; ele foi totalmente destruído."</p>
+            <p class="font-display text-xs text-forest mt-2 tracking-widest">Naum 1:15</p>
+          </div>
+          <p class="font-body text-sm text-ink-muted leading-relaxed">Este versículo é paralelo quase exato de Isaías 52:7 — "Como são formosos sobre os montes os pés do que traz as boas novas, do que anuncia a paz." Paulo cita Is 52:7 em Romanos 10:15. A "boa notícia" de Naum não é abstrata: é a notícia concreta de que o terror acabou, o opressor foi destruído.</p>
+        </div>
+        <div>
+          <h3 class="font-display text-sm font-semibold text-ink mb-3">Naum como Teodiceia</h3>
+          <p class="font-body text-sm text-ink-muted leading-relaxed mb-3">Para Judá, que havia suportado décadas de dominação assíria, tributação brutal e ameaças de invasão, Naum respondeu à pergunta mais urgente: <em>onde está Deus quando o mal triunfa?</em></p>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-gold-dark">A resposta de Naum:</strong> Deus não estava ausente — estava acumulando a evidência. O "tardio em irar-se" (1:3) não significa indiferente; significa que quando a ira chega, é irresistível. A paciência divina tem um limite — e quando o limite foi atingido para Nínive, a destruição foi total e irreversível.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.05);border:1px solid rgba(30,74,42,0.18);"><p class="font-body text-xs text-ink-muted leading-relaxed"><strong class="text-forest">1:7 no contexto:</strong> O "O Senhor é bom, um refúgio" não é uma afirmação abstrata — foi dito a pessoas que viviam sob o terror assírio. A bondade de Deus e seu julgamento são dois lados da mesma moeda: é <em>porque</em> ele é bom que ele não tolera indefinidamente o mal.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-4">
+      <div class="section-label">Temas Teológicos e Conexões com o NT</div>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Grandes Temas</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="theme-badge" style="background:rgba(139,32,32,0.07);border-color:rgba(139,32,32,0.3);color:#8b2020;">⚖️ Justiça retributiva de Deus</span>
+            <span class="theme-badge" style="background:rgba(30,74,42,0.08);border-color:rgba(30,74,42,0.3);color:#1e4a2a;">🛡️ Deus como refúgio dos oprimidos</span>
+            <span class="theme-badge" style="background:rgba(200,145,58,0.1);border-color:rgba(200,145,58,0.35);color:#7a4a10;">📯 A boa notícia do fim da opressão</span>
+            <span class="theme-badge" style="background:rgba(92,61,30,0.07);border-color:rgba(92,61,30,0.28);color:#5c3d1e;">🏴 Nenhum império é eterno</span>
+            <span class="theme-badge" style="background:rgba(30,58,95,0.07);border-color:rgba(30,58,95,0.3);color:#1e3a5f;">⏳ A paciência de Deus tem limite</span>
+            <span class="theme-badge" style="background:rgba(184,74,16,0.08);border-color:rgba(184,74,16,0.3);color:#b84a10;">🌊 O Deus da história</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="font-display text-base font-semibold text-ink mb-3">Naum no NT e na Tradição</h3>
+          <div class="space-y-2">
+            <div class="p-3 rounded-lg" style="background:rgba(30,74,42,0.06);border:1px solid rgba(30,74,42,0.2);"><span class="font-display text-xs font-bold text-forest">Rm 10:15 ecoa Nq 1:15 via Is 52:7</span><p class="font-body text-xs text-ink-muted mt-1">"Como são formosos os pés dos que anunciam o evangelho" — Paulo cita Isaías, que partilha a linguagem de Naum 1:15. A "boa notícia" de Naum (fim da opressão assíria) e o evangelho paulino compartilham a mesma estrutura: libertação de um poder opressor.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(74,30,110,0.05);border:1px solid rgba(74,30,110,0.18);"><span class="font-display text-xs font-bold text-violet">Ap 18 — A Queda de Babilônia como eco de Naum</span><p class="font-body text-xs text-ink-muted mt-1">A descrição da queda de Babilônia no Apocalipse usa linguagem e estrutura semelhantes à queda de Nínive em Naum — o padrão do poder opressor destruído enquanto o povo de Deus é libertado.</p></div>
+            <div class="p-3 rounded-lg" style="background:rgba(200,145,58,0.06);border:1px solid rgba(200,145,58,0.2);"><span class="font-display text-xs font-bold text-gold-dark">Cafarnaum — "A Aldeia de Naum"</span><p class="font-body text-xs text-ink-muted mt-1">Cafarnaum (כְּפַר נַחוּם — Kfar Nachum) significa literalmente "aldeia de Naum" — possivelmente o local de origem do profeta. Irônico: a cidade que ganhou o nome do profeta da destruição de Nínive tornou-se a cidade base do ministério de Jesus na Galileia.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card animate-fade-up animate-delay-5">
+      <div class="section-label">Fatos e Curiosidades Verificadas</div>
+      <div class="grid md:grid-cols-2 gap-3">
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Nínive esquecida por 2.400 anos:</strong> Quando Xenofonte passou pelo local em 401 a.C., não sabia que as ruínas gigantescas às suas margens eram de Nínive. Diodoro Sículo (séc. I a.C.) a descreve como uma cidade lendária. Só em 1845–1847, quando Austen Henry Layard escavou Kuyunjik (atual Mosul), Nínive foi redescoberta — junto com a Biblioteca de Assurbanipal com 30.000 tábuas de argila.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O rio que derrubou as muralhas (2:6):</strong> A Crônica Babilônica (tábua cuneiforme) descreve o cerco de Nínive em 612 a.C. e menciona que as defesas foram rompidas. Diodoro Sículo registra a lenda de que o Tigre inundou parte das muralhas. Naum havia profetizado "as comportas dos rios serão abertas" — escrito décadas antes do evento.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Os relevos do Museu Britânico:</strong> Os relevos do palácio de Assurbanipal em Nínive (hoje no Museu Britânico) mostram com detalhes precisos as práticas de guerra assíria — empalamento, deportação em massa, destruição de cidades. O "nenhum alívio para a tua ferida" (3:19) é confirmado pela arqueologia: nenhuma população voltou a habitar Nínive após 612 a.C.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>O nome "Naum" = consolação:</strong> A ironia é deliberada — o livro que traz "consolação" a Judá o faz anunciando a destruição do opressor, não a sua reforma. O conforto não vem de circunstâncias melhoradas mas de saber que o Juiz agiu. Para os oprimidos, a queda do opressor É a consolação.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Naum 2:4 e o tráfego moderno:</strong> "Os carros correm pelas ruas como relâmpagos, correndo desordenadamente pelas praças" — estudiosos de literatura bíblica notam que este versículo, escrito para descrever carros de guerra assírios, soa surpreendentemente como uma descrição de tráfego urbano moderno. A linguagem do caos cinético é universal.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Nenhuma lágrima por Nínive (3:19):</strong> "Todos os que ouvirem as novas de ti baterão palmas sobre ti." Quando Nínive caiu em 612 a.C., as crônicas babilônicas não registram nenhuma expressão de luto pelas nações subjugadas — ao contrário, há evidências de celebração nas populações liberadas. A profecia refletia o sentimento real do mundo antigo em relação à Assíria.</p></div>
+        <div class="curiosity-item"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Naum e a questão da "vingança divina":</strong> O v.2 usa três vezes a palavra <em>naqqam</em> (vingança/retribuição). Em hebraico, este conceito não é rancor emocional — é a restauração da ordem moral do universo. É o que Romanos 12:19 chama de "deixai estar a ira; porque está escrito: A mim pertence a vingança" — Deus reserva para si a retribuição que os humanos não devem exercer.</p></div>
+        <div class="curiosity-item md:col-span-2"><span class="flex-shrink-0 mt-0.5" style="color:#c8913a;">✦</span><p class="font-body text-sm text-ink leading-relaxed"><strong>Por que Naum ainda ressoa:</strong> Em toda geração há impérios — sistemas de poder que parecem invencíveis, que aterrorizam, exploram e oprimem sem aparente consequência. Para quem vive sob estes poderes e se pergunta "onde está Deus?", Naum é a resposta histórica: Nínive, o maior poder do mundo antigo, não sobreviveu à sua própria maldade, e foi tão completamente destruída que o mundo a esqueceu por 2.400 anos. Nenhum poder é eterno exceto o de Deus — e o mesmo Deus que destrói o opressor é "um refúgio nos dias de angústia" para os que confiam nele (1:7).</p></div>
+      </div>
+    </section>
+
+    <section class="text-center py-8 animate-fade-up animate-delay-6">
+      <div class="divider-ornament"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"O Senhor é bom, um refúgio nos dias de angústia; e conhece os que confiam nele."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Naum 1:7 · O verso mais luminoso no livro mais sombrio · o mesmo Deus que julga é refúgio</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Eis que sobre os montes os pés do que anuncia boas novas, do que proclama a paz! Celebra, ó Judá, as tuas festas... porque nunca mais passará por ti o perverso."</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Naum 1:15 · A boa notícia do fim da opressão · paralelo a Isaías 52:7 e Romanos 10:15</cite>
+      <div class="divider-ornament mt-8"><span class="ornament">✦</span></div>
+      <blockquote class="font-body text-xl italic text-ink-muted max-w-2xl mx-auto leading-relaxed px-4">"Todos os que ouvirem as novas de ti baterão palmas sobre ti; porque sobre quem não passou continuamente a tua maldade?"</blockquote>
+      <cite class="font-display text-xs text-gold-dark block mt-3 tracking-widest">Naum 3:19 · A última palavra do livro · e da história de Nínive</cite>
+    </section>
+  </main>
+  <footer class="text-center py-8 border-t font-body text-xs text-ink-faint" style="border-color:rgba(200,145,58,0.2);">Guia de Estudos Bíblico · Naum · Informações históricas e documentalmente verificadas</footer>
+</body>
+</html>
